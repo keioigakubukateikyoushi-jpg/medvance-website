@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Sub */}
             <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.65)", maxWidth: "440px" }}>
-              現役慶應医学部生が、あなただけの最短合格ルートを設計します。医学部合格実績多数。完全1対1・全国オンライン対応の医学部受験専門塾Medvance。
+              現役慶應医学部生が、あなただけの最短合格ルートを設計します。完全1対1・全国オンライン対応の医学部受験専門塾Medvance。
             </p>
 
             {/* CTAs */}
@@ -195,7 +195,7 @@ export default function Home() {
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { num: "合格実績多数", label: "現役生・浪人生・再受験生" },
+            { num: "現役・浪人・再受験", label: "幅広い生徒に対応" },
             { num: "完全1対1", label: "全授業が個別指導" },
             { num: "全員が", label: "現役慶應医学部生" },
             { num: "無料", label: "初回相談・カウンセリング" },
