@@ -1,9 +1,33 @@
 import Link from "next/link";
 
+const stories = [
+  {
+    name: "A.T.さん",
+    label: "現役合格・慶應義塾大学医学部",
+    quote:
+      "高2の秋から始めた時点では偏差値40台でした。Medvanceの講師に出会い、「本質から理解する勉強法」を教わってから成績が急激に伸びました。1年で慶應医学部に合格できたのは、オーダーメイドの学習計画があったからだと思います。",
+  },
+  {
+    name: "K.M.さん",
+    label: "再受験・東京慈恵会医科大学合格",
+    quote:
+      "社会人から再受験を決意しましたが、どう勉強すればいいかわからず不安でした。Medvanceでは私のペースに合わせて計画を立ててくれ、面接・小論文対策まで手厚くサポートしてもらいました。念願の医学部に合格できて本当に感謝しています。",
+  },
+  {
+    name: "S.Y.さん",
+    label: "一浪・順天堂大学医学部合格",
+    quote:
+      "現役時代は数学が特に苦手で、模試でも点が取れませんでした。Medvanceの講師が「なぜつまずくのか」を根本から分析してくれて、苦手の原因を一つひとつ潰していきました。浪人1年で志望校に合格できたのは、講師との二人三脚があったからです。",
+  },
+];
+
 export default function SuccessStoriesPage() {
   return (
     <div className="py-16 px-4 min-h-screen bg-white">
       <div className="max-w-4xl mx-auto">
+        <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#424f8f" }}>
+          合格実績
+        </p>
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ color: "#142b57" }}>
           合格体験記
         </h1>
@@ -12,49 +36,28 @@ export default function SuccessStoriesPage() {
         </p>
 
         <div className="space-y-8 mb-12">
-          {[
-            {
-              name: "A.T.さん（現役合格・慶應義塾大学医学部）",
-              bg: "#424f8f",
-              text: "white",
-              quote:
-                "高2の秋から始めた時点では偏差値40台でした。Medvanceの講師に出会い、「本質から理解する勉強法」を教わってから成績が急激に伸びました。1年で慶應医学部に合格できたのは、オーダーメイドの学習計画があったからだと思います。",
-            },
-            {
-              name: "K.M.さん（再受験・東京慈恵会医科大学合格）",
-              bg: "#d1d3ca",
-              text: "#142b57",
-              quote:
-                "社会人から再受験を決意しましたが、どう勉強すればいいかわからず不安でした。Medvanceでは私のペースに合わせて計画を立ててくれ、面接・小論文対策まで手厚くサポートしてもらいました。念願の医学部に合格できて本当に感謝しています。",
-            },
-            {
-              name: "S.Y.さん（一浪・順天堂大学医学部合格）",
-              bg: "#f9f9f8",
-              text: "#142b57",
-              quote:
-                "現役時代は数学が特に苦手で、模試でも点が取れませんでした。Medvanceの講師が「なぜつまずくのか」を根本から分析してくれて、苦手の原因を一つひとつ潰していきました。浪人1年で志望校に合格できたのは、講師との二人三脚があったからです。",
-            },
-          ].map((story, i) => (
+          {stories.map((story, i) => (
             <div
               key={i}
-              className="p-6 rounded-lg"
-              style={{
-                backgroundColor: story.bg,
-                border: story.bg === "#f9f9f8" ? "1px solid #d1d3ca" : "none",
-              }}
+              className="p-6 md:p-8 rounded-lg"
+              style={{ backgroundColor: "#f9f9f8", border: "1px solid #d1d3ca" }}
             >
-              <p
-                className="font-bold text-lg mb-3"
-                style={{ color: story.text === "white" ? "white" : story.text }}
-              >
-                {story.name}
+              <div className="text-5xl font-serif leading-none mb-4" style={{ color: "#142b57", opacity: 0.2 }}>"</div>
+              <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: "#424f8f" }}>
+                {story.quote}
               </p>
-              <p
-                className="text-sm md:text-base leading-relaxed"
-                style={{ color: story.text === "white" ? "rgba(255,255,255,0.9)" : "#424f8f" }}
-              >
-                &quot;{story.quote}&quot;
-              </p>
+              <div className="flex items-center gap-3 pt-4" style={{ borderTop: "1px solid #d1d3ca" }}>
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
+                  style={{ backgroundColor: "#142b57" }}
+                >
+                  {story.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-bold text-base" style={{ color: "#142b57" }}>{story.name}</p>
+                  <p className="text-xs mt-0.5" style={{ color: "#424f8f" }}>{story.label}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
