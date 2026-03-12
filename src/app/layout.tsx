@@ -22,6 +22,20 @@ export const metadata: Metadata = {
     siteName: "Medvance",
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: "https://medvance-edu.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Medvance｜医学部合格は、戦略で決まる。",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Medvance｜現役慶應医学部生による医学部受験専門塾",
+    description: "医学部合格は、戦略で決まる。現役慶應医学部生による完全1対1指導。",
+    images: ["https://medvance-edu.com/og-image.png"],
   },
 };
 
