@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Medvance",
   },
   description:
-    "医学部合格は、戦略で決まる。現役慶應医学部生による完全1対1の医学部受験専門塾Medvance。偏差値40台からの逆転合格実績。家庭教師・オンライン全国対応・浪人生・再受験生歓迎。無料相談受付中。",
+    "医学部合格は、戦略で決まる。現役慶應医学部生による完全1対1の医学部受験専門塾Medvance。医学部合格実績多数。家庭教師・オンライン全国対応・浪人生・再受験生歓迎。無料相談受付中。",
   keywords: [
     "医学部受験", "医学部塾", "医学部家庭教師", "医学部個別指導", "慶應医学部",
     "医学部オンライン", "浪人生 医学部", "再受験 医学部", "医学部合格",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Medvance｜現役慶應医学部生による医学部受験専門塾",
-    description: "医学部合格は、戦略で決まる。慶應医学部生による完全1対1指導。偏差値40台からの逆転合格実績。",
+    description: "医学部合格は、戦略で決まる。慶應医学部生による完全1対1指導。医学部合格実績多数。",
     url: "https://medvance-edu.com",
     siteName: "Medvance",
     locale: "ja_JP",
@@ -30,7 +30,7 @@ const jsonLd = {
   "@type": "EducationalOrganization",
   name: "Medvance（メドバンス）",
   alternateName: "メドバンス",
-  description: "現役慶應義塾大学医学部生による、医学部受験に特化した完全1対1の個別指導塾。偏差値40台からの医学部合格実績あり。",
+  description: "現役慶應義塾大学医学部生による、医学部受験に特化した完全1対1の個別指導塾。医学部合格実績多数。",
   url: "https://medvance-edu.com",
   contactPoint: {
     "@type": "ContactPoint",

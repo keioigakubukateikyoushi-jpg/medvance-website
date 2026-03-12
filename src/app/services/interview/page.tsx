@@ -126,6 +126,43 @@ export default function InterviewPage() {
       </div>
 
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            医学部面接でよく聞かれる質問と対策
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            「何を聞かれるかわからない」という不安が、面接を難しく感じさせます。実際には頻出パターンが存在します。ただ、暗記した答えを言うのではなく、自分の言葉で語れるかどうかが評価のポイントです。
+          </p>
+          <div className="space-y-4 mb-16">
+            {[
+              {
+                q: "「なぜ医師になりたいのか」",
+                a: "最も基本的な質問ですが、最も差がつく質問でもあります。「人の役に立ちたい」という抽象的な動機では評価されません。具体的なエピソード——家族の病気、医療現場での体験、自分が医療を受けた経験——から出発して、「なぜ医師でなければならないか」を組み立てることが重要です。",
+              },
+              {
+                q: "「なぜ本学を選んだのか」",
+                a: "「偏差値が高いから」「有名だから」は絶対にNGです。その大学の教育理念・カリキュラム・臨床実習の特色など、大学ごとに異なる強みと自分の志望が一致していることを具体的に示す必要があります。オープンキャンパスや過去問研究を通じて得た情報を活用しましょう。",
+              },
+              {
+                q: "「医療の現状についてどう思うか」",
+                a: "医師不足・地域偏在・高齢化社会・医療費の問題など、時事的な医療問題への自分なりの見解を持っておく必要があります。ニュースに対して「それについて自分はどう考えるか」を言葉にする習慣をつけることが重要。暗記ではなく、日常的に考えていることが問われています。",
+              },
+              {
+                q: "「自分の長所・短所は？」",
+                a: "「几帳面です」「コミュニケーションが得意です」という一般的な回答はほぼ意味を持ちません。医師として必要な資質——忍耐力・チームワーク・判断力・共感力——と自分の特性がどうつながるかを示すことが大切です。短所は「認識していて改善しようとしている」姿勢が伝わることが重要です。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-sm mb-3" style={{ color: "#c9922a" }}>頻出質問 {i + 1}</p>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.q}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             よくあるご質問

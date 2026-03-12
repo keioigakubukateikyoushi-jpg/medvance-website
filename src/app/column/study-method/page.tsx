@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "医学部合格のための勉強法｜偏差値40台から合格した慶應医学部生が解説 | Medvance",
+  title: "医学部合格のための勉強法｜現役慶應医学部生が解説 | Medvance",
   description:
-    "偏差値40台から慶應医学部に合格した経験者が、医学部受験の正しい勉強法を科目別に解説。英語・数学・物理・化学・生物の効率的な学習法とよくある失敗パターン。",
+    "現役慶應医学部生が、医学部受験の正しい勉強法を科目別に解説。英語・数学・物理・化学・生物の効率的な学習法とよくある失敗パターン。",
 };
 
 const subjectMethods = [
@@ -56,13 +56,24 @@ export default function StudyMethodPage() {
             医学部合格のための正しい勉強法
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            偏差値40台から慶應医学部に合格した経験者が解説
+            現役慶應医学部生が解説
           </p>
         </div>
       </div>
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
+          <div className="p-8 rounded-2xl bg-white mb-8" style={{ border: "1px solid #e5e1d8" }}>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
+              医学部受験で一番よく聞く相談が「何を勉強すればいいかわからない」というものです。参考書は山ほどある。YouTube動画も無限にある。でも、何が正解かわからない。
+            </p>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
+              実は、勉強法に迷っている時間が一番もったいないです。医学部受験で本当に必要なのは「完璧な勉強法」ではなく、「自分に合った方向性を決めて、それを続けること」です。
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
+              このページでは、科目別の具体的なアプローチと、実際によく見る失敗パターンをまとめました。参考にしてみてください。
+            </p>
+          </div>
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             まず知っておくべきこと：勉強量より勉強の質
           </h2>
@@ -100,6 +111,35 @@ export default function StudyMethodPage() {
               <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
                 <p className="font-bold text-sm mb-3" style={{ color: "#0c1a33" }}>NG {i + 1}. {item.title}</p>
                 <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            1日8時間の使い方例
+          </h2>
+          <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
+            「8時間勉強したけど何もできた気がしない」という声はよく聞きます。時間を「科目ブロック」で区切ると、集中しやすく進捗も確認しやすいです。あくまで一例ですが、参考にしてください。
+          </p>
+          <div className="space-y-3">
+            {[
+              { time: "7:00〜9:00", label: "数学（2時間）", note: "脳が冴えている朝は思考力が必要な数学に。解けない問題は最低15分考えてから解答を見る。" },
+              { time: "9:00〜11:00", label: "英語（2時間）", note: "長文読解1題＋文法復習。長文は時間を計って読むことで本番感覚を維持する。" },
+              { time: "11:00〜12:00", label: "物理 or 化学（1時間）", note: "午前中の最後に理科を少し入れておく。概念の確認や問題演習。" },
+              { time: "13:00〜15:00", label: "理科（2時間）", note: "昼食後は暗記より演習向き。物理なら問題を解いて解法を定着させる時間に。" },
+              { time: "15:00〜17:00", label: "苦手科目の集中補強（2時間）", note: "その日の模試結果や前日の振り返りから、最も弱いポイントに絞って取り組む。" },
+              { time: "夜（1時間）", label: "復習・翌日の準備", note: "その日学んだことを簡単にノートに書き出す。「できた」「まだ不安」を整理する時間。" },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4 p-4 rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <div className="flex-shrink-0 text-xs font-bold pt-0.5" style={{ color: "#c9922a", minWidth: "110px" }}>{item.time}</div>
+                <div>
+                  <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>{item.label}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.note}</p>
+                </div>
               </div>
             ))}
           </div>

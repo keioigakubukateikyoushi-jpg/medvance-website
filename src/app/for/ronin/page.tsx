@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "浪人生の医学部受験対策｜現役慶應医学部生による完全1対1指導 | Medvance",
   description:
-    "浪人して医学部を目指している方へ。Medvanceは現役慶應医学部生が完全1対1で指導。偏差値40台から1年で医学部合格の実績。浪人生の悩みに寄り添ったオーダーメイド学習計画で最短合格を目指します。",
+    "浪人して医学部を目指している方へ。Medvanceは現役慶應医学部生が完全1対1で指導。浪人生の医学部合格実績多数。浪人生の悩みに寄り添ったオーダーメイド学習計画で最短合格を目指します。",
 };
 
 const challenges = [
@@ -131,6 +131,49 @@ export default function RoninPage() {
               <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
                 <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>Q. {item.q}</p>
                 <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>A. {item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            浪人1年間のスケジュール例
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            Medvanceでは、4月の入塾時から12月の直前期まで、時期に応じた学習テーマを設定しています。闇雲に勉強するのではなく、「今この時期に何をすべきか」を常に明確にしながら進めます。
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                period: "4月〜6月",
+                title: "基礎固め期",
+                desc: "まず現役時の失敗を分析します。どの科目で点を落としたか、なぜ落としたかを丁寧に整理し、弱点の根本原因を特定。この時期に基礎を再構築しないと、夏以降の演習が意味を持ちません。「わかったつもり」をなくすことに集中します。",
+              },
+              {
+                period: "7月〜9月",
+                title: "応用演習期",
+                desc: "固めた基礎を問題演習で試す時期。模試を積極的に活用し、本番形式での戦い方を鍛えます。ここで大切なのは「点数」より「分析」。模試後に何を改善すべきかを講師と一緒に整理することが、この時期の最重要作業です。",
+              },
+              {
+                period: "10月〜11月",
+                title: "志望校特化期",
+                desc: "過去問演習を本格化し、志望校の出題傾向にピンポイントで対応できる力をつけます。大学によって「何が問われるか」は大きく違います。慶應なら論証力、慈恵なら英語の速度、といった具合に、大学別の仕上げをこの時期に行います。",
+              },
+              {
+                period: "12月〜1月",
+                title: "直前期",
+                desc: "新しいことには手を出しません。これまでの学習を確認・定着させることに集中する時期です。直前期に陥りがちな「不安から新しい参考書に手を出す」という行動は厳禁。メンタル管理も含めて、講師と二人三脚で本番を迎えます。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full text-white" style={{ backgroundColor: "#c9922a" }}>{item.period}</span>
+                  <span className="font-bold text-sm" style={{ color: "#0c1a33" }}>{item.title}</span>
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.desc}</p>
               </div>
             ))}
           </div>

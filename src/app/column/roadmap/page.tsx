@@ -102,6 +102,63 @@ export default function RoadmapPage() {
       </div>
 
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            高3生：何月までに何を終わらせるべきか
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            高3の1年間は「あっという間」です。漠然と過ごすと9月に「まだ基礎が終わっていない」という事態になりがちです。月ごとの目標を意識して進めましょう。
+          </p>
+          <div className="space-y-3 mb-16">
+            {[
+              { month: "4月", goal: "現状の学力を正確に把握", detail: "模試を受けて弱点を洗い出す。志望校を仮決定し、合格に必要な学力とのギャップを確認。勉強の優先順位を決める時期。" },
+              { month: "5月〜6月", goal: "英語・数学の基礎固め完成", detail: "英文法と数学の公式・定理の理解を徹底。「なんとなく解ける」状態から「根拠をもって解ける」状態に引き上げることが目標。" },
+              { month: "7月〜8月", goal: "理科の基礎を完成・全科目応用開始", detail: "夏は理科に集中投資するチャンス。物理・化学（または生物）の基礎を仕上げ、英語・数学は応用問題演習へ移行。1日8〜10時間の本格的な勉強時間を確保する。" },
+              { month: "9月〜10月", goal: "志望校の過去問を開始", detail: "秋模試で志望校の判定を確認しながら、過去問演習を開始。「本番で何が出るか」の感覚をつかむことが優先。弱点が見えたら即補強。" },
+              { month: "11月〜12月", goal: "面接・小論文の対策を本格化", detail: "面接は「ぶっつけ本番」が最も危険なパターン。11月には模擬面接を始め、自分の言葉で答える練習を積む。小論文も志望校の過去テーマを分析して練習。" },
+              { month: "1月", goal: "直前期：新しいことはしない", detail: "これまでの復習と定着確認に集中。新参考書・新範囲への手出しは厳禁。睡眠・体調管理を最優先し、本番当日のパフォーマンスを最大化することだけを考える。" },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4 p-5 rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <div className="flex-shrink-0">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full text-white inline-block" style={{ backgroundColor: "#c9922a", minWidth: "60px", textAlign: "center" }}>{item.month}</span>
+                </div>
+                <div>
+                  <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>{item.goal}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            浪人生のロードマップ
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            浪人は「高3をもう一回やる」ではありません。なぜ去年落ちたかを分析し、同じ失敗を繰り返さない1年を設計することが最も重要です。
+          </p>
+          <div className="space-y-3 mb-16">
+            {[
+              { month: "4月", goal: "去年の失敗を徹底分析", detail: "どの科目・どの問題形式で点が取れなかったかを過去の模試・入試結果から整理。「感覚的に苦手」ではなく、データをもとに弱点を特定する。この分析が浪人1年の学習の方向性を決める。" },
+              { month: "5月〜7月", goal: "弱点の根本解消に集中", detail: "基礎に戻ることを恐れない。「わかっているつもり」の概念ほど危ない。授業のわかりやすさより、自分が本当に理解できているかの確認を最優先にする。" },
+              { month: "8月〜9月", goal: "模試を活用した実戦力強化", detail: "夏の記述模試・マーク模試を通じて、本番形式での弱点を再確認。模試は「受けっぱなし」が最もムダ。翌日に必ず復習し、次の学習テーマを更新する。" },
+              { month: "10月〜11月", goal: "志望校の過去問を徹底的にやり込む", detail: "各大学の出題傾向に合わせた対策に集中する時期。慶應なら論述、慈恵なら英語速読、日医なら数学難問対策——志望校別に学習の色を変える。面接・小論文も並行して進める。" },
+              { month: "12月〜1月", goal: "直前期：仕上げと確認", detail: "やってきたことを信じる時期。不安から新しい参考書に手を出すのは厳禁。弱点の最終確認と、本番シミュレーション（時間配分の確認等）に集中する。睡眠を削らない。" },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4 p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <div className="flex-shrink-0">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full text-white inline-block" style={{ backgroundColor: "#0c1a33", minWidth: "60px", textAlign: "center" }}>{item.month}</span>
+                </div>
+                <div>
+                  <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>{item.goal}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             「いつから始めれば間に合う？」への回答

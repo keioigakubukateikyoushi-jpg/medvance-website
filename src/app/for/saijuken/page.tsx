@@ -137,6 +137,77 @@ export default function SaijukenPage() {
         </div>
       </div>
 
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            再受験生が医学部合格するための3ステップ
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            再受験は「量をこなす」より「何が足りないかを正確に把握する」ことの方が何倍も重要です。限られた時間で結果を出すには、戦略が全てです。
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                step: "01",
+                title: "現状の正確な把握",
+                desc: "どの科目が足りないか、どの大学が現実的かを客観的に分析します。「なんとなく苦手」ではなく、模試・過去問を使って具体的な弱点を特定することが出発点。自己評価は往々にして甘いため、講師の客観的な目が必要です。",
+              },
+              {
+                step: "02",
+                title: "効率的な学習計画",
+                desc: "仕事や学業と両立しながら、限られた時間で最大の効果を出すスケジューリングが求められます。1週間に使える時間を正確に把握し、優先順位をつけて科目・範囲を絞り込む。「全部やろうとして全部中途半端」は再受験生の最大の落とし穴です。",
+              },
+              {
+                step: "03",
+                title: "面接・小論文を武器にする",
+                desc: "社会人経験や他学部での学びは、面接で大きな強みになります。「なぜ今医師を目指すのか」という問いへの答えは、現役生よりはるかに説得力を持てる。この経験を整理し、志望動機として昇華させることが合格への重要な一手です。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-5xl font-bold mb-3 leading-none" style={{ color: "#0c1a33", opacity: 0.07, fontFamily: "'Noto Serif JP', serif" }}>{item.step}</p>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            Medvanceが再受験生に向いている理由
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            大手予備校のように「全員に同じ授業」ではありません。再受験生に特有の悩みや状況を踏まえた上で、個別に対応できるのがMedvanceの強みです。
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "同世代として話せる環境",
+                desc: "慶應医学部の現役学生が講師です。年齢が近い分、学習の悩みだけでなく「医学部に入ってどうだったか」「入試でどんなことを考えていたか」といったリアルな話を聞けます。大手予備校の講師では得られない視点です。",
+              },
+              {
+                title: "ライフスタイルに合わせた柔軟さ",
+                desc: "夜間・週末のみでの受講、月によって頻度を変えるといった対応が可能です。仕事の繁忙期には回数を減らし、受験直前には集中して対応する。大手予備校のコースに縛られない自由度が、社会人再受験生には特に重要です。",
+              },
+              {
+                title: "面接対策の質の高さ",
+                desc: "再受験生が最も差をつけられるのが面接です。Medvanceの講師は入試面接を直近で経験しており、「今の面接官は何を見ているか」を肌感覚で理解しています。再受験生の経歴を活かした回答作りを、実践的にサポートします。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold mb-4" style={{ backgroundColor: "#c9922a" }}>
+                  {i + 1}
+                </div>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>

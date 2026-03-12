@@ -44,7 +44,7 @@ const features = [
       </svg>
     ),
     title: "合格者が実践した「本質的な勉強法」",
-    body: "本質を捉えて効率よく得点力を伸ばす──実際に偏差値40台から難関医学部に合格した講師の成功メソッドを、再現可能な形で伝授します。",
+    body: "本質を捉えて効率よく得点力を伸ばす──実際に難関医学部に合格した講師の成功メソッドを、再現可能な形で伝授します。",
   },
   {
     icon: (
@@ -78,7 +78,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <div className="p-8 rounded-2xl text-base leading-relaxed" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8", color: "#3d3d3d" }}>
             Medvanceは、現役慶應義塾大学医学部生が立ち上げた、医学部受験に特化した完全個別指導塾です。
-            「偏差値40から慶應医学部合格」という実績をもとに、再現性のある合格メソッドを一人ひとりにオーダーメイドで提供します。
+            慶應医学部入試を突破した経験をもとに、再現性のある合格メソッドを一人ひとりにオーダーメイドで提供します。
           </div>
         </div>
       </div>

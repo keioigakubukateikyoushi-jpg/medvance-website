@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "慶應義塾大学医学部対策｜現役慶應医学部生が入試を徹底解説 | Medvance",
   description:
-    "慶應義塾大学医学部の入試対策を現役慶應医学部生が指導。英語・数学・物理・化学・小論文・面接の傾向と対策。偏差値40台からの慶應医学部合格実績あり。",
+    "慶應義塾大学医学部の入試対策を現役慶應医学部生が指導。英語・数学・物理・化学・小論文・面接の傾向と対策。合格者の視点から慶應医学部入試を徹底解説。",
 };
 
 const subjects = [
@@ -39,8 +39,8 @@ const reasons = [
     body: "過去10年以上の過去問を分析し、頻出テーマ・問われやすい思考パターンを体系的に把握。効率的な対策を行います。",
   },
   {
-    title: "偏差値40台からの合格実績",
-    body: "スタート時点の偏差値に関係なく、正しい学習法と戦略で慶應医学部合格を実現した実績があります。諦めずにご相談ください。",
+    title: "合格者の視点からの指導",
+    body: "慶應医学部を実際に突破した講師だからこそ、本番で何が求められるかを正確に理解しています。スタート地点に関わらず、諦めずにご相談ください。",
   },
 ];
 
@@ -125,6 +125,75 @@ export default function KeioPage() {
       </div>
 
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            慶應義塾大学医学部の入試データ
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            慶應医学部の入試は年度によって変動しますが、ここでは概況をまとめます。最新の情報は大学公式サイトで確認してください。
+          </p>
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            {[
+              {
+                label: "募集人員",
+                value: "一般選抜：約66名",
+                note: "推薦・帰国生等を含む全体の定員は110名程度。一般選抜の競争率は年度によって6〜8倍前後で推移します。",
+              },
+              {
+                label: "1次試験科目",
+                value: "英語・数学・物理または化学",
+                note: "英語と数学は記述式・論述形式が中心。単なる知識の再現ではなく、思考過程を言語化する力が求められます。",
+              },
+              {
+                label: "2次試験",
+                value: "小論文・面接（グループ・個人）",
+                note: "2次試験は1次通過者のみ受験可能。面接は複数の教員が担当し、医師としての資質・倫理観・思考力を総合的に評価します。",
+              },
+              {
+                label: "出願期間・試験日",
+                value: "例年1月中旬出願、2月上旬1次試験",
+                note: "他の私立医学部と日程が重なることが多いため、出願スケジュールの管理が重要です。複数校受験の場合は日程の確認を早めに行いましょう。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-bold tracking-wide uppercase mb-1" style={{ color: "#c9922a" }}>{item.label}</p>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.value}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            慶應医学部を目指す上で多くの受験生が陥る失敗
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            慶應医学部は「難しいから対策も難しいはず」と思いがちですが、実際に受験した立場から見ると、合格した人と落ちた人の間には、意外と共通した失敗パターンがあります。
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                title: "英語の速度不足で時間切れ",
+                body: "慶應医学部の英語は文量が多く、読解スピードが合否を分けます。「読めるけど時間が足りない」という状態のまま本番を迎える受験生が毎年います。日頃から時間を計って長文を読む訓練が不可欠です。",
+              },
+              {
+                title: "数学の「答えは合っているが減点」",
+                body: "記述式の数学では、答えが正しくても論証が不十分だと減点されます。「式だけ書いて答えを出す」スタイルでは通用しません。解法の根拠を言語化する練習を、早い段階から意識的に行う必要があります。",
+              },
+              {
+                title: "面接を「最後に少しだけやればいい」と思う",
+                body: "慶應の面接は準備なしでは対応できません。医師としての倫理観・社会問題への見解・志望理由の深掘りなど、即席で答えられる質問ではありません。3〜4か月前から取り組まないと間に合わないケースがあります。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-sm mb-3" style={{ color: "#0c1a33" }}>落とし穴 {i + 1}. {item.title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             合格者の声

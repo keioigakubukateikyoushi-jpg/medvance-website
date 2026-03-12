@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "偏差値がまだ低いのですが私立医学部を目指せますか？",
-    a: "現状の偏差値は関係ありません。まず現在の学力を正確に診断し、合格に必要な学力をどう積み上げるかを設計します。偏差値40台からの合格実績もあります。",
+    a: "現状の偏差値は関係ありません。まず現在の学力を正確に診断し、合格に必要な学力をどう積み上げるかを設計します。",
   },
   {
     q: "どの私立医学部が自分に合っているか分かりません",
@@ -133,6 +133,69 @@ export default function PrivatePage() {
       </div>
 
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            私立医学部の選び方
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            「とりあえず受けられるところを全部受ける」という戦略は、準備が分散して全て中途半端になるリスクがあります。自分の状況に合わせた受験校の絞り方が重要です。
+          </p>
+          <div className="space-y-4 mb-16">
+            {[
+              {
+                title: "学力の得意・不得意から選ぶ",
+                body: "数学が得意なら記述式・思考力重視の慶應や日医が向いています。英語に自信があれば慈恵の英語重視の傾向が追い風になります。自分の強みが活きる大学を第一志望に据えることで、合格確率が上がります。逆に、全科目バランスが取れているなら、順天堂・昭和のような標準型の大学が安定した選択肢になります。",
+              },
+              {
+                title: "通学・立地・学費を現実的に考える",
+                body: "私立医学部の学費は6年間で2,000万〜4,500万円と大きく異なります。奨学金・特待生制度がある大学も多いため、合格後の費用面も含めて検討する必要があります。また、臨床実習の附属病院の規模・特色も大学ごとに異なるため、将来の専門分野を考慮した選択も有効です。",
+              },
+              {
+                title: "面接スタイルと自分の相性を確認する",
+                body: "MMI（複数の面接官がステーションを回る形式）を採用している大学と、従来の個人面接・グループ面接の大学では、求められる対応が異なります。自分が得意なスタイルを把握しておくことで、面接対策の優先順位が立てやすくなります。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>ポイント {i + 1}. {item.title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            私立医学部受験で使える受験校戦略
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            私立医学部は日程が重なりにくいため、複数校を受験しやすいのが特徴です。だからこそ、受験校の組み合わせと順番が重要になります。
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                title: "「練習校」と「本命校」を区別する",
+                body: "試験は「受ければ慣れる」という側面があります。本命校の前に、日程的に早い別の大学を受験することで、本番の緊張感を経験できます。ただし、「練習のつもりで受けた大学に受かってしまう」こともあります。受験する以上は、全ての大学に合格する準備をしておくことが大切です。",
+              },
+              {
+                title: "補欠繰り上がりを計算に入れる",
+                body: "私立医学部では補欠合格の繰り上がりが相当数あります。1次合格後の手続きや補欠順位の確認など、本番期間中にやることは多い。複数校の状況を同時管理しながら最終決断をするため、精神的な余裕を持った受験スケジュールが望ましいです。",
+              },
+              {
+                title: "「受かっても行かない大学」は受けない",
+                body: "受験校を増やせば合格確率が上がると思いがちですが、準備が分散するデメリットの方が大きいです。仮に合格しても進学しない大学への受験は、時間・体力・費用のロスになります。「合格したら本当に行く」と思える大学を厳選することが、最終的に良い結果につながります。",
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold mb-4" style={{ backgroundColor: "#c9922a" }}>
+                  {i + 1}
+                </div>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             よくあるご質問
