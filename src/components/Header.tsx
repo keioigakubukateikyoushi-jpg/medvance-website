@@ -13,10 +13,8 @@ const subjects = [
 ];
 
 const navLinks = [
-  { label: "ホーム", href: "/" },
-  { label: "無料相談・指導依頼・お問い合わせ", href: "/contact" },
-  { label: "料金について", href: "/pricing" },
-  { label: "Medvanceとは？", href: "/about" },
+  { label: "塾について", href: "/about" },
+  { label: "料金", href: "/pricing" },
   { label: "合格体験記", href: "/success-stories" },
 ];
 
@@ -25,50 +23,50 @@ export default function Header() {
   const [subjectsOpen, setSubjectsOpen] = useState(false);
 
   return (
-    <header style={{ backgroundColor: "#142b57" }} className="text-white sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <header style={{ backgroundColor: "#0c1a33" }} className="text-white sticky top-0 z-50 shadow-lg">
+      <div className="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 hover:opacity-90">
-          <Image src="/images/logo.png" alt="Medvance" width={60} height={34} className="object-contain" />
-          <span className="text-white font-bold text-sm hidden sm:block">慶應医学部生が教える医学部受験専門塾</span>
+        <Link href="/" className="flex items-center gap-2.5 hover:opacity-85 transition-opacity flex-shrink-0">
+          <Image src="/images/logo.png" alt="Medvance" width={56} height={32} className="object-contain" />
+          <span className="text-white font-semibold text-xs hidden sm:block opacity-70 leading-tight max-w-[160px]">
+            慶應医学部生による<br />医学部受験専門塾
+          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-4 text-sm">
+        <nav className="hidden lg:flex items-center gap-6 text-sm">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-white hover:opacity-75 transition-opacity whitespace-nowrap"
+              className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap"
             >
               {link.label}
             </Link>
           ))}
 
           {/* Subjects dropdown */}
-          <div className="relative">
-            <button
-              className="text-white hover:opacity-75 transition-opacity flex items-center gap-1 whitespace-nowrap"
-              onMouseEnter={() => setSubjectsOpen(true)}
-              onMouseLeave={() => setSubjectsOpen(false)}
-            >
-              各教科の指導方法・勉強方法
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div
+            className="relative"
+            onMouseEnter={() => setSubjectsOpen(true)}
+            onMouseLeave={() => setSubjectsOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
+              各教科の指導
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {subjectsOpen && (
               <div
-                className="absolute top-full left-0 mt-1 shadow-lg z-50 min-w-36"
-                style={{ backgroundColor: "#142b57", border: "1px solid rgba(255,255,255,0.2)" }}
-                onMouseEnter={() => setSubjectsOpen(true)}
-                onMouseLeave={() => setSubjectsOpen(false)}
+                className="absolute top-full left-0 mt-2 rounded-xl overflow-hidden shadow-xl z-50 min-w-32 py-1"
+                style={{ backgroundColor: "#162540", border: "1px solid rgba(255,255,255,0.12)" }}
               >
                 {subjects.map((s) => (
                   <Link
                     key={s.href}
                     href={s.href}
-                    className="block px-4 py-2 text-white hover:bg-white hover:text-blue-900 transition-colors text-sm"
+                    className="block px-4 py-2.5 text-white opacity-75 hover:opacity-100 hover:bg-white hover:bg-opacity-10 transition-colors text-sm"
                   >
                     {s.label}
                   </Link>
@@ -79,20 +77,20 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="ml-2 px-4 py-2 text-white font-semibold rounded text-sm whitespace-nowrap transition-opacity hover:opacity-80"
-            style={{ backgroundColor: "#424f8f", border: "1px solid rgba(255,255,255,0.4)" }}
+            className="ml-2 px-5 py-2.5 text-white font-bold rounded-lg text-sm whitespace-nowrap hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#c9922a" }}
           >
-            お問い合わせ・無料相談はこちらから
+            無料相談
           </Link>
         </nav>
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-white p-2 rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="メニュー"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {menuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -104,34 +102,38 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div style={{ backgroundColor: "#142b57", borderTop: "1px solid rgba(255,255,255,0.2)" }} className="lg:hidden px-4 pb-4">
+        <div style={{ backgroundColor: "#0c1a33", borderTop: "1px solid rgba(255,255,255,0.1)" }} className="lg:hidden px-5 pb-5 pt-2">
+          <Link href="/" className="block py-2.5 text-sm text-white opacity-75 hover:opacity-100 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }} onClick={() => setMenuOpen(false)}>
+            ホーム
+          </Link>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block py-2 text-white hover:opacity-75 text-sm border-b border-white border-opacity-10"
+              className="block py-2.5 text-sm text-white opacity-75 hover:opacity-100 border-b"
+              style={{ borderColor: "rgba(255,255,255,0.08)" }}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <div className="py-2 border-b border-white border-opacity-10">
+          <div className="py-2.5 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
             <button
-              className="text-white text-sm flex items-center gap-1 w-full justify-between"
+              className="text-sm text-white opacity-75 flex items-center gap-1 w-full justify-between"
               onClick={() => setSubjectsOpen(!subjectsOpen)}
             >
-              各教科の指導方法・勉強方法
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              各教科の指導
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {subjectsOpen && (
-              <div className="mt-2 ml-4">
+              <div className="mt-2 ml-3 space-y-1">
                 {subjects.map((s) => (
                   <Link
                     key={s.href}
                     href={s.href}
-                    className="block py-1 text-white hover:opacity-75 text-sm"
+                    className="block py-1.5 text-sm text-white opacity-65 hover:opacity-100"
                     onClick={() => { setMenuOpen(false); setSubjectsOpen(false); }}
                   >
                     {s.label}
@@ -142,11 +144,11 @@ export default function Header() {
           </div>
           <Link
             href="/contact"
-            className="block mt-3 px-4 py-2 text-white font-semibold rounded text-sm text-center"
-            style={{ backgroundColor: "#424f8f" }}
+            className="block mt-4 px-5 py-3 text-white font-bold rounded-lg text-sm text-center hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#c9922a" }}
             onClick={() => setMenuOpen(false)}
           >
-            お問い合わせ・無料相談はこちらから
+            無料相談・お問い合わせ
           </Link>
         </div>
       )}

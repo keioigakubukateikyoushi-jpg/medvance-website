@@ -1,102 +1,74 @@
 import Link from "next/link";
 import Image from "next/image";
 
+/* ── Icon components ────────────────────────── */
+const IconPerson = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+  </svg>
+);
+const IconAcademic = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+  </svg>
+);
+const IconBook = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+  </svg>
+);
+const IconClipboard = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z" />
+  </svg>
+);
+const IconLightbulb = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+  </svg>
+);
+const IconGlobe = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3 12a8.959 8.959 0 0 0 .284 2.253" />
+  </svg>
+);
+
+/* ── Data ─────────────────────────────────── */
 const features = [
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-      </svg>
-    ),
-    title: "完全1対1指導",
-    body: "すべての授業が個別の家庭教師スタイル。生徒の理解度や目標に合わせて、学習内容・進度をフルカスタマイズします。",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-      </svg>
-    ),
-    title: "講師は全員・現役慶應医学部生",
-    body: "厳選された慶應医学部の合格者のみが指導。東大模試上位者・多浪経験者・地方公立出身者など、多様なバックグラウンドを持つ講師陣から最適な人物をマッチングします。",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-      </svg>
-    ),
-    title: "医学部に特化した専門対策",
-    body: "英数理に加え、面接・小論文・願書の書き方まで、医学部受験に必要なすべてをトータルサポート。",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z" />
-      </svg>
-    ),
-    title: "オーダーメイド学習計画",
-    body: "受験生一人ひとりの学力・志望校・性格・生活スタイルに合わせた最適な学習スケジュールを作成。1か月・1週間・1日単位の計画で最短合格を目指します。",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-      </svg>
-    ),
-    title: "合格者が実践した「本質的な勉強法」",
-    body: "実際に偏差値40台から難関医学部に合格した講師の成功メソッドを、再現可能な形で伝授します。",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-      </svg>
-    ),
-    title: "自宅でもオンラインでも受講可能",
-    body: "対面指導（関東圏）・オンライン指導の両方に対応。全国どこからでも最高レベルの家庭教師指導が受けられます。",
-  },
+  { icon: <IconPerson />, title: "完全1対1指導", body: "すべての授業が個別の家庭教師スタイル。生徒の理解度や目標に合わせて学習内容・進度をフルカスタマイズします。" },
+  { icon: <IconAcademic />, title: "講師は全員・現役慶應医学部生", body: "東大模試上位者・多浪経験者・地方公立出身者など多様な合格経験者から、あなたに最適な講師をマッチングします。" },
+  { icon: <IconBook />, title: "医学部に特化した専門対策", body: "英数理に加え、面接・小論文・願書まで、医学部受験に必要なすべてをトータルサポートします。" },
+  { icon: <IconClipboard />, title: "オーダーメイド学習計画", body: "学力・志望校・性格・生活スタイルに合わせた最適なスケジュールを1日単位で設計。最短距離で合格を目指します。" },
+  { icon: <IconLightbulb />, title: "合格者が実践した「本質的な勉強法」", body: "偏差値40台から難関医学部に合格した講師の成功メソッドを、再現可能な形で直接伝授します。" },
+  { icon: <IconGlobe />, title: "自宅でもオンラインでも受講可能", body: "対面指導（関東圏）・オンライン指導の両方に対応。全国どこからでも受講できます。" },
+];
+
+const strengths = [
+  { num: "01", title: "慶應医学部生のみが指導", body: "指導するのは慶應義塾大学医学部の現役学生のみ。実際に難関を突破した経験者が、再現性ある合格戦略を直接伝授します。他塾では決して得られない、リアルな合格者の視点があります。" },
+  { num: "02", title: "完全オーダーメイドの学習戦略", body: "学力・志望校・生活スタイルに合わせた専用プランを設計。「偏差値40から慶應医学部合格」の実績を持つ講師が、あなたの最短ルートを描きます。" },
+  { num: "03", title: "医学部受験に完全特化", body: "英数理の学力向上はもちろん、面接・小論文・願書まで一貫サポート。一般予備校では対応できない医学部特有の試験を、専門家が丁寧に指導します。" },
 ];
 
 const steps = [
-  {
-    step: "Step 1",
-    title: "無料カウンセリングのお申し込み",
-    body: "まずは、公式LINEまたは専用フォームからお気軽にご連絡ください。学力状況・志望校・学習環境・現在の悩みなどをヒアリングします。",
-  },
-  {
-    step: "Step 2",
-    title: "最適な講師のご提案",
-    body: "ヒアリング内容をもとに、性格・志望校・科目の相性まで考慮して、現役慶應医学部生から最適な講師を選定します。講師プロフィールの提示や、事前の面談も可能です。",
-  },
-  {
-    step: "Step 3",
-    title: "体験指導（1回60分〜）",
-    body: "希望があれば、実際に担当予定の講師による体験指導を実施。相性や指導の質を確認したうえで、本契約に進むことができます。",
-  },
-  {
-    step: "Step 4",
-    title: "本契約と指導スタート",
-    body: "スケジュールや指導方針をすり合わせたうえで契約を行い、完全1対1の本格指導がスタートします。指導後も継続的に進捗管理・相談対応・保護者報告などを行い、合格までしっかりサポートします。",
-  },
+  { title: "無料カウンセリング", body: "フォームからご連絡ください。学力・志望校・悩みをヒアリングします。" },
+  { title: "最適な講師をご提案", body: "相性・志望校・科目を考慮し、現役慶應医学部生から最適な講師を選定。" },
+  { title: "体験指導（60分〜）", body: "担当予定の講師による体験指導を実施。相性を確認したうえで本契約へ。" },
+  { title: "本契約・指導スタート", body: "完全1対1の本格指導がスタート。合格まで継続的にサポートします。" },
 ];
 
 const testimonials = [
-  {
-    name: "A.T.さん",
-    label: "現役合格・慶應義塾大学医学部",
-    quote: "1年で慶應医学部に合格できたのは、オーダーメイドの学習計画があったからだと思います。高2の秋に偏差値40台から始め、本質から理解する勉強法で急激に成績が伸びました。",
-  },
-  {
-    name: "K.M.さん",
-    label: "再受験・東京慈恵会医科大学合格",
-    quote: "社会人から再受験を決意しましたが、Medvanceでは私のペースに合わせて計画を立ててくれ、面接・小論文対策まで手厚くサポートしてもらいました。",
-  },
-  {
-    name: "S.Y.さん",
-    label: "一浪・順天堂大学医学部合格",
-    quote: "数学の苦手の原因を根本から分析してくれて、一つひとつ潰していきました。浪人1年で志望校に合格できたのは、講師との二人三脚があったからです。",
-  },
+  { name: "A.T.さん", label: "現役合格・慶應義塾大学医学部", quote: "高2の秋、偏差値40台から始めました。本質から理解する勉強法を教わってから成績が急激に伸び、1年で慶應医学部に合格できました。" },
+  { name: "K.M.さん", label: "再受験・東京慈恵会医科大学合格", quote: "社会人からの再受験で不安でしたが、私のペースに合わせた計画と面接対策まで手厚くサポートしてもらい、念願の医学部に合格できました。" },
+  { name: "S.Y.さん", label: "一浪・順天堂大学医学部合格", quote: "数学の苦手の根本原因を分析し、一つひとつ潰してもらいました。浪人1年で志望校に合格できたのは講師との二人三脚があったからです。" },
+];
+
+const faqs = [
+  { q: "どんな生徒が対象ですか？", a: "現役生・浪人生・再受験生すべてに対応しています。学力や年齢を問わず、医学部合格を目指す方であればどなたでもお申し込みいただけます。" },
+  { q: "本当に偏差値40から合格できますか？", a: "実際に偏差値40台から慶應医学部に合格した講師が在籍しています。重要なのは現在の偏差値ではなく、正しい戦略と努力です。まずは無料相談でご状況をお聞かせください。" },
+  { q: "料金はどのくらいかかりますか？", a: "指導頻度・内容・期間によって異なるため、無料相談でヒアリングしたうえでご提案しています。まずはお気軽にご連絡ください。" },
+  { q: "オンラインでも受講できますか？", a: "はい、全国どこからでもオンラインで受講できます。対面指導（関東圏）とオンライン指導の両方に対応しています。" },
+  { q: "体験指導はありますか？", a: "希望があれば、担当予定の講師による体験指導（1回60分〜）を実施しています。相性や指導の質をご確認いただいてから本契約に進めます。" },
+  { q: "講師はどのように選ばれますか？", a: "性格・志望校・得意科目・指導スタイルなどを総合的に考慮し、生徒さんに最も合った慶應医学部生をマッチングします。希望があれば事前の面談も可能です。" },
 ];
 
 const subjects = [
@@ -107,101 +79,141 @@ const subjects = [
   { label: "生物", badge: "生", href: "/subjects/biology" },
 ];
 
+/* ── Page ─────────────────────────────────── */
 export default function Home() {
   return (
     <>
-      {/* 1. Hero Section */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1 text-left">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#424f8f" }}>
-              医学部受験専門塾
-            </p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-1" style={{ color: "#142b57" }}>
-              Medvance
-            </h1>
-            <p className="text-lg font-medium mb-2" style={{ color: "#142b57" }}>メドバンス</p>
-            <p className="text-2xl md:text-3xl font-medium mb-6" style={{ color: "#424f8f" }}>
-              １歩先の医学部受験を
-            </p>
-            <p className="text-base md:text-lg mb-8 leading-relaxed" style={{ color: "#424f8f" }}>
-              偏差値40から慶應医学部合格の実績。現役慶應医学部生による完全1対1の医学部受験専門塾です。家庭教師・オンライン対応・再受験生歓迎。
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-4 text-white font-bold text-lg rounded shadow-md hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#142b57" }}
+      {/* ── 1. HERO ───────────────────────────── */}
+      <section style={{ backgroundColor: "#0c1a33" }} className="min-h-screen flex items-center py-24 px-4">
+        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full text-xs tracking-widest"
+              style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)" }}
             >
-              無料相談・お問い合わせ
-            </Link>
-            <p className="mt-3 text-sm" style={{ color: "#424f8f" }}>
-              ご依頼・無料相談はフォームから受付中
+              医学部受験専門塾 Medvance
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug mb-6" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+              偏差値40から<br />
+              <span style={{ color: "#c9922a" }}>慶應医学部合格</span><br />
+              の実績
+            </h1>
+            <p className="text-base md:text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.72)" }}>
+              現役慶應医学部生だけが教える、完全1対1の医学部受験専門塾。あなた専用の合格戦略で、最短ルートを走ります。
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-4 font-bold text-base rounded-lg text-white shadow-lg hover:opacity-90 transition-opacity text-center"
+                style={{ backgroundColor: "#c9922a" }}
+              >
+                無料相談・お問い合わせ
+              </Link>
+              <Link
+                href="/about"
+                className="inline-block px-8 py-4 font-semibold text-base rounded-lg text-white hover:bg-white hover:bg-opacity-10 transition-colors text-center"
+                style={{ border: "1px solid rgba(255,255,255,0.3)" }}
+              >
+                Medvanceとは？
+              </Link>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {["慶應義塾大学医学部在籍", "完全1対1制", "全国対応（オンライン）"].map((badge) => (
+                <span key={badge} className="text-xs flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.5)" }}>
+                  <span className="w-1.5 h-1.5 rounded-full inline-block flex-shrink-0" style={{ backgroundColor: "#c9922a" }} />
+                  {badge}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="flex-1 w-full max-w-sm md:max-w-none">
+          <div className="hidden md:flex justify-center">
             <Image
               src="/images/hero.png"
               alt="Medvance 医学部受験専門塾"
               width={500}
               height={600}
-              className="w-full h-auto rounded-lg object-cover"
+              className="w-full max-w-md h-auto rounded-2xl object-cover shadow-2xl"
             />
           </div>
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section style={{ backgroundColor: "#142b57" }} className="py-6 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {/* ── 2. RESULTS STRIP ──────────────────── */}
+      <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "指導スタイル", value: "完全1対1制" },
-            { label: "講師の資格", value: "全員が慶應医学部生" },
-            { label: "対応エリア", value: "全国（オンライン）" },
-            { label: "初回相談", value: "無料" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-white">
-              <p className="text-xs opacity-60 mb-1">{stat.label}</p>
-              <p className="font-bold text-base md:text-lg">{stat.value}</p>
+            { num: "偏差値40台", label: "からの慶應医学部合格実績" },
+            { num: "完全1対1", label: "全授業が個別指導" },
+            { num: "全員が", label: "現役慶應医学部生" },
+            { num: "無料", label: "初回相談・カウンセリング" },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="text-xl md:text-2xl font-bold mb-1" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>{s.num}</p>
+              <p className="text-xs md:text-sm" style={{ color: "#6b7280" }}>{s.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 2. About Section */}
-      <section className="bg-white py-16 px-4 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ color: "#142b57" }}>
-            Medvanceとは？慶應医学部生による家庭教師型受験塾です
+      {/* ── 3. THREE STRENGTHS ────────────────── */}
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Why Medvance
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
+            Medvanceが選ばれる3つの理由
           </h2>
-          <div className="mb-10">
-            <Image
-              src="/images/about.png"
-              alt="Medvanceについて"
-              width={1200}
-              height={675}
-              className="w-full h-auto rounded-lg"
-            />
+          <div className="grid md:grid-cols-3 gap-6">
+            {strengths.map((item) => (
+              <div key={item.num} className="bg-white rounded-2xl p-8 shadow-sm" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-6xl font-bold mb-4 leading-none" style={{ color: "#0c1a33", opacity: 0.07, fontFamily: "'Noto Serif JP', serif" }}>{item.num}</p>
+                <h3 className="text-base font-bold mb-3" style={{ color: "#0c1a33" }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+              </div>
+            ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        </div>
+      </section>
+
+      {/* ── 4. ABOUT IMAGE ────────────────────── */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <Image
+            src="/images/about.png"
+            alt="Medvanceについて"
+            width={1200}
+            height={675}
+            className="w-full h-auto rounded-2xl shadow-sm"
+          />
+        </div>
+      </section>
+
+      {/* ── 5. 6 FEATURES ─────────────────────── */}
+      <section style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Features
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-14" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            Medvanceの6つの特徴
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
             {features.map((item, i) => (
               <div
                 key={i}
-                className="flex gap-4 p-5 rounded-lg"
-                style={{ backgroundColor: "#f9f9f8", border: "1px solid #d1d3ca" }}
+                className="flex gap-4 p-6 rounded-xl"
+                style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
               >
                 <div
                   className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white"
-                  style={{ backgroundColor: "#142b57" }}
+                  style={{ backgroundColor: "#c9922a" }}
                 >
                   {item.icon}
                 </div>
                 <div>
-                  <p className="font-bold text-base mb-1" style={{ color: "#142b57" }}>
-                    {item.title}
-                  </p>
-                  <p className="text-sm leading-relaxed" style={{ color: "#424f8f" }}>
-                    {item.body}
-                  </p>
+                  <p className="font-bold text-white text-sm mb-1">{item.title}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>{item.body}</p>
                 </div>
               </div>
             ))}
@@ -209,71 +221,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Flow Section */}
-      <section className="py-16 px-4" style={{ backgroundColor: "#424f8f" }}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
-            無料相談、ご応募までの流れ
+      {/* ── 6. FLOW ───────────────────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Flow
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+            お申し込みから指導開始まで
           </h2>
-          <div className="mb-10">
-            <Image
-              src="/images/flow.jpg"
-              alt="ご応募までの流れ"
-              width={1440}
-              height={517}
-              className="w-full h-auto rounded-lg"
-            />
+          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+            無料相談から最短1週間で指導をスタートできます
+          </p>
+          <div className="mb-12">
+            <Image src="/images/flow.jpg" alt="ご応募までの流れ" width={1440} height={517} className="w-full h-auto rounded-2xl" />
           </div>
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-4 gap-6">
             {steps.map((item, i) => (
-              <div
-                key={i}
-                className="flex gap-4 rounded-lg p-5"
-                style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
-              >
-                <div className="flex-shrink-0 flex items-start pt-1">
+              <div key={i} className="relative text-center">
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4"
+                  style={{ backgroundColor: "#0c1a33" }}
+                >
+                  {i + 1}
+                </div>
+                {i < steps.length - 1 && (
                   <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-xs font-bold text-white border-2 border-white text-center"
-                    style={{ backgroundColor: "#142b57" }}
-                  >
-                    {item.step.replace("Step ", "S")}<br />{i + 1}
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <p className="font-bold text-white text-base mb-1">
-                    {item.step}｜{item.title}
-                  </p>
-                  <p className="text-white text-sm leading-relaxed opacity-90">{item.body}</p>
-                </div>
+                    className="hidden md:block absolute top-6 left-[calc(50%+24px)] right-0 h-px"
+                    style={{ backgroundColor: "#e5e1d8" }}
+                  />
+                )}
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. Testimonials Preview */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2" style={{ color: "#142b57" }}>
+      {/* ── 7. TESTIMONIALS ───────────────────── */}
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Success Stories
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
             合格者の声
           </h2>
-          <p className="text-center text-sm mb-10" style={{ color: "#424f8f" }}>
-            Medvanceで合格を勝ち取った受験生たちの声をご紹介します。
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="p-6 rounded-lg flex flex-col"
-                style={{ backgroundColor: "#f9f9f8", border: "1px solid #d1d3ca" }}
+                className="bg-white rounded-2xl p-7 flex flex-col shadow-sm"
+                style={{ border: "1px solid #e5e1d8" }}
               >
-                <div className="text-4xl font-serif mb-3 leading-none" style={{ color: "#142b57", opacity: 0.25 }}>"</div>
-                <p className="text-sm leading-relaxed flex-1 mb-4" style={{ color: "#424f8f" }}>
-                  {t.quote}
-                </p>
-                <div className="border-t pt-3" style={{ borderColor: "#d1d3ca" }}>
-                  <p className="font-bold text-sm" style={{ color: "#142b57" }}>{t.name}</p>
-                  <p className="text-xs mt-0.5" style={{ color: "#424f8f" }}>{t.label}</p>
+                <div className="text-5xl leading-none mb-4" style={{ color: "#c9922a", opacity: 0.3, fontFamily: "Georgia, serif" }}>&ldquo;</div>
+                <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#4a5568" }}>{t.quote}</p>
+                <div className="flex items-center gap-3 pt-4" style={{ borderTop: "1px solid #e5e1d8" }}>
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
+                    style={{ backgroundColor: "#0c1a33" }}
+                  >
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm" style={{ color: "#0c1a33" }}>{t.name}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{t.label}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -281,111 +295,142 @@ export default function Home() {
           <div className="text-center">
             <Link
               href="/success-stories"
-              className="inline-block px-6 py-3 font-semibold rounded border text-sm hover:opacity-80 transition-opacity"
-              style={{ color: "#142b57", borderColor: "#142b57" }}
+              className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-lg text-sm hover:opacity-80 transition-opacity"
+              style={{ color: "#0c1a33", border: "1px solid #0c1a33" }}
             >
               合格体験記をすべて読む
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 5. CTA Section */}
-      <section className="py-16 px-4" style={{ backgroundColor: "#d1d3ca" }}>
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: "#142b57" }}>
-            医学部受験専門塾Medvanceでは
+      {/* ── 8. FAQ ────────────────────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            FAQ
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
+            よくあるご質問
           </h2>
-          <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#142b57" }}>
-            慶應義塾大学医学部の現役医学部生が
-          </h2>
-          <h2 className="text-xl md:text-2xl font-semibold mb-8" style={{ color: "#142b57" }}>
-            マンツーマンで合格まで指導します
-          </h2>
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
-            <h3 className="text-lg md:text-xl font-bold mb-4" style={{ color: "#142b57" }}>
-              医学部合格は「才能」ではなく「戦略」
-            </h3>
-            <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: "#424f8f" }}>
-              どれだけ努力しても、やり方を間違えると結果は出ません。Medvanceは、合格者が実際に通った&quot;最短合格ルート&quot;を、あなた専用に最適化して提供します。1年で逆転合格を目指すなら──あなたの医学部合格を、私たちが本気でサポートします。
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-4 text-white font-bold text-lg rounded shadow-md hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#142b57" }}
-            >
-              無料相談・依頼はこちら
-            </Link>
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <details
+                key={i}
+                className="rounded-xl overflow-hidden group"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <summary
+                  className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none"
+                  style={{ color: "#0c1a33" }}
+                >
+                  <span>Q. {faq.q}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>
+                  {faq.a}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 6. Note Section */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: "#142b57" }}>
-            「どうすれば医学部に合格できるのか」
+      {/* ── 9. NOTE ───────────────────────────── */}
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Note
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+            現役慶應医学部生のnoteも更新中
           </h2>
-          <h2 className="text-xl md:text-2xl font-bold mb-8" style={{ color: "#142b57" }}>
-            現役慶應医学部生のnoteも更新しています
-          </h2>
-          <div className="mb-8">
+          <p className="text-center text-sm mb-10 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
+            「偏差値40から慶應医学部に合格した戦略」「医学部に受かる人・落ちる人の違い」など、他では読めないリアルな受験情報を公開中です。
+          </p>
+          <div className="rounded-2xl overflow-hidden shadow-sm mb-8" style={{ border: "1px solid #e5e1d8" }}>
             <Image
               src="/images/note.png"
               alt="note記事"
               width={1280}
               height={819}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto"
             />
           </div>
-          <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: "#424f8f" }}>
-            noteでは、「偏差値40から慶應医学部に合格した戦略」「医学部に受かる人・落ちる人の決定的な違い」など、他では読めないリアルで実践的な受験情報を公開中。実際の合格体験記、科目別の勉強法、面接・小論文対策、そして最短で結果を出すスケジュール設計まで──医学部合格のすべてが詰まったnoteです。
-          </p>
-          <a
-            href="https://note.com/igakubu_juken"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 text-white font-bold text-lg rounded shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#142b57" }}
-          >
-            note記事を読む
-          </a>
+          <div className="text-center">
+            <a
+              href="https://note.com/igakubu_juken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#0c1a33" }}
+            >
+              note記事を読む
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* 7. Subjects Section */}
-      <section className="py-16 px-4" style={{ backgroundColor: "#d1d3ca" }}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center" style={{ color: "#142b57" }}>
+      {/* ── 10. SUBJECTS ──────────────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
             各教科の指導方法
           </h2>
-          <p className="text-lg font-medium mb-4 text-center" style={{ color: "#424f8f" }}>
-            「わかるまで、分かるように」——一人ひとりに寄り添う、本質的な受験指導
-          </p>
-          <p className="text-sm md:text-base leading-relaxed text-center mb-10 max-w-2xl mx-auto" style={{ color: "#142b57" }}>
-            Medvanceでは、「ただ教える」だけでは終わりません。講師は、生徒が&quot;どこでつまずいているのか&quot;を丁寧に観察し、的確に見抜いたうえで、ピンポイントに解消していきます。
+          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+            「ただ教える」だけでなく、つまずきの根本を見抜いてピンポイントに解消します
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {subjects.map((subject) => (
               <Link
                 key={subject.href}
                 href={subject.href}
-                className="flex items-center gap-3 p-5 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow font-semibold text-lg"
-                style={{ color: "#142b57" }}
+                className="flex items-center gap-3 p-5 rounded-xl bg-white hover:shadow-md transition-shadow font-semibold"
+                style={{ color: "#0c1a33", border: "1px solid #e5e1d8" }}
               >
                 <span
                   className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                  style={{ backgroundColor: "#142b57" }}
+                  style={{ backgroundColor: "#0c1a33" }}
                 >
                   {subject.badge}
                 </span>
-                {subject.label}
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 ml-auto opacity-40">
+                <span>{subject.label}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 ml-auto opacity-30">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── 11. FINAL CTA ─────────────────────── */}
+      <section style={{ backgroundColor: "#0c1a33" }} className="py-28 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-5 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            医学部合格は<span style={{ color: "#c9922a" }}>「才能」ではなく「戦略」</span>
+          </h2>
+          <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.68)" }}>
+            どれだけ努力しても、やり方を間違えると結果は出ません。合格者が実際に通った最短ルートを、あなた専用に最適化して提供します。まずは無料相談から、一歩を踏み出してください。
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-10 py-5 text-white font-bold text-lg rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#c9922a" }}
+          >
+            無料相談・お問い合わせ
+          </Link>
+          <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+            ご依頼・無料相談はフォームから受付中
+          </p>
         </div>
       </section>
     </>

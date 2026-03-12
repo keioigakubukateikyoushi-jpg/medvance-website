@@ -23,63 +23,70 @@ const stories = [
 
 export default function SuccessStoriesPage() {
   return (
-    <div className="py-16 px-4 min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto">
-        <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#424f8f" }}>
-          合格実績
-        </p>
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ color: "#142b57" }}>
-          合格体験記
-        </h1>
-        <p className="text-center mb-12 text-base" style={{ color: "#424f8f" }}>
-          Medvanceで合格を勝ち取った受験生たちの声をご紹介します。
-        </p>
+    <div className="min-h-screen bg-white">
+      {/* Page Header */}
+      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Success Stories</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            合格体験記
+          </h1>
+          <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
+            Medvanceで合格を勝ち取った受験生たちの声をご紹介します。
+          </p>
+        </div>
+      </div>
 
-        <div className="space-y-8 mb-12">
+      {/* Stories */}
+      <div className="py-20 px-4">
+        <div className="max-w-3xl mx-auto space-y-8 mb-16">
           {stories.map((story, i) => (
             <div
               key={i}
-              className="p-6 md:p-8 rounded-lg"
-              style={{ backgroundColor: "#f9f9f8", border: "1px solid #d1d3ca" }}
+              className="rounded-2xl p-8"
+              style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
             >
-              <div className="text-5xl font-serif leading-none mb-4" style={{ color: "#142b57", opacity: 0.2 }}>"</div>
-              <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: "#424f8f" }}>
+              <div className="text-6xl leading-none mb-4" style={{ color: "#c9922a", opacity: 0.25, fontFamily: "Georgia, serif" }}>&ldquo;</div>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "#3d3d3d" }}>
                 {story.quote}
               </p>
-              <div className="flex items-center gap-3 pt-4" style={{ borderTop: "1px solid #d1d3ca" }}>
+              <div className="flex items-center gap-3 pt-6" style={{ borderTop: "1px solid #e5e1d8" }}>
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                  style={{ backgroundColor: "#142b57" }}
+                  style={{ backgroundColor: "#0c1a33" }}
                 >
                   {story.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="font-bold text-base" style={{ color: "#142b57" }}>{story.name}</p>
-                  <p className="text-xs mt-0.5" style={{ color: "#424f8f" }}>{story.label}</p>
+                  <p className="font-bold text-sm" style={{ color: "#0c1a33" }}>{story.name}</p>
+                  <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{story.label}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div
-          className="p-8 rounded-lg text-center mb-8"
-          style={{ backgroundColor: "#142b57" }}
-        >
-          <h2 className="text-xl md:text-2xl font-bold text-white mb-4">
-            あなたも合格体験記の主役になりませんか？
-          </h2>
-          <p className="text-white opacity-90 mb-6 text-sm leading-relaxed">
-            Medvanceでは、今この瞬間も多くの受験生が最短合格を目指して取り組んでいます。
-            まずは無料相談から、あなたの可能性を確認してみてください。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-lg rounded shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#424f8f", border: "1px solid rgba(255,255,255,0.4)" }}
+        {/* CTA */}
+        <div className="max-w-3xl mx-auto">
+          <div
+            className="p-10 rounded-2xl text-center"
+            style={{ backgroundColor: "#0c1a33" }}
           >
-            無料相談・お問い合わせはこちら
-          </Link>
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+              あなたも合格体験記の主役になりませんか？
+            </h2>
+            <p className="mb-8 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
+              Medvanceでは、今この瞬間も多くの受験生が最短合格を目指して取り組んでいます。
+              まずは無料相談から、あなたの可能性を確認してみてください。
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#c9922a" }}
+            >
+              無料相談・お問い合わせ
+            </Link>
+          </div>
         </div>
       </div>
     </div>
