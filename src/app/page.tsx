@@ -103,17 +103,21 @@ export default function Home() {
 
             {/* Headline */}
             <h1
-              className="font-bold text-white leading-tight mb-6"
-              style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "clamp(2rem, 4vw, 3.75rem)" }}
+              className="font-bold text-white leading-tight mb-4"
+              style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
             >
-              偏差値40から<br />
-              <span style={{ color: "#c9922a" }}>慶應医学部合格</span><br />
-              の実績
+              医学部合格は、<br />
+              <span style={{ color: "#c9922a" }}>戦略</span>で決まる。
             </h1>
 
+            {/* Sub headline */}
+            <p className="font-semibold mb-6" style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(1rem, 2vw, 1.25rem)", fontFamily: "'Noto Serif JP', serif" }}>
+              努力の方向が、合否を分ける。
+            </p>
+
             {/* Sub */}
-            <p className="text-base md:text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.68)", maxWidth: "440px" }}>
-              現役慶應医学部生だけが教える、完全1対1の医学部受験専門塾。あなた専用の合格戦略で、最短ルートを走ります。
+            <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.65)", maxWidth: "440px" }}>
+              現役慶應医学部生が、あなただけの最短合格ルートを設計します。偏差値40台からの逆転合格実績。完全1対1・全国オンライン対応の医学部受験専門塾Medvance。
             </p>
 
             {/* CTAs */}
@@ -356,7 +360,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 8. FAQ ────────────────────────────── */}
+      {/* ── 8. TARGET AUDIENCE ────────────────── */}
+      <section style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            こんな方へ
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            Medvanceはこんな方を応援します
+          </h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { label: "浪人生の方", desc: "現役時代の失敗を分析し、正しい戦略で1年以内の合格を目指します", href: "/for/ronin" },
+              { label: "再受験生の方", desc: "社会人・大学生からの挑戦も歓迎。柔軟なスケジュールで全力サポート", href: "/for/saijuken" },
+              { label: "保護者の方", desc: "毎月の進捗報告・保護者面談で、お子さまの状況を透明にご報告", href: "/for/parents" },
+              { label: "慶應医学部を目指す方", desc: "現役慶應医学部生だからこそ語れる、リアルな入試対策", href: "/universities/keio" },
+              { label: "私立医学部を目指す方", desc: "慈恵・順天堂・日本医科など、大学別の傾向に合わせた専門対策", href: "/universities/private" },
+              { label: "国公立医学部を目指す方", desc: "共通テストから二次試験まで、全科目の完成を目指します", href: "/universities/national" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block p-6 rounded-xl hover:bg-white hover:bg-opacity-10 transition-colors group"
+                style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
+              >
+                <p className="font-bold text-white mb-2 group-hover:opacity-100 flex items-center gap-2">
+                  {item.label}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5 opacity-50">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
+                </p>
+                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. FAQ ────────────────────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
