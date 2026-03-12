@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 type DropdownItem = { label: string; href: string; desc?: string };
 
@@ -41,6 +41,16 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleEnter = (label: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenDropdown(label);
+  };
+
+  const handleLeave = () => {
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 120);
+  };
 
   return (
     <header style={{ backgroundColor: "#0c1a33" }} className="text-white sticky top-0 z-50 shadow-lg">
@@ -65,37 +75,54 @@ export default function Header() {
             合格体験記
           </Link>
 
-          {/* Mega menu dropdowns */}
+          {/* Dropdowns — button + menu share the same hover zone */}
           {megaMenus.map((menu) => (
             <div
               key={menu.label}
               className="relative"
-              onMouseEnter={() => setOpenDropdown(menu.label)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              onMouseEnter={() => handleEnter(menu.label)}
+              onMouseLeave={handleLeave}
             >
-              <button className="flex items-center gap-1 text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
+              <button className="flex items-center gap-1 text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap py-4">
                 {menu.label}
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
+
+              {/* Invisible bridge fills the gap between button and dropdown */}
               {openDropdown === menu.label && (
-                <div
-                  className="absolute top-full left-0 mt-2 rounded-xl overflow-hidden shadow-2xl z-50 py-2"
-                  style={{ backgroundColor: "#162540", border: "1px solid rgba(255,255,255,0.12)", minWidth: "220px" }}
-                >
-                  {menu.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2.5 hover:bg-white hover:bg-opacity-10 transition-colors"
-                    >
-                      <span className="text-white text-sm font-medium block">{item.label}</span>
-                      {item.desc && <span className="text-xs block mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{item.desc}</span>}
-                    </Link>
-                  ))}
-                </div>
+                <div className="absolute top-full left-0 w-full h-2 bg-transparent" />
               )}
+
+              <div
+                className="absolute left-0 rounded-xl overflow-hidden shadow-2xl z-50 py-2 transition-all duration-100"
+                style={{
+                  backgroundColor: "#162540",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  minWidth: "220px",
+                  top: "calc(100% + 4px)",
+                  opacity: openDropdown === menu.label ? 1 : 0,
+                  pointerEvents: openDropdown === menu.label ? "auto" : "none",
+                  transform: openDropdown === menu.label ? "translateY(0)" : "translateY(-4px)",
+                }}
+              >
+                {menu.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block px-4 py-3 hover:bg-white hover:bg-opacity-10 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                  >
+                    <span className="text-white text-sm font-medium block">{item.label}</span>
+                    {item.desc && (
+                      <span className="text-xs block mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>
+                        {item.desc}
+                      </span>
+                    )}
+                  </Link>
+                ))}
+              </div>
             </div>
           ))}
 
@@ -126,7 +153,10 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div style={{ backgroundColor: "#0c1a33", borderTop: "1px solid rgba(255,255,255,0.1)" }} className="lg:hidden px-5 pb-5 pt-2 max-h-[80vh] overflow-y-auto">
+        <div
+          style={{ backgroundColor: "#0c1a33", borderTop: "1px solid rgba(255,255,255,0.1)" }}
+          className="lg:hidden px-5 pb-5 pt-2 max-h-[80vh] overflow-y-auto"
+        >
           {[
             { label: "ホーム", href: "/" },
             { label: "塾について", href: "/about" },
@@ -136,7 +166,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="block py-2.5 text-sm text-white opacity-75 hover:opacity-100 border-b"
+              className="block py-3 text-sm text-white opacity-75 hover:opacity-100 border-b"
               style={{ borderColor: "rgba(255,255,255,0.08)" }}
               onClick={() => setMenuOpen(false)}
             >
@@ -147,7 +177,7 @@ export default function Header() {
           {megaMenus.map((menu) => (
             <div key={menu.label} className="border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
               <button
-                className="w-full flex items-center justify-between py-2.5 text-sm text-white opacity-75"
+                className="w-full flex items-center justify-between py-3 text-sm text-white opacity-75"
                 onClick={() => setOpenMobileMenu(openMobileMenu === menu.label ? null : menu.label)}
               >
                 {menu.label}
@@ -156,12 +186,12 @@ export default function Header() {
                 </svg>
               </button>
               {openMobileMenu === menu.label && (
-                <div className="ml-3 mb-2 space-y-1">
+                <div className="ml-3 mb-3 space-y-1">
                   {menu.items.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block py-1.5 text-xs hover:opacity-100"
+                      className="block py-2 text-xs hover:opacity-100"
                       style={{ color: "rgba(255,255,255,0.6)" }}
                       onClick={() => setMenuOpen(false)}
                     >
