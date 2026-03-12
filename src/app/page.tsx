@@ -84,23 +84,39 @@ export default function Home() {
   return (
     <>
       {/* ── 1. HERO ───────────────────────────── */}
-      <section style={{ backgroundColor: "#0c1a33" }} className="min-h-screen flex items-center py-24 px-4">
-        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-          <div>
+      <section style={{ backgroundColor: "#0c1a33" }} className="relative overflow-hidden">
+        {/* Desktop: full-height split layout */}
+        <div className="grid md:grid-cols-[55%_45%]" style={{ minHeight: "100svh" }}>
+
+          {/* Left: text panel */}
+          <div className="flex flex-col justify-center py-28 px-8 sm:px-12 lg:px-16 xl:px-20 relative z-10">
+            {/* Gold accent line */}
+            <div className="w-10 h-0.5 mb-8" style={{ backgroundColor: "#c9922a" }} />
+
+            {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full text-xs tracking-widest"
-              style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)" }}
+              className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full text-xs tracking-widest w-fit"
+              style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.14)", color: "rgba(255,255,255,0.6)" }}
             >
               医学部受験専門塾 Medvance
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug mb-6" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+
+            {/* Headline */}
+            <h1
+              className="font-bold text-white leading-tight mb-6"
+              style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "clamp(2rem, 4vw, 3.75rem)" }}
+            >
               偏差値40から<br />
               <span style={{ color: "#c9922a" }}>慶應医学部合格</span><br />
               の実績
             </h1>
-            <p className="text-base md:text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.72)" }}>
+
+            {/* Sub */}
+            <p className="text-base md:text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.68)", maxWidth: "440px" }}>
               現役慶應医学部生だけが教える、完全1対1の医学部受験専門塾。あなた専用の合格戦略で、最短ルートを走ります。
             </p>
+
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Link
                 href="/contact"
@@ -111,30 +127,63 @@ export default function Home() {
               </Link>
               <Link
                 href="/about"
-                className="inline-block px-8 py-4 font-semibold text-base rounded-lg text-white hover:bg-white hover:bg-opacity-10 transition-colors text-center"
-                style={{ border: "1px solid rgba(255,255,255,0.3)" }}
+                className="inline-block px-8 py-4 font-semibold text-base rounded-lg text-white transition-colors text-center"
+                style={{ border: "1px solid rgba(255,255,255,0.28)" }}
               >
                 Medvanceとは？
               </Link>
             </div>
+
+            {/* Trust badges */}
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {["慶應義塾大学医学部在籍", "完全1対1制", "全国対応（オンライン）"].map((badge) => (
-                <span key={badge} className="text-xs flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.5)" }}>
+                <span key={badge} className="text-xs flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.42)" }}>
                   <span className="w-1.5 h-1.5 rounded-full inline-block flex-shrink-0" style={{ backgroundColor: "#c9922a" }} />
                   {badge}
                 </span>
               ))}
             </div>
           </div>
-          <div className="hidden md:flex justify-center">
+
+          {/* Right: hero image fills full panel — desktop only */}
+          <div className="hidden md:block relative">
             <Image
               src="/images/hero.png"
               alt="Medvance 医学部受験専門塾"
-              width={500}
-              height={600}
-              className="w-full max-w-md h-auto rounded-2xl object-cover shadow-2xl"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            {/* Gradient: left edge bleeds into dark panel */}
+            <div
+              className="absolute inset-y-0 left-0 pointer-events-none"
+              style={{ width: "220px", background: "linear-gradient(to right, #0c1a33, transparent)" }}
             />
           </div>
+        </div>
+
+        {/* Mobile: image below text */}
+        <div className="md:hidden px-6 pb-14">
+          <div className="relative rounded-2xl overflow-hidden" style={{ height: "300px" }}>
+            <Image
+              src="/images/hero.png"
+              alt="Medvance 医学部受験専門塾"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+            {/* Top fade into dark background */}
+            <div
+              className="absolute inset-x-0 top-0 pointer-events-none"
+              style={{ height: "80px", background: "linear-gradient(to bottom, #0c1a33, transparent)" }}
+            />
+          </div>
+        </div>
+
+        {/* Scroll indicator — desktop */}
+        <div className="hidden md:flex flex-col items-center gap-2 absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none">
+          <span className="text-xs tracking-widest" style={{ color: "rgba(255,255,255,0.25)" }}>scroll</span>
+          <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.25), transparent)" }} />
         </div>
       </section>
 
