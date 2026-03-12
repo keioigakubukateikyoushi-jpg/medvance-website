@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const subjects = [
@@ -27,8 +28,9 @@ export default function Header() {
     <header style={{ backgroundColor: "#142b57" }} className="text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold tracking-wide text-white hover:opacity-90">
-          Medvance
+        <Link href="/" className="flex items-center gap-2 hover:opacity-90">
+          <Image src="/images/logo.png" alt="Medvance" width={60} height={34} className="object-contain" />
+          <span className="text-white font-bold text-sm hidden sm:block">慶應医学部生が教える医学部受験専門塾</span>
         </Link>
 
         {/* Desktop Nav */}

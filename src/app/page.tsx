@@ -1,48 +1,69 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       {/* 1. Hero Section */}
-      <section className="bg-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-2" style={{ color: "#142b57" }}>
-            Medvance
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-semibold mt-2 mb-3" style={{ color: "#142b57" }}>
-            メドバンス
-          </h2>
-          <h2 className="text-2xl md:text-3xl italic font-medium mb-6" style={{ color: "#424f8f" }}>
-            １歩先の医学部受験を
-          </h2>
-          <p className="text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed" style={{ color: "#142b57" }}>
-            偏差値40から慶應医学部合格！現役慶應医学部生による医学部受験専門塾Medvance｜家庭教師・オンライン対応・再受験生OK
-          </p>
-          <h2 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: "#142b57" }}>
-            Medvanceは現役慶應医学部生による
-          </h2>
-          <h3 className="text-lg md:text-xl font-medium mb-8" style={{ color: "#424f8f" }}>
-            最短で合格するための医学部受験塾です
-          </h3>
-          <p className="mb-6 text-sm md:text-base" style={{ color: "#142b57" }}>
-            ↓ご依頼、無料相談、お問い合わせはこちらのリンクからお願いします↓
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-lg rounded shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#142b57" }}
-          >
-            無料相談、お問い合わせはこちらから
-          </Link>
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+          <div className="flex-1 text-left">
+            <h1 className="text-5xl md:text-6xl font-bold mb-2" style={{ color: "#142b57" }}>
+              Medvance
+            </h1>
+            <h2 className="text-3xl md:text-4xl font-semibold mt-2 mb-3" style={{ color: "#142b57" }}>
+              メドバンス
+            </h2>
+            <h2 className="text-2xl md:text-3xl italic font-medium mb-6" style={{ color: "#424f8f" }}>
+              １歩先の医学部受験を
+            </h2>
+            <p className="text-base md:text-lg mb-6 leading-relaxed" style={{ color: "#142b57" }}>
+              偏差値40から慶應医学部合格！現役慶應医学部生による医学部受験専門塾Medvance｜家庭教師・オンライン対応・再受験生OK
+            </p>
+            <h2 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: "#142b57" }}>
+              Medvanceは現役慶應医学部生による
+            </h2>
+            <h3 className="text-lg md:text-xl font-medium mb-6" style={{ color: "#424f8f" }}>
+              最短で合格するための医学部受験塾です
+            </h3>
+            <p className="mb-4 text-sm md:text-base" style={{ color: "#142b57" }}>
+              ↓ご依頼、無料相談、お問い合わせはこちらのリンクからお願いします↓
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 text-white font-bold text-lg rounded shadow-md hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#142b57" }}
+            >
+              無料相談、お問い合わせはこちらから
+            </Link>
+          </div>
+          <div className="flex-1 w-full max-w-sm md:max-w-none">
+            <Image
+              src="/images/hero.png"
+              alt="Medvance 医学部受験専門塾"
+              width={500}
+              height={600}
+              className="w-full h-auto rounded-lg object-cover"
+            />
+          </div>
         </div>
       </section>
 
       {/* 2. About Section */}
       <section className="bg-white py-16 px-4 border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10" style={{ color: "#142b57" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8" style={{ color: "#142b57" }}>
             Medvanceとは？慶應医学部生による家庭教師型受験塾です
           </h2>
+          <div className="mb-10">
+            <Image
+              src="/images/about.png"
+              alt="Medvanceについて"
+              width={1200}
+              height={675}
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
           <ul className="space-y-6">
             {[
               {
@@ -99,9 +120,18 @@ export default function Home() {
       {/* 3. Flow Section */}
       <section className="py-16 px-4" style={{ backgroundColor: "#424f8f" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
             無料相談、ご応募までの流れ
           </h2>
+          <div className="mb-10">
+            <Image
+              src="/images/flow.jpg"
+              alt="ご応募までの流れ"
+              width={1440}
+              height={517}
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
           <div className="space-y-6">
             {[
               {
@@ -166,10 +196,7 @@ export default function Home() {
             <h3 className="text-lg md:text-xl font-bold mb-4" style={{ color: "#142b57" }}>
               医学部合格は「才能」ではなく「戦略」
             </h3>
-            <p
-              className="text-sm md:text-base leading-relaxed mb-6"
-              style={{ color: "#424f8f" }}
-            >
+            <p className="text-sm md:text-base leading-relaxed mb-6" style={{ color: "#424f8f" }}>
               どれだけ努力しても、やり方を間違えると結果は出ません。Medvanceは、合格者が実際に通った&quot;最短合格ルート&quot;を、あなた専用に最適化して提供します。1年で逆転合格を目指すなら──あなたの医学部合格を、私たちが本気でサポートします。
             </p>
             <Link
@@ -192,10 +219,16 @@ export default function Home() {
           <h2 className="text-xl md:text-2xl font-bold mb-8" style={{ color: "#142b57" }}>
             現役慶應医学部生のnoteも更新しています
           </h2>
-          <h3
-            className="text-base md:text-lg font-medium mb-8 leading-relaxed"
-            style={{ color: "#424f8f" }}
-          >
+          <div className="mb-8">
+            <Image
+              src="/images/note.png"
+              alt="note記事"
+              width={1280}
+              height={819}
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+          <h3 className="text-base md:text-lg font-medium mb-8 leading-relaxed" style={{ color: "#424f8f" }}>
             noteでは、「偏差値40から慶應医学部に合格した戦略」「医学部に受かる人・落ちる人の決定的な違い」など、他では絶対に読めない、リアルで実践的な受験情報を公開中。実際の合格体験記、科目別の勉強法、面接・小論文対策、そして最短で結果を出すスケジュール設計まで──医学部合格のすべてが詰まったnoteです。無料記事だけでも多くの気づきが得られますが、有料記事では、読んだ翌日から実行できる合格ノウハウを詳しく紹介しています。まずは下のリンクから、noteをチェックしてみてください。きっと、合格への突破口が見えてくるはずです。
           </h3>
           <a
@@ -213,22 +246,13 @@ export default function Home() {
       {/* 6. Subjects Section */}
       <section className="py-16 px-4" style={{ backgroundColor: "#d1d3ca" }}>
         <div className="max-w-4xl mx-auto">
-          <h2
-            className="text-2xl md:text-3xl font-bold mb-4 text-center"
-            style={{ color: "#142b57" }}
-          >
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center" style={{ color: "#142b57" }}>
             各教科の指導方法
           </h2>
-          <h3
-            className="text-lg md:text-xl font-semibold mb-4 text-center"
-            style={{ color: "#424f8f" }}
-          >
+          <h3 className="text-lg md:text-xl font-semibold mb-4 text-center" style={{ color: "#424f8f" }}>
             「わかるまで、分かるように」——一人ひとりに寄り添う、本質的な受験指導
           </h3>
-          <p
-            className="text-sm md:text-base leading-relaxed text-center mb-10 max-w-2xl mx-auto"
-            style={{ color: "#142b57" }}
-          >
+          <p className="text-sm md:text-base leading-relaxed text-center mb-10 max-w-2xl mx-auto" style={{ color: "#142b57" }}>
             Medvanceでは、「ただ教える」だけでは終わりません。講師は、生徒が&quot;どこでつまずいているのか&quot;を丁寧に観察し、的確に見抜いたうえで、ピンポイントに解消していきます。
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
