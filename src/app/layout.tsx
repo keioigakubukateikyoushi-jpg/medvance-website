@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Medvance",
   },
   other: {
-    "google-site-verification": "1XZ07R2jz1Ws36Ag3Fzl6ZUuZEuNFiXxsBONYJg6ZK8",
+    "google-site-verification": "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
   },
   description:
     "医学部合格は、戦略で決まる。現役慶應医学部生による完全1対1の医学部受験専門塾Medvance。家庭教師・オンライン全国対応・浪人生・再受験生歓迎。無料相談受付中。",
