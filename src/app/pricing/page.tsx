@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const plans = [
-  { freq: "月4回", weekly: "週1回", lessons: 4, lessonFee: 60000, coaching: 20000, total: 80000 },
-  { freq: "月8回", weekly: "週2回", lessons: 8, lessonFee: 120000, coaching: 20000, total: 140000 },
-  { freq: "月12回", weekly: "週3回", lessons: 12, lessonFee: 180000, coaching: 20000, total: 200000 },
-  { freq: "月16回", weekly: "週4回", lessons: 16, lessonFee: 240000, coaching: 20000, total: 260000 },
-  { freq: "月20回", weekly: "週5回", lessons: 20, lessonFee: 300000, coaching: 20000, total: 320000 },
+  { freq: "月4回",  weekly: "週1回", lessons: 4,  lessonFee: 60000,  coaching: 20000, total: 80000,  discount: 0 },
+  { freq: "月8回",  weekly: "週2回", lessons: 8,  lessonFee: 120000, coaching: 20000, total: 140000, discount: 0 },
+  { freq: "月12回", weekly: "週3回", lessons: 12, lessonFee: 180000, coaching: 20000, total: 200000, discount: 20000 },
+  { freq: "月16回", weekly: "週4回", lessons: 16, lessonFee: 240000, coaching: 20000, total: 260000, discount: 20000 },
+  { freq: "月20回", weekly: "週5回", lessons: 20, lessonFee: 300000, coaching: 20000, total: 320000, discount: 20000 },
 ];
 
 const included = [
@@ -58,35 +58,62 @@ export default function PricingPage() {
 
           {/* 月額プラン */}
           <div>
-            <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33" }}>月額プラン（授業＋コーチング）</h2>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-bold" style={{ color: "#0c1a33" }}>月額プラン（授業＋コーチング）</h2>
+              <span className="text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "#fff0d6", color: "#c9922a", border: "1px solid #c9922a" }}>
+                期間限定割引実施中
+              </span>
+            </div>
             <div className="space-y-3">
-              {plans.map((plan, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-between p-5 rounded-xl bg-white"
-                  style={{ border: "1px solid #e5e1d8" }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div
-                      className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xs flex-shrink-0 text-center leading-tight"
-                      style={{ backgroundColor: "#0c1a33" }}
-                    >
-                      {plan.weekly}
-                    </div>
-                    <div>
-                      <p className="font-bold text-base" style={{ color: "#0c1a33" }}>{plan.freq}</p>
-                      <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>
-                        授業{plan.lessons}回（{plan.lessonFee.toLocaleString()}円）＋ コーチング（{plan.coaching.toLocaleString()}円）
-                      </p>
+              {plans.map((plan, i) => {
+                const discounted = plan.discount > 0;
+                const finalTotal = plan.total - plan.discount;
+                return (
+                  <div
+                    key={i}
+                    className="relative rounded-xl overflow-hidden"
+                    style={{
+                      border: discounted ? "2px solid #c9922a" : "1px solid #e5e1d8",
+                      backgroundColor: discounted ? "#fffbf4" : "#fff",
+                    }}
+                  >
+                    {discounted && (
+                      <div
+                        className="absolute top-0 right-0 text-xs font-bold px-3 py-1 rounded-bl-xl"
+                        style={{ backgroundColor: "#c9922a", color: "#fff" }}
+                      >
+                        今なら2万円引き
+                      </div>
+                    )}
+                    <div className="flex items-center justify-between p-5">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xs flex-shrink-0 text-center leading-tight"
+                          style={{ backgroundColor: "#0c1a33" }}
+                        >
+                          {plan.weekly}
+                        </div>
+                        <div>
+                          <p className="font-bold text-base" style={{ color: "#0c1a33" }}>{plan.freq}</p>
+                          <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>
+                            授業{plan.lessons}回（{plan.lessonFee.toLocaleString()}円）＋ コーチング（{plan.coaching.toLocaleString()}円）
+                          </p>
+                        </div>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        {discounted && (
+                          <p className="text-sm line-through mb-0.5" style={{ color: "#9ca3af" }}>
+                            {plan.total.toLocaleString()}円
+                          </p>
+                        )}
+                        <p className="text-xl font-bold" style={{ color: discounted ? "#c9922a" : "#0c1a33" }}>
+                          {finalTotal.toLocaleString()}<span className="text-sm font-normal" style={{ color: "#6b7280" }}>円/月</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="text-right flex-shrink-0">
-                    <p className="text-xl font-bold" style={{ color: "#c9922a" }}>
-                      {plan.total.toLocaleString()}<span className="text-sm font-normal" style={{ color: "#6b7280" }}>円/月</span>
-                    </p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
