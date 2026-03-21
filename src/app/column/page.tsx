@@ -1,0 +1,148 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "医学部受験コラム | Medvance",
+  description:
+    "現役慶應医学部生による医学部受験コラム。勉強法・ロードマップ・面接対策・学費比較など、受験に役立つ情報を詳しく解説します。",
+};
+
+const articles = [
+  {
+    slug: "study-method",
+    label: "勉強法",
+    title: "医学部合格のための正しい勉強法",
+    description:
+      "科目別の具体的な学習アプローチとよくある失敗パターンを解説。量より質を重視した学習設計で成績を伸ばす方法。",
+  },
+  {
+    slug: "roadmap",
+    label: "受験戦略",
+    title: "医学部受験ロードマップ",
+    description:
+      "現役合格から再受験まで、時期別にやるべきことを整理。いつ・何を・どの順番で進めるかを明確にするためのガイド。",
+  },
+  {
+    slug: "difference",
+    label: "合格分析",
+    title: "医学部に受かる人・落ちる人の違い",
+    description:
+      "合格者と不合格者を分けるのは才能ではなく戦略の差。現場で見えた「差がつくポイント」を具体的に解説。",
+  },
+  {
+    slug: "shigaku-vs-kokuritsu",
+    label: "大学選び",
+    title: "私立医学部と国公立医学部、どちらを目指すべきか",
+    description:
+      "学費・難易度・環境の違いを徹底比較。自分のタイプ別に「どちらを選ぶべきか」のアドバイスをまとめました。",
+  },
+  {
+    slug: "mensetu",
+    label: "面接対策",
+    title: "医学部面接対策の完全ガイド",
+    description:
+      "よく聞かれる質問と回答例、MMI対策、面接で落とされるパターンまで。配点の高い面接で差をつける準備法。",
+  },
+  {
+    slug: "gakuhi",
+    label: "費用・学費",
+    title: "医学部の学費・費用を徹底比較",
+    description:
+      "国公立と私立の学費差から奨学金・特待生制度まで網羅。6年間でいくらかかるかを大学別に整理しています。",
+  },
+];
+
+export default function ColumnIndexPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <p
+            className="text-xs font-semibold tracking-widest uppercase mb-3"
+            style={{ color: "#c9922a" }}
+          >
+            Column
+          </p>
+          <h1
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
+            style={{ fontFamily: "'Noto Serif JP', serif" }}
+          >
+            医学部受験コラム
+          </h1>
+          <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
+            現役慶應医学部生が、受験に本当に役立つ情報を解説します
+          </p>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
+            {articles.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/column/${article.slug}`}
+                className="block p-6 rounded-2xl bg-white hover:shadow-md transition-shadow"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <span
+                  className="inline-block text-xs font-semibold tracking-wide px-3 py-1 rounded-full mb-4"
+                  style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
+                >
+                  {article.label}
+                </span>
+                <h2
+                  className="text-base font-bold mb-3 leading-snug"
+                  style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+                >
+                  {article.title}
+                </h2>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "#6b7280" }}
+                >
+                  {article.description}
+                </p>
+                <p
+                  className="text-xs font-semibold mt-4"
+                  style={{ color: "#c9922a" }}
+                >
+                  記事を読む →
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div
+          className="max-w-3xl mx-auto rounded-2xl p-8 text-center"
+          style={{ backgroundColor: "#0c1a33" }}
+        >
+          <p
+            className="text-sm font-semibold tracking-widest uppercase mb-3"
+            style={{ color: "#c9922a" }}
+          >
+            Free Consultation
+          </p>
+          <h2
+            className="text-xl font-bold text-white mb-3"
+            style={{ fontFamily: "'Noto Serif JP', serif" }}
+          >
+            疑問点は無料相談でお気軽にどうぞ
+          </h2>
+          <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
+            コラムの内容や受験戦略について、個別にご相談いただけます。
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#c9922a" }}
+          >
+            無料相談・お問い合わせ
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

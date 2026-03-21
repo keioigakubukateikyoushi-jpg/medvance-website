@@ -23,9 +23,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/universities/private`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/universities/national`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // コラム
+    { url: `${BASE}/column`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/study-method`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/column/roadmap`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/column/difference`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/column/shigaku-vs-kokuritsu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/column/mensetu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/column/gakuhi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // 教科別
     { url: `${BASE}/subjects`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/subjects/english`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
