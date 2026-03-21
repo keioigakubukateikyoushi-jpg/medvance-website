@@ -515,9 +515,6 @@ export default function Home() {
           <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
             無料相談から最短1週間で指導をスタートできます
           </p>
-          <div className="mb-12">
-            <Image src="/images/flow.jpg" alt="ご応募までの流れ" width={1440} height={517} className="w-full h-auto rounded-2xl" />
-          </div>
           <div className="grid md:grid-cols-4 gap-6">
             {steps.map((item, i) => (
               <div key={i} className="relative text-center">
