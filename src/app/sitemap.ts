@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/success-stories`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     // 対象者別
     { url: `${BASE}/for/ronin`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

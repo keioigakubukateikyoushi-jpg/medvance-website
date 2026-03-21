@@ -71,10 +71,6 @@ export default function Header() {
           <Link href="/pricing" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
             料金
           </Link>
-          <Link href="/success-stories" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
-            合格体験記
-          </Link>
-
           {/* Dropdowns — button + menu share the same hover zone */}
           {megaMenus.map((menu) => (
             <div
@@ -161,7 +157,6 @@ export default function Header() {
             { label: "ホーム", href: "/" },
             { label: "塾について", href: "/about" },
             { label: "料金", href: "/pricing" },
-            { label: "合格体験記", href: "/success-stories" },
           ].map((link) => (
             <Link
               key={link.href}

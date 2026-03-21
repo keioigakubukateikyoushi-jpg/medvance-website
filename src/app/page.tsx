@@ -56,12 +56,6 @@ const steps = [
   { title: "本契約・指導スタート", body: "完全1対1の本格指導がスタート。合格まで継続的にサポートします。" },
 ];
 
-const testimonials = [
-  { name: "A.T.さん", label: "現役合格・慶應義塾大学医学部", quote: "本質から理解する勉強法を教わってから成績が急激に伸び、1年で慶應医学部に合格できました。" },
-  { name: "K.M.さん", label: "再受験・東京慈恵会医科大学合格", quote: "社会人からの再受験で不安でしたが、私のペースに合わせた計画と面接対策まで手厚くサポートしてもらい、念願の医学部に合格できました。" },
-  { name: "S.Y.さん", label: "一浪・順天堂大学医学部合格", quote: "数学の苦手の根本原因を分析し、一つひとつ潰してもらいました。浪人1年で志望校に合格できたのは講師との二人三脚があったからです。" },
-];
-
 const faqs = [
   { q: "どんな生徒が対象ですか？", a: "現役生・浪人生・再受験生すべてに対応しています。学力や年齢を問わず、医学部合格を目指す方であればどなたでもお申し込みいただけます。" },
   { q: "どんな学力からでも医学部に合格できますか？", a: "現状の学力より、そこからどう伸ばすかの戦略の方が大切です。重要なのは現在の偏差値ではなく、正しい戦略と努力です。まずは無料相談でご状況をお聞かせください。" },
@@ -308,54 +302,6 @@ export default function Home() {
                 <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 7. TESTIMONIALS ───────────────────── */}
-      <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Success Stories
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
-            合格者の声
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-7 flex flex-col shadow-sm"
-                style={{ border: "1px solid #e5e1d8" }}
-              >
-                <div className="text-5xl leading-none mb-4" style={{ color: "#c9922a", opacity: 0.3, fontFamily: "Georgia, serif" }}>&ldquo;</div>
-                <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#4a5568" }}>{t.quote}</p>
-                <div className="flex items-center gap-3 pt-4" style={{ borderTop: "1px solid #e5e1d8" }}>
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                    style={{ backgroundColor: "#0c1a33" }}
-                  >
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: "#0c1a33" }}>{t.name}</p>
-                    <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{t.label}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link
-              href="/success-stories"
-              className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-lg text-sm hover:opacity-80 transition-opacity"
-              style={{ color: "#0c1a33", border: "1px solid #0c1a33" }}
-            >
-              合格体験記をすべて読む
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-              </svg>
-            </Link>
           </div>
         </div>
       </section>

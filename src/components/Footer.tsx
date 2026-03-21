@@ -48,7 +48,6 @@ export default function Footer() {
                 { label: "訪問・対面指導", href: "/services/visit" },
                 { label: "面接・小論文対策", href: "/services/interview" },
                 { label: "料金について", href: "/pricing" },
-                { label: "合格体験記", href: "/success-stories" },
                 { label: "お問い合わせ", href: "/contact" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
