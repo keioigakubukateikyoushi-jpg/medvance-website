@@ -1,5 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import HeroAnimated from "@/components/HeroAnimated";
+import Marquee from "@/components/Marquee";
+import FadeIn from "@/components/FadeIn";
+import HoverCard from "@/components/HoverCard";
 
 /* ── Icon components ────────────────────────── */
 const IconPerson = () => (
@@ -78,112 +82,7 @@ export default function Home() {
   return (
     <>
       {/* ── 1. HERO ───────────────────────────── */}
-      <section style={{ backgroundColor: "#0c1a33" }} className="relative overflow-hidden">
-        {/* Desktop: full-height split layout */}
-        <div className="grid md:grid-cols-[55%_45%]" style={{ minHeight: "100svh" }}>
-
-          {/* Left: text panel */}
-          <div className="flex flex-col justify-center py-28 px-8 sm:px-12 lg:px-16 xl:px-20 relative z-10">
-            {/* Gold accent line */}
-            <div className="w-10 h-0.5 mb-8" style={{ backgroundColor: "#c9922a" }} />
-
-            {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full text-xs tracking-widest w-fit"
-              style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.14)", color: "rgba(255,255,255,0.6)" }}
-            >
-              医学部受験専門塾 Medvance
-            </div>
-
-            {/* Headline */}
-            <h1
-              className="font-bold text-white leading-tight mb-4"
-              style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-            >
-              医学部合格は、<br />
-              <span style={{ color: "#c9922a" }}>戦略</span>で決まる。
-            </h1>
-
-            {/* Sub headline */}
-            <p className="font-semibold mb-6" style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(1rem, 2vw, 1.25rem)", fontFamily: "'Noto Serif JP', serif" }}>
-              努力の方向が、合否を分ける。
-            </p>
-
-            {/* Sub */}
-            <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.65)", maxWidth: "440px" }}>
-              現役慶應医学部生が、あなただけの最短合格ルートを設計します。完全1対1・全国オンライン対応の医学部受験専門塾Medvance。
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Link
-                href="/contact"
-                className="inline-block px-8 py-4 font-bold text-base rounded-lg text-white shadow-lg hover:opacity-90 transition-opacity text-center"
-                style={{ backgroundColor: "#c9922a" }}
-              >
-                無料相談・お問い合わせ
-              </Link>
-              <Link
-                href="/about"
-                className="inline-block px-8 py-4 font-semibold text-base rounded-lg text-white transition-colors text-center"
-                style={{ border: "1px solid rgba(255,255,255,0.28)" }}
-              >
-                Medvanceとは？
-              </Link>
-            </div>
-
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
-              {["慶應義塾大学医学部在籍", "完全1対1制", "全国対応（オンライン）"].map((badge) => (
-                <span key={badge} className="text-xs flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.42)" }}>
-                  <span className="w-1.5 h-1.5 rounded-full inline-block flex-shrink-0" style={{ backgroundColor: "#c9922a" }} />
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: hero image fills full panel — desktop only */}
-          <div className="hidden md:block relative">
-            <Image
-              src="/images/hero.png"
-              alt="Medvance 医学部受験専門塾"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-            {/* Gradient: left edge bleeds into dark panel */}
-            <div
-              className="absolute inset-y-0 left-0 pointer-events-none"
-              style={{ width: "220px", background: "linear-gradient(to right, #0c1a33, transparent)" }}
-            />
-          </div>
-        </div>
-
-        {/* Mobile: image below text */}
-        <div className="md:hidden px-6 pb-14">
-          <div className="relative rounded-2xl overflow-hidden" style={{ height: "300px" }}>
-            <Image
-              src="/images/hero.png"
-              alt="Medvance 医学部受験専門塾"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-            {/* Top fade into dark background */}
-            <div
-              className="absolute inset-x-0 top-0 pointer-events-none"
-              style={{ height: "80px", background: "linear-gradient(to bottom, #0c1a33, transparent)" }}
-            />
-          </div>
-        </div>
-
-        {/* Scroll indicator — desktop */}
-        <div className="hidden md:flex flex-col items-center gap-2 absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none">
-          <span className="text-xs tracking-widest" style={{ color: "rgba(255,255,255,0.25)" }}>scroll</span>
-          <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.25), transparent)" }} />
-        </div>
-      </section>
+      <HeroAnimated />
 
       {/* ── 2. STATS STRIP ────────────────────── */}
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
@@ -202,22 +101,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── MARQUEE ───────────────────────────── */}
+      <Marquee />
+
       {/* ── 3. THREE STRENGTHS ────────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Why Medvance
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
-            医学部受験専門塾Medvanceが選ばれる3つの理由
-          </h2>
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Why Medvance
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
+              医学部受験専門塾Medvanceが選ばれる3つの理由
+            </h2>
+          </FadeIn>
           <div className="grid md:grid-cols-3 gap-6">
-            {strengths.map((item) => (
-              <div key={item.num} className="bg-white rounded-2xl p-8 shadow-sm" style={{ border: "1px solid #e5e1d8" }}>
-                <p className="text-6xl font-bold mb-4 leading-none" style={{ color: "#0c1a33", opacity: 0.07, fontFamily: "'Noto Serif JP', serif" }}>{item.num}</p>
-                <h3 className="text-base font-bold mb-3" style={{ color: "#0c1a33" }}>{item.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
-              </div>
+            {strengths.map((item, i) => (
+              <FadeIn key={item.num} delay={i * 0.1}>
+                <HoverCard className="bg-white rounded-2xl p-8 shadow-sm h-full" style={{ border: "1px solid #e5e1d8" }}>
+                  <p className="text-6xl font-bold mb-4 leading-none" style={{ color: "#0c1a33", opacity: 0.07, fontFamily: "'Noto Serif JP', serif" }}>{item.num}</p>
+                  <h3 className="text-base font-bold mb-3" style={{ color: "#0c1a33" }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+                </HoverCard>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -226,178 +132,186 @@ export default function Home() {
       {/* ── 4. COMPARISON TABLE ───────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Comparison
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-            他塾との違い
-          </h2>
-          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
-            Medvanceが選ばれる理由を、他塾と比較してご確認ください
-          </p>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse" style={{ minWidth: "600px" }}>
-              <thead>
-                <tr>
-                  <th
-                    className="text-left py-4 px-5 text-sm font-semibold"
-                    style={{ color: "#6b7280", borderBottom: "2px solid #e5e1d8", width: "28%" }}
-                  >
-                    比較項目
-                  </th>
-                  <th
-                    className="py-4 px-5 text-center text-sm font-bold rounded-t-xl"
-                    style={{
-                      color: "#0c1a33",
-                      backgroundColor: "rgba(201,146,42,0.08)",
-                      border: "2px solid #c9922a",
-                      borderBottom: "none",
-                      width: "24%",
-                    }}
-                  >
-                    <span className="block text-base" style={{ color: "#c9922a" }}>Medvance</span>
-                    <span className="text-xs font-normal" style={{ color: "#6b7280" }}>医学部受験専門塾</span>
-                  </th>
-                  <th
-                    className="py-4 px-5 text-center text-sm font-bold"
-                    style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
-                  >
-                    大手予備校
-                  </th>
-                  <th
-                    className="py-4 px-5 text-center text-sm font-bold"
-                    style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
-                  >
-                    一般家庭教師
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    item: "講師の質",
-                    medvance: "慶應医学部生のみ",
-                    yobikou: "様々",
-                    kateikyoshi: "学生バイト多数",
-                    highlight: true,
-                  },
-                  {
-                    item: "指導スタイル",
-                    medvance: "完全1対1",
-                    yobikou: "集団授業が中心",
-                    kateikyoshi: "1対1だが医学部特化なし",
-                    highlight: false,
-                  },
-                  {
-                    item: "医学部特化",
-                    medvance: "完全特化",
-                    yobikou: "一部コースのみ",
-                    kateikyoshi: "非特化",
-                    highlight: true,
-                  },
-                  {
-                    item: "面接・小論文対策",
-                    medvance: "対応",
-                    yobikou: "一部対応",
-                    kateikyoshi: "非対応",
-                    highlight: false,
-                  },
-                  {
-                    item: "料金相談",
-                    medvance: "無料カウンセリング",
-                    yobikou: "固定コース",
-                    kateikyoshi: "様々",
-                    highlight: true,
-                  },
-                ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: "1px solid #e5e1d8" }}>
-                    <td
-                      className="py-4 px-5 text-sm font-semibold"
-                      style={{ color: "#0c1a33" }}
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Comparison
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
+              他塾との違い
+            </h2>
+            <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+              Medvanceが選ばれる理由を、他塾と比較してご確認ください
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse" style={{ minWidth: "600px" }}>
+                <thead>
+                  <tr>
+                    <th
+                      className="text-left py-4 px-5 text-sm font-semibold"
+                      style={{ color: "#6b7280", borderBottom: "2px solid #e5e1d8", width: "28%" }}
                     >
-                      {row.item}
-                    </td>
-                    <td
-                      className="py-4 px-5 text-center text-sm font-bold"
+                      比較項目
+                    </th>
+                    <th
+                      className="py-4 px-5 text-center text-sm font-bold rounded-t-xl"
                       style={{
                         color: "#0c1a33",
-                        backgroundColor: row.highlight ? "rgba(201,146,42,0.06)" : "rgba(201,146,42,0.03)",
-                        borderLeft: "2px solid #c9922a",
-                        borderRight: "2px solid #c9922a",
+                        backgroundColor: "rgba(201,146,42,0.08)",
+                        border: "2px solid #c9922a",
+                        borderBottom: "none",
+                        width: "24%",
                       }}
                     >
-                      <span className="inline-flex items-center gap-1.5">
-                        <span
-                          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: "#c9922a" }}
-                        />
-                        {row.medvance}
-                      </span>
-                    </td>
-                    <td
-                      className="py-4 px-5 text-center text-sm"
-                      style={{ color: "#6b7280" }}
+                      <span className="block text-base" style={{ color: "#c9922a" }}>Medvance</span>
+                      <span className="text-xs font-normal" style={{ color: "#6b7280" }}>医学部受験専門塾</span>
+                    </th>
+                    <th
+                      className="py-4 px-5 text-center text-sm font-bold"
+                      style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
                     >
-                      {row.yobikou}
-                    </td>
-                    <td
-                      className="py-4 px-5 text-center text-sm"
-                      style={{ color: "#6b7280" }}
+                      大手予備校
+                    </th>
+                    <th
+                      className="py-4 px-5 text-center text-sm font-bold"
+                      style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
                     >
-                      {row.kateikyoshi}
-                    </td>
+                      一般家庭教師
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td />
-                  <td
-                    className="rounded-b-xl"
-                    style={{
-                      backgroundColor: "rgba(201,146,42,0.05)",
-                      border: "2px solid #c9922a",
-                      borderTop: "none",
-                      height: "12px",
-                    }}
-                  />
-                  <td />
-                  <td />
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      item: "講師の質",
+                      medvance: "慶應医学部生のみ",
+                      yobikou: "様々",
+                      kateikyoshi: "学生バイト多数",
+                      highlight: true,
+                    },
+                    {
+                      item: "指導スタイル",
+                      medvance: "完全1対1",
+                      yobikou: "集団授業が中心",
+                      kateikyoshi: "1対1だが医学部特化なし",
+                      highlight: false,
+                    },
+                    {
+                      item: "医学部特化",
+                      medvance: "完全特化",
+                      yobikou: "一部コースのみ",
+                      kateikyoshi: "非特化",
+                      highlight: true,
+                    },
+                    {
+                      item: "面接・小論文対策",
+                      medvance: "対応",
+                      yobikou: "一部対応",
+                      kateikyoshi: "非対応",
+                      highlight: false,
+                    },
+                    {
+                      item: "料金相談",
+                      medvance: "無料カウンセリング",
+                      yobikou: "固定コース",
+                      kateikyoshi: "様々",
+                      highlight: true,
+                    },
+                  ].map((row, i) => (
+                    <tr key={i} style={{ borderBottom: "1px solid #e5e1d8" }}>
+                      <td
+                        className="py-4 px-5 text-sm font-semibold"
+                        style={{ color: "#0c1a33" }}
+                      >
+                        {row.item}
+                      </td>
+                      <td
+                        className="py-4 px-5 text-center text-sm font-bold"
+                        style={{
+                          color: "#0c1a33",
+                          backgroundColor: row.highlight ? "rgba(201,146,42,0.06)" : "rgba(201,146,42,0.03)",
+                          borderLeft: "2px solid #c9922a",
+                          borderRight: "2px solid #c9922a",
+                        }}
+                      >
+                        <span className="inline-flex items-center gap-1.5">
+                          <span
+                            className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                            style={{ backgroundColor: "#c9922a" }}
+                          />
+                          {row.medvance}
+                        </span>
+                      </td>
+                      <td
+                        className="py-4 px-5 text-center text-sm"
+                        style={{ color: "#6b7280" }}
+                      >
+                        {row.yobikou}
+                      </td>
+                      <td
+                        className="py-4 px-5 text-center text-sm"
+                        style={{ color: "#6b7280" }}
+                      >
+                        {row.kateikyoshi}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td />
+                    <td
+                      className="rounded-b-xl"
+                      style={{
+                        backgroundColor: "rgba(201,146,42,0.05)",
+                        border: "2px solid #c9922a",
+                        borderTop: "none",
+                        height: "12px",
+                      }}
+                    />
+                    <td />
+                    <td />
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── 5. TUTOR STRENGTHS ────────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Tutors
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-            講師陣の強み
-          </h2>
-          <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-            各生徒に最適な講師をマッチング。多様な合格背景を持つ現役慶應医学部生があなたの合格を支えます。
-          </p>
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Tutors
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
+              講師陣の強み
+            </h2>
+            <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
+              各生徒に最適な講師をマッチング。多様な合格背景を持つ現役慶應医学部生があなたの合格を支えます。
+            </p>
+          </FadeIn>
           {/* Credential Badge */}
-          <div className="flex justify-center mb-12">
-            <div
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full font-bold text-sm"
-              style={{
-                backgroundColor: "#0c1a33",
-                color: "#c9922a",
-                border: "1px solid #c9922a",
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 flex-shrink-0">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.745 3.745 0 0 1 3.296-1.043A3.745 3.745 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-              </svg>
-              全講師：慶應義塾大学医学部 現役在籍
+          <FadeIn delay={0.1}>
+            <div className="flex justify-center mb-12">
+              <div
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full font-bold text-sm"
+                style={{
+                  backgroundColor: "#0c1a33",
+                  color: "#c9922a",
+                  border: "1px solid #c9922a",
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 flex-shrink-0">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.745 3.745 0 0 1 3.296-1.043A3.745 3.745 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                </svg>
+                全講師：慶應義塾大学医学部 現役在籍
+              </div>
             </div>
-          </div>
+          </FadeIn>
           {/* Tutor profile cards */}
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
             {[
@@ -439,20 +353,21 @@ export default function Home() {
                 desc: "生徒の性格・志望校・科目に合わせて最も相性の良い講師を選定。",
               },
             ].map((t, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-6 shadow-sm text-center"
-                style={{ border: "1px solid #e5e1d8" }}
-              >
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white"
-                  style={{ backgroundColor: "#0c1a33" }}
+              <FadeIn key={i} delay={i * 0.1}>
+                <HoverCard
+                  className="bg-white rounded-2xl p-6 shadow-sm text-center h-full"
+                  style={{ border: "1px solid #e5e1d8" }}
                 >
-                  {t.icon}
-                </div>
-                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{t.title}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{t.desc}</p>
-              </div>
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white"
+                    style={{ backgroundColor: "#0c1a33" }}
+                  >
+                    {t.icon}
+                  </div>
+                  <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{t.title}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{t.desc}</p>
+                </HoverCard>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -461,84 +376,93 @@ export default function Home() {
       {/* ── 6. ABOUT IMAGE ────────────────────── */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <Image
-            src="/images/about.png"
-            alt="Medvanceについて"
-            width={1200}
-            height={675}
-            className="w-full h-auto rounded-2xl shadow-sm"
-          />
+          <FadeIn>
+            <Image
+              src="/images/about.png"
+              alt="Medvanceについて"
+              width={1200}
+              height={675}
+              className="w-full h-auto rounded-2xl shadow-sm"
+            />
+          </FadeIn>
         </div>
       </section>
 
-      {/* ── 5. 6 FEATURES ─────────────────────── */}
+      {/* ── 7. 6 FEATURES ─────────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Features
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-14" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            Medvanceの6つの特徴
-          </h2>
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Features
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-14" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+              Medvanceの6つの特徴
+            </h2>
+          </FadeIn>
           <div className="grid md:grid-cols-2 gap-4">
             {features.map((item, i) => (
-              <div
-                key={i}
-                className="flex gap-4 p-6 rounded-xl"
-                style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-              >
-                <div
-                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white"
-                  style={{ backgroundColor: "#c9922a" }}
+              <FadeIn key={i} delay={(i % 2) * 0.1}>
+                <HoverCard
+                  className="flex gap-4 p-6 rounded-xl h-full"
+                  style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
                 >
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="font-bold text-white text-sm mb-1">{item.title}</p>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>{item.body}</p>
-                </div>
-              </div>
+                  <div
+                    className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white"
+                    style={{ backgroundColor: "#c9922a" }}
+                  >
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="font-bold text-white text-sm mb-1">{item.title}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>{item.body}</p>
+                  </div>
+                </HoverCard>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 6. FLOW ───────────────────────────── */}
+      {/* ── 8. FLOW ───────────────────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Flow
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-            お申し込みから指導開始まで
-          </h2>
-          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
-            無料相談から最短1週間で指導をスタートできます
-          </p>
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Flow
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+              お申し込みから指導開始まで
+            </h2>
+            <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+              無料相談から最短1週間で指導をスタートできます
+            </p>
+          </FadeIn>
           <div className="grid md:grid-cols-4 gap-6">
             {steps.map((item, i) => (
-              <div key={i} className="relative text-center">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4"
-                  style={{ backgroundColor: "#0c1a33" }}
-                >
-                  {i + 1}
-                </div>
-                {i < steps.length - 1 && (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="relative text-center">
                   <div
-                    className="hidden md:block absolute top-6 left-[calc(50%+24px)] right-0 h-px"
-                    style={{ backgroundColor: "#e5e1d8" }}
-                  />
-                )}
-                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
-              </div>
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4"
+                    style={{ backgroundColor: "#0c1a33" }}
+                  >
+                    {i + 1}
+                  </div>
+                  {i < steps.length - 1 && (
+                    <div
+                      className="hidden md:block absolute top-6 left-[calc(50%+24px)] right-0 h-px"
+                      style={{ backgroundColor: "#e5e1d8" }}
+                    />
+                  )}
+                  <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 8. TARGET AUDIENCE ────────────────── */}
+      {/* ── 9. TARGET AUDIENCE ────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
@@ -575,7 +499,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. FAQ ────────────────────────────── */}
+      {/* ── 10. FAQ ────────────────────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
@@ -609,18 +533,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. COLUMN PREVIEW ─────────────────── */}
+      {/* ── 11. COLUMN PREVIEW ─────────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Column
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-            最新コラム
-          </h2>
-          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
-            現役慶應医学部生が書く、医学部受験のリアルな情報
-          </p>
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Column
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+              最新コラム
+            </h2>
+            <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+              現役慶應医学部生が書く、医学部受験のリアルな情報
+            </p>
+          </FadeIn>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
               {
@@ -642,38 +568,40 @@ export default function Home() {
                 href: "/column/difference",
               },
             ].map((col, i) => (
-              <a
-                key={i}
-                href={col.href}
-                className="block rounded-2xl overflow-hidden hover:shadow-md transition-shadow group"
-                style={{ border: "1px solid #e5e1d8" }}
-              >
-                {/* Top color bar */}
-                <div className="h-1.5" style={{ backgroundColor: "#c9922a" }} />
-                <div className="p-6">
-                  <span
-                    className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-4"
-                    style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}
-                  >
-                    {col.tag}
-                  </span>
-                  <h3
-                    className="font-bold text-base mb-3 leading-snug group-hover:underline"
-                    style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
-                  >
-                    {col.title}
-                  </h3>
-                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-                    {col.desc}
-                  </p>
-                  <div className="flex items-center gap-1 mt-5 text-xs font-semibold" style={{ color: "#c9922a" }}>
-                    続きを読む
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
-                  </div>
-                </div>
-              </a>
+              <FadeIn key={i} delay={i * 0.1}>
+                <HoverCard
+                  className="block rounded-2xl overflow-hidden h-full"
+                  style={{ border: "1px solid #e5e1d8" }}
+                >
+                  <a href={col.href} className="block group h-full">
+                    {/* Top color bar */}
+                    <div className="h-1.5" style={{ backgroundColor: "#c9922a" }} />
+                    <div className="p-6">
+                      <span
+                        className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-4"
+                        style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}
+                      >
+                        {col.tag}
+                      </span>
+                      <h3
+                        className="font-bold text-base mb-3 leading-snug group-hover:underline"
+                        style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+                      >
+                        {col.title}
+                      </h3>
+                      <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+                        {col.desc}
+                      </p>
+                      <div className="flex items-center gap-1 mt-5 text-xs font-semibold" style={{ color: "#c9922a" }}>
+                        続きを読む
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
+                </HoverCard>
+              </FadeIn>
             ))}
           </div>
           <div className="text-center">
@@ -691,7 +619,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10. NOTE ──────────────────────────── */}
+      {/* ── 12. NOTE ──────────────────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
@@ -729,7 +657,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10. SUBJECTS ──────────────────────── */}
+      {/* ── 13. SUBJECTS ──────────────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
@@ -762,25 +690,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 11. FINAL CTA ─────────────────────── */}
+      {/* ── 14. FINAL CTA ─────────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-28 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-5 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            医学部合格は<span style={{ color: "#c9922a" }}>「才能」ではなく「戦略」</span>
-          </h2>
-          <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.68)" }}>
-            どれだけ努力しても、やり方を間違えると結果は出ません。合格者が実際に通った最短ルートを、あなた専用に最適化して提供します。まずは無料相談から、一歩を踏み出してください。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-10 py-5 text-white font-bold text-lg rounded-lg shadow-lg hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-          <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-            ご依頼・無料相談はフォームから受付中
-          </p>
+          <FadeIn>
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-5 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+              医学部合格は<span style={{ color: "#c9922a" }}>「才能」ではなく「戦略」</span>
+            </h2>
+            <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.68)" }}>
+              どれだけ努力しても、やり方を間違えると結果は出ません。合格者が実際に通った最短ルートを、あなた専用に最適化して提供します。まずは無料相談から、一歩を踏み出してください。
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block px-10 py-5 text-white font-bold text-lg rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#c9922a" }}
+            >
+              無料相談・お問い合わせ
+            </Link>
+            <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+              ご依頼・無料相談はフォームから受付中
+            </p>
+          </FadeIn>
         </div>
       </section>
     </>
