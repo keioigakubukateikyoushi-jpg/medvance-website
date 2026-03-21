@@ -215,7 +215,7 @@ export default function Home() {
             Why Medvance
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
-            Medvanceが選ばれる3つの理由
+            医学部受験専門塾Medvanceが選ばれる3つの理由
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {strengths.map((item) => (

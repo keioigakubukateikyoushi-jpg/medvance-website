@@ -1,5 +1,44 @@
 import Link from "next/link";
 
+const faqItems = [
+  {
+    q: "医学部受験で一番大切な科目はどれですか？",
+    a: "志望校によって異なりますが、英語と数学はどの医学部でも合否に直結する重要科目です。理科（物理・化学・生物）は大学によって出題傾向が異なるため、志望校の傾向に合わせた対策が必要です。まずは英数を早期に固めることを優先しましょう。",
+  },
+  {
+    q: "1日何時間勉強すれば医学部に合格できますか？",
+    a: "時間より質が重要です。ただし目安として、高3・浪人期は1日8〜10時間が一般的です。ただし「8時間こなす」ことを目標にするのではなく、「今日何を理解できたか」を毎日確認することの方が重要です。",
+  },
+  {
+    q: "参考書は何冊やれば医学部に合格できますか？",
+    a: "冊数より完成度が重要です。1冊を完璧に仕上げる方が、5冊を中途半端にやるより効果的です。数学であれば青チャートを1冊完全に仕上げることが、多くの医学部合格への近道になります。",
+  },
+  {
+    q: "医学部受験で模試はどう活用すればいいですか？",
+    a: "模試は「現状把握」と「弱点発見」のためのツールです。結果に一喜一憂せず、模試後の翌日には必ず復習し、次の学習テーマを更新することが重要です。判定が悪くても、その後の改善で合格した受験生は多数います。",
+  },
+  {
+    q: "医学部受験に向けた勉強はいつから始めればいいですか？",
+    a: "今すぐ始めることが最善です。高1からが理想ですが、高3からでも正しい戦略と優先順位の設定で合格を目指せます。まず現状の学力を把握し、志望校合格までのギャップを埋める計画を立てることが最初のステップです。",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const relatedArticles = [
+  { href: "/column/roadmap", title: "医学部受験ロードマップ：いつから・何をすべきか", label: "受験戦略" },
+  { href: "/column/difference", title: "医学部に受かる人・落ちる人の違い", label: "合格分析" },
+  { href: "/column/juken-timing", title: "医学部受験はいつから始めるべきか", label: "受験戦略" },
+];
+
 export const metadata = {
   title: "医学部合格のための勉強法｜現役慶應医学部生が解説 | Medvance",
   description:
@@ -47,6 +86,10 @@ const mistakes = [
 export default function StudyMethodPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
@@ -155,6 +198,62 @@ export default function StudyMethodPage() {
             <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
               医学部合格者に共通するのは「才能」ではなく「正しい戦略と継続力」です。自分の現在地を正確に把握し、合格までのギャップを埋める最短ルートを設計する。そして、毎日の学習で「理解できたか」を確認しながら積み上げていく。この思考法さえ身につければ、スタートの偏差値は関係ありません。Medvanceでは、合格に向けた思考法から一緒に構築します。
             </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            よくある質問
+          </h2>
+          <div className="space-y-4 mb-12">
+            {faqItems.map((faq, i) => (
+              <details
+                key={i}
+                className="rounded-xl overflow-hidden group"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <summary
+                  className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white"
+                  style={{ color: "#0c1a33" }}
+                >
+                  <span>Q. {faq.q}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4 mb-12">
+            {relatedArticles.map((article) => (
+              <Link
+                key={article.href}
+                href={article.href}
+                className="block p-5 rounded-xl bg-white hover:shadow-md transition-shadow"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <span
+                  className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3"
+                  style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
+                >
+                  {article.label}
+                </span>
+                <p className="text-sm font-bold leading-snug" style={{ color: "#0c1a33" }}>
+                  {article.title}
+                </p>
+                <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
+                  記事を読む →
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

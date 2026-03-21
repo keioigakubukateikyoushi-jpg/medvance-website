@@ -30,6 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/column/shigaku-vs-kokuritsu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/column/mensetu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/column/gakuhi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/column/juken-timing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column/hensachi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column/saijuken`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column/private-top5`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column/keio-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // 教科別
     { url: `${BASE}/subjects`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/subjects/english`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },

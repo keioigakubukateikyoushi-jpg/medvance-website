@@ -1,5 +1,40 @@
 import Link from "next/link";
 
+const faqItems = [
+  {
+    q: "私立医学部と国公立医学部、どちらが合格しやすいですか？",
+    a: "一概には言えません。国公立は7〜8科目の共通テストで高得点が必要な分、ハードルが高い面があります。私立は3〜4科目に絞れるため、得意科目がある受験生には有利です。自分の強みと残り時間を考慮して選択することが重要です。",
+  },
+  {
+    q: "私立医学部の学費は本当に高いですか？",
+    a: "国公立と比べると高額で、6年間で2,000万〜4,000万円程度かかります。ただし、特待生制度・地域枠・各種奨学金を活用することで実質的な負担を大幅に減らせる場合があります。受験前に各大学の制度を確認することをお勧めします。",
+  },
+  {
+    q: "国公立と私立の両方を受験することはできますか？",
+    a: "できます。共通テストを受けながら私立医学部も並行して受験する戦略は一般的です。ただし科目数が増えるため、スケジュール管理と優先順位の設計が重要になります。どちらを軸にするかを明確にした上で計画を立てることをお勧めします。",
+  },
+  {
+    q: "私立医学部の中で学費が安い大学はどこですか？",
+    a: "最も安いのは自治医科大学（卒後の地域医療勤務を条件に実質無償）と防衛医科大学校（給与支給）です。一般の私立医大では順天堂大学・東京慈恵会医科大学が約2,100万円と比較的抑えられています。",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const relatedArticles = [
+  { href: "/column/gakuhi", title: "医学部の学費・費用を徹底比較", label: "費用・学費" },
+  { href: "/column/hensachi", title: "医学部合格に必要な偏差値は？", label: "受験情報" },
+  { href: "/column/private-top5", title: "慶應・慈恵・順天堂など私立医学部トップ5", label: "大学選び" },
+];
+
 export const metadata = {
   title: "私立医学部と国公立医学部、どちらを目指すべきか | Medvance",
   description:
@@ -92,6 +127,10 @@ const typeAdvice = [
 export default function ShigakuVsKokuritsuPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p
@@ -339,6 +378,59 @@ export default function ShigakuVsKokuritsuPage() {
       </div>
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-3xl mx-auto mb-12">
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            よくある質問
+          </h2>
+          <div className="space-y-4 mb-12">
+            {faqItems.map((faq, i) => (
+              <details
+                key={i}
+                className="rounded-xl overflow-hidden group"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <summary
+                  className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white"
+                  style={{ color: "#0c1a33" }}
+                >
+                  <span>Q. {faq.q}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {relatedArticles.map((article) => (
+              <Link
+                key={article.href}
+                href={article.href}
+                className="block p-5 rounded-xl bg-white hover:shadow-md transition-shadow"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <span
+                  className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3"
+                  style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
+                >
+                  {article.label}
+                </span>
+                <p className="text-sm font-bold leading-snug" style={{ color: "#0c1a33" }}>
+                  {article.title}
+                </p>
+                <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
+                  記事を読む →
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
         <div
           className="max-w-3xl mx-auto rounded-2xl p-8 text-center"
           style={{ backgroundColor: "#0c1a33" }}

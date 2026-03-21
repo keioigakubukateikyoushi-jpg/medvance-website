@@ -1,5 +1,44 @@
 import Link from "next/link";
 
+const faqItems = [
+  {
+    q: "医学部面接の対策はいつから始めればいいですか？",
+    a: "遅くとも11月には始めることをお勧めします。理想は受験の半年前（夏頃）から自己分析と医療知識のインプットを始め、秋以降に模擬面接を繰り返す流れです。ぶっつけ本番が最も危険なパターンです。",
+  },
+  {
+    q: "医学部面接で落とされるパターンはどんなものですか？",
+    a: "最多のパターンは「準備した模範解答を丸暗記して話す」ことです。面接官はプロのため、暗記した回答はすぐにわかります。また、志望動機が抽象的すぎる・大学への理解が浅いことも落とされる原因になります。",
+  },
+  {
+    q: "MMI（多面的面接）はどう対策すればいいですか？",
+    a: "倫理的問題について普段から考える習慣をつけることが最も効果的です。医療ニュースを読む・生命倫理に関する本を1冊読む・ロールプレイの練習をするなどが有効です。正解を求めるのではなく「どう考え、どう伝えるか」を意識してください。",
+  },
+  {
+    q: "面接で「医師を目指した理由」はどう答えればいいですか？",
+    a: "具体的なエピソード（家族の入院体験、ボランティア活動、医療現場との接点など）を交えて話すことが重要です。「患者に寄り添いたい」という言葉は多くの受験生が使うため、あなた自身の経験から語られる言葉で表現することが評価につながります。",
+  },
+  {
+    q: "面接の練習は一人でできますか？",
+    a: "自己分析や答えの準備は一人でできますが、実際に話す練習は第三者に面接官役をしてもらうことが効果的です。録画して見返すことで、話し方・目線・表情などの改善点を確認できます。Medvanceでは模擬面接と個別フィードバックを提供しています。",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const relatedArticles = [
+  { href: "/column/difference", title: "医学部に受かる人・落ちる人の違い", label: "合格分析" },
+  { href: "/column/saijuken", title: "社会人・大学生からの医学部再受験ガイド", label: "再受験" },
+  { href: "/column/keio-guide", title: "慶應義塾大学医学部の入試完全ガイド", label: "大学別対策" },
+];
+
 export const metadata = {
   title: "医学部面接対策の完全ガイド | Medvance",
   description:
@@ -76,6 +115,10 @@ const failPatterns = [
 export default function MensetsuPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p
@@ -290,6 +333,59 @@ export default function MensetsuPage() {
       </div>
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-3xl mx-auto mb-12">
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            よくある質問
+          </h2>
+          <div className="space-y-4 mb-12">
+            {faqItems.map((faq, i) => (
+              <details
+                key={i}
+                className="rounded-xl overflow-hidden group"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <summary
+                  className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white"
+                  style={{ color: "#0c1a33" }}
+                >
+                  <span>Q. {faq.q}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {relatedArticles.map((article) => (
+              <Link
+                key={article.href}
+                href={article.href}
+                className="block p-5 rounded-xl bg-white hover:shadow-md transition-shadow"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <span
+                  className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3"
+                  style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
+                >
+                  {article.label}
+                </span>
+                <p className="text-sm font-bold leading-snug" style={{ color: "#0c1a33" }}>
+                  {article.title}
+                </p>
+                <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
+                  記事を読む →
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
         <div
           className="max-w-3xl mx-auto rounded-2xl p-8 text-center"
           style={{ backgroundColor: "#0c1a33" }}

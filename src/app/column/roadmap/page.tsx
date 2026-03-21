@@ -1,5 +1,40 @@
 import Link from "next/link";
 
+const faqItems = [
+  {
+    q: "医学部受験のロードマップはいつから計画すべきですか？",
+    a: "できるだけ早い段階で計画を立てることをお勧めします。理想は高1〜高2ですが、高3・浪人からでも計画を立てることで成果が大きく変わります。まず現状の学力と志望校を把握し、合格までの逆算スケジュールを作ることが最初のステップです。",
+  },
+  {
+    q: "医学部受験で浪人するとどのくらい不利になりますか？",
+    a: "浪人そのものは不利ではありません。多くの医学部では浪人生の合格者が現役生より多い年もあります。ただし「同じことをもう一回やる」だけでは成績は伸びません。前年の失敗原因を分析し、戦略を根本から見直すことが浪人成功の鍵です。",
+  },
+  {
+    q: "高3の春から医学部対策を始めて現役合格できますか？",
+    a: "可能ですが、志望校の選択と優先順位の徹底が必要です。特に私立医学部に絞り、科目負担を最小化した上で集中対策を行うことで、高3春スタートでも合格した生徒がいます。ただし計画設計の精度が非常に重要です。",
+  },
+  {
+    q: "医学部受験のロードマップで最も重要なポイントは何ですか？",
+    a: "「夏までに全科目の基礎を完成させること」が最重要です。秋以降に基礎が固まっていないと、過去問演習に移れず時間切れになります。特に理科は高3夏が最終期限だと意識して、計画を組みましょう。",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const relatedArticles = [
+  { href: "/column/juken-timing", title: "医学部受験はいつから始めるべきか", label: "受験戦略" },
+  { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
+  { href: "/column/difference", title: "医学部に受かる人・落ちる人の違い", label: "合格分析" },
+];
+
 export const metadata = {
   title: "医学部受験ロードマップ｜いつから・何をすればいいか完全解説 | Medvance",
   description:
@@ -55,6 +90,10 @@ const ngActions = [
 export default function RoadmapPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
@@ -182,6 +221,62 @@ export default function RoadmapPage() {
                 <p className="font-bold text-sm mb-3" style={{ color: "#0c1a33" }}>NG {i + 1}. {item.title}</p>
                 <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            よくある質問
+          </h2>
+          <div className="space-y-4 mb-12">
+            {faqItems.map((faq, i) => (
+              <details
+                key={i}
+                className="rounded-xl overflow-hidden group"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <summary
+                  className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white"
+                  style={{ color: "#0c1a33" }}
+                >
+                  <span>Q. {faq.q}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {relatedArticles.map((article) => (
+              <Link
+                key={article.href}
+                href={article.href}
+                className="block p-5 rounded-xl bg-white hover:shadow-md transition-shadow"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <span
+                  className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3"
+                  style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
+                >
+                  {article.label}
+                </span>
+                <p className="text-sm font-bold leading-snug" style={{ color: "#0c1a33" }}>
+                  {article.title}
+                </p>
+                <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
+                  記事を読む →
+                </p>
+              </Link>
             ))}
           </div>
         </div>
