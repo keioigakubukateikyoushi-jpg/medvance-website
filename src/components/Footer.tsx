@@ -62,9 +62,13 @@ export default function Footer() {
             <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>コラム</p>
             <nav className="space-y-2 text-sm mb-6">
               {[
+                { label: "コラム一覧", href: "/column" },
                 { label: "医学部合格の勉強法", href: "/column/study-method" },
                 { label: "医学部受験ロードマップ", href: "/column/roadmap" },
                 { label: "受かる人・落ちる人の違い", href: "/column/difference" },
+                { label: "私立 vs 国公立", href: "/column/shigaku-vs-kokuritsu" },
+                { label: "医学部面接対策", href: "/column/mensetu" },
+                { label: "医学部の学費比較", href: "/column/gakuhi" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
                   {l.label}

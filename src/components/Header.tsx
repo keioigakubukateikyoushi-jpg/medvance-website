@@ -30,9 +30,13 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
   {
     label: "コラム",
     items: [
+      { label: "コラム一覧", href: "/column", desc: "医学部受験コラムをすべて見る" },
       { label: "医学部合格の勉強法", href: "/column/study-method", desc: "科目別の正しい学習法" },
       { label: "医学部受験ロードマップ", href: "/column/roadmap", desc: "いつから・何をすべきか" },
       { label: "受かる人・落ちる人の違い", href: "/column/difference", desc: "合格者の共通点とは" },
+      { label: "私立 vs 国公立", href: "/column/shigaku-vs-kokuritsu", desc: "どちらを選ぶべきか" },
+      { label: "医学部面接対策", href: "/column/mensetu", desc: "面接で差をつけるポイント" },
+      { label: "医学部の学費比較", href: "/column/gakuhi", desc: "私立・国公立の費用を比較" },
     ],
   },
 ];

@@ -185,18 +185,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 2. RESULTS STRIP ──────────────────── */}
+      {/* ── 2. STATS STRIP ────────────────────── */}
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { num: "現役・浪人・再受験", label: "幅広い生徒に対応" },
-            { num: "完全1対1", label: "全授業が個別指導" },
-            { num: "全員が", label: "現役慶應医学部生" },
-            { num: "無料", label: "初回相談・カウンセリング" },
+            { label: "講師が全員", sub: "慶應医学部在籍" },
+            { label: "全指導が", sub: "完全1対1制" },
+            { label: "オンラインで", sub: "全国どこでも受講可能" },
+            { label: "まず", sub: "無料カウンセリング" },
           ].map((s) => (
-            <div key={s.label}>
-              <p className="text-xl md:text-2xl font-bold mb-1" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>{s.num}</p>
-              <p className="text-xs md:text-sm" style={{ color: "#6b7280" }}>{s.label}</p>
+            <div key={s.sub}>
+              <p className="text-lg md:text-xl font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "'Noto Serif JP', serif" }}>{s.label}</p>
+              <p className="text-sm md:text-base font-semibold" style={{ color: "#0c1a33" }}>{s.sub}</p>
             </div>
           ))}
         </div>
@@ -223,7 +223,242 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 4. ABOUT IMAGE ────────────────────── */}
+      {/* ── 4. COMPARISON TABLE ───────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Comparison
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
+            他塾との違い
+          </h2>
+          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+            Medvanceが選ばれる理由を、他塾と比較してご確認ください
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse" style={{ minWidth: "600px" }}>
+              <thead>
+                <tr>
+                  <th
+                    className="text-left py-4 px-5 text-sm font-semibold"
+                    style={{ color: "#6b7280", borderBottom: "2px solid #e5e1d8", width: "28%" }}
+                  >
+                    比較項目
+                  </th>
+                  <th
+                    className="py-4 px-5 text-center text-sm font-bold rounded-t-xl"
+                    style={{
+                      color: "#0c1a33",
+                      backgroundColor: "rgba(201,146,42,0.08)",
+                      border: "2px solid #c9922a",
+                      borderBottom: "none",
+                      width: "24%",
+                    }}
+                  >
+                    <span className="block text-base" style={{ color: "#c9922a" }}>Medvance</span>
+                    <span className="text-xs font-normal" style={{ color: "#6b7280" }}>医学部受験専門塾</span>
+                  </th>
+                  <th
+                    className="py-4 px-5 text-center text-sm font-bold"
+                    style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
+                  >
+                    大手予備校
+                  </th>
+                  <th
+                    className="py-4 px-5 text-center text-sm font-bold"
+                    style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
+                  >
+                    一般家庭教師
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    item: "講師の質",
+                    medvance: "慶應医学部生のみ",
+                    yobikou: "様々",
+                    kateikyoshi: "学生バイト多数",
+                    highlight: true,
+                  },
+                  {
+                    item: "指導スタイル",
+                    medvance: "完全1対1",
+                    yobikou: "集団授業が中心",
+                    kateikyoshi: "1対1だが医学部特化なし",
+                    highlight: false,
+                  },
+                  {
+                    item: "医学部特化",
+                    medvance: "完全特化",
+                    yobikou: "一部コースのみ",
+                    kateikyoshi: "非特化",
+                    highlight: true,
+                  },
+                  {
+                    item: "面接・小論文対策",
+                    medvance: "対応",
+                    yobikou: "一部対応",
+                    kateikyoshi: "非対応",
+                    highlight: false,
+                  },
+                  {
+                    item: "料金相談",
+                    medvance: "無料カウンセリング",
+                    yobikou: "固定コース",
+                    kateikyoshi: "様々",
+                    highlight: true,
+                  },
+                ].map((row, i) => (
+                  <tr key={i} style={{ borderBottom: "1px solid #e5e1d8" }}>
+                    <td
+                      className="py-4 px-5 text-sm font-semibold"
+                      style={{ color: "#0c1a33" }}
+                    >
+                      {row.item}
+                    </td>
+                    <td
+                      className="py-4 px-5 text-center text-sm font-bold"
+                      style={{
+                        color: "#0c1a33",
+                        backgroundColor: row.highlight ? "rgba(201,146,42,0.06)" : "rgba(201,146,42,0.03)",
+                        borderLeft: "2px solid #c9922a",
+                        borderRight: "2px solid #c9922a",
+                      }}
+                    >
+                      <span className="inline-flex items-center gap-1.5">
+                        <span
+                          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: "#c9922a" }}
+                        />
+                        {row.medvance}
+                      </span>
+                    </td>
+                    <td
+                      className="py-4 px-5 text-center text-sm"
+                      style={{ color: "#6b7280" }}
+                    >
+                      {row.yobikou}
+                    </td>
+                    <td
+                      className="py-4 px-5 text-center text-sm"
+                      style={{ color: "#6b7280" }}
+                    >
+                      {row.kateikyoshi}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td />
+                  <td
+                    className="rounded-b-xl"
+                    style={{
+                      backgroundColor: "rgba(201,146,42,0.05)",
+                      border: "2px solid #c9922a",
+                      borderTop: "none",
+                      height: "12px",
+                    }}
+                  />
+                  <td />
+                  <td />
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. TUTOR STRENGTHS ────────────────── */}
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Tutors
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
+            講師陣の強み
+          </h2>
+          <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
+            各生徒に最適な講師をマッチング。多様な合格背景を持つ現役慶應医学部生があなたの合格を支えます。
+          </p>
+          {/* Credential Badge */}
+          <div className="flex justify-center mb-12">
+            <div
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full font-bold text-sm"
+              style={{
+                backgroundColor: "#0c1a33",
+                color: "#c9922a",
+                border: "1px solid #c9922a",
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 flex-shrink-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.745 3.745 0 0 1 3.296-1.043A3.745 3.745 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+              </svg>
+              全講師：慶應義塾大学医学部 現役在籍
+            </div>
+          </div>
+          {/* Tutor profile cards */}
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+            {[
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                  </svg>
+                ),
+                title: "東大模試 上位経験者",
+                desc: "最難関レベルの受験戦略を熟知。論理的な指導が強み。",
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                ),
+                title: "一浪での慶應合格",
+                desc: "浪人生の気持ちを理解。無駄なく逆転合格したノウハウを伝授。",
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  </svg>
+                ),
+                title: "地方公立出身",
+                desc: "独学・情報戦を乗り越えた経験を活かし、地方からの挑戦を応援。",
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                  </svg>
+                ),
+                title: "最適マッチング",
+                desc: "生徒の性格・志望校・科目に合わせて最も相性の良い講師を選定。",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-6 shadow-sm text-center"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white"
+                  style={{ backgroundColor: "#0c1a33" }}
+                >
+                  {t.icon}
+                </div>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{t.title}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{t.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. ABOUT IMAGE ────────────────────── */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <Image
@@ -377,7 +612,89 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. NOTE ───────────────────────────── */}
+      {/* ── 9. COLUMN PREVIEW ─────────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+            Column
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+            最新コラム
+          </h2>
+          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+            現役慶應医学部生が書く、医学部受験のリアルな情報
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                tag: "勉強法",
+                title: "医学部合格のための正しい勉強法",
+                desc: "科目別の効率的な学習法から、医学部特有の試験対策まで。合格者が実践した再現性ある勉強法を解説します。",
+                href: "/column/study-method",
+              },
+              {
+                tag: "計画",
+                title: "医学部受験ロードマップ",
+                desc: "いつから・何を・どう勉強すべきか。高校生から社会人まで、目標から逆算した受験スケジュールを紹介します。",
+                href: "/column/roadmap",
+              },
+              {
+                tag: "合格分析",
+                title: "医学部に受かる人・落ちる人の違い",
+                desc: "毎年多くの受験生を見てきた慶應医学部生が語る、合格者と不合格者を分ける本当の差とは何か。",
+                href: "/column/difference",
+              },
+            ].map((col, i) => (
+              <a
+                key={i}
+                href={col.href}
+                className="block rounded-2xl overflow-hidden hover:shadow-md transition-shadow group"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                {/* Top color bar */}
+                <div className="h-1.5" style={{ backgroundColor: "#c9922a" }} />
+                <div className="p-6">
+                  <span
+                    className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-4"
+                    style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}
+                  >
+                    {col.tag}
+                  </span>
+                  <h3
+                    className="font-bold text-base mb-3 leading-snug group-hover:underline"
+                    style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+                  >
+                    {col.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+                    {col.desc}
+                  </p>
+                  <div className="flex items-center gap-1 mt-5 text-xs font-semibold" style={{ color: "#c9922a" }}>
+                    続きを読む
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="text-center">
+            <a
+              href="/column"
+              className="inline-flex items-center gap-2 px-8 py-4 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#0c1a33", color: "#fff" }}
+            >
+              コラム一覧を見る
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 10. NOTE ──────────────────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
