@@ -25,6 +25,35 @@ h1, h2, h3, h4, h5 {
   color: var(--navy);
 }
 
+/* ── Column article typography ───────────────────────────── */
+
+/* Hero h1: clamp for responsive sizing */
+.column-body h1 {
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+/* Section headings: clear hierarchy */
+.column-body h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+/* Body paragraphs: 15px for comfortable reading (overrides text-sm=14px) */
+.column-body p {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+
+/* List items */
+.column-body li {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

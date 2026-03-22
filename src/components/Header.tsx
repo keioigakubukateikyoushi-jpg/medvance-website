@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 type DropdownItem = { label: string; href: string; desc?: string };
 
@@ -46,6 +47,14 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pathname = usePathname();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   const handleEnter = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -60,7 +69,7 @@ export default function Header() {
     <header style={{ backgroundColor: "#0c1a33" }} className="text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 hover:opacity-85 transition-opacity flex-shrink-0">
+        <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 hover:opacity-85 transition-opacity flex-shrink-0">
           <Image src="/images/logo.png" alt="Medvance" width={56} height={32} className="object-contain" />
           <span className="text-white font-semibold text-xs hidden sm:block opacity-70 leading-tight">
             慶應医学部生による<br />医学部受験専門塾
