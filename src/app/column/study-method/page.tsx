@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ColumnCTA from "@/components/ColumnCTA";
 
 const faqItems = [
   {
@@ -258,24 +259,10 @@ export default function StudyMethodPage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto rounded-2xl p-8 text-center" style={{ backgroundColor: "#0c1a33" }}>
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
-          <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            あなたに合った勉強法を、一緒に設計しませんか？
-          </h2>
-          <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-            現状の学習法を診断し、改善策をお伝えします。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
-      </div>
+      <ColumnCTA
+        heading="あなたに合った勉強法を、一緒に設計しませんか？"
+        subtext="現状の学習法を診断し、改善策をお伝えします。Medvanceの無料相談でお気軽にご相談ください。"
+      />
     </div>
   );
 }

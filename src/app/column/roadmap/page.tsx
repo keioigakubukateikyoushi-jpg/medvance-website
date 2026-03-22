@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ColumnCTA from "@/components/ColumnCTA";
 
 const faqItems = [
   {
@@ -282,24 +283,10 @@ export default function RoadmapPage() {
         </div>
       </div>
 
-      <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            まずは無料相談から
-          </h2>
-          <p className="mb-8 text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-            あなたの状況に合わせたロードマップを、一緒に作ります。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
-      </div>
+      <ColumnCTA
+        heading="あなた専用のロードマップを、一緒に設計します"
+        subtext="現状の学力・志望校・スケジュールをヒアリングして、合格までの最短ルートを一緒に描きます。"
+      />
     </div>
   );
 }
