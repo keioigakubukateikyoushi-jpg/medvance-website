@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ColumnCTA from "@/components/ColumnCTA";
 
 export const metadata = {
   title: "慶應義塾大学医学部の入試完全ガイド｜現役生が解説 | Medvance",
@@ -273,26 +274,11 @@ export default function KeioGuidePage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto rounded-2xl p-8 text-center" style={{ backgroundColor: "#0c1a33" }}>
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            Free Consultation
-          </p>
-          <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            慶應医学部への最短ルートを一緒に設計します
-          </h2>
-          <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-            現役慶應医学部生が、入試のリアルな視点から合格戦略を提案します。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
-      </div>
+
+      <ColumnCTA
+        heading="慶應医学部への最短ルートを一緒に設計します"
+        subtext="現役慶應医学部生が、入試のリアルな視点から合格戦略を提案します。"
+      />
     </div>
   );
 }

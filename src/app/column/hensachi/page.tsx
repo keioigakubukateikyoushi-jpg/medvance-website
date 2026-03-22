@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ColumnCTA from "@/components/ColumnCTA";
 
 export const metadata = {
   title: "医学部合格に必要な偏差値は？現実的な目標設定｜Medvance",
@@ -248,26 +249,11 @@ export default function HensachiPage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto rounded-2xl p-8 text-center" style={{ backgroundColor: "#0c1a33" }}>
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            Free Consultation
-          </p>
-          <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            現在の偏差値から合格までの道筋を設計します
-          </h2>
-          <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-            今の学力を診断し、志望校合格に向けた最短ルートをご提案します。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
-      </div>
+
+      <ColumnCTA
+        heading="今の偏差値から合格までの最短ルートを設計します"
+        subtext="今の学力を診断し、志望校合格に向けた最短プランをご提案します。"
+      />
     </div>
   );
 }

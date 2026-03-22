@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ColumnCTA from "@/components/ColumnCTA";
 
 const faqItems = [
   {
@@ -248,24 +249,11 @@ export default function DifferencePage() {
         </div>
       </div>
 
-      <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            まずは無料相談から
-          </h2>
-          <p className="mb-8 text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-            あなたの学習を診断し、合格者の思考法・戦略をお伝えします。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
-      </div>
+
+      <ColumnCTA
+        heading="合格者の思考法・戦略を、一緒に体得しませんか？"
+        subtext="合格者と不合格者の差は戦略です。Medvanceで正しい受験戦略を設計しましょう。"
+      />
     </div>
   );
 }

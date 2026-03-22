@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ColumnCTA from "@/components/ColumnCTA";
 
 const faqItems = [
   {
@@ -332,91 +333,11 @@ export default function MensetsuPage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-            よくある質問
-          </h2>
-          <div className="space-y-4 mb-12">
-            {faqItems.map((faq, i) => (
-              <details
-                key={i}
-                className="rounded-xl overflow-hidden group"
-                style={{ border: "1px solid #e5e1d8" }}
-              >
-                <summary
-                  className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white"
-                  style={{ color: "#0c1a33" }}
-                >
-                  <span>Q. {faq.q}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>
-                  {faq.a}
-                </div>
-              </details>
-            ))}
-          </div>
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-            関連記事
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {relatedArticles.map((article) => (
-              <Link
-                key={article.href}
-                href={article.href}
-                className="block p-5 rounded-xl bg-white hover:shadow-md transition-shadow"
-                style={{ border: "1px solid #e5e1d8" }}
-              >
-                <span
-                  className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3"
-                  style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
-                >
-                  {article.label}
-                </span>
-                <p className="text-sm font-bold leading-snug" style={{ color: "#0c1a33" }}>
-                  {article.title}
-                </p>
-                <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
-                  記事を読む →
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-        <div
-          className="max-w-3xl mx-auto rounded-2xl p-8 text-center"
-          style={{ backgroundColor: "#0c1a33" }}
-        >
-          <p
-            className="text-sm font-semibold tracking-widest uppercase mb-3"
-            style={{ color: "#c9922a" }}
-          >
-            Free Consultation
-          </p>
-          <h2
-            className="text-xl font-bold text-white mb-3"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
-          >
-            面接練習・フィードバック、一緒にやりましょう
-          </h2>
-          <p
-            className="text-sm mb-6"
-            style={{ color: "rgba(255,255,255,0.65)" }}
-          >
-            模擬面接から志望動機の磨き方まで、個別にサポートします。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
-      </div>
+
+      <ColumnCTA
+        heading="面接練習・小論文対策もMedvanceにお任せください"
+        subtext="模擬面接から志望動機の磨き方まで、完全1対1で個別サポートします。"
+      />
     </div>
   );
 }
