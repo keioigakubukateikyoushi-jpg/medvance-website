@@ -41,12 +41,13 @@ export default function HeroAnimated() {
             医学部受験専門塾 Medvance
           </motion.div>
 
-          {/* Headline — single line, no break, responsive size */}
+          {/* Headline */}
           <motion.h1
-            className="font-bold text-white leading-tight mb-5"
+            className="font-bold leading-tight mb-5"
             style={{
               fontFamily: "'Noto Serif JP', serif",
               fontSize: "clamp(1.9rem, 5.5vw, 3.8rem)",
+              color: "#ffffff",
             }}
             {...fadeUp(0.2)}
           >
@@ -71,10 +72,10 @@ export default function HeroAnimated() {
           {/* Description */}
           <motion.p
             className="leading-relaxed mb-10"
-            style={{ color: "rgba(255,255,255,0.62)", maxWidth: "440px", fontSize: "clamp(0.8125rem, 1.4vw, 0.9375rem)" }}
+            style={{ color: "rgba(255,255,255,0.62)", maxWidth: "460px", fontSize: "clamp(0.8125rem, 1.4vw, 0.9375rem)" }}
             {...fadeUp(0.45)}
           >
-            現役慶應医学部生が、あなただけの最短合格ルートを設計します。完全1対1・全国オンライン対応の医学部受験専門塾Medvance。
+            現役慶應医学部生が、あなただけの最短合格ルートを設計します。<br className="hidden sm:block" />完全1対1・全国オンライン対応の医学部受験専門塾Medvance。
           </motion.p>
 
           {/* CTAs */}
