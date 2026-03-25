@@ -42,22 +42,22 @@ export default function HeroAnimated() {
 
           {/* Headline */}
           <motion.h1
-            className="font-bold text-white leading-tight mb-4"
-            style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+            className="font-bold text-white leading-tight mb-5"
+            style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "clamp(2.4rem, 5vw, 4rem)" }}
             {...fadeUp(0.2)}
           >
-            医学部合格は、<br />
-            <span style={{ color: "#c9922a" }}>才能</span>ではなく<br />
-            <span style={{ color: "#c9922a" }}>方法</span>で決まる。
+            才能は、<br />
+            <span style={{ color: "#c9922a" }}>関係ない。</span>
           </motion.h1>
 
           {/* Sub headline */}
           <motion.p
             className="font-semibold mb-6"
-            style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(1rem, 2vw, 1.25rem)", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "rgba(255,255,255,0.6)", fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)", fontFamily: "'Noto Serif JP', serif", lineHeight: 1.7 }}
             {...fadeUp(0.35)}
           >
-            正しい戦略と、それを実行する仕組みが合否を分ける。
+            医学部合格を決めるのは、才能でも運でもない。<br />
+            正しい方法と、それを実行する環境だけだ。
           </motion.p>
 
           {/* Sub */}
