@@ -129,6 +129,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 3.5 TESTIMONIALS ──────────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Voices
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
+              受講生の声
+            </h2>
+            <p className="text-center text-sm mb-14" style={{ color: "#6b7280" }}>
+              プライバシー保護のため匿名・一部加工して掲載しています
+            </p>
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "偏差値52から始めて、1年で北里大学医学部に合格できました。勉強の「方向性」が全く変わったと感じています。",
+                name: "浪人生（1浪）",
+                place: "神奈川県",
+                result: "北里大学医学部 合格",
+              },
+              {
+                quote: "社会人3年目から再受験を決意。仕事と両立しながら週2回のペースで指導を受け、東京医科大学に合格しました。",
+                name: "再受験生・26歳",
+                place: "東京都",
+                result: "東京医科大学 合格",
+              },
+              {
+                quote: "高3の夏からスタートしましたが、無駄を省いた戦略のおかげで昭和大学医学部に現役合格。相談して本当に良かったです。",
+                name: "現役生",
+                place: "埼玉県",
+                result: "昭和大学医学部 合格",
+              },
+            ].map((t, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="flex flex-col h-full p-7 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                  {/* Quote mark */}
+                  <span className="text-4xl font-bold leading-none mb-4 block" style={{ color: "#c9922a", fontFamily: "Georgia, serif" }}>"</span>
+                  <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#3d3d3d" }}>{t.quote}</p>
+                  <div>
+                    <div className="h-px mb-4" style={{ backgroundColor: "#e5e1d8" }} />
+                    <p className="text-xs font-bold mb-0.5" style={{ color: "#0c1a33" }}>{t.name}・{t.place}</p>
+                    <p className="text-xs font-semibold" style={{ color: "#c9922a" }}>{t.result}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 4. COMPARISON TABLE ───────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
@@ -692,24 +744,45 @@ export default function Home() {
 
       {/* ── 14. FINAL CTA ─────────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-28 px-4">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-5 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-              医学部合格は<span style={{ color: "#c9922a" }}>「才能」ではなく「戦略」</span>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-4" style={{ color: "#c9922a" }}>
+              Free Consultation
+            </p>
+            <h2 className="text-2xl md:text-4xl font-bold text-white text-center mb-4 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+              まず、話してみてください。
             </h2>
-            <p className="text-base leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.68)" }}>
-              どれだけ努力しても、やり方を間違えると結果は出ません。合格者が実際に通った最短ルートを、あなた専用に最適化して提供します。まずは無料相談から、一歩を踏み出してください。
+            <p className="text-center mb-12" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.9375rem" }}>
+              売り込みは一切しません。30分で、あなたの現状と合格への道筋が見えます。
             </p>
-            <Link
-              href="/contact"
-              className="inline-block px-10 py-5 text-white font-bold text-lg rounded-lg shadow-lg hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#c9922a" }}
-            >
-              無料相談・お問い合わせ
-            </Link>
-            <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-              ご依頼・無料相談はフォームから受付中
-            </p>
+
+            {/* What you get */}
+            <div className="grid sm:grid-cols-3 gap-4 mb-12">
+              {[
+                { num: "01", title: "現状分析", body: "今の学力・勉強法・使っている時間を整理し、何が足りていないかを明確にします。" },
+                { num: "02", title: "合格プランの提示", body: "志望校・残り時間・学力から、最短で合格するための具体的なステップをお伝えします。" },
+                { num: "03", title: "正直な判断", body: "Medvanceが合っているかどうかも含め、あなたに本当に必要なことを率直にお話しします。" },
+              ].map((item) => (
+                <div key={item.num} className="p-6 rounded-xl" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                  <p className="text-xs font-bold mb-2" style={{ color: "#c9922a" }}>{item.num}</p>
+                  <p className="font-bold text-white text-sm mb-2">{item.title}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>{item.body}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="/contact"
+                className="inline-block px-10 py-5 text-white font-bold text-base rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#c9922a" }}
+              >
+                無料相談・お問い合わせ（30分）
+              </Link>
+              <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+                完全無料・勧誘なし・オンライン対応
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
