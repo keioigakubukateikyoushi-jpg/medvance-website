@@ -47,7 +47,8 @@ export default function HeroAnimated() {
             {...fadeUp(0.2)}
           >
             医学部合格は、<br />
-            <span style={{ color: "#c9922a" }}>戦略</span>で決まる。
+            <span style={{ color: "#c9922a" }}>才能</span>ではなく<br />
+            <span style={{ color: "#c9922a" }}>方法</span>で決まる。
           </motion.h1>
 
           {/* Sub headline */}
@@ -56,7 +57,7 @@ export default function HeroAnimated() {
             style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(1rem, 2vw, 1.25rem)", fontFamily: "'Noto Serif JP', serif" }}
             {...fadeUp(0.35)}
           >
-            努力の方向が、合否を分ける。
+            正しい戦略と、それを実行する仕組みが合否を分ける。
           </motion.p>
 
           {/* Sub */}
