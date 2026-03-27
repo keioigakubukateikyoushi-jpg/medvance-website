@@ -9,6 +9,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     status: "",
+    target: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -55,6 +56,12 @@ export default function ContactPage() {
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
             売り込みは一切しません。あなたの状況をお聞きして、正直にお答えします。
           </p>
+          {/* 特典バナー */}
+          <div className="mb-6 mx-auto max-w-sm rounded-xl px-5 py-3" style={{ backgroundColor: "rgba(201,146,42,0.15)", border: "1px solid rgba(201,146,42,0.4)" }}>
+            <p className="text-xs font-bold text-center" style={{ color: "#c9922a" }}>
+              📘 申し込み特典：医学部受験戦略マニュアルを同時にお届けします
+            </p>
+          </div>
           {/* 3つの保証 */}
           <div className="flex flex-wrap justify-center gap-3">
             {[
@@ -163,27 +170,42 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
                         現在の状況
-                        <span className="inline-block text-xs text-white px-2 py-0.5 rounded ml-2" style={{ backgroundColor: "#c9922a" }}>
-                          必須
-                        </span>
+                        <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
                       </label>
                       <select
-                        required
                         value={formData.status}
                         onChange={(e) => setFormData({ ...formData, status: e.target.value })}
                         className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 bg-white"
                         style={{ border: "1px solid #e5e1d8", color: formData.status ? "#0c1a33" : "#9ca3af" }}
                       >
-                        <option value="" disabled>選択してください</option>
-                        <option value="現役高校生（高1）">現役高校生（高1）</option>
-                        <option value="現役高校生（高2）">現役高校生（高2）</option>
+                        <option value="">選択してください（任意）</option>
                         <option value="現役高校生（高3）">現役高校生（高3）</option>
+                        <option value="現役高校生（高2）">現役高校生（高2）</option>
+                        <option value="現役高校生（高1）">現役高校生（高1）</option>
                         <option value="浪人生（1浪）">浪人生（1浪）</option>
                         <option value="浪人生（多浪）">浪人生（多浪）</option>
                         <option value="再受験生（大学生・社会人）">再受験生（大学生・社会人）</option>
                         <option value="保護者として相談したい">保護者として相談したい</option>
+                        <option value="中学生">中学生</option>
+                        <option value="小学生">小学生</option>
                         <option value="その他">その他</option>
                       </select>
+                    </div>
+
+                    {/* 志望校 */}
+                    <div>
+                      <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
+                        志望校
+                        <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.target}
+                        onChange={(e) => setFormData({ ...formData, target: e.target.value })}
+                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                        style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                        placeholder="例：慶應義塾大学医学部、国立医学部など"
+                      />
                     </div>
 
                     {/* 電話 */}
@@ -206,21 +228,18 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
                         ご相談内容
-                        <span className="inline-block text-xs text-white px-2 py-0.5 rounded ml-2" style={{ backgroundColor: "#c9922a" }}>
-                          必須
-                        </span>
+                        <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
                       </label>
                       <textarea
-                        required
-                        rows={5}
+                        rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 resize-none"
                         style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="例：高2です。現在偏差値55で慶應医学部を目指しています。何から始めればいいか相談したいです。"
+                        placeholder="例：現在偏差値55で慶應医学部を目指しています。何から始めればいいか相談したいです。"
                       />
                       <p className="text-xs mt-1.5" style={{ color: "#9ca3af" }}>
-                        志望校・現在の学力・悩みなど、何でも書いてください。「まだ決まっていない」でも大丈夫です。
+                        「まだ何も決まっていない」「とりあえず話だけ聞きたい」でも大丈夫です。
                       </p>
                     </div>
 
@@ -299,16 +318,72 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* 資料請求 */}
-              <div className="rounded-2xl p-6" style={{ backgroundColor: "rgba(201,146,42,0.08)", border: "1px solid rgba(201,146,42,0.3)" }}>
-                <p className="text-xs font-bold tracking-wide uppercase mb-2" style={{ color: "#c9922a" }}>📘 無料配布中</p>
-                <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>医学部受験戦略マニュアル</p>
-                <p className="text-xs leading-relaxed mb-3" style={{ color: "#6b7280" }}>
-                  相談前に読んでおくと、より具体的な相談ができます。
-                </p>
-                <Link href="/download" className="text-xs font-bold hover:underline" style={{ color: "#c9922a" }}>
-                  無料で受け取る →
-                </Link>
+              {/* マニュアル特典ビジュアル */}
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#c9922a" }} />
+                  <p className="text-xs font-bold tracking-widest uppercase" style={{ color: "#c9922a" }}>申し込み特典</p>
+                </div>
+                {/* Book mockup */}
+                <div className="relative" style={{ perspective: "800px" }}>
+                  <div
+                    className="rounded-lg overflow-hidden shadow-xl"
+                    style={{
+                      background: "linear-gradient(135deg, #0c1a33 0%, #142b57 100%)",
+                      border: "1px solid rgba(201,146,42,0.3)",
+                      transform: "rotateY(-4deg)",
+                      transformStyle: "preserve-3d",
+                    }}
+                  >
+                    {/* Gold spine accent */}
+                    <div style={{ height: "3px", background: "linear-gradient(90deg, #c9922a, #e8b84b, #c9922a)" }} />
+                    <div className="p-6">
+                      {/* Label */}
+                      <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a", letterSpacing: "0.2em" }}>Medvance</p>
+                      {/* Title */}
+                      <h3 className="text-white font-bold leading-tight mb-1" style={{ fontSize: "1.2rem", fontFamily: "'Noto Serif JP', serif" }}>
+                        医学部受験
+                      </h3>
+                      <h3 className="font-bold leading-tight mb-5" style={{ fontSize: "1.2rem", fontFamily: "'Noto Serif JP', serif", color: "#e8b84b" }}>
+                        戦略マニュアル
+                      </h3>
+                      {/* Divider */}
+                      <div style={{ height: "1px", backgroundColor: "rgba(201,146,42,0.3)", marginBottom: "16px" }} />
+                      {/* Chapter list */}
+                      <div className="space-y-2 mb-6">
+                        {[
+                          "医学部入試の全体像",
+                          "科目別・最短攻略法",
+                          "合格者の年間スケジュール",
+                          "面接・小論文の対策",
+                          "合格者と不合格者の違い",
+                          "難関校別・攻略ポイント",
+                        ].map((ch, i) => (
+                          <div key={i} className="flex items-center gap-2.5">
+                            <span className="text-xs font-bold flex-shrink-0" style={{ color: "#c9922a", fontVariantNumeric: "tabular-nums" }}>
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <span className="text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>{ch}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {/* Footer */}
+                      <div style={{ borderTop: "1px solid rgba(201,146,42,0.25)", paddingTop: "12px" }}>
+                        <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>現役慶應義塾大学医学部生 監修</p>
+                      </div>
+                    </div>
+                    {/* Bottom gold bar */}
+                    <div style={{ height: "4px", background: "linear-gradient(90deg, #c9922a, #e8b84b, #c9922a)" }} />
+                  </div>
+                  {/* Shadow under book */}
+                  <div
+                    className="absolute inset-x-4 -bottom-2 h-4 rounded-full blur-md"
+                    style={{ backgroundColor: "rgba(12,26,51,0.4)", zIndex: -1 }}
+                  />
+                </div>
+                <div className="mt-4 text-center rounded-xl py-3 px-4" style={{ backgroundColor: "rgba(201,146,42,0.08)", border: "1px solid rgba(201,146,42,0.25)" }}>
+                  <p className="text-xs font-semibold" style={{ color: "#c9922a" }}>無料相談に申し込むと同時に受け取れます</p>
+                </div>
               </div>
 
               {/* オンライン対応 */}

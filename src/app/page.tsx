@@ -95,16 +95,16 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <span className="text-lg flex-shrink-0">📘</span>
             <p className="text-sm font-bold">
-              無料配布中：<span className="font-extrabold">医学部受験戦略マニュアル</span>
+              無料相談の特典：<span className="font-extrabold">医学部受験戦略マニュアルをプレゼント</span>
               <span className="hidden sm:inline text-xs font-normal ml-2 opacity-80">— 現役慶應医学部生 監修・6章構成</span>
             </p>
           </div>
           <Link
-            href="/download"
+            href="/contact"
             className="flex-shrink-0 px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
             style={{ backgroundColor: "#fff", color: "#c9922a" }}
           >
-            今すぐ無料で受け取る →
+            無料相談に申し込む →
           </Link>
         </div>
       </section>
@@ -842,35 +842,62 @@ export default function Home() {
       <section style={{ backgroundColor: "#f7f5f0", borderTop: "1px solid #e5e1d8" }} className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center p-8 md:p-12 rounded-2xl bg-white" style={{ border: "2px solid #c9922a" }}>
+            <div className="grid md:grid-cols-[1fr_260px] gap-10 items-center p-8 md:p-12 rounded-2xl bg-white" style={{ border: "2px solid #c9922a" }}>
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}>
-                  📘 無料配布中
+                  📘 無料相談の申し込み特典
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
                   医学部受験戦略マニュアル
                 </h2>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
                   科目別攻略法・年間スケジュール・面接対策・難関校攻略まで。<br />
-                  現役慶應医学部生が書いた6章構成の合格戦略ガイドを無料でお渡しします。
+                  現役慶應医学部生が書いた6章構成の合格戦略ガイド。無料相談に申し込むと同時にお届けします。
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-8">
                   {["Chapter 01 入試の全体像", "Chapter 02 科目別攻略法", "Chapter 03 年間スケジュール", "Chapter 04 面接・小論文", "Chapter 05 合格者の共通点", "Chapter 06 難関校別対策"].map((ch) => (
                     <span key={ch} className="text-xs px-2.5 py-1 rounded-full" style={{ backgroundColor: "#f7f5f0", color: "#6b7280", border: "1px solid #e5e1d8" }}>
                       {ch}
                     </span>
                   ))}
                 </div>
-              </div>
-              <div className="flex-shrink-0 text-center">
                 <Link
-                  href="/download"
-                  className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity whitespace-nowrap"
+                  href="/contact"
+                  className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
                   style={{ backgroundColor: "#c9922a" }}
                 >
-                  無料で受け取る →
+                  無料相談に申し込む（マニュアル付き）→
                 </Link>
-                <p className="text-xs mt-2" style={{ color: "#9ca3af" }}>メールアドレスのみで即受け取り</p>
+                <p className="text-xs mt-2" style={{ color: "#9ca3af" }}>完全無料・勧誘なし・全国オンライン対応</p>
+              </div>
+              {/* Book mockup */}
+              <div className="hidden md:block flex-shrink-0">
+                <div
+                  className="rounded-lg overflow-hidden shadow-2xl"
+                  style={{
+                    background: "linear-gradient(135deg, #0c1a33 0%, #142b57 100%)",
+                    transform: "rotateY(-6deg) rotateX(2deg)",
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  <div style={{ height: "3px", background: "linear-gradient(90deg, #c9922a, #e8b84b, #c9922a)" }} />
+                  <div className="p-5">
+                    <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>Medvance</p>
+                    <p className="text-white font-bold leading-tight mb-0.5" style={{ fontSize: "1rem", fontFamily: "'Noto Serif JP', serif" }}>医学部受験</p>
+                    <p className="font-bold leading-tight mb-4" style={{ fontSize: "1rem", fontFamily: "'Noto Serif JP', serif", color: "#e8b84b" }}>戦略マニュアル</p>
+                    <div style={{ height: "1px", backgroundColor: "rgba(201,146,42,0.3)", marginBottom: "12px" }} />
+                    <div className="space-y-1.5 mb-4">
+                      {["医学部入試の全体像", "科目別・最短攻略法", "合格者の年間スケジュール", "面接・小論文の対策", "合格者と不合格者の違い", "難関校別・攻略ポイント"].map((ch, i) => (
+                        <div key={i} className="flex items-center gap-2">
+                          <span className="text-xs font-bold flex-shrink-0" style={{ color: "#c9922a" }}>{String(i + 1).padStart(2, "0")}</span>
+                          <span className="text-xs" style={{ color: "rgba(255,255,255,0.65)" }}>{ch}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)", borderTop: "1px solid rgba(201,146,42,0.2)", paddingTop: "10px" }}>現役慶應義塾大学医学部生 監修</p>
+                  </div>
+                  <div style={{ height: "3px", background: "linear-gradient(90deg, #c9922a, #e8b84b, #c9922a)" }} />
+                </div>
               </div>
             </div>
           </FadeIn>

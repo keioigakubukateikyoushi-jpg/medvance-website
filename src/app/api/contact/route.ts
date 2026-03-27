@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
-  const { name, email, phone, status, message } = await req.json();
+  const { name, email, phone, status, target, message } = await req.json();
 
-  if (!name || !email || !message) {
+  if (!name || !email) {
     return NextResponse.json({ error: "必須項目が未入力です" }, { status: 400 });
   }
 
@@ -32,6 +32,7 @@ export async function POST(req: NextRequest) {
   <tr><td style="font-weight:bold;color:#142b57;">メールアドレス</td><td><a href="mailto:${email}">${email}</a></td></tr>
   <tr><td style="font-weight:bold;color:#142b57;">電話番号</td><td>${phone || "未入力"}</td></tr>
   <tr><td style="font-weight:bold;color:#142b57;">現在の状況</td><td>${status || "未選択"}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">志望校</td><td>${target || "未入力"}</td></tr>
 </table>
 <br>
 <p style="font-weight:bold;color:#142b57;">ご相談内容</p>
