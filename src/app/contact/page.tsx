@@ -9,7 +9,8 @@ export default function ContactPage() {
     email: "",
     phone: "",
     status: "",
-    target: "",
+    targetType: "",
+    targetName: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -194,17 +195,37 @@ export default function ContactPage() {
 
                     {/* 志望校 */}
                     <div>
-                      <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
+                      <label className="block text-sm font-semibold mb-2" style={{ color: "#0c1a33" }}>
                         志望校
                         <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
                       </label>
+                      <div className="flex gap-3 mb-2">
+                        {[
+                          { value: "国立", label: "国立" },
+                          { value: "私立", label: "私立" },
+                        ].map((opt) => (
+                          <button
+                            key={opt.value}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, targetType: formData.targetType === opt.value ? "" : opt.value })}
+                            className="flex-1 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+                            style={{
+                              border: `2px solid ${formData.targetType === opt.value ? "#c9922a" : "#e5e1d8"}`,
+                              backgroundColor: formData.targetType === opt.value ? "rgba(201,146,42,0.08)" : "#fff",
+                              color: formData.targetType === opt.value ? "#c9922a" : "#6b7280",
+                            }}
+                          >
+                            {opt.label}
+                          </button>
+                        ))}
+                      </div>
                       <input
                         type="text"
-                        value={formData.target}
-                        onChange={(e) => setFormData({ ...formData, target: e.target.value })}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                        value={formData.targetName}
+                        onChange={(e) => setFormData({ ...formData, targetName: e.target.value })}
+                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none"
                         style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="例：慶應義塾大学医学部、国立医学部など"
+                        placeholder="具体的な志望校名（例：慶應義塾大学医学部）"
                       />
                     </div>
 
