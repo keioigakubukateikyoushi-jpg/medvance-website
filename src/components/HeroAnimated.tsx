@@ -92,7 +92,7 @@ function HeroText() {
 
       {/* Trust badges */}
       <motion.div className="flex flex-wrap gap-x-5 gap-y-2" {...fadeUp(0.6)}>
-        {["慶應義塾大学医学部在籍", "完全1対1制", "全国対応（オンライン）"].map((badge) => (
+        {["慶應義塾大学医学部在籍", "完全1対1制", "全国オンライン対応", "無料相談あり"].map((badge) => (
           <span key={badge} className="text-xs flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.42)" }}>
             <span className="w-1.5 h-1.5 rounded-full inline-block flex-shrink-0" style={{ backgroundColor: "#c9922a" }} />
             {badge}
