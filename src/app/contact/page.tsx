@@ -228,6 +228,10 @@ export default function ContactPage() {
                       <p className="text-red-600 text-sm text-center">{error}</p>
                     )}
 
+                    <div className="rounded-xl p-4" style={{ backgroundColor: "rgba(201,146,42,0.08)", border: "1px solid rgba(201,146,42,0.25)" }}>
+                      <p className="text-xs text-center font-semibold mb-1" style={{ color: "#c9922a" }}>📘 申し込みと同時に、医学部受験戦略マニュアルをお届けします（無料）</p>
+                      <p className="text-xs text-center" style={{ color: "#6b7280" }}>相談前に読んでおくと、より具体的な話ができます</p>
+                    </div>
                     <button
                       type="submit"
                       disabled={loading}
