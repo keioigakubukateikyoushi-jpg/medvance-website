@@ -839,7 +839,7 @@ export default function Home() {
       </section>
 
       {/* ── 13.5 MANUAL CTA ───────────────────── */}
-      <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
+      <section style={{ backgroundColor: "#f7f5f0", borderTop: "1px solid #e5e1d8" }} className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center p-8 md:p-12 rounded-2xl bg-white" style={{ border: "2px solid #c9922a" }}>
