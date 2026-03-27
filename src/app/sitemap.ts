@@ -21,6 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/universities/keio`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/universities/private`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/universities/national`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/universities/jikei`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/universities/juntendo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/universities/nippon-medical`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/universities/showa`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/universities/tokyo-ika`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // コラム
     { url: `${BASE}/column`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/study-method`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

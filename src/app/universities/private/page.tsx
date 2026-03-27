@@ -99,6 +99,31 @@ export default function PrivatePage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            大学別の詳しい対策ページ
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            各大学の入試傾向・科目別対策・合格スケジュールを詳しく解説しています。志望校のページをご覧ください。
+          </p>
+          <div className="grid md:grid-cols-2 gap-4 mb-16">
+            {[
+              { name: "慶應義塾大学医学部", desc: "思考力・論証力重視の最難関。英数理と小論文・面接の全方位対策。", href: "/universities/keio" },
+              { name: "東京慈恵会医科大学", desc: "英語が私立医学部トップクラスの難易度。「慈恵の医師像」重視の面接対策。", href: "/universities/jikei" },
+              { name: "順天堂大学医学部", desc: "バランス型出題とMMI面接が特徴。全科目の均等な仕上がりが合格の鍵。", href: "/universities/juntendo" },
+              { name: "日本医科大学", desc: "数学・理科の記述式難問と2回面接。記述力と論証力が最重要。", href: "/universities/nippon-medical" },
+              { name: "昭和大学医学部", desc: "基礎力と正確性を最重視。ミスゼロで標準問題を取り切ることが合格条件。", href: "/universities/showa" },
+              { name: "東京医科大学", desc: "全科目バランス型で近年は思考力重視に変化。標準問題の確実な習得が必須。", href: "/universities/tokyo-ika" },
+            ].map((item) => (
+              <div key={item.href} className="p-5 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-sm mb-1" style={{ color: "#c9922a" }}>{item.name}</p>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: "#6b7280" }}>{item.desc}</p>
+                <Link href={item.href} className="text-xs font-bold hover:opacity-80 transition-opacity" style={{ color: "#0c1a33" }}>
+                  詳しく見る →
+                </Link>
+              </div>
+            ))}
+          </div>
+
           <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             主な対策大学と各校のポイント
           </h2>
