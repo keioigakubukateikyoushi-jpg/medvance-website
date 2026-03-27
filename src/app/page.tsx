@@ -89,6 +89,26 @@ export default function Home() {
       {/* ── 1. HERO ───────────────────────────── */}
       <HeroAnimated />
 
+      {/* ── 1.5 LEAD MAGNET BANNER ────────────── */}
+      <section style={{ backgroundColor: "#c9922a" }} className="py-4 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-white">
+          <div className="flex items-center gap-3">
+            <span className="text-lg flex-shrink-0">📘</span>
+            <p className="text-sm font-bold">
+              無料配布中：<span className="font-extrabold">医学部受験戦略マニュアル</span>
+              <span className="hidden sm:inline text-xs font-normal ml-2 opacity-80">— 現役慶應医学部生 監修・6章構成</span>
+            </p>
+          </div>
+          <Link
+            href="/download"
+            className="flex-shrink-0 px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#fff", color: "#c9922a" }}
+          >
+            今すぐ無料で受け取る →
+          </Link>
+        </div>
+      </section>
+
       {/* ── 2. STATS STRIP ────────────────────── */}
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -815,6 +835,45 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── 13.5 MANUAL CTA ───────────────────── */}
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center p-8 md:p-12 rounded-2xl bg-white" style={{ border: "2px solid #c9922a" }}>
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}>
+                  📘 無料配布中
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                  医学部受験戦略マニュアル
+                </h2>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
+                  科目別攻略法・年間スケジュール・面接対策・難関校攻略まで。<br />
+                  現役慶應医学部生が書いた6章構成の合格戦略ガイドを無料でお渡しします。
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Chapter 01 入試の全体像", "Chapter 02 科目別攻略法", "Chapter 03 年間スケジュール", "Chapter 04 面接・小論文", "Chapter 05 合格者の共通点", "Chapter 06 難関校別対策"].map((ch) => (
+                    <span key={ch} className="text-xs px-2.5 py-1 rounded-full" style={{ backgroundColor: "#f7f5f0", color: "#6b7280", border: "1px solid #e5e1d8" }}>
+                      {ch}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex-shrink-0 text-center">
+                <Link
+                  href="/download"
+                  className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity whitespace-nowrap"
+                  style={{ backgroundColor: "#c9922a" }}
+                >
+                  無料で受け取る →
+                </Link>
+                <p className="text-xs mt-2" style={{ color: "#9ca3af" }}>メールアドレスのみで即受け取り</p>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 

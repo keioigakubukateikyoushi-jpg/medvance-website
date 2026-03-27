@@ -294,6 +294,18 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              {/* 資料請求 */}
+              <div className="rounded-2xl p-6" style={{ backgroundColor: "rgba(201,146,42,0.08)", border: "1px solid rgba(201,146,42,0.3)" }}>
+                <p className="text-xs font-bold tracking-wide uppercase mb-2" style={{ color: "#c9922a" }}>📘 無料配布中</p>
+                <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>医学部受験戦略マニュアル</p>
+                <p className="text-xs leading-relaxed mb-3" style={{ color: "#6b7280" }}>
+                  相談前に読んでおくと、より具体的な相談ができます。
+                </p>
+                <Link href="/download" className="text-xs font-bold hover:underline" style={{ color: "#c9922a" }}>
+                  無料で受け取る →
+                </Link>
+              </div>
+
               {/* オンライン対応 */}
               <div className="rounded-2xl p-6 text-white" style={{ backgroundColor: "#0c1a33" }}>
                 <p className="font-bold text-sm mb-2" style={{ color: "#c9922a" }}>全国オンライン対応</p>
