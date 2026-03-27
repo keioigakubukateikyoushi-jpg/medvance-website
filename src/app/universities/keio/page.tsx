@@ -1,67 +1,177 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "慶應義塾大学医学部対策｜現役慶應医学部生が入試を徹底解説 | Medvance",
+  title: "慶應医学部に受かるには｜入試対策・合格戦略を現役生が解説 | Medvance",
   description:
-    "慶應義塾大学医学部の入試対策を現役慶應医学部生が指導。英語・数学・物理・化学・小論文・面接の傾向と対策。合格者の視点から慶應医学部入試を徹底解説。",
+    "慶應義塾大学医学部に受かるには何が必要か。現役慶應医学部生が英語・数学・物理・化学・小論文・面接の具体的な対策を解説。合格への最短ルートを詳しく紹介します。",
 };
 
 const subjects = [
   {
     name: "英語",
-    body: "長文読解中心で医療・科学系テーマが頻出。スピードと正確性が求められます。英作文では論理的な記述力が問われるため、文章構成力を丁寧に鍛えます。",
+    level: "★★★★★",
+    body: "長文読解中心で医療・科学系テーマが頻出。文量が多く、スピードと正確性が合否を分けます。英作文では論理的な記述力が問われます。",
+    detail: "大問構成は長文読解2〜3題＋英作文が基本。医学・生命科学・倫理系テーマの英文が多く、専門用語を推測しながら読む力が必要。英作文は日本語の考えを英語で論述する形式で、構成力・語彙力・文法の三拍子が求められる。目標は1分100語以上の読解速度。",
   },
   {
     name: "数学",
-    body: "記述式で思考力・論証力が問われます。単なる計算力ではなく、解法の根拠を説明できる力が必要。基礎概念の深い理解から積み上げる指導を行います。",
+    level: "★★★★★",
+    body: "記述式で思考力・論証力が問われます。単なる計算力ではなく、解法の根拠を説明できる力が必要です。",
+    detail: "大問5題・記述式。微積・確率・数列・複素数・ベクトルが頻出。答えが合っていても論証が不十分だと減点される。解答に至るまでの思考プロセスを言語化する訓練が合否を分ける。難問は完答せず部分点を確実に取る戦略も重要。",
   },
   {
-    name: "物理・化学",
-    body: "難易度が高く、本質的な理解がないと解けない問題が多い。公式の丸暗記ではなく、なぜその公式が成り立つかを理解する指導を行います。",
+    name: "物理",
+    level: "★★★★☆",
+    body: "難易度が高く、本質的な理解がないと解けない問題が多い。公式の丸暗記ではなく、原理から理解する指導を行います。",
+    detail: "力学・電磁気・波動・熱力学から満遍なく出題。実験・グラフ読み取り問題も頻出。物理の本質（なぜそうなるか）を問う問題が多く、教科書の公式を当てはめるだけでは対応不可。問題文から物理モデルを構築する力が不可欠。",
+  },
+  {
+    name: "化学",
+    level: "★★★★☆",
+    body: "有機化学の比重が高く、反応機構の深い理解が求められます。計算問題では多段階の思考が必要です。",
+    detail: "有機・無機・理論化学がバランスよく出題。特に有機化学では構造決定問題の難度が高い。計算問題は数値が複雑で手計算での精度が求められる。医療・生命科学に関連した出題も増えており、背景知識があると有利。",
   },
   {
     name: "小論文",
-    body: "医療倫理・生命科学・社会問題に関するテーマが出題されます。単なる意見の羅列ではなく、論理的な構成と深い考察が評価されます。",
+    level: "★★★★☆",
+    body: "医療倫理・生命科学・社会問題に関するテーマが出題されます。論理的な構成と深い考察が評価されます。",
+    detail: "600〜800字程度の論述。安楽死・遺伝子操作・医療格差・AI診断など最先端の医療トピックが出題される。「賛否を述べよ」ではなく「どう考えるか」を問う形式が多く、多面的な視点と自分なりの結論が求められる。医療ニュースの日頃からのインプットが差をつける。",
   },
   {
     name: "面接",
+    level: "★★★★☆",
     body: "グループ面接・個人面接の両形式があります。志望動機・医師としての倫理観・社会問題への意見など、思考の深さを問う質問が多い傾向です。",
+    detail: "グループ面接（4〜5人）と個人面接の二段階構成。グループ面接ではディスカッション形式の場合もある。「なぜ医師になりたいのか」「臓器移植についてどう考えるか」「AI診断が普及したら医師の役割は？」など、その場で考えを述べる力が問われる。準備なしでは対応不可。",
+  },
+];
+
+const strategies = [
+  {
+    step: "01",
+    title: "英語の「読む速さ」を最優先で鍛える",
+    body: "慶應医学部の英語で最も多くの受験生が時間切れになります。合格者の多くは「本番で時間が余った」と言います。1分100語以上の読解速度を目標に、毎日長文を時間計測しながら読む習慣をつけてください。速読の訓練は最低3ヶ月必要です。高3春には着手しましょう。",
+  },
+  {
+    step: "02",
+    title: "数学は「書いて説明する」練習を毎日する",
+    body: "慶應の数学は「答えを出す」だけでは不十分です。「なぜその解法を選んだか」「どの定理を使っているか」を言語化する練習が必要です。問題を解いたあとに、採点者が読んで理解できる答案かを確認する習慣をつけてください。友人や講師に「この解答で伝わるか」を確認してもらうのが効果的です。",
+  },
+  {
+    step: "03",
+    title: "小論文・面接は3ヶ月前から始める",
+    body: "「小論文は秋から」という考えは慶應受験では通用しません。医療倫理・生命科学の知識は1日2日で身につくものではないからです。夏休み中から医療系ニュース・書籍を定期的に読み、自分の意見をノートに書き留める習慣を作りましょう。面接は模擬練習を最低5回は行うべきです。",
+  },
+  {
+    step: "04",
+    title: "物理・化学は「なぜ」から理解する",
+    body: "慶應の理科は公式の暗記だけでは解けない問題が多い。特に物理は「この状況では力はどの方向に働くか」を自分でモデル化する力が求められます。化学の有機構造決定は、反応機構を根拠に筋道を立てて解く力が必要です。問題演習の前に教科書の理論を徹底的に理解することが近道です。",
+  },
+  {
+    step: "05",
+    title: "過去問は「採点者視点」で解く",
+    body: "慶應医学部の過去問は、解くだけでなく「採点者が何を見ているか」を意識しながら分析することが重要です。模範解答と自分の解答を比べて、何が足りないかを言語化してください。過去問演習は受験直前ではなく、高3の夏終わりから始めるのが理想です。",
+  },
+];
+
+const timeline = [
+  {
+    period: "高1・高2",
+    title: "基礎力の徹底構築",
+    tasks: [
+      "英語：単語・文法・読解の基礎を固める。毎日30分の英文読解習慣",
+      "数学：青チャートレベルの問題を完全に理解。解法の暗記ではなく理解",
+      "理科：教科書の原理・定義を言語化できるレベルまで理解",
+      "医療への関心：医療ニュース・書籍を定期的に読む習慣をつける",
+    ],
+  },
+  {
+    period: "高3春（4〜6月）",
+    title: "応用力・論述力の強化",
+    tasks: [
+      "英語：長文読解の時間計測トレーニング開始（目標: 1分100語）",
+      "数学：記述式問題の答案作成トレーニング。解法の言語化を意識",
+      "理科：難問演習開始。問題文からモデルを構築する力を養成",
+      "小論文：医療トピックのインプット開始。週1本の小論文作成",
+    ],
+  },
+  {
+    period: "高3夏（7〜8月）",
+    title: "実戦レベルへの引き上げ",
+    tasks: [
+      "英語：英作文の本格練習。採点者が読める答案の作成",
+      "数学：時間内に論証を完成させる練習。部分点戦略の習得",
+      "理科：過去問レベルの問題に慣れる",
+      "面接：志望動機・医療倫理の考えを言語化する練習開始",
+    ],
+  },
+  {
+    period: "高3秋〜冬（9〜12月）",
+    title: "過去問演習と弱点補強",
+    tasks: [
+      "慶應医学部過去問演習（5〜10年分）",
+      "面接模擬練習を複数回実施。外部の視点でフィードバックを受ける",
+      "小論文の完成度を上げる。200字要約→600字論述の反復",
+      "他の私立医学部との受験スケジュール管理",
+    ],
+  },
+  {
+    period: "直前期（1月〜本番）",
+    title: "仕上げと体調管理",
+    tasks: [
+      "過去問の最終確認と弱点の最終チェック",
+      "英語・数学の読み書きを毎日維持",
+      "面接の最終模擬練習。当日のシミュレーション",
+      "睡眠・食事・体調管理を最優先に",
+    ],
   },
 ];
 
 const reasons = [
   {
     title: "講師が現役慶應医学部生",
-    body: "実際に慶應医学部の入試を突破した現役生が指導します。試験の雰囲気・傾向・当日の戦略まで、体験者だからこそ語れるリアルな情報を提供します。",
+    body: "実際に慶應医学部の入試を突破した現役生が指導します。試験の雰囲気・傾向・当日の戦略まで、体験者だからこそ語れるリアルな情報を提供します。参考書や予備校では教えてくれない「合格者の思考プロセス」が学べます。",
   },
   {
     title: "慶應医学部の過去問を完全分析",
-    body: "過去10年以上の過去問を分析し、頻出テーマ・問われやすい思考パターンを体系的に把握。効率的な対策を行います。",
+    body: "過去10年以上の過去問を分析し、頻出テーマ・問われやすい思考パターンを体系的に把握。やみくもに問題を解くのではなく、出題傾向に合わせた効率的な対策を行います。",
   },
   {
     title: "合格者の視点からの指導",
-    body: "慶應医学部を実際に突破した講師だからこそ、本番で何が求められるかを正確に理解しています。スタート地点に関わらず、諦めずにご相談ください。",
+    body: "慶應医学部を実際に突破した講師だからこそ、本番で何が求められるかを正確に理解しています。「なぜこの科目でこの点数が必要か」「どこで差がつくか」を根拠をもって指導します。",
   },
 ];
 
 const faqs = [
   {
+    q: "慶應医学部に受かるには、どのくらいの学力が必要ですか？",
+    a: "一般的に東大理科I類・II類合格レベルの学力が目安とされています。ただし「現時点の学力」よりも「いつから始めるか」と「何をどう対策するか」が重要です。高2から始めれば十分な準備期間があります。現状の学力を把握してから合格までの道筋を逆算する方法が最も現実的です。",
+  },
+  {
+    q: "慶應医学部に受かるには、どの科目が最重要ですか？",
+    a: "英語と数学が最重要です。1次試験の配点比率と難易度から、この2科目で差がつきます。特に英語は読解速度の問題で多くの受験生が失敗するため、早期から対策を始めることが重要です。理科は物理・化学いずれかを選択できますが、どちらも本質的な理解が必要です。",
+  },
+  {
     q: "慶應医学部はどのくらい難しいですか？",
-    a: "私立医学部の中でも最難関に位置する大学です。しかし、正しい対策と十分な準備があれば手が届かない大学ではありません。まずは現状の学力をヒアリングし、合格までの道筋をお伝えします。",
+    a: "私立医学部の中でも最難関に位置しますが、正しい対策と十分な準備期間があれば手が届かない大学ではありません。合格者の多くが「どの科目で点を取るか」の戦略を明確に持っていた点が共通しています。まずは現状の学力をヒアリングし、具体的な合格戦略をお伝えします。",
   },
   {
     q: "慶應医学部対策はいつから始めればいいですか？",
-    a: "早ければ早いほどいいですが、高3からでも間に合ったケースがあります。まず現状を把握し、必要な準備期間を逆算します。",
+    a: "早ければ早いほど選択肢が広がりますが、高3からでも合格したケースがあります。ただし高3からの場合は、英語・数学の基礎が固まっていることが前提です。現状の学力によってプランが異なるため、まずは無料相談でご確認ください。",
+  },
+  {
+    q: "慶應医学部の面接対策はどうすればいいですか？",
+    a: "面接は最低でも本番の3〜4ヶ月前から準備を始めることをお勧めします。医療倫理・生命科学の知識を蓄えつつ、自分の考えを言語化する練習が必要です。Medvanceでは現役慶應医学部生による模擬面接を実施し、採点者目線でのフィードバックを提供しています。",
   },
   {
     q: "慶應医学部専願で対策できますか？",
-    a: "はい。慶應医学部に特化した対策プランを組むことが可能です。他の医学部と並行して受験する場合のプランもご提案できます。",
+    a: "はい、慶應医学部に特化した対策プランを組むことが可能です。他の私立医学部と並行して受験する場合のスケジュール管理プランもご提案できます。",
   },
 ];
 
 export default function KeioPage() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
@@ -76,55 +186,119 @@ export default function KeioPage() {
         </div>
       </div>
 
+      {/* 入試概要 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             慶應義塾大学医学部の入試概要と特徴
           </h2>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-            <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
-              慶應義塾大学医学部の一般選抜は、1次試験（英語・数学・物理または化学）と2次試験（小論文・面接）の二段階選抜です。1次試験では高い学力が問われ、特に英語・数学は思考力・記述力重視の出題スタイルが特徴的です。2次試験の面接では医師としての適性・倫理観・社会問題への視点が問われ、単なる学力以上の準備が必要になります。私立医学部の中でも最難関と位置付けられていますが、Medvanceでは現役慶應医学部生の講師が自身の合格体験をもとに、戦略的な対策を提供しています。
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
+              慶應義塾大学医学部の一般選抜は、1次試験（英語・数学・物理または化学）と2次試験（小論文・面接）の二段階選抜です。1次試験では高い学力が問われ、特に英語・数学は思考力・記述力重視の出題スタイルが特徴的です。
             </p>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
+              2次試験の面接では医師としての適性・倫理観・社会問題への視点が問われ、単なる学力以上の準備が必要になります。私立医学部の中でも最難関と位置付けられていますが、Medvanceでは現役慶應医学部生の講師が自身の合格体験をもとに、戦略的な対策を提供しています。
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+              {[
+                { label: "募集人員", value: "一般約66名" },
+                { label: "競争倍率", value: "6〜8倍" },
+                { label: "1次試験", value: "英・数・理" },
+                { label: "2次試験", value: "小論文・面接" },
+              ].map((item) => (
+                <div key={item.label} className="text-center p-3 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                  <p className="text-xs mb-1" style={{ color: "#c9922a" }}>{item.label}</p>
+                  <p className="font-bold text-sm" style={{ color: "#0c1a33" }}>{item.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
+      {/* 慶應医学部に受かるには */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-            科目別対策のポイント
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            慶應医学部に受かるには｜合格のための5つの戦略
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {subjects.map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                <p className="font-bold text-base mb-3" style={{ color: "#c9922a" }}>{item.name}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            慶應医学部を実際に突破した現役生の視点から、合否を分ける戦略を解説します。「難しいから対策も難しいはず」ではありません。合格者には共通した考え方と行動パターンがあります。
+          </p>
+          <div className="space-y-6">
+            {strategies.map((item) => (
+              <div key={item.step} className="flex gap-5 p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: "#c9922a" }}>
+                  {item.step}
+                </div>
+                <div>
+                  <p className="font-bold text-base mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
+      {/* 科目別対策 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-            なぜMedvanceが慶應医学部合格に強いか
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            科目別対策のポイント
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {reasons.map((item, i) => (
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            各科目の出題傾向と、現役慶應医学部生が実践した具体的な対策を解説します。
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {subjects.map((item, i) => (
               <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold mb-4" style={{ backgroundColor: "#c9922a" }}>
-                  {i + 1}
+                <div className="flex items-center justify-between mb-3">
+                  <p className="font-bold text-base" style={{ color: "#c9922a" }}>{item.name}</p>
+                  <p className="text-xs" style={{ color: "#c9922a" }}>{item.level}</p>
                 </div>
-                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: "#3d3d3d" }}>{item.body}</p>
+                <p className="text-xs leading-relaxed p-3 rounded-lg" style={{ color: "#6b7280", backgroundColor: "#f7f5f0" }}>{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
+      {/* 合格までのスケジュール */}
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            慶應医学部合格までのスケジュール
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            いつ、何を、どのくらいやるべきか。合格者の勉強ロードマップを公開します。
+          </p>
+          <div className="space-y-4">
+            {timeline.map((item, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
+                <div className="flex items-center gap-4 px-6 py-4" style={{ backgroundColor: i % 2 === 0 ? "#0c1a33" : "#1a3a72" }}>
+                  <span className="text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>{item.period}</span>
+                  <span className="font-bold text-sm text-white">{item.title}</span>
+                </div>
+                <div className="p-6">
+                  <ul className="space-y-2">
+                    {item.tasks.map((task, j) => (
+                      <li key={j} className="flex gap-3 text-sm" style={{ color: "#6b7280" }}>
+                        <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-1.5" style={{ backgroundColor: "#c9922a" }} />
+                        {task}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 入試データ */}
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             慶應義塾大学医学部の入試データ
@@ -132,7 +306,7 @@ export default function KeioPage() {
           <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
             慶應医学部の入試は年度によって変動しますが、ここでは概況をまとめます。最新の情報は大学公式サイトで確認してください。
           </p>
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 label: "募集人員",
@@ -155,21 +329,26 @@ export default function KeioPage() {
                 note: "他の私立医学部と日程が重なることが多いため、出願スケジュールの管理が重要です。複数校受験の場合は日程の確認を早めに行いましょう。",
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
                 <p className="text-xs font-bold tracking-wide uppercase mb-1" style={{ color: "#c9922a" }}>{item.label}</p>
                 <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.value}</p>
                 <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.note}</p>
               </div>
             ))}
           </div>
+        </div>
+      </div>
 
+      {/* 失敗パターン */}
+      <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             慶應医学部を目指す上で多くの受験生が陥る失敗
           </h2>
           <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            慶應医学部は「難しいから対策も難しいはず」と思いがちですが、実際に受験した立場から見ると、合格した人と落ちた人の間には、意外と共通した失敗パターンがあります。
+            慶應医学部は「難しいから対策も難しいはず」と思いがちですが、実際に受験した立場から見ると、合格した人と落ちた人の間には共通した失敗パターンがあります。
           </p>
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: "英語の速度不足で時間切れ",
@@ -184,7 +363,7 @@ export default function KeioPage() {
                 body: "慶應の面接は準備なしでは対応できません。医師としての倫理観・社会問題への見解・志望理由の深掘りなど、即席で答えられる質問ではありません。3〜4か月前から取り組まないと間に合わないケースがあります。",
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
                 <p className="font-bold text-sm mb-3" style={{ color: "#0c1a33" }}>落とし穴 {i + 1}. {item.title}</p>
                 <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
               </div>
@@ -193,7 +372,28 @@ export default function KeioPage() {
         </div>
       </div>
 
+      {/* なぜMedvanceか */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            なぜMedvanceが慶應医学部合格に強いか
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {reasons.map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold mb-4" style={{ backgroundColor: "#c9922a" }}>
+                  {i + 1}
+                </div>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 合格者の声 */}
+      <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             合格者の声
@@ -207,6 +407,7 @@ export default function KeioPage() {
         </div>
       </div>
 
+      {/* FAQ */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
@@ -223,6 +424,7 @@ export default function KeioPage() {
         </div>
       </div>
 
+      {/* CTA */}
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
