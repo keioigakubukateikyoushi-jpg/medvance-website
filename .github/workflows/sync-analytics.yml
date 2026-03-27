@@ -1,0 +1,50 @@
+name: 📊 毎日 GA4 → Notion 同期
+
+on:
+  schedule:
+    # 毎朝9:00 JST (= UTC 0:00) に昨日分を取得
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "取得日 (YYYY-MM-DD)。空欄なら昨日"
+        required: false
+        default: ""
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install --save-dev @google-analytics/data @notionhq/client googleapis
+
+      - name: Run sync
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT: ${{ secrets.GA4_SERVICE_ACCOUNT }}
+          SC_SITE_URL: ${{ secrets.SC_SITE_URL }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          NOTION_PARENT_PAGE_ID: ${{ secrets.NOTION_PARENT_PAGE_ID }}
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            node scripts/sync-analytics.mjs --date ${{ github.event.inputs.date }}
+          else
+            node scripts/sync-analytics.mjs
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::GA4→Notion同期に失敗しました。Secretsの設定を確認してください。"
