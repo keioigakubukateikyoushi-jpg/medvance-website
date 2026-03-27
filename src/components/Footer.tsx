@@ -22,14 +22,28 @@ export default function Footer() {
 
           {/* 対象・志望校 */}
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>対象・志望校</p>
-            <nav className="space-y-2 text-sm">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>対象者</p>
+            <nav className="space-y-2 text-sm mb-5">
               {[
                 { label: "浪人生の方", href: "/for/ronin" },
                 { label: "再受験生の方", href: "/for/saijuken" },
                 { label: "保護者の方", href: "/for/parents" },
-                { label: "慶應医学部対策", href: "/universities/keio" },
-                { label: "私立医学部対策", href: "/universities/private" },
+              ].map((l) => (
+                <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>大学別対策</p>
+            <nav className="space-y-2 text-sm">
+              {[
+                { label: "慶應義塾大学医学部", href: "/universities/keio" },
+                { label: "東京慈恵会医科大学", href: "/universities/jikei" },
+                { label: "順天堂大学医学部", href: "/universities/juntendo" },
+                { label: "日本医科大学", href: "/universities/nippon-medical" },
+                { label: "昭和大学医学部", href: "/universities/showa" },
+                { label: "東京医科大学", href: "/universities/tokyo-ika" },
+                { label: "私立医学部（一覧）", href: "/universities/private" },
                 { label: "国公立医学部対策", href: "/universities/national" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>

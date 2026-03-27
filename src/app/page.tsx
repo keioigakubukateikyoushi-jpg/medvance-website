@@ -681,88 +681,109 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 10.5 UNIVERSITY LINKS ──────────────── */}
+      <section className="bg-white py-24 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              大学別対策
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+              志望校別・入試対策ガイド
+            </h2>
+            <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+              各大学の出題傾向・合格戦略・科目別対策を現役慶應医学部生が解説
+            </p>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+            {[
+              { name: "慶應義塾大学医学部", badge: "最難関", desc: "思考力・論証力重視。小論文・面接の比重が高い", href: "/universities/keio" },
+              { name: "東京慈恵会医科大学", badge: "難関", desc: "英語最難関レベル。慈恵の医師像への理解が重要", href: "/universities/jikei" },
+              { name: "順天堂大学医学部", badge: "難関", desc: "バランス型出題。MMI面接方式を採用", href: "/universities/juntendo" },
+              { name: "日本医科大学", badge: "難関", desc: "数学・理科の記述難問。面接2回実施", href: "/universities/nippon-medical" },
+              { name: "昭和大学医学部", badge: "標準〜難", desc: "基礎の完成度が合否を分ける。正確性重視", href: "/universities/showa" },
+              { name: "東京医科大学", badge: "標準〜難", desc: "全科目バランス型。近年は思考力問題が増加", href: "/universities/tokyo-ika" },
+            ].map((u, i) => (
+              <FadeIn key={i} delay={i * 0.05}>
+                <Link
+                  href={u.href}
+                  className="block p-5 rounded-xl group hover:shadow-md transition-shadow h-full"
+                  style={{ border: "1px solid #e5e1d8", backgroundColor: "#faf9f6" }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-bold px-2 py-0.5 rounded" style={{ backgroundColor: "rgba(201,146,42,0.12)", color: "#c9922a" }}>{u.badge}</span>
+                  </div>
+                  <p className="font-bold text-sm mb-1.5 group-hover:underline" style={{ color: "#0c1a33" }}>{u.name}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{u.desc}</p>
+                  <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>対策ガイドを見る →</p>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link href="/universities/private" className="text-sm font-semibold hover:underline" style={{ color: "#6b7280" }}>
+              その他の私立医学部一覧を見る →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── 11. COLUMN PREVIEW ─────────────────── */}
-      <section className="bg-white py-24 px-4">
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
               Column
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-              最新コラム
+              医学部受験コラム
             </h2>
             <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
               現役慶應医学部生が書く、医学部受験のリアルな情報
             </p>
           </FadeIn>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-3 gap-5 mb-10">
             {[
-              {
-                tag: "勉強法",
-                title: "医学部合格のための正しい勉強法",
-                desc: "科目別の効率的な学習法から、医学部特有の試験対策まで。合格者が実践した再現性ある勉強法を解説します。",
-                href: "/column/study-method",
-              },
-              {
-                tag: "計画",
-                title: "医学部受験ロードマップ",
-                desc: "いつから・何を・どう勉強すべきか。高校生から社会人まで、目標から逆算した受験スケジュールを紹介します。",
-                href: "/column/roadmap",
-              },
-              {
-                tag: "合格分析",
-                title: "医学部に受かる人・落ちる人の違い",
-                desc: "毎年多くの受験生を見てきた慶應医学部生が語る、合格者と不合格者を分ける本当の差とは何か。",
-                href: "/column/difference",
-              },
+              { tag: "勉強法", title: "医学部合格のための正しい勉強法", href: "/column/study-method" },
+              { tag: "計画", title: "医学部受験ロードマップ", href: "/column/roadmap" },
+              { tag: "合格分析", title: "医学部に受かる人・落ちる人の違い", href: "/column/difference" },
+              { tag: "私立vs国公立", title: "私立医学部 vs 国公立医学部", href: "/column/shigaku-vs-kokuritsu" },
+              { tag: "面接", title: "医学部面接対策の完全ガイド", href: "/column/mensetu" },
+              { tag: "学費", title: "私立・国公立の学費を徹底比較", href: "/column/gakuhi" },
+              { tag: "タイミング", title: "医学部受験はいつから始めるべきか", href: "/column/juken-timing" },
+              { tag: "偏差値", title: "偏差値と医学部合格の関係", href: "/column/hensachi" },
+              { tag: "再受験", title: "再受験で医学部に合格する方法", href: "/column/saijuken" },
             ].map((col, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <HoverCard
-                  className="block rounded-2xl overflow-hidden h-full"
+              <FadeIn key={i} delay={(i % 3) * 0.07}>
+                <Link
+                  href={col.href}
+                  className="flex items-start gap-3 p-4 rounded-xl group hover:shadow-sm transition-shadow bg-white"
                   style={{ border: "1px solid #e5e1d8" }}
                 >
-                  <a href={col.href} className="block group h-full">
-                    {/* Top color bar */}
-                    <div className="h-1.5" style={{ backgroundColor: "#c9922a" }} />
-                    <div className="p-6">
-                      <span
-                        className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-4"
-                        style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}
-                      >
-                        {col.tag}
-                      </span>
-                      <h3
-                        className="font-bold text-base mb-3 leading-snug group-hover:underline"
-                        style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
-                      >
-                        {col.title}
-                      </h3>
-                      <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-                        {col.desc}
-                      </p>
-                      <div className="flex items-center gap-1 mt-5 text-xs font-semibold" style={{ color: "#c9922a" }}>
-                        続きを読む
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-                      </div>
-                    </div>
-                  </a>
-                </HoverCard>
+                  <span
+                    className="flex-shrink-0 text-xs font-semibold px-2 py-1 rounded-full mt-0.5"
+                    style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}
+                  >
+                    {col.tag}
+                  </span>
+                  <p className="font-semibold text-sm leading-snug group-hover:underline" style={{ color: "#0c1a33" }}>
+                    {col.title}
+                  </p>
+                </Link>
               </FadeIn>
             ))}
           </div>
           <div className="text-center">
-            <a
+            <Link
               href="/column"
               className="inline-flex items-center gap-2 px-8 py-4 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity"
               style={{ backgroundColor: "#0c1a33", color: "#fff" }}
             >
-              コラム一覧を見る
+              コラム一覧をすべて見る
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
