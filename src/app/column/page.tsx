@@ -3,6 +3,39 @@
 import Link from "next/link";
 import { useState } from "react";
 
+// 大学別対策ページ（/universities/配下）
+const universityArticles: { slug: string; href: string; category: string; title: string; description: string; popular: boolean }[] = [
+  { slug: "keio", href: "/universities/keio", category: "大学別対策", title: "慶應義塾大学医学部 入試対策ガイド", description: "思考力・論証力重視の英数理。小論文・面接の比重が高く、医師としての人間性が問われる最難関私立医学部の完全攻略ガイド。", popular: true },
+  { slug: "jikei", href: "/universities/jikei", category: "大学別対策", title: "東京慈恵会医科大学 入試対策ガイド", description: "英語が私立医学部最難関レベル。医学系長文読解と英作文の対策が合否を分ける。「慈恵の医師像」を深く理解した面接準備が必須。", popular: true },
+  { slug: "juntendo", href: "/universities/juntendo", category: "大学別対策", title: "順天堂大学医学部 入試対策ガイド", description: "バランス型の出題で基礎力の完成度が問われる。MMI面接方式を採用しており、全科目を均等に仕上げる戦略が有効。", popular: true },
+  { slug: "nippon-medical", href: "/universities/nippon-medical", category: "大学別対策", title: "日本医科大学 入試対策ガイド", description: "数学・理科の記述難問が特徴。解法の論理性が評価される。面接が2回実施される独自の選考フローへの対策が重要。", popular: false },
+  { slug: "showa", href: "/universities/showa", category: "大学別対策", title: "昭和大学医学部 入試対策ガイド", description: "基礎力を重視した出題スタイル。受験者数が多く、基礎問題での取りこぼしが命取り。正確性とスピードを徹底的に鍛える。", popular: false },
+  { slug: "tokyo-ika", href: "/universities/tokyo-ika", category: "大学別対策", title: "東京医科大学 入試対策ガイド", description: "英語・数学・理科2科目のバランス型出題。標準〜やや難の問題が中心で、近年は思考力を問う問題が増加している。", popular: false },
+  { slug: "nihon", href: "/universities/nihon", category: "大学別対策", title: "日本大学医学部 入試対策ガイド", description: "標準〜やや難のバランス型出題。全科目で基礎〜標準問題を確実に取ることが合格への最短ルート。", popular: false },
+  { slug: "toho", href: "/universities/toho", category: "大学別対策", title: "東邦大学医学部 入試対策ガイド", description: "英語の長文量が多く読解スピードが鍵。計算問題でのミスが合否を分ける。全体的に標準レベルで安定した実力が求められる。", popular: false },
+  { slug: "kyorin", href: "/universities/kyorin", category: "大学別対策", title: "杏林大学医学部 入試対策ガイド", description: "比較的取り組みやすい問題構成。基礎の完成が最重要で、標準問題を確実に解く力が合否を決める。", popular: false },
+  { slug: "teikyo", href: "/universities/teikyo", category: "大学別対策", title: "帝京大学医学部 入試対策ガイド", description: "マークシート中心の出題。典型問題が多く、スピードと正確性の両立が求められる実践的な対策が有効。", popular: false },
+  { slug: "tokai", href: "/universities/tokai", category: "大学別対策", title: "東海大学医学部 入試対策ガイド", description: "英語の長文読解と数学の計算力が重要。標準レベルの問題が中心で、全科目バランスよく仕上げることが合格の鍵。", popular: false },
+  { slug: "kitasato", href: "/universities/kitasato", category: "大学別対策", title: "北里大学医学部 入試対策ガイド", description: "理科の難易度がやや高い。基礎を固めた上で理科を重点強化することで合格ラインに届く。面接も重要視される。", popular: false },
+  { slug: "marianna", href: "/universities/marianna", category: "大学別対策", title: "聖マリアンナ医科大学 入試対策ガイド", description: "建学精神に基づいた面接が特徴。ボランティア経験や医療への動機が重視される。学力は標準〜やや難のレベル。", popular: false },
+  { slug: "joshi-ika", href: "/universities/joshi-ika", category: "大学別対策", title: "東京女子医科大学 入試対策ガイド", description: "女子医学部唯一の専門校。面接では女性医師としての覚悟と将来像を問われる。基礎力重視の出題スタイル。", popular: false },
+  { slug: "iuhw", href: "/universities/iuhw", category: "大学別対策", title: "国際医療福祉大学医学部 入試対策ガイド", description: "英語重視のグローバル教育が特徴。英語力が特に重要で、英語長文・英作文への十分な対策が必須。", popular: false },
+  { slug: "dokkyo", href: "/universities/dokkyo", category: "大学別対策", title: "獨協医科大学 入試対策ガイド", description: "英語・数学の基礎固めが合否を分ける。標準問題中心の出題で小論文も課される。バランスのよい学習計画が有効。", popular: false },
+  { slug: "saitama-ika", href: "/universities/saitama-ika", category: "大学別対策", title: "埼玉医科大学 入試対策ガイド", description: "標準レベルの出題が中心。基礎を丁寧に固めることで安定した得点が可能。面接では地域医療への関心が評価される。", popular: false },
+  { slug: "kansai-ika", href: "/universities/kansai-ika", category: "大学別対策", title: "関西医科大学 入試対策ガイド", description: "関西圏の難関私立医学部。英語の読解力が特に重要。標準〜やや難の問題で、全科目のバランスが求められる。", popular: false },
+  { slug: "kindai", href: "/universities/kindai", category: "大学別対策", title: "近畿大学医学部 入試対策ガイド", description: "近年難化傾向あり。英語の長文読解力が鍵。標準〜やや難の問題が中心で、関西圏の受験生に人気の医学部。", popular: false },
+  { slug: "osaka-ika", href: "/universities/osaka-ika", category: "大学別対策", title: "大阪医科薬科大学 入試対策ガイド", description: "関西圏の名門。全体的に難易度が高く、英数理でそれぞれ高いレベルの実力が求められる。", popular: false },
+  { slug: "hyogo", href: "/universities/hyogo", category: "大学別対策", title: "兵庫医科大学 入試対策ガイド", description: "標準レベルの出題。全科目バランスよく仕上げることが合格への近道。面接重視の選考スタイルが特徴。", popular: false },
+  { slug: "fujita", href: "/universities/fujita", category: "大学別対策", title: "藤田医科大学 入試対策ガイド", description: "中部圏最大規模の医学部。比較的取り組みやすい問題が多く、基礎〜標準力の完成が合格の条件。", popular: false },
+  { slug: "aichi-ika", href: "/universities/aichi-ika", category: "大学別対策", title: "愛知医科大学 入試対策ガイド", description: "中部圏の私立医学部。標準問題中心の出題で、基礎力の完成度が合否を直接左右する。", popular: false },
+  { slug: "kanazawa-ika", href: "/universities/kanazawa-ika", category: "大学別対策", title: "金沢医科大学 入試対策ガイド", description: "北陸唯一の私立医学部。標準レベルの問題が中心で、理科のバランスよい対策が重要。", popular: false },
+  { slug: "kurume", href: "/universities/kurume", category: "大学別対策", title: "久留米大学医学部 入試対策ガイド", description: "九州圏の私立医学部。英語の読解力と理科の基礎が合否を分ける。標準問題を確実に取る実力が必要。", popular: false },
+  { slug: "fukuoka", href: "/universities/fukuoka", category: "大学別対策", title: "福岡大学医学部 入試対策ガイド", description: "九州圏。全科目バランス型の出題が特徴。標準問題で失点しない完成度の高い学力が求められる。", popular: false },
+  { slug: "kawasaki-ika", href: "/universities/kawasaki-ika", category: "大学別対策", title: "川崎医科大学 入試対策ガイド", description: "岡山県の私立医学部。合格難易度は比較的低め。ただし学費が高水準のため、費用面も含めた計画的な受験戦略が必要。", popular: false },
+  { slug: "iwate", href: "/universities/iwate", category: "大学別対策", title: "岩手医科大学 入試対策ガイド", description: "東北地方の私立医学部。標準問題中心。地元出身者への配慮もある地域密着型の医学部で、地域医療への志望動機が重視される。", popular: false },
+  { slug: "tohoku-ika", href: "/universities/tohoku-ika", category: "大学別対策", title: "東北医科薬科大学 入試対策ガイド", description: "2016年新設の医学部。東北の医療人材育成を目的とした建学理念を持つ。標準〜やや難の出題で、英数理の基礎力が重要。", popular: false },
+];
+
 const articles = [
   {
     slug: "study-method",
@@ -104,9 +137,10 @@ const articles = [
   },
 ];
 
-const categories = ["すべて", "受験戦略", "勉強法", "大学選び", "入試対策", "再受験", "塾・指導", "受験情報"];
+const categories = ["すべて", "大学別対策", "受験戦略", "勉強法", "大学選び", "入試対策", "再受験", "塾・指導", "受験情報"];
 
 const categoryColors: Record<string, string> = {
+  大学別対策: "#0c6e4f",
   受験戦略: "#3b6cb7",
   勉強法: "#2a9d5c",
   大学選び: "#7c5cbf",
@@ -116,14 +150,19 @@ const categoryColors: Record<string, string> = {
   受験情報: "#6b7280",
 };
 
+const allArticles = [
+  ...universityArticles.map((a) => ({ ...a, href: a.href })),
+  ...articles.map((a) => ({ ...a, href: `/column/${a.slug}` })),
+];
+
 export default function ColumnIndexPage() {
   const [activeCategory, setActiveCategory] = useState("すべて");
 
   const filtered = activeCategory === "すべて"
-    ? articles
-    : articles.filter((a) => a.category === activeCategory);
+    ? allArticles
+    : allArticles.filter((a) => a.category === activeCategory);
 
-  const popular = articles.filter((a) => a.popular);
+  const popular = allArticles.filter((a) => a.popular);
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,7 +180,7 @@ export default function ColumnIndexPage() {
             現役慶應医学部生が、受験に本当に役立つ情報を解説します
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold" style={{ backgroundColor: "rgba(201,146,42,0.2)", color: "#c9922a", border: "1px solid rgba(201,146,42,0.4)" }}>
-            全{articles.length}記事
+            全{allArticles.length}記事
           </div>
         </div>
       </div>
@@ -154,7 +193,7 @@ export default function ColumnIndexPage() {
             {popular.map((a) => (
               <Link
                 key={a.slug}
-                href={`/column/${a.slug}`}
+                href={a.href}
                 className="flex items-start gap-3 p-4 rounded-xl bg-white hover:shadow-md transition-shadow group"
                 style={{ border: "1px solid #e5e1d8" }}
               >
@@ -193,7 +232,7 @@ export default function ColumnIndexPage() {
                 {cat}
                 {cat !== "すべて" && (
                   <span className="ml-1.5 text-xs opacity-60">
-                    {articles.filter((a) => a.category === cat).length}
+                    {allArticles.filter((a) => a.category === cat).length}
                   </span>
                 )}
               </button>
@@ -209,8 +248,8 @@ export default function ColumnIndexPage() {
           <div className="grid md:grid-cols-2 gap-5">
             {filtered.map((article, i) => (
               <Link
-                key={article.slug}
-                href={`/column/${article.slug}`}
+                key={`${article.category}-${article.slug}`}
+                href={article.href}
                 className="flex gap-5 p-6 rounded-2xl bg-white hover:shadow-md transition-shadow group"
                 style={{ border: "1px solid #e5e1d8" }}
               >
@@ -219,7 +258,7 @@ export default function ColumnIndexPage() {
                   className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
                   style={{ backgroundColor: "#f7f5f0", color: "#0c1a33" }}
                 >
-                  {String(articles.indexOf(article) + 1).padStart(2, "0")}
+                  {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2 mb-2">
