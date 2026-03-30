@@ -9,7 +9,7 @@ export const metadata = {
 
 const stats = [
   { label: "募集人員", value: "約70名" },
-  { label: "競争倍率", value: "年度で変動" },
+  { label: "競争倍率", value: "約9倍" },
   { label: "1次試験", value: "英・数・理2科目" },
   { label: "2次試験", value: "面接・小論文" },
 ];
