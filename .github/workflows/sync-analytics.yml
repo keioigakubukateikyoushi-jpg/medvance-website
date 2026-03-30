@@ -15,28 +15,51 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+      GA4_SERVICE_ACCOUNT: ${{ secrets.GA4_SERVICE_ACCOUNT }}
+      SC_SITE_URL: ${{ secrets.SC_SITE_URL }}
+      NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+      NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      NOTION_PARENT_PAGE_ID: ${{ secrets.NOTION_PARENT_PAGE_ID }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate required secrets
+        id: secrets
+        shell: bash
+        run: |
+          missing=()
+          [ -n "$GA4_PROPERTY_ID" ] || missing+=("GA4_PROPERTY_ID")
+          [ -n "$GA4_SERVICE_ACCOUNT" ] || missing+=("GA4_SERVICE_ACCOUNT")
+          [ -n "$NOTION_API_KEY" ] || missing+=("NOTION_API_KEY")
+          [ -n "$NOTION_DATABASE_ID" ] || missing+=("NOTION_DATABASE_ID")
+
+          if [ ${#missing[@]} -gt 0 ]; then
+            {
+              echo "configured=false"
+              echo "missing=$(IFS=,; echo "${missing[*]}")"
+            } >> "$GITHUB_OUTPUT"
+            echo "::warning::Skipping GA4→Notion sync because required secrets are missing: $(IFS=,; echo "${missing[*]}")"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Node.js
+        if: steps.secrets.outputs.configured == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
       - name: Install dependencies
+        if: steps.secrets.outputs.configured == 'true'
         run: npm install --save-dev @google-analytics/data @notionhq/client googleapis
 
       - name: Run sync
-        env:
-          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
-          GA4_SERVICE_ACCOUNT: ${{ secrets.GA4_SERVICE_ACCOUNT }}
-          SC_SITE_URL: ${{ secrets.SC_SITE_URL }}
-          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-          NOTION_PARENT_PAGE_ID: ${{ secrets.NOTION_PARENT_PAGE_ID }}
+        if: steps.secrets.outputs.configured == 'true'
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
             node scripts/sync-analytics.mjs --date ${{ github.event.inputs.date }}
@@ -44,7 +67,12 @@ jobs:
             node scripts/sync-analytics.mjs
           fi
 
+      - name: Report skipped sync
+        if: steps.secrets.outputs.configured != 'true'
+        run: |
+          echo "::warning::GA4→Notion sync was skipped. Add these GitHub secrets to enable it: ${{ steps.secrets.outputs.missing }}"
+
       - name: Notify on failure
-        if: failure()
+        if: failure() && steps.secrets.outputs.configured == 'true'
         run: |
           echo "::error::GA4→Notion同期に失敗しました。Secretsの設定を確認してください。"
