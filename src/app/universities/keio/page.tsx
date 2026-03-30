@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MedvanceBanner from "@/components/MedvanceBanner";
 
 export const metadata = {
   title: "慶應医学部に受かるには｜入試対策・合格戦略を現役生が解説 | Medvance",
@@ -423,6 +424,8 @@ export default function KeioPage() {
           </div>
         </div>
       </div>
+
+      <MedvanceBanner />
 
       {/* CTA */}
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>

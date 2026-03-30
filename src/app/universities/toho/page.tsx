@@ -111,7 +111,7 @@ export default function TohoPage() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { label: "募集人員", value: "約100名" },
+                { label: "募集人員", value: "約70名" },
                 { label: "競争倍率", value: "4〜6倍" },
                 { label: "1次試験", value: "英・数・理2科目" },
                 { label: "2次試験", value: "面接" },
