@@ -129,6 +129,13 @@ const articles = [
     popular: false,
   },
   {
+    slug: "support-juku-choice",
+    category: "塾・指導",
+    title: "医学部受験の塾はサポート体制で選ぶべき理由",
+    description: "医学部専門予備校の高額な学費、大手予備校の一律カリキュラム、オーダーメイド指導の強みを比較。伴走型サポートの重要性を解説します。",
+    popular: false,
+  },
+  {
     slug: "kateikyoushi",
     category: "塾・指導",
     title: "医学部受験に家庭教師は効果的か？選び方と活用法",
