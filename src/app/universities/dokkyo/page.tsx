@@ -7,8 +7,8 @@ export const metadata = {
 };
 
 const overviewStats = [
-  { label: "募集人員", value: "約110名" },
-  { label: "競争倍率", value: "6〜9倍" },
+  { label: "募集人員", value: "52名" },
+  { label: "競争倍率", value: "年度で変動" },
   { label: "1次試験", value: "英・数・理科2科目" },
   { label: "2次試験", value: "小論文・面接" },
 ];

@@ -104,7 +104,7 @@ export default function TohoPage() {
           <h2 className="text-2xl font-bold text-center mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>東邦大学医学部の入試概要</h2>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
-              東邦大学医学部は、千葉県習志野市に位置する私立医学部です。一般選抜では英語・数学・理科2科目の筆記試験と面接が課されます。英語は長文の文量が多めであることが特徴で、読解スピードが重要なポイントです。
+              東邦大学医学部は東京都大田区大森西に位置し、一般入試の2次試験も大森キャンパスで実施されます。一般選抜では英語・数学・理科2科目の筆記試験と面接が課されます。英語は長文の文量が多めであることが特徴で、読解スピードが重要なポイントです。
             </p>
             <p className="text-sm leading-relaxed mb-6" style={{ color: "#3d3d3d" }}>
               問題全体の難易度は標準レベルで、計算問題での正確性が合否を分ける傾向があります。基礎から標準問題を確実に得点する力を養いながら、英語の読解力を重点的に強化する戦略が有効です。
@@ -112,7 +112,7 @@ export default function TohoPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label: "募集人員", value: "約70名" },
-                { label: "競争倍率", value: "4〜6倍" },
+                { label: "競争倍率", value: "年度で変動" },
                 { label: "1次試験", value: "英・数・理2科目" },
                 { label: "2次試験", value: "面接" },
               ].map((item) => (
