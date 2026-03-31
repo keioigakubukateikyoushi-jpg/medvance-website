@@ -91,6 +91,27 @@ const searchIntentLinks = [
   { label: "保護者向けの情報を知りたい", href: "/for/parents", desc: "塾選び、費用、サポートの考え方" },
 ];
 
+const decisionLinks = [
+  {
+    tag: "信頼",
+    title: "合格体験記を読む",
+    desc: "現役・浪人・再受験それぞれの出発点と、何が変わって合格に近づいたかを確認できます。",
+    href: "/success-stories",
+  },
+  {
+    tag: "料金",
+    title: "料金と始め方を見る",
+    desc: "週1〜週3の目安、費用感、無料相談で決まることをまとめています。",
+    href: "/pricing",
+  },
+  {
+    tag: "保護者",
+    title: "保護者向け情報を見る",
+    desc: "親が確認したいサポート体制、進捗報告、面談の進め方を整理しています。",
+    href: "/for/parents",
+  },
+];
+
 /* ── Page ─────────────────────────────────── */
 export default function Home() {
   return (
@@ -254,6 +275,64 @@ export default function Home() {
                 style={{ backgroundColor: "#0c1a33", color: "#fff" }}
               >
                 合格体験記をもっと見る →
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── 3.8 DECISION HUB ─────────────────── */} 
+      <section style={{ backgroundColor: "#f7f5f0", borderTop: "1px solid #e5e1d8", borderBottom: "1px solid #e5e1d8" }} className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
+              Decision Support
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+              比較検討でよく見られるページ
+            </h2>
+            <p className="text-center text-sm mb-12 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+              すぐに申し込まない方でも大丈夫です。まずは「信頼できるか」「料金感は合うか」「親として確認すべきことは何か」を整理できる導線を用意しています。
+            </p>
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-5 mb-8">
+            {decisionLinks.map((item, i) => (
+              <FadeIn key={item.href} delay={i * 0.08}>
+                <Link
+                  href={item.href}
+                  className="block h-full rounded-2xl p-6 bg-white hover:shadow-md transition-shadow"
+                  style={{ border: "1px solid #e5e1d8" }}
+                >
+                  <span
+                    className="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold mb-4"
+                    style={{ backgroundColor: "rgba(201,146,42,0.12)", color: "#c9922a" }}
+                  >
+                    {item.tag}
+                  </span>
+                  <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>
+                    {item.title}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                    {item.desc}
+                  </p>
+                  <p className="text-xs font-semibold mt-5" style={{ color: "#c9922a" }}>
+                    詳しく見る →
+                  </p>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn delay={0.12}>
+            <div className="text-center">
+              <Link
+                href="/contact?from=home-decision-hub"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#0c1a33", color: "#fff" }}
+              >
+                迷っている段階でも無料相談してみる
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
               </Link>
             </div>
           </FadeIn>

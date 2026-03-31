@@ -1,8 +1,14 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "医学部受験専門塾Medvanceの料金｜週1〜週5のプラン目安と始め方",
+  description:
+    "Medvanceの料金ページです。授業料、コーチング料、入塾金、週1〜週5の月額プラン目安、無料相談で決まることまでまとめています。",
+};
+
 const plans = [
-  { freq: "月4回",  weekly: "週1回", lessons: 4,  lessonFee: 60000,  coaching: 20000, total: 80000,  discount: 0 },
-  { freq: "月8回",  weekly: "週2回", lessons: 8,  lessonFee: 120000, coaching: 20000, total: 140000, discount: 0 },
+  { freq: "月4回", weekly: "週1回", lessons: 4, lessonFee: 60000, coaching: 20000, total: 80000, discount: 0 },
+  { freq: "月8回", weekly: "週2回", lessons: 8, lessonFee: 120000, coaching: 20000, total: 140000, discount: 0 },
   { freq: "月12回", weekly: "週3回", lessons: 12, lessonFee: 180000, coaching: 20000, total: 200000, discount: 20000 },
   { freq: "月16回", weekly: "週4回", lessons: 16, lessonFee: 240000, coaching: 20000, total: 260000, discount: 20000 },
   { freq: "月20回", weekly: "週5回", lessons: 20, lessonFee: 300000, coaching: 20000, total: 320000, discount: 20000 },
@@ -17,10 +23,45 @@ const included = [
   "LINE・メールでの質問対応",
 ];
 
+const fitGuides = [
+  {
+    title: "まず戦略を整えたい方",
+    label: "月4回 / 週1回",
+    body:
+      "学校や仕事と両立しながら、まず勉強の軸と優先順位を整えたい方向けです。授業で弱点を補強しつつ、コーチングで日々の進め方を管理します。",
+  },
+  {
+    title: "最も相談が多い開始パターン",
+    label: "月8回 / 週2回",
+    body:
+      "高3・浪人・再受験の初期相談で最もイメージしやすい頻度です。学習内容の改善と演習量の確保を両立しやすく、標準的な立ち上がり方として使いやすい構成です。",
+  },
+  {
+    title: "短期間で追い上げたい方",
+    label: "月12回以上 / 週3回〜",
+    body:
+      "秋以降の追い上げや、科目数が多い受験生向けです。授業回数を増やしながら、面接・小論文も含めて密度高く進めたい場合に向いています。",
+  },
+];
+
+const pricingFaqs = [
+  {
+    q: "どのプランから始める人が多いですか？",
+    a: "もっとも相談が多いのは週2回です。ただし、現役生でまず勉強の軸を整えたい方は週1回、秋以降に追い上げたい方は週3回以上から始めるケースもあります。無料相談で、現状と残り期間に合わせて整理します。",
+  },
+  {
+    q: "料金を見るときに何を重視すべきですか？",
+    a: "授業回数だけでなく、学習計画・進捗管理・面接や小論文まで含めてどこまで伴走してもらえるかを見るのが重要です。医学部受験は授業だけで完結しないため、設計と管理の比重が大きくなります。",
+  },
+  {
+    q: "無料相談ではどこまで決まりますか？",
+    a: "志望校、現在地、使える時間、優先すべき科目、開始プランの目安まで整理できます。すぐ契約する必要はなく、相談内容をもとに持ち帰って検討していただけます。",
+  },
+];
+
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Page Header */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Pricing</p>
@@ -28,15 +69,26 @@ export default function PricingPage() {
             料金について
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            授業＋コーチングで、合格まで徹底的にサポートします。
+            授業だけでなく、学習計画と進捗管理まで含めて合格まで伴走します。
           </p>
         </div>
       </div>
 
-      <div className="py-20 px-4">
-        <div className="max-w-3xl mx-auto space-y-8">
+      <div className="py-20 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
+              塾選びでは、料金そのものより「その料金で何が含まれているか」を整理することが大切です。医学部受験は授業だけで完結せず、学習計画、進捗管理、面接・小論文、出願まで含めて全体設計が必要になります。
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
+              Medvanceでは、授業とコーチングを分けて考えず、合格まで必要なサポートを一つの流れとして提供しています。まずは費用感と、どのくらいの頻度から始めるのが現実的かを確認してみてください。
+            </p>
+          </div>
+        </div>
+      </div>
 
-          {/* 基本料金 */}
+      <div className="py-20 px-4 bg-white">
+        <div className="max-w-3xl mx-auto space-y-8">
           <div className="p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
             <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33" }}>基本料金</h2>
             <div className="grid grid-cols-2 gap-4 mb-4">
@@ -56,7 +108,6 @@ export default function PricingPage() {
             </p>
           </div>
 
-          {/* 月額プラン */}
           <div>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold" style={{ color: "#0c1a33" }}>月額プラン（授業＋コーチング）</h2>
@@ -116,9 +167,38 @@ export default function PricingPage() {
               })}
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* What's included */}
-          <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+      <div className="py-20 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            どのくらいの頻度から始めるべきか
+          </h2>
+          <p className="text-center text-sm mb-12 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            ここに正解はありません。大切なのは、学力・志望校・残り期間に対して現実的な頻度を選ぶことです。
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {fitGuides.map((item) => (
+              <div key={item.title} className="rounded-2xl p-6 bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
+                  {item.label}
+                </p>
+                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>
+                  {item.title}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-20 px-4 bg-white">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="p-8 rounded-2xl" style={{ border: "1px solid #e5e1d8" }}>
             <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33" }}>料金に含まれるもの</h2>
             <ul className="space-y-3">
               {included.map((item, i) => (
@@ -134,17 +214,45 @@ export default function PricingPage() {
             </ul>
           </div>
 
-          {/* Free Consultation */}
+          <div className="p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+            <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33" }}>無料相談で決まること</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                { title: "現状の整理", body: "志望校、学力、残り期間、使える時間を整理します。" },
+                { title: "優先順位の明確化", body: "何を先に改善すべきかを具体的に言語化します。" },
+                { title: "開始プランの目安", body: "週1〜週3のどこから始めるのが現実的か見えてきます。" },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl p-5 bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                  <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>
+                    {item.title}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold" style={{ color: "#0c1a33" }}>料金に関するよくある質問</h2>
+            {pricingFaqs.map((item) => (
+              <div key={item.q} className="rounded-2xl p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>Q. {item.q}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>A. {item.a}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="p-8 rounded-2xl text-center" style={{ backgroundColor: "#0c1a33" }}>
             <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
               まずは無料相談から
             </h2>
             <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.68)" }}>
-              どのプランが合っているかは、無料相談でヒアリングしたうえでご提案します。
-              お気軽にお問い合わせください。
+              どのプランが合っているかは、無料相談でヒアリングしたうえでご提案します。すぐに契約を決める必要はありません。
             </p>
             <Link
-              href="/contact"
+              href="/contact?from=pricing-page"
               className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg hover:opacity-90 transition-opacity"
               style={{ backgroundColor: "#c9922a" }}
             >
