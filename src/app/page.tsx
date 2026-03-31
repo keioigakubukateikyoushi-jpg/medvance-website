@@ -120,6 +120,19 @@ const decisionLinks = [
   },
 ];
 
+const idealForItems = [
+  "予備校の集団授業では埋まらない弱点が残っている",
+  "何から始めるべきか分からず、計画が止まりがち",
+  "面接・小論文・志望理由書まで含めて医学部受験全体を整えたい",
+  "保護者と本人で受験方針の認識がずれている",
+];
+
+const consultationBenefits = [
+  "現在地の整理: 学力、志望校、スケジュールのどこに詰まりがあるかを明確化",
+  "優先順位の設計: 今やるべきことと後回しにすべきことを切り分け",
+  "伴走イメージの確認: 授業、課題、面接、出願までどう支えるかを具体化",
+];
+
 const homeArticleSchemas = [
   buildItemListSchema(
     "ホームから読める注目コラム",
@@ -181,6 +194,100 @@ export default function Home() {
       </section>
 
       {/* ── 2.5 SEARCH INTENT HUB ─────────────── */}
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                First Message
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                まずは「この塾なら任せる価値がある」と感じてもらう
+              </h2>
+              <p className="text-sm max-w-3xl mx-auto leading-relaxed" style={{ color: "#6b7280" }}>
+                Medvanceは、医学部受験に必要な学科、面接、小論文、出願までを分断せずに支えるための塾です。
+                ただ授業をするだけではなく、今の課題を整理し、志望校に向けて優先順位をつけ、やるべきことが動き出す状態まで一緒につくります。
+              </p>
+            </div>
+          </FadeIn>
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
+            <FadeIn>
+              <div className="rounded-[28px] bg-white p-7 md:p-8 h-full" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                  Ideal For
+                </p>
+                <h3 className="text-xl font-bold mb-4" style={{ color: "#0c1a33" }}>
+                  こういう受験生に合います
+                </h3>
+                <div className="space-y-3">
+                  {idealForItems.map((item, index) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span
+                        className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                        style={{ backgroundColor: "rgba(201,146,42,0.12)", color: "#c9922a" }}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="text-sm leading-relaxed" style={{ color: "#4b5563" }}>
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.08}>
+              <div
+                className="rounded-[28px] p-7 md:p-8 h-full"
+                style={{ background: "linear-gradient(135deg, #0c1a33 0%, #17315f 100%)", border: "1px solid rgba(201,146,42,0.24)" }}
+              >
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                  Free Consultation
+                </p>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  無料相談で分かること
+                </h3>
+                <div className="space-y-3 mb-6">
+                  {consultationBenefits.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span
+                        className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                        style={{ backgroundColor: "rgba(201,146,42,0.16)", color: "#c9922a" }}
+                      >
+                        ✓
+                      </span>
+                      <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.76)" }}>
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/contact?from=home-trust-entry"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#c9922a", color: "#fff" }}
+                  >
+                    無料相談で話してみる
+                  </Link>
+                  <Link
+                    href="/pricing"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "#fff", border: "1px solid rgba(255,255,255,0.18)" }}
+                  >
+                    料金を見る
+                  </Link>
+                </div>
+                <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.42)" }}>
+                  営業だけで終わらず、現状整理と優先順位の設計まで行います。
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-14 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
           <FadeIn>
@@ -967,6 +1074,89 @@ export default function Home() {
               現役慶應医学部生が書く、医学部受験のリアルな情報
             </p>
           </FadeIn>
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-6 mb-8">
+            <FadeIn>
+              <div className="rounded-2xl bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                  Before Contact
+                </p>
+                <h3 className="text-lg font-bold mb-3" style={{ color: "#0c1a33" }}>
+                  相談前に読んでおくと判断しやすい記事
+                </h3>
+                <div className="space-y-3">
+                  {homeFeaturedColumnArticles.slice(0, 4).map((article) => (
+                    <Link
+                      key={article.slug}
+                      href={article.href}
+                      className="block rounded-xl px-4 py-3"
+                      style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+                    >
+                      <p className="text-xs font-bold mb-1" style={{ color: "#c9922a" }}>
+                        {article.category}
+                      </p>
+                      <p className="text-sm font-semibold leading-snug" style={{ color: "#0c1a33" }}>
+                        {article.title}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            <div className="space-y-4">
+              {resolvedColumnTopicClusters.map((cluster, index) => (
+                <FadeIn key={cluster.title} delay={index * 0.08}>
+                  <div className="rounded-2xl bg-white p-5" style={{ border: "1px solid #e5e1d8" }}>
+                    <div className="flex items-center justify-between gap-3 mb-2">
+                      <h3 className="text-base font-bold" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                        {cluster.title}
+                      </h3>
+                      <Link
+                        href={`/search?q=${encodeURIComponent(cluster.searchKeyword)}`}
+                        className="text-xs font-semibold whitespace-nowrap"
+                        style={{ color: "#c9922a" }}
+                      >
+                        まとめて探す
+                      </Link>
+                    </div>
+                    <p className="text-sm leading-relaxed mb-3" style={{ color: "#6b7280" }}>
+                      {cluster.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {cluster.articles.slice(0, 3).map((article) => (
+                        <Link
+                          key={article.slug}
+                          href={article.href}
+                          className="rounded-full px-3 py-2 text-xs font-semibold"
+                          style={{ backgroundColor: "#f7f5f0", color: "#0c1a33", border: "1px solid #e5e1d8" }}
+                        >
+                          {article.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mb-10">
+            {searchIntentLinks.slice(0, 4).map((item, index) => (
+              <FadeIn key={item.href} delay={(index % 4) * 0.06}>
+                <Link
+                  href={item.href}
+                  className="block rounded-2xl p-5 bg-white hover:shadow-sm transition-shadow"
+                  style={{ border: "1px solid #e5e1d8" }}
+                >
+                  <p className="text-sm font-bold mb-2" style={{ color: "#0c1a33" }}>
+                    {item.label}
+                  </p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+                    {item.desc}
+                  </p>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
           <div className="grid md:grid-cols-3 gap-5 mb-10">
             {[
               { tag: "勉強法", title: "医学部合格のための正しい勉強法", href: "/column/study-method" },
