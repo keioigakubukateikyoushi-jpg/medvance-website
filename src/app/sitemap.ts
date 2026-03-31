@@ -64,8 +64,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/column/keio-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/juku-erabi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/support-juku-choice`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column/medical-yobiko-cost`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column/ordermade-curriculum`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/kateikyoushi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/shobun`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/search`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     // 教科別
     { url: `${BASE}/subjects`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/subjects/english`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },

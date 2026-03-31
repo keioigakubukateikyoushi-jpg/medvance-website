@@ -136,6 +136,20 @@ const articles = [
     popular: false,
   },
   {
+    slug: "medical-yobiko-cost",
+    category: "塾・指導",
+    title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント",
+    description: "高額な医学部専門予備校でも、伴走や質問対応が弱いケースはあります。費用の高さではなく、学習管理と個別サポートの質で塾を見極める視点を整理します。",
+    popular: false,
+  },
+  {
+    slug: "ordermade-curriculum",
+    category: "塾・指導",
+    title: "医学部受験でオーダーメイドカリキュラムが重要な理由",
+    description: "全員同じ大手カリキュラムでは伸びにくい受験生もいます。志望校、現在地、苦手、残り期間に応じて学習設計を変える重要性を解説します。",
+    popular: true,
+  },
+  {
     slug: "kateikyoushi",
     category: "塾・指導",
     title: "医学部受験に家庭教師は効果的か？選び方と活用法",
@@ -195,6 +209,37 @@ export default function ColumnIndexPage() {
       {/* Popular picks */}
       <div className="py-12 px-4" style={{ backgroundColor: "#f7f5f0", borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
+          <div className="mb-8 rounded-2xl bg-white p-5 md:p-6" style={{ border: "1px solid #e5e1d8" }}>
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
+                  Search
+                </p>
+                <h2 className="text-lg font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                  記事をキーワードで検索
+                </h2>
+                <p className="text-sm" style={{ color: "#6b7280" }}>
+                  学費、面接、再受験、塾選びなど、気になるテーマから記事を探せます。
+                </p>
+              </div>
+              <form action="/search" className="flex w-full max-w-xl gap-2">
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="例: 医学部専門予備校 / 面接 / 慶應"
+                  className="flex-1 rounded-xl px-4 py-3 text-sm"
+                  style={{ border: "1px solid #d6d1c7", color: "#0c1a33", backgroundColor: "#fff" }}
+                />
+                <button
+                  type="submit"
+                  className="rounded-xl px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#0c1a33" }}
+                >
+                  検索する
+                </button>
+              </form>
+            </div>
+          </div>
           <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>よく読まれている記事</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
             {popular.map((a) => (
