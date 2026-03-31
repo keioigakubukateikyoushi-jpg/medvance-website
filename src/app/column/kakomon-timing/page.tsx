@@ -1,11 +1,26 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ArticleConsultationBox from "@/components/ArticleConsultationBox";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+} from "@/lib/seo";
 
 export const metadata = {
   title: "医学部受験の過去問はいつから始めるべきか｜使い方と復習法を解説 | Medvance",
   description:
     "医学部受験の過去問はいつから始めるべきか。高1・高2・高3・浪人それぞれの着手時期、本格演習への移り方、国公立・私立での使い分け、復習の進め方まで現役慶應医学部生が解説します。",
+  alternates: {
+    canonical: "/column/kakomon-timing",
+  },
+  openGraph: {
+    title: "医学部受験の過去問はいつから始めるべきか｜使い方と復習法を解説",
+    description:
+      "医学部受験の過去問はいつから始めるべきか。高1・高2・高3・浪人それぞれの着手時期、本格演習への移り方、国公立・私立での使い分け、復習の進め方まで解説します。",
+    type: "article",
+    url: "https://medvance-edu.com/column/kakomon-timing",
+  },
   keywords: [
     "医学部受験 過去問 いつから",
     "医学部 過去問 何年分",
@@ -176,22 +191,31 @@ const relatedArticles = [
   { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
+const kakomonTimingSchemas = [
+  buildArticleSchema({
+    headline: "医学部受験の過去問はいつから始めるべきか",
+    description:
+      "医学部受験の過去問はいつから始めるべきか。高1・高2・高3・浪人それぞれの着手時期、本格演習への移り方、国公立・私立での使い分け、復習の進め方まで解説します。",
+    path: "/column/kakomon-timing",
+    datePublished: "2026-03-31",
+    dateModified: "2026-03-31",
+    articleSection: "受験戦略",
+    keywords: metadata.keywords,
+  }),
+  buildBreadcrumbSchema([
+    { name: "ホーム", url: "/" },
+    { name: "コラム", url: "/column" },
+    { name: "医学部受験の過去問はいつから始めるべきか", url: "/column/kakomon-timing" },
+  ]),
+  buildFaqSchema(faqItems),
+];
 
 export default function KakomonTimingPage() {
   return (
     <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(kakomonTimingSchemas) }}
       />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

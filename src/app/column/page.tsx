@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import {
+  columnArticlesWithHref,
+  columnCategories,
+  resolvedColumnTopicClusters,
+} from "@/lib/columnArticles";
+import { buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
 
 // 大学別対策ページ（/universities/配下）
 const universityArticles: { slug: string; href: string; category: string; title: string; description: string; popular: boolean }[] = [
@@ -36,144 +42,6 @@ const universityArticles: { slug: string; href: string; category: string; title:
   { slug: "tohoku-ika", href: "/universities/tohoku-ika", category: "大学別対策", title: "東北医科薬科大学 入試対策ガイド", description: "2016年新設の医学部。東北の医療人材育成を目的とした建学理念を持つ。標準〜やや難の出題で、英数理の基礎力が重要。", popular: false },
 ];
 
-const articles = [
-  {
-    slug: "study-method",
-    category: "勉強法",
-    title: "医学部合格のための正しい勉強法",
-    description: "科目別の具体的な学習アプローチとよくある失敗パターンを解説。量より質を重視した学習設計で成績を伸ばす方法。",
-    popular: true,
-  },
-  {
-    slug: "roadmap",
-    category: "受験戦略",
-    title: "医学部受験ロードマップ",
-    description: "現役合格から再受験まで、時期別にやるべきことを整理。いつ・何を・どの順番で進めるかを明確にするためのガイド。",
-    popular: true,
-  },
-  {
-    slug: "difference",
-    category: "受験戦略",
-    title: "医学部に受かる人・落ちる人の違い",
-    description: "合格者と不合格者を分けるのは才能ではなく戦略の差。現場で見えた「差がつくポイント」を具体的に解説。",
-    popular: true,
-  },
-  {
-    slug: "juken-timing",
-    category: "受験戦略",
-    title: "医学部受験はいつから始めるべきか",
-    description: "高1・高2・高3・浪人・再受験それぞれの最適なスタート時期と準備内容を解説。「何年生から始めれば間に合う？」という疑問に完全回答。",
-    popular: false,
-  },
-  {
-    slug: "mensetu-timing",
-    category: "受験戦略",
-    title: "医学部面接対策はいつから始めるべきか",
-    description: "高1・高2・高3・浪人別に、面接対策の始め方と仕上げ方を整理。自己分析、大学研究、模擬面接の進め方まで解説。",
-    popular: false,
-  },
-  {
-    slug: "kakomon-timing",
-    category: "受験戦略",
-    title: "医学部受験の過去問はいつから始めるべきか",
-    description: "高1・高2・高3・浪人それぞれの着手時期、何年分やるか、復習の回し方まで整理。過去問を点数確認で終わらせないための実践ガイド。",
-    popular: false,
-  },
-  {
-    slug: "hensachi",
-    category: "受験情報",
-    title: "医学部合格に必要な偏差値は？現実的な目標設定",
-    description: "国公立・私立医学部の偏差値目安を大学別に整理。偏差値だけで判断しない受験戦略と現実的な目標設定の考え方を解説。",
-    popular: false,
-  },
-  {
-    slug: "shigaku-vs-kokuritsu",
-    category: "大学選び",
-    title: "私立医学部と国公立医学部、どちらを目指すべきか",
-    description: "学費・難易度・環境の違いを徹底比較。自分のタイプ別に「どちらを選ぶべきか」のアドバイスをまとめました。",
-    popular: false,
-  },
-  {
-    slug: "gakuhi",
-    category: "大学選び",
-    title: "医学部の学費・費用を徹底比較",
-    description: "国公立と私立の学費差から奨学金・特待生制度まで網羅。6年間でいくらかかるかを大学別に整理しています。",
-    popular: false,
-  },
-  {
-    slug: "private-top5",
-    category: "大学選び",
-    title: "慶應・慈恵・順天堂など私立医学部トップ5の特徴と対策",
-    description: "慶應義塾・東京慈恵会・順天堂・日本医科・昭和大学の入試傾向・特色・合格戦略を現役慶應医学部生が徹底解説。",
-    popular: false,
-  },
-  {
-    slug: "keio-guide",
-    category: "大学選び",
-    title: "慶應義塾大学医学部の入試完全ガイド",
-    description: "慶應医学部の科目別入試傾向・倍率・面接の実態・合格戦略を現役在籍生が解説。慶應受験を目指す方必見の完全ガイド。",
-    popular: false,
-  },
-  {
-    slug: "mensetu",
-    category: "入試対策",
-    title: "医学部面接対策の完全ガイド",
-    description: "よく聞かれる質問と回答例、MMI対策、面接で落とされるパターンまで。配点の高い面接で差をつける準備法。",
-    popular: true,
-  },
-  {
-    slug: "shobun",
-    category: "入試対策",
-    title: "医学部小論文の書き方・完全対策ガイド",
-    description: "頻出テーマ（生命倫理・医療制度・AI医療）と合格答案の書き方を解説。構成の型・NGパターン・対策スケジュールまで網羅。",
-    popular: false,
-  },
-  {
-    slug: "saijuken",
-    category: "再受験",
-    title: "社会人・大学生からの医学部再受験ガイド",
-    description: "医学部再受験のリアルな現状・合格者の共通点・勉強計画の設計まで。社会人経験を面接の強みに変える方法も解説。",
-    popular: false,
-  },
-  {
-    slug: "juku-erabi",
-    category: "塾・指導",
-    title: "医学部受験の塾・予備校の選び方",
-    description: "大手予備校・個別指導・医学部専門塾・家庭教師の特徴を徹底比較。失敗しない塾選びの5つの判断基準と失敗パターンを解説。",
-    popular: false,
-  },
-  {
-    slug: "support-juku-choice",
-    category: "塾・指導",
-    title: "医学部受験の塾はサポート体制で選ぶべき理由",
-    description: "医学部専門予備校の高額な学費、大手予備校の一律カリキュラム、オーダーメイド指導の強みを比較。伴走型サポートの重要性を解説します。",
-    popular: false,
-  },
-  {
-    slug: "medical-yobiko-cost",
-    category: "塾・指導",
-    title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント",
-    description: "高額な医学部専門予備校でも、伴走や質問対応が弱いケースはあります。費用の高さではなく、学習管理と個別サポートの質で塾を見極める視点を整理します。",
-    popular: false,
-  },
-  {
-    slug: "ordermade-curriculum",
-    category: "塾・指導",
-    title: "医学部受験でオーダーメイドカリキュラムが重要な理由",
-    description: "全員同じ大手カリキュラムでは伸びにくい受験生もいます。志望校、現在地、苦手、残り期間に応じて学習設計を変える重要性を解説します。",
-    popular: true,
-  },
-  {
-    slug: "kateikyoushi",
-    category: "塾・指導",
-    title: "医学部受験に家庭教師は効果的か？選び方と活用法",
-    description: "医学部受験における家庭教師の5つのメリット・選び方のポイント・費用相場を解説。現役医学部生による1対1指導の特徴も紹介。",
-    popular: false,
-  },
-];
-
-const categories = ["すべて", "大学別対策", "受験戦略", "勉強法", "大学選び", "入試対策", "再受験", "塾・指導", "受験情報"];
-
 const categoryColors: Record<string, string> = {
   大学別対策: "#0c6e4f",
   受験戦略: "#3b6cb7",
@@ -187,7 +55,20 @@ const categoryColors: Record<string, string> = {
 
 const allArticles = [
   ...universityArticles.map((a) => ({ ...a, href: a.href })),
-  ...articles.map((a) => ({ ...a, href: `/column/${a.slug}` })),
+  ...columnArticlesWithHref,
+];
+
+const columnIndexSchemas = [
+  buildCollectionPageSchema(
+    "医学部受験コラム一覧",
+    "医学部受験の勉強法、面接、小論文、学費、塾選び、再受験まで横断して探せるコラム一覧です。",
+    "/column",
+  ),
+  buildItemListSchema(
+    "医学部受験コラム一覧",
+    "/column",
+    columnArticlesWithHref.map((article) => ({ name: article.title, url: article.href })),
+  ),
 ];
 
 export default function ColumnIndexPage() {
@@ -201,6 +82,10 @@ export default function ColumnIndexPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(columnIndexSchemas) }}
+      />
 
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
@@ -278,13 +163,63 @@ export default function ColumnIndexPage() {
         </div>
       </div>
 
+      <div className="py-12 px-4 bg-white" style={{ borderBottom: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>
+            Search Intent Hubs
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {resolvedColumnTopicClusters.map((cluster) => (
+              <div
+                key={cluster.title}
+                className="rounded-2xl p-6"
+                style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+              >
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <h2 className="text-lg font-bold" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                    {cluster.title}
+                  </h2>
+                  <Link
+                    href={`/search?q=${encodeURIComponent(cluster.searchKeyword)}`}
+                    className="text-xs font-semibold whitespace-nowrap"
+                    style={{ color: "#c9922a" }}
+                  >
+                    まとめて探す →
+                  </Link>
+                </div>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
+                  {cluster.description}
+                </p>
+                <div className="space-y-3">
+                  {cluster.articles.map((article) => (
+                    <Link
+                      key={article.slug}
+                      href={article.href}
+                      className="block rounded-xl bg-white p-4 hover:shadow-sm transition-shadow"
+                      style={{ border: "1px solid #e5e1d8" }}
+                    >
+                      <p className="text-xs font-bold mb-2" style={{ color: categoryColors[article.category] ?? "#c9922a" }}>
+                        {article.category}
+                      </p>
+                      <p className="text-sm font-semibold leading-snug" style={{ color: "#0c1a33" }}>
+                        {article.title}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Filter + Articles */}
       <div className="py-14 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
 
           {/* Category tabs */}
           <div className="flex flex-wrap gap-2 mb-10">
-            {categories.map((cat) => (
+            {columnCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}

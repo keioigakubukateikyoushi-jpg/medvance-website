@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "医学部受験コラム一覧",
+  description:
+    "医学部受験の勉強法、面接、小論文、学費、塾選び、再受験まで横断して探せるMedvanceのコラム一覧です。",
+};
 
 export default function ColumnLayout({ children }: { children: React.ReactNode }) {
   return (

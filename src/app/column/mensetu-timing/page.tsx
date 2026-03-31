@@ -1,11 +1,26 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ArticleConsultationBox from "@/components/ArticleConsultationBox";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+} from "@/lib/seo";
 
 export const metadata = {
   title: "医学部面接対策はいつから始めるべきか｜高1・高2・高3・浪人別に解説 | Medvance",
   description:
     "医学部面接対策はいつから始めるべきか。高1・高2・高3・浪人・再受験それぞれの始め方、自己分析・医療知識・模擬面接の進め方、大学ごとの面接形式の違いまで現役慶應医学部生が解説します。",
+  alternates: {
+    canonical: "/column/mensetu-timing",
+  },
+  openGraph: {
+    title: "医学部面接対策はいつから始めるべきか｜高1・高2・高3・浪人別に解説",
+    description:
+      "医学部面接対策はいつから始めるべきか。高1・高2・高3・浪人・再受験それぞれの始め方、自己分析・医療知識・模擬面接の進め方、大学ごとの面接形式の違いまで解説します。",
+    type: "article",
+    url: "https://medvance-edu.com/column/mensetu-timing",
+  },
   keywords: [
     "医学部 面接対策 いつから",
     "医学部 面接 いつから",
@@ -180,22 +195,31 @@ const relatedArticles = [
   { href: "/column/roadmap", title: "医学部受験ロードマップ：いつから・何をすべきか", label: "受験戦略" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
+const mensetuTimingSchemas = [
+  buildArticleSchema({
+    headline: "医学部面接対策はいつから始めるべきか",
+    description:
+      "医学部面接対策はいつから始めるべきか。高1・高2・高3・浪人・再受験それぞれの始め方、自己分析・医療知識・模擬面接の進め方、大学ごとの面接形式の違いまで解説します。",
+    path: "/column/mensetu-timing",
+    datePublished: "2026-03-31",
+    dateModified: "2026-03-31",
+    articleSection: "受験戦略",
+    keywords: metadata.keywords,
+  }),
+  buildBreadcrumbSchema([
+    { name: "ホーム", url: "/" },
+    { name: "コラム", url: "/column" },
+    { name: "医学部面接対策はいつから始めるべきか", url: "/column/mensetu-timing" },
+  ]),
+  buildFaqSchema(faqItems),
+];
 
 export default function MensetsuTimingPage() {
   return (
     <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(mensetuTimingSchemas) }}
       />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

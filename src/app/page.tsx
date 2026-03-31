@@ -4,10 +4,18 @@ import HeroAnimated from "@/components/HeroAnimated";
 import Marquee from "@/components/Marquee";
 import FadeIn from "@/components/FadeIn";
 import HoverCard from "@/components/HoverCard";
+import {
+  homeFeaturedColumnArticles,
+  resolvedColumnTopicClusters,
+} from "@/lib/columnArticles";
+import { buildItemListSchema } from "@/lib/seo";
 
 export const metadata = {
   title: "医学部受験専門塾 Medvance｜慶應医学部生が完全1対1・全国オンライン対応",
   description: "現役慶應医学部生による完全1対1の医学部受験専門塾。慶應医学部に受かるには何が必要か、面接対策はいつから始めるべきかまで解説。オンラインで全国どこからでも受講可能。",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 /* ── Icon components ────────────────────────── */
@@ -112,10 +120,26 @@ const decisionLinks = [
   },
 ];
 
+const homeArticleSchemas = [
+  buildItemListSchema(
+    "ホームから読める注目コラム",
+    "/",
+    homeFeaturedColumnArticles.map((article) => ({
+      name: article.title,
+      url: article.href,
+    })),
+  ),
+];
+
 /* ── Page ─────────────────────────────────── */
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeArticleSchemas) }}
+      />
+
       {/* ── 1. HERO ───────────────────────────── */}
       <HeroAnimated />
 
@@ -186,6 +210,94 @@ export default function Home() {
                 </Link>
               </FadeIn>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                Content Hubs
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>
+                悩み別にまとめて読める導線
+              </h2>
+              <p className="text-sm max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+                1記事だけで終わらず、関連テーマまで一気にたどれるようにしました。検索流入からの回遊を強くするための入口です。
+              </p>
+            </div>
+          </FadeIn>
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6">
+            <div className="grid sm:grid-cols-2 gap-4">
+              {homeFeaturedColumnArticles.map((article, index) => (
+                <FadeIn key={article.slug} delay={(index % 3) * 0.06}>
+                  <Link
+                    href={article.href}
+                    className="block rounded-2xl p-5 bg-white hover:shadow-md transition-shadow"
+                    style={{ border: "1px solid #e5e1d8" }}
+                  >
+                    <p className="text-xs font-bold mb-2" style={{ color: "#c9922a" }}>
+                      {article.category}
+                    </p>
+                    <h3 className="text-sm font-bold leading-snug mb-3" style={{ color: "#0c1a33" }}>
+                      {article.title}
+                    </h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+                      {article.description}
+                    </p>
+                    <p className="text-xs font-semibold mt-4" style={{ color: "#c9922a" }}>
+                      記事を読む →
+                    </p>
+                  </Link>
+                </FadeIn>
+              ))}
+            </div>
+
+            <div className="space-y-4">
+              {resolvedColumnTopicClusters.map((cluster, index) => (
+                <FadeIn key={cluster.title} delay={index * 0.08}>
+                  <div
+                    className="rounded-2xl p-5 bg-white"
+                    style={{ border: "1px solid #e5e1d8" }}
+                  >
+                    <div className="flex items-center justify-between gap-3 mb-3">
+                      <h3 className="text-base font-bold" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                        {cluster.title}
+                      </h3>
+                      <Link
+                        href={`/search?q=${encodeURIComponent(cluster.searchKeyword)}`}
+                        className="text-xs font-semibold whitespace-nowrap"
+                        style={{ color: "#c9922a" }}
+                      >
+                        まとめて探す →
+                      </Link>
+                    </div>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
+                      {cluster.description}
+                    </p>
+                    <div className="space-y-3">
+                      {cluster.articles.map((article) => (
+                        <Link
+                          key={article.slug}
+                          href={article.href}
+                          className="block rounded-xl px-4 py-3"
+                          style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+                        >
+                          <p className="text-xs font-bold mb-1" style={{ color: "#c9922a" }}>
+                            {article.category}
+                          </p>
+                          <p className="text-sm font-semibold leading-snug" style={{ color: "#0c1a33" }}>
+                            {article.title}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </div>
       </section>

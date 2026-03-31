@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { columnArticles } from "@/lib/columnArticles";
 import { nationalUniversityArticles } from "./universities/national/data";
 
 const BASE = "https://medvance-edu.com";
@@ -57,26 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/universities/iwate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/universities/tohoku-ika`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // コラム
-    { url: `${BASE}/column`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/study-method`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/column/roadmap`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/column/difference`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/column/shigaku-vs-kokuritsu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/column/mensetu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/column/gakuhi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/column/juken-timing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/mensetu-timing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/kakomon-timing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/hensachi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/saijuken`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/private-top5`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/keio-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/juku-erabi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/support-juku-choice`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/medical-yobiko-cost`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/ordermade-curriculum`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/kateikyoushi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/column/shobun`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    ...columnArticles.map((entry) => ({
+      url: `${BASE}/column/${entry.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: entry.featuredOnHome || entry.popular ? 0.8 : 0.7,
+    })),
     { url: `${BASE}/search`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     // 教科別
     { url: `${BASE}/subjects`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

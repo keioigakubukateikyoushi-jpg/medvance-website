@@ -3,11 +3,16 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import { buildWebSiteSchema, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Medvance｜現役慶應医学部生による医学部受験専門塾",
     template: "%s | Medvance",
+  },
+  alternates: {
+    canonical: "/",
   },
   other: {
     "google-site-verification": "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
@@ -43,7 +48,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   name: "Medvance（メドバンス）",
@@ -71,6 +76,8 @@ const jsonLd = {
   },
 };
 
+const schemaGraph = [organizationSchema, buildWebSiteSchema()];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -87,7 +94,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNNSC04YT0" />
         <script
