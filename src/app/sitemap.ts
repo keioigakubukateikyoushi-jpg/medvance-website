@@ -65,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/column/mensetu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/column/gakuhi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/column/juken-timing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/column/kakomon-timing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/hensachi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/saijuken`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/column/private-top5`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+
+type GtagParams = {
+  event_category: string;
+  event_label: string;
+};
+
+type AnalyticsWindow = Window & typeof globalThis & {
+  gtag?: (command: "event", action: string, params: GtagParams) => void;
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -35,8 +43,9 @@ export default function ContactPage() {
       }
 
       setSubmitted(true);
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "generate_lead", {
+      const analyticsWindow = typeof window !== "undefined" ? (window as AnalyticsWindow) : undefined;
+      if (analyticsWindow?.gtag) {
+        analyticsWindow.gtag("event", "generate_lead", {
           event_category: "contact",
           event_label: "無料相談申し込み",
         });

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 
 const faqItems = [
@@ -29,12 +28,6 @@ const faqSchema = {
     acceptedAnswer: { "@type": "Answer", text: item.a },
   })),
 };
-
-const relatedArticles = [
-  { href: "/column/gakuhi", title: "医学部の学費・費用を徹底比較", label: "費用・学費" },
-  { href: "/column/hensachi", title: "医学部合格に必要な偏差値は？", label: "受験情報" },
-  { href: "/column/private-top5", title: "慶應・慈恵・順天堂など私立医学部トップ5", label: "大学選び" },
-];
 
 export const metadata = {
   title: "私立医学部と国公立医学部、どちらを目指すべきか | Medvance",

@@ -36,7 +36,7 @@ const faqSchema = {
 
 const relatedArticles = [
   { href: "/column/roadmap", title: "医学部受験ロードマップ：いつから・何をすべきか", label: "受験戦略" },
-  { href: "/column/difference", title: "医学部に受かる人・落ちる人の違い", label: "合格分析" },
+  { href: "/column/kakomon-timing", title: "医学部受験の過去問はいつから始めるべきか", label: "受験戦略" },
   { href: "/column/juken-timing", title: "医学部受験はいつから始めるべきか", label: "受験戦略" },
 ];
 

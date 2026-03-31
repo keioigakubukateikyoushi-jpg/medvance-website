@@ -169,6 +169,13 @@ const columnPages: SearchItem[] = [
     keywords: ["いつから", "開始時期"],
   },
   {
+    href: "/column/kakomon-timing",
+    category: "コラム",
+    title: "医学部受験の過去問はいつから始めるべきか",
+    description: "過去問に触れる時期、本格演習の始め方、何年分やるか、復習法を解説します。",
+    keywords: ["過去問", "赤本", "何年分", "復習", "着手時期"],
+  },
+  {
     href: "/column/hensachi",
     category: "コラム",
     title: "医学部受験に必要な偏差値と現実的な目標設定",

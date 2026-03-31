@@ -66,6 +66,13 @@ const articles = [
     popular: false,
   },
   {
+    slug: "kakomon-timing",
+    category: "受験戦略",
+    title: "医学部受験の過去問はいつから始めるべきか",
+    description: "高1・高2・高3・浪人それぞれの着手時期、何年分やるか、復習の回し方まで整理。過去問を点数確認で終わらせないための実践ガイド。",
+    popular: false,
+  },
+  {
     slug: "hensachi",
     category: "受験情報",
     title: "医学部合格に必要な偏差値は？現実的な目標設定",

@@ -20,8 +20,8 @@ type LinkBlock = {
 
 function isUrban(entry: NationalUniversityEntry) {
   return (
-    entry.category === "旧帝大系" ||
-    entry.category === "都市部・中核国立大学" ||
+    entry.category === "旧帝大" ||
+    entry.category === "都市型総合大学" ||
     entry.area === "東京" ||
     entry.area === "大阪" ||
     entry.area === "京都"
@@ -44,7 +44,7 @@ function buildFeatures(entry: NationalUniversityEntry): ContentBlock[] {
     },
   ];
 
-  if (entry.category === "旧帝大系") {
+  if (entry.category === "旧帝大") {
     base[0].body =
       `${entry.name}は難関大らしく学力水準の高さに加えて、記述で論理を積み上げる力が問われやすい大学です。単に問題集を回すのではなく、答案の再現性と科目横断の完成度を高い水準で揃える必要があります。`;
     base[2].body =
@@ -108,7 +108,7 @@ function buildSubjectFocus(entry: NationalUniversityEntry): ContentBlock[] {
     ? "長文の情報処理量が多くても崩れない読解力と、記述で減点されない表現力を磨くのが基本です。和訳・要約・説明型の設問を意識して復習しましょう。"
     : "共通テストでの安定得点に加え、二次では読解の正確性と語彙の運用力を求められます。標準問題を落とさず、記述で確実に点を取り切る練習が有効です。";
   const math =
-    entry.category === "旧帝大系"
+    entry.category === "旧帝大"
       ? "難問に見えても典型解法の組み合わせで崩す力が必要です。途中式の整合性、場合分けの整理、記述の論理を最後まで通す練習を重視しましょう。"
       : "国公立医学部では数学の安定感が合否を左右しやすいです。典型問題の処理速度を上げたうえで、記述で部分点を拾える答案作成を徹底するのが効果的です。";
   const science =
@@ -208,7 +208,7 @@ function buildRelatedArticles(entry: NationalUniversityEntry): LinkBlock[] {
     },
   ];
 
-  if (entry.category === "旧帝大系" || isUrban(entry)) {
+  if (entry.category === "旧帝大" || isUrban(entry)) {
     articles[0] = {
       href: "/subjects/math",
       title: "医学部数学の対策",

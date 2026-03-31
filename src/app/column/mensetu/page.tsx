@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 
 const faqItems = [
@@ -33,12 +32,6 @@ const faqSchema = {
     acceptedAnswer: { "@type": "Answer", text: item.a },
   })),
 };
-
-const relatedArticles = [
-  { href: "/column/difference", title: "医学部に受かる人・落ちる人の違い", label: "合格分析" },
-  { href: "/column/saijuken", title: "社会人・大学生からの医学部再受験ガイド", label: "再受験" },
-  { href: "/column/keio-guide", title: "慶應義塾大学医学部の入試完全ガイド", label: "大学別対策" },
-];
 
 export const metadata = {
   title: "医学部面接対策の完全ガイド | Medvance",
