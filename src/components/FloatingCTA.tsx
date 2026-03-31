@@ -8,7 +8,7 @@ export default function FloatingCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 300);
+      setVisible(window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();

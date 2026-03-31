@@ -35,6 +35,12 @@ export default function ContactPage() {
       }
 
       setSubmitted(true);
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "generate_lead", {
+          event_category: "contact",
+          event_label: "無料相談申し込み",
+        });
+      }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "エラーが発生しました。しばらく経ってからお試しください。");
     } finally {

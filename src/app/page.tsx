@@ -681,6 +681,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 10.2 PRICING SUMMARY ──────────────── */}
+      <section className="bg-white py-16 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Pricing</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>料金の目安</h2>
+            <p className="text-sm mb-8 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
+              授業（1コマ80分 15,000円）＋コーチング月20,000円のシンプルな構成です。入塾金は20,000円（初回のみ）。
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="grid grid-cols-3 gap-3 mb-6">
+              {[
+                { label: "週1回", price: "8万円", note: "月4回＋コーチング", highlight: false },
+                { label: "週2回", price: "14万円", note: "月8回＋コーチング", highlight: true },
+                { label: "週3回〜", price: "20万円〜", note: "月12回以上（割引あり）", highlight: false },
+              ].map((plan, i) => (
+                <div
+                  key={i}
+                  className="p-4 md:p-5 rounded-xl text-center"
+                  style={{
+                    border: `${plan.highlight ? "2px" : "1px"} solid ${plan.highlight ? "#c9922a" : "#e5e1d8"}`,
+                    backgroundColor: plan.highlight ? "rgba(201,146,42,0.05)" : "#faf9f6",
+                  }}
+                >
+                  <p className="text-xs font-semibold mb-1" style={{ color: "#c9922a" }}>{plan.label}</p>
+                  <p className="text-xl md:text-2xl font-bold mb-1" style={{ color: "#0c1a33" }}>
+                    {plan.price}<span className="text-xs font-normal">/月</span>
+                  </p>
+                  <p className="text-xs leading-snug" style={{ color: "#6b7280" }}>{plan.note}</p>
+                </div>
+              ))}
+            </div>
+            <Link href="/pricing" className="inline-flex items-center gap-1.5 text-sm font-semibold hover:underline" style={{ color: "#c9922a" }}>
+              料金の詳細・プラン一覧を見る
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3.5 h-3.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── 10.5 UNIVERSITY LINKS ──────────────── */}
       <section className="bg-white py-24 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
