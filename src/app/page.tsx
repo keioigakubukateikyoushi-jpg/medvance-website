@@ -797,6 +797,28 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+          <FadeIn delay={0.15}>
+            <div
+              className="mt-6 flex flex-col sm:flex-row items-center gap-5 rounded-2xl px-7 py-6"
+              style={{ background: "linear-gradient(135deg, #0c1a33 0%, #17315f 100%)", border: "1px solid rgba(201,146,42,0.3)" }}
+            >
+              <div
+                className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: "rgba(201,146,42,0.18)", color: "#c9922a" }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#c9922a" }}>24h Support</p>
+                <p className="font-bold text-white text-base mb-1">現役医学生が24時間質問に対応</p>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  授業外でも疑問が生じたらすぐに質問できます。わからないことをその日のうちに解消し、翌日の学習に持ち越さない仕組みです。
+                </p>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
