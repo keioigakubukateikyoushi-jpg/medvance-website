@@ -145,6 +145,23 @@ export default function Header() {
             </div>
           ))}
 
+          <form action="/search" className="ml-2 hidden lg:flex items-center gap-2">
+            <input
+              type="text"
+              name="q"
+              placeholder="サイト内検索"
+              className="w-44 rounded-lg px-3 py-2 text-xs"
+              style={{ backgroundColor: "rgba(255,255,255,0.12)", color: "#fff", border: "1px solid rgba(255,255,255,0.16)" }}
+            />
+            <button
+              type="submit"
+              className="rounded-lg px-3 py-2 text-xs font-bold text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "rgba(201,146,42,0.95)" }}
+            >
+              検索
+            </button>
+          </form>
+
           <Link
             href="/contact"
             className="ml-1 px-5 py-2.5 text-white font-bold rounded-lg text-sm whitespace-nowrap hover:opacity-90 transition-opacity"
@@ -176,6 +193,24 @@ export default function Header() {
           style={{ backgroundColor: "#0c1a33", borderTop: "1px solid rgba(255,255,255,0.1)" }}
           className="lg:hidden px-5 pb-5 pt-2 max-h-[80vh] overflow-y-auto"
         >
+          <form action="/search" className="mb-4 mt-2 flex items-center gap-2">
+            <input
+              type="text"
+              name="q"
+              placeholder="サイト内検索"
+              className="flex-1 rounded-lg px-4 py-3 text-sm"
+              style={{ backgroundColor: "rgba(255,255,255,0.12)", color: "#fff", border: "1px solid rgba(255,255,255,0.16)" }}
+            />
+            <button
+              type="submit"
+              className="rounded-lg px-4 py-3 text-sm font-bold text-white"
+              style={{ backgroundColor: "#c9922a" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              検索
+            </button>
+          </form>
+
           {[
             { label: "ホーム", href: "/" },
             { label: "塾について", href: "/about" },
