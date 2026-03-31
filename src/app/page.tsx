@@ -299,7 +299,7 @@ export default function Home() {
                 よく検索される悩みから探す
               </h2>
               <p className="text-sm" style={{ color: "#6b7280" }}>
-                アクセス分析で実際に需要が見えたテーマを、すぐ読める形でまとめました。
+                医学部受験を考える方がよく調べるテーマを、すぐ読める形でまとめました。
               </p>
             </div>
           </FadeIn>
@@ -321,93 +321,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ backgroundColor: "#f7f5f0" }} className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-10">
-              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                Content Hubs
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>
-                悩み別にまとめて読める導線
-              </h2>
-              <p className="text-sm max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-                1記事だけで終わらず、関連テーマまで一気にたどれるようにしました。検索流入からの回遊を強くするための入口です。
-              </p>
-            </div>
-          </FadeIn>
-          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6">
-            <div className="grid sm:grid-cols-2 gap-4">
-              {homeFeaturedColumnArticles.map((article, index) => (
-                <FadeIn key={article.slug} delay={(index % 3) * 0.06}>
-                  <Link
-                    href={article.href}
-                    className="block rounded-2xl p-5 bg-white hover:shadow-md transition-shadow"
-                    style={{ border: "1px solid #e5e1d8" }}
-                  >
-                    <p className="text-xs font-bold mb-2" style={{ color: "#c9922a" }}>
-                      {article.category}
-                    </p>
-                    <h3 className="text-sm font-bold leading-snug mb-3" style={{ color: "#0c1a33" }}>
-                      {article.title}
-                    </h3>
-                    <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-                      {article.description}
-                    </p>
-                    <p className="text-xs font-semibold mt-4" style={{ color: "#c9922a" }}>
-                      記事を読む →
-                    </p>
-                  </Link>
-                </FadeIn>
-              ))}
-            </div>
-
-            <div className="space-y-4">
-              {resolvedColumnTopicClusters.map((cluster, index) => (
-                <FadeIn key={cluster.title} delay={index * 0.08}>
-                  <div
-                    className="rounded-2xl p-5 bg-white"
-                    style={{ border: "1px solid #e5e1d8" }}
-                  >
-                    <div className="flex items-center justify-between gap-3 mb-3">
-                      <h3 className="text-base font-bold" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-                        {cluster.title}
-                      </h3>
-                      <Link
-                        href={`/search?q=${encodeURIComponent(cluster.searchKeyword)}`}
-                        className="text-xs font-semibold whitespace-nowrap"
-                        style={{ color: "#c9922a" }}
-                      >
-                        まとめて探す →
-                      </Link>
-                    </div>
-                    <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
-                      {cluster.description}
-                    </p>
-                    <div className="space-y-3">
-                      {cluster.articles.map((article) => (
-                        <Link
-                          key={article.slug}
-                          href={article.href}
-                          className="block rounded-xl px-4 py-3"
-                          style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
-                        >
-                          <p className="text-xs font-bold mb-1" style={{ color: "#c9922a" }}>
-                            {article.category}
-                          </p>
-                          <p className="text-sm font-semibold leading-snug" style={{ color: "#0c1a33" }}>
-                            {article.title}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── MARQUEE ───────────────────────────── */}
       <Marquee />
@@ -1078,7 +991,7 @@ export default function Home() {
             <FadeIn>
               <div className="rounded-2xl bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
                 <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                  Before Contact
+                  相談前に確認できる記事
                 </p>
                 <h3 className="text-lg font-bold mb-3" style={{ color: "#0c1a33" }}>
                   相談前に読んでおくと判断しやすい記事
@@ -1139,24 +1052,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mb-10">
-            {searchIntentLinks.slice(0, 4).map((item, index) => (
-              <FadeIn key={item.href} delay={(index % 4) * 0.06}>
-                <Link
-                  href={item.href}
-                  className="block rounded-2xl p-5 bg-white hover:shadow-sm transition-shadow"
-                  style={{ border: "1px solid #e5e1d8" }}
-                >
-                  <p className="text-sm font-bold mb-2" style={{ color: "#0c1a33" }}>
-                    {item.label}
-                  </p>
-                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-                    {item.desc}
-                  </p>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
+
           <div className="grid md:grid-cols-3 gap-5 mb-10">
             {[
               { tag: "勉強法", title: "医学部合格のための正しい勉強法", href: "/column/study-method" },
@@ -1203,11 +1099,10 @@ export default function Home() {
                   Recommended
                 </p>
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-                  塾選びで失敗したくない人向けの人気記事をまとめて読めます
+                  塾・予備校を比較検討している方へ
                 </h3>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.68)" }}>
-                  医学部専門予備校の費用感、大手の一律カリキュラムの落とし穴、伴走型サポートの重要性まで、
-                  実際に相談でよく聞かれる論点を先に整理できます。
+                  塾選びで悩んでいる方がよく相談される論点を先に読んでおくと、比較や判断がしやすくなります。
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
