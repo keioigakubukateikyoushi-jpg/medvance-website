@@ -259,12 +259,44 @@ const columnPages: SearchItem[] = [
   },
 ];
 
+const universityAliases: Record<string, string[]> = {
+  "keio":         ["慶応", "慶応義塾", "けいお", "慶応医学部", "慶應医"],
+  "jikei":        ["慈恵", "じけい", "慈恵医大", "東京慈恵", "東慈"],
+  "juntendo":     ["順天堂", "順天", "じゅんてんどう"],
+  "nippon-medical": ["日医", "にちい", "日本医大", "日医大"],
+  "showa":        ["昭和", "しょうわ", "昭和医大"],
+  "tokyo-ika":    ["東京医大", "東医", "とうきょういか"],
+  "nihon":        ["日大", "にちだい", "日大医"],
+  "toho":         ["東邦", "とうほう", "東邦医大"],
+  "kyorin":       ["杏林", "きょうりん", "杏林医大"],
+  "teikyo":       ["帝京", "ていきょう", "帝京医大"],
+  "tokai":        ["東海", "とうかい", "東海医大"],
+  "kitasato":     ["北里", "きたさと", "北里医大"],
+  "marianna":     ["聖マリ", "マリアンナ", "せいまりあんな"],
+  "joshi-ika":    ["女子医大", "東京女子医大", "女子医"],
+  "iuhw":         ["国際医療福祉", "国医福", "IUHW"],
+  "dokkyo":       ["獨協", "どっきょう", "獨協医大"],
+  "saitama-ika":  ["埼玉医大", "さいたまいか"],
+  "kansai-ika":   ["関西医大", "かんさいいか"],
+  "kindai":       ["近大", "きんだい", "近大医"],
+  "osaka-ika":    ["大阪医大", "阪医大", "おおさかいか"],
+  "hyogo":        ["兵庫医大", "ひょうごいか"],
+  "fujita":       ["藤田", "ふじた", "藤田医大"],
+  "aichi-ika":    ["愛知医大", "あいちいか"],
+  "kanazawa-ika": ["金沢医大", "かなざわいか"],
+  "kurume":       ["久留米", "くるめ", "久留米医大"],
+  "fukuoka":      ["福岡医大", "ふくおかいか"],
+  "kawasaki-ika": ["川崎医大", "かわさきいか"],
+  "iwate":        ["岩手医大", "いわていか"],
+  "tohoku-ika":   ["東北医科薬科", "とうほくいか"],
+};
+
 const universityDefinitions = [
   ["keio", "慶應義塾大学医学部"],
   ["jikei", "東京慈恵会医科大学"],
   ["juntendo", "順天堂大学医学部"],
   ["nippon-medical", "日本医科大学"],
-  ["showa", "昭和医科大学"],
+  ["showa", "昭和大学医学部"],
   ["tokyo-ika", "東京医科大学"],
   ["nihon", "日本大学医学部"],
   ["toho", "東邦大学医学部"],
@@ -311,7 +343,10 @@ const universityPages: SearchItem[] = [
     category: "大学別対策",
     title: `${name} の入試対策`,
     description: `${name} の入試形式、科目、対策方針、面接や小論文のポイントをまとめたページです。`,
-    keywords: [name, slug, "医学部", "入試", "面接", "小論文", "数学", "英語"],
+    keywords: [
+      name, slug, "医学部", "入試", "面接", "小論文", "数学", "英語",
+      ...universityAliases[slug as keyof typeof universityAliases] ?? [],
+    ],
   })),
 ];
 
@@ -326,25 +361,34 @@ export const siteSearchItems: SearchItem[] = [
 
 export const suggestedSearchKeywords = [
   "慶應",
+  "慈恵",
+  "順天堂",
+  "日医",
+  "昭和",
   "面接",
-  "医学部専門予備校",
+  "小論文",
+  "数学",
+  "英語",
   "学費",
   "再受験",
-  "数学",
-  "小論文",
+  "浪人",
+  "オンライン",
+  "塾選び",
+  "偏差値",
+  "ロードマップ",
 ];
 
 export function searchSite(query: string) {
   const normalized = query.trim().toLowerCase();
+  if (!normalized) return [];
 
-  if (!normalized) {
-    return [];
-  }
+  // スペース区切りで複数ワードのAND検索に対応
+  const terms = normalized.split(/[\s　]+/).filter(Boolean);
 
-  return siteSearchItems.filter((item) =>
-    [item.title, item.description, item.category, ...(item.keywords ?? [])]
+  return siteSearchItems.filter((item) => {
+    const text = [item.title, item.description, item.category, ...(item.keywords ?? [])]
       .join(" ")
-      .toLowerCase()
-      .includes(normalized)
-  );
+      .toLowerCase();
+    return terms.every((term) => text.includes(term));
+  });
 }
