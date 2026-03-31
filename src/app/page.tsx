@@ -121,16 +121,16 @@ const decisionLinks = [
 ];
 
 const idealForItems = [
-  "予備校の集団授業では埋まらない弱点が残っている",
-  "何から始めるべきか分からず、計画が止まりがち",
-  "面接・小論文・志望理由書まで含めて医学部受験全体を整えたい",
-  "保護者と本人で受験方針の認識がずれている",
+  "予備校の授業は受けているのに、弱点がいつまでも埋まらない",
+  "何から手をつければいいか分からず、勉強が止まってしまっている",
+  "学科だけでなく、面接・小論文・出願書類まで一貫して整えたい",
+  "合格できるかどうか、本当に正しい方向で進んでいるか不安がある",
 ];
 
 const consultationBenefits = [
-  "現在地の整理: 学力、志望校、スケジュールのどこに詰まりがあるかを明確化",
-  "優先順位の設計: 今やるべきことと後回しにすべきことを切り分け",
-  "伴走イメージの確認: 授業、課題、面接、出願までどう支えるかを具体化",
+  "今どこに詰まりがあるかを整理 — 学力・志望校・スケジュールを一緒に確認",
+  "次にやることを明確化 — 優先順位を切り分け、迷わず動ける状態にする",
+  "サポートの流れを具体化 — 授業・課題・面接・出願まで、どう支えるかを説明",
 ];
 
 const homeArticleSchemas = [
@@ -199,14 +199,14 @@ export default function Home() {
           <FadeIn>
             <div className="text-center mb-10">
               <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                First Message
+                Why Medvance
               </p>
               <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-                まずは「この塾なら任せる価値がある」と感じてもらう
+                慶應医学部合格者が、あなたの受験戦略を直接設計します
               </h2>
               <p className="text-sm max-w-3xl mx-auto leading-relaxed" style={{ color: "#6b7280" }}>
-                Medvanceは、医学部受験に必要な学科、面接、小論文、出願までを分断せずに支えるための塾です。
-                ただ授業をするだけではなく、今の課題を整理し、志望校に向けて優先順位をつけ、やるべきことが動き出す状態まで一緒につくります。
+                Medvanceは、学科指導から面接・小論文・出願まで、医学部受験に必要なすべてをワンチームで支えます。
+                授業をこなすだけでなく、今の課題を整理し、志望校までの優先順位を設計し、迷わず動ける状態をつくります。
               </p>
             </div>
           </FadeIn>
@@ -217,7 +217,7 @@ export default function Home() {
                   Ideal For
                 </p>
                 <h3 className="text-xl font-bold mb-4" style={{ color: "#0c1a33" }}>
-                  こういう受験生に合います
+                  こんな受験生によく選ばれています
                 </h3>
                 <div className="space-y-3">
                   {idealForItems.map((item, index) => (
