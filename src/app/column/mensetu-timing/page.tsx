@@ -1,10 +1,11 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ArticleConsultationBox from "@/components/ArticleConsultationBox";
 
 export const metadata = {
   title: "医学部面接対策はいつから始めるべきか｜高1・高2・高3・浪人別に解説 | Medvance",
   description:
-    "医学部面接対策はいつから始めるべきか。高1・高2・高3・浪人・再受験それぞれの始め方、自己分析・医療知識・模擬面接の進め方を現役慶應医学部生が解説します。",
+    "医学部面接対策はいつから始めるべきか。高1・高2・高3・浪人・再受験それぞれの始め方、自己分析・医療知識・模擬面接の進め方、大学ごとの面接形式の違いまで現役慶應医学部生が解説します。",
   keywords: [
     "医学部 面接対策 いつから",
     "医学部 面接 いつから",
@@ -13,6 +14,24 @@ export const metadata = {
     "医学部 面接対策 高3",
   ],
 };
+
+const startSignals = [
+  {
+    title: "志望理由を1分で話せない",
+    body:
+      "『なぜ医師なのか』『なぜその大学なのか』を短く説明できないなら、着手時期です。面接対策は暗記ではなく、軸を言語化する作業なので、早く始めるほど深さが出ます。",
+  },
+  {
+    title: "大学ごとの差をまだ把握していない",
+    body:
+      "個人面接なのか、MMIなのか、グループ形式なのかで準備は大きく変わります。形式と大学の特色を知らないまま秋に入ると、準備が浅くなりがちです。",
+  },
+  {
+    title: "医療テーマに自分の意見が持てていない",
+    body:
+      "地域医療、終末期医療、AI医療、医師の働き方などへの考えは、一夜漬けでは深まりません。高3春〜夏のうちに論点整理を始めると、秋の模擬面接で伸びやすくなります。",
+  },
+];
 
 const startGuides = [
   {
@@ -93,6 +112,24 @@ const timeline = [
     title: "大学別に最終調整",
     body:
       "提出書類と回答の整合を確認し、大学ごとの特色に合わせて答え方を微調整します。新しい答えを増やすより、軸をぶらさないことが重要です。",
+  },
+];
+
+const formatGuides = [
+  {
+    title: "個人面接",
+    body:
+      "最も一般的な形式です。志望理由、医師志望理由、高校生活、長所短所、医療テーマへの考えを深掘りされます。表面的な答えより、一貫性と人柄が見られます。",
+  },
+  {
+    title: "MMI",
+    body:
+      "複数の短いステーションを回り、その場で考えて答える形式です。暗記した回答では対応しづらく、普段から論点を整理し、自分の言葉で話す訓練が必要です。",
+  },
+  {
+    title: "グループ面接・討論",
+    body:
+      "自分だけが話せばよい試験ではありません。相手の発言を受けて整理する力や、場を壊さずに意見を言う姿勢まで見られます。個人面接とは別の練習が必要です。",
   },
 ];
 
@@ -179,19 +216,39 @@ export default function MensetsuTimingPage() {
         <div className="max-w-3xl mx-auto">
           <div className="p-8 rounded-2xl bg-white mb-8" style={{ border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
-              Search Console では「医学部 面接対策 いつから」のような検索が早い段階から発生しやすく、実際に多くの受験生がこのタイミングで悩みます。
+              Search Console では「医学部 面接対策 いつから」のような検索が早い段階から発生しやすく、実際に多くの受験生がこのタイミングで悩みます。学科に比べて後回しにされやすい一方で、短期間で差が出る領域でもあります。
             </p>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
               結論から言うと、面接対策は高3の春〜夏に着手し、秋から模擬面接で仕上げる流れが最も安全です。面接は「直前に答えを覚える試験」ではなく、志望理由と人物像を時間をかけて磨く試験だからです。
             </p>
             <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
-              このページでは、学年別の始め方、月ごとの流れ、やってはいけない失敗を整理します。
+              このページでは、学年別の始め方、月ごとの流れ、形式ごとの違い、やってはいけない失敗まで整理します。
             </p>
           </div>
         </div>
       </div>
 
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            こんな状態なら、面接対策はもう始めるべき
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {startSignals.map((item) => (
+              <div key={item.title} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>
+                  {item.title}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             学年・状況別の始め方
@@ -223,20 +280,56 @@ export default function MensetsuTimingPage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+      <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             いつから何をすべきか
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {timeline.map((item) => (
-              <div key={item.period} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+              <div key={item.period} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
                 <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>{item.period}</p>
                 <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>{item.title}</p>
                 <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            大学ごとに、求められる面接はかなり違う
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {formatGuides.map((item) => (
+              <div key={item.title} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>
+                  {item.title}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-4 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ArticleConsultationBox
+            title="面接は、独学のまま秋に入るとズレが残りやすい領域です"
+            description="面接対策は『何を答えるか』だけでなく、『どう伝わるか』まで見られます。Medvanceの無料相談では、着手時期だけでなく、志望校ごとの対策順序まで整理できます。"
+            points={[
+              "志望理由・医師志望理由の骨子が弱い部分を具体的に洗い出せる",
+              "個人面接・MMI・グループ面接のどれに重点を置くべきか明確になる",
+              "学科対策と両立できる現実的な面接スケジュールを作れる",
+              "模擬面接を入れるべき時期や回数の目安まで整理できる",
+            ]}
+            source="column-mensetu-timing-mid"
+          />
         </div>
       </div>
 
@@ -257,6 +350,22 @@ export default function MensetsuTimingPage() {
       </div>
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            面接対策で本当に差がつくポイント
+          </h2>
+          <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
+              医学部面接で差がつくのは、立派な言葉を並べることではありません。志望理由、これまでの経験、大学理解、医療テーマへの考え方が、ひとつの人物像としてつながっているかどうかです。
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
+              そのためには、直前に答えを暗記するより、早めに考え始めて、秋に第三者との練習で磨く方が圧倒的に有利です。時期に迷っているなら、迷っている今が着手のサインだと考えてよいです。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             よくある質問
@@ -316,6 +425,17 @@ export default function MensetsuTimingPage() {
       <ColumnCTA
         heading="面接対策の始め方から、模擬面接まで一緒に設計します"
         subtext="志望校の形式に合わせて、いつから何を準備するかを個別に整理します。面接・小論文対策の無料相談も可能です。"
+        concerns={[
+          "志望理由はあるつもりだが、深掘りされると不安が残る",
+          "面接形式が大学ごとに違い、何を優先すべきかわからない",
+          "学科対策と面接対策をどう両立すべきか迷っている",
+        ]}
+        benefits={[
+          "志望理由・自己PR・医師志望理由の骨子が整理できる",
+          "大学別に必要な面接対策の順番と時期が明確になる",
+          "模擬面接を入れるべき回数やタイミングまで相談できる",
+        ]}
+        source="column-mensetu-timing-bottom"
       />
     </div>
   );

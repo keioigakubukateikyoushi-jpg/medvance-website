@@ -1,10 +1,11 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ArticleConsultationBox from "@/components/ArticleConsultationBox";
 
 export const metadata = {
   title: "医学部受験の過去問はいつから始めるべきか｜使い方と復習法を解説 | Medvance",
   description:
-    "医学部受験の過去問はいつから始めるべきか。高1・高2・高3・浪人それぞれの着手時期、本格演習への移り方、復習の進め方、やってはいけない失敗例まで現役慶應医学部生が解説します。",
+    "医学部受験の過去問はいつから始めるべきか。高1・高2・高3・浪人それぞれの着手時期、本格演習への移り方、国公立・私立での使い分け、復習の進め方まで現役慶應医学部生が解説します。",
   keywords: [
     "医学部受験 過去問 いつから",
     "医学部 過去問 何年分",
@@ -13,6 +14,24 @@ export const metadata = {
     "医学部受験 過去問 いつから始める",
   ],
 };
+
+const readySignals = [
+  {
+    title: "志望校が2〜3校まで絞れてきた",
+    body:
+      "大学ごとの出題形式を見て、今の勉強が本当に志望校に合っているか確認すべきタイミングです。学校群が決まり始めたら、まず1年分だけでも過去問に触れる価値があります。",
+  },
+  {
+    title: "基礎は回しているが、伸び方に不安がある",
+    body:
+      "英数理の基礎演習を続けているのに、何を優先すべきか見えないなら、過去問でゴールを先に確認した方が軌道修正しやすくなります。基礎の質を上げる材料として使うイメージです。",
+  },
+  {
+    title: "夏以降の計画をそろそろ固めたい",
+    body:
+      "夏から秋にかけての勉強は、大学別の寄せ方で効率が大きく変わります。夏前に一度触れておけば、秋の本格演習に向けた準備を逆算しやすくなります。",
+  },
+];
 
 const startGuides = [
   {
@@ -69,6 +88,24 @@ const startGuides = [
   },
 ];
 
+const schoolTypePlans = [
+  {
+    title: "国公立医学部志望",
+    body:
+      "共通テストと二次の両方を見ながら進める必要があります。春〜夏は二次の傾向把握に軽く触れ、秋以降は共通テストとの配分を見ながら、二次の過去問を本格的に回すのが基本です。",
+  },
+  {
+    title: "私立医学部志望",
+    body:
+      "英語・数学・理科の出題癖が大学ごとにかなり違うため、国公立より少し早めに形式確認をしておく価値があります。特に時間配分が厳しい大学は、夏前に一度触れるだけでも勉強の方向性が変わります。",
+  },
+  {
+    title: "単科医大・特色の強い大学志望",
+    body:
+      "記述の重さ、英語の分量、理科の難度、面接や小論文の有無など、大学ごとの差が非常に大きい領域です。『一般的な医学部対策』だけではズレやすいため、志望校が固まったら早めに過去問で確認すべきです。",
+  },
+];
+
 const steps = [
   {
     title: "1. 本番条件で解く",
@@ -104,7 +141,7 @@ const mistakes = [
       "高2や高3春の段階で低得点でも、それ自体は問題ではありません。早期の過去問は実力判定ではなく、ゴール設定のために使うものです。数字だけで自信を失うのは本末転倒です。",
   },
   {
-    title: "過去問ばかり解いて基礎を戻らない",
+    title: "過去問ばかり解いて基礎に戻らない",
     body:
       "過去問は弱点発見ツールです。間違えた単元に戻らず、年度だけを消費していくと伸びません。『演習』と『基礎補強』を必ず往復させる必要があります。",
   },
@@ -175,19 +212,39 @@ export default function KakomonTimingPage() {
         <div className="max-w-3xl mx-auto">
           <div className="p-8 rounded-2xl bg-white mb-8" style={{ border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
-              「過去問は秋からでいいですか？」「まだ基礎が終わっていないのに解いても意味ありますか？」——医学部受験では、過去問の扱い方に悩む受験生が非常に多いです。
+              「過去問は秋からでいいですか？」「まだ基礎が終わっていないのに解いても意味ありますか？」という相談は、医学部受験では非常に多いです。特に難関大学を目指すほど、過去問をいつから使うかで学習の効率が変わります。
             </p>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
               結論から言うと、過去問は「本格的に解く時期」と「早めに触れておく時期」を分けて考えるべきです。早すぎても遅すぎても非効率ですが、正しく使えば受験勉強の方向性を決める最強の材料になります。
             </p>
             <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
-              このページでは、学年別の始め方、1年分の回し方、失敗しやすいパターンまで整理して解説します。
+              このページでは、学年別の始め方、今すぐ触れるべきサイン、国公立・私立での使い分け、1年分の回し方まで実践的に整理します。
             </p>
           </div>
         </div>
       </div>
 
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            こんな状態なら、今すぐ一度過去問に触れるべき
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {readySignals.map((item) => (
+              <div key={item.title} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>
+                  {item.title}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             学年・状況別の過去問スタートガイド
@@ -219,12 +276,12 @@ export default function KakomonTimingPage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+      <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             目安は「早めに見る、秋から本格的に回す」
           </h2>
-          <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+          <div className="p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
               多くの受験生にとって最もバランスがいいのは、高3春〜夏に一度触れて、秋から本格演習に入る流れです。これなら、過去問の傾向を知らずに勉強がズレることも、基礎が曖昧なまま年度だけ消費することも避けやすくなります。
             </p>
@@ -232,9 +289,45 @@ export default function KakomonTimingPage() {
               逆に、秋まで完全に封印すると「志望校に必要な力」が曖昧なまま夏を終えやすくなります。医学部入試は大学ごとの差が大きいので、ゴールを見ないまま走るのは危険です。
             </p>
             <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
-              Medvanceでは、過去問を単なる演習材料ではなく、学習計画を修正する診断材料として扱います。いつ・どの大学に・何年分触れるかまで含めて個別に設計しています。
+              重要なのは、過去問を早く解くことそのものではなく、見つかった課題をその後の学習計画に反映することです。過去問は実力テストではなく、軌道修正の材料として使うと最も効果が高くなります。
             </p>
           </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            国公立・私立で、過去問の回し方は少し変わる
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {schoolTypePlans.map((item) => (
+              <div key={item.title} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>
+                  {item.title}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="py-4 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ArticleConsultationBox
+            title="過去問をいつから始めるか迷うなら、先に設計を固めた方が安全です"
+            description="過去問の時期は、学力と志望校次第で正解が変わります。Medvanceの無料相談では、単に『秋から』と一般論で答えるのではなく、今の状況に合わせた回し方を具体化します。"
+            points={[
+              "今の学力で、どの大学の過去問にいつ触れるべきか整理できる",
+              "過去問で見えた弱点を、夏以降の学習計画にどう落とすか明確になる",
+              "国公立と私立の併願バランスまで含めた年間戦略を相談できる",
+              "独学だと難しい答案の質や復習の深さも相談できる",
+            ]}
+            source="column-kakomon-timing-mid"
+          />
         </div>
       </div>
 
@@ -276,8 +369,11 @@ export default function KakomonTimingPage() {
             「過去問を始める時期」より大切なこと
           </h2>
           <div className="p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
+              本当に重要なのは、過去問を解いたあとに勉強が変わることです。解いた年度数が多くても、弱点補強につながっていなければ意味はありません。逆に、2〜3年分でも丁寧に分析し、復習と再演習まで回せていれば大きく伸びます。
+            </p>
             <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
-              本当に重要なのは、過去問を解いたあとに勉強が変わることです。解いた年度数が多くても、弱点補強につながっていなければ意味はありません。逆に、2〜3年分でも丁寧に分析し、復習と再演習まで回せていれば大きく伸びます。過去問は「終盤の確認作業」ではなく、「合格までの距離を測る道具」として使いましょう。
+              過去問は「終盤の確認作業」ではなく、「合格までの距離を測る道具」として使うのが正解です。今の自分にとって早いか遅いかを判断できないなら、まずは一度、第三者と一緒に戦略を整理する方が遠回りを防げます。
             </p>
           </div>
         </div>
@@ -343,6 +439,17 @@ export default function KakomonTimingPage() {
       <ColumnCTA
         heading="過去問の使い方まで含めて、受験戦略を整理しませんか？"
         subtext="志望校、現在地、残り期間に合わせて、過去問に触れる時期と復習の回し方まで個別に設計します。"
+        concerns={[
+          "基礎演習はしているのに、志望校との差がどこにあるか見えない",
+          "国公立と私立のどちらにどれだけ寄せるべきか迷っている",
+          "過去問を解いても、復習の深さや優先順位に自信がない",
+        ]}
+        benefits={[
+          "今の時点で触れるべき大学と年数が明確になる",
+          "夏から秋にかけての学習配分と過去問スケジュールが整理できる",
+          "答案の作り方や弱点補強の進め方まで具体的に相談できる",
+        ]}
+        source="column-kakomon-timing-bottom"
       />
     </div>
   );

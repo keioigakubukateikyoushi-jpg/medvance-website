@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type GtagParams = {
   event_category: string;
@@ -20,10 +20,20 @@ export default function ContactPage() {
     targetType: "",
     targetName: "",
     message: "",
+    source: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const sourceFromQuery = new URLSearchParams(window.location.search).get("from") ?? "";
+    if (!sourceFromQuery) return;
+
+    setFormData((prev) => (
+      prev.source ? prev : { ...prev, source: sourceFromQuery }
+    ));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -142,6 +152,17 @@ export default function ContactPage() {
                   <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
                     どんな内容でも大丈夫です。「まだ迷っている」「学力が心配」でも構いません。
                   </p>
+
+                  {formData.source && (
+                    <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: "rgba(201,146,42,0.08)", border: "1px solid rgba(201,146,42,0.25)" }}>
+                      <p className="text-xs font-semibold mb-1" style={{ color: "#c9922a" }}>
+                        記事ページからのご相談として受け付けます
+                      </p>
+                      <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+                        読んで気になった内容があれば、そのままご相談内容に書いていただければ大丈夫です。志望校・現状・悩みに合わせて具体的にお答えします。
+                      </p>
+                    </div>
+                  )}
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     {/* お名前 */}

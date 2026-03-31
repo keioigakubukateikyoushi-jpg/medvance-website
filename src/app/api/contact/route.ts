@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
-  const { name, email, phone, status, targetType, targetName, message } = await req.json();
+  const { name, email, phone, status, targetType, targetName, message, source } = await req.json();
   const target = [targetType, targetName].filter(Boolean).join(" / ") || "未入力";
 
   if (!name || !email) {
@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
   <tr><td style="font-weight:bold;color:#142b57;">電話番号</td><td>${phone || "未入力"}</td></tr>
   <tr><td style="font-weight:bold;color:#142b57;">現在の状況</td><td>${status || "未選択"}</td></tr>
   <tr><td style="font-weight:bold;color:#142b57;">志望校</td><td>${target}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">流入元</td><td>${source || "不明"}</td></tr>
 </table>
 <br>
 <p style="font-weight:bold;color:#142b57;">ご相談内容</p>
