@@ -7,7 +7,7 @@ import HoverCard from "@/components/HoverCard";
 
 export const metadata = {
   title: "医学部受験専門塾 Medvance｜慶應医学部生が完全1対1・全国オンライン対応",
-  description: "現役慶應医学部生による完全1対1の医学部受験専門塾。オンラインで全国どこからでも受講可能。英語・数学・物理・化学・小論文・面接まで一貫サポート。無料相談受付中。",
+  description: "現役慶應医学部生による完全1対1の医学部受験専門塾。慶應医学部に受かるには何が必要か、面接対策はいつから始めるべきかまで解説。オンラインで全国どこからでも受講可能。",
 };
 
 /* ── Icon components ────────────────────────── */
@@ -82,6 +82,15 @@ const subjects = [
   { label: "生物", badge: "生", href: "/subjects/biology" },
 ];
 
+const searchIntentLinks = [
+  { label: "慶應医学部に受かるには", href: "/universities/keio", desc: "科目別対策、面接、合格戦略まで" },
+  { label: "医学部面接対策はいつから？", href: "/column/mensetu-timing", desc: "学年別の始め方と模擬面接の流れ" },
+  { label: "医学部の過去問はいつから？", href: "/column/kakomon-timing", desc: "着手時期、何年分やるか、復習法" },
+  { label: "私立医学部の学費を比較したい", href: "/column/gakuhi", desc: "国公立との差や6年間の費用感を整理" },
+  { label: "合格体験記を見たい", href: "/success-stories", desc: "現役・浪人・再受験の合格事例を見る" },
+  { label: "保護者向けの情報を知りたい", href: "/for/parents", desc: "塾選び、費用、サポートの考え方" },
+];
+
 /* ── Page ─────────────────────────────────── */
 export default function Home() {
   return (
@@ -123,6 +132,40 @@ export default function Home() {
               <p className="text-sm md:text-base font-semibold" style={{ color: "#0c1a33" }}>{s.sub}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── 2.5 SEARCH INTENT HUB ─────────────── */}
+      <section className="bg-white py-14 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                Popular Topics
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>
+                よく検索される悩みから探す
+              </h2>
+              <p className="text-sm" style={{ color: "#6b7280" }}>
+                アクセス分析で実際に需要が見えたテーマを、すぐ読める形でまとめました。
+              </p>
+            </div>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {searchIntentLinks.map((item, i) => (
+              <FadeIn key={item.href} delay={(i % 3) * 0.07}>
+                <Link
+                  href={item.href}
+                  className="block rounded-2xl p-5 hover:shadow-md transition-shadow"
+                  style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+                >
+                  <p className="text-sm font-bold mb-2" style={{ color: "#0c1a33" }}>{item.label}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.desc}</p>
+                  <p className="text-xs font-semibold mt-4" style={{ color: "#c9922a" }}>詳しく見る →</p>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -203,6 +246,17 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+          <FadeIn delay={0.15}>
+            <div className="text-center mt-10">
+              <Link
+                href="/success-stories"
+                className="inline-block px-6 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#0c1a33", color: "#fff" }}
+              >
+                合格体験記をもっと見る →
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -792,8 +846,10 @@ export default function Home() {
               { tag: "合格分析", title: "医学部に受かる人・落ちる人の違い", href: "/column/difference" },
               { tag: "私立vs国公立", title: "私立医学部 vs 国公立医学部", href: "/column/shigaku-vs-kokuritsu" },
               { tag: "面接", title: "医学部面接対策の完全ガイド", href: "/column/mensetu" },
+              { tag: "面接時期", title: "医学部面接対策はいつから始めるべきか", href: "/column/mensetu-timing" },
               { tag: "学費", title: "私立・国公立の学費を徹底比較", href: "/column/gakuhi" },
               { tag: "タイミング", title: "医学部受験はいつから始めるべきか", href: "/column/juken-timing" },
+              { tag: "過去問", title: "医学部受験の過去問はいつから始めるべきか", href: "/column/kakomon-timing" },
               { tag: "偏差値", title: "偏差値と医学部合格の関係", href: "/column/hensachi" },
               { tag: "再受験", title: "再受験で医学部に合格する方法", href: "/column/saijuken" },
               { tag: "塾選び", title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント", href: "/column/medical-yobiko-cost" },
@@ -840,6 +896,7 @@ export default function Home() {
                     { label: "高いだけ？費用とサポート", href: "/column/medical-yobiko-cost" },
                     { label: "オーダーメイド型が伸びる理由", href: "/column/ordermade-curriculum" },
                     { label: "塾はサポート体制で選ぶ", href: "/column/support-juku-choice" },
+                    { label: "面接対策はいつ始める？", href: "/column/mensetu-timing" },
                   ].map((item) => (
                     <Link
                       key={item.href}

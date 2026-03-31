@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "医学部合格体験記｜現役・浪人・再受験の成功事例 | Medvance",
+  description:
+    "Medvanceの医学部合格体験記を掲載。現役合格、一浪、再受験それぞれの成功事例から、成績の伸ばし方と合格までの流れを確認できます。",
+};
+
 const stories = [
   {
     name: "A.T.さん",

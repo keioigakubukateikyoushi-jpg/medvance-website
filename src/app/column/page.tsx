@@ -66,6 +66,13 @@ const articles = [
     popular: false,
   },
   {
+    slug: "mensetu-timing",
+    category: "受験戦略",
+    title: "医学部面接対策はいつから始めるべきか",
+    description: "高1・高2・高3・浪人別に、面接対策の始め方と仕上げ方を整理。自己分析、大学研究、模擬面接の進め方まで解説。",
+    popular: false,
+  },
+  {
     slug: "kakomon-timing",
     category: "受験戦略",
     title: "医学部受験の過去問はいつから始めるべきか",

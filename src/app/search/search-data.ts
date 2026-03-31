@@ -169,6 +169,13 @@ const columnPages: SearchItem[] = [
     keywords: ["いつから", "開始時期"],
   },
   {
+    href: "/column/mensetu-timing",
+    category: "コラム",
+    title: "医学部面接対策はいつから始めるべきか",
+    description: "面接対策の着手時期、自己分析、大学研究、模擬面接の進め方を解説します。",
+    keywords: ["面接対策", "面接 いつから", "MMI", "模擬面接", "医師志望理由"],
+  },
+  {
     href: "/column/kakomon-timing",
     category: "コラム",
     title: "医学部受験の過去問はいつから始めるべきか",
@@ -382,6 +389,7 @@ export const suggestedSearchKeywords = [
   "日医",
   "昭和",
   "面接",
+  "過去問",
   "小論文",
   "数学",
   "英語",

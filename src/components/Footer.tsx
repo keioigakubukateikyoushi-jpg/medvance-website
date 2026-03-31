@@ -28,6 +28,7 @@ export default function Footer() {
                 { label: "浪人生の方", href: "/for/ronin" },
                 { label: "再受験生の方", href: "/for/saijuken" },
                 { label: "保護者の方", href: "/for/parents" },
+                { label: "合格体験記", href: "/success-stories" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
                   {l.label}
@@ -82,7 +83,9 @@ export default function Footer() {
                 { label: "受かる人・落ちる人の違い", href: "/column/difference" },
                 { label: "私立 vs 国公立", href: "/column/shigaku-vs-kokuritsu" },
                 { label: "医学部面接対策", href: "/column/mensetu" },
+                { label: "面接対策はいつから？", href: "/column/mensetu-timing" },
                 { label: "医学部の学費比較", href: "/column/gakuhi" },
+                { label: "過去問はいつから？", href: "/column/kakomon-timing" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
                   {l.label}
