@@ -424,37 +424,43 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse" style={{ minWidth: "600px" }}>
+              <table className="w-full border-collapse" style={{ minWidth: "760px" }}>
                 <thead>
                   <tr>
                     <th
-                      className="text-left py-4 px-5 text-sm font-semibold"
-                      style={{ color: "#6b7280", borderBottom: "2px solid #e5e1d8", width: "28%" }}
+                      className="text-left py-4 px-4 text-sm font-semibold"
+                      style={{ color: "#6b7280", borderBottom: "2px solid #e5e1d8", width: "20%" }}
                     >
                       比較項目
                     </th>
                     <th
-                      className="py-4 px-5 text-center text-sm font-bold rounded-t-xl"
+                      className="py-4 px-4 text-center text-sm font-bold rounded-t-xl"
                       style={{
                         color: "#0c1a33",
                         backgroundColor: "rgba(201,146,42,0.08)",
                         border: "2px solid #c9922a",
                         borderBottom: "none",
-                        width: "24%",
+                        width: "20%",
                       }}
                     >
                       <span className="block text-base" style={{ color: "#c9922a" }}>Medvance</span>
                       <span className="text-xs font-normal" style={{ color: "#6b7280" }}>医学部受験専門塾</span>
                     </th>
                     <th
-                      className="py-4 px-5 text-center text-sm font-bold"
-                      style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
+                      className="py-4 px-4 text-center text-sm font-bold"
+                      style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "20%" }}
+                    >
+                      医学部専門予備校
+                    </th>
+                    <th
+                      className="py-4 px-4 text-center text-sm font-bold"
+                      style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "20%" }}
                     >
                       大手予備校
                     </th>
                     <th
-                      className="py-4 px-5 text-center text-sm font-bold"
-                      style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "24%" }}
+                      className="py-4 px-4 text-center text-sm font-bold"
+                      style={{ color: "#0c1a33", borderBottom: "2px solid #e5e1d8", width: "20%" }}
                     >
                       一般家庭教師
                     </th>
@@ -465,6 +471,7 @@ export default function Home() {
                     {
                       item: "講師の質",
                       medvance: "慶應医学部生のみ",
+                      igaku: "専任講師（受験経験者）",
                       yobikou: "様々",
                       kateikyoshi: "学生バイト多数",
                       highlight: true,
@@ -472,6 +479,7 @@ export default function Home() {
                     {
                       item: "指導スタイル",
                       medvance: "完全1対1",
+                      igaku: "少人数〜1対1",
                       yobikou: "集団授業が中心",
                       kateikyoshi: "1対1だが医学部特化なし",
                       highlight: false,
@@ -479,6 +487,7 @@ export default function Home() {
                     {
                       item: "医学部特化",
                       medvance: "完全特化",
+                      igaku: "特化",
                       yobikou: "一部コースのみ",
                       kateikyoshi: "非特化",
                       highlight: true,
@@ -486,6 +495,7 @@ export default function Home() {
                     {
                       item: "面接・小論文対策",
                       medvance: "対応",
+                      igaku: "対応",
                       yobikou: "一部対応",
                       kateikyoshi: "非対応",
                       highlight: false,
@@ -493,27 +503,29 @@ export default function Home() {
                     {
                       item: "受講エリア",
                       medvance: "全国オンライン対応",
+                      igaku: "通塾が必要（大都市中心）",
                       yobikou: "通塾が必要",
                       kateikyoshi: "エリア限定が多い",
                       highlight: true,
                     },
                     {
-                      item: "料金相談",
-                      medvance: "無料カウンセリング",
-                      yobikou: "固定コース",
+                      item: "料金目安",
+                      medvance: "8万円〜/月",
+                      igaku: "年間150〜500万円",
+                      yobikou: "年間50〜150万円",
                       kateikyoshi: "様々",
                       highlight: false,
                     },
                   ].map((row, i) => (
                     <tr key={i} style={{ borderBottom: "1px solid #e5e1d8" }}>
                       <td
-                        className="py-4 px-5 text-sm font-semibold"
+                        className="py-4 px-4 text-sm font-semibold"
                         style={{ color: "#0c1a33" }}
                       >
                         {row.item}
                       </td>
                       <td
-                        className="py-4 px-5 text-center text-sm font-bold"
+                        className="py-4 px-4 text-center text-sm font-bold"
                         style={{
                           color: "#0c1a33",
                           backgroundColor: row.highlight ? "rgba(201,146,42,0.06)" : "rgba(201,146,42,0.03)",
@@ -530,13 +542,19 @@ export default function Home() {
                         </span>
                       </td>
                       <td
-                        className="py-4 px-5 text-center text-sm"
+                        className="py-4 px-4 text-center text-sm"
+                        style={{ color: "#6b7280" }}
+                      >
+                        {row.igaku}
+                      </td>
+                      <td
+                        className="py-4 px-4 text-center text-sm"
                         style={{ color: "#6b7280" }}
                       >
                         {row.yobikou}
                       </td>
                       <td
-                        className="py-4 px-5 text-center text-sm"
+                        className="py-4 px-4 text-center text-sm"
                         style={{ color: "#6b7280" }}
                       >
                         {row.kateikyoshi}
@@ -556,6 +574,7 @@ export default function Home() {
                         height: "12px",
                       }}
                     />
+                    <td />
                     <td />
                     <td />
                   </tr>
