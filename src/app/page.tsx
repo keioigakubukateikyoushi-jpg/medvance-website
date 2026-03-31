@@ -192,7 +192,7 @@ export default function Home() {
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="flex flex-col h-full p-7 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
                   {/* Quote mark */}
-                  <span className="text-4xl font-bold leading-none mb-4 block" style={{ color: "#c9922a", fontFamily: "Georgia, serif" }}>"</span>
+                  <span className="text-4xl font-bold leading-none mb-4 block" style={{ color: "#c9922a", fontFamily: "Georgia, serif" }}>&ldquo;</span>
                   <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#3d3d3d" }}>{t.quote}</p>
                   <div>
                     <div className="h-px mb-4" style={{ backgroundColor: "#e5e1d8" }} />
@@ -796,6 +796,9 @@ export default function Home() {
               { tag: "タイミング", title: "医学部受験はいつから始めるべきか", href: "/column/juken-timing" },
               { tag: "偏差値", title: "偏差値と医学部合格の関係", href: "/column/hensachi" },
               { tag: "再受験", title: "再受験で医学部に合格する方法", href: "/column/saijuken" },
+              { tag: "塾選び", title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント", href: "/column/medical-yobiko-cost" },
+              { tag: "個別設計", title: "医学部受験でオーダーメイドカリキュラムが重要な理由", href: "/column/ordermade-curriculum" },
+              { tag: "伴走", title: "医学部受験の塾はサポート体制で選ぶべき理由", href: "/column/support-juku-choice" },
             ].map((col, i) => (
               <FadeIn key={i} delay={(i % 3) * 0.07}>
                 <Link
@@ -816,6 +819,68 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+          <FadeIn delay={0.15}>
+            <div
+              className="mt-8 grid lg:grid-cols-[1.3fr_0.7fr] gap-6 rounded-2xl p-6 md:p-8"
+              style={{ background: "linear-gradient(135deg, #0c1a33 0%, #17315f 100%)", border: "1px solid rgba(201,146,42,0.25)" }}
+            >
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                  Recommended
+                </p>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                  塾選びで失敗したくない人向けの人気記事をまとめて読めます
+                </h3>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.68)" }}>
+                  医学部専門予備校の費用感、大手の一律カリキュラムの落とし穴、伴走型サポートの重要性まで、
+                  実際に相談でよく聞かれる論点を先に整理できます。
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { label: "高いだけ？費用とサポート", href: "/column/medical-yobiko-cost" },
+                    { label: "オーダーメイド型が伸びる理由", href: "/column/ordermade-curriculum" },
+                    { label: "塾はサポート体制で選ぶ", href: "/column/support-juku-choice" },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="px-4 py-2 rounded-full text-xs font-semibold hover:opacity-90 transition-opacity"
+                      style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "#fff", border: "1px solid rgba(255,255,255,0.14)" }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-2xl p-5 md:p-6 bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
+                  Site Search
+                </p>
+                <h4 className="text-lg font-bold mb-2" style={{ color: "#0c1a33" }}>
+                  大学名やテーマから探す
+                </h4>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
+                  慶應、面接、数学、学費、再受験などのキーワードで、コラムも大学別ページもまとめて検索できます。
+                </p>
+                <form action="/search" className="flex gap-2">
+                  <input
+                    type="text"
+                    name="q"
+                    placeholder="例: 慶應 / 面接 / 学費"
+                    className="flex-1 rounded-xl px-4 py-3 text-sm"
+                    style={{ border: "1px solid #d6d1c7", color: "#0c1a33", backgroundColor: "#fff" }}
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-xl px-5 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#0c1a33" }}
+                  >
+                    検索
+                  </button>
+                </form>
+              </div>
+            </div>
+          </FadeIn>
           <div className="text-center">
             <Link
               href="/column"
