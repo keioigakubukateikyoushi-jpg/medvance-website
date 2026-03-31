@@ -1,3 +1,5 @@
+import { nationalUniversityArticles } from "../universities/national/data";
+
 export type SearchItem = {
   href: string;
   category: string;
@@ -338,6 +340,13 @@ const universityPages: SearchItem[] = [
     description: "国公立医学部対策の考え方や学習の進め方をまとめています。",
     keywords: ["国公立医学部", "大学別対策"],
   },
+  ...nationalUniversityArticles.map((entry) => ({
+    href: `/universities/national/${entry.slug}`,
+    category: "大学別対策",
+    title: `${entry.name} の入試対策`,
+    description: `${entry.name}の特徴、学習戦略、面接準備、合格までの進め方をまとめたページです。`,
+    keywords: [entry.name, entry.area, entry.region, ...entry.keywords],
+  })),
   ...universityDefinitions.map(([slug, name]) => ({
     href: `/universities/${slug}`,
     category: "大学別対策",

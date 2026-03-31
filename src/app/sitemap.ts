@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { nationalUniversityArticles } from "./universities/national/data";
 
 const BASE = "https://medvance-edu.com";
 
@@ -20,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 大学別
     { url: `${BASE}/universities/private`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/universities/national`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    ...nationalUniversityArticles.map((entry) => ({
+      url: `${BASE}/universities/national/${entry.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     { url: `${BASE}/universities/keio`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/universities/jikei`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/universities/juntendo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
