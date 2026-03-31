@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type DropdownItem = { label: string; href: string; desc?: string };
 
@@ -58,6 +58,20 @@ export default function Header() {
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const q = (new FormData(e.currentTarget).get("q") as string ?? "").trim();
+    if (q) router.push(`/search?q=${encodeURIComponent(q)}`);
+  };
+
+  const handleMobileSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const q = (new FormData(e.currentTarget).get("q") as string ?? "").trim();
+    setMenuOpen(false);
+    if (q) router.push(`/search?q=${encodeURIComponent(q)}`);
+  };
 
   const handleLogoClick = (e: React.MouseEvent) => {
     if (pathname === "/") {
@@ -145,7 +159,7 @@ export default function Header() {
             </div>
           ))}
 
-          <form action="/search" className="ml-2 hidden lg:flex items-center gap-2">
+          <form onSubmit={handleSearch} className="ml-2 hidden lg:flex items-center gap-2">
             <input
               type="text"
               name="q"
@@ -193,7 +207,7 @@ export default function Header() {
           style={{ backgroundColor: "#0c1a33", borderTop: "1px solid rgba(255,255,255,0.1)" }}
           className="lg:hidden px-5 pb-5 pt-2 max-h-[80vh] overflow-y-auto"
         >
-          <form action="/search" className="mb-4 mt-2 flex items-center gap-2">
+          <form onSubmit={handleMobileSearch} className="mb-4 mt-2 flex items-center gap-2">
             <input
               type="text"
               name="q"
@@ -205,7 +219,6 @@ export default function Header() {
               type="submit"
               className="rounded-lg px-4 py-3 text-sm font-bold text-white"
               style={{ backgroundColor: "#c9922a" }}
-              onClick={() => setMenuOpen(false)}
             >
               検索
             </button>
