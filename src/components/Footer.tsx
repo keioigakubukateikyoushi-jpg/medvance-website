@@ -28,7 +28,6 @@ export default function Footer() {
                 { label: "浪人生の方", href: "/for/ronin" },
                 { label: "再受験生の方", href: "/for/saijuken" },
                 { label: "保護者の方", href: "/for/parents" },
-                { label: "合格体験記", href: "/success-stories" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
                   {l.label}

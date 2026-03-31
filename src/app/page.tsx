@@ -87,16 +87,16 @@ const searchIntentLinks = [
   { label: "医学部面接対策はいつから？", href: "/column/mensetu-timing", desc: "学年別の始め方と模擬面接の流れ" },
   { label: "医学部の過去問はいつから？", href: "/column/kakomon-timing", desc: "着手時期、何年分やるか、復習法" },
   { label: "私立医学部の学費を比較したい", href: "/column/gakuhi", desc: "国公立との差や6年間の費用感を整理" },
-  { label: "合格体験記を見たい", href: "/success-stories", desc: "現役・浪人・再受験の合格事例を見る" },
+  { label: "無料相談で今の優先順位を整理したい", href: "/contact?from=home-search-hub", desc: "志望校・現在地・残り期間から、次にやることを30分で整理" },
   { label: "保護者向けの情報を知りたい", href: "/for/parents", desc: "塾選び、費用、サポートの考え方" },
 ];
 
 const decisionLinks = [
   {
-    tag: "信頼",
-    title: "合格体験記を読む",
-    desc: "現役・浪人・再受験それぞれの出発点と、何が変わって合格に近づいたかを確認できます。",
-    href: "/success-stories",
+    tag: "相談",
+    title: "無料相談で相性を確かめる",
+    desc: "今の課題・残り期間・必要なサポートをその場で具体化できます。",
+    href: "/contact?from=home-decision-card",
   },
   {
     tag: "料金",
@@ -270,11 +270,11 @@ export default function Home() {
           <FadeIn delay={0.15}>
             <div className="text-center mt-10">
               <Link
-                href="/success-stories"
+                href="/contact?from=home-voices"
                 className="inline-block px-6 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: "#0c1a33", color: "#fff" }}
               >
-                合格体験記をもっと見る →
+                無料相談で話を聞いてみる →
               </Link>
             </div>
           </FadeIn>
