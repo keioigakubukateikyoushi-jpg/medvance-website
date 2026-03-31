@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 
@@ -57,6 +58,16 @@ export default function MedicalYobikoCostPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
+          <div className="mb-8 overflow-hidden rounded-[28px]" style={{ border: "1px solid #e5e1d8" }}>
+            <Image
+              src="/images/generated/medical-yobiko-cost-hero.png"
+              alt="高額な医学部専門予備校と丁寧なサポート体制を対比したイメージ"
+              width={1536}
+              height={1024}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
               医学部専門予備校は、一般的な予備校に比べて学費が高くなりやすい傾向があります。年間数百万円規模になることもあり、「高いのだからサポートも手厚いはず」と考えたくなります。
@@ -84,6 +95,15 @@ export default function MedicalYobikoCostPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
+          <div className="mb-8 overflow-hidden rounded-[28px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
+            <Image
+              src="/images/generated/juku-comparison-infographic.png"
+              alt="塾のタイプごとに費用感とサポートの違いを整理した比較図"
+              width={1536}
+              height={1024}
+              className="w-full h-auto rounded-[20px]"
+            />
+          </div>
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             契約前に必ず確認したいこと
           </h2>

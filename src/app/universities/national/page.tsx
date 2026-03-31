@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { nationalUniversityArticles } from "./data";
 
@@ -27,8 +28,19 @@ export default function NationalPage() {
       </div>
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-          {[
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-8 overflow-hidden rounded-[32px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
+            <Image
+              src="/images/generated/national-guide-hero.png"
+              alt="日本地図と学習要素をモチーフにした国公立医学部一覧ページのキービジュアル"
+              width={1536}
+              height={1024}
+              className="w-full h-auto rounded-[24px]"
+              priority
+            />
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+          {[ 
             {
               title: "共通テストと二次の配点を先に確認する",
               body: "国公立医学部は大学ごとに配点差が大きく、同じ勉強量でも結果が変わりやすいです。まずは配点と必要得点の整理から入るのがおすすめです。",
@@ -51,6 +63,7 @@ export default function NationalPage() {
               </p>
             </div>
           ))}
+          </div>
         </div>
       </div>
 

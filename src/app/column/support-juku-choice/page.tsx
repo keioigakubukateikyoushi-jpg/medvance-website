@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 
@@ -115,6 +116,16 @@ export default function SupportJukuChoicePage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
+          <div className="mb-8 overflow-hidden rounded-[28px]" style={{ border: "1px solid #e5e1d8" }}>
+            <Image
+              src="/images/generated/support-juku-hero.png"
+              alt="医学部受験で自分に合う塾を比較しながら進路を考える受験生のイメージ"
+              width={1536}
+              height={1024}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
               医学部受験で塾を選ぶとき、授業の分かりやすさや合格実績だけを見て決めてしまう人は少なくありません。しかし実際には、
@@ -153,6 +164,15 @@ export default function SupportJukuChoicePage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
+          <div className="mb-8 overflow-hidden rounded-[28px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
+            <Image
+              src="/images/generated/juku-comparison-infographic.png"
+              alt="大手予備校、医学部専門予備校、オーダーメイド指導の違いを視覚化した比較図"
+              width={1536}
+              height={1024}
+              className="w-full h-auto rounded-[20px]"
+            />
+          </div>
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             入塾前に確認すべきチェックリスト
           </h2>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 
@@ -56,6 +57,16 @@ export default function OrdermadeCurriculumPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
+          <div className="mb-8 overflow-hidden rounded-[28px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
+            <Image
+              src="/images/generated/ordermade-roadmap-infographic.png"
+              alt="医学部受験に向けたオーダーメイド学習ロードマップのイメージ図"
+              width={1536}
+              height={1024}
+              className="w-full h-auto rounded-[20px]"
+              priority
+            />
+          </div>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
               医学部受験で成績が伸びる人は、たくさん授業を受けている人とは限りません。伸びる人は、自分に必要なことだけを、正しい順番でやっています。
@@ -83,6 +94,15 @@ export default function OrdermadeCurriculumPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
+          <div className="mb-8 overflow-hidden rounded-[28px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
+            <Image
+              src="/images/generated/ordermade-roadmap-infographic.png"
+              alt="課題発見から復習までを可視化した個別最適カリキュラムの図解"
+              width={1536}
+              height={1024}
+              className="w-full h-auto rounded-[20px]"
+            />
+          </div>
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             こんな調整ができると強い
           </h2>
