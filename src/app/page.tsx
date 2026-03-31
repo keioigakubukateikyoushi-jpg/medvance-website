@@ -218,69 +218,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 3.5 TESTIMONIALS ──────────────────── */}
-      <section className="bg-white py-24 px-4">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Voices
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-              受講生の声
-            </h2>
-            <p className="text-center text-sm mb-14" style={{ color: "#6b7280" }}>
-              プライバシー保護のため匿名・一部加工して掲載しています
-            </p>
-          </FadeIn>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                quote: "偏差値52から始めて、1年で北里大学医学部に合格できました。勉強の「方向性」が全く変わったと感じています。",
-                name: "浪人生（1浪）",
-                place: "神奈川県",
-                result: "北里大学医学部 合格",
-              },
-              {
-                quote: "社会人3年目から再受験を決意。仕事と両立しながら週2回のペースで指導を受け、東京医科大学に合格しました。",
-                name: "再受験生・26歳",
-                place: "東京都",
-                result: "東京医科大学 合格",
-              },
-              {
-                quote: "高3の夏からスタートしましたが、無駄を省いた戦略のおかげで昭和大学医学部に現役合格。相談して本当に良かったです。",
-                name: "現役生",
-                place: "埼玉県",
-                result: "昭和大学医学部 合格",
-              },
-            ].map((t, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="flex flex-col h-full p-7 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                  {/* Quote mark */}
-                  <span className="text-4xl font-bold leading-none mb-4 block" style={{ color: "#c9922a", fontFamily: "Georgia, serif" }}>&ldquo;</span>
-                  <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "#3d3d3d" }}>{t.quote}</p>
-                  <div>
-                    <div className="h-px mb-4" style={{ backgroundColor: "#e5e1d8" }} />
-                    <p className="text-xs font-bold mb-0.5" style={{ color: "#0c1a33" }}>{t.name}・{t.place}</p>
-                    <p className="text-xs font-semibold" style={{ color: "#c9922a" }}>{t.result}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-          <FadeIn delay={0.15}>
-            <div className="text-center mt-10">
-              <Link
-                href="/contact?from=home-voices"
-                className="inline-block px-6 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#0c1a33", color: "#fff" }}
-              >
-                無料相談で話を聞いてみる →
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* ── 3.8 DECISION HUB ─────────────────── */} 
       <section style={{ backgroundColor: "#f7f5f0", borderTop: "1px solid #e5e1d8", borderBottom: "1px solid #e5e1d8" }} className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
