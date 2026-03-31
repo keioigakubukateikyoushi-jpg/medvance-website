@@ -511,7 +511,7 @@ export default function Home() {
                     {
                       item: "料金目安",
                       medvance: "8万円〜/月",
-                      igaku: "年間150〜500万円",
+                      igaku: "年間400〜1000万円",
                       yobikou: "年間50〜150万円",
                       kateikyoshi: "様々",
                       highlight: false,
