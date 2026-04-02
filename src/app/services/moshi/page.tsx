@@ -186,6 +186,26 @@ export default function MoshiPage() {
         </div>
       </div>
 
+      {/* Tool CTA */}
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Tool</p>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            模試偏差値 自動分析ツール
+          </h2>
+          <p className="text-sm mb-6" style={{ color: "#6b7280" }}>
+            偏差値を入力するだけで、科目別バンド・参考書・学習タイムラインを自動生成します。無料・登録不要。
+          </p>
+          <Link
+            href="/services/moshi/tool"
+            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#0c1a33" }}
+          >
+            自動分析ツールを使う
+          </Link>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
