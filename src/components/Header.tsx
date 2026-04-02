@@ -34,6 +34,7 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "オンライン指導", href: "/services/online", desc: "全国どこからでも受講" },
       { label: "訪問・対面指導", href: "/services/visit", desc: "東京・関東エリア対応" },
       { label: "面接・小論文対策", href: "/services/interview", desc: "医学部特有の対策" },
+      { label: "模試分析サービス", href: "/services/moshi", desc: "偏差値・弱点から学習ルート設計" },
       { label: "各教科の指導方法", href: "/subjects", desc: "英数理の本質的指導" },
     ],
   },

@@ -65,6 +65,7 @@ export default function Footer() {
                 { label: "オンライン指導", href: "/services/online" },
                 { label: "訪問・対面指導", href: "/services/visit" },
                 { label: "面接・小論文対策", href: "/services/interview" },
+                { label: "模試分析サービス", href: "/services/moshi" },
                 { label: "料金について", href: "/pricing" },
                 { label: "お問い合わせ", href: "/contact" },
               ].map((l) => (
