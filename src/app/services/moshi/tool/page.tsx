@@ -154,17 +154,18 @@ export default function MoshiToolPage() {
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            Mock Exam Analysis Tool
-          </p>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 text-xs font-semibold" style={{ backgroundColor: "rgba(201,146,42,0.15)", color: "#c9922a", border: "1px solid rgba(201,146,42,0.4)" }}>
+            <span>🤖</span>
+            <span>AI Mock Exam Analysis Tool</span>
+          </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            模試偏差値 自動分析ツール
+            AI模試偏差値 自動分析ツール
           </h1>
-          <p className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-            偏差値を入力するだけで、科目別バンド・弱点・参考書・学習タイムラインを自動生成します
+          <p className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.8)" }}>
+            偏差値を入力するだけで、AIが学習ルートを即時生成します
           </p>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-            駿台・河合塾・進研・東進など主要模試に対応。模試の難易度補正も自動で行います
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
+            模試の難易度補正・6段階バンド評価・参考書レコメンド・タイムライン設計まで自動。無料・登録不要。
           </p>
         </div>
       </div>
