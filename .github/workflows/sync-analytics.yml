@@ -2,8 +2,8 @@ name: 📊 毎日 GA4 → Notion 同期
 
 on:
   schedule:
-    # 毎朝9:00 JST (= UTC 0:00) に昨日分を取得
-    - cron: "0 0 * * *"
+    # 毎日JST 1:00 (= UTC 16:00) に昨日分を取得
+    - cron: "0 16 * * *"
   workflow_dispatch:
     inputs:
       date:
