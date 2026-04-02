@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "訪問・対面医学部受験指導｜東京・関東で慶應医学部生が自宅に来て指導 | Medvance",
+  title: "訪問・対面医学部受験指導｜自宅・カフェ・学習スペースで慶應医学部生が1対1指導 | Medvance",
   description:
-    "東京・神奈川・千葉・埼玉などの関東エリアで、現役慶應医学部生が自宅に来て医学部受験を指導。完全1対1の訪問家庭教師。まずは無料相談から。",
+    "東京・神奈川・千葉・埼玉などの関東エリアで、現役慶應医学部生が自宅・カフェ・レンタル学習スペースで医学部受験を指導。完全1対1の対面家庭教師。まずは無料相談から。",
 };
 
 const features = [
@@ -40,6 +40,22 @@ const recommended = [
   "お気に入りの参考書を使いたい方",
   "対面でのリアルなコミュニケーションを重視する方",
   "保護者の方が指導の様子を確認したい方",
+  "カフェや学習スペースなど外での指導を希望する方",
+];
+
+const locations = [
+  {
+    title: "自宅訪問",
+    body: "ご自宅に講師が伺います。慣れた環境でリラックスして受講でき、外出不要で学習時間を最大化できます。",
+  },
+  {
+    title: "カフェ",
+    body: "近所のカフェや指定の場所での指導にも対応。自宅以外の環境で気分を変えて学習したい方にも柔軟に対応します。",
+  },
+  {
+    title: "レンタル学習スペース",
+    body: "コワーキングスペースや個室の学習スペースでの指導も可能。集中しやすい静かな環境で、しっかり取り組みたい方におすすめです。",
+  },
 ];
 
 const faqs = [
@@ -59,6 +75,10 @@ const faqs = [
     q: "家に来てもらうのですが、準備は必要ですか？",
     a: "特別な準備は不要です。机・椅子・ご自身の教材があれば授業を行えます。プリント・問題集はこちらで用意することも可能です。",
   },
+  {
+    q: "カフェやレンタル学習スペースでも指導してもらえますか？",
+    a: "はい、対応しています。カフェや個室のレンタル学習スペースなど、ご希望の場所での指導が可能です。場所によっては交通費や施設費が別途かかる場合がありますので、お問い合わせ時にご相談ください。",
+  },
 ];
 
 export default function VisitPage() {
@@ -70,10 +90,10 @@ export default function VisitPage() {
             訪問・対面指導
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-            慶應医学部生が、あなたの自宅で1対1指導。
+            慶應医学部生が、あなたの場所で1対1指導。
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            東京・神奈川・千葉・埼玉など関東エリア対応
+            自宅・カフェ・レンタル学習スペースに対応｜東京・神奈川・千葉・埼玉など関東エリア
           </p>
         </div>
       </div>
@@ -95,6 +115,25 @@ export default function VisitPage() {
       </div>
 
       <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            指導場所について
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {locations.map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="font-bold text-sm mb-3" style={{ color: "#0c1a33" }}>{item.title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs mt-4 text-center" style={{ color: "#6b7280" }}>
+            ご希望の場所についてはお問い合わせ時にお知らせください。場所によって交通費等が発生する場合があります。
+          </p>
+        </div>
+      </div>
+
+      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
             対応エリア
