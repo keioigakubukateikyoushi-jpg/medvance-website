@@ -25,6 +25,9 @@ export default function Footer() {
             <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>対象者</p>
             <nav className="space-y-2 text-sm mb-5">
               {[
+                { label: "高校1年生の方", href: "/for/ko1" },
+                { label: "高校2年生の方", href: "/for/ko2" },
+                { label: "高校3年生の方", href: "/for/ko3" },
                 { label: "浪人生の方", href: "/for/ronin" },
                 { label: "再受験生の方", href: "/for/saijuken" },
                 { label: "保護者の方", href: "/for/parents" },

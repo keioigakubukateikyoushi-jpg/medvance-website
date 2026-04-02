@@ -11,6 +11,9 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
   {
     label: "対象・志望校",
     items: [
+      { label: "高校1年生の方", href: "/for/ko1", desc: "早期スタートで圧倒的有利に" },
+      { label: "高校2年生の方", href: "/for/ko2", desc: "部活と両立・高3に備える" },
+      { label: "高校3年生の方", href: "/for/ko3", desc: "現役合格への最短戦略" },
       { label: "浪人生の方", href: "/for/ronin", desc: "浪人生専用の指導・戦略" },
       { label: "再受験生の方", href: "/for/saijuken", desc: "社会人・大学生からの挑戦" },
       { label: "保護者の方", href: "/for/parents", desc: "定期報告・保護者面談あり" },
