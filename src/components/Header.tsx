@@ -11,6 +11,7 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
   {
     label: "対象・志望校",
     items: [
+      { label: "中学生の方", href: "/for/chugaku", desc: "医学部への道筋を今から設計" },
       { label: "高校1年生の方", href: "/for/ko1", desc: "早期スタートで圧倒的有利に" },
       { label: "高校2年生の方", href: "/for/ko2", desc: "部活と両立・高3に備える" },
       { label: "高校3年生の方", href: "/for/ko3", desc: "現役合格への最短戦略" },
