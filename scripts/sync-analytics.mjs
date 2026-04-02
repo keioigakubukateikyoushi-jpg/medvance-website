@@ -13,7 +13,8 @@
  *   PAGESPEED_URL           速度計測対象URL (https://medvance-edu.com/)
  *   NOTION_API_KEY          Notion Token
  *   NOTION_DATABASE_ID      日次アクセスログ DB ID
- *   NOTION_PARENT_PAGE_ID   レポート作成先ページID（省略可）
+ *   NOTION_DAILY_PAGE_ID    デイリーレポート作成先ページID（省略可）
+ *   NOTION_WEEKLY_PAGE_ID   週次レポート作成先ページID（省略可）
  *
  * 実行例:
  *   node scripts/sync-analytics.mjs
@@ -27,7 +28,8 @@ import { google } from "googleapis";
 const GA4_PROPERTY_ID       = process.env.GA4_PROPERTY_ID;
 const NOTION_DATABASE_ID    = process.env.NOTION_DATABASE_ID;
 const NOTION_API_KEY        = process.env.NOTION_API_KEY;
-const NOTION_PARENT_PAGE_ID = process.env.NOTION_PARENT_PAGE_ID || "334791ed-0116-8139-8dfc-e6915c723632";
+const NOTION_DAILY_PAGE_ID  = process.env.NOTION_DAILY_PAGE_ID  || "336791ed-0116-813a-9933-e375c6ad34f0";
+const NOTION_WEEKLY_PAGE_ID = process.env.NOTION_WEEKLY_PAGE_ID || "336791ed-0116-8100-a336-f4eac2a2a4ff";
 const SC_SITE_URL           = process.env.SC_SITE_URL   || "https://medvance-edu.com/";
 const PAGESPEED_URL         = process.env.PAGESPEED_URL || "https://medvance-edu.com/";
 
@@ -446,7 +448,7 @@ async function createDailyPage({ date, today, prev, channels, topPages, contactP
   ];
 
   await nFetch("/pages", "POST", {
-    parent: { page_id: NOTION_PARENT_PAGE_ID },
+    parent: { page_id: NOTION_DAILY_PAGE_ID },
     icon: { type: "emoji", emoji: "📊" },
     properties: {
       title: { title: [{ type: "text", text: { content: `📊 ${mm}/${dd} デイリーレポート` } }] },
@@ -598,7 +600,7 @@ async function createWeeklyPage(sunday) {
   ];
 
   await nFetch("/pages", "POST", {
-    parent: { page_id: NOTION_PARENT_PAGE_ID },
+    parent: { page_id: NOTION_WEEKLY_PAGE_ID },
     icon: { type: "emoji", emoji: "📈" },
     properties: {
       title: { title: [{ type: "text", text: { content: `📈 週次レポート ${sm}/${sd}〜${em}/${ed}` } }] },
