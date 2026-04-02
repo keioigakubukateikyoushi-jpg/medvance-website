@@ -107,20 +107,6 @@ export default function RoninPage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-            合格者の声
-          </h2>
-          <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
-              「現役時代は独学で何とかしようとしていましたが、どれだけ時間を使っても成績が伸びず、気づいたら受験が終わっていました。Medvanceで初めて、自分の学習のどこに問題があるかを言語化してもらい、勉強の仕方が根本から変わりました。講師の先生が同じ浪人経験を持っているので、焦りや不安を話せる存在でもありました。一浪で順天堂大学医学部に合格できたのは、Medvanceなしでは考えられません。」
-            </p>
-            <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>S.Y.さん｜一浪・順天堂大学医学部合格</p>
-          </div>
-        </div>
-      </div>
-
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>

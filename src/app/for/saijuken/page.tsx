@@ -107,20 +107,6 @@ export default function SaijukenPage() {
         </div>
       </div>
 
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-            合格者の声
-          </h2>
-          <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
-              「大学卒業後に一般企業に就職しましたが、医師になりたいという気持ちが消えず、再受験を決意しました。働きながらの勉強は体力・時間的に非常にきつかったのですが、Medvanceの先生が毎週のスケジュールを一緒に組んでくれて、限られた時間でも着実に力が伸びました。面接では再受験の経緯を正直に話す準備ができており、慈恵医大の面接官の方にも好印象を持ってもらえたと感じています。」
-            </p>
-            <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>K.M.さん｜再受験・東京慈恵会医科大学合格</p>
-          </div>
-        </div>
-      </div>
-
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>

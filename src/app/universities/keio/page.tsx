@@ -393,21 +393,6 @@ export default function KeioPage() {
         </div>
       </div>
 
-      {/* 合格者の声 */}
-      <div className="py-16 px-4 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
-            合格者の声
-          </h2>
-          <div className="p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
-              「高2の終わりに偏差値50程度の状態から慶應医学部を目指し始めました。周囲からは無謀と言われましたが、Medvanceの先生が最初から戦略を立ててくれたので、ブレずに勉強できました。特に数学の論証力と英語の読解速度が大きく伸び、本番でも自信をもって臨めました。面接の準備も何度も模擬練習をしていただき、本番は緊張しませんでした。」
-            </p>
-            <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>A.T.さん｜慶應義塾大学医学部合格</p>
-          </div>
-        </div>
-      </div>
-
       {/* FAQ */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
