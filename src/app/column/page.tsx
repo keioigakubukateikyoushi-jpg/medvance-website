@@ -294,6 +294,30 @@ export default function ColumnIndexPage() {
         </div>
       </div>
 
+      {/* note導線 */}
+      <div className="py-10 px-4 bg-white" style={{ borderTop: "1px solid #e5e1d8" }}>
+        <div className="max-w-3xl mx-auto">
+          <a
+            href="https://note.com/igakubu_juken"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between gap-4 p-5 rounded-2xl hover:shadow-md transition-shadow group"
+            style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+          >
+            <div className="flex items-center gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm" style={{ backgroundColor: "#41c9b4" }}>
+                n
+              </div>
+              <div>
+                <p className="text-xs font-semibold mb-0.5" style={{ color: "#6b7280" }}>note でも発信中</p>
+                <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>医学部受験の情報をnoteでも読む</p>
+              </div>
+            </div>
+            <span className="text-sm font-semibold flex-shrink-0 group-hover:underline" style={{ color: "#41c9b4" }}>読む →</span>
+          </a>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto rounded-2xl p-8 text-center" style={{ backgroundColor: "#0c1a33" }}>

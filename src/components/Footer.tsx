@@ -110,10 +110,24 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style={{ color: "rgba(255,255,255,0.32)" }}>
           <p>&copy; {new Date().getFullYear()} Medvance. All rights reserved.</p>
-          <nav className="flex gap-5">
-            <Link href="/privacy" className="hover:opacity-80 transition-opacity">プライバシーポリシー</Link>
-            <Link href="/cookies" className="hover:opacity-80 transition-opacity">Cookie設定</Link>
-          </nav>
+          <div className="flex items-center gap-5">
+            <a
+              href="https://note.com/igakubu_juken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+              style={{ color: "rgba(255,255,255,0.45)" }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm-1-13v6l5-3-5-3z"/>
+              </svg>
+              note
+            </a>
+            <nav className="flex gap-5">
+              <Link href="/privacy" className="hover:opacity-80 transition-opacity">プライバシーポリシー</Link>
+              <Link href="/cookies" className="hover:opacity-80 transition-opacity">Cookie設定</Link>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
