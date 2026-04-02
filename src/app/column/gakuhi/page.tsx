@@ -44,7 +44,7 @@ export const metadata = {
 
 const privateSchoolFees = [
   {
-    category: "学費が安い大学（〜約2,200万円）",
+    category: "ほぼ無償（条件付き免除）",
     schools: [
       {
         name: "防衛医科大学校",
@@ -58,6 +58,11 @@ const privateSchoolFees = [
         annual: "約200万円（貸与制）",
         note: "卒業後9年間の地域医療勤務で学費が免除される制度。実質的な負担は非常に少ない。",
       },
+    ],
+  },
+  {
+    category: "学費が抑えられた大学（約1,500〜2,200万円）",
+    schools: [
       {
         name: "産業医科大学",
         total: "約1,500万円",
@@ -91,7 +96,7 @@ const privateSchoolFees = [
     ],
   },
   {
-    category: "学費が中程度の大学（約2,300〜2,900万円）",
+    category: "中程度（約2,300〜2,900万円）",
     schools: [
       {
         name: "日本医科大学",
@@ -126,7 +131,7 @@ const privateSchoolFees = [
     ],
   },
   {
-    category: "学費が高い大学（約3,000万円〜）",
+    category: "高額（約3,000万円〜）",
     schools: [
       {
         name: "帝京大学（医学部）",
