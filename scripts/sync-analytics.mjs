@@ -27,7 +27,7 @@ import { google } from "googleapis";
 const GA4_PROPERTY_ID       = process.env.GA4_PROPERTY_ID;
 const NOTION_DATABASE_ID    = process.env.NOTION_DATABASE_ID;
 const NOTION_API_KEY        = process.env.NOTION_API_KEY;
-const NOTION_PARENT_PAGE_ID = process.env.NOTION_PARENT_PAGE_ID || "32d791ed-0116-804f-8b02-fd60cf7bffcc";
+const NOTION_PARENT_PAGE_ID = process.env.NOTION_PARENT_PAGE_ID || "334791ed-0116-8139-8dfc-e6915c723632";
 const SC_SITE_URL           = process.env.SC_SITE_URL   || "https://medvance-edu.com/";
 const PAGESPEED_URL         = process.env.PAGESPEED_URL || "https://medvance-edu.com/";
 
