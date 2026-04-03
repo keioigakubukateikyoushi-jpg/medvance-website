@@ -119,6 +119,26 @@ export function buildArticleSchema({
   };
 }
 
+export function buildServiceSchema(name: string, description: string, path: string, serviceType: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: buildAbsoluteUrl(path),
+    serviceType,
+    provider: {
+      "@type": "EducationalOrganization",
+      name: "Medvance",
+      url: siteUrl,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Japan",
+    },
+  };
+}
+
 export function buildFaqSchema(items: FaqSchemaInput[]) {
   return {
     "@context": "https://schema.org",

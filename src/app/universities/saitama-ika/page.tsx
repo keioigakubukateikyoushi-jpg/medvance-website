@@ -4,7 +4,10 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 export const metadata = {
   title: "埼玉医科大学受験対策｜入試傾向・合格戦略 | Medvance",
   description: "埼玉医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。基礎〜標準レベルで地域医療への関心が面接で評価されます。完全個別指導で合格を目指す。",
-};
+
+  alternates: {
+    canonical: "/universities/saitama-ika",
+  },};
 
 const overviewStats = [
   { label: "募集人員", value: "約120名" },

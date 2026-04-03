@@ -3,7 +3,10 @@ import Link from "next/link";
 export const metadata = {
   title: "日本大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
   description: "日本大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。基礎から標準問題を確実に取る戦略を詳しく紹介します。",
-};
+
+  alternates: {
+    canonical: "/universities/nihon",
+  },};
 
 const subjects = [
   {

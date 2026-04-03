@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { buildFaqSchema, buildServiceSchema } from "@/lib/seo";
 
 export const metadata = {
   title: "AI模試分析サービス｜偏差値を入力するだけで学習ルートを自動生成 | Medvance",
   description:
     "偏差値を入力するだけで、AIが科目別バンド・弱点・参考書・学習タイムラインを即時生成。駿台・河合塾・進研・東進など模試の難易度補正も自動対応。無料・登録不要で今すぐ使えます。",
-};
+
+  alternates: {
+    canonical: "/services/moshi",
+  },};
 
 const features = [
   {
@@ -82,9 +86,18 @@ const faqs = [
   },
 ];
 
+const faqSchema = buildFaqSchema(faqs.map((f) => ({ q: f.q, a: f.a })));
+const serviceSchema = buildServiceSchema(
+  "AI模試分析サービス",
+  "偏差値を入力するだけでAIが科目別バンド・弱点・参考書・学習タイムラインを即時生成する無料ツール。",
+  "/services/moshi",
+  "模試分析・学習ルート設計"
+);
+
 export default function MoshiPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, serviceSchema]) }} />
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">

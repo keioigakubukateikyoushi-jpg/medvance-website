@@ -40,7 +40,10 @@ export const metadata = {
   title: "医学部受験ロードマップ｜いつから・何をすればいいか完全解説 | Medvance",
   description:
     "医学部受験のスケジュールを現役慶應医学部生が解説。高1・高2・高3・浪人・再受験それぞれのロードマップ。「いつから始めれば間に合う？」という疑問にお答えします。",
-};
+
+  alternates: {
+    canonical: "/column/roadmap",
+  },};
 
 const roadmap = [
   {

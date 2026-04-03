@@ -40,7 +40,10 @@ export const metadata = {
   title: "医学部受験に家庭教師は効果的か？選び方と活用法を解説 | Medvance",
   description:
     "医学部受験における家庭教師の効果・選び方・費用相場を解説。現役医学部生による完全1対1指導の特徴と、予備校との組み合わせ方も紹介します。",
-};
+
+  alternates: {
+    canonical: "/column/kateikyoushi",
+  },};
 
 const advantages = [
   {

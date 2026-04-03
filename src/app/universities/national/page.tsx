@@ -6,7 +6,10 @@ export const metadata = {
   title: "国公立大学医学部・防衛医科大学校の対策一覧 | Medvance",
   description:
     "国公立大学医学部と防衛医科大学校の対策ページ一覧です。大学ごとの特徴、学習戦略、面接準備の考え方をまとめています。",
-};
+
+  alternates: {
+    canonical: "/universities/national",
+  },};
 
 const regionOrder = ["北海道", "東北", "関東", "甲信越", "北陸", "東海", "近畿", "中国", "四国", "九州", "沖縄"];
 

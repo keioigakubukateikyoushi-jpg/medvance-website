@@ -40,7 +40,10 @@ export const metadata = {
   title: "医学部の学費・費用を徹底比較 | Medvance",
   description:
     "国公立・私立医学部の6年間の学費を徹底比較。奨学金・特待生制度や学費以外にかかる費用まで、医学部進学に必要なお金を整理します。",
-};
+
+  alternates: {
+    canonical: "/column/gakuhi",
+  },};
 
 const privateSchoolFees = [
   {

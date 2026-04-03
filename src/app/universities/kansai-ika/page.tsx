@@ -4,7 +4,10 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 export const metadata = {
   title: "関西医科大学受験対策｜入試傾向・合格戦略 | Medvance",
   description: "関西医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。英語の比重が高い関西圏難関私立。英語力強化が合格の鍵。完全個別指導で対策。",
-};
+
+  alternates: {
+    canonical: "/universities/kansai-ika",
+  },};
 
 const overviewStats = [
   { label: "募集人員", value: "約102名" },

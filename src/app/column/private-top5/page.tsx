@@ -6,7 +6,10 @@ export const metadata = {
   description:
     "慶應義塾・東京慈恵会・順天堂・日本医科・昭和大学など私立医学部上位校の入試傾向・特徴・対策を現役慶應医学部生が解説。私立医学部おすすめ5校の徹底分析。",
   keywords: ["私立医学部 おすすめ", "私立医学部 トップ", "慶應医学部 対策", "慈恵医科大学 対策", "順天堂医学部 対策"],
-};
+
+  alternates: {
+    canonical: "/column/private-top5",
+  },};
 
 const topSchools = [
   {

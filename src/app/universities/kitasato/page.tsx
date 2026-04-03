@@ -4,7 +4,10 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 export const metadata = {
   title: "北里大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
   description: "北里大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。物理難度が高め・感染症研究で有名な相模原キャンパスの入試を徹底攻略します。",
-};
+
+  alternates: {
+    canonical: "/universities/kitasato",
+  },};
 
 const subjects = [
   {

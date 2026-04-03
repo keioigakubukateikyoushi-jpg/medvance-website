@@ -4,7 +4,10 @@ export const metadata = {
   title: "オンライン医学部受験指導｜全国どこからでも現役慶應医学部生に習える | Medvance",
   description:
     "全国対応のオンライン医学部受験専門指導。現役慶應医学部生が1対1でオンライン指導。北海道から沖縄まで、地方在住でも最高レベルの医学部受験対策が受けられます。無料相談実施中。",
-};
+
+  alternates: {
+    canonical: "/services/online",
+  },};
 
 const features = [
   {

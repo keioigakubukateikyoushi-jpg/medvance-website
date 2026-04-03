@@ -5,7 +5,10 @@ export const metadata = {
   title: "順天堂大学医学部に受かるには｜入試対策・合格戦略 | Medvance",
   description:
     "順天堂大学医学部の入試対策を徹底解説。MMI面接方式・英語長文・数学の具体的な対策と合格戦略を現役慶應医学部生が紹介します。",
-};
+
+  alternates: {
+    canonical: "/universities/juntendo",
+  },};
 
 const subjects = [
   {

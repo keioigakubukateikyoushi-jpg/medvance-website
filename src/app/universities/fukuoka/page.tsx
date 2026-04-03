@@ -5,7 +5,10 @@ export const metadata = {
   title: "福岡大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
   description:
     "福岡大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。全科目バランス型の九州圏私立医学部への完全対策ガイドです。",
-};
+
+  alternates: {
+    canonical: "/universities/fukuoka",
+  },};
 
 const stats = [
   { label: "募集人員", value: "約60名" },

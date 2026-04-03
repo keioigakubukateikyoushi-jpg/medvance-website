@@ -44,7 +44,10 @@ export const metadata = {
   title: "医学部合格のための勉強法｜現役慶應医学部生が解説 | Medvance",
   description:
     "現役慶應医学部生が、医学部受験の正しい勉強法を科目別に解説。英語・数学・物理・化学・生物の効率的な学習法とよくある失敗パターン。",
-};
+
+  alternates: {
+    canonical: "/column/study-method",
+  },};
 
 const subjectMethods = [
   {

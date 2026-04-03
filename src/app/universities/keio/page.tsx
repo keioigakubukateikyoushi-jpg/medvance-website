@@ -5,7 +5,10 @@ export const metadata = {
   title: "慶應医学部に受かるには｜入試対策・合格戦略を現役生が解説 | Medvance",
   description:
     "慶應義塾大学医学部に受かるには何が必要か。現役慶應医学部生が英語・数学・物理・化学・小論文・面接の具体的な対策を解説。合格への最短ルートを詳しく紹介します。",
-};
+
+  alternates: {
+    canonical: "/universities/keio",
+  },};
 
 const subjects = [
   {

@@ -3,7 +3,10 @@ import Link from "next/link";
 export const metadata = {
   title: "藤田医科大学受験対策｜入試傾向・合格戦略 | Medvance",
   description: "藤田医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。中部圏最大規模で基礎〜標準問題中心の対策を詳しく紹介します。",
-};
+
+  alternates: {
+    canonical: "/universities/fujita",
+  },};
 
 const subjects = [
   {

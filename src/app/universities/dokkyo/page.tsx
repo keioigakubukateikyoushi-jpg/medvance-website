@@ -4,7 +4,10 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 export const metadata = {
   title: "獨協医科大学受験対策｜入試傾向・合格戦略 | Medvance",
   description: "獨協医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。標準問題中心で小論文あり。基礎完成と小論文対策が合否を決める戦略を詳しく紹介します。",
-};
+
+  alternates: {
+    canonical: "/universities/dokkyo",
+  },};
 
 const overviewStats = [
   { label: "募集人員", value: "52名" },

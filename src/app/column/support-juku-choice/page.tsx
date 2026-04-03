@@ -88,7 +88,10 @@ export const metadata = {
   title: "医学部受験の塾はサポート体制で選ぶべき理由 | Medvance",
   description:
     "医学部専門予備校の高額な学費、大手予備校の一律カリキュラム、そしてオーダーメイド指導の強みを比較。医学部受験で本当に伸びやすい塾の選び方を解説します。",
-};
+
+  alternates: {
+    canonical: "/column/support-juku-choice",
+  },};
 
 export default function SupportJukuChoicePage() {
   return (

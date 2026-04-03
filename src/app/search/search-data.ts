@@ -258,6 +258,9 @@ export const siteSearchItems: SearchItem[] = [
 ];
 
 export const suggestedSearchKeywords = [
+  "4月",
+  "新高3",
+  "年間計画",
   "慶應",
   "慈恵",
   "順天堂",

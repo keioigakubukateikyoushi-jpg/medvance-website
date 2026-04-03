@@ -4,7 +4,10 @@ export const metadata = {
   title: "保護者の方へ｜お子さまの医学部合格を一緒に目指します | Medvance",
   description:
     "お子さまの医学部合格を目指す保護者の方へ。Medvanceは現役慶應医学部生による完全1対1指導。定期報告・保護者面談あり。料金・指導内容など、まずは無料相談でご確認ください。",
-};
+
+  alternates: {
+    canonical: "/for/parents",
+  },};
 
 const concerns = [
   {

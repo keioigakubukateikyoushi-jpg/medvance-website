@@ -5,7 +5,10 @@ export const metadata = {
   title: "久留米大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
   description:
     "久留米大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。英語読解力と全科目バランスが合否を決める九州圏私立医学部への完全ガイドです。",
-};
+
+  alternates: {
+    canonical: "/universities/kurume",
+  },};
 
 const stats = [
   { label: "募集人員", value: "約120名" },

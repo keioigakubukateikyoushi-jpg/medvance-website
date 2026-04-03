@@ -4,7 +4,10 @@ export const metadata = {
   title: "浪人生の医学部受験対策｜現役慶應医学部生による完全1対1指導 | Medvance",
   description:
     "浪人して医学部を目指している方へ。Medvanceは現役慶應医学部生が完全1対1で指導。浪人生の悩みに寄り添ったオーダーメイド学習計画で最短合格を目指します。全国オンライン対応・無料相談受付中。",
-};
+
+  alternates: {
+    canonical: "/for/ronin",
+  },};
 
 const challenges = [
   {

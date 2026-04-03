@@ -259,6 +259,30 @@ export const columnArticles: ColumnArticle[] = [
     keywords: ["医学部 生物 勉強法", "記述", "資料問題"],
     popular: false,
   },
+  {
+    slug: "new-high3-april-plan",
+    category: "受験情報",
+    title: "医学部受験の新高3が4月にやるべきこと",
+    description: "医学部受験で新高3が4月にやるべきことを、英数理の優先順位、模試までの進め方、志望校の決め方まで含めて解説します。",
+    keywords: ["医学部受験 新高3 4月", "医学部受験 高3 4月 やること", "新高3 医学部 4月"],
+    popular: true,
+  },
+  {
+    slug: "ronin-april-plan",
+    category: "受験情報",
+    title: "医学部受験の浪人生が4月にやるべきこと",
+    description: "浪人生が医学部受験で4月にやるべきことを、生活リズム、基礎固め、予備校との併用、月内の到達目標まで含めて解説します。",
+    keywords: ["医学部受験 浪人生 4月", "浪人生 4月 勉強計画 医学部", "宅浪 4月 医学部"],
+    popular: true,
+  },
+  {
+    slug: "april-year-plan",
+    category: "受験戦略",
+    title: "医学部受験の4月からの年間計画",
+    description: "4月スタートで医学部合格を目指す人向けに、春から共通テスト直前までの年間計画、学年別の優先順位、志望校決定の進め方を解説します。",
+    keywords: ["医学部受験 4月 年間計画", "医学部受験 4月 勉強計画", "医学部受験 年間スケジュール"],
+    popular: true,
+  },
 ];
 
 export const columnCategories = [
@@ -283,6 +307,12 @@ export const homeFeaturedColumnArticles = columnArticlesWithHref.filter((article
 const columnArticleMap = new Map(columnArticlesWithHref.map((article) => [article.slug, article]));
 
 export const columnTopicClusters = [
+  {
+    title: "4月スタートで出遅れたくない人へ",
+    description: "新高3、浪人生、年間計画の立て方を4月目線でまとめた入口です。",
+    searchKeyword: "4月",
+    articleSlugs: ["new-high3-april-plan", "ronin-april-plan", "april-year-plan"],
+  },
   {
     title: "いつから始めるかで迷う人へ",
     description: "受験全体、面接、過去問の着手時期をまとめて追える入口です。",

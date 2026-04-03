@@ -6,7 +6,10 @@ export const metadata = {
   description:
     "医学部合格に必要な偏差値を国公立・私立別に解説。慶應・慈恵・順天堂など主要大学の偏差値目安と、現実的な目標設定の方法。現役慶應医学部生が「偏差値だけで判断しない」受験戦略も紹介。",
   keywords: ["医学部 偏差値", "医学部 偏差値 必要", "私立医学部 偏差値", "医学部 難易度", "医学部合格 偏差値"],
-};
+
+  alternates: {
+    canonical: "/column/hensachi",
+  },};
 
 const nationalUniversities = [
   { name: "東京大学（理科三類）", deviation: "70〜73以上", note: "日本最難関。共通テスト・二次試験ともに最高水準が求められる。" },

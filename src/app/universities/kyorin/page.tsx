@@ -4,7 +4,10 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 export const metadata = {
   title: "杏林大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
   description: "杏林大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。三鷹キャンパス・基礎力重視の出題傾向を徹底分析し、合格への最短ルートを紹介します。",
-};
+
+  alternates: {
+    canonical: "/universities/kyorin",
+  },};
 
 const subjects = [
   {

@@ -6,7 +6,10 @@ export const metadata = {
   description:
     "慶應義塾大学医学部の入試科目・出題傾向・面接・倍率・合格戦略を現役慶應医学部生が徹底解説。慶應医学部受験を考えている方必見の完全ガイド。",
   keywords: ["慶應医学部 入試", "慶應医学部 受験", "慶應義塾大学 医学部 対策", "慶應医学部 難易度", "慶應医学部 倍率"],
-};
+
+  alternates: {
+    canonical: "/column/keio-guide",
+  },};
 
 const subjects = [
   {

@@ -4,7 +4,10 @@ export const metadata = {
   title: "医学部受験専門塾Medvanceの料金｜週1〜週5のプラン目安と始め方",
   description:
     "Medvanceの料金ページです。授業料、コーチング料、入塾金、週1〜週5の月額プラン目安、無料相談で決まることまでまとめています。",
-};
+
+  alternates: {
+    canonical: "/pricing",
+  },};
 
 const plans = [
   { freq: "月4回", weekly: "週1回", lessons: 4, lessonFee: 60000, coaching: 20000, total: 80000, discount: 0 },

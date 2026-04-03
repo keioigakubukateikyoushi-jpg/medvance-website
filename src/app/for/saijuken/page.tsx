@@ -4,7 +4,10 @@ export const metadata = {
   title: "再受験生の医学部合格対策｜社会人・大学生からの医学部挑戦 | Medvance",
   description:
     "社会人・大学生から医学部を目指す再受験生を完全サポート。現役慶應医学部生が1対1で指導。忙しいあなたに合わせたオーダーメイド学習計画。全国オンライン対応・無料相談実施中。",
-};
+
+  alternates: {
+    canonical: "/for/saijuken",
+  },};
 
 const challenges = [
   {

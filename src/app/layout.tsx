@@ -11,9 +11,6 @@ export const metadata: Metadata = {
     default: "Medvance｜現役慶應医学部生による医学部受験専門塾",
     template: "%s | Medvance",
   },
-  alternates: {
-    canonical: "/",
-  },
   other: {
     "google-site-verification": "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
   },

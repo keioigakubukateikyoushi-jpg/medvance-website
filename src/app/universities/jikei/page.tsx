@@ -5,7 +5,10 @@ export const metadata = {
   title: "東京慈恵会医科大学に受かるには｜入試対策・合格戦略 | Medvance",
   description:
     "東京慈恵会医科大学医学部の入試対策を徹底解説。私立最難関の英語・数学記述・面接対策まで、合格への具体的な戦略を現役慶應医学部生が紹介します。",
-};
+
+  alternates: {
+    canonical: "/universities/jikei",
+  },};
 
 const subjects = [
   {

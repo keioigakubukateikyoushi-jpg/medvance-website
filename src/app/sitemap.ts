@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { columnArticles } from "@/lib/columnArticles";
 import { nationalUniversityArticles } from "./universities/national/data";
+import { notices } from "@/lib/notices";
 
 const BASE = "https://medvance-edu.com";
 
@@ -12,6 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     // 対象者別
+    { url: `${BASE}/for/chugaku`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/for/ko1`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/for/ko2`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/for/ko3`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/ronin`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/saijuken`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/parents`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
@@ -19,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/online`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/services/visit`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/services/interview`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/services/moshi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/services/moshi/tool`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // 大学別
     { url: `${BASE}/universities/private`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/universities/national`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
@@ -66,6 +73,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: entry.featuredOnHome || entry.popular ? 0.8 : 0.7,
     })),
     { url: `${BASE}/search`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    // お知らせ
+    { url: `${BASE}/news`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...notices.map((n) => ({
+      url: `${BASE}/news/${n.slug}`,
+      lastModified: new Date(n.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
     // 教科別
     { url: `${BASE}/subjects`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/subjects/english`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },

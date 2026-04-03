@@ -44,7 +44,10 @@ export const metadata = {
   title: "医学部受験の塾・予備校の選び方｜失敗しない選択基準を解説 | Medvance",
   description:
     "医学部受験専門塾・大手予備校・個別指導・家庭教師の違いを徹底比較。自分に合った塾を選ぶための基準と、よくある失敗パターンを現役慶應医学部生が解説します。",
-};
+
+  alternates: {
+    canonical: "/column/juku-erabi",
+  },};
 
 const comparison = [
   {

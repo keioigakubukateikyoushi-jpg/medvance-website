@@ -6,7 +6,10 @@ export const metadata = {
   description:
     "医学部再受験を考えている社会人・大学生向けの完全ガイド。再受験のリアルな現状、合格者の共通点、年齢制限の実態、勉強スケジュールの設計まで現役慶應医学部生が解説。",
   keywords: ["医学部 再受験", "医学部 社会人", "医学部 再受験 難しい", "社会人 医学部 合格", "医学部 再受験 勉強法"],
-};
+
+  alternates: {
+    canonical: "/column/saijuken",
+  },};
 
 const realities = [
   {

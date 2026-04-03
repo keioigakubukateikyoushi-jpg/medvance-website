@@ -4,7 +4,10 @@ import { notices } from "@/lib/notices";
 export const metadata = {
   title: "お知らせ一覧 | Medvance",
   description: "Medvanceからのお知らせ・サービス情報・キャンペーン情報の一覧です。",
-};
+
+  alternates: {
+    canonical: "/news",
+  },};
 
 const categoryColor: Record<string, { bg: string; text: string }> = {
   重要:         { bg: "#fef2f2", text: "#dc2626" },

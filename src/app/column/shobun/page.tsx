@@ -40,7 +40,10 @@ export const metadata = {
   title: "医学部小論文の書き方・完全対策ガイド｜頻出テーマと合格答案の作り方 | Medvance",
   description:
     "医学部小論文の頻出テーマ・書き方の型・採点基準・対策スケジュールを現役慶應医学部生が解説。生命倫理・医療制度など頻出テーマへの対応法も詳しく紹介します。",
-};
+
+  alternates: {
+    canonical: "/column/shobun",
+  },};
 
 const themes = [
   {

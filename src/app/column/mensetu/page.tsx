@@ -37,7 +37,10 @@ export const metadata = {
   title: "医学部面接対策の完全ガイド | Medvance",
   description:
     "医学部面接でよく聞かれる質問と回答例、MMI対策、落とされるパターンまで解説。配点が高い面接で確実に合格点を取る準備法。",
-};
+
+  alternates: {
+    canonical: "/column/mensetu",
+  },};
 
 const commonQuestions = [
   {

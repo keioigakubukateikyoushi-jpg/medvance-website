@@ -4,7 +4,10 @@ export const metadata = {
   title: "私立医学部受験対策｜慈恵・順天堂・日医など私立医学部に強い個別指導 | Medvance",
   description:
     "私立医学部（慈恵・順天堂・日本医科大学など）の受験対策を現役慶應医学部生が1対1で指導。各大学の傾向に合わせたオーダーメイド対策。無料相談受付中。",
-};
+
+  alternates: {
+    canonical: "/universities/private",
+  },};
 
 const universities = [
   {
