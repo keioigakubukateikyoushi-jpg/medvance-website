@@ -64,7 +64,8 @@ jobs:
           if [ -n "${{ github.event.inputs.date }}" ]; then
             node scripts/sync-analytics.mjs --date ${{ github.event.inputs.date }}
           else
-            node scripts/sync-analytics.mjs
+            TARGET_DATE=$(TZ=Asia/Tokyo date -d "1 day ago" "+%Y-%m-%d")
+            node scripts/sync-analytics.mjs --date $TARGET_DATE
           fi
 
       - name: Report skipped sync
