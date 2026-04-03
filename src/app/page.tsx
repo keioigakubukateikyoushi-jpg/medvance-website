@@ -1450,6 +1450,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 13.8 RECRUIT ──────────────────────── */}
+      <section className="py-20 px-4" style={{ backgroundColor: "#f7f5f0", borderTop: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
+              <div className="grid md:grid-cols-2">
+                {/* Left */}
+                <div className="p-8 md:p-10" style={{ backgroundColor: "#0c1a33" }}>
+                  <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Tutor Recruitment</p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                    慶應医学部生の方、<br />講師として働きませんか？
+                  </h2>
+                  <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
+                    あなたの合格体験・勉強法を、次の受験生の力に変えられる仕事です。
+                  </p>
+                  <div className="inline-block px-5 py-3 rounded-xl mb-6" style={{ backgroundColor: "rgba(201,146,42,0.15)", border: "1px solid rgba(201,146,42,0.35)" }}>
+                    <p className="text-xs font-semibold mb-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>時給</p>
+                    <p className="text-2xl font-bold" style={{ color: "#c9922a", fontFamily: "'Noto Serif JP', serif" }}>
+                      2,500〜10,000円
+                    </p>
+                    <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>昇給制度あり</p>
+                  </div>
+                  <div>
+                    <Link
+                      href="/recruit"
+                      className="inline-block px-6 py-3 text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity"
+                      style={{ backgroundColor: "#c9922a" }}
+                    >
+                      講師募集の詳細を見る →
+                    </Link>
+                  </div>
+                </div>
+                {/* Right */}
+                <div className="p-8 md:p-10 bg-white">
+                  <p className="text-xs font-semibold tracking-widest uppercase mb-5" style={{ color: "#9ca3af" }}>Highlights</p>
+                  <div className="space-y-4">
+                    {[
+                      { icon: "📈", title: "実績に応じて昇給", desc: "継続年数・生徒評価・合格実績で時給アップ" },
+                      { icon: "🗓", title: "スケジュール自由", desc: "試験・研究の繁忙期はコマ数を調整できます" },
+                      { icon: "💻", title: "完全リモートOK", desc: "オンライン指導で全国どこからでも勤務可" },
+                      { icon: "🎯", title: "経験が武器になる", desc: "医学部受験の体験談・勉強法をそのまま伝授" },
+                    ].map((item) => (
+                      <div key={item.title} className="flex gap-3">
+                        <span className="text-xl flex-shrink-0">{item.icon}</span>
+                        <div>
+                          <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
+                          <p className="text-xs" style={{ color: "#6b7280" }}>{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── 14. FINAL CTA ─────────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-28 px-4">
         <div className="max-w-4xl mx-auto">
