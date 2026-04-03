@@ -116,6 +116,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style={{ color: "rgba(255,255,255,0.32)" }}>
           <p>&copy; {new Date().getFullYear()} Medvance. All rights reserved.</p>
+          <Link href="/recruit" className="hover:opacity-80 transition-opacity" style={{ color: "rgba(255,255,255,0.32)" }}>講師募集</Link>
           <div className="flex items-center gap-5">
             <a
               href="https://note.com/igakubu_juken"
