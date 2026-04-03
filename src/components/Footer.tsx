@@ -67,6 +67,7 @@ export default function Footer() {
                 { label: "面接・小論文対策", href: "/services/interview" },
                 { label: "AI模試分析（無料）", href: "/services/moshi" },
                 { label: "料金について", href: "/pricing" },
+                { label: "お知らせ", href: "/news" },
                 { label: "お問い合わせ", href: "/contact" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>

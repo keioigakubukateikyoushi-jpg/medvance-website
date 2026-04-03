@@ -9,6 +9,7 @@ import {
   resolvedColumnTopicClusters,
 } from "@/lib/columnArticles";
 import { buildItemListSchema } from "@/lib/seo";
+import { notices } from "@/lib/notices";
 
 export const metadata = {
   title: "医学部受験専門塾 Medvance｜慶應医学部生が完全1対1・全国オンライン対応",
@@ -92,9 +93,6 @@ const subjects = [
 
 const searchIntentLinks = [
   { label: "慶應医学部に受かるには", href: "/universities/keio", desc: "科目別対策、面接、合格戦略まで" },
-  { label: "新高3が4月にやるべきこと", href: "/column/new-high3-april-plan", desc: "4月の優先順位、英数理の進め方、月内の到達目標を整理" },
-  { label: "浪人生が4月にやるべきこと", href: "/column/ronin-april-plan", desc: "生活設計、基礎固め、予備校との併用まで4月目線で解説" },
-  { label: "4月からの年間計画を立てたい", href: "/column/april-year-plan", desc: "春から本番までの進め方を時期別に整理" },
   { label: "医学部面接対策はいつから？", href: "/column/mensetu-timing", desc: "学年別の始め方と模擬面接の流れ" },
   { label: "医学部の過去問はいつから？", href: "/column/kakomon-timing", desc: "着手時期、何年分やるか、復習法" },
   { label: "私立医学部の学費を比較したい", href: "/column/gakuhi", desc: "国公立との差や6年間の費用感を整理" },
@@ -195,6 +193,39 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── 2.3 NEWS STRIP ────────────────────── */}
+      {(() => {
+        const latest = [...notices].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+        const catColor: Record<string, string> = {
+          重要: "#dc2626", サービス情報: "#1d4ed8", キャンペーン: "#d97706", お知らせ: "#16a34a",
+        };
+        const fmtDate = (d: string) => { const [y,m,day] = d.split("-"); return `${y}.${m.padStart(2,"0")}.${day.padStart(2,"0")}`; };
+        return (
+          <section className="bg-white py-6 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
+            <div className="max-w-5xl mx-auto">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#0c1a33" }}>お知らせ</span>
+                <Link href="/news" className="text-xs hover:opacity-80 ml-auto" style={{ color: "#c9922a" }}>一覧を見る →</Link>
+              </div>
+              <div className="space-y-2">
+                {latest.map((n) => (
+                  <Link
+                    key={n.slug}
+                    href={`/news/${n.slug}`}
+                    className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 py-2 hover:opacity-80 transition-opacity group"
+                    style={{ borderBottom: "1px solid #f3f4f6" }}
+                  >
+                    <span className="text-xs flex-shrink-0" style={{ color: "#9ca3af" }}>{fmtDate(n.date)}</span>
+                    <span className="flex-shrink-0 text-xs font-semibold" style={{ color: catColor[n.category] ?? "#16a34a" }}>[{n.category}]</span>
+                    <span className="text-sm group-hover:underline" style={{ color: "#1f2937" }}>{n.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ── 2.5 SEARCH INTENT HUB ─────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4">
