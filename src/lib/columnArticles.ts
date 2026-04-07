@@ -249,6 +249,24 @@ export const columnArticles: ColumnArticle[] = [
     featuredOnHome: false,
   },
   {
+    slug: "keio-naibu-shikumi",
+    category: "受験情報",
+    title: "慶應義塾の内部進学の仕組みを解説｜評定・選考・医学部進学枠",
+    description: "慶應附属校から慶應義塾大学医学部へ内部進学するための仕組みを解説。評定の算出方法、選考の流れ、医学部の難しさ、成績を上げる実践戦略まで。",
+    keywords: ["慶應 内部進学 仕組み", "慶應義塾 内部進学 評定", "慶應附属校 医学部 内部進学"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
+    slug: "keio-fuzoku-kateikyoushi",
+    category: "塾・指導",
+    title: "慶應附属校の家庭教師おすすめ｜定期試験対策・評定向上",
+    description: "慶應附属校（義塾高校・女子高・志木・SFC・普通部・中等部）の家庭教師を比較。定期試験対策・評定向上・内部進学サポートまで現役慶應医学部生が対応。",
+    keywords: ["慶應附属校 家庭教師 おすすめ", "慶應義塾高校 家庭教師", "慶應 内部進学 家庭教師"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
     slug: "shoronbun-timing",
     category: "入試対策",
     title: "医学部小論文対策はいつから始めるべきか",
@@ -435,9 +453,15 @@ export const columnTopicClusters = [
   },
   {
     title: "慶應附属校から医学部内部進学を目指す人へ",
-    description: "慶應内部進学の成績対策・家庭教師の選び方・評定向上戦略をまとめて読めます。",
+    description: "慶應内部進学の仕組み・成績対策・家庭教師の選び方・評定向上戦略をまとめて読めます。",
     searchKeyword: "内部進学",
-    articleSlugs: ["keio-naibu-kateikyoushi", "keio-naibu-seiseki", "keio-kateikyoushi"],
+    articleSlugs: ["keio-naibu-shikumi", "keio-naibu-seiseki", "keio-naibu-kateikyoushi"],
+  },
+  {
+    title: "慶應附属校の定期試験・評定を上げたい人へ",
+    description: "慶應附属校の家庭教師選び・科目別成績向上・内部進学準備を横断して読めます。",
+    searchKeyword: "慶應附属校",
+    articleSlugs: ["keio-fuzoku-kateikyoushi", "keio-naibu-seiseki", "keio-naibu-kateikyoushi"],
   },
 ] as const;
 

@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/for/saijuken`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/parents`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/for/keio-naibu`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/for/keio-fuzoku`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // サービス別
     { url: `${BASE}/services/online`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/services/visit`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
