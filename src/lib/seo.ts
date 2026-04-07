@@ -32,11 +32,6 @@ export function buildWebSiteSchema() {
     alternateName: "メドバンス",
     url: siteUrl,
     inLanguage: "ja-JP",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 

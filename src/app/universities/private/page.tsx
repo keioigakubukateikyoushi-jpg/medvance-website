@@ -1,4 +1,10 @@
 import Link from "next/link";
+import {
+  buildBreadcrumbSchema,
+  buildCollectionPageSchema,
+  buildFaqSchema,
+  buildItemListSchema,
+} from "@/lib/seo";
 
 export const metadata = {
   title: "私立医学部受験対策｜慈恵・順天堂・日医など私立医学部に強い個別指導 | Medvance",
@@ -70,9 +76,44 @@ const faqs = [
   },
 ];
 
+const privatePageSchemas = [
+  buildCollectionPageSchema(
+    "私立医学部受験対策一覧",
+    "私立医学部の大学別対策ページ一覧と、私立医学部受験の考え方をまとめた一覧ページです。",
+    "/universities/private",
+  ),
+  buildBreadcrumbSchema([
+    { name: "ホーム", url: "/" },
+    { name: "私立医学部対策", url: "/universities/private" },
+  ]),
+  buildItemListSchema(
+    "私立医学部の大学別対策ページ",
+    "/universities/private",
+    [
+      { name: "慶應義塾大学医学部", url: "/universities/keio" },
+      { name: "東京慈恵会医科大学", url: "/universities/jikei" },
+      { name: "順天堂大学医学部", url: "/universities/juntendo" },
+      { name: "日本医科大学", url: "/universities/nippon-medical" },
+      { name: "昭和大学医学部", url: "/universities/showa" },
+      { name: "東京医科大学", url: "/universities/tokyo-ika" },
+      { name: "日本大学医学部", url: "/universities/nihon" },
+      { name: "東邦大学医学部", url: "/universities/toho" },
+      { name: "杏林大学医学部", url: "/universities/kyorin" },
+      { name: "帝京大学医学部", url: "/universities/teikyo" },
+      { name: "東海大学医学部", url: "/universities/tokai" },
+      { name: "北里大学医学部", url: "/universities/kitasato" },
+    ],
+  ),
+  buildFaqSchema(faqs),
+];
+
 export default function PrivatePage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(privatePageSchemas) }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
@@ -112,7 +153,7 @@ export default function PrivatePage() {
             {[
               { name: "慶應義塾大学医学部", desc: "思考力・論証力重視の最難関。英数理と小論文・面接の全方位対策。", href: "/universities/keio" },
               { name: "東京慈恵会医科大学", desc: "英語が私立医学部トップクラスの難易度。「慈恵の医師像」重視の面接対策。", href: "/universities/jikei" },
-              { name: "順天堂大学医学部", desc: "バランス型出題とMMI面接が特徴。全科目の均等な仕上がりが合格の鍵。", href: "/universities/juntendo" },
+              { name: "順天堂大学医学部", desc: "一般選抜A方式では小論文を一次日に実施し、二次で面接。配点に沿った総合対策が必要。", href: "/universities/juntendo" },
               { name: "日本医科大学", desc: "数学・理科の記述式難問と2回面接。記述力と論証力が最重要。", href: "/universities/nippon-medical" },
               { name: "昭和大学医学部", desc: "基礎力と正確性を最重視。ミスゼロで標準問題を取り切ることが合格条件。", href: "/universities/showa" },
               { name: "東京医科大学", desc: "全科目バランス型で近年は思考力重視に変化。標準問題の確実な習得が必須。", href: "/universities/tokyo-ika" },

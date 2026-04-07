@@ -1,8 +1,28 @@
 import Link from "next/link";
+import { buildBreadcrumbSchema } from "@/lib/seo";
+
+export const metadata = {
+  title: "医学部受験 英語対策 | 長文・英作文・読解の勉強法",
+  description:
+    "医学部受験の英語対策ページです。長文読解、英作文、語彙、読解スピードまで、医学部英語で得点するための勉強法を整理しています。",
+  alternates: {
+    canonical: "/subjects/english",
+  },
+};
+
+const englishSchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "教科別対策", url: "/subjects" },
+  { name: "英語対策", url: "/subjects/english" },
+]);
 
 export default function EnglishPage() {
   return (
     <div className="py-16 px-4 min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(englishSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <h1
           className="text-2xl md:text-3xl font-bold text-center mb-4"

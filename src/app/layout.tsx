@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     default: "Medvance｜現役慶應医学部生による医学部受験専門塾",
     template: "%s | Medvance",
   },
-  other: {
-    "google-site-verification": "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
+  verification: {
+    google: "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
   },
   description:
     "医学部合格は、戦略で決まる。現役慶應医学部生による完全1対1の医学部受験専門塾Medvance。家庭教師・オンライン全国対応・浪人生・再受験生歓迎。無料相談受付中。",
@@ -42,6 +42,10 @@ export const metadata: Metadata = {
     title: "Medvance｜現役慶應医学部生による医学部受験専門塾",
     description: "医学部合格は、戦略で決まる。現役慶應医学部生による完全1対1指導。",
     images: ["https://medvance-edu.com/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

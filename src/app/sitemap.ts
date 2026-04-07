@@ -13,6 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/recruit`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/download`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/cookies`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/success-stories`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     // 対象者別
     { url: `${BASE}/for/chugaku`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/ko1`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
@@ -73,7 +77,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: entry.featuredOnHome || entry.popular ? 0.8 : 0.7,
     })),
-    { url: `${BASE}/search`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     // お知らせ
     { url: `${BASE}/news`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     ...notices.map((n) => ({

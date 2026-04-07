@@ -5,10 +5,14 @@ export const metadata = {
   title: "サイト内検索 | Medvance",
   description:
     "Medvance サイト内の大学別対策、コラム、料金、教科別対策、サービス情報をキーワードで検索できます。",
-
   alternates: {
     canonical: "/search",
-  },};
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default async function SearchPage({
   searchParams,

@@ -1,4 +1,19 @@
 import Link from "next/link";
+import { buildBreadcrumbSchema } from "@/lib/seo";
+
+export const metadata = {
+  title: "Medvanceについて | 現役慶應医学部生による医学部受験専門塾",
+  description:
+    "Medvanceの指導方針、講師陣、医学部受験に特化したサポート体制を紹介するページです。現役慶應医学部生による1対1指導の特徴を確認できます。",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
+const aboutSchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "Medvanceについて", url: "/about" },
+]);
 
 const features = [
   {
@@ -60,6 +75,10 @@ const features = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       {/* Page Header */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">

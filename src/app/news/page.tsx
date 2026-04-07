@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notices } from "@/lib/notices";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
 
 export const metadata = {
   title: "お知らせ一覧 | Medvance",
@@ -23,9 +24,29 @@ function formatDate(d: string) {
 
 export default function NewsPage() {
   const sorted = [...notices].sort((a, b) => b.date.localeCompare(a.date));
+  const newsPageSchemas = [
+    buildCollectionPageSchema(
+      "お知らせ一覧",
+      "Medvanceからのお知らせ・サービス情報・キャンペーン情報の一覧です。",
+      "/news",
+    ),
+    buildBreadcrumbSchema([
+      { name: "ホーム", url: "/" },
+      { name: "お知らせ一覧", url: "/news" },
+    ]),
+    buildItemListSchema(
+      "お知らせ一覧",
+      "/news",
+      sorted.map((notice) => ({ name: notice.title, url: `/news/${notice.slug}` })),
+    ),
+  ];
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsPageSchemas) }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>News</p>

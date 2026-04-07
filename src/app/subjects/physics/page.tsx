@@ -1,8 +1,28 @@
 import Link from "next/link";
+import { buildBreadcrumbSchema } from "@/lib/seo";
+
+export const metadata = {
+  title: "医学部受験 物理対策 | 力学・電磁気・波動の勉強法",
+  description:
+    "医学部受験の物理対策ページです。力学、電磁気、波動、熱力学を中心に、典型問題と記述対応を両立する勉強法を整理しています。",
+  alternates: {
+    canonical: "/subjects/physics",
+  },
+};
+
+const physicsSchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "教科別対策", url: "/subjects" },
+  { name: "物理対策", url: "/subjects/physics" },
+]);
 
 export default function PhysicsPage() {
   return (
     <div className="py-16 px-4 min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(physicsSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <h1
           className="text-2xl md:text-3xl font-bold text-center mb-4"

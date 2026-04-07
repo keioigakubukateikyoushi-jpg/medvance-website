@@ -7,13 +7,13 @@ import {
   columnCategories,
   resolvedColumnTopicClusters,
 } from "@/lib/columnArticles";
-import { buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
 
 // 大学別対策ページ（/universities/配下）
 const universityArticles: { slug: string; href: string; category: string; title: string; description: string; popular: boolean }[] = [
   { slug: "keio", href: "/universities/keio", category: "大学別対策", title: "慶應義塾大学医学部 入試対策ガイド", description: "思考力・論証力重視の英数理。小論文・面接の比重が高く、医師としての人間性が問われる最難関私立医学部の完全攻略ガイド。", popular: true },
   { slug: "jikei", href: "/universities/jikei", category: "大学別対策", title: "東京慈恵会医科大学 入試対策ガイド", description: "英語が私立医学部最難関レベル。医学系長文読解と英作文の対策が合否を分ける。「慈恵の医師像」を深く理解した面接準備が必須。", popular: true },
-  { slug: "juntendo", href: "/universities/juntendo", category: "大学別対策", title: "順天堂大学医学部 入試対策ガイド", description: "バランス型の出題で基礎力の完成度が問われる。MMI面接方式を採用しており、全科目を均等に仕上げる戦略が有効。", popular: true },
+  { slug: "juntendo", href: "/universities/juntendo", category: "大学別対策", title: "順天堂大学医学部 入試対策ガイド", description: "一般選抜A方式では小論文を一次日に実施し、二次で面接を行う。配点と時間割を踏まえた総合対策が必要。", popular: true },
   { slug: "nippon-medical", href: "/universities/nippon-medical", category: "大学別対策", title: "日本医科大学 入試対策ガイド", description: "数学・理科の記述難問が特徴。解法の論理性が評価される。面接が2回実施される独自の選考フローへの対策が重要。", popular: false },
   { slug: "showa", href: "/universities/showa", category: "大学別対策", title: "昭和大学医学部 入試対策ガイド", description: "基礎力を重視した出題スタイル。受験者数が多く、基礎問題での取りこぼしが命取り。正確性とスピードを徹底的に鍛える。", popular: false },
   { slug: "tokyo-ika", href: "/universities/tokyo-ika", category: "大学別対策", title: "東京医科大学 入試対策ガイド", description: "英語・数学・理科2科目のバランス型出題。標準〜やや難の問題が中心で、近年は思考力を問う問題が増加している。", popular: false },
@@ -64,6 +64,10 @@ const columnIndexSchemas = [
     "医学部受験の勉強法、面接、小論文、学費、塾選び、再受験まで横断して探せるコラム一覧です。",
     "/column",
   ),
+  buildBreadcrumbSchema([
+    { name: "ホーム", url: "/" },
+    { name: "医学部受験コラム一覧", url: "/column" },
+  ]),
   buildItemListSchema(
     "医学部受験コラム一覧",
     "/column",

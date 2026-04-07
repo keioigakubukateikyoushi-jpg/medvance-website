@@ -1,8 +1,28 @@
 import Link from "next/link";
+import { buildBreadcrumbSchema } from "@/lib/seo";
+
+export const metadata = {
+  title: "医学部受験 数学対策 | 基礎から記述までの勉強法",
+  description:
+    "医学部受験の数学対策ページです。基礎の定着から記述力、典型問題の処理力まで、医学部数学で得点するための勉強法を整理しています。",
+  alternates: {
+    canonical: "/subjects/math",
+  },
+};
+
+const mathSchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "教科別対策", url: "/subjects" },
+  { name: "数学対策", url: "/subjects/math" },
+]);
 
 export default function MathPage() {
   return (
     <div className="py-16 px-4 min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(mathSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <h1
           className="text-2xl md:text-3xl font-bold text-center mb-4"

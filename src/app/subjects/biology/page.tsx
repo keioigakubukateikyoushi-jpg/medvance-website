@@ -1,8 +1,28 @@
 import Link from "next/link";
+import { buildBreadcrumbSchema } from "@/lib/seo";
+
+export const metadata = {
+  title: "医学部受験 生物対策 | 知識整理と記述力の勉強法",
+  description:
+    "医学部受験の生物対策ページです。知識整理、論述、図表問題まで含めて、生物で安定して得点するための勉強法を整理しています。",
+  alternates: {
+    canonical: "/subjects/biology",
+  },
+};
+
+const biologySchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "教科別対策", url: "/subjects" },
+  { name: "生物対策", url: "/subjects/biology" },
+]);
 
 export default function BiologyPage() {
   return (
     <div className="py-16 px-4 min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(biologySchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <h1
           className="text-2xl md:text-3xl font-bold text-center mb-4"

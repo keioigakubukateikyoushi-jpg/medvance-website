@@ -1091,7 +1091,7 @@ export default function Home() {
             {[
               { name: "慶應義塾大学医学部", badge: "最難関", desc: "思考力・論証力重視。小論文・面接の比重が高い", href: "/universities/keio" },
               { name: "東京慈恵会医科大学", badge: "難関", desc: "英語最難関レベル。慈恵の医師像への理解が重要", href: "/universities/jikei" },
-              { name: "順天堂大学医学部", badge: "難関", desc: "バランス型出題。MMI面接方式を採用", href: "/universities/juntendo" },
+              { name: "順天堂大学医学部", badge: "難関", desc: "一般選抜A方式は小論文と約20分の面接まで含めて対策", href: "/universities/juntendo" },
               { name: "日本医科大学", badge: "難関", desc: "数学・理科の記述難問。面接2回実施", href: "/universities/nippon-medical" },
               { name: "昭和大学医学部", badge: "標準〜難", desc: "基礎の完成度が合否を分ける。正確性重視", href: "/universities/showa" },
               { name: "東京医科大学", badge: "標準〜難", desc: "全科目バランス型。近年は思考力問題が増加", href: "/universities/tokyo-ika" },

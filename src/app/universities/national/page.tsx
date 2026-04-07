@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
 import { nationalUniversityArticles } from "./data";
 
 export const metadata = {
@@ -13,9 +14,33 @@ export const metadata = {
 
 const regionOrder = ["北海道", "東北", "関東", "甲信越", "北陸", "東海", "近畿", "中国", "四国", "九州", "沖縄"];
 
+const nationalPageSchemas = [
+  buildCollectionPageSchema(
+    "国公立大学医学部・防衛医科大学校の対策一覧",
+    "国公立大学医学部と防衛医科大学校の対策ページを地域別に一覧できるページです。",
+    "/universities/national",
+  ),
+  buildBreadcrumbSchema([
+    { name: "ホーム", url: "/" },
+    { name: "国公立大学医学部・防衛医科大学校の対策一覧", url: "/universities/national" },
+  ]),
+  buildItemListSchema(
+    "国公立大学医学部・防衛医科大学校の対策ページ",
+    "/universities/national",
+    nationalUniversityArticles.map((entry) => ({
+      name: entry.name,
+      url: `/universities/national/${entry.slug}`,
+    })),
+  ),
+];
+
 export default function NationalPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(nationalPageSchemas) }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>

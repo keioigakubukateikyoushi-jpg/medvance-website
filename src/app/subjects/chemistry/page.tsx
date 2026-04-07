@@ -1,8 +1,28 @@
 import Link from "next/link";
+import { buildBreadcrumbSchema } from "@/lib/seo";
+
+export const metadata = {
+  title: "医学部受験 化学対策 | 理論・無機・有機の勉強法",
+  description:
+    "医学部受験の化学対策ページです。理論化学、無機化学、有機化学を軸に、暗記と計算の両方を仕上げる勉強法を整理しています。",
+  alternates: {
+    canonical: "/subjects/chemistry",
+  },
+};
+
+const chemistrySchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "教科別対策", url: "/subjects" },
+  { name: "化学対策", url: "/subjects/chemistry" },
+]);
 
 export default function ChemistryPage() {
   return (
     <div className="py-16 px-4 min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(chemistrySchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <h1
           className="text-2xl md:text-3xl font-bold text-center mb-4"
