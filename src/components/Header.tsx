@@ -18,6 +18,7 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "浪人生の方", href: "/for/ronin", desc: "浪人生専用の指導・戦略" },
       { label: "再受験生の方", href: "/for/saijuken", desc: "社会人・大学生からの挑戦" },
       { label: "保護者の方", href: "/for/parents", desc: "定期報告・保護者面談あり" },
+      { label: "慶應内部進学を目指す方", href: "/for/keio-naibu", desc: "附属校から医学部へ・評定対策" },
       { label: "慶應義塾大学医学部", href: "/universities/keio", desc: "現役慶應生が入試を解説" },
       { label: "東京慈恵会医科大学", href: "/universities/jikei", desc: "英語最難関・慈恵の医師像" },
       { label: "順天堂大学医学部", href: "/universities/juntendo", desc: "バランス型・MMI面接対策" },

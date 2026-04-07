@@ -231,6 +231,24 @@ export const columnArticles: ColumnArticle[] = [
     featuredOnHome: false,
   },
   {
+    slug: "keio-naibu-kateikyoushi",
+    category: "塾・指導",
+    title: "慶應医学部への内部進学に家庭教師が最適な理由",
+    description: "慶應附属校から医学部への内部進学を目指す方に家庭教師が効果的な理由を解説。評定管理・定期試験対策・選考準備を現役慶應医学部生が1対1でサポート。",
+    keywords: ["慶應医学部 内部進学 家庭教師", "慶應附属校 内部進学 対策", "慶應 内部進学 評定"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
+    slug: "keio-naibu-seiseki",
+    category: "塾・指導",
+    title: "慶應附属校の成績を上げて医学部内部進学へ｜科目別対策",
+    description: "慶應附属校の定期試験・成績向上のための対策を解説。評定の上げ方、科目別の勉強法、内部進学選考への備えを現役慶應医学部生が指導。",
+    keywords: ["慶應義塾 内部進学 成績", "慶應附属校 成績 上げる", "慶應高校 内部進学 対策"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
     slug: "shoronbun-timing",
     category: "入試対策",
     title: "医学部小論文対策はいつから始めるべきか",
@@ -414,6 +432,12 @@ export const columnTopicClusters = [
     description: "浪人生向け・全国オンライン対応・料金相場の観点から家庭教師を選べます。",
     searchKeyword: "浪人",
     articleSlugs: ["ronin-kateikyoushi", "igakubu-kateikyoushi-online", "mensetu-shoronbun-kateikyoushi"],
+  },
+  {
+    title: "慶應附属校から医学部内部進学を目指す人へ",
+    description: "慶應内部進学の成績対策・家庭教師の選び方・評定向上戦略をまとめて読めます。",
+    searchKeyword: "内部進学",
+    articleSlugs: ["keio-naibu-kateikyoushi", "keio-naibu-seiseki", "keio-kateikyoushi"],
   },
 ] as const;
 
