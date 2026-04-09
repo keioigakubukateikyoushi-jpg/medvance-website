@@ -267,6 +267,24 @@ export const columnArticles: ColumnArticle[] = [
     featuredOnHome: false,
   },
   {
+    slug: "nangandai-kateikyoushi",
+    category: "塾・指導",
+    title: "難関大受験（東大・京大・早慶）に家庭教師が効果的な理由",
+    description: "難関大受験に家庭教師が有効な理由と選び方を解説。慶應義塾大学医学部生が数学・英語・理科を本質から1対1で指導。全国オンライン対応。",
+    keywords: ["難関大受験 家庭教師", "東大受験 個別指導", "早慶 家庭教師 おすすめ"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
+    slug: "suisen-ao-taisaku",
+    category: "入試対策",
+    title: "推薦・AO入試対策の完全ガイド｜志望理由書・面接・小論文",
+    description: "推薦・総合型選抜（AO入試）の対策方法を解説。志望理由書の書き方・面接準備・小論文対策・スケジュール設計まで。現役慶應医学部生による個別指導。",
+    keywords: ["推薦入試 対策 家庭教師", "AO入試 志望理由書 書き方", "総合型選抜 面接 対策"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
     slug: "seiseki-kateikyoushi",
     category: "塾・指導",
     title: "学校の成績を上げるための家庭教師の選び方",
@@ -474,6 +492,12 @@ export const columnTopicClusters = [
     description: "慶應内部進学の仕組み・成績対策・家庭教師の選び方・評定向上戦略をまとめて読めます。",
     searchKeyword: "内部進学",
     articleSlugs: ["keio-naibu-shikumi", "keio-naibu-seiseki", "keio-naibu-kateikyoushi"],
+  },
+  {
+    title: "難関大・推薦AO入試を目指す人へ",
+    description: "難関大受験の家庭教師選びと推薦・AO対策の全体像をまとめて読めます。",
+    searchKeyword: "難関大",
+    articleSlugs: ["nangandai-kateikyoushi", "suisen-ao-taisaku", "mensetu-shoronbun-kateikyoushi"],
   },
   {
     title: "学校の成績・定期テストで悩む中高生へ",

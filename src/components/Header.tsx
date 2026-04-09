@@ -21,6 +21,8 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "慶應内部進学を目指す方", href: "/for/keio-naibu", desc: "附属校から医学部へ・評定対策" },
       { label: "慶應附属校生の方", href: "/for/keio-fuzoku", desc: "定期テスト対策・評定向上" },
       { label: "学校の成績を上げたい方", href: "/for/seiseki-up", desc: "定期テスト対策・内申点向上" },
+      { label: "難関大受験を目指す方", href: "/for/nangandai", desc: "東大・京大・早慶・難関国公立" },
+      { label: "推薦・AO入試を目指す方", href: "/for/suisen-ao", desc: "志望理由書・面接・小論文対策" },
       { label: "慶應義塾大学医学部", href: "/universities/keio", desc: "現役慶應生が入試を解説" },
       { label: "東京慈恵会医科大学", href: "/universities/jikei", desc: "英語最難関・慈恵の医師像" },
       { label: "順天堂大学医学部", href: "/universities/juntendo", desc: "バランス型・MMI面接対策" },
@@ -60,6 +62,8 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "塾・予備校の選び方", href: "/column/juku-erabi", desc: "失敗しない塾選びのポイント" },
       { label: "学校の成績を上げる家庭教師", href: "/column/seiseki-kateikyoushi", desc: "定期テスト対策・内申点向上" },
       { label: "定期テスト対策に家庭教師", href: "/column/teiki-test-kateikyoushi", desc: "3週間前から始める対策法" },
+      { label: "難関大受験に家庭教師", href: "/column/nangandai-kateikyoushi", desc: "東大・京大・早慶の個別指導" },
+      { label: "推薦・AO入試対策ガイド", href: "/column/suisen-ao-taisaku", desc: "志望理由書・面接・小論文" },
     ],
   },
 ];
