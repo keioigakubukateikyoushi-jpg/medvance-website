@@ -5,6 +5,7 @@ import { columnArticles } from "@/lib/columnArticles";
 import {
   buildArticleSchema,
   buildBreadcrumbSchema,
+  buildFaqSchema,
   siteUrl,
   SITE_MODIFIED,
 } from "@/lib/seo";
@@ -91,6 +92,9 @@ export default async function ColumnLayout({
         { name: article.title, url: path },
       ])
     );
+    if (article.faq && article.faq.length > 0) {
+      articleSchemas.push(buildFaqSchema(article.faq));
+    }
   }
 
   return (
