@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
   {
@@ -62,6 +63,13 @@ export const metadata = {
 export default function SuisenAoTaisakuPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ColumnJsonLd
+        title="推薦・AO入試対策の完全ガイド｜志望理由書・面接・小論文"
+        description="推薦・総合型選抜（AO入試）の対策方法を解説。志望理由書の書き方・面接準備・小論文対策・スケジュール設計まで。現役慶應医学部生による個別指導。"
+        slug="suisen-ao-taisaku"
+        category="入試対策"
+        keywords={["推薦入試 対策 家庭教師", "AO入試 志望理由書 書き方", "総合型選抜 面接 対策"]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

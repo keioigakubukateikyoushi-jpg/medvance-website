@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
   {
@@ -107,6 +108,13 @@ export const metadata = {
 export default function KeioFuzokuKateikyoushiPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ColumnJsonLd
+        title="慶應附属校の家庭教師おすすめ｜定期試験対策・評定向上"
+        description="慶應附属校（義塾高校・女子高・志木・SFC・普通部・中等部）の家庭教師を比較。定期試験対策・評定向上・内部進学サポートまで現役慶應医学部生が対応。"
+        slug="keio-fuzoku-kateikyoushi"
+        category="塾・指導"
+        keywords={["慶應附属校 家庭教師 おすすめ", "慶應義塾高校 家庭教師", "慶應 内部進学 家庭教師"]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

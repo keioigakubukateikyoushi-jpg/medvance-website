@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
   {
@@ -55,6 +56,13 @@ export const metadata = {
 export default function NangandaiKateikyoushiPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ColumnJsonLd
+        title="難関大受験（東大・京大・早慶）に家庭教師が効果的な理由"
+        description="難関大受験に家庭教師が有効な理由と選び方を解説。慶應義塾大学医学部生が数学・英語・理科を本質から1対1で指導。全国オンライン対応。"
+        slug="nangandai-kateikyoushi"
+        category="塾・指導"
+        keywords={["難関大受験 家庭教師", "東大受験 個別指導", "早慶 家庭教師 おすすめ"]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

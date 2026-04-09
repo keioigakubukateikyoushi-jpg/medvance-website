@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
   {
@@ -64,6 +65,13 @@ export const metadata = {
 export default function SeisekiKateikyoushiPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ColumnJsonLd
+        title="学校の成績を上げるための家庭教師の選び方"
+        description="学校の成績向上・定期テスト対策・内申点アップに家庭教師が効果的な理由を解説。塾・映像授業との違い、選び方のポイントを紹介。"
+        slug="seiseki-kateikyoushi"
+        category="塾・指導"
+        keywords={["学校の成績 上げる 家庭教師", "定期テスト対策 家庭教師", "内申点 上げる 家庭教師"]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

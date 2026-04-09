@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
   {
@@ -65,6 +66,13 @@ export const metadata = {
 export default function KeioNaibuShikumiPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ColumnJsonLd
+        title="慶應義塾の内部進学の仕組みを解説｜評定・選考・医学部進学枠"
+        description="慶應附属校から慶應義塾大学医学部へ内部進学するための仕組みを解説。評定の算出方法、選考の流れ、医学部の難しさ、成績を上げる実践戦略まで。"
+        slug="keio-naibu-shikumi"
+        category="受験情報"
+        keywords={["慶應 内部進学 仕組み", "慶應義塾 内部進学 評定", "慶應附属校 医学部 内部進学"]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
