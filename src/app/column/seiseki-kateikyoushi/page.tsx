@@ -77,7 +77,7 @@ export default function SeisekiKateikyoushiPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>成績向上・家庭教師</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             学校の成績を上げるための<br />家庭教師の選び方
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -106,7 +106,7 @@ export default function SeisekiKateikyoushiPage() {
       {/* WHY TUTORING */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             学校の成績向上に家庭教師が効果的な3つの理由
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -143,7 +143,7 @@ export default function SeisekiKateikyoushiPage() {
       {/* COMPARISON TABLE */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             家庭教師 vs 塾 vs 映像授業
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -177,7 +177,7 @@ export default function SeisekiKateikyoushiPage() {
       {/* SELECTION POINTS */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             家庭教師を選ぶ際の3つのポイント
           </h2>
           <div className="space-y-4">
@@ -207,7 +207,7 @@ export default function SeisekiKateikyoushiPage() {
       {/* FAQ */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>よくある質問</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4 mb-12">
             {faqItems.map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>

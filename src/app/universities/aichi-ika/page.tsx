@@ -204,7 +204,7 @@ export default function AichiIkaPage() {
           </p>
           <h1
             className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             愛知医科大学
             <br />
@@ -242,7 +242,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Exam Overview
           </p>
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             入試概要
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -273,7 +273,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Strategy
           </p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             合格のための戦略
           </h2>
           <div className="space-y-5">
@@ -309,7 +309,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Subject Analysis
           </p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             科目別対策
           </h2>
           <div className="space-y-6">
@@ -348,7 +348,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Schedule
           </p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             合格までのスケジュール
           </h2>
           <div className="space-y-4">
@@ -380,7 +380,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Common Mistakes
           </p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある失敗パターン
           </h2>
           <div className="space-y-5">
@@ -414,7 +414,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Why Medvance
           </p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             なぜMedvanceか
           </h2>
           <div className="grid md:grid-cols-3 gap-5">
@@ -438,7 +438,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             FAQ
           </p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-5">
@@ -465,7 +465,7 @@ export default function AichiIkaPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Free Consultation
           </p>
-          <h2 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
             愛知医科大学対策の相談はこちら
           </h2>
           <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>

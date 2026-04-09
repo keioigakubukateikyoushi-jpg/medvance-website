@@ -106,7 +106,7 @@ export default function SupportJukuChoicePage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             コラム
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             医学部受験の塾は
             <br />
             サポート体制で選ぶべき
@@ -146,7 +146,7 @@ export default function SupportJukuChoicePage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             なぜサポート体制が重要なのか
           </h2>
           <div className="space-y-4">
@@ -176,7 +176,7 @@ export default function SupportJukuChoicePage() {
               className="w-full h-auto rounded-[20px]"
             />
           </div>
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             入塾前に確認すべきチェックリスト
           </h2>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
@@ -194,7 +194,7 @@ export default function SupportJukuChoicePage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             Medvanceをおすすめする理由
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -210,7 +210,7 @@ export default function SupportJukuChoicePage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4 mb-12">
@@ -236,7 +236,7 @@ export default function SupportJukuChoicePage() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             関連記事
           </h2>
           <div className="grid md:grid-cols-3 gap-4">

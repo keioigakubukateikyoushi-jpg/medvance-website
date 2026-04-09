@@ -30,7 +30,7 @@ export default async function SearchPage({
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Search
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             サイト内検索
           </h1>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>

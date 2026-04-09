@@ -39,7 +39,7 @@ function HeroText() {
       <motion.h1
         className="font-bold leading-snug mb-4"
         style={{
-          fontFamily: "'Noto Serif JP', serif",
+          fontFamily: "var(--font-noto-serif)",
           fontSize: "clamp(1.75rem, 5vw, 3.6rem)",
           color: "#ffffff",
         }}
@@ -55,7 +55,7 @@ function HeroText() {
         style={{
           color: "rgba(255,255,255,0.65)",
           fontSize: "clamp(0.9rem, 1.8vw, 1.1rem)",
-          fontFamily: "'Noto Serif JP', serif",
+          fontFamily: "var(--font-noto-serif)",
           lineHeight: 1.7,
         }}
         {...fadeUp(0.32)}

@@ -137,7 +137,7 @@ export default function PrivateTop5Page() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             コラム
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             慶應・慈恵・順天堂など<br className="hidden md:block" />私立医学部トップ5の特徴と対策
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -165,11 +165,11 @@ export default function PrivateTop5Page() {
             <div key={i} className="rounded-2xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
               <div className="px-8 py-6" style={{ backgroundColor: "#0c1a33" }}>
                 <div className="flex items-center gap-4">
-                  <span className="text-5xl font-bold leading-none" style={{ color: "rgba(255,255,255,0.1)", fontFamily: "'Noto Serif JP', serif" }}>
+                  <span className="text-5xl font-bold leading-none" style={{ color: "rgba(255,255,255,0.1)", fontFamily: "var(--font-noto-serif)" }}>
                     {school.rank}
                   </span>
                   <div>
-                    <h2 className="text-xl font-bold text-white" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                    <h2 className="text-xl font-bold text-white" style={{ fontFamily: "var(--font-noto-serif)" }}>
                       {school.name}
                     </h2>
                     <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1">
@@ -210,7 +210,7 @@ export default function PrivateTop5Page() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4">
@@ -240,7 +240,7 @@ export default function PrivateTop5Page() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             関連記事
           </h2>
           <div className="grid md:grid-cols-3 gap-4">

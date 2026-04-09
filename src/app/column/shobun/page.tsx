@@ -127,7 +127,7 @@ export default function ShobunPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             コラム
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             医学部小論文の書き方・完全対策ガイド
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -154,7 +154,7 @@ export default function ShobunPage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             医学部小論文の頻出テーマ
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -184,7 +184,7 @@ export default function ShobunPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             合格答案の書き方：5ステップ
           </h2>
           <p className="text-sm mb-10" style={{ color: "#6b7280" }}>
@@ -206,7 +206,7 @@ export default function ShobunPage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             採点者が気にするNGパターン
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -224,7 +224,7 @@ export default function ShobunPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4 mb-12">
@@ -249,7 +249,7 @@ export default function ShobunPage() {
               </details>
             ))}
           </div>
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             関連記事
           </h2>
           <div className="grid md:grid-cols-3 gap-4">

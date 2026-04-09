@@ -97,7 +97,7 @@ export default function ColumnIndexPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Column
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             医学部受験コラム
           </h1>
           <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -118,7 +118,7 @@ export default function ColumnIndexPage() {
                 <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
                   Search
                 </p>
-                <h2 className="text-lg font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                <h2 className="text-lg font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                   記事をキーワードで検索
                 </h2>
                 <p className="text-sm" style={{ color: "#6b7280" }}>
@@ -180,7 +180,7 @@ export default function ColumnIndexPage() {
                 style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
               >
                 <div className="flex items-center justify-between gap-3 mb-3">
-                  <h2 className="text-lg font-bold" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                  <h2 className="text-lg font-bold" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                     {cluster.title}
                   </h2>
                   <Link
@@ -328,7 +328,7 @@ export default function ColumnIndexPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Free Consultation
           </p>
-          <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
             疑問点は無料相談でお気軽にどうぞ
           </h2>
           <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>

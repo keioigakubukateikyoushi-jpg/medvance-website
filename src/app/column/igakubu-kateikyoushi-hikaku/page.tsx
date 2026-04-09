@@ -133,7 +133,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             比較・選び方
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             医学部受験の家庭教師を比較して選ぶ方法
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -162,7 +162,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
       {/* CHECK POINTS */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             家庭教師サービスを選ぶ5つのチェックポイント
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -171,7 +171,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
           <div className="space-y-4">
             {checkPoints.map((item) => (
               <div key={item.no} className="p-6 rounded-2xl flex gap-5" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                <div className="text-2xl font-bold flex-shrink-0 w-10" style={{ color: "#c9922a", fontFamily: "'Noto Serif JP', serif" }}>{item.no}</div>
+                <div className="text-2xl font-bold flex-shrink-0 w-10" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{item.no}</div>
                 <div>
                   <p className="font-bold text-base mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
                   <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.detail}</p>
@@ -185,7 +185,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
       {/* COMPARISON TABLE */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             Medvanceと一般的な医学部家庭教師サービスの比較
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -219,7 +219,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
       {/* TYPES OF SERVICES */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             医学部家庭教師サービスの種類と特徴
           </h2>
           <div className="space-y-4">
@@ -271,7 +271,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
       {/* FAQ */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>よくある質問</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4 mb-12">
             {faqItems.map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
@@ -283,7 +283,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
               </details>
             ))}
           </div>
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>関連記事</h2>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>関連記事</h2>
           <div className="grid md:grid-cols-3 gap-4">
             {relatedArticles.map((article) => (
               <Link key={article.href} href={article.href} className="block p-5 rounded-xl bg-white hover:shadow-md transition-shadow" style={{ border: "1px solid #e5e1d8" }}>

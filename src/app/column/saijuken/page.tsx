@@ -99,7 +99,7 @@ export default function SaijukenPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             コラム
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             社会人・大学生からの<br className="hidden md:block" />医学部再受験ガイド
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -123,7 +123,7 @@ export default function SaijukenPage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             医学部再受験のリアル
           </h2>
           <div className="space-y-6">
@@ -141,7 +141,7 @@ export default function SaijukenPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             再受験生のための学習ロードマップ
           </h2>
           <p className="text-sm text-center mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
@@ -151,7 +151,7 @@ export default function SaijukenPage() {
             {studyPlan.map((phase, i) => (
               <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
                 <p className="text-xs font-semibold tracking-wide mb-2" style={{ color: "#c9922a" }}>{phase.phase}</p>
-                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>{phase.title}</p>
+                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>{phase.title}</p>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>{phase.body}</p>
                 <ul className="space-y-1">
                   {phase.actions.map((action, j) => (
@@ -169,7 +169,7 @@ export default function SaijukenPage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             再受験生の面接対策：社会人経験を強みに変える
           </h2>
           <div className="p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
@@ -188,7 +188,7 @@ export default function SaijukenPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4">
@@ -218,7 +218,7 @@ export default function SaijukenPage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             関連記事
           </h2>
           <div className="grid md:grid-cols-3 gap-4">

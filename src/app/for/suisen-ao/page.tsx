@@ -94,7 +94,7 @@ export default function SuisenAoPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>推薦・総合型選抜（AO）入試対策</p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-noto-serif)" }}>
             推薦・AO入試を<br />突破する
           </h1>
           <p className="text-base md:text-lg mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
@@ -123,7 +123,7 @@ export default function SuisenAoPage() {
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-            <h2 className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            <h2 className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
               慶應医学部生が推薦・AO対策に強い理由
             </h2>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
@@ -142,7 +142,7 @@ export default function SuisenAoPage() {
       {/* SUPPORT TYPES */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             指導内容
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>書類・面接・小論文・活動実績まで一貫サポート</p>
@@ -165,7 +165,7 @@ export default function SuisenAoPage() {
       {/* TARGET EXAMS */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             対応している入試・学部
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>医療系以外も幅広く対応</p>
@@ -183,7 +183,7 @@ export default function SuisenAoPage() {
       {/* FLOW */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             推薦・AO対策の進め方
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>書類締め切り・面接日程から逆算して設計</p>
@@ -211,7 +211,7 @@ export default function SuisenAoPage() {
       {/* FAQ */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>よくある質問</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
@@ -230,7 +230,7 @@ export default function SuisenAoPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談受付中</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             推薦・AO入試の準備を<br />今すぐ始める
           </h2>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>

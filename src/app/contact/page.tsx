@@ -76,7 +76,7 @@ export default function ContactPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Free Consultation
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             まず、話してみてください。
           </h1>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                   >
                     ✓
                   </div>
-                  <h2 className="text-2xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                  <h2 className="text-2xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                     お問い合わせを受け付けました
                   </h2>
                   <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <>
-                  <h2 className="text-xl font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                  <h2 className="text-xl font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                     無料相談フォーム
                   </h2>
                   <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
@@ -398,10 +398,10 @@ export default function ContactPage() {
                       {/* Label */}
                       <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a", letterSpacing: "0.2em" }}>Medvance</p>
                       {/* Title */}
-                      <h3 className="text-white font-bold leading-tight mb-1" style={{ fontSize: "1.2rem", fontFamily: "'Noto Serif JP', serif" }}>
+                      <h3 className="text-white font-bold leading-tight mb-1" style={{ fontSize: "1.2rem", fontFamily: "var(--font-noto-serif)" }}>
                         医学部受験
                       </h3>
-                      <h3 className="font-bold leading-tight mb-5" style={{ fontSize: "1.2rem", fontFamily: "'Noto Serif JP', serif", color: "#e8b84b" }}>
+                      <h3 className="font-bold leading-tight mb-5" style={{ fontSize: "1.2rem", fontFamily: "var(--font-noto-serif)", color: "#e8b84b" }}>
                         戦略マニュアル
                       </h3>
                       {/* Divider */}

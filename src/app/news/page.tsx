@@ -50,7 +50,7 @@ export default function NewsPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>News</p>
-          <h1 className="text-3xl font-bold text-white" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-noto-serif)" }}>
             お知らせ
           </h1>
         </div>

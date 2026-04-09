@@ -148,14 +148,14 @@ export default function RecruitPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Tutor Recruitment
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             講師募集
           </h1>
           <p className="text-base mb-6" style={{ color: "rgba(255,255,255,0.75)" }}>
             慶應義塾大学医学部在籍の方へ。あなたの合格体験を、次の受験生の力に。
           </p>
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl" style={{ backgroundColor: "rgba(201,146,42,0.15)", border: "1px solid rgba(201,146,42,0.4)" }}>
-            <span className="text-2xl font-bold" style={{ color: "#c9922a", fontFamily: "'Noto Serif JP', serif" }}>
+            <span className="text-2xl font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
               時給 2,500〜10,000円
             </span>
             <span className="text-xs font-semibold px-2 py-1 rounded-full" style={{ backgroundColor: "#c9922a", color: "#fff" }}>
@@ -168,7 +168,7 @@ export default function RecruitPage() {
       {/* 待遇 */}
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             待遇・条件
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -188,7 +188,7 @@ export default function RecruitPage() {
       {/* 特徴 */}
       <div className="py-14 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             Medvanceで働く特徴
           </h2>
           <div className="grid md:grid-cols-2 gap-5">
@@ -208,7 +208,7 @@ export default function RecruitPage() {
       {/* 昇給の仕組み */}
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             昇給の仕組み
           </h2>
           <div className="space-y-3">
@@ -239,7 +239,7 @@ export default function RecruitPage() {
       {/* 応募資格 */}
       <div className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             応募資格
           </h2>
           <div className="space-y-3">
@@ -256,7 +256,7 @@ export default function RecruitPage() {
       {/* FAQ */}
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4">
@@ -273,7 +273,7 @@ export default function RecruitPage() {
       {/* 応募フォーム */}
       <div className="py-16 px-4 bg-white" id="form">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-2" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             応募フォーム
           </h2>
           <p className="text-sm text-center mb-8" style={{ color: "#6b7280" }}>

@@ -158,7 +158,7 @@ export default function MoshiToolPage() {
             <span>🤖</span>
             <span>AI Mock Exam Analysis Tool</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             AI模試偏差値 自動分析ツール
           </h1>
           <p className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.8)" }}>
@@ -174,7 +174,7 @@ export default function MoshiToolPage() {
       <div className="py-12 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl p-8" style={{ border: "1px solid #e5e1d8" }}>
-            <h2 className="text-lg font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            <h2 className="text-lg font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
               情報を入力する
             </h2>
 
@@ -323,7 +323,7 @@ export default function MoshiToolPage() {
 
             {/* 科目別バンド */}
             <div>
-              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 科目別分析結果
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -390,7 +390,7 @@ export default function MoshiToolPage() {
             {/* 優先対策科目の参考書 */}
             {result.weakest && (
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                   優先対策：{labelOf(result.weakest)}の学習ルート
                 </h2>
                 <p className="text-sm mb-5" style={{ color: "#6b7280" }}>
@@ -440,7 +440,7 @@ export default function MoshiToolPage() {
 
             {/* 全科目の参考書（折りたたみ表示用に簡易表示） */}
             <div>
-              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 全科目の学習ルート
               </h2>
               <div className="space-y-4">
@@ -490,7 +490,7 @@ export default function MoshiToolPage() {
 
             {/* タイムライン */}
             <div>
-              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 学習タイムライン
               </h2>
               <div className="space-y-4">
@@ -519,7 +519,7 @@ export default function MoshiToolPage() {
             {/* CTA */}
             <div className="p-8 rounded-2xl text-center" style={{ backgroundColor: "#0c1a33" }}>
               <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Next Step</p>
-              <p className="text-lg font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+              <p className="text-lg font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
                 この分析結果を持って、無料相談へ
               </p>
               <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>

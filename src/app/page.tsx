@@ -187,7 +187,7 @@ export default function Home() {
             { label: "まず", sub: "無料カウンセリング" },
           ].map((s) => (
             <div key={s.sub}>
-              <p className="text-lg md:text-xl font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "'Noto Serif JP', serif" }}>{s.label}</p>
+              <p className="text-lg md:text-xl font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{s.label}</p>
               <p className="text-sm md:text-base font-semibold" style={{ color: "#0c1a33" }}>{s.sub}</p>
             </div>
           ))}
@@ -235,7 +235,7 @@ export default function Home() {
               <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
                 Why Medvance
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 慶應医学部合格者が、あなたの受験戦略を直接設計します
               </h2>
               <p className="text-sm max-w-3xl mx-auto leading-relaxed" style={{ color: "#6b7280" }}>
@@ -374,7 +374,7 @@ export default function Home() {
             {strengths.map((item, i) => (
               <FadeIn key={item.num} delay={i * 0.1}>
                 <HoverCard className="bg-white rounded-2xl p-8 shadow-sm h-full" style={{ border: "1px solid #e5e1d8" }}>
-                  <p className="text-6xl font-bold mb-4 leading-none" style={{ color: "#0c1a33", opacity: 0.07, fontFamily: "'Noto Serif JP', serif" }}>{item.num}</p>
+                  <p className="text-6xl font-bold mb-4 leading-none" style={{ color: "#0c1a33", opacity: 0.07, fontFamily: "var(--font-noto-serif)" }}>{item.num}</p>
                   <h3 className="text-base font-bold mb-3" style={{ color: "#0c1a33" }}>{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
                 </HoverCard>
@@ -734,7 +734,7 @@ export default function Home() {
             <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
               Features
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-14" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-14" style={{ fontFamily: "var(--font-noto-serif)" }}>
               Medvanceの6つの特徴
             </h2>
           </FadeIn>
@@ -965,7 +965,7 @@ export default function Home() {
           <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
             こんな方へ
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12" style={{ fontFamily: "var(--font-noto-serif)" }}>
             Medvanceはこんな方を応援します
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -1168,7 +1168,7 @@ export default function Home() {
                 <FadeIn key={cluster.title} delay={index * 0.08}>
                   <div className="rounded-2xl bg-white p-5" style={{ border: "1px solid #e5e1d8" }}>
                     <div className="flex items-center justify-between gap-3 mb-2">
-                      <h3 className="text-base font-bold" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                      <h3 className="text-base font-bold" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                         {cluster.title}
                       </h3>
                       <Link
@@ -1245,7 +1245,7 @@ export default function Home() {
                 <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
                   Recommended
                 </p>
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
                   塾・予備校を比較検討している方へ
                 </h3>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.68)" }}>
@@ -1393,7 +1393,7 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}>
                   📘 無料相談の申し込み特典
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                   医学部受験戦略マニュアル
                 </h2>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
@@ -1429,8 +1429,8 @@ export default function Home() {
                   <div style={{ height: "3px", background: "linear-gradient(90deg, #c9922a, #e8b84b, #c9922a)" }} />
                   <div className="p-5">
                     <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>Medvance</p>
-                    <p className="text-white font-bold leading-tight mb-0.5" style={{ fontSize: "1rem", fontFamily: "'Noto Serif JP', serif" }}>医学部受験</p>
-                    <p className="font-bold leading-tight mb-4" style={{ fontSize: "1rem", fontFamily: "'Noto Serif JP', serif", color: "#e8b84b" }}>戦略マニュアル</p>
+                    <p className="text-white font-bold leading-tight mb-0.5" style={{ fontSize: "1rem", fontFamily: "var(--font-noto-serif)" }}>医学部受験</p>
+                    <p className="font-bold leading-tight mb-4" style={{ fontSize: "1rem", fontFamily: "var(--font-noto-serif)", color: "#e8b84b" }}>戦略マニュアル</p>
                     <div style={{ height: "1px", backgroundColor: "rgba(201,146,42,0.3)", marginBottom: "12px" }} />
                     <div className="space-y-1.5 mb-4">
                       {["医学部入試の全体像", "科目別・最短攻略法", "合格者の年間スケジュール", "面接・小論文の対策", "合格者と不合格者の違い", "難関校別・攻略ポイント"].map((ch, i) => (
@@ -1459,7 +1459,7 @@ export default function Home() {
                 {/* Left */}
                 <div className="p-8 md:p-10" style={{ backgroundColor: "#0c1a33" }}>
                   <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Tutor Recruitment</p>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug" style={{ fontFamily: "var(--font-noto-serif)" }}>
                     慶應医学部生の方、<br />講師として働きませんか？
                   </h2>
                   <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -1467,7 +1467,7 @@ export default function Home() {
                   </p>
                   <div className="inline-block px-5 py-3 rounded-xl mb-6" style={{ backgroundColor: "rgba(201,146,42,0.15)", border: "1px solid rgba(201,146,42,0.35)" }}>
                     <p className="text-xs font-semibold mb-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>時給</p>
-                    <p className="text-2xl font-bold" style={{ color: "#c9922a", fontFamily: "'Noto Serif JP', serif" }}>
+                    <p className="text-2xl font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
                       2,500〜10,000円
                     </p>
                     <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>昇給制度あり</p>
@@ -1515,7 +1515,7 @@ export default function Home() {
             <p className="text-xs font-semibold tracking-widest uppercase text-center mb-4" style={{ color: "#c9922a" }}>
               Free Consultation
             </p>
-            <h2 className="text-2xl md:text-4xl font-bold text-white text-center mb-4 leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            <h2 className="text-2xl md:text-4xl font-bold text-white text-center mb-4 leading-snug" style={{ fontFamily: "var(--font-noto-serif)" }}>
               まず、話してみてください。
             </h2>
             <p className="text-center mb-12" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.9375rem" }}>

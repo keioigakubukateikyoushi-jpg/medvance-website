@@ -172,7 +172,7 @@ export default function KitasatoPage() {
           </p>
           <h1
             className="text-3xl md:text-5xl font-bold text-white mb-5"
-            style={{ fontFamily: "'Noto Serif JP', serif", lineHeight: "1.3" }}
+            style={{ fontFamily: "var(--font-noto-serif)", lineHeight: "1.3" }}
           >
             物理の壁を越えた者が合格する。<br />北里大学医学部合格戦略。
           </h1>
@@ -199,7 +199,7 @@ export default function KitasatoPage() {
           <p className="text-xs font-bold tracking-widest uppercase text-center mb-2" style={{ color: "#c9922a" }}>Overview</p>
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-8"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             北里大学医学部の入試概要
           </h2>
@@ -237,7 +237,7 @@ export default function KitasatoPage() {
           <p className="text-xs font-bold tracking-widest uppercase text-center mb-2" style={{ color: "#c9922a" }}>Strategy</p>
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             合格のための戦略
           </h2>
@@ -270,7 +270,7 @@ export default function KitasatoPage() {
           <p className="text-xs font-bold tracking-widest uppercase text-center mb-2" style={{ color: "#c9922a" }}>Subjects</p>
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             科目別対策のポイント
           </h2>
@@ -300,7 +300,7 @@ export default function KitasatoPage() {
           <p className="text-xs font-bold tracking-widest uppercase text-center mb-2" style={{ color: "#c9922a" }}>Schedule</p>
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             合格までのスケジュール
           </h2>
@@ -329,7 +329,7 @@ export default function KitasatoPage() {
           <p className="text-xs font-bold tracking-widest uppercase text-center mb-2" style={{ color: "#c9922a" }}>Mistakes</p>
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             よくある失敗パターン
           </h2>
@@ -360,7 +360,7 @@ export default function KitasatoPage() {
           <p className="text-xs font-bold tracking-widest uppercase text-center mb-2" style={{ color: "#c9922a" }}>Why Medvance</p>
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             北里大学合格にMedvanceが選ばれる理由
           </h2>
@@ -391,7 +391,7 @@ export default function KitasatoPage() {
           <p className="text-xs font-bold tracking-widest uppercase text-center mb-2" style={{ color: "#c9922a" }}>FAQ</p>
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-8"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             よくあるご質問
           </h2>
@@ -417,7 +417,7 @@ export default function KitasatoPage() {
           </p>
           <h2
             className="text-2xl md:text-3xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             まずは無料相談から
           </h2>

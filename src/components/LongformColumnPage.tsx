@@ -57,7 +57,7 @@ export default function LongformColumnPage({
           </p>
           <h1
             className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             {article.title}
           </h1>
@@ -93,7 +93,7 @@ export default function LongformColumnPage({
         <div className="max-w-5xl mx-auto">
           <h2
             className="text-2xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             最初に押さえたいポイント
           </h2>
@@ -132,7 +132,7 @@ export default function LongformColumnPage({
             <div className="max-w-4xl mx-auto">
               <h2
                 className="text-2xl font-bold mb-6"
-                style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+                style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
               >
                 {section.title}
               </h2>
@@ -219,7 +219,7 @@ export default function LongformColumnPage({
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-8"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             よくある質問
           </h2>
@@ -263,7 +263,7 @@ export default function LongformColumnPage({
 
           <h2
             className="text-xl font-bold mb-6"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             関連記事
           </h2>

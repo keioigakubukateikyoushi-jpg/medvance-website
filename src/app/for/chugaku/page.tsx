@@ -114,7 +114,7 @@ export default function ChugakuPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             中学生の方へ
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             中学生からの医学部受験ロードマップ
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -126,7 +126,7 @@ export default function ChugakuPage() {
       {/* ロードマップ */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             中学生の学年別ロードマップ
           </h2>
           <p className="text-center text-sm mb-10" style={{ color: "#6b7280" }}>
@@ -136,7 +136,7 @@ export default function ChugakuPage() {
             {roadmap.map((section, si) => (
               <div key={si} className="rounded-2xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
                 <div className="px-6 py-4 flex items-center gap-4" style={{ backgroundColor: "#0c1a33" }}>
-                  <span className="text-white font-bold text-base" style={{ fontFamily: "'Noto Serif JP', serif" }}>{section.grade}</span>
+                  <span className="text-white font-bold text-base" style={{ fontFamily: "var(--font-noto-serif)" }}>{section.grade}</span>
                   <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.7)" }}>— {section.title}</span>
                   <span className="ml-auto text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(201,146,42,0.25)", color: "#c9922a" }}>{section.priority}</span>
                 </div>
@@ -159,7 +159,7 @@ export default function ChugakuPage() {
       {/* 高校での続き */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             高校入学後の流れ
           </h2>
           <p className="text-center text-sm mb-10" style={{ color: "#6b7280" }}>
@@ -185,7 +185,7 @@ export default function ChugakuPage() {
       {/* 今からできること */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             中学生のうちに意識しておくこと
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -202,7 +202,7 @@ export default function ChugakuPage() {
       {/* FAQ */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくあるご質問
           </h2>
           <div className="space-y-4">
@@ -219,7 +219,7 @@ export default function ChugakuPage() {
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             まずは無料相談から
           </h2>
           <p className="mb-8 text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>

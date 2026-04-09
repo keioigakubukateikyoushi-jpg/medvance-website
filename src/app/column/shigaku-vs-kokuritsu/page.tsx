@@ -138,7 +138,7 @@ export default function ShigakuVsKokuritsuPage() {
           </p>
           <h1
             className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             私立医学部と国公立医学部、
             <br className="hidden md:block" />
@@ -179,7 +179,7 @@ export default function ShigakuVsKokuritsuPage() {
         <div className="max-w-4xl mx-auto">
           <h2
             className="text-2xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             国公立 vs 私立：主な違いの比較
           </h2>
@@ -220,7 +220,7 @@ export default function ShigakuVsKokuritsuPage() {
         <div className="max-w-4xl mx-auto">
           <h2
             className="text-2xl font-bold text-center mb-4"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             私立医学部の学費比較（主な大学）
           </h2>
@@ -262,7 +262,7 @@ export default function ShigakuVsKokuritsuPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             カリキュラム・環境の違い
           </h2>
@@ -303,7 +303,7 @@ export default function ShigakuVsKokuritsuPage() {
         <div className="max-w-4xl mx-auto">
           <h2
             className="text-2xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             タイプ別：どちらを選ぶべきか
           </h2>
@@ -323,7 +323,7 @@ export default function ShigakuVsKokuritsuPage() {
                   </span>
                   <p
                     className="font-bold text-base"
-                    style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+                    style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
                   >
                     {item.type}
                   </p>
@@ -353,7 +353,7 @@ export default function ShigakuVsKokuritsuPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-6"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             どちらか迷っているなら、両方を視野に入れた戦略を
           </h2>

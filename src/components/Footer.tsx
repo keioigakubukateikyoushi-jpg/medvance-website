@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12 pb-12" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
-            <p className="text-xl font-bold mb-2" style={{ fontFamily: "'Noto Serif JP', serif" }}>Medvance</p>
+            <p className="text-xl font-bold mb-2" style={{ fontFamily: "var(--font-noto-serif)" }}>Medvance</p>
             <p className="text-xs mb-5 leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
               現役慶應義塾大学医学部生による<br />医学部受験専門塾
             </p>

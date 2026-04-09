@@ -33,7 +33,7 @@ export default function MedvanceBanner() {
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
                 Medvance — 医学部受験専門塾
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif", lineHeight: "1.4" }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)", lineHeight: "1.4" }}>
                 医学部合格なら、<br />現役慶應医学部生に相談を。
               </h2>
               <ul className="space-y-2 mb-0">
@@ -62,7 +62,7 @@ export default function MedvanceBanner() {
               style={{ minWidth: "220px", boxShadow: "0 8px 32px rgba(0,0,0,0.25)" }}
             >
               <p className="text-xs font-semibold mb-1" style={{ color: "#6b7280" }}>まずはここから</p>
-              <p className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+              <p className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 無料相談<br />受付中
               </p>
               <Link

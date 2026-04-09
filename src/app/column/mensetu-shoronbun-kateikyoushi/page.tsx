@@ -108,7 +108,7 @@ export default function MensetsuShoronbunKateikyoushiPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             面接・小論文対策
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             医学部の面接・小論文対策に<br />家庭教師が最適な理由
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -137,7 +137,7 @@ export default function MensetsuShoronbunKateikyoushiPage() {
       {/* MENSETU POINTS */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             面接対策：家庭教師だからできること
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -158,7 +158,7 @@ export default function MensetsuShoronbunKateikyoushiPage() {
       {/* SHORONBUN POINTS */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             小論文対策：1対1添削で格段に伸ばす
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -179,7 +179,7 @@ export default function MensetsuShoronbunKateikyoushiPage() {
       {/* MEDVANCE SUPPORT */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             Medvanceの面接・小論文サポート
           </h2>
           <div className="space-y-3 mb-8">
@@ -210,7 +210,7 @@ export default function MensetsuShoronbunKateikyoushiPage() {
       {/* FAQ */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4 mb-12">
@@ -236,7 +236,7 @@ export default function MensetsuShoronbunKateikyoushiPage() {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             関連記事
           </h2>
           <div className="grid md:grid-cols-3 gap-4">

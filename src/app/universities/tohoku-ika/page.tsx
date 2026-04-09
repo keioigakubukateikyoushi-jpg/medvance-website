@@ -27,7 +27,7 @@ export default function TohokuIkaPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>大学別対策ガイド</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>東北医科薬科大学<br />入試対策ガイド</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>東北医科薬科大学<br />入試対策ガイド</h1>
           <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>現役慶應医学部生による入試傾向・合格戦略の完全解説</p>
           <div className="flex flex-wrap justify-center gap-3">
             <span className="px-4 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(201,146,42,0.2)", color: "#c9922a", border: "1px solid rgba(201,146,42,0.4)" }}>私立医学部</span>
@@ -38,14 +38,14 @@ export default function TohokuIkaPage() {
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Overview</p>
-          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>東北医科薬科大学の特徴</h2>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>東北医科薬科大学の特徴</h2>
           <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>東北医科薬科大学医学部は2016年に新設された医学部で、東北地方の医療人材育成を使命としています。入試は標準〜やや難レベルで、学力とともに地域医療への貢献意識が強く問われます。面接・小論文の比重が高く、東北の医療課題への理解と建学理念への共感が合否を大きく左右します。</p>
         </div>
       </div>
       <div className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Subject Analysis</p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>科目別出題傾向</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>科目別出題傾向</h2>
           <div className="space-y-6">
             {subjects.map((s) => (
               <div key={s.name} className="p-6 rounded-2xl" style={{ border: "1px solid #e5e1d8" }}>
@@ -63,7 +63,7 @@ export default function TohokuIkaPage() {
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Strategy</p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>合格するための戦略</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>合格するための戦略</h2>
           <div className="space-y-5">
             {strategies.map((s) => (
               <div key={s.step} className="flex gap-5 p-6 bg-white rounded-2xl" style={{ border: "1px solid #e5e1d8" }}>
@@ -80,7 +80,7 @@ export default function TohokuIkaPage() {
       <div className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>FAQ</p>
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>よくある質問</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-5">
             {faqs.map((f, i) => (
               <div key={i} className="p-6 rounded-2xl" style={{ border: "1px solid #e5e1d8" }}>
@@ -94,7 +94,7 @@ export default function TohokuIkaPage() {
       <div className="py-16 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
-          <h2 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>東北医科薬科大学対策の相談はこちら</h2>
+          <h2 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>東北医科薬科大学対策の相談はこちら</h2>
           <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>現役慶應医学部生が個別に対策をアドバイスします。</p>
           <Link href="/contact" className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: "#c9922a" }}>無料相談・お問い合わせ</Link>
         </div>

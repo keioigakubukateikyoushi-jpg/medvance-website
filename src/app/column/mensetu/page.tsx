@@ -126,7 +126,7 @@ export default function MensetsuPage() {
           </p>
           <h1
             className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             医学部面接対策の完全ガイド
           </h1>
@@ -165,7 +165,7 @@ export default function MensetsuPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             よく聞かれる質問と回答のポイント
           </h2>
@@ -203,7 +203,7 @@ export default function MensetsuPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-4"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             MMI（多面的面接）とは
           </h2>
@@ -236,7 +236,7 @@ export default function MensetsuPage() {
         <div className="max-w-4xl mx-auto">
           <h2
             className="text-2xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             面接で落とされる人のパターン
           </h2>
@@ -266,7 +266,7 @@ export default function MensetsuPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-6"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             面接対策の進め方
           </h2>

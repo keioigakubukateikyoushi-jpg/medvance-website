@@ -78,7 +78,7 @@ export default function KeioNaibuShikumiPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>慶應内部進学</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             慶應内部進学の仕組みと<br />評定の上げ方を徹底解説
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -107,7 +107,7 @@ export default function KeioNaibuShikumiPage() {
       {/* HOW IT WORKS */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             慶應内部進学の仕組み
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -121,7 +121,7 @@ export default function KeioNaibuShikumiPage() {
               { step: "04", title: "医学部は選考（志望理由書・面談）が加わる", body: "特に医学部への内部進学は、評定に加えて志望理由書・面談などの特別選考が課されます。成績を確保した上で、選考の準備も早期から行う必要があります。" },
             ].map((item) => (
               <div key={item.step} className="flex gap-5 p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                <div className="text-2xl font-bold flex-shrink-0 w-10" style={{ color: "#c9922a", fontFamily: "'Noto Serif JP', serif" }}>{item.step}</div>
+                <div className="text-2xl font-bold flex-shrink-0 w-10" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{item.step}</div>
                 <div>
                   <p className="font-bold text-base mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
                   <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
@@ -135,7 +135,7 @@ export default function KeioNaibuShikumiPage() {
       {/* DIFFICULTY TABLE */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             学部別・内部進学の難易度
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -167,7 +167,7 @@ export default function KeioNaibuShikumiPage() {
       {/* WHAT TO DO */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             評定を上げるための実践対策
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -196,7 +196,7 @@ export default function KeioNaibuShikumiPage() {
       {/* MEDVANCE */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             Medvanceが慶應内部進学対策に選ばれる理由
           </h2>
           <div className="space-y-3">
@@ -221,7 +221,7 @@ export default function KeioNaibuShikumiPage() {
       {/* FAQ */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>よくある質問</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4 mb-12">
             {faqItems.map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>

@@ -68,7 +68,7 @@ export default function PricingPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Pricing</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             料金について
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -175,7 +175,7 @@ export default function PricingPage() {
 
       <div className="py-20 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             どのくらいの頻度から始めるべきか
           </h2>
           <p className="text-center text-sm mb-12 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
@@ -248,7 +248,7 @@ export default function PricingPage() {
           </div>
 
           <div className="p-8 rounded-2xl text-center" style={{ backgroundColor: "#0c1a33" }}>
-            <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+            <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
               まずは無料相談から
             </h2>
             <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.68)" }}>

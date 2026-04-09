@@ -98,7 +98,7 @@ export default function NangandaiPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>難関大受験対策</p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-noto-serif)" }}>
             東大・京大・早慶<br />難関大受験を突破する
           </h1>
           <p className="text-base md:text-lg mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
@@ -127,7 +127,7 @@ export default function NangandaiPage() {
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-            <h2 className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+            <h2 className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
               なぜ「慶應医学部生」が難関大受験にも対応できるのか
             </h2>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
@@ -146,7 +146,7 @@ export default function NangandaiPage() {
       {/* TARGET UNIVERSITIES */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             対応している志望校
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>理系・文系問わず相談可能</p>
@@ -170,7 +170,7 @@ export default function NangandaiPage() {
       {/* WHY MEDVANCE */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             Medvanceが選ばれる4つの理由
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
@@ -191,7 +191,7 @@ export default function NangandaiPage() {
       {/* SUBJECTS */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             対応科目
           </h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>理系科目は全員対応。英語も全員対応。</p>
@@ -219,7 +219,7 @@ export default function NangandaiPage() {
       {/* PRICING */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>料金の目安</h2>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>料金の目安</h2>
           <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>契約縛りなし。無料相談後にご提案します。</p>
           <div className="grid md:grid-cols-3 gap-5">
             {[
@@ -241,7 +241,7 @@ export default function NangandaiPage() {
       {/* FAQ */}
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>よくある質問</h2>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4">
             {faqSchema.mainEntity.map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
@@ -260,7 +260,7 @@ export default function NangandaiPage() {
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談受付中</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             難関大受験の合格を<br />Medvanceと目指す
           </h2>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>

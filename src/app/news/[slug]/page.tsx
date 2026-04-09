@@ -50,7 +50,7 @@ export default async function NoticeDetailPage({ params }: { params: Promise<{ s
               {notice.category}
             </span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-bold text-white leading-snug" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-2xl md:text-3xl font-bold text-white leading-snug" style={{ fontFamily: "var(--font-noto-serif)" }}>
             {notice.title}
           </h1>
         </div>

@@ -25,7 +25,7 @@ export default function ArticleConsultationBox({
         <p className="text-xs font-semibold tracking-[0.28em] uppercase mb-3" style={{ color: "#c9922a" }}>
           {eyebrow}
         </p>
-        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white" style={{ fontFamily: "var(--font-noto-serif)" }}>
           {title}
         </h3>
         <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.72)" }}>

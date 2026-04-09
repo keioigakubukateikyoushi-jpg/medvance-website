@@ -144,7 +144,7 @@ export default function GakuhiPage() {
           </p>
           <h1
             className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Noto Serif JP', serif" }}
+            style={{ fontFamily: "var(--font-noto-serif)" }}
           >
             医学部の学費・費用を徹底比較
           </h1>
@@ -183,7 +183,7 @@ export default function GakuhiPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-6"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             国公立医学部の学費
           </h2>
@@ -224,7 +224,7 @@ export default function GakuhiPage() {
         <div className="max-w-4xl mx-auto">
           <h2
             className="text-2xl font-bold mb-4"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             私立医学部の学費比較
           </h2>
@@ -288,7 +288,7 @@ export default function GakuhiPage() {
         <div className="max-w-4xl mx-auto">
           <h2
             className="text-2xl font-bold text-center mb-10"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             学費を減らす：奨学金・特待生制度
           </h2>
@@ -318,7 +318,7 @@ export default function GakuhiPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-4"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             学費以外にかかる費用
           </h2>
@@ -362,7 +362,7 @@ export default function GakuhiPage() {
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-2xl font-bold mb-6"
-            style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}
+            style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             費用を踏まえた大学選びの考え方
           </h2>
@@ -385,7 +385,7 @@ export default function GakuhiPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4 mb-12">
@@ -410,7 +410,7 @@ export default function GakuhiPage() {
               </details>
             ))}
           </div>
-          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             関連記事
           </h2>
           <div className="grid md:grid-cols-3 gap-4">

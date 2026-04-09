@@ -46,7 +46,7 @@ export default function NationalPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             National University Guide
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             国公立大学医学部・防衛医科大学校の対策一覧
           </h1>
           <p className="text-base max-w-3xl mx-auto" style={{ color: "rgba(255,255,255,0.68)" }}>
@@ -102,7 +102,7 @@ export default function NationalPage() {
               <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
                 All Schools
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "#0c1a33", fontFamily: "'Noto Serif JP', serif" }}>
+              <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 全大学の対策ページ
               </h2>
             </div>
@@ -183,7 +183,7 @@ export default function NationalPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             Free Consultation
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             国公立志望でも、大学ごとに優先順位はかなり変わります
           </h2>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.68)" }}>
