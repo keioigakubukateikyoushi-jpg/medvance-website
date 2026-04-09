@@ -267,6 +267,15 @@ export const columnArticles: ColumnArticle[] = [
     featuredOnHome: false,
   },
   {
+    slug: "igakubu-juku-osusume",
+    category: "塾・指導",
+    title: "医学部受験の塾・予備校おすすめ比較【2026年版】",
+    description: "医学部受験の塾・予備校を徹底比較。大手予備校・医学部専門予備校・個別指導・映像授業の違い、費用相場、選び方の基準を解説。",
+    keywords: ["医学部 塾 おすすめ", "医学部 予備校 おすすめ", "医学部受験 塾 比較"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
     slug: "nangandai-kateikyoushi",
     category: "塾・指導",
     title: "難関大受験（東大・京大・早慶）に家庭教師が効果的な理由",
