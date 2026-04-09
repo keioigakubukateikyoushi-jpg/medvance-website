@@ -267,6 +267,24 @@ export const columnArticles: ColumnArticle[] = [
     featuredOnHome: false,
   },
   {
+    slug: "seiseki-kateikyoushi",
+    category: "塾・指導",
+    title: "学校の成績を上げるための家庭教師の選び方",
+    description: "学校の成績向上・定期テスト対策・内申点アップに家庭教師が効果的な理由を解説。塾・映像授業との違い、選び方のポイントを紹介。",
+    keywords: ["学校の成績 上げる 家庭教師", "定期テスト対策 家庭教師", "内申点 上げる 家庭教師"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
+    slug: "teiki-test-kateikyoushi",
+    category: "塾・指導",
+    title: "定期テスト対策に家庭教師が最も効果的な理由",
+    description: "定期テスト対策に家庭教師を使うべき理由、3週間前からの対策スケジュール、成績が上がらない3つの原因と解決策を解説。",
+    keywords: ["定期テスト対策 家庭教師", "定期試験 個別指導", "中学 定期テスト 家庭教師"],
+    popular: true,
+    featuredOnHome: false,
+  },
+  {
     slug: "shoronbun-timing",
     category: "入試対策",
     title: "医学部小論文対策はいつから始めるべきか",
@@ -456,6 +474,12 @@ export const columnTopicClusters = [
     description: "慶應内部進学の仕組み・成績対策・家庭教師の選び方・評定向上戦略をまとめて読めます。",
     searchKeyword: "内部進学",
     articleSlugs: ["keio-naibu-shikumi", "keio-naibu-seiseki", "keio-naibu-kateikyoushi"],
+  },
+  {
+    title: "学校の成績・定期テストで悩む中高生へ",
+    description: "定期テスト対策・成績向上のための家庭教師活用法と選び方をまとめて読めます。",
+    searchKeyword: "定期テスト",
+    articleSlugs: ["seiseki-kateikyoushi", "teiki-test-kateikyoushi", "igakubu-kateikyoushi-hikaku"],
   },
   {
     title: "慶應附属校の定期試験・評定を上げたい人へ",

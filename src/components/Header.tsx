@@ -19,6 +19,8 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "再受験生の方", href: "/for/saijuken", desc: "社会人・大学生からの挑戦" },
       { label: "保護者の方", href: "/for/parents", desc: "定期報告・保護者面談あり" },
       { label: "慶應内部進学を目指す方", href: "/for/keio-naibu", desc: "附属校から医学部へ・評定対策" },
+      { label: "慶應附属校生の方", href: "/for/keio-fuzoku", desc: "定期テスト対策・評定向上" },
+      { label: "学校の成績を上げたい方", href: "/for/seiseki-up", desc: "定期テスト対策・内申点向上" },
       { label: "慶應義塾大学医学部", href: "/universities/keio", desc: "現役慶應生が入試を解説" },
       { label: "東京慈恵会医科大学", href: "/universities/jikei", desc: "英語最難関・慈恵の医師像" },
       { label: "順天堂大学医学部", href: "/universities/juntendo", desc: "バランス型・MMI面接対策" },
@@ -56,6 +58,8 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "再受験で合格する方法", href: "/column/saijuken", desc: "社会人・大学生からの挑戦" },
       { label: "慶應医学部ガイド", href: "/column/keio-guide", desc: "慶應医学部のすべてを解説" },
       { label: "塾・予備校の選び方", href: "/column/juku-erabi", desc: "失敗しない塾選びのポイント" },
+      { label: "学校の成績を上げる家庭教師", href: "/column/seiseki-kateikyoushi", desc: "定期テスト対策・内申点向上" },
+      { label: "定期テスト対策に家庭教師", href: "/column/teiki-test-kateikyoushi", desc: "3週間前から始める対策法" },
     ],
   },
 ];
