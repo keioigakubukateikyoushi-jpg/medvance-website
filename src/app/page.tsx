@@ -1313,44 +1313,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 12. NOTE ──────────────────────────── */}
-      <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-            Note
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-            現役慶應医学部生のnoteも更新中
-          </h2>
-          <p className="text-center text-sm mb-10 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-            「医学部合格者だけが知る戦略」「医学部に受かる人・落ちる人の違い」など、他では読めないリアルな受験情報を公開中です。
-          </p>
-          <div className="rounded-2xl overflow-hidden shadow-sm mb-8" style={{ border: "1px solid #e5e1d8" }}>
-            <Image
-              src="/images/note.png"
-              alt="note記事"
-              width={1280}
-              height={819}
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="text-center">
-            <a
-              href="https://note.com/igakubu_juken"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#0c1a33" }}
-            >
-              note記事を読む
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* ── 13. SUBJECTS ──────────────────────── */}
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
