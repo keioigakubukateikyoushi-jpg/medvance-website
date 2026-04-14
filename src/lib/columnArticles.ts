@@ -516,6 +516,24 @@ export const columnArticles: ColumnArticle[] = [
     keywords: ["医学部受験 4月 年間計画", "医学部受験 4月 勉強計画", "医学部受験 年間スケジュール"],
     popular: true,
   },
+  {
+    slug: "mmi-taisaku",
+    category: "入試対策",
+    title: "医学部MMI面接の対策方法｜頻出テーマ・練習法・合格のポイント",
+    description: "医学部MMI（複数ミニ面接）の具体的な対策方法を解説。頻出テーマ10選、ステーション別の練習手順、大学別の出題傾向、準備スケジュールまで現役慶應医学部生が説明します。",
+    keywords: ["MMI 対策", "MMI 医学部 面接", "MMI 頻出テーマ", "MMI 練習方法", "医学部 MMI 何をする"],
+    popular: true,
+    featuredOnHome: true,
+  },
+  {
+    slug: "natsu-manikiai",
+    category: "受験戦略",
+    title: "医学部受験は夏から間に合う？高3・浪人生がやるべきこと完全ガイド",
+    description: "「夏から本気になっても医学部に間に合う？」高3・浪人生それぞれの可能性と現実、夏の3ヶ月で何をどう進めるかを現役慶應医学部生が解説します。",
+    keywords: ["医学部受験 夏から", "医学部受験 間に合う", "高3 夏 医学部", "医学部受験 夏休み 勉強法", "浪人 夏から 医学部"],
+    popular: true,
+    featuredOnHome: true,
+  },
 ];
 
 export const columnCategories = [

@@ -93,8 +93,8 @@ const subjects = [
 
 const searchIntentLinks = [
   { label: "慶應医学部に受かるには", href: "/universities/keio", desc: "科目別対策、面接、合格戦略まで" },
-  { label: "医学部面接対策はいつから？", href: "/column/mensetu-timing", desc: "学年別の始め方と模擬面接の流れ" },
-  { label: "医学部の過去問はいつから？", href: "/column/kakomon-timing", desc: "着手時期、何年分やるか、復習法" },
+  { label: "MMI面接の対策方法を知りたい", href: "/column/mmi-taisaku", desc: "頻出テーマ・ロールプレイ・大学別傾向を整理" },
+  { label: "医学部受験は夏から間に合う？", href: "/column/natsu-manikiai", desc: "高3・浪人生それぞれの戦略と優先順位" },
   { label: "私立医学部の学費を比較したい", href: "/column/gakuhi", desc: "国公立との差や6年間の費用感を整理" },
   { label: "無料相談で今の優先順位を整理したい", href: "/contact?from=home-search-hub", desc: "志望校・現在地・残り期間から、次にやることを30分で整理" },
   { label: "保護者向けの情報を知りたい", href: "/for/parents", desc: "塾選び、費用、サポートの考え方" },
@@ -181,10 +181,10 @@ export default function Home() {
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "講師が全員", sub: "慶應医学部在籍" },
-            { label: "全指導が", sub: "完全1対1制" },
-            { label: "オンラインで", sub: "全国どこでも受講可能" },
-            { label: "まず", sub: "無料カウンセリング" },
+            { label: "73校以上", sub: "大学別の入試対策を掲載" },
+            { label: "完全1対1", sub: "慶應医学部生が専任指導" },
+            { label: "全国どこでも", sub: "オンラインで完全対応" },
+            { label: "30分・無料", sub: "まず相談から始められる" },
           ].map((s) => (
             <div key={s.sub}>
               <p className="text-lg md:text-xl font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{s.label}</p>
