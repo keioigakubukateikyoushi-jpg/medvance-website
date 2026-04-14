@@ -2,7 +2,7 @@ export const siteUrl = "https://medvance-edu.com";
 
 // Published date for all content (static for now, used in Article schema)
 export const SITE_PUBLISHED = "2024-04-01";
-export const SITE_MODIFIED = "2026-04-09";
+export const SITE_MODIFIED = "2026-04-14";
 
 type SchemaListItem = {
   name: string;

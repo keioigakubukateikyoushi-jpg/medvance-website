@@ -58,6 +58,7 @@ export type LongformColumnArticle = {
 const publishDate = "2026-04-01";
 
 function buildArticleMetadata(article: LongformColumnArticle): Metadata {
+  const ogImageUrl = `https://medvance-edu.com/api/og?title=${encodeURIComponent(article.title)}&cat=${encodeURIComponent(article.category)}`;
   return {
     title: `${article.title} | Medvance`,
     description: article.description,
@@ -69,6 +70,16 @@ function buildArticleMetadata(article: LongformColumnArticle): Metadata {
       description: article.description,
       type: "article",
       url: `https://medvance-edu.com/column/${article.slug}`,
+      publishedTime: article.datePublished,
+      modifiedTime: article.dateModified,
+      authors: ["Medvance編集部"],
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: article.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+      images: [ogImageUrl],
     },
     keywords: article.keywords,
   };

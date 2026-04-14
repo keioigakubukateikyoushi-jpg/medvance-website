@@ -534,6 +534,31 @@ export const columnArticles: ColumnArticle[] = [
     popular: true,
     featuredOnHome: true,
   },
+  {
+    slug: "dokugaku-genkai",
+    category: "塾・指導",
+    title: "医学部受験で独学が難しい理由｜伸び悩んだときに確認すること",
+    description: "医学部受験で独学が難しい理由と、伸び悩んだときに確認すべき3つのポイントを解説。塾・家庭教師が必要なタイミングの見極め方も整理します。",
+    keywords: ["医学部受験 独学", "医学部受験 塾なし", "医学部受験 独学 限界", "医学部 独学 難しい", "医学部 塾 必要"],
+    popular: true,
+    featuredOnHome: true,
+  },
+  {
+    slug: "moshi-katsuyo",
+    category: "受験戦略",
+    title: "医学部受験の模試の使い方｜結果の読み方と次にやること",
+    description: "医学部受験で模試を最大限に活用する方法を解説。判定の見方、科目別の結果分析、次の学習計画への落とし込み方まで実践的にまとめます。",
+    keywords: ["医学部 模試 使い方", "医学部 模試 結果 読み方", "医学部 模試 判定", "医学部受験 模試 活用"],
+    popular: true,
+  },
+  {
+    slug: "junrejo-goukaku",
+    category: "受験情報",
+    title: "私立医学部の繰り上げ合格・補欠合格の仕組みと対策",
+    description: "私立医学部の繰り上げ合格・補欠合格の仕組み、連絡タイミング、入学手続きの注意点を解説。補欠通知後に何をすべきか行動指針も整理します。",
+    keywords: ["私立医学部 繰り上げ合格", "医学部 補欠合格", "医学部 繰り上げ 仕組み", "医学部 補欠 いつ連絡"],
+    popular: true,
+  },
 ];
 
 export const columnCategories = [
