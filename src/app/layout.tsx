@@ -9,16 +9,17 @@ import { buildWebSiteSchema, buildOrganizationSchema, siteUrl } from "@/lib/seo"
 
 const notoSans = Noto_Sans_JP({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],
   variable: "--font-noto-sans",
   display: "swap",
 });
 
 const notoSerif = Noto_Serif_JP({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],
   variable: "--font-noto-serif",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

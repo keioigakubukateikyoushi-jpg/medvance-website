@@ -12,6 +12,12 @@ export default function FadeIn({ children, delay = 0, className = "" }: {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // If already in viewport on mount, show immediately
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      setVisible(true);
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -19,7 +25,7 @@ export default function FadeIn({ children, delay = 0, className = "" }: {
           observer.disconnect();
         }
       },
-      { rootMargin: "-80px" }
+      { rootMargin: "-60px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -31,8 +37,11 @@ export default function FadeIn({ children, delay = 0, className = "" }: {
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(32px)",
-        transition: `opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`,
+        transform: visible ? "translateY(0)" : "translateY(28px)",
+        transition: visible
+          ? `opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`
+          : "none",
+        willChange: visible ? "auto" : "opacity, transform",
       }}
     >
       {children}
