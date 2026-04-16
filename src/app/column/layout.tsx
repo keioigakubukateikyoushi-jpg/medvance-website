@@ -1,14 +1,10 @@
-import { headers } from "next/headers";
-import type { Metadata } from "next";
 import Link from "next/link";
+import { siteUrl } from "@/lib/seo";
 import { columnArticles } from "@/lib/columnArticles";
-import {
-  buildArticleSchema,
-  buildBreadcrumbSchema,
-  buildFaqSchema,
-  siteUrl,
-  SITE_MODIFIED,
-} from "@/lib/seo";
+
+const popularArticles = columnArticles
+  .filter((a) => a.popular)
+  .slice(0, 6);
 
 const blogSchema = {
   "@context": "https://schema.org",
@@ -25,91 +21,17 @@ const blogSchema = {
   inLanguage: "ja-JP",
 };
 
-// generateMetadata: inject per-article OG image via /api/og
-export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "";
-  const slug = pathname.replace(/^\/column\//, "").split("/")[0];
-  const article = columnArticles.find((a) => a.slug === slug);
-
-  if (!article || !slug) {
-    return {
-      title: "受験・学習コラム",
-      description:
-        "医学部受験・難関大受験・定期テスト対策・推薦AO入試・慶應内部進学まで、Medvanceの受験・学習コラム一覧。",
-    };
-  }
-
-  const ogImageUrl = `${siteUrl}/api/og?title=${encodeURIComponent(article.title)}&cat=${encodeURIComponent(article.category)}`;
-
-  return {
-    openGraph: {
-      title: article.title,
-      description: article.description,
-      url: `${siteUrl}/column/${slug}`,
-      siteName: "Medvance",
-      locale: "ja_JP",
-      type: "article",
-      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: article.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: article.title,
-      description: article.description,
-      images: [ogImageUrl],
-    },
-  };
-}
-
-export default async function ColumnLayout({
+export default function ColumnLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "";
-  const slug = pathname.replace(/^\/column\//, "").split("/")[0];
-  const article = columnArticles.find((a) => a.slug === slug);
-
-  // Build per-article schemas for all column pages automatically
-  const articleSchemas: object[] = [];
-  if (article && slug) {
-    const path = `/column/${slug}`;
-    articleSchemas.push(
-      buildArticleSchema({
-        headline: article.title,
-        description: article.description,
-        path,
-        dateModified: SITE_MODIFIED,
-        articleSection: article.category,
-        keywords: article.keywords,
-      })
-    );
-    articleSchemas.push(
-      buildBreadcrumbSchema([
-        { name: "ホーム", url: "/" },
-        { name: "コラム一覧", url: "/column" },
-        { name: article.title, url: path },
-      ])
-    );
-    if (article.faq && article.faq.length > 0) {
-      articleSchemas.push(buildFaqSchema(article.faq));
-    }
-  }
-
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
-      {articleSchemas.map((schema, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
 
       {/* Top CTA bar */}
       <div
@@ -151,6 +73,44 @@ export default async function ColumnLayout({
 
       {/* column-body wrapper */}
       <div className="column-body">{children}</div>
+
+      {/* Popular articles internal linking */}
+      <nav aria-label="人気コラム記事" className="py-12 px-4" style={{ backgroundColor: "#f7f5f0", borderTop: "1px solid #e5e1d8" }}>
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>
+            よく読まれているコラム
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {popularArticles.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/column/${article.slug}`}
+                className="flex items-center gap-3 p-3 rounded-xl bg-white hover:shadow-sm transition-shadow"
+                style={{ border: "1px solid #e5e1d8" }}
+              >
+                <span
+                  className="flex-shrink-0 text-xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}
+                >
+                  {article.category}
+                </span>
+                <span className="text-sm font-semibold leading-snug" style={{ color: "#0c1a33" }}>
+                  {article.title}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-5 text-center">
+            <Link
+              href="/column"
+              className="text-sm font-semibold hover:underline"
+              style={{ color: "#c9922a" }}
+            >
+              コラム一覧をすべて見る →
+            </Link>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }

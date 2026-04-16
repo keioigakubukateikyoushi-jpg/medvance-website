@@ -450,7 +450,7 @@ export default function Home() {
               Comparison
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-              他塾との違い
+              医学部塾・予備校・家庭教師の違いを比較
             </h2>
             <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
               Medvanceが選ばれる理由を、他塾と比較してご確認ください
@@ -627,7 +627,7 @@ export default function Home() {
               Tutors
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-              講師陣の強み
+              現役慶應医学部生が1対1で指導する強み
             </h2>
             <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
               各生徒に最適な講師をマッチング。多様な合格背景を持つ現役慶應医学部生があなたの合格を支えます。
@@ -718,7 +718,7 @@ export default function Home() {
           <FadeIn>
             <Image
               src="/images/about.png"
-              alt="Medvanceについて"
+              alt="Medvance 医学部受験専門塾 現役慶應医学部生による完全1対1個別指導"
               width={1200}
               height={675}
               className="w-full h-auto rounded-2xl shadow-sm"
@@ -770,7 +770,7 @@ export default function Home() {
               Coaching & Support
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-              伴走型サポートの内容
+              医学部受験の個別サポート体制
             </h2>
             <p className="text-center text-sm mb-12 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
               授業だけで終わらない。学習計画の設計から毎日の進捗管理、保護者への報告まで一貫して行います。
