@@ -35,7 +35,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-noto-serif), serif;
+  font-family: var(--font-noto-serif), "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "MS PMincho", Georgia, serif;
 }
 
 /* ── Column article typography ───────────────────────────── */

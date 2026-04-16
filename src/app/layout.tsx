@@ -12,13 +12,14 @@ const notoSans = Noto_Sans_JP({
   weight: ["400", "700"],
   variable: "--font-noto-sans",
   display: "swap",
+  preload: true,
 });
 
 const notoSerif = Noto_Serif_JP({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["700"],
   variable: "--font-noto-serif",
-  display: "swap",
+  display: "optional",
   preload: false,
 });
 
