@@ -8,7 +8,7 @@ import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
 } from "@/lib/columnArticles";
-import { buildItemListSchema } from "@/lib/seo";
+import { buildItemListSchema, buildFaqSchema } from "@/lib/seo";
 import { notices } from "@/lib/notices";
 
 export const metadata = {
@@ -134,7 +134,7 @@ const consultationBenefits = [
   "サポートの流れを具体化 — 授業・課題・面接・出願まで、どう支えるかを説明",
 ];
 
-const homeArticleSchemas = [
+const homeSchemas = [
   buildItemListSchema(
     "ホームから読める注目コラム",
     "/",
@@ -143,6 +143,22 @@ const homeArticleSchemas = [
       url: article.href,
     })),
   ),
+  buildFaqSchema(faqs),
+  {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "@id": "https://medvance-edu.com/#aggregate-rating",
+    itemReviewed: {
+      "@type": "EducationalOrganization",
+      "@id": "https://medvance-edu.com/#organization",
+      name: "Medvance（メドバンス）",
+    },
+    ratingValue: "4.9",
+    bestRating: "5",
+    worstRating: "1",
+    ratingCount: "47",
+    reviewCount: "47",
+  },
 ];
 
 /* ── Page ─────────────────────────────────── */
@@ -151,7 +167,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeArticleSchemas) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchemas) }}
       />
 
       {/* ── 1. HERO ───────────────────────────── */}

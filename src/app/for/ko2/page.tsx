@@ -1,3 +1,4 @@
+import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 
 export const metadata = {
@@ -73,7 +74,9 @@ const faqs = [
 
 export default function Ko2Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <ForPageSchemas slug="ko2" />
+      <div className="min-h-screen bg-white">
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
@@ -180,5 +183,6 @@ export default function Ko2Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

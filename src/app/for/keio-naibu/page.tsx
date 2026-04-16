@@ -1,3 +1,4 @@
+import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 
 export const metadata = {
@@ -112,23 +113,12 @@ const faqs = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
 
 export default function KeioNaibuPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+    <>
+      <ForPageSchemas slug="keio-naibu" />
+      <div className="min-h-screen bg-white">
 
       {/* HERO */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
@@ -334,5 +324,6 @@ export default function KeioNaibuPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

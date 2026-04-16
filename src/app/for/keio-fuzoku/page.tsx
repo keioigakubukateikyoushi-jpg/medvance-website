@@ -1,3 +1,4 @@
+import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -20,15 +21,6 @@ const faqItems = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
 
 const supportedSchools = [
   "慶應義塾高校（男子校・東京）",
@@ -99,8 +91,9 @@ export const metadata: Metadata = {
 
 export default function KeioFuzokuPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <>
+      <ForPageSchemas slug="keio-fuzoku" />
+      <div className="min-h-screen bg-white">
 
       {/* HERO */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
@@ -273,5 +266,6 @@ export default function KeioFuzokuPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

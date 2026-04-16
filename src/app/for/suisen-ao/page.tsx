@@ -1,44 +1,8 @@
+import ForPageSchemas from "@/components/ForPageSchemas";
+import { forPageMeta } from "@/lib/forPageMeta";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "推薦・AO入試の面接対策はいつから始めるべきですか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "高校3年生の4〜5月には着手するのが理想です。志望理由書の提出締め切りや面接日程は秋に集中するため、夏休みまでに「なぜこの大学・学部か」「自分が何をしたいか」を言語化できている状態が望ましいです。Medvanceでは逆算スケジュールを一緒に設計します。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "志望理由書の添削だけ依頼できますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、志望理由書の添削・ブラッシュアップのみのご依頼も承っています。ただし、面接では志望理由書の内容を深掘りされることが多いため、書類と面接対策をセットで準備することをお勧めします。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "医療・医学系以外の学部志望でも対応していますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、対応しています。慶應の法・経済・理工・SFCや早稲田政経・国際教養など、医療系以外の学部のAO・推薦入試にも対応しています。面接・小論文・志望理由書の指導は学部を問わず対応可能です。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "小論文の添削もお願いできますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、小論文の添削・構成指導にも対応しています。医療系・理系・文系いずれのテーマにも対応できます。現役慶應医学部生は小論文対策を徹底して行った経験があり、「合格する書き方」を実践的に指導します。",
-      },
-    },
-  ],
-};
 
 const supportTypes = [
   {
@@ -87,8 +51,9 @@ export const metadata: Metadata = {
 
 export default function SuisenAoPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <>
+      <ForPageSchemas slug="suisen-ao" />
+      <div className="min-h-screen bg-white">
 
       {/* HERO */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
@@ -213,13 +178,13 @@ export default function SuisenAoPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4">
-            {faqSchema.mainEntity.map((faq, i) => (
+            {(forPageMeta["suisen-ao"].faq ?? []).map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
                 <summary className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white" style={{ color: "#0c1a33" }}>
-                  <span>Q. {faq.name}</span>
+                  <span>Q. {faq.q}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}><path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" /></svg>
                 </summary>
-                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.acceptedAnswer.text}</div>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.a}</div>
               </details>
             ))}
           </div>
@@ -243,5 +208,6 @@ export default function SuisenAoPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

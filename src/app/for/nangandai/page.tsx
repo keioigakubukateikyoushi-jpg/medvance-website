@@ -1,44 +1,8 @@
+import ForPageSchemas from "@/components/ForPageSchemas";
+import { forPageMeta } from "@/lib/forPageMeta";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "医学部受験専門ではないのに難関大受験も対応できますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、対応できます。Medvanceの講師は慶應義塾大学医学部の在籍生であり、医学部受験に必要な英語・数学・物理・化学の学力は東大・京大・早慶理工のそれをカバーします。むしろ「医学部受験で培った本質的な理解力」を難関大受験に転用することで、他の塾にはない指導が可能です。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "文系科目（国語・社会・英語）にも対応していますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "英語は全員対応しています。国語・社会については担当講師によって対応可否が異なりますので、無料相談でご確認ください。理系科目（数学・物理・化学・生物）は全員対応可能です。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "浪人生でも受講できますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、浪人生も歓迎しています。前年の失敗分析・弱点の特定・志望校別対策まで対応します。予備校との併用も可能です。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "東大・京大を目指しているが、慶應医学部生で本当に対応できますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "十分対応できます。慶應義塾大学医学部の入試難易度は東大理一・理二と同等かそれ以上とされており、数学・英語・理科いずれも最高水準の学力を持つ講師が揃っています。東大・京大に合格した経験を持つ講師も在籍しています。",
-      },
-    },
-  ],
-};
 
 const targetUniversities = [
   { name: "東京大学（理科一類・理科二類・理科三類）", level: "最難関" },
@@ -91,8 +55,9 @@ export const metadata: Metadata = {
 
 export default function NangandaiPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <>
+      <ForPageSchemas slug="nangandai" />
+      <div className="min-h-screen bg-white">
 
       {/* HERO */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
@@ -243,13 +208,13 @@ export default function NangandaiPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4">
-            {faqSchema.mainEntity.map((faq, i) => (
+            {(forPageMeta["nangandai"].faq ?? []).map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
                 <summary className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white" style={{ color: "#0c1a33" }}>
-                  <span>Q. {faq.name}</span>
+                  <span>Q. {faq.q}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}><path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" /></svg>
                 </summary>
-                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.acceptedAnswer.text}</div>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.a}</div>
               </details>
             ))}
           </div>
@@ -273,5 +238,6 @@ export default function NangandaiPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

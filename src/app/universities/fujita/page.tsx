@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 
 export const metadata = {
@@ -81,7 +82,9 @@ const faqs = [
 
 export default function FujitaPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="藤田医科大学" slug="fujita" breadcrumbLabel="藤田医科大対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -195,5 +198,6 @@ export default function FujitaPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -195,7 +196,9 @@ const faqs = [
 
 export default function KurumePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="久留米大学医学部" slug="kurume" breadcrumbLabel="久留米大医学部対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -481,5 +484,6 @@ export default function KurumePage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -189,7 +190,9 @@ const faqs = [
 
 export default function NipponMedicalPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="日本医科大学" slug="nippon-medical" breadcrumbLabel="日本医科大対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -395,5 +398,6 @@ export default function NipponMedicalPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

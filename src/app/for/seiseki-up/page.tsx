@@ -1,44 +1,8 @@
+import ForPageSchemas from "@/components/ForPageSchemas";
+import { forPageMeta } from "@/lib/forPageMeta";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "中学生でも受講できますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、中学生から受講いただけます。定期テスト対策・内申点向上を目的とした指導に対応しており、高校受験を見据えた学習計画も一緒に設計します。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "学校の教科書・プリントに合わせた指導ができますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、学校の授業内容・試験範囲に合わせた完全オーダーメイドの指導が可能です。市販の参考書だけでなく、学校配布のプリントや教科書を使った対策にも対応します。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "医学部を目指していなくても利用できますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、利用できます。学校の成績向上・内申点アップ・推薦入試対策など、医学部以外の目標をお持ちの方も受け付けています。まずは無料相談でご相談ください。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "苦手科目だけ指導してもらえますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "もちろんです。1科目からでも受講可能です。成績を引き上げたい科目を集中的に対策することもできますし、全科目の評定バランスを見ながら優先順位を決めることもできます。",
-      },
-    },
-  ],
-};
 
 const subjects = [
   { name: "英語", point: "文法・語彙・長文読解・英作文。学校ごとの試験形式に合わせて重点分野を調整。" },
@@ -89,8 +53,9 @@ export const metadata: Metadata = {
 
 export default function SeisekiUpPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <>
+      <ForPageSchemas slug="seiseki-up" />
+      <div className="min-h-screen bg-white">
 
       {/* HERO */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
@@ -289,13 +254,13 @@ export default function SeisekiUpPage() {
           {/* FAQ */}
           <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4">
-            {faqSchema.mainEntity.map((faq, i) => (
+            {(forPageMeta["seiseki-up"].faq ?? []).map((faq, i) => (
               <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
                 <summary className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white" style={{ color: "#0c1a33" }}>
-                  <span>Q. {faq.name}</span>
+                  <span>Q. {faq.q}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}><path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" /></svg>
                 </summary>
-                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.acceptedAnswer.text}</div>
+                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.a}</div>
               </details>
             ))}
           </div>
@@ -325,5 +290,6 @@ export default function SeisekiUpPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

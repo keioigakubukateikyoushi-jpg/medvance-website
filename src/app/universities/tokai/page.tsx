@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -163,7 +164,9 @@ const faqs = [
 
 export default function TokaiPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="東海大学医学部" slug="tokai" breadcrumbLabel="東海大医学部対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -434,5 +437,6 @@ export default function TokaiPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

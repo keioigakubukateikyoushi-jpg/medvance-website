@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -163,7 +164,9 @@ const faqs = [
 
 export default function MariannaPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="聖マリアンナ医科大学" slug="marianna" breadcrumbLabel="聖マリアンナ医科大対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -434,5 +437,6 @@ export default function MariannaPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

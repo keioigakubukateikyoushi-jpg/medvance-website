@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 
 export const metadata = {
@@ -94,7 +95,9 @@ const faqs = [
 
 export default function NihonPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="日本大学医学部" slug="nihon" breadcrumbLabel="日本大医学部対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -196,5 +199,6 @@ export default function NihonPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

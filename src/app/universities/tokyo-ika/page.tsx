@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -189,7 +190,9 @@ const faqs = [
 
 export default function TokyoIkaPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="東京医科大学" slug="tokyo-ika" breadcrumbLabel="東京医科大対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -395,5 +398,6 @@ export default function TokyoIkaPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

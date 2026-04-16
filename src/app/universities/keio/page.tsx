@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -168,7 +169,9 @@ const faqs = [
 
 export default function KeioPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="慶應義塾大学医学部" slug="keio" breadcrumbLabel="慶應義塾大学医学部対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -429,5 +432,6 @@ export default function KeioPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

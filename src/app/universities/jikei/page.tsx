@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -183,7 +184,9 @@ const faqs = [
 
 export default function JikeiPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="東京慈恵会医科大学" slug="jikei" breadcrumbLabel="慈恵医科大対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -389,5 +392,6 @@ export default function JikeiPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
 
@@ -190,7 +191,9 @@ const faqs = [
 
 export default function KindaiPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <UniversityPageSchemas name="近畿大学医学部" slug="kindai" breadcrumbLabel="近畿大医学部対策" />
+          <div className="min-h-screen bg-white">
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -387,5 +390,6 @@ export default function KindaiPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
