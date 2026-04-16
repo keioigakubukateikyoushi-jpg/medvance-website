@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 
 export default function HoverCard({ children, className, style }: {
   children: React.ReactNode;
@@ -7,13 +6,24 @@ export default function HoverCard({ children, className, style }: {
   style?: React.CSSProperties;
 }) {
   return (
-    <motion.div
+    <div
       className={className}
-      style={style}
-      whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.10)" }}
-      transition={{ duration: 0.25 }}
+      style={{
+        ...style,
+        transition: "transform 0.25s ease, box-shadow 0.25s ease",
+      }}
+      onMouseEnter={(e) => {
+        const el = e.currentTarget as HTMLDivElement;
+        el.style.transform = "translateY(-6px)";
+        el.style.boxShadow = "0 20px 40px rgba(0,0,0,0.10)";
+      }}
+      onMouseLeave={(e) => {
+        const el = e.currentTarget as HTMLDivElement;
+        el.style.transform = "";
+        el.style.boxShadow = "";
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

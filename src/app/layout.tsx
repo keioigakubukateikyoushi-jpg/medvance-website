@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -97,18 +98,19 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="format-detection" content="telephone=no" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNNSC04YT0" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VNNSC04YT0');`,
-          }}
-        />
       </head>
       <body className="antialiased">
         <Header />
         <main>{children}</main>
         <Footer />
         <FloatingCTA />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VNNSC04YT0"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VNNSC04YT0');`}
+        </Script>
       </body>
     </html>
   );

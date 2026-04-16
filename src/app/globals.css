@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* ── Performance animations (replaces framer-motion) ──────── */
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleInX {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 :root {
   --navy: #0c1a33;
   --navy-mid: #1a3a72;
