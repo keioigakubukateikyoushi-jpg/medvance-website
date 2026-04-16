@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import FadeInObserver from "@/components/FadeInObserver";
 import { buildWebSiteSchema, buildOrganizationSchema, siteUrl } from "@/lib/seo";
 
 const notoSans = Noto_Sans_JP({
@@ -108,12 +109,13 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <FadeInObserver />
         <FloatingCTA />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VNNSC04YT0"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VNNSC04YT0');`}
         </Script>
       </body>

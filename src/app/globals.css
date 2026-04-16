@@ -67,6 +67,17 @@ h1, h2, h3, h4, h5 {
 
 /* ──────────────────────────────────────────────────────────── */
 
+/* ── FadeIn server-component animation (no React hydration) ── */
+.fade-in-el {
+  opacity: 0;
+  transform: translateY(28px);
+  /* no transition until visible — avoids flash on SSR */
+}
+.fade-in-el.fi-visible {
+  animation: fadeUpIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--fi-delay, 0s) both;
+}
+/* ─────────────────────────────────────────────────────────── */
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
