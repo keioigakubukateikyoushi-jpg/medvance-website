@@ -129,9 +129,73 @@ export default function AboutPage() {
             ))}
           </div>
 
+          {/* 指導品質基準 */}
+          <div className="mb-16 p-8 rounded-2xl" style={{ backgroundColor: "#0c1a33" }}>
+            <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>
+              Quality Standards
+            </p>
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-noto-serif)" }}>
+              講師・指導品質の基準
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  title: "講師要件",
+                  body: "講師は全員、慶應義塾大学医学部に合格・在籍している現役学生。採用時に学力・指導適性・人物面を面接し、合格後も継続的に指導品質を確認しています。",
+                },
+                {
+                  title: "指導内容の透明性",
+                  body: "指導内容・進捗・課題は毎回記録し、保護者・生徒と共有。曖昧な精神論ではなく、具体的な学習計画と成果指標で進めます。",
+                },
+                {
+                  title: "情報の正確性",
+                  body: "入試情報・大学別傾向は公式発表・最新の入試要項に基づき定期的に更新。推測や伝聞に依存しない情報提供を徹底しています。",
+                },
+                {
+                  title: "勧誘方針",
+                  body: "無料相談での過度な勧誘・強引な契約誘導は一切行いません。ご家庭の状況と合わない場合は他塾や予備校をご提案することもあります。",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-5 rounded-xl"
+                  style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(201,146,42,0.25)" }}
+                >
+                  <p className="font-bold text-sm mb-2" style={{ color: "#c9922a" }}>
+                    {item.title}
+                  </p>
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 編集・監修方針 */}
+          <div className="mb-16 p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+              Editorial Policy
+            </p>
+            <h2 className="text-xl md:text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+              コラム・情報の編集方針
+            </h2>
+            <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
+              <p>
+                当サイトに掲載する受験情報・勉強法・大学別対策は、すべて<strong style={{ color: "#0c1a33" }}>現役慶應医学部生による執筆・監修</strong>を経て公開しています。大学入試要項・偏差値・配点など公開情報は、毎年の募集要項発表に合わせて定期的に更新しています。
+              </p>
+              <p>
+                記事内で紹介する勉強法・対策は、執筆者自身または近しい合格者の経験に基づくものであり、すべての受験生に当てはまる唯一の正解ではありません。個別の状況については、無料相談でお気軽にご相談ください。
+              </p>
+              <p>
+                誤った情報・古い情報を発見された場合は、お問い合わせフォームよりご連絡ください。確認のうえ速やかに修正・更新いたします。
+              </p>
+            </div>
+          </div>
+
           <div className="text-center">
             <Link
-              href="/contact"
+              href="/contact?from=about-bottom"
               className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
               style={{ backgroundColor: "#c9922a" }}
             >
