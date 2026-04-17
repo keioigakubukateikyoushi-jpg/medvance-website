@@ -144,21 +144,6 @@ const homeSchemas = [
     })),
   ),
   buildFaqSchema(faqs),
-  {
-    "@context": "https://schema.org",
-    "@type": "AggregateRating",
-    "@id": "https://medvance-edu.com/#aggregate-rating",
-    itemReviewed: {
-      "@type": "EducationalOrganization",
-      "@id": "https://medvance-edu.com/#organization",
-      name: "Medvance（メドバンス）",
-    },
-    ratingValue: "4.9",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "47",
-    reviewCount: "47",
-  },
 ];
 
 /* ── Page ─────────────────────────────────── */
@@ -197,10 +182,10 @@ export default function Home() {
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "73校以上", sub: "大学別の入試対策を掲載" },
-            { label: "完全1対1", sub: "慶應医学部生が専任指導" },
-            { label: "全国どこでも", sub: "オンラインで完全対応" },
-            { label: "30分・無料", sub: "まず相談から始められる" },
+            { label: "講師100%", sub: "現役慶應医学部生のみ" },
+            { label: "73校+", sub: "大学別入試対策を掲載" },
+            { label: "56記事+", sub: "医学部受験の戦略コラム" },
+            { label: "30分・無料", sub: "初回相談・勧誘なし" },
           ].map((s) => (
             <div key={s.sub}>
               <p className="text-lg md:text-xl font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{s.label}</p>

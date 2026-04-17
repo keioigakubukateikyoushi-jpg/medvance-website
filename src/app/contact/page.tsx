@@ -25,6 +25,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     const sourceFromQuery = new URLSearchParams(window.location.search).get("from") ?? "";
@@ -149,8 +150,11 @@ export default function ContactPage() {
                   <h2 className="text-xl font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                     無料相談フォーム
                   </h2>
-                  <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
-                    どんな内容でも大丈夫です。「まだ迷っている」「学力が心配」でも構いません。
+                  <p className="text-sm mb-2" style={{ color: "#6b7280" }}>
+                    まずはお名前とメールだけで大丈夫です。30秒で完了します。
+                  </p>
+                  <p className="text-xs mb-8" style={{ color: "#9ca3af" }}>
+                    詳細は折りたたみ欄で、必要な方だけ入力できます。
                   </p>
 
                   {formData.source && (
@@ -203,102 +207,116 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* 学年・状況 */}
-                    <div>
-                      <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
-                        現在の状況
-                        <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
-                      </label>
-                      <select
-                        value={formData.status}
-                        onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 bg-white"
-                        style={{ border: "1px solid #e5e1d8", color: formData.status ? "#0c1a33" : "#9ca3af" }}
+                    {/* 詳細情報（折りたたみ） */}
+                    <div className="pt-1">
+                      <button
+                        type="button"
+                        onClick={() => setShowDetails(!showDetails)}
+                        className="flex items-center gap-2 text-sm font-semibold hover:underline"
+                        style={{ color: "#c9922a" }}
+                        aria-expanded={showDetails}
                       >
-                        <option value="">選択してください（任意）</option>
-                        <option value="現役高校生（高3）">現役高校生（高3）</option>
-                        <option value="現役高校生（高2）">現役高校生（高2）</option>
-                        <option value="現役高校生（高1）">現役高校生（高1）</option>
-                        <option value="浪人生（1浪）">浪人生（1浪）</option>
-                        <option value="浪人生（多浪）">浪人生（多浪）</option>
-                        <option value="再受験生（大学生・社会人）">再受験生（大学生・社会人）</option>
-                        <option value="保護者として相談したい">保護者として相談したい</option>
-                        <option value="中学生">中学生</option>
-                        <option value="小学生">小学生</option>
-                        <option value="その他">その他</option>
-                      </select>
+                        <span>{showDetails ? "−" : "+"}</span>
+                        事前に詳細を伝える（任意・相談がスムーズになります）
+                      </button>
                     </div>
 
-                    {/* 志望校 */}
-                    <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: "#0c1a33" }}>
-                        志望校
-                        <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
-                      </label>
-                      <div className="flex gap-3 mb-2">
-                        {[
-                          { value: "国立", label: "国立" },
-                          { value: "私立", label: "私立" },
-                        ].map((opt) => (
-                          <button
-                            key={opt.value}
-                            type="button"
-                            onClick={() => setFormData({ ...formData, targetType: formData.targetType === opt.value ? "" : opt.value })}
-                            className="flex-1 py-2.5 rounded-lg text-sm font-semibold transition-colors"
-                            style={{
-                              border: `2px solid ${formData.targetType === opt.value ? "#c9922a" : "#e5e1d8"}`,
-                              backgroundColor: formData.targetType === opt.value ? "rgba(201,146,42,0.08)" : "#fff",
-                              color: formData.targetType === opt.value ? "#c9922a" : "#6b7280",
-                            }}
+                    {showDetails && (
+                      <div className="space-y-5 pt-1">
+                        {/* 学年・状況 */}
+                        <div>
+                          <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
+                            現在の状況
+                          </label>
+                          <select
+                            value={formData.status}
+                            onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+                            className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 bg-white"
+                            style={{ border: "1px solid #e5e1d8", color: formData.status ? "#0c1a33" : "#9ca3af" }}
                           >
-                            {opt.label}
-                          </button>
-                        ))}
+                            <option value="">選択してください</option>
+                            <option value="現役高校生（高3）">現役高校生（高3）</option>
+                            <option value="現役高校生（高2）">現役高校生（高2）</option>
+                            <option value="現役高校生（高1）">現役高校生（高1）</option>
+                            <option value="浪人生（1浪）">浪人生（1浪）</option>
+                            <option value="浪人生（多浪）">浪人生（多浪）</option>
+                            <option value="再受験生（大学生・社会人）">再受験生（大学生・社会人）</option>
+                            <option value="保護者として相談したい">保護者として相談したい</option>
+                            <option value="中学生">中学生</option>
+                            <option value="小学生">小学生</option>
+                            <option value="その他">その他</option>
+                          </select>
+                        </div>
+
+                        {/* 志望校 */}
+                        <div>
+                          <label className="block text-sm font-semibold mb-2" style={{ color: "#0c1a33" }}>
+                            志望校
+                          </label>
+                          <div className="flex gap-3 mb-2">
+                            {[
+                              { value: "国立", label: "国立" },
+                              { value: "私立", label: "私立" },
+                            ].map((opt) => (
+                              <button
+                                key={opt.value}
+                                type="button"
+                                onClick={() => setFormData({ ...formData, targetType: formData.targetType === opt.value ? "" : opt.value })}
+                                className="flex-1 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+                                style={{
+                                  border: `2px solid ${formData.targetType === opt.value ? "#c9922a" : "#e5e1d8"}`,
+                                  backgroundColor: formData.targetType === opt.value ? "rgba(201,146,42,0.08)" : "#fff",
+                                  color: formData.targetType === opt.value ? "#c9922a" : "#6b7280",
+                                }}
+                              >
+                                {opt.label}
+                              </button>
+                            ))}
+                          </div>
+                          <input
+                            type="text"
+                            value={formData.targetName}
+                            onChange={(e) => setFormData({ ...formData, targetName: e.target.value })}
+                            className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none"
+                            style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                            placeholder="具体的な志望校名（例：慶應義塾大学医学部）"
+                          />
+                        </div>
+
+                        {/* 電話 */}
+                        <div>
+                          <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
+                            電話番号
+                          </label>
+                          <input
+                            type="tel"
+                            value={formData.phone}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                            className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                            placeholder="090-0000-0000"
+                          />
+                        </div>
+
+                        {/* メッセージ */}
+                        <div>
+                          <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
+                            ご相談内容
+                          </label>
+                          <textarea
+                            rows={4}
+                            value={formData.message}
+                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 resize-none"
+                            style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                            placeholder="例：現在偏差値55で慶應医学部を目指しています。何から始めればいいか相談したいです。"
+                          />
+                          <p className="text-xs mt-1.5" style={{ color: "#9ca3af" }}>
+                            「まだ何も決まっていない」「とりあえず話だけ聞きたい」でも大丈夫です。
+                          </p>
+                        </div>
                       </div>
-                      <input
-                        type="text"
-                        value={formData.targetName}
-                        onChange={(e) => setFormData({ ...formData, targetName: e.target.value })}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none"
-                        style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="具体的な志望校名（例：慶應義塾大学医学部）"
-                      />
-                    </div>
-
-                    {/* 電話 */}
-                    <div>
-                      <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
-                        電話番号
-                        <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
-                      </label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="090-0000-0000"
-                      />
-                    </div>
-
-                    {/* メッセージ */}
-                    <div>
-                      <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
-                        ご相談内容
-                        <span className="inline-block text-xs ml-2" style={{ color: "#9ca3af" }}>任意</span>
-                      </label>
-                      <textarea
-                        rows={4}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 resize-none"
-                        style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="例：現在偏差値55で慶應医学部を目指しています。何から始めればいいか相談したいです。"
-                      />
-                      <p className="text-xs mt-1.5" style={{ color: "#9ca3af" }}>
-                        「まだ何も決まっていない」「とりあえず話だけ聞きたい」でも大丈夫です。
-                      </p>
-                    </div>
+                    )}
 
                     {error && (
                       <p className="text-red-600 text-sm text-center">{error}</p>

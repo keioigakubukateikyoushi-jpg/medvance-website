@@ -233,6 +233,37 @@ export function buildFaqSchema(items: FaqSchemaInput[]) {
   };
 }
 
+type HowToStep = { name: string; text: string };
+
+export function buildHowToSchema({
+  name,
+  description,
+  path,
+  steps,
+  totalTime,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  steps: HowToStep[];
+  totalTime?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    url: `${siteUrl}${path}`,
+    ...(totalTime ? { totalTime } : {}),
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
 // Convenience: article page full schema graph (Article + Breadcrumb + FAQ)
 export function buildColumnPageSchemas({
   title,

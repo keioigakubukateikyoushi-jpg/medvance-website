@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import { buildHowToSchema } from "@/lib/seo";
 
 const faqItems = [
   {
@@ -33,6 +34,35 @@ const faqSchema = {
     acceptedAnswer: { "@type": "Answer", text: item.a },
   })),
 };
+
+const howToSchema = buildHowToSchema({
+  name: "医学部受験の塾・予備校を失敗なく選ぶ手順",
+  description:
+    "大手予備校・個別指導・医学部専門塾・家庭教師から自分に合う選択肢を選ぶための5ステップ。",
+  path: "/column/juku-erabi",
+  steps: [
+    {
+      name: "現状の学力と志望校のギャップを整理する",
+      text: "現在の模試偏差値・苦手科目・志望校の難易度を書き出し、合格までに埋めるべき差を定量化する。差の大きさで必要な指導スタイルが変わる。",
+    },
+    {
+      name: "指導形式を比較する",
+      text: "大手予備校（集団）・個別指導塾・医学部専門塾・家庭教師それぞれの長所短所を自分の状況に当てはめて評価する。基礎が弱い場合は個別系が有利。",
+    },
+    {
+      name: "医学部受験の実態を知る指導者かを確認する",
+      text: "MMI・小論文・学校別傾向など医学部固有の入試知識があるかを面談で確認。現役医学部生または医学部受験突破者が指導するかをチェック。",
+    },
+    {
+      name: "無料相談と体験授業を利用する",
+      text: "契約前に無料相談・体験授業を必ず受ける。相性・指導品質・コーチングの具体性を自分で確かめる。急かす塾は避ける。",
+    },
+    {
+      name: "費用対効果で最終判断する",
+      text: "年間総額だけでなく、必要な科目・時間・オプションを含めた実質コストで比較。安さで選ばず、合格から逆算した最短ルートが最安という視点で判断する。",
+    },
+  ],
+});
 
 const relatedArticles = [
   { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
@@ -125,6 +155,10 @@ export default function JukuErabiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
