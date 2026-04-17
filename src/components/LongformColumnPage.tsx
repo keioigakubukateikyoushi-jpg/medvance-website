@@ -12,6 +12,21 @@ function getSectionBackground(background?: "white" | "sand") {
   return background === "sand" ? "#f7f5f0" : "#ffffff";
 }
 
+function slugifySection(title: string, index: number) {
+  const base = title
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\p{L}\p{N}-]/gu, "")
+    .slice(0, 40);
+  return `section-${index + 1}${base ? "-" + base : ""}`;
+}
+
+function formatReviewDate(iso: string) {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+}
+
 export default function LongformColumnPage({
   article,
 }: {
@@ -62,13 +77,80 @@ export default function LongformColumnPage({
             {article.title}
           </h1>
           <p
-            className="text-base"
+            className="text-base mb-5"
             style={{ color: "rgba(255,255,255,0.68)" }}
           >
             {article.heroSubtitle}
           </p>
+          <div
+            className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs"
+            style={{ color: "rgba(255,255,255,0.55)" }}
+          >
+            <time dateTime={article.datePublished}>
+              公開: {formatReviewDate(article.datePublished)}
+            </time>
+            {article.dateModified !== article.datePublished && (
+              <time dateTime={article.dateModified}>
+                最終更新: {formatReviewDate(article.dateModified)}
+              </time>
+            )}
+            <span style={{ color: "#c9922a" }}>
+              現役慶應医学部生 監修
+            </span>
+          </div>
         </div>
       </div>
+
+      {article.sections.length > 2 && (
+        <div className="py-8 px-4 bg-white">
+          <nav
+            aria-label="目次"
+            className="max-w-3xl mx-auto p-6 rounded-2xl"
+            style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+          >
+            <p
+              className="text-xs font-bold tracking-widest uppercase mb-4"
+              style={{ color: "#c9922a" }}
+            >
+              目次
+            </p>
+            <ol className="space-y-2">
+              {article.sections.map((section, i) => (
+                <li key={section.title} className="flex gap-3 text-sm">
+                  <span
+                    className="flex-shrink-0 font-bold"
+                    style={{ color: "#c9922a", fontVariantNumeric: "tabular-nums" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <a
+                    href={`#${slugifySection(section.title, i)}`}
+                    className="font-semibold hover:underline"
+                    style={{ color: "#0c1a33" }}
+                  >
+                    {section.title}
+                  </a>
+                </li>
+              ))}
+              <li className="flex gap-3 text-sm">
+                <span
+                  className="flex-shrink-0 font-bold"
+                  style={{ color: "#c9922a", fontVariantNumeric: "tabular-nums" }}
+                >
+                  {String(article.sections.length + 1).padStart(2, "0")}
+                </span>
+                <a
+                  href="#faq"
+                  className="font-semibold hover:underline"
+                  style={{ color: "#0c1a33" }}
+                >
+                  よくある質問
+                </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      )}
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
@@ -131,7 +213,8 @@ export default function LongformColumnPage({
           >
             <div className="max-w-4xl mx-auto">
               <h2
-                className="text-2xl font-bold mb-6"
+                id={slugifySection(section.title, index)}
+                className="text-2xl font-bold mb-6 scroll-mt-20"
                 style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
               >
                 {section.title}
@@ -218,7 +301,8 @@ export default function LongformColumnPage({
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2
-            className="text-2xl font-bold mb-8"
+            id="faq"
+            className="text-2xl font-bold mb-8 scroll-mt-20"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             よくある質問
