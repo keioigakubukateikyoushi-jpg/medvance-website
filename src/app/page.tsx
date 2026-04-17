@@ -5,6 +5,7 @@ import Marquee from "@/components/Marquee";
 import FadeIn from "@/components/FadeIn";
 import HoverCard from "@/components/HoverCard";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import LineButton from "@/components/LineButton";
 import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
@@ -169,13 +170,16 @@ export default function Home() {
               <span className="hidden sm:inline text-xs font-normal ml-2 opacity-80">— 現役慶應医学部生 監修・6章構成</span>
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="flex-shrink-0 px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#fff", color: "#c9922a" }}
-          >
-            無料相談に申し込む →
-          </Link>
+          <div className="flex-shrink-0 flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#fff", color: "#c9922a" }}
+            >
+              無料相談に申し込む →
+            </Link>
+            <LineButton label="LINE" size="md" />
+          </div>
         </div>
       </section>
 
@@ -307,6 +311,7 @@ export default function Home() {
                   >
                     無料相談で話してみる
                   </Link>
+                  <LineButton label="LINEで相談" size="lg" className="!rounded-xl !py-3 !px-6" />
                   <Link
                     href="/pricing"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity"
@@ -428,7 +433,7 @@ export default function Home() {
             ))}
           </div>
           <FadeIn delay={0.12}>
-            <div className="text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/contact?from=home-decision-hub"
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
@@ -439,6 +444,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
               </Link>
+              <LineButton label="LINEで相談する" size="lg" className="!px-7 !py-3" />
             </div>
           </FadeIn>
         </div>
@@ -911,13 +917,16 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <Link
-                  href="/contact"
-                  className="block text-center py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: "#c9922a", color: "#fff" }}
-                >
-                  オンラインで無料相談する
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Link
+                    href="/contact"
+                    className="flex-1 block text-center py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#c9922a", color: "#fff" }}
+                  >
+                    オンラインで無料相談する
+                  </Link>
+                  <LineButton label="LINE" size="lg" className="!py-3 sm:!w-28" />
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -1376,13 +1385,16 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                <Link
-                  href="/contact"
-                  className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: "#c9922a" }}
-                >
-                  無料相談に申し込む（マニュアル付き）→
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Link
+                    href="/contact"
+                    className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#c9922a" }}
+                  >
+                    無料相談に申し込む（マニュアル付き）→
+                  </Link>
+                  <LineButton label="LINEで相談" size="lg" className="!py-4 !px-6 shadow-md" />
+                </div>
                 <p className="text-xs mt-2" style={{ color: "#9ca3af" }}>完全無料・勧誘なし・全国オンライン対応</p>
               </div>
               {/* Book mockup */}
@@ -1507,13 +1519,16 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <Link
-                href="/contact"
-                className="inline-block px-10 py-5 text-white font-bold text-base rounded-lg shadow-lg hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#c9922a" }}
-              >
-                無料相談・お問い合わせ（30分）
-              </Link>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-block px-10 py-5 text-white font-bold text-base rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: "#c9922a" }}
+                >
+                  無料相談・お問い合わせ（30分）
+                </Link>
+                <LineButton label="LINEで相談する" size="lg" className="!py-5 !px-8 shadow-lg" />
+              </div>
               <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
                 完全無料・勧誘なし・オンライン対応
               </p>
