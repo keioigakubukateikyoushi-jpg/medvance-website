@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
   title: "訪問・対面医学部受験指導｜自宅・カフェ・学習スペースで慶應医学部生が1対1指導 | Medvance",
@@ -87,6 +88,14 @@ const faqs = [
 export default function VisitPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ServicePageSchemas
+        name="訪問・対面医学部受験指導"
+        description="東京・神奈川・千葉・埼玉などの関東エリアで、現役慶應医学部生が自宅・カフェ・レンタル学習スペースで医学部受験を指導。完全1対1の対面家庭教師。"
+        slug="visit"
+        serviceType="訪問型 医学部受験個別指導"
+        breadcrumbLabel="訪問・対面指導"
+        faq={faqs}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>

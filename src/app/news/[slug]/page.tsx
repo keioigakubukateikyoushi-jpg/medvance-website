@@ -13,6 +13,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${notice.title} | Medvance`,
     description: notice.body.replace(/\n/g, " ").slice(0, 120),
+    alternates: {
+      canonical: `/news/${slug}`,
+    },
+    openGraph: {
+      title: `${notice.title} | Medvance`,
+      description: notice.body.replace(/\n/g, " ").slice(0, 120),
+      url: `/news/${slug}`,
+      type: "article",
+    },
   };
 }
 

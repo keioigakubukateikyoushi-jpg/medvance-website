@@ -110,7 +110,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 hover:opacity-85 transition-opacity flex-shrink-0">
-          <Image src="/images/logo.png" alt="Medvance" width={56} height={32} className="object-contain" />
+          <Image src="/images/logo.webp" alt="Medvance" width={56} height={32} priority className="object-contain" />
           <span className="text-white font-semibold text-xs hidden sm:block opacity-70 leading-tight">
             慶應医学部生による<br />医学部受験専門塾
           </span>

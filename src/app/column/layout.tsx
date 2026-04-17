@@ -1,6 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { siteUrl } from "@/lib/seo";
 import { columnArticles } from "@/lib/columnArticles";
+
+export const metadata: Metadata = {
+  title: "医学部受験コラム｜合格戦略・勉強法・学費・面接対策まとめ",
+  description:
+    "医学部受験の勉強法・合格戦略・学費・過去問・面接・小論文・推薦AO対策を現役慶應医学部生が解説。浪人・再受験・内部進学・大学別対策まで網羅。",
+  alternates: { canonical: "/column" },
+  openGraph: {
+    title: "医学部受験コラム | Medvance",
+    description: "医学部受験の勉強法・合格戦略・学費・過去問・面接・推薦AO対策を現役慶應医学部生が解説。",
+    url: "/column",
+    type: "website",
+  },
+};
 
 const popularArticles = columnArticles
   .filter((a) => a.popular)

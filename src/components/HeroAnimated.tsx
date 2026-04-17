@@ -117,11 +117,13 @@ export default function HeroAnimated() {
         {/* Image */}
         <div className="relative">
           <Image
-            src="/images/hero.png"
+            src="/images/hero.webp"
             alt="Medvance 医学部受験専門塾"
             fill
+            sizes="(max-width: 768px) 100vw, 45vw"
             className="object-cover object-center"
             priority
+            fetchPriority="high"
           />
           <div
             className="absolute inset-y-0 left-0 pointer-events-none"
@@ -134,11 +136,13 @@ export default function HeroAnimated() {
       <div className="md:hidden relative" style={{ minHeight: "100svh" }}>
         {/* Background image */}
         <Image
-          src="/images/hero.png"
+          src="/images/hero.webp"
           alt="Medvance 医学部受験専門塾"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
+          fetchPriority="high"
         />
         {/* Dark overlay — strong at top/bottom, lighter in middle */}
         <div

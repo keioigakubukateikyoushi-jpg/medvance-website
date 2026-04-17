@@ -31,7 +31,9 @@
 body {
   background: #ffffff;
   color: var(--text-body);
-  font-family: var(--font-noto-sans), sans-serif;
+  font-family: var(--font-noto-sans), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5 {

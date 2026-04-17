@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# image originals (backed up locally, not needed in repo)
+/_backup_images

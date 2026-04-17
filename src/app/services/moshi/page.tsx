@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buildFaqSchema, buildServiceSchema } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildFaqSchema, buildServiceSchema } from "@/lib/seo";
 
 export const metadata = {
   title: "AI模試分析サービス｜偏差値を入力するだけで学習ルートを自動生成 | Medvance",
@@ -93,11 +93,16 @@ const serviceSchema = buildServiceSchema(
   "/services/moshi",
   "模試分析・学習ルート設計"
 );
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "サービス", url: "/services" },
+  { name: "AI模試分析", url: "/services/moshi" },
+]);
 
 export default function MoshiPage() {
   return (
     <div className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, serviceSchema]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, serviceSchema, breadcrumbSchema]) }} />
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">

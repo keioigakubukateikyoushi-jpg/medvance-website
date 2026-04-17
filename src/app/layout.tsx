@@ -12,16 +12,34 @@ const notoSans = Noto_Sans_JP({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-noto-sans",
-  display: "optional",
+  display: "swap",
   preload: false,
+  fallback: [
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    "Meiryo",
+    "sans-serif",
+  ],
+  adjustFontFallback: false,
 });
 
 const notoSerif = Noto_Serif_JP({
   subsets: ["latin"],
   weight: ["700"],
   variable: "--font-noto-serif",
-  display: "optional",
+  display: "swap",
   preload: false,
+  fallback: [
+    "Hiragino Mincho ProN",
+    "Yu Mincho",
+    "YuMincho",
+    "MS PMincho",
+    "Georgia",
+    "serif",
+  ],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {

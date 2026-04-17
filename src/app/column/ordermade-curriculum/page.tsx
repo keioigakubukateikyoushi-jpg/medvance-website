@@ -62,12 +62,14 @@ export default function OrdermadeCurriculumPage() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 overflow-hidden rounded-[28px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
             <Image
-              src="/images/generated/ordermade-roadmap-infographic.png"
+              src="/images/generated/ordermade-roadmap-infographic.webp"
               alt="医学部受験に向けたオーダーメイド学習ロードマップのイメージ図"
-              width={1536}
-              height={1024}
+              width={1400}
+              height={933}
+              sizes="(max-width: 768px) 100vw, 768px"
               className="w-full h-auto rounded-[20px]"
               priority
+              fetchPriority="high"
             />
           </div>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
@@ -99,11 +101,13 @@ export default function OrdermadeCurriculumPage() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 overflow-hidden rounded-[28px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
             <Image
-              src="/images/generated/ordermade-roadmap-infographic.png"
+              src="/images/generated/ordermade-roadmap-infographic.webp"
               alt="課題発見から復習までを可視化した個別最適カリキュラムの図解"
-              width={1536}
-              height={1024}
+              width={1400}
+              height={933}
+              sizes="(max-width: 768px) 100vw, 768px"
               className="w-full h-auto rounded-[20px]"
+              loading="lazy"
             />
           </div>
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>

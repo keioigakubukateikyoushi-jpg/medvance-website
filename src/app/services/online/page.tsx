@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
   title: "オンライン医学部受験指導｜全国どこからでも現役慶應医学部生に習える | Medvance",
@@ -77,6 +78,14 @@ const faqs = [
 export default function OnlinePage() {
   return (
     <div className="min-h-screen bg-white">
+      <ServicePageSchemas
+        name="オンライン医学部受験指導"
+        description="全国対応のオンライン医学部受験専門指導。現役慶應医学部生が1対1でオンライン指導。北海道から沖縄まで、地方在住でも最高レベルの医学部受験対策が受けられます。"
+        slug="online"
+        serviceType="オンライン医学部受験個別指導"
+        breadcrumbLabel="オンライン指導"
+        faq={faqs}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>

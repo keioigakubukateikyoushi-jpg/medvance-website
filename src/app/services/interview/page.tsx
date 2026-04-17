@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
   title: "医学部面接・小論文対策｜現役慶應医学部生が実践的に指導 | Medvance",
@@ -69,6 +70,14 @@ const faqs = [
 export default function InterviewPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ServicePageSchemas
+        name="医学部面接・小論文対策"
+        description="医学部入試の面接・小論文対策を現役慶應医学部生が1対1で指導。頻出質問への回答作り、小論文の書き方、志望理由書の作成まで徹底サポート。"
+        slug="interview"
+        serviceType="医学部面接・小論文対策"
+        breadcrumbLabel="面接・小論文対策"
+        faq={faqs}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>

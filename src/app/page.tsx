@@ -733,11 +733,13 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <Image
-              src="/images/about.png"
+              src="/images/about.webp"
               alt="Medvance 医学部受験専門塾 現役慶應医学部生による完全1対1個別指導"
-              width={1200}
-              height={675}
+              width={1400}
+              height={788}
+              sizes="(max-width: 1024px) 100vw, 1024px"
               className="w-full h-auto rounded-2xl shadow-sm"
+              loading="lazy"
             />
           </FadeIn>
         </div>

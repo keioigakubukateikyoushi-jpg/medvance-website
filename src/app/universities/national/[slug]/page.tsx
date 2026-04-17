@@ -265,7 +265,16 @@ export async function generateMetadata({
 
   return {
     title: `${entry.name}の受験対策ガイド | Medvance`,
-    description: `${entry.name}の特徴、向いている受験生、共通テストと二次の勉強方針、面接・小論文対策までまとめた受験対策ガイドです。`,
+    description: `${entry.name}の特徴、向いている受験生、共通テストと二次の勉強方針、面接・小論文対策までまとめた受験対策ガイドです。現役慶應医学部生が1対1で指導。`,
+    alternates: {
+      canonical: `/universities/national/${slug}`,
+    },
+    openGraph: {
+      title: `${entry.name}の受験対策ガイド | Medvance`,
+      description: `${entry.name}の入試対策を現役慶應医学部生が1対1でサポート。出題傾向・配点・面接対策まで。`,
+      url: `/universities/national/${slug}`,
+      type: "article",
+    },
   };
 }
 

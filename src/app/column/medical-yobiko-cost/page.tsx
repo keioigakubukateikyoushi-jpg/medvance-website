@@ -63,12 +63,14 @@ export default function MedicalYobikoCostPage() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 overflow-hidden rounded-[28px]" style={{ border: "1px solid #e5e1d8" }}>
             <Image
-              src="/images/generated/medical-yobiko-cost-hero.png"
+              src="/images/generated/medical-yobiko-cost-hero.webp"
               alt="高額な医学部専門予備校と丁寧なサポート体制を対比したイメージ"
-              width={1536}
-              height={1024}
+              width={1600}
+              height={1067}
+              sizes="(max-width: 768px) 100vw, 768px"
               className="w-full h-auto"
               priority
+              fetchPriority="high"
             />
           </div>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
@@ -100,11 +102,13 @@ export default function MedicalYobikoCostPage() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 overflow-hidden rounded-[28px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
             <Image
-              src="/images/generated/juku-comparison-infographic.png"
+              src="/images/generated/juku-comparison-infographic.webp"
               alt="塾のタイプごとに費用感とサポートの違いを整理した比較図"
-              width={1536}
-              height={1024}
+              width={1400}
+              height={933}
+              sizes="(max-width: 768px) 100vw, 768px"
               className="w-full h-auto rounded-[20px]"
+              loading="lazy"
             />
           </div>
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>

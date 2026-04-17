@@ -59,12 +59,14 @@ export default function NationalPage() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-8 overflow-hidden rounded-[32px] bg-white p-3" style={{ border: "1px solid #e5e1d8" }}>
             <Image
-              src="/images/generated/national-guide-hero.png"
+              src="/images/generated/national-guide-hero.webp"
               alt="日本地図と学習要素をモチーフにした国公立医学部一覧ページのキービジュアル"
-              width={1536}
-              height={1024}
+              width={1600}
+              height={1067}
+              sizes="(max-width: 1024px) 100vw, 1024px"
               className="w-full h-auto rounded-[24px]"
               priority
+              fetchPriority="high"
             />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
