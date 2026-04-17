@@ -213,7 +213,7 @@ export default function LinePage() {
               {
                 step: "01",
                 title: "LINE公式アカウントを友だち追加",
-                body: "下のボタンから医進ラボ公式LINEを追加してください。スマホ／PCどちらでも利用できます。",
+                body: "下のボタンからMedvance公式LINEを追加してください。スマホ／PCどちらでも利用できます。",
               },
               {
                 step: "02",
