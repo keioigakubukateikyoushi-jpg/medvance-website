@@ -4,6 +4,7 @@ import HeroAnimated from "@/components/HeroAnimated";
 import Marquee from "@/components/Marquee";
 import FadeIn from "@/components/FadeIn";
 import HoverCard from "@/components/HoverCard";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
@@ -998,6 +999,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── 9.5 TESTIMONIALS (data-driven, hidden until filled) ── */}
+      <TestimonialsSection />
 
       {/* ── 10. FAQ ────────────────────────────── */}
       <section className="bg-white py-24 px-4">

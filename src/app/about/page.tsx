@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { buildBreadcrumbSchema } from "@/lib/seo";
+import TutorProfiles from "@/components/TutorProfiles";
 
 export const metadata = {
   title: "Medvanceについて | 現役慶應医学部生による医学部受験専門塾",
@@ -129,6 +130,14 @@ export default function AboutPage() {
             ))}
           </div>
 
+          {/* 講師紹介（データ登録後に表示） */}
+        </div>
+      </div>
+
+      <TutorProfiles />
+
+      <div className="py-8 px-4 pb-24">
+        <div className="max-w-4xl mx-auto">
           {/* 指導品質基準 */}
           <div className="mb-16 p-8 rounded-2xl" style={{ backgroundColor: "#0c1a33" }}>
             <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>
