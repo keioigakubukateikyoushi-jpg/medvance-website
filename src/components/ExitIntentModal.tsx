@@ -126,11 +126,19 @@ export default function ExitIntentModal() {
             ))}
           </ul>
 
+          <Link
+            href="/contact?from=exit-intent"
+            className="block w-full py-3 rounded-lg text-white font-bold text-center shadow-md hover:opacity-90 transition-opacity mb-2"
+            style={{ backgroundColor: "#c9922a" }}
+            onClick={() => setOpen(false)}
+          >
+            フォームでマニュアルを受け取る
+          </Link>
           <a
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-white font-bold text-center shadow-md hover:opacity-90 transition-opacity mb-2"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-white font-bold text-center shadow-md hover:opacity-90 transition-opacity"
             style={{ backgroundColor: "#06C755" }}
             onClick={() => setOpen(false)}
           >
@@ -139,14 +147,6 @@ export default function ExitIntentModal() {
             </svg>
             LINEですぐ相談する
           </a>
-          <Link
-            href="/contact?from=exit-intent"
-            className="block w-full py-3 rounded-lg text-white font-bold text-center shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-            onClick={() => setOpen(false)}
-          >
-            フォームでマニュアルを受け取る
-          </Link>
           <button
             type="button"
             onClick={() => setOpen(false)}

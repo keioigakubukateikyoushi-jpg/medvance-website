@@ -35,23 +35,13 @@ export default function FloatingCTA() {
 
   return (
     <>
-      {/* Mobile: split bottom bar (LINE + form) */}
+      {/* Mobile: split bottom bar (form + LINE) */}
       <div
         className="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex transition-transform duration-300"
         style={{
           transform: visible ? "translateY(0)" : "translateY(100%)",
         }}
       >
-        <a
-          href={LINE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 py-4 text-white font-bold text-sm"
-          style={{ backgroundColor: LINE_GREEN }}
-        >
-          <LineIcon />
-          LINEで無料相談
-        </a>
         <Link
           href="/contact?from=floating-mobile"
           className="flex-1 flex items-center justify-center gap-2 py-4 text-white font-bold text-sm"
@@ -62,9 +52,19 @@ export default function FloatingCTA() {
           </svg>
           フォームで相談
         </Link>
+        <a
+          href={LINE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 flex items-center justify-center gap-2 py-4 text-white font-bold text-sm"
+          style={{ backgroundColor: LINE_GREEN }}
+        >
+          <LineIcon />
+          LINEで無料相談
+        </a>
       </div>
 
-      {/* Desktop: stacked floating buttons */}
+      {/* Desktop: stacked floating buttons (form on top, LINE on right/below) */}
       <div
         className="hidden lg:flex fixed bottom-6 right-6 z-50 flex-col gap-3 transition-all duration-300"
         style={{
@@ -72,22 +72,6 @@ export default function FloatingCTA() {
           opacity: visible ? 1 : 0,
         }}
       >
-        <a
-          href={LINE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 pl-5 pr-6 py-3.5 rounded-full shadow-2xl hover:shadow-xl transition-shadow text-white"
-          style={{
-            backgroundColor: LINE_GREEN,
-            boxShadow: "0 10px 30px -10px rgba(6,199,85,0.55), 0 4px 12px rgba(0,0,0,0.1)",
-          }}
-        >
-          <LineIcon className="w-6 h-6" />
-          <div className="leading-tight">
-            <div className="text-[10px] font-semibold tracking-widest uppercase opacity-90">Instant</div>
-            <div className="text-sm font-bold whitespace-nowrap">LINEで無料相談</div>
-          </div>
-        </a>
         <Link
           href="/contact?from=floating-desktop"
           className="flex items-center gap-3 pl-5 pr-6 py-3.5 rounded-full shadow-xl hover:shadow-lg transition-shadow text-white"
@@ -109,6 +93,22 @@ export default function FloatingCTA() {
             <div className="text-sm font-bold whitespace-nowrap">フォームで相談</div>
           </div>
         </Link>
+        <a
+          href={LINE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 pl-5 pr-6 py-3.5 rounded-full shadow-2xl hover:shadow-xl transition-shadow text-white"
+          style={{
+            backgroundColor: LINE_GREEN,
+            boxShadow: "0 10px 30px -10px rgba(6,199,85,0.55), 0 4px 12px rgba(0,0,0,0.1)",
+          }}
+        >
+          <LineIcon className="w-6 h-6" />
+          <div className="leading-tight">
+            <div className="text-[10px] font-semibold tracking-widest uppercase opacity-90">Instant</div>
+            <div className="text-sm font-bold whitespace-nowrap">LINEで無料相談</div>
+          </div>
+        </a>
       </div>
     </>
   );

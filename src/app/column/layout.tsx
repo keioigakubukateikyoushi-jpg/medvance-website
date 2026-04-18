@@ -77,6 +77,13 @@ export default function ColumnLayout({
             </div>
           </div>
           <div className="flex-shrink-0 flex items-center gap-2">
+            <Link
+              href="/contact?from=column-top-bar"
+              className="inline-flex text-sm font-bold px-4 py-2.5 rounded-lg text-white hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
+              style={{ backgroundColor: "#c9922a" }}
+            >
+              フォーム相談
+            </Link>
             <a
               href={LINE_URL}
               target="_blank"
@@ -89,13 +96,6 @@ export default function ColumnLayout({
               </svg>
               LINE相談
             </a>
-            <Link
-              href="/contact?from=column-top-bar"
-              className="hidden sm:inline-flex text-sm font-bold px-4 py-2.5 rounded-lg text-white hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
-              style={{ backgroundColor: "#c9922a" }}
-            >
-              フォーム相談
-            </Link>
           </div>
         </div>
       </div>
