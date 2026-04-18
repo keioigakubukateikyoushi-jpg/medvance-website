@@ -10,7 +10,7 @@ import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
 } from "@/lib/columnArticles";
-import { buildItemListSchema, buildFaqSchema } from "@/lib/seo";
+import { buildItemListSchema, buildFaqSchema, buildSpeakableSchema } from "@/lib/seo";
 import { notices } from "@/lib/notices";
 
 export const metadata = {
@@ -146,6 +146,7 @@ const homeSchemas = [
     })),
   ),
   buildFaqSchema(faqs),
+  buildSpeakableSchema("/"),
 ];
 
 /* ── Page ─────────────────────────────────── */

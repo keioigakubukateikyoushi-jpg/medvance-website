@@ -103,6 +103,18 @@ export function buildOrganizationSchema() {
   };
 }
 
+export function buildSpeakableSchema(path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: buildAbsoluteUrl(path),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "p"],
+    },
+  };
+}
+
 export function buildBreadcrumbSchema(items: SchemaListItem[]) {
   return {
     "@context": "https://schema.org",
