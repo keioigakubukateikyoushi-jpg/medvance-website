@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import FadeInObserver from "@/components/FadeInObserver";
 import AutoBreadcrumb from "@/components/AutoBreadcrumb";
-import ExitIntentModal from "@/components/ExitIntentModal";
 import { buildWebSiteSchema, buildOrganizationSchema, siteUrl } from "@/lib/seo";
 
 const notoSans = Noto_Sans_JP({
@@ -136,7 +135,6 @@ export default function RootLayout({
         <Footer />
         <FadeInObserver />
         <FloatingCTA />
-        <ExitIntentModal />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VNNSC04YT0"
           strategy="lazyOnload"
