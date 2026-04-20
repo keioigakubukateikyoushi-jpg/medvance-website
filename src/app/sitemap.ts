@@ -10,12 +10,12 @@ const D = (s: string) => new Date(s);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: BASE, lastModified: D("2026-04-16"), changeFrequency: "weekly", priority: 1.0 },
+    { url: BASE, lastModified: D("2026-04-20"), changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/about`, lastModified: D("2026-03-21"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/recruit`, lastModified: D("2026-03-21"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/pricing`, lastModified: D("2026-04-01"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/contact`, lastModified: D("2026-03-21"), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/line`, lastModified: D("2026-04-17"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/pricing`, lastModified: D("2026-04-20"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/contact`, lastModified: D("2026-04-20"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/line`, lastModified: D("2026-04-20"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/privacy`, lastModified: D("2026-03-21"), changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/cookies`, lastModified: D("2026-03-21"), changeFrequency: "yearly", priority: 0.3 },
     // 対象者別
