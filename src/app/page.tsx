@@ -1450,7 +1450,7 @@ export default function Home() {
                   <div className="inline-block px-5 py-3 rounded-xl mb-6" style={{ backgroundColor: "rgba(201,146,42,0.15)", border: "1px solid rgba(201,146,42,0.35)" }}>
                     <p className="text-xs font-semibold mb-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>時給</p>
                     <p className="text-2xl font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
-                      2,500〜10,000円
+                      3,000〜10,000円
                     </p>
                     <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>昇給制度あり</p>
                   </div>

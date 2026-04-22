@@ -24,6 +24,7 @@ const DEFAULT_LABELS: LabelMap = {
   chemistry: "化学",
   biology: "生物",
   about: "運営会社",
+  tutors: "家庭教師一覧",
   recruit: "講師募集",
   pricing: "料金",
   contact: "お問い合わせ",

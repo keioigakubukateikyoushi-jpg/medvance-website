@@ -3,16 +3,16 @@ import type { ReactNode } from "react";
 import { buildBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "講師採用 | Medvance",
+  title: "講師募集 | Medvance",
   description:
-    "Medvanceの医学部受験指導講師の採用ページです。医学部生を中心に、担当可能科目や指導経験を活かして受験生を支える講師を募集しています。",
+    "Medvanceの講師募集ページです。医学部受験、内部進学、学校成績対策、面接・小論文対策を支える講師を募集しています。オンライン中心、対面も相談可能です。",
   alternates: {
     canonical: "/recruit",
   },
   openGraph: {
-    title: "講師採用 | Medvance",
+    title: "講師募集 | Medvance",
     description:
-      "Medvanceの医学部受験指導講師の採用ページです。担当可能科目や指導経験を活かして受験生を支える講師を募集しています。",
+      "医学部受験、内部進学、学校成績対策を支えるMedvance講師を募集しています。承認後は講師一覧への掲載も可能です。",
     url: "https://medvance-edu.com/recruit",
     siteName: "Medvance",
     locale: "ja_JP",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const recruitSchema = buildBreadcrumbSchema([
   { name: "ホーム", url: "/" },
-  { name: "講師採用", url: "/recruit" },
+  { name: "講師募集", url: "/recruit" },
 ]);
 
 export default function RecruitLayout({ children }: { children: ReactNode }) {

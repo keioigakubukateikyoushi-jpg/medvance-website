@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { tutors, buildPersonSchemas } from "@/lib/tutors";
+import { buildPersonSchemas, getApprovedTutors } from "@/lib/tutors";
 
 export default function TutorProfiles() {
+  const tutors = getApprovedTutors();
   if (tutors.length === 0) return null;
 
-  const schemas = buildPersonSchemas();
+  const schemas = buildPersonSchemas(tutors);
 
   return (
     <section className="py-16 px-4 bg-white">

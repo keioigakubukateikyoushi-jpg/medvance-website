@@ -41,6 +41,8 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "訪問・対面指導", href: "/services/visit", desc: "東京・関東エリア対応" },
       { label: "面接・小論文対策", href: "/services/interview", desc: "医学部特有の対策" },
       { label: "AI模試分析（無料）", href: "/services/moshi", desc: "AIが偏差値から学習ルートを即時生成" },
+      { label: "家庭教師一覧", href: "/tutors", desc: "講師を科目・エリアから探す" },
+      { label: "講師募集", href: "/recruit", desc: "Medvance講師として応募する" },
       { label: "各教科の指導方法", href: "/subjects", desc: "英数理の本質的指導" },
     ],
   },
@@ -261,6 +263,7 @@ export default function Header() {
             { label: "ホーム", href: "/" },
             { label: "塾について", href: "/about" },
             { label: "料金", href: "/pricing" },
+            { label: "家庭教師一覧", href: "/tutors" },
             { label: "お知らせ", href: "/news" },
           ].map((link) => (
             <Link

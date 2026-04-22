@@ -66,6 +66,20 @@ const audiencePages: SearchItem[] = [
 
 const servicePages: SearchItem[] = [
   {
+    href: "/tutors",
+    category: "家庭教師",
+    title: "Medvance 家庭教師一覧",
+    description: "医学部受験向け家庭教師を、大学・科目・対応エリア・指導形式から探せる公開一覧です。",
+    keywords: ["家庭教師", "講師一覧", "医学部受験", "オンライン", "対面", "料金", "講師検索"],
+  },
+  {
+    href: "/recruit",
+    category: "講師募集",
+    title: "Medvance 講師募集",
+    description: "医学部受験、内部進学、学校成績対策を支えるMedvance講師の募集ページです。",
+    keywords: ["講師募集", "採用", "家庭教師募集", "医学部生", "講師応募", "オンライン指導"],
+  },
+  {
     href: "/services/online",
     category: "サービス",
     title: "オンライン指導",
@@ -275,6 +289,8 @@ export const suggestedSearchKeywords = [
   "再受験",
   "浪人",
   "オンライン",
+  "家庭教師",
+  "講師募集",
   "塾選び",
   "偏差値",
   "ロードマップ",

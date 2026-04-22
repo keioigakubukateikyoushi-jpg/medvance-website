@@ -1,411 +1,598 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
-const benefits = [
+const offerCards = [
   {
-    label: "時給",
-    value: "2,500〜10,000円",
-    note: "昇給制度あり。実績・継続年数に応じて昇給します",
+    label: "業務内容",
+    value: "医学部受験・内部進学の個別指導",
+    note: "英語、数学、理科、面接、小論文、学校成績対策など。得意領域から担当できます。",
   },
   {
-    label: "勤務形態",
-    value: "完全リモート or 訪問",
-    note: "オンライン指導または自宅訪問・カフェ対応。全国どこからでも可",
+    label: "報酬目安",
+    value: "時給3,000円スタート / 昇給で10,000円まで",
+    note: "担当内容、実績、継続年数、生徒評価に応じて段階的に昇給します。",
   },
   {
-    label: "勤務時間",
-    value: "週1コマ〜",
-    note: "授業は1コマ90〜120分。週1〜複数コマまで相談可",
+    label: "勤務形式",
+    value: "オンライン中心・対面も相談可",
+    note: "Zoom、Google Meetなどを利用。関東圏は対面指導の相談もあります。",
   },
   {
-    label: "対象",
-    value: "慶應義塾大学医学部在籍",
-    note: "学年・学士編入問いません。医学部受験経験者歓迎",
+    label: "掲載制度",
+    value: "承認後に講師一覧へ掲載",
+    note: "本人確認、所属確認、掲載内容の確認が完了した講師から公開します。",
   },
 ];
 
-const points = [
+const strengths = [
   {
-    icon: "📈",
-    title: "昇給制度あり",
-    body: "生徒の合格実績・継続年数・評価に応じて時給が上がる仕組みです。長く続けるほど待遇が上がります。",
+    title: "経験をそのまま価値にできる",
+    body: "医学部受験、内部進学、推薦・AO、面接、小論文で実際に悩んだ経験は、受験生にとって強い支援になります。",
   },
   {
-    icon: "🗓",
-    title: "スケジュールは自分で決める",
-    body: "試験期間・部活・研究の繁忙期は授業コマ数を減らすことができます。無理なく続けられる働き方を一緒に設計します。",
+    title: "指導だけで終わらない",
+    body: "授業内容だけでなく、学習計画、復習の進め方、模試後の修正まで含めて生徒を支えます。",
   },
   {
-    icon: "🎯",
-    title: "自分の経験が直接活きる",
-    body: "医学部受験で培った知識・勉強法・メンタルのノウハウをそのまま伝えることができます。「自分が合格したときのやり方」が最大の武器です。",
+    title: "講師プロフィールを育てられる",
+    body: "承認済み講師は公開一覧に掲載できます。科目、料金、対応エリア、指導方針を明確にして問い合わせにつなげます。",
   },
   {
-    icon: "🤝",
-    title: "チームで動ける環境",
-    body: "講師同士で情報共有・授業内容の相談ができます。一人で抱え込まず、チームでサポートしながら指導できます。",
+    title: "無理な稼働を前提にしない",
+    body: "試験、実習、研究、部活と両立できるよう、担当数と時間帯を事前にすり合わせます。",
   },
 ];
 
 const requirements = [
-  "慶應義塾大学医学部に在籍中であること（学年・学士編入問いません）",
-  "週1コマ以上の指導時間を確保できること",
-  "生徒の合格に向けて誠実に向き合える方",
-  "Zoom・Google Meetを使ったオンライン指導ができること",
+  "医学部受験、難関大受験、内部進学、学校成績対策のいずれかで強みを説明できる方",
+  "生徒と保護者に対して、誠実に進捗共有できる方",
+  "オンライン指導に必要な通信環境と基本的なPC操作がある方",
+  "本人確認、所属確認、プロフィール確認に協力できる方",
+];
+
+const flow = [
+  ["01", "応募フォーム送信", "所属、担当可能科目、稼働時間、指導経験を確認します。"],
+  ["02", "書類確認", "本人確認、在籍・卒業情報、指導可能領域を確認します。"],
+  ["03", "オンライン面談", "指導方針、得意領域、担当可能な生徒像をすり合わせます。"],
+  ["04", "登録・掲載準備", "承認後、希望者は講師一覧に掲載するプロフィールを作成します。"],
 ];
 
 const faqs = [
   {
     q: "指導経験がなくても応募できますか？",
-    a: "はい、問題ありません。指導経験よりも「医学部受験への理解」と「誠実さ」を重視しています。採用後に指導方法のオリエンテーションを行います。",
+    a: "応募できます。採用時は指導経験よりも、受験経験を言語化できること、誠実に伴走できることを重視します。",
   },
   {
-    q: "時給が2,500円〜10,000円と幅がありますが、どう決まりますか？",
-    a: "入塾時は経験・スキルをもとに決定し、その後は継続年数・生徒評価・合格実績に応じて昇給します。長く続けるほど時給が上がる仕組みです。",
+    q: "医学部生以外でも応募できますか？",
+    a: "医学部受験、難関大受験、内部進学、学校成績対策で明確な強みがあれば応募できます。担当可否は個別に判断します。",
   },
   {
-    q: "担当できる科目に制限はありますか？",
-    a: "英数理のうち得意科目での担当が基本です。複数科目を担当することも可能です。面接時に得意科目をお聞きします。",
+    q: "講師一覧への掲載は必須ですか？",
+    a: "必須ではありません。公開掲載を希望する場合のみ、本人確認と掲載内容の確認後に公開します。",
   },
   {
-    q: "選考の流れを教えてください。",
-    a: "①応募フォーム送信 → ②書類確認（3営業日以内に連絡） → ③オンライン面談（30〜45分） → ④採用・指導開始、という流れです。",
-  },
-  {
-    q: "卒業後も続けられますか？",
-    a: "現在は慶應義塾大学医学部在籍者を対象としています。卒業後については個別にご相談ください。",
+    q: "どのくらい稼働する必要がありますか？",
+    a: "週1コマから相談できます。試験期間や実習期間は事前に調整します。",
   },
 ];
 
+const subjectOptions = ["英語", "数学", "物理", "化学", "生物", "面接", "小論文", "学校成績", "推薦・AO"];
+
+type RecruitForm = {
+  name: string;
+  email: string;
+  phone: string;
+  university: string;
+  grade: string;
+  subjects: string;
+  experience: string;
+  hoursPerWeek: string;
+  preferredFormat: string;
+  availableArea: string;
+  profilePublish: string;
+  teachingStyle: string;
+  motivation: string;
+};
+
+const initialForm: RecruitForm = {
+  name: "",
+  email: "",
+  phone: "",
+  university: "",
+  grade: "",
+  subjects: "",
+  experience: "",
+  hoursPerWeek: "",
+  preferredFormat: "",
+  availableArea: "",
+  profilePublish: "",
+  teachingStyle: "",
+  motivation: "",
+};
+
+function RequiredBadge() {
+  return (
+    <span className="ml-2 rounded px-1.5 py-0.5 text-[11px] font-bold" style={{ backgroundColor: "#fef2f2", color: "#dc2626" }}>
+      必須
+    </span>
+  );
+}
+
 export default function RecruitPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    university: "",
-    grade: "",
-    subjects: "",
-    experience: "",
-    hoursPerWeek: "",
-    motivation: "",
-  });
+  const [form, setForm] = useState<RecruitForm>(initialForm);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const setField = (key: keyof RecruitForm, value: string) => {
+    setForm((current) => ({ ...current, [key]: value }));
+  };
+
+  const toggleSubject = (subject: string, checked: boolean) => {
+    const current = form.subjects ? form.subjects.split(" / ") : [];
+    const next = checked ? [...current, subject] : current.filter((item) => item !== subject);
+    setField("subjects", next.join(" / "));
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!form.subjects) {
+      setError("担当可能科目を1つ以上選択してください。");
+      return;
+    }
+
     setLoading(true);
     setError("");
+
     try {
-      const res = await fetch("/api/recruit", {
+      const response = await fetch("/api/recruit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || "送信に失敗しました");
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || "送信に失敗しました。時間をおいて再度お試しください。");
       }
+
       setSubmitted(true);
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "エラーが発生しました");
+      setForm(initialForm);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "送信に失敗しました。");
     } finally {
       setLoading(false);
     }
   };
 
-  const field = (
-    id: keyof typeof form,
-    label: string,
-    required = false,
-    placeholder = ""
-  ) => (
-    <div>
-      <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
-        {label}
-        {required && <span className="ml-1.5 text-xs font-bold px-1.5 py-0.5 rounded" style={{ backgroundColor: "#fef2f2", color: "#dc2626" }}>必須</span>}
-      </label>
-      <input
-        type={id === "email" ? "email" : "text"}
-        value={form[id]}
-        onChange={(e) => setForm({ ...form, [id]: e.target.value })}
-        placeholder={placeholder}
-        required={required}
-        className="w-full rounded-lg px-3 py-2.5 text-sm"
-        style={{ border: "1px solid #d1d5db", color: "#1f2937", backgroundColor: "#fff" }}
-      />
-    </div>
-  );
+  const inputClass = "w-full rounded-lg px-3 py-3 text-sm";
+  const inputStyle = { border: "1px solid #d1d5db", color: "#111827", backgroundColor: "#fff" };
 
   return (
     <div className="min-h-screen bg-white">
-
-      {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            Tutor Recruitment
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            講師募集
-          </h1>
-          <p className="text-base mb-6" style={{ color: "rgba(255,255,255,0.75)" }}>
-            慶應義塾大学医学部在籍の方へ。あなたの合格体験を、次の受験生の力に。
-          </p>
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl" style={{ backgroundColor: "rgba(201,146,42,0.15)", border: "1px solid rgba(201,146,42,0.4)" }}>
-            <span className="text-2xl font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
-              時給 2,500〜10,000円
-            </span>
-            <span className="text-xs font-semibold px-2 py-1 rounded-full" style={{ backgroundColor: "#c9922a", color: "#fff" }}>
-              昇給制度あり
-            </span>
+      <section className="relative min-h-[620px] overflow-hidden px-4 py-20 md:py-28">
+        <Image
+          src="/images/hero.webp"
+          alt="講師が受験生に個別指導している様子"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(12,26,51,0.92) 0%, rgba(12,26,51,0.76) 42%, rgba(12,26,51,0.25) 100%)" }} />
+        <div className="relative mx-auto flex min-h-[460px] max-w-6xl items-center">
+          <div className="max-w-2xl">
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest" style={{ color: "#c9922a" }}>
+              Instructor Recruitment
+            </p>
+            <h1 className="mb-5 text-3xl font-bold leading-tight text-white md:text-5xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
+              医学部受験の経験を、次の受験生の力に。
+            </h1>
+            <p className="mb-8 text-sm leading-relaxed md:text-base" style={{ color: "rgba(255,255,255,0.76)" }}>
+              Medvanceでは、医学部受験・内部進学・学校成績対策を支える講師を募集しています。
+              得意科目や受験経験を活かし、生徒一人ひとりの学習計画と実行を支える仕事です。
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#form"
+                className="inline-flex items-center justify-center rounded-lg px-7 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#c9922a" }}
+              >
+                応募フォームへ進む
+              </a>
+              <Link
+                href="/tutors"
+                className="inline-flex items-center justify-center rounded-lg px-7 py-4 text-sm font-bold transition-opacity hover:opacity-90"
+                style={{ color: "#fff", border: "1px solid rgba(255,255,255,0.32)", backgroundColor: "rgba(255,255,255,0.08)" }}
+              >
+                講師一覧を見る
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 待遇 */}
-      <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            待遇・条件
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {benefits.map((b, i) => (
-              <div key={i} className="p-5 rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <span className="text-xs font-semibold" style={{ color: "#9ca3af" }}>{b.label}</span>
-                </div>
-                <p className="text-lg font-bold mb-1" style={{ color: "#0c1a33" }}>{b.value}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{b.note}</p>
+      <section className="px-4 py-12" style={{ backgroundColor: "#f7f5f0", borderBottom: "1px solid #e5e1d8" }}>
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-4">
+          {offerCards.map((item) => (
+            <div key={item.label} className="rounded-lg bg-white p-5" style={{ border: "1px solid #e5e1d8" }}>
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest" style={{ color: "#9ca3af" }}>
+                {item.label}
+              </p>
+              <p className="mb-2 text-base font-bold" style={{ color: "#0c1a33" }}>
+                {item.value}
+              </p>
+              <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+                {item.note}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 max-w-3xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: "#c9922a" }}>
+              Why Medvance
+            </p>
+            <h2 className="mb-3 text-2xl font-bold md:text-3xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+              ただ教えるだけではなく、合格までの進め方を支える講師を募集します。
+            </h2>
+            <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+              Medvanceの講師には、問題の解説力だけでなく、生徒が次に何をすべきかを整理する力を求めています。
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {strengths.map((item, index) => (
+              <article key={item.title} className="rounded-xl p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="mb-3 text-sm font-bold" style={{ color: "#c9922a" }}>
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mb-2 text-base font-bold" style={{ color: "#0c1a33" }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-20" style={{ backgroundColor: "#0c1a33" }}>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: "#c9922a" }}>
+              Requirements
+            </p>
+            <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
+              応募条件
+            </h2>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+              所属大学名だけでは判断しません。生徒に対して、どの領域で何を支援できるかを重視します。
+            </p>
+          </div>
+          <div className="space-y-3">
+            {requirements.map((item) => (
+              <div key={item} className="rounded-lg p-4" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.82)" }}>
+                  {item}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 特徴 */}
-      <div className="py-14 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            Medvanceで働く特徴
-          </h2>
-          <div className="grid md:grid-cols-2 gap-5">
-            {points.map((p, i) => (
-              <div key={i} className="flex gap-4 p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                <span className="text-2xl flex-shrink-0">{p.icon}</span>
+      <section className="px-4 py-20" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: "#c9922a" }}>
+              Process
+            </p>
+            <h2 className="text-2xl font-bold md:text-3xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+              応募から掲載・指導開始まで
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-4">
+            {flow.map(([num, title, body]) => (
+              <div key={num} className="rounded-xl bg-white p-5" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="mb-4 text-sm font-bold" style={{ color: "#c9922a" }}>
+                  {num}
+                </p>
+                <h3 className="mb-2 text-base font-bold" style={{ color: "#0c1a33" }}>
+                  {title}
+                </h3>
+                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="form" className="px-4 py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: "#c9922a" }}>
+              Apply
+            </p>
+            <h2 className="mb-4 text-2xl font-bold md:text-3xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+              講師応募フォーム
+            </h2>
+            <p className="mb-6 text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+              送信後、内容を確認したうえで通常3営業日以内にご連絡します。公開プロフィールの掲載は、採用後に希望者のみ進めます。
+            </p>
+            <div className="rounded-xl p-5" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+              <h3 className="mb-3 text-sm font-bold" style={{ color: "#0c1a33" }}>
+                入力前に確認すること
+              </h3>
+              <div className="space-y-2 text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                <p>担当できる科目と学年を具体的に書くと、面談が早く進みます。</p>
+                <p>公開掲載を希望する場合は、掲載名や顔写真の扱いも面談で確認します。</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl p-6 md:p-8" style={{ backgroundColor: "#fff", border: "1px solid #e5e1d8" }}>
+            {submitted ? (
+              <div className="rounded-xl p-8 text-center" style={{ backgroundColor: "#f0fdf4", border: "1px solid #86efac" }}>
+                <h3 className="mb-2 text-xl font-bold" style={{ color: "#166534" }}>
+                  応募を受け付けました
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+                  入力内容を確認し、通常3営業日以内にメールでご連絡します。
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    氏名
+                    <RequiredBadge />
+                    <input
+                      type="text"
+                      value={form.name}
+                      onChange={(event) => setField("name", event.target.value)}
+                      required
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                      placeholder="山田 太郎"
+                    />
+                  </label>
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    メールアドレス
+                    <RequiredBadge />
+                    <input
+                      type="email"
+                      value={form.email}
+                      onChange={(event) => setField("email", event.target.value)}
+                      required
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                      placeholder="example@university.ac.jp"
+                    />
+                  </label>
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    電話番号
+                    <input
+                      type="text"
+                      value={form.phone}
+                      onChange={(event) => setField("phone", event.target.value)}
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                      placeholder="090-0000-0000"
+                    />
+                  </label>
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    所属・学年
+                    <RequiredBadge />
+                    <input
+                      type="text"
+                      value={form.university}
+                      onChange={(event) => setField("university", event.target.value)}
+                      required
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                      placeholder="慶應義塾大学 医学部 3年"
+                    />
+                  </label>
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    学年・卒業区分
+                    <select
+                      value={form.grade}
+                      onChange={(event) => setField("grade", event.target.value)}
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                    >
+                      <option value="">選択してください</option>
+                      <option>1年</option>
+                      <option>2年</option>
+                      <option>3年</option>
+                      <option>4年</option>
+                      <option>5年</option>
+                      <option>6年</option>
+                      <option>大学院・既卒</option>
+                      <option>その他</option>
+                    </select>
+                  </label>
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    週あたり稼働目安
+                    <select
+                      value={form.hoursPerWeek}
+                      onChange={(event) => setField("hoursPerWeek", event.target.value)}
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                    >
+                      <option value="">選択してください</option>
+                      <option>週1から2時間</option>
+                      <option>週3から5時間</option>
+                      <option>週6から10時間</option>
+                      <option>週10時間以上</option>
+                    </select>
+                  </label>
+                </div>
+
                 <div>
-                  <p className="font-bold text-sm mb-1.5" style={{ color: "#0c1a33" }}>{p.title}</p>
-                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{p.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* 昇給の仕組み */}
-      <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            昇給の仕組み
-          </h2>
-          <div className="space-y-3">
-            {[
-              { range: "2,500〜3,500円", label: "入塾時", desc: "経験・スキルをもとに決定" },
-              { range: "3,500〜5,500円", label: "継続・評価UP", desc: "継続年数・生徒評価で昇給" },
-              { range: "5,500〜8,000円", label: "合格実績", desc: "担当生徒の合格実績に応じて昇給" },
-              { range: "8,000〜10,000円", label: "上位講師", desc: "継続的な実績と高評価で最高水準へ" },
-            ].map((s, i) => (
-              <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: "#0c1a33" }}>
-                  {i + 1}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <span className="font-bold text-sm" style={{ color: "#c9922a" }}>{s.range}円</span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#eff6ff", color: "#1d4ed8" }}>{s.label}</span>
+                  <p className="mb-2 text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    担当可能科目
+                    <RequiredBadge />
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {subjectOptions.map((subject) => (
+                      <label key={subject} className="inline-flex cursor-pointer items-center gap-2 rounded-full px-3 py-2 text-sm" style={{ border: "1px solid #d1d5db", color: "#374151" }}>
+                        <input
+                          type="checkbox"
+                          value={subject}
+                          checked={form.subjects.split(" / ").includes(subject)}
+                          onChange={(event) => toggleSubject(subject, event.target.checked)}
+                          className="h-4 w-4"
+                        />
+                        {subject}
+                      </label>
+                    ))}
                   </div>
-                  <p className="text-xs mt-0.5" style={{ color: "#6b7280" }}>{s.desc}</p>
+                  <input type="hidden" name="subjects" value={form.subjects} required />
                 </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-xs text-center mt-4" style={{ color: "#9ca3af" }}>昇給は定期評価（半年ごと）に基づきます</p>
-        </div>
-      </div>
 
-      {/* 応募資格 */}
-      <div className="py-14 px-4 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            応募資格
-          </h2>
-          <div className="space-y-3">
-            {requirements.map((r, i) => (
-              <div key={i} className="flex gap-3 p-4 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                <span className="flex-shrink-0 text-sm font-bold" style={{ color: "#c9922a" }}>✓</span>
-                <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>{r}</p>
-              </div>
-            ))}
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    指導経験・受験経験
+                    <select
+                      value={form.experience}
+                      onChange={(event) => setField("experience", event.target.value)}
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                    >
+                      <option value="">選択してください</option>
+                      <option>現役合格</option>
+                      <option>浪人経験あり</option>
+                      <option>指導経験あり</option>
+                      <option>合格実績あり</option>
+                      <option>その他</option>
+                    </select>
+                  </label>
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    希望する指導形式
+                    <select
+                      value={form.preferredFormat}
+                      onChange={(event) => setField("preferredFormat", event.target.value)}
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                    >
+                      <option value="">選択してください</option>
+                      <option>オンラインのみ</option>
+                      <option>対面も可能</option>
+                      <option>どちらでも可能</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    対応可能エリア
+                    <input
+                      type="text"
+                      value={form.availableArea}
+                      onChange={(event) => setField("availableArea", event.target.value)}
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                      placeholder="オンライン、東京都、神奈川県など"
+                    />
+                  </label>
+                  <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                    講師一覧への掲載希望
+                    <select
+                      value={form.profilePublish}
+                      onChange={(event) => setField("profilePublish", event.target.value)}
+                      className={`${inputClass} mt-1.5`}
+                      style={inputStyle}
+                    >
+                      <option value="">選択してください</option>
+                      <option>希望する</option>
+                      <option>相談して決めたい</option>
+                      <option>現時点では希望しない</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                  指導スタイル・得意な支援
+                  <textarea
+                    rows={4}
+                    value={form.teachingStyle}
+                    onChange={(event) => setField("teachingStyle", event.target.value)}
+                    className={`${inputClass} mt-1.5 resize-none`}
+                    style={inputStyle}
+                    placeholder="例: 数学の記述答案添削、面接対策、定期テスト前の計画管理など"
+                  />
+                </label>
+
+                <label className="block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                  応募理由・自己PR
+                  <RequiredBadge />
+                  <textarea
+                    rows={5}
+                    value={form.motivation}
+                    onChange={(event) => setField("motivation", event.target.value)}
+                    required
+                    className={`${inputClass} mt-1.5 resize-none`}
+                    style={inputStyle}
+                    placeholder="受験経験、指導経験、生徒に提供できる価値を自由に書いてください"
+                  />
+                </label>
+
+                {error && (
+                  <p className="rounded-lg px-4 py-3 text-sm" style={{ color: "#b91c1c", backgroundColor: "#fef2f2" }}>
+                    {error}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full rounded-xl px-6 py-4 text-base font-bold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+                  style={{ backgroundColor: "#c9922a" }}
+                >
+                  {loading ? "送信中..." : "講師として応募する"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* FAQ */}
-      <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+      <section className="px-4 pb-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-8 text-center text-2xl font-bold" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4">
-            {faqs.map((f, i) => (
-              <div key={i} className="p-5 rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>Q. {f.q}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>A. {f.a}</p>
-              </div>
+            {faqs.map((faq) => (
+              <details key={faq.q} className="rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                <summary className="cursor-pointer px-5 py-4 text-sm font-bold" style={{ color: "#0c1a33" }}>
+                  {faq.q}
+                </summary>
+                <p className="px-5 pb-5 text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {faq.a}
+                </p>
+              </details>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* 応募フォーム */}
-      <div className="py-16 px-4 bg-white" id="form">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            応募フォーム
-          </h2>
-          <p className="text-sm text-center mb-8" style={{ color: "#6b7280" }}>
-            フォームを送信後、3営業日以内にご連絡します
-          </p>
-
-          {submitted ? (
-            <div className="p-8 rounded-2xl text-center" style={{ backgroundColor: "#f0fdf4", border: "2px solid #86efac" }}>
-              <p className="text-2xl mb-3">✅</p>
-              <p className="font-bold text-lg mb-2" style={{ color: "#16a34a" }}>応募を受け付けました</p>
-              <p className="text-sm" style={{ color: "#374151" }}>
-                3営業日以内にメールにてご連絡します。<br />
-                自動返信メールが届かない場合は迷惑メールフォルダをご確認ください。
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                {field("name", "お名前", true, "山田 太郎")}
-                {field("email", "メールアドレス", true, "example@keio.jp")}
-              </div>
-              {field("phone", "電話番号", false, "090-0000-0000")}
-              <div className="grid sm:grid-cols-2 gap-5">
-                {field("university", "所属大学・学部", true, "慶應義塾大学医学部")}
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
-                    学年
-                    <span className="ml-1.5 text-xs font-bold px-1.5 py-0.5 rounded" style={{ backgroundColor: "#fef2f2", color: "#dc2626" }}>必須</span>
-                  </label>
-                  <select
-                    value={form.grade}
-                    onChange={(e) => setForm({ ...form, grade: e.target.value })}
-                    required
-                    className="w-full rounded-lg px-3 py-2.5 text-sm"
-                    style={{ border: "1px solid #d1d5db", color: form.grade ? "#1f2937" : "#9ca3af", backgroundColor: "#fff" }}
-                  >
-                    <option value="">選択してください</option>
-                    <option>1年</option>
-                    <option>2年</option>
-                    <option>3年</option>
-                    <option>4年</option>
-                    <option>5年</option>
-                    <option>6年</option>
-                    <option>学士編入</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
-                  指導可能科目
-                  <span className="ml-1.5 text-xs font-bold px-1.5 py-0.5 rounded" style={{ backgroundColor: "#fef2f2", color: "#dc2626" }}>必須</span>
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {["英語", "数学", "物理", "化学", "生物", "面接・小論文"].map((s) => (
-                    <label key={s} className="flex items-center gap-1.5 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        value={s}
-                        checked={form.subjects.includes(s)}
-                        onChange={(e) => {
-                          const cur = form.subjects ? form.subjects.split("・") : [];
-                          const next = e.target.checked ? [...cur, s] : cur.filter((x) => x !== s);
-                          setForm({ ...form, subjects: next.join("・") });
-                        }}
-                        className="rounded"
-                      />
-                      <span className="text-sm" style={{ color: "#374151" }}>{s}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>医学部受験経験</label>
-                <select
-                  value={form.experience}
-                  onChange={(e) => setForm({ ...form, experience: e.target.value })}
-                  className="w-full rounded-lg px-3 py-2.5 text-sm"
-                  style={{ border: "1px solid #d1d5db", color: form.experience ? "#1f2937" : "#9ca3af", backgroundColor: "#fff" }}
-                >
-                  <option value="">選択してください</option>
-                  <option>現役合格</option>
-                  <option>1浪合格</option>
-                  <option>2浪以上合格</option>
-                  <option>学士編入</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>週あたり指導可能時間</label>
-                <select
-                  value={form.hoursPerWeek}
-                  onChange={(e) => setForm({ ...form, hoursPerWeek: e.target.value })}
-                  className="w-full rounded-lg px-3 py-2.5 text-sm"
-                  style={{ border: "1px solid #d1d5db", color: form.hoursPerWeek ? "#1f2937" : "#9ca3af", backgroundColor: "#fff" }}
-                >
-                  <option value="">選択してください</option>
-                  <option>週1〜2時間</option>
-                  <option>週3〜5時間</option>
-                  <option>週6〜10時間</option>
-                  <option>週10時間以上</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>志望動機・自己PR</label>
-                <textarea
-                  rows={5}
-                  value={form.motivation}
-                  onChange={(e) => setForm({ ...form, motivation: e.target.value })}
-                  placeholder="Medvanceで講師をしたい理由、自分の強み、受験時の経験など自由にお書きください"
-                  className="w-full rounded-lg px-3 py-2.5 text-sm resize-none"
-                  style={{ border: "1px solid #d1d5db", color: "#1f2937", backgroundColor: "#fff" }}
-                />
-              </div>
-
-              {error && (
-                <p className="text-sm text-center" style={{ color: "#dc2626" }}>{error}</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full py-4 rounded-xl text-white font-bold text-base transition-opacity hover:opacity-90 disabled:opacity-50"
-                style={{ backgroundColor: "#c9922a" }}
-              >
-                {loading ? "送信中..." : "応募する"}
-              </button>
-              <p className="text-xs text-center" style={{ color: "#9ca3af" }}>
-                送信後、自動返信メールをお送りします。届かない場合は迷惑メールフォルダをご確認ください。
-              </p>
-            </form>
-          )}
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
