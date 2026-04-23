@@ -148,7 +148,9 @@ export default function Footer() {
               </svg>
               note
             </a>
-            <nav className="flex gap-5">
+            <nav className="flex flex-wrap gap-x-5 gap-y-2 justify-center sm:justify-end">
+              <Link href="/tokushoho" className="hover:opacity-80 transition-opacity">特定商取引法に基づく表記</Link>
+              <Link href="/terms" className="hover:opacity-80 transition-opacity">利用規約</Link>
               <Link href="/privacy" className="hover:opacity-80 transition-opacity">プライバシーポリシー</Link>
               <Link href="/cookies" className="hover:opacity-80 transition-opacity">Cookie設定</Link>
             </nav>
