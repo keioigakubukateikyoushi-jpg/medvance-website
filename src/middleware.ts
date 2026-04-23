@@ -8,7 +8,7 @@ export function middleware(request: NextRequest) {
     url.protocol = "https";
     url.hostname = "medvance-edu.com";
     url.port = "";
-    return NextResponse.redirect(url, 308);
+    return NextResponse.redirect(url, 301);
   }
 
   const requestHeaders = new Headers(request.headers);

@@ -12,19 +12,19 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "medvance.website" }],
         destination: "https://medvance-edu.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.medvance.website" }],
         destination: "https://medvance-edu.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.medvance-edu.com" }],
         destination: "https://medvance-edu.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
