@@ -15,6 +15,7 @@
  *   NOTION_DATABASE_ID      日次アクセスログ DB ID
  *   NOTION_DAILY_PAGE_ID    デイリーレポート作成先ページID（省略可）
  *   NOTION_WEEKLY_PAGE_ID   週次レポート作成先ページID（省略可）
+ *   PAGESPEED_API_KEY       PageSpeed Insights APIキー（省略可／未設定ならOAuth→匿名の順で試行）
  *
  * 実行例:
  *   node scripts/sync-analytics.mjs
@@ -244,24 +245,98 @@ async function fetchSearchConsole(date) {
 }
 
 // ─── PageSpeed Insights ────────────────────────────────────────────────────
-async function fetchPageSpeed() {
+// 匿名アクセスは共有クォータ(429)で失敗しやすいため、以下の順で認証を試みる:
+//   1. PAGESPEED_API_KEY （?key= 付与）
+//   2. GA4_SERVICE_ACCOUNT（OAuth2 Bearer トークン）
+//   3. 認証なし（フォールバック）
+// 失敗時はスコアを null にしてNotion側で空欄を示す（0点は実スコアと誤認するため避ける）。
+const PSI_TIMEOUT_MS = 120_000;
+const PSI_MAX_ATTEMPTS = 3;
+
+const psiAuth = new google.auth.GoogleAuth({
+  credentials,
+  scopes: ["https://www.googleapis.com/auth/openid"],
+});
+
+async function psiAccessToken() {
   try {
-    const [mobRes, deskRes] = await Promise.all([
-      fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(PAGESPEED_URL)}&strategy=mobile`),
-      fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(PAGESPEED_URL)}&strategy=desktop`),
-    ]);
-    const mob  = await mobRes.json();
-    const desk = await deskRes.json();
-    const mScore = mob.lighthouseResult?.categories?.performance?.score;
-    const dScore = desk.lighthouseResult?.categories?.performance?.score;
-    return {
-      mobile:  mScore != null ? Math.round(mScore * 100) : 0,
-      desktop: dScore != null ? Math.round(dScore * 100) : 0,
-    };
-  } catch (err) {
-    console.warn("  ⚠️  PageSpeed:", err.message.slice(0, 60));
-    return { mobile: 0, desktop: 0 };
+    const client = await psiAuth.getClient();
+    const token  = await client.getAccessToken();
+    return typeof token === "string" ? token : token?.token ?? null;
+  } catch {
+    return null;
   }
+}
+
+function buildPsiUrl(strategy, apiKey) {
+  const params = new URLSearchParams({
+    url: PAGESPEED_URL,
+    strategy,
+    category: "performance",
+  });
+  if (apiKey) params.set("key", apiKey);
+  return `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?${params.toString()}`;
+}
+
+async function callPSI(strategy, { apiKey, bearerToken }) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), PSI_TIMEOUT_MS);
+  try {
+    const headers = { "Accept": "application/json" };
+    if (bearerToken) headers["Authorization"] = `Bearer ${bearerToken}`;
+    const res = await fetch(buildPsiUrl(strategy, apiKey), { headers, signal: controller.signal });
+    const body = await res.json();
+    if (!res.ok || body.error) {
+      const code = body.error?.code ?? res.status;
+      const msg  = body.error?.message ?? `HTTP ${res.status}`;
+      throw new Error(`[${code}] ${msg}`);
+    }
+    const score = body.lighthouseResult?.categories?.performance?.score;
+    if (score == null) throw new Error("lighthouseResult.performance.score が取得できませんでした");
+    return Math.round(score * 100);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function fetchScoreWithRetry(strategy, auth) {
+  let lastErr = null;
+  for (let attempt = 1; attempt <= PSI_MAX_ATTEMPTS; attempt++) {
+    try {
+      return await callPSI(strategy, auth);
+    } catch (err) {
+      lastErr = err;
+      const msg = err?.message ?? String(err);
+      const retriable = /\[5\d\d\]|\[429\]|AbortError|network|fetch failed/i.test(msg);
+      console.warn(`  ⚠️  PageSpeed[${strategy}] attempt ${attempt}/${PSI_MAX_ATTEMPTS}: ${msg.slice(0, 140)}`);
+      if (!retriable || attempt === PSI_MAX_ATTEMPTS) break;
+      await new Promise((r) => setTimeout(r, 2000 * attempt));
+    }
+  }
+  throw lastErr ?? new Error("PageSpeed Insights 取得失敗");
+}
+
+async function fetchPageSpeed() {
+  const apiKey      = process.env.PAGESPEED_API_KEY || null;
+  const bearerToken = apiKey ? null : await psiAccessToken();
+  const auth        = { apiKey, bearerToken };
+
+  if (apiKey)         console.log("  🔑 PSI: API key を使用");
+  else if (bearerToken) console.log("  🔑 PSI: サービスアカウントOAuthトークンを使用");
+  else                console.log("  ⚠️  PSI: 認証なし（匿名クォータのため失敗の可能性大）");
+
+  const result = { mobile: null, desktop: null, error: null };
+  try {
+    const [mobile, desktop] = await Promise.all([
+      fetchScoreWithRetry("mobile",  auth).catch((e) => { result.error = (result.error ? result.error + " / " : "") + `mobile: ${e.message}`;  return null; }),
+      fetchScoreWithRetry("desktop", auth).catch((e) => { result.error = (result.error ? result.error + " / " : "") + `desktop: ${e.message}`; return null; }),
+    ]);
+    result.mobile  = mobile;
+    result.desktop = desktop;
+  } catch (err) {
+    result.error = err.message;
+  }
+  return result;
 }
 
 // ─── Notion ────────────────────────────────────────────────────────────────
@@ -282,13 +357,18 @@ async function postToNotion({ date, today, prev, channels, topPages, contactPV, 
   const uuChange = pct(today.uu, prev.uu);
   const sign     = (v) => (v >= 0 ? `+${v}%` : `${v}%`);
 
+  const psFmt = (v) => (v == null ? "—" : v);
+  const psMemo = pageSpeed.error
+    ? `PageSpeed 測定失敗(${pageSpeed.error.slice(0, 60)})`
+    : `PageSpeed MB:${psFmt(pageSpeed.mobile)} PC:${psFmt(pageSpeed.desktop)}`;
+
   const memo = [
     `PV ${sign(pvChange)}`,
     `新規 ${today.newUserRate}%`,
     `Organic ${channels.organic}`,
     `モバイル ${devices.mobile}%`,
     `SC ${sc.clicks}クリック / ${sc.position}位`,
-    `PageSpeed MB:${pageSpeed.mobile} PC:${pageSpeed.desktop}`,
+    psMemo,
   ].join(" | ");
 
   await nFetch("/pages", "POST", {
@@ -315,8 +395,8 @@ async function postToNotion({ date, today, prev, channels, topPages, contactPV, 
       "SCクリック数":            { number: sc.clicks },
       "SC_CTR(%)":              { number: sc.ctr },
       "SC平均掲載順位":          { number: sc.position },
-      "PageSpeed_モバイル":      { number: pageSpeed.mobile },
-      "PageSpeed_PC":           { number: pageSpeed.desktop },
+      "PageSpeed_モバイル":      { number: pageSpeed.mobile  ?? null },
+      "PageSpeed_PC":           { number: pageSpeed.desktop ?? null },
       "TOP5ページ":              { rich_text: [{ type: "text", text: { content: topPages.map((p, i) => `${i + 1}. ${p.path}  ${p.pv}PV`).join("\n") } }] },
       "SC上位キーワード":         { rich_text: [{ type: "text", text: { content: sc.topKw } }] },
       "上位都道府県":             { rich_text: [{ type: "text", text: { content: regions } }] },
@@ -336,7 +416,15 @@ async function createDailyPage({ date, today, prev, channels, topPages, contactP
 
   const pvIcon  = pvChange >= 10 ? "🟢" : pvChange >= 0 ? "🟡" : "🔴";
   const scIcon  = sc.clicks > 0 ? "🟢" : sc.impressions > 0 ? "🟡" : "⚪";
-  const psIcon  = pageSpeed.mobile >= 70 ? "🟢" : pageSpeed.mobile >= 50 ? "🟡" : "🔴";
+  const psIcon  = pageSpeed.mobile == null ? "⚪" : pageSpeed.mobile >= 70 ? "🟢" : pageSpeed.mobile >= 50 ? "🟡" : "🔴";
+  const psText  = pageSpeed.error
+    ? `測定失敗: ${pageSpeed.error.slice(0, 140)}`
+    : `モバイル  ${pageSpeed.mobile ?? "—"}点　PC  ${pageSpeed.desktop ?? "—"}点`;
+  const psColor = pageSpeed.mobile == null
+    ? "gray_background"
+    : pageSpeed.mobile >= 70 ? "green_background"
+    : pageSpeed.mobile >= 50 ? "yellow_background"
+    : "red_background";
   const cvIcon  = contactPV > 0 ? "🟢" : "⚪";
 
   const blocks = [
@@ -441,8 +529,8 @@ async function createDailyPage({ date, today, prev, channels, topPages, contactP
       type: "callout",
       callout: {
         icon: { type: "emoji", emoji: psIcon },
-        color: pageSpeed.mobile >= 70 ? "green_background" : pageSpeed.mobile >= 50 ? "yellow_background" : "red_background",
-        rich_text: [{ type: "text", text: { content: `モバイル  ${pageSpeed.mobile}点　PC  ${pageSpeed.desktop}点` } }],
+        color: psColor,
+        rich_text: [{ type: "text", text: { content: psText } }],
       },
     },
   ];
@@ -654,7 +742,11 @@ async function main() {
   console.log(`\n  ── Search Console ──`);
   console.log(`  表示: ${sc.impressions} | クリック: ${sc.clicks} | CTR: ${sc.ctr}% | 順位: ${sc.position}位`);
   console.log(`\n  ── PageSpeed ──`);
-  console.log(`  モバイル: ${pageSpeed.mobile}点 | PC: ${pageSpeed.desktop}点`);
+  if (pageSpeed.error) {
+    console.log(`  ❌ 測定失敗: ${pageSpeed.error}`);
+  } else {
+    console.log(`  モバイル: ${pageSpeed.mobile ?? "—"}点 | PC: ${pageSpeed.desktop ?? "—"}点`);
+  }
 
   const data = { date: targetDate, today, prev, channels, topPages, contactPV, devices, regions, referrals, landingPages, exitPages, sc, pageSpeed };
 
