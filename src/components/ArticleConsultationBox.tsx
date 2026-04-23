@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LINE_URL } from "@/lib/links";
 
 interface ArticleConsultationBoxProps {
   eyebrow?: string;
@@ -65,13 +66,24 @@ export default function ArticleConsultationBox({
             ))}
           </div>
 
-          <Link
-            href={contactHref}
-            className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            {ctaLabel}
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <a
+              href={LINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#06C755" }}
+            >
+              LINEで質問する
+            </a>
+            <Link
+              href={contactHref}
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#c9922a" }}
+            >
+              {ctaLabel}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

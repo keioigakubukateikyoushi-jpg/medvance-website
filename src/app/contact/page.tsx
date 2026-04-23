@@ -151,6 +151,15 @@ export default function ContactPage() {
                   <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
                     2営業日以内に、ご登録のメールアドレスへご連絡いたします。
                   </p>
+                  <a
+                    href={LINE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-8 inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#06C755" }}
+                  >
+                    LINEで追加質問する
+                  </a>
                   {/* 次のステップ */}
                   <div className="text-left max-w-sm mx-auto space-y-4">
                     <p className="text-xs font-bold tracking-wide uppercase mb-3" style={{ color: "#c9922a" }}>次のステップ</p>
@@ -177,6 +186,26 @@ export default function ContactPage() {
                   <p className="text-xs mb-8" style={{ color: "#9ca3af" }}>
                     詳細は折りたたみ欄で、必要な方だけ入力できます。
                   </p>
+
+                  <div className="rounded-2xl p-5 mb-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                    <p className="text-sm font-bold mb-3" style={{ color: "#0c1a33" }}>
+                      相談で分かる3つのこと
+                    </p>
+                    <div className="grid gap-2">
+                      {[
+                        "今の学力から志望校までの最短ルート",
+                        "今日から変えるべき学習習慣の優先順位",
+                        "Medvanceで伴走した場合の具体的な進め方",
+                      ].map((item) => (
+                        <div key={item} className="flex items-start gap-2 text-sm" style={{ color: "#3d3d3d" }}>
+                          <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: "#c9922a" }}>
+                            ✓
+                          </span>
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
                   {formData.source && (
                     <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: "rgba(201,146,42,0.08)", border: "1px solid rgba(201,146,42,0.25)" }}>

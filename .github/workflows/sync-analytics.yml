@@ -59,6 +59,11 @@ jobs:
         if: steps.secrets.outputs.configured == 'true'
         run: npm install --save-dev @google-analytics/data @notionhq/client googleapis
 
+      - name: Check Search Console health
+        if: steps.secrets.outputs.configured == 'true'
+        continue-on-error: true
+        run: node scripts/check-sc-health.mjs --days 7
+
       - name: Run sync
         if: steps.secrets.outputs.configured == 'true'
         run: |

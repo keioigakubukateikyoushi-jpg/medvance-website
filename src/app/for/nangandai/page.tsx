@@ -192,11 +192,11 @@ export default function NangandaiPage() {
               { plan: "本格受験対策プラン", freq: "月10〜14回", price: "月額 ¥110,000〜", desc: "複数科目を並行指導。志望校合格に必要な水準まで引き上げ。", highlight: true },
               { plan: "直前集中プラン", freq: "月16回〜", price: "月額 ¥150,000〜", desc: "入試直前期の仕上げに。弱点の最終修正・実戦演習を集中実施。" },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: (item as any).highlight ? "#0c1a33" : "white", border: (item as any).highlight ? "none" : "1px solid #e5e1d8" }}>
+              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: item.highlight ? "#0c1a33" : "white", border: item.highlight ? "none" : "1px solid #e5e1d8" }}>
                 <p className="text-xs font-semibold mb-2" style={{ color: "#c9922a" }}>{item.plan}</p>
-                <p className="font-bold text-xl mb-1" style={{ color: (item as any).highlight ? "#fff" : "#0c1a33" }}>{item.price}</p>
-                <p className="text-xs mb-3" style={{ color: (item as any).highlight ? "rgba(255,255,255,0.6)" : "#6b7280" }}>{item.freq}</p>
-                <p className="text-sm leading-relaxed" style={{ color: (item as any).highlight ? "rgba(255,255,255,0.75)" : "#6b7280" }}>{item.desc}</p>
+                <p className="font-bold text-xl mb-1" style={{ color: item.highlight ? "#fff" : "#0c1a33" }}>{item.price}</p>
+                <p className="text-xs mb-3" style={{ color: item.highlight ? "rgba(255,255,255,0.6)" : "#6b7280" }}>{item.freq}</p>
+                <p className="text-sm leading-relaxed" style={{ color: item.highlight ? "rgba(255,255,255,0.75)" : "#6b7280" }}>{item.desc}</p>
               </div>
             ))}
           </div>
