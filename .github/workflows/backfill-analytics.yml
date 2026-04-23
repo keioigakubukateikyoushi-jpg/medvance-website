@@ -1,0 +1,64 @@
+name: 🔁 アクセス解析バックフィル
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: "開始日 YYYY-MM-DD (空欄ならNotion DBから自動検出)"
+        required: false
+        default: ""
+      to_date:
+        description: "終了日 YYYY-MM-DD (空欄ならNotion DBから自動検出)"
+        required: false
+        default: ""
+      only_zero:
+        description: "PageSpeed=0 のレコードのみ対象にするか"
+        required: false
+        type: boolean
+        default: true
+      dry_run:
+        description: "対象日の一覧だけ出力して終了（実行しない）"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+      GA4_SERVICE_ACCOUNT: ${{ secrets.GA4_SERVICE_ACCOUNT }}
+      SC_SITE_URL: ${{ secrets.SC_SITE_URL }}
+      NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+      NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      NOTION_PARENT_PAGE_ID: ${{ secrets.NOTION_PARENT_PAGE_ID }}
+      PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install --save-dev @google-analytics/data @notionhq/client googleapis
+
+      - name: Run backfill
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.from_date }}" ] && [ -n "${{ github.event.inputs.to_date }}" ]; then
+            ARGS="--from ${{ github.event.inputs.from_date }} --to ${{ github.event.inputs.to_date }}"
+          fi
+          if [ "${{ github.event.inputs.only_zero }}" = "true" ]; then
+            ARGS="$ARGS --only-zero"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          echo "Running: node scripts/backfill-analytics.mjs $ARGS"
+          node scripts/backfill-analytics.mjs $ARGS

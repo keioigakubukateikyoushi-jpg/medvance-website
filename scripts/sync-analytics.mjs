@@ -43,7 +43,7 @@ if (!GA4_PROPERTY_ID || !NOTION_DATABASE_ID || !NOTION_API_KEY || !process.env.G
   process.exit(1);
 }
 
-// ── 日付 ─────────────────────────────────────────────────────────────────
+// ── 日付 / フラグ ────────────────────────────────────────────────────────
 function resolveTargetDate() {
   const idx = process.argv.indexOf("--date");
   if (idx !== -1 && process.argv[idx + 1]) return process.argv[idx + 1];
@@ -52,6 +52,8 @@ function resolveTargetDate() {
   return d.toISOString().slice(0, 10);
 }
 const targetDate = resolveTargetDate();
+const FORCE      = process.argv.includes("--force");
+const NO_WEEKLY  = process.argv.includes("--no-weekly");
 const prevDate   = (() => { const d = new Date(targetDate); d.setDate(d.getDate() - 1); return d.toISOString().slice(0, 10); })();
 console.log(`📅 取得日: ${targetDate}`);
 
@@ -348,6 +350,15 @@ const nFetch = (path, method, body) =>
 async function checkDuplicate(date) {
   const res = await nFetch(`/databases/${NOTION_DATABASE_ID}/query`, "POST", { filter: { property: "日付", date: { equals: date } } });
   return res.results.length > 0;
+}
+
+async function archiveExistingRecords(date) {
+  const res = await nFetch(`/databases/${NOTION_DATABASE_ID}/query`, "POST", { filter: { property: "日付", date: { equals: date } } });
+  for (const page of res.results ?? []) {
+    await nFetch(`/pages/${page.id}`, "PATCH", { archived: true });
+    console.log(`  🗑️  アーカイブ: ${page.id.slice(0, 8)}… (${date})`);
+  }
+  return res.results?.length ?? 0;
 }
 
 // ─── Notion: 日次アクセスログDB に保存（原本） ─────────────────────────────
@@ -701,7 +712,10 @@ async function createWeeklyPage(sunday) {
 
 // ─── メイン ────────────────────────────────────────────────────────────────
 async function main() {
-  if (await checkDuplicate(targetDate)) {
+  if (FORCE) {
+    console.log(`♻️  --force 指定: 既存レコードをアーカイブして再作成します`);
+    await archiveExistingRecords(targetDate);
+  } else if (await checkDuplicate(targetDate)) {
     console.log(`⚠️  ${targetDate} はすでに存在します。スキップします。`);
     return;
   }
@@ -761,7 +775,9 @@ async function main() {
 
   // 3. 日曜日なら週次レポートページ作成
   const dayOfWeek = new Date(targetDate).getDay(); // 0 = 日曜
-  if (dayOfWeek === 0) {
+  if (NO_WEEKLY) {
+    console.log("📝 [3/3] 週次レポートはスキップ（--no-weekly）");
+  } else if (dayOfWeek === 0) {
     console.log("📝 [3/3] 週次レポートページ作成中（日曜日）...");
     await createWeeklyPage(targetDate);
   } else {
