@@ -12,9 +12,9 @@ function anim(duration: number, delay: number, name = "fadeUpIn"): React.CSSProp
 
 /* ── Shared text content ── */
 const proofPoints = [
-  { label: "代表実績", value: "偏差値40→慶應医全勝" },
+  { label: "講師", value: "慶應医学部生" },
   { label: "指導体制", value: "完全1対1" },
-  { label: "計画管理", value: "週次で見直し" },
+  { label: "受講形式", value: "全国オンライン対応" },
 ];
 
 const segmentLinks = [
@@ -53,7 +53,7 @@ function HeroText() {
           ...anim(0.5, 0.1, "fadeSlideDown"),
         }}
       >
-        現役慶應医学部生による医学部受験戦略
+        医学部受験専門塾 Medvance
       </div>
 
       {/* Headline */}
@@ -61,14 +61,13 @@ function HeroText() {
         className="font-bold leading-snug mb-4"
         style={{
           fontFamily: "var(--font-noto-serif)",
-          fontSize: "clamp(1.65rem, 4.5vw, 3.25rem)",
+          fontSize: "clamp(1.75rem, 5vw, 3.6rem)",
           color: "#ffffff",
           ...anim(0.65, 0.2),
         }}
       >
-        偏差値40から慶應医学部に全勝した現役医学生が、
-        <br className="hidden lg:block" />
-        あなただけの合格戦略を設計します
+        医学部合格に、<br />
+        才能は<span style={{ color: "#c9922a" }}>関係ない。</span>
       </h1>
 
       {/* Sub headline */}
@@ -82,7 +81,7 @@ function HeroText() {
           ...anim(0.65, 0.32),
         }}
       >
-        医学部合格は、戦略が9割。
+        必要なのは、正しい方法だけだ。
       </p>
 
       {/* Description */}
@@ -90,12 +89,12 @@ function HeroText() {
         className="leading-relaxed mb-9"
         style={{
           color: "rgba(255,255,255,0.58)",
-          maxWidth: "560px",
+          maxWidth: "420px",
           fontSize: "clamp(0.8125rem, 1.3vw, 0.9rem)",
           ...anim(0.65, 0.42),
         }}
       >
-        学力、志望校、残り期間をもとに、科目別の優先順位から面接・小論文まで完全1対1で逆算。全国オンラインで、今日から動ける学習計画に落とし込みます。
+        現役慶應医学部生が、あなただけの最短合格ルートを設計します。完全1対1・全国オンライン対応。
       </p>
 
       <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-6" style={anim(0.65, 0.48)}>
