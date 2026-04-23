@@ -31,7 +31,8 @@ const NOTION_DATABASE_ID    = process.env.NOTION_DATABASE_ID;
 const NOTION_API_KEY        = process.env.NOTION_API_KEY;
 const NOTION_DAILY_PAGE_ID  = process.env.NOTION_DAILY_PAGE_ID  || "336791ed-0116-813a-9933-e375c6ad34f0";
 const NOTION_WEEKLY_PAGE_ID = process.env.NOTION_WEEKLY_PAGE_ID || "336791ed-0116-8100-a336-f4eac2a2a4ff";
-const SC_SITE_URL           = process.env.SC_SITE_URL   || "https://medvance-edu.com/";
+const DEFAULT_SC_SITE_URL   = "https://medvance-edu.com/";
+const SC_SITE_URL           = process.env.SC_SITE_URL   || DEFAULT_SC_SITE_URL;
 const PAGESPEED_URL         = process.env.PAGESPEED_URL || "https://medvance-edu.com/";
 
 if (!GA4_PROPERTY_ID || !NOTION_DATABASE_ID || !NOTION_API_KEY || !process.env.GA4_SERVICE_ACCOUNT) {
@@ -221,12 +222,75 @@ async function fetchExitPages(s, e) {
 // ─── Search Console ────────────────────────────────────────────────────────
 const scAuth = new google.auth.GoogleAuth({ credentials, scopes: ["https://www.googleapis.com/auth/webmasters.readonly"] });
 
+function minusDays(date, days) {
+  const d = new Date(date);
+  d.setUTCDate(d.getUTCDate() - days);
+  return d.toISOString().slice(0, 10);
+}
+
+async function resolveSearchConsoleSiteUrl(sc, date) {
+  const sitesRes = await sc.sites.list();
+  const accessibleSites = (sitesRes.data.siteEntry ?? [])
+    .map((site) => site.siteUrl)
+    .filter(Boolean);
+  const candidates = [
+    SC_SITE_URL,
+    DEFAULT_SC_SITE_URL,
+    "https://www.medvance-edu.com/",
+    "sc-domain:medvance-edu.com",
+    ...accessibleSites.filter((site) => site.includes("medvance")),
+  ];
+  const uniqueCandidates = [...new Set(candidates.filter(Boolean))];
+  const startDate = minusDays(date, 6);
+  let firstAccessibleSiteUrl = null;
+
+  for (const siteUrl of uniqueCandidates) {
+    try {
+      const res = await sc.searchanalytics.query({
+        siteUrl,
+        requestBody: {
+          startDate,
+          endDate: date,
+          dimensions: ["date"],
+          rowLimit: 7,
+        },
+      });
+      firstAccessibleSiteUrl ??= siteUrl;
+      const totals = (res.data.rows ?? []).reduce(
+        (acc, row) => ({
+          clicks: acc.clicks + (row.clicks ?? 0),
+          impressions: acc.impressions + (row.impressions ?? 0),
+        }),
+        { clicks: 0, impressions: 0 },
+      );
+      if (totals.impressions > 0 || totals.clicks > 0) {
+        if (siteUrl !== SC_SITE_URL) console.log(`  Search Console site auto-selected: ${siteUrl}`);
+        return siteUrl;
+      }
+    } catch (err) {
+      const message = err?.message ?? String(err);
+      console.warn(`  Search Console candidate skipped (${siteUrl}): ${message.slice(0, 80)}`);
+    }
+  }
+
+  if (firstAccessibleSiteUrl) {
+    if (firstAccessibleSiteUrl !== SC_SITE_URL) {
+      console.log(`  Search Console site auto-selected despite zero recent rows: ${firstAccessibleSiteUrl}`);
+    }
+    return firstAccessibleSiteUrl;
+  }
+
+  console.warn("  Search Console: no candidate was queryable; using configured site URL.");
+  return SC_SITE_URL;
+}
+
 async function fetchSearchConsole(date) {
   try {
     const sc = google.searchconsole({ version: "v1", auth: await scAuth.getClient() });
+    const siteUrl = await resolveSearchConsoleSiteUrl(sc, date);
     const [summaryRes, kwRes] = await Promise.all([
-      sc.searchanalytics.query({ siteUrl: SC_SITE_URL, requestBody: { startDate: date, endDate: date } }),
-      sc.searchanalytics.query({ siteUrl: SC_SITE_URL, requestBody: { startDate: date, endDate: date, dimensions: ["query"], rowLimit: 5 } }),
+      sc.searchanalytics.query({ siteUrl, requestBody: { startDate: date, endDate: date } }),
+      sc.searchanalytics.query({ siteUrl, requestBody: { startDate: date, endDate: date, dimensions: ["query"], rowLimit: 5 } }),
     ]);
     const row = summaryRes.data.rows?.[0];
     const topKw = (kwRes.data.rows ?? [])

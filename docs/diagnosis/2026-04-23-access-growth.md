@@ -33,6 +33,7 @@ Live old-domain check on 2026-04-23:
 - Added old-domain redirects for `medvance.website` and `www.medvance.website` in both `next.config.ts` and middleware.
 - Added `scripts/check-sc-health.mjs` and `npm run sc:health` to diagnose Search Console property, service-account access, and zero-row results.
 - Added a non-blocking Search Console health check to the daily analytics workflow.
+- Updated the daily analytics sync to test Medvance Search Console property candidates and use the first queryable property when the configured URL has no recent rows.
 - Added LINE CTAs to shared article CTA components and a LINE follow-up path after contact submission.
 - Added a "相談で分かる3つのこと" block above the contact form.
 
