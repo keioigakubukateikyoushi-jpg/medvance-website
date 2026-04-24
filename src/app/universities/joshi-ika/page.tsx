@@ -1,5 +1,6 @@
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "東京女子医科大学受験対策｜入試傾向・合格戦略 | Medvance",
@@ -86,7 +87,7 @@ export default function JoshiIkaPage() {
       <UniversityPageSchemas name="東京女子医科大学" slug="joshi-ika" breadcrumbLabel="女子医科大対策" />
           <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="joshi-ika">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             大学別対策ガイド
@@ -106,7 +107,7 @@ export default function JoshiIkaPage() {
             </span>
           </div>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* Overview */}
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>

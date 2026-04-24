@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityHero from "@/components/UniversityHero";
 export const metadata = { title: "川崎医科大学受験対策｜入試傾向・合格戦略 | Medvance", description: "川崎医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。岡山県の私立医学部合格への完全ガイド。", 
   alternates: {
     canonical: "/universities/kawasaki-ika",
@@ -24,7 +25,7 @@ const faqs = [
 export default function KawasakiIkaPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="kawasaki-ika">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>大学別対策ガイド</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>川崎医科大学<br />入試対策ガイド</h1>
@@ -34,7 +35,7 @@ export default function KawasakiIkaPage() {
             <span className="px-4 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.8)", border: "1px solid rgba(255,255,255,0.2)" }}>岡山県</span>
           </div>
         </div>
-      </div>
+      </UniversityHero>
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Overview</p>

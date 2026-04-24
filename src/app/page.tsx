@@ -10,6 +10,7 @@ import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
 } from "@/lib/columnArticles";
+import { getColumnThumbnail } from "@/lib/columnThumbnails";
 import { buildItemListSchema, buildFaqSchema, buildSpeakableSchema } from "@/lib/seo";
 import { notices } from "@/lib/notices";
 
@@ -55,18 +56,18 @@ const IconGlobe = () => (
 
 /* ── Data ─────────────────────────────────── */
 const features = [
-  { icon: <IconPerson />, title: "完全1対1指導", body: "すべての授業が個別の家庭教師スタイル。生徒の理解度や目標に合わせて学習内容・進度をフルカスタマイズします。" },
-  { icon: <IconAcademic />, title: "講師は全員・現役慶應医学部生", body: "東大模試上位者・多浪経験者・地方公立出身者など多様な合格経験者から、あなたに最適な講師をマッチングします。" },
-  { icon: <IconBook />, title: "医学部に特化した専門対策", body: "英数理に加え、面接・小論文・願書まで、医学部受験に必要なすべてをトータルサポートします。" },
-  { icon: <IconClipboard />, title: "オーダーメイド学習計画", body: "学力・志望校・性格・生活スタイルに合わせた最適なスケジュールを1日単位で設計。最短距離で合格を目指します。" },
-  { icon: <IconLightbulb />, title: "合格者が実践した「本質的な勉強法」", body: "難関医学部に合格した講師の成功メソッドを、再現可能な形で直接伝授します。" },
-  { icon: <IconGlobe />, title: "場所を選ばず受講可能", body: "オンライン・自宅訪問・カフェ・レンタル学習スペースなど、ご希望の場所で受講できます。関東圏での対面指導にも対応。全国どこからでも受講可能です。" },
+  { icon: <IconPerson />, title: "完全1対1指導", body: "集団授業・映像授業は一切なし。担当講師が毎回の授業を直接指導し、理解度に応じて進度を調整します。" },
+  { icon: <IconAcademic />, title: "講師は全員、現役慶應医学部生", body: "東大模試上位経験者、多浪から合格した講師、地方公立出身者など、タイプの異なる講師の中から生徒に合う1人をマッチングします。" },
+  { icon: <IconBook />, title: "医学部入試に限定した指導", body: "英数理に加え、小論文・面接・MMI・出願書類まで、同じ担当講師が見ます。医学部以外の受験指導は行いません。" },
+  { icon: <IconClipboard />, title: "週単位で組む学習計画", body: "使う問題集、1週間のノルマ、模試ごとの目標点を志望校から逆算して決めます。計画は毎週見直します。" },
+  { icon: <IconLightbulb />, title: "合格者本人の勉強法を伝える", body: "どの時期に何を解き、どこでつまずき、どう乗り越えたか。合格者が自分の経験として答えられる形で指導します。" },
+  { icon: <IconGlobe />, title: "オンライン・対面の両対応", body: "全国どこからでもオンラインで受講可能。関東圏であれば対面指導（自宅・カフェ・学習スペース）にも対応します。" },
 ];
 
 const strengths = [
-  { num: "01", title: "慶應医学部生のみが指導", body: "指導するのは慶應義塾大学医学部の現役学生のみ。実際に難関を突破した経験者が、再現性ある合格戦略を直接伝授します。他塾では決して得られない、リアルな合格者の視点があります。" },
-  { num: "02", title: "完全オーダーメイドの学習戦略", body: "学力・志望校・生活スタイルに合わせた専用プランを設計。実績を持つ講師が、あなたの最短ルートを描きます。" },
-  { num: "03", title: "医学部受験に完全特化", body: "英数理の学力向上はもちろん、面接・小論文・願書まで一貫サポート。一般予備校では対応できない医学部特有の試験を、専門家が丁寧に指導します。" },
+  { num: "01", title: "講師は全員、慶應医学部の現役生", body: "自分が1〜2年前に実際に受けた試験について、科目別の時間配分や当日の緊張への対処まで、経験として話せる講師だけが指導します。合格者の思考プロセスを、大学受験産業を通さず直接生徒に伝える形です。" },
+  { num: "02", title: "1日単位の学習計画を組む", body: "使う問題集、どの範囲をいつまでに終わらせるか、模試ごとの目標点まで、志望校から逆算して決めます。毎週の進捗を確認し、遅れが出た時点で計画を組み直します。" },
+  { num: "03", title: "医学部受験のための指導に限定", body: "英数理だけでなく、小論文・面接・MMI・出願書類まで、同じ担当講師が見ます。大学別の傾向（例：慶應の理科2科目、慈恵の英語、MMI導入校）まで踏まえた指導が可能です。" },
 ];
 
 const steps = [
@@ -78,7 +79,7 @@ const steps = [
 
 const faqs = [
   { q: "どんな生徒が対象ですか？", a: "現役生・浪人生・再受験生すべてに対応しています。学力や年齢を問わず、医学部合格を目指す方であればどなたでもお申し込みいただけます。" },
-  { q: "どんな学力からでも医学部に合格できますか？", a: "現状の学力より、そこからどう伸ばすかの戦略の方が大切です。重要なのは現在の偏差値ではなく、正しい戦略と努力です。まずは無料相談でご状況をお聞かせください。" },
+  { q: "どんな学力からでも医学部に合格できますか？", a: "現在の偏差値よりも、そこから残り何ヶ月でどれだけ積み上げられるかで決まります。高3春に偏差値50台から1年で私立医学部に合格した事例、浪人1年で国公立医学部に届いた事例もあります。無料相談で残り期間と志望校の距離を確認してから判断してください。" },
   { q: "料金はどのくらいかかりますか？", a: "指導頻度・内容・期間によって異なるため、無料相談でヒアリングしたうえでご提案しています。まずはお気軽にご連絡ください。" },
   { q: "受講場所はどこになりますか？", a: "オンライン・自宅訪問（関東圏）・カフェ・レンタル学習スペースなど、ご希望の場所に対応しています。オンラインなら全国どこからでも受講可能です。" },
   { q: "体験指導はありますか？", a: "希望があれば、担当予定の講師による体験指導（1回60分〜）を実施しています。相性や指導の質をご確認いただいてから本契約に進めます。" },
@@ -94,46 +95,46 @@ const subjects = [
 ];
 
 const searchIntentLinks = [
-  { label: "慶應医学部に受かるには", href: "/universities/keio", desc: "科目別対策、面接、合格戦略まで" },
-  { label: "MMI面接の対策方法を知りたい", href: "/column/mmi-taisaku", desc: "頻出テーマ・ロールプレイ・大学別傾向を整理" },
-  { label: "医学部受験は夏から間に合う？", href: "/column/natsu-manikiai", desc: "高3・浪人生それぞれの戦略と優先順位" },
-  { label: "私立医学部の学費を比較したい", href: "/column/gakuhi", desc: "国公立との差や6年間の費用感を整理" },
-  { label: "無料相談で今の優先順位を整理したい", href: "/contact?from=home-search-hub", desc: "志望校・現在地・残り期間から、次にやることを30分で整理" },
-  { label: "保護者向けの情報を知りたい", href: "/for/parents", desc: "塾選び、費用、サポートの考え方" },
+  { label: "慶應医学部に受かるには", href: "/universities/keio", desc: "科目別配点、小論文、面接、出願戦略まで" },
+  { label: "MMI面接の対策方法を知りたい", href: "/column/mmi-taisaku", desc: "頻出テーマ、大学別傾向、練習の始め方" },
+  { label: "医学部受験は夏から間に合う？", href: "/column/natsu-manikiai", desc: "高3・浪人生それぞれの夏以降の使い方" },
+  { label: "私立医学部の学費を比較したい", href: "/column/gakuhi", desc: "私立30校・国公立との6年間総額の比較" },
+  { label: "無料相談で受験戦略を立てたい", href: "/contact?from=home-search-hub", desc: "志望校・現在地・残り期間から、30分で次の一手をお伝えします" },
+  { label: "保護者向けの情報を知りたい", href: "/for/parents", desc: "費用、保護者面談、成績報告、講師変更制度" },
 ];
 
 const decisionLinks = [
   {
     tag: "相談",
     title: "無料相談で相性を確かめる",
-    desc: "今の課題・残り期間・必要なサポートをその場で具体化できます。",
+    desc: "現在の学力、志望校、残り期間から、次にやるべきことをその場でお伝えします。",
     href: "/contact?from=home-decision-card",
   },
   {
     tag: "料金",
     title: "料金と始め方を見る",
-    desc: "週1〜週3の目安、費用感、無料相談で決まることをまとめています。",
+    desc: "週1回・週2回・週3回の費用目安と、契約までの流れをまとめています。",
     href: "/pricing",
   },
   {
     tag: "保護者",
     title: "保護者向け情報を見る",
-    desc: "親が確認したいサポート体制、進捗報告、面談の進め方を整理しています。",
+    desc: "月々の費用、月1回の保護者面談、成績報告、講師の変更制度まで解説します。",
     href: "/for/parents",
   },
 ];
 
 const idealForItems = [
-  "予備校の授業は受けているのに、弱点がいつまでも埋まらない",
-  "何から手をつければいいか分からず、勉強が止まってしまっている",
-  "学科だけでなく、面接・小論文・出願書類まで一貫して整えたい",
-  "合格できるかどうか、本当に正しい方向で進んでいるか不安がある",
+  "予備校に通っているのに、模試の偏差値が半年変わっていない",
+  "英数理のどこを先に仕上げるべきか、自分で判断できない",
+  "面接・小論文・出願書類をどう準備するか決まっていない",
+  "今のやり方で志望校に届くのか、正直に判断してほしい",
 ];
 
 const consultationBenefits = [
-  "今どこに詰まりがあるかを整理 — 学力・志望校・スケジュールを一緒に確認",
-  "次にやることを明確化 — 優先順位を切り分け、迷わず動ける状態にする",
-  "サポートの流れを具体化 — 授業・課題・面接・出願まで、どう支えるかを説明",
+  "現在の学力と志望校の差を、科目別に数値で整理します",
+  "この1週間・1ヶ月で優先すべき科目と問題集を具体的に提案します",
+  "授業頻度・担当講師・面接対策・出願まで、何をどう進めるか説明します",
 ];
 
 const homeSchemas = [
@@ -243,11 +244,11 @@ export default function Home() {
                 Why Medvance
               </p>
               <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                慶應医学部合格者が、あなたの受験戦略を直接設計します
+                慶應医学部に合格した現役生が、直接指導します
               </h2>
               <p className="text-sm max-w-3xl mx-auto leading-relaxed" style={{ color: "#6b7280" }}>
-                Medvanceは、学科指導から面接・小論文・出願まで、医学部受験に必要なすべてをワンチームで支えます。
-                授業をこなすだけでなく、今の課題を整理し、志望校までの優先順位を設計し、迷わず動ける状態をつくります。
+                英語・数学・理科の指導だけでなく、小論文・面接・出願書類まで、医学部入試で必要なものをすべて1人の担当講師が見ます。
+                受験本番で何が問われるかを知っている慶應医学部の現役生が、あなたの志望校と現在地に合わせた学習計画を組みます。
               </p>
             </div>
           </FadeIn>
@@ -322,7 +323,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.42)" }}>
-                  営業だけで終わらず、現状整理と優先順位の設計まで行います。
+                  入会を前提にした営業は行いません。相談のみで終わって問題ありません。
                 </p>
               </div>
             </FadeIn>
@@ -403,7 +404,7 @@ export default function Home() {
               比較検討でよく見られるページ
             </h2>
             <p className="text-center text-sm mb-12 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-              すぐに申し込まない方でも大丈夫です。まずは「信頼できるか」「料金感は合うか」「親として確認すべきことは何か」を整理できる導線を用意しています。
+              申し込み前に、塾の雰囲気・料金・指導方針を確認いただけます。保護者の方は、費用と指導体制のページからご覧ください。
             </p>
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-5 mb-8">
@@ -639,7 +640,7 @@ export default function Home() {
               現役慶應医学部生が1対1で指導する強み
             </h2>
             <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-              各生徒に最適な講師をマッチング。多様な合格背景を持つ現役慶應医学部生があなたの合格を支えます。
+              複数人の現役慶應医学部生から、性格・志望校・得意科目を踏まえて担当を選びます。事前の面談で相性確認も可能です。
             </p>
           </FadeIn>
           {/* Credential Badge */}
@@ -1161,21 +1162,43 @@ export default function Home() {
                   相談前に読んでおくと判断しやすい記事
                 </h3>
                 <div className="space-y-3">
-                  {homeFeaturedColumnArticles.slice(0, 4).map((article) => (
-                    <Link
-                      key={article.slug}
-                      href={article.href}
-                      className="block rounded-xl px-4 py-3"
-                      style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
-                    >
-                      <p className="text-xs font-bold mb-1" style={{ color: "#c9922a" }}>
-                        {article.category}
-                      </p>
-                      <p className="text-sm font-semibold leading-snug" style={{ color: "#0c1a33" }}>
-                        {article.title}
-                      </p>
-                    </Link>
-                  ))}
+                  {homeFeaturedColumnArticles.slice(0, 4).map((article) => {
+                    const thumb = getColumnThumbnail(article.slug, article.category);
+                    return (
+                      <Link
+                        key={article.slug}
+                        href={article.href}
+                        className="group flex overflow-hidden rounded-xl transition-shadow hover:shadow-sm"
+                        style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+                      >
+                        {thumb && (
+                          <div className="relative w-24 flex-shrink-0 bg-[#0c1a33]">
+                            <Image
+                              src={thumb}
+                              alt=""
+                              fill
+                              sizes="96px"
+                              className="object-cover"
+                              loading="lazy"
+                            />
+                            <div
+                              aria-hidden
+                              className="absolute inset-0"
+                              style={{ background: "linear-gradient(180deg, rgba(12,26,51,0.1) 0%, rgba(12,26,51,0.4) 100%)" }}
+                            />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0 px-4 py-3">
+                          <p className="text-xs font-bold mb-1" style={{ color: "#c9922a" }}>
+                            {article.category}
+                          </p>
+                          <p className="text-sm font-semibold leading-snug group-hover:underline" style={{ color: "#0c1a33" }}>
+                            {article.title}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </FadeIn>

@@ -1,5 +1,6 @@
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "日本大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
@@ -99,13 +100,13 @@ export default function NihonPage() {
       <UniversityPageSchemas name="日本大学医学部" slug="nihon" breadcrumbLabel="日本大医学部対策" />
           <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="nihon">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>日本大学医学部</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>日本大学医学部合格への最短ルート。</h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>現役慶應医学部生が入試傾向と対策を解説</p>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* 入試概要 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>

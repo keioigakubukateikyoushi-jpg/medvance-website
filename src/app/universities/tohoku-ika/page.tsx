@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityHero from "@/components/UniversityHero";
 export const metadata = { title: "東北医科薬科大学受験対策｜入試傾向・合格戦略 | Medvance", description: "東北医科薬科大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。2016年新設の東北の私立医学部への合格ガイド。", 
   alternates: {
     canonical: "/universities/tohoku-ika",
@@ -24,7 +25,7 @@ const faqs = [
 export default function TohokuIkaPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="tohoku-ika">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>大学別対策ガイド</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>東北医科薬科大学<br />入試対策ガイド</h1>
@@ -34,7 +35,7 @@ export default function TohokuIkaPage() {
             <span className="px-4 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.8)", border: "1px solid rgba(255,255,255,0.2)" }}>宮城県</span>
           </div>
         </div>
-      </div>
+      </UniversityHero>
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Overview</p>

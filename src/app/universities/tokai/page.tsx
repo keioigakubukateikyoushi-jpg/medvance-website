@@ -1,6 +1,7 @@
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "東海大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
@@ -168,7 +169,7 @@ export default function TokaiPage() {
       <UniversityPageSchemas name="東海大学医学部" slug="tokai" breadcrumbLabel="東海大医学部対策" />
           <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
+      <UniversityHero slug="tokai">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             東海大学医学部 — 神奈川県伊勢原市
@@ -194,7 +195,7 @@ export default function TokaiPage() {
             ))}
           </div>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* 入試概要 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>

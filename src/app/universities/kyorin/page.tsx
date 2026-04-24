@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "杏林大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
@@ -165,7 +166,7 @@ export default function KyorinPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
+      <UniversityHero slug="kyorin">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             杏林大学医学部 — 東京都三鷹市
@@ -191,7 +192,7 @@ export default function KyorinPage() {
             ))}
           </div>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* 入試概要 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>

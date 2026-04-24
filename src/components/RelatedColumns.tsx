@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getRelatedColumns } from "@/lib/relatedColumns";
+import { getColumnThumbnail } from "@/lib/columnThumbnails";
 
 type Props = {
   hub: string;
@@ -42,39 +44,64 @@ export default function RelatedColumns({
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {articles.map((article) => (
-            <Link
-              key={article.slug}
-              href={`/column/${article.slug}`}
-              className="block p-5 rounded-2xl bg-white hover:shadow-md transition-shadow"
-              style={{ border: "1px solid #e5e1d8" }}
-            >
-              <span
-                className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3"
-                style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
+          {articles.map((article) => {
+            const thumb = getColumnThumbnail(article.slug, article.category);
+            return (
+              <Link
+                key={article.slug}
+                href={`/column/${article.slug}`}
+                className="group flex flex-col overflow-hidden rounded-2xl bg-white transition-shadow hover:shadow-md"
+                style={{ border: "1px solid #e5e1d8" }}
               >
-                {article.category}
-              </span>
-              <p
-                className="text-sm font-bold leading-snug mb-2"
-                style={{ color: "#0c1a33" }}
-              >
-                {article.title}
-              </p>
-              <p
-                className="text-xs leading-relaxed mb-3"
-                style={{ color: "#6b7280" }}
-              >
-                {article.description}
-              </p>
-              <p
-                className="text-xs font-semibold"
-                style={{ color: "#c9922a" }}
-              >
-                記事を読む →
-              </p>
-            </Link>
-          ))}
+                {thumb && (
+                  <div className="relative aspect-[16/9] bg-[#0c1a33]">
+                    <Image
+                      src={thumb}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(12,26,51,0.05) 0%, rgba(12,26,51,0.45) 100%)",
+                      }}
+                    />
+                  </div>
+                )}
+                <div className="p-5">
+                  <span
+                    className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3"
+                    style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}
+                  >
+                    {article.category}
+                  </span>
+                  <p
+                    className="text-sm font-bold leading-snug mb-2 group-hover:underline"
+                    style={{ color: "#0c1a33" }}
+                  >
+                    {article.title}
+                  </p>
+                  <p
+                    className="text-xs leading-relaxed mb-3"
+                    style={{ color: "#6b7280" }}
+                  >
+                    {article.description}
+                  </p>
+                  <p
+                    className="text-xs font-semibold"
+                    style={{ color: "#c9922a" }}
+                  >
+                    記事を読む →
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
         <div className="mt-8 text-center">

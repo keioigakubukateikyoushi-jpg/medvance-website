@@ -1,6 +1,7 @@
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "近畿大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
@@ -195,7 +196,7 @@ export default function KindaiPage() {
       <UniversityPageSchemas name="近畿大学医学部" slug="kindai" breadcrumbLabel="近畿大医学部対策" />
           <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="kindai">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             大学別対策ガイド
@@ -221,7 +222,7 @@ export default function KindaiPage() {
             </span>
           </div>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* 入試概要 */}
       <div className="py-14 px-4" style={{ backgroundColor: "#f7f5f0" }}>

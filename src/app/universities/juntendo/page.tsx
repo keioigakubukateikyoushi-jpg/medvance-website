@@ -1,6 +1,7 @@
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "順天堂大学医学部に受かるには｜入試対策・合格戦略 | Medvance",
@@ -194,7 +195,7 @@ export default function JuntendoPage() {
       <UniversityPageSchemas name="順天堂大学医学部" slug="juntendo" breadcrumbLabel="順天堂大医学部対策" />
           <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="juntendo">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             順天堂大学医学部
@@ -206,7 +207,7 @@ export default function JuntendoPage() {
             一般選抜A方式の時間割と配点を踏まえて攻略する実践的戦略
           </p>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* 入試概要 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>

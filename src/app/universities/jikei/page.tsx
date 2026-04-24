@@ -1,6 +1,7 @@
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "東京慈恵会医科大学に受かるには｜入試対策・合格戦略 | Medvance",
@@ -188,7 +189,7 @@ export default function JikeiPage() {
       <UniversityPageSchemas name="東京慈恵会医科大学" slug="jikei" breadcrumbLabel="慈恵医科大対策" />
           <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="jikei">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             東京慈恵会医科大学
@@ -200,7 +201,7 @@ export default function JikeiPage() {
             英語・数学・理科2科目とMMIを見据えた、実践的な合格戦略
           </p>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* 入試概要 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -7,7 +8,18 @@ import {
   columnCategories,
   resolvedColumnTopicClusters,
 } from "@/lib/columnArticles";
+import { getColumnThumbnail } from "@/lib/columnThumbnails";
+import { getUniversityImage } from "@/lib/universityImages";
 import { buildBreadcrumbSchema, buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
+
+// 大学別対策記事は大学の写真を直接使う。その他はカテゴリ別のサムネイル。
+function getArticleThumbnail(article: { slug: string; category: string }): string | null {
+  if (article.category === "大学別対策") {
+    const img = getUniversityImage(article.slug);
+    return img?.src ?? null;
+  }
+  return getColumnThumbnail(article.slug, article.category);
+}
 
 // 大学別対策ページ（/universities/配下）
 const universityArticles: { slug: string; href: string; category: string; title: string; description: string; popular: boolean }[] = [
@@ -145,24 +157,46 @@ export default function ColumnIndexPage() {
           </div>
           <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>よく読まれている記事</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-            {popular.map((a) => (
-              <Link
-                key={a.slug}
-                href={a.href}
-                className="flex items-start gap-3 p-4 rounded-xl bg-white hover:shadow-md transition-shadow group"
-                style={{ border: "1px solid #e5e1d8" }}
-              >
-                <span
-                  className="flex-shrink-0 text-xs font-bold px-2 py-0.5 rounded mt-0.5"
-                  style={{ backgroundColor: categoryColors[a.category] ? `${categoryColors[a.category]}22` : "rgba(201,146,42,0.1)", color: categoryColors[a.category] ?? "#c9922a" }}
+            {popular.map((a) => {
+              const thumb = getArticleThumbnail(a);
+              return (
+                <Link
+                  key={a.slug}
+                  href={a.href}
+                  className="group flex overflow-hidden rounded-xl bg-white transition-shadow hover:shadow-md"
+                  style={{ border: "1px solid #e5e1d8" }}
                 >
-                  {a.category}
-                </span>
-                <p className="text-sm font-semibold leading-snug group-hover:underline" style={{ color: "#0c1a33" }}>
-                  {a.title}
-                </p>
-              </Link>
-            ))}
+                  {thumb && (
+                    <div className="relative w-20 flex-shrink-0 bg-[#0c1a33]">
+                      <Image
+                        src={thumb}
+                        alt=""
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                        loading="lazy"
+                      />
+                      <div
+                        aria-hidden
+                        className="absolute inset-0"
+                        style={{ background: "linear-gradient(180deg, rgba(12,26,51,0.1) 0%, rgba(12,26,51,0.4) 100%)" }}
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0 p-3">
+                    <span
+                      className="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded mb-1.5"
+                      style={{ backgroundColor: categoryColors[a.category] ? `${categoryColors[a.category]}22` : "rgba(201,146,42,0.1)", color: categoryColors[a.category] ?? "#c9922a" }}
+                    >
+                      {a.category}
+                    </span>
+                    <p className="text-xs font-semibold leading-snug line-clamp-3 group-hover:underline" style={{ color: "#0c1a33" }}>
+                      {a.title}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -251,49 +285,62 @@ export default function ColumnIndexPage() {
 
           {/* Grid */}
           <div className="grid md:grid-cols-2 gap-5">
-            {filtered.map((article, i) => (
-              <Link
-                key={`${article.category}-${article.slug}`}
-                href={article.href}
-                className="flex gap-5 p-6 rounded-2xl bg-white hover:shadow-md transition-shadow group"
-                style={{ border: "1px solid #e5e1d8" }}
-              >
-                {/* Index number */}
-                <div
-                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-                  style={{ backgroundColor: "#f7f5f0", color: "#0c1a33" }}
+            {filtered.map((article) => {
+              const thumb = getArticleThumbnail(article);
+              return (
+                <Link
+                  key={`${article.category}-${article.slug}`}
+                  href={article.href}
+                  className="group flex overflow-hidden rounded-2xl bg-white transition-shadow hover:shadow-md"
+                  style={{ border: "1px solid #e5e1d8" }}
                 >
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span
-                      className="text-xs font-bold px-2.5 py-0.5 rounded-full"
-                      style={{
-                        backgroundColor: categoryColors[article.category] ? `${categoryColors[article.category]}18` : "rgba(201,146,42,0.1)",
-                        color: categoryColors[article.category] ?? "#c9922a",
-                      }}
-                    >
-                      {article.category}
-                    </span>
-                    {article.popular && (
-                      <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: "rgba(201,146,42,0.12)", color: "#c9922a" }}>
-                        人気
+                  {thumb && (
+                    <div className="relative w-32 sm:w-40 flex-shrink-0 bg-[#0c1a33]">
+                      <Image
+                        src={thumb}
+                        alt=""
+                        fill
+                        sizes="(max-width: 640px) 128px, 160px"
+                        className="object-cover"
+                        loading="lazy"
+                      />
+                      <div
+                        aria-hidden
+                        className="absolute inset-0"
+                        style={{ background: "linear-gradient(180deg, rgba(12,26,51,0.15) 0%, rgba(12,26,51,0.35) 100%)" }}
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0 p-5">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span
+                        className="text-xs font-bold px-2.5 py-0.5 rounded-full"
+                        style={{
+                          backgroundColor: categoryColors[article.category] ? `${categoryColors[article.category]}18` : "rgba(201,146,42,0.1)",
+                          color: categoryColors[article.category] ?? "#c9922a",
+                        }}
+                      >
+                        {article.category}
                       </span>
-                    )}
+                      {article.popular && (
+                        <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: "rgba(201,146,42,0.12)", color: "#c9922a" }}>
+                          人気
+                        </span>
+                      )}
+                    </div>
+                    <h2 className="font-bold text-sm leading-snug mb-2 group-hover:underline" style={{ color: "#0c1a33" }}>
+                      {article.title}
+                    </h2>
+                    <p className="text-xs leading-relaxed line-clamp-2" style={{ color: "#6b7280" }}>
+                      {article.description}
+                    </p>
+                    <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
+                      記事を読む →
+                    </p>
                   </div>
-                  <h2 className="font-bold text-sm leading-snug mb-2 group-hover:underline" style={{ color: "#0c1a33" }}>
-                    {article.title}
-                  </h2>
-                  <p className="text-xs leading-relaxed line-clamp-2" style={{ color: "#6b7280" }}>
-                    {article.description}
-                  </p>
-                  <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
-                    記事を読む →
-                  </p>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

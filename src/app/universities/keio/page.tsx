@@ -1,6 +1,7 @@
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import Link from "next/link";
 import MedvanceBanner from "@/components/MedvanceBanner";
+import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
   title: "慶應医学部に受かるには｜入試対策・合格戦略を現役生が解説 | Medvance",
@@ -173,7 +174,7 @@ export default function KeioPage() {
       <UniversityPageSchemas name="慶應義塾大学医学部" slug="keio" breadcrumbLabel="慶應義塾大学医学部対策" />
           <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug="keio">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
             慶應義塾大学医学部
@@ -185,7 +186,7 @@ export default function KeioPage() {
             現役慶應医学部生だからこそ語れる、リアルな入試対策
           </p>
         </div>
-      </div>
+      </UniversityHero>
 
       {/* 入試概要 */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
