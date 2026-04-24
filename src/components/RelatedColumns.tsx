@@ -24,12 +24,7 @@ export default function RelatedColumns({
       aria-label="関連コラム"
     >
       <div className="max-w-5xl mx-auto">
-        <p
-          className="text-xs font-semibold tracking-widest uppercase text-center mb-3"
-          style={{ color: "#c9922a" }}
-        >
-          Related Columns
-        </p>
+        
         <h2
           className="text-2xl font-bold text-center mb-3"
           style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import UniversityHero from "@/components/UniversityHero";
 import {
   getNationalUniversityBySlug,
   nationalUniversityArticles,
@@ -318,19 +319,19 @@ export default async function NationalUniversityArticlePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
+      <UniversityHero slug={entry.slug}>
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            National University Guide
+            国公立医学部ガイド
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             {entry.name}の受験対策ガイド
           </h1>
-          <p className="text-base max-w-3xl mx-auto" style={{ color: "rgba(255,255,255,0.7)" }}>
+          <p className="text-base max-w-3xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
             {entry.summary}
           </p>
         </div>
-      </div>
+      </UniversityHero>
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-4">

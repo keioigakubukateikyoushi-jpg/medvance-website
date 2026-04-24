@@ -240,9 +240,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="text-center mb-10">
-              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                Why Medvance
-              </p>
+              
               <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 慶應医学部に合格した現役生が、直接指導します
               </h2>
@@ -254,10 +252,8 @@ export default function Home() {
           </FadeIn>
           <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
             <FadeIn>
-              <div className="rounded-[28px] bg-white p-7 md:p-8 h-full" style={{ border: "1px solid #e5e1d8" }}>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                  Ideal For
-                </p>
+              <div className="rounded-2xl bg-white p-7 md:p-8 h-full" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>こんな受験生へ</p>
                 <h3 className="text-xl font-bold mb-4" style={{ color: "#0c1a33" }}>
                   こんな受験生によく選ばれています
                 </h3>
@@ -281,12 +277,10 @@ export default function Home() {
 
             <FadeIn delay={0.08}>
               <div
-                className="rounded-[28px] p-7 md:p-8 h-full"
-                style={{ background: "linear-gradient(135deg, #0c1a33 0%, #17315f 100%)", border: "1px solid rgba(201,146,42,0.24)" }}
+                className="rounded-2xl p-7 md:p-8 h-full"
+                style={{ backgroundColor: "#0c1a33", border: "1px solid rgba(201,146,42,0.18)" }}
               >
-                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                  Free Consultation
-                </p>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談</p>
                 <h3 className="text-xl font-bold text-white mb-4">
                   無料相談で分かること
                 </h3>
@@ -335,9 +329,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="text-center mb-10">
-              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                Popular Topics
-              </p>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>よくある検索</p>
               <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>
                 よく検索される悩みから探す
               </h2>
@@ -372,9 +364,7 @@ export default function Home() {
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Why Medvance
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
               医学部受験専門塾Medvanceが選ばれる3つの理由
             </h2>
@@ -397,9 +387,7 @@ export default function Home() {
       <section style={{ backgroundColor: "#f7f5f0", borderTop: "1px solid #e5e1d8", borderBottom: "1px solid #e5e1d8" }} className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Decision Support
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
               比較検討でよく見られるページ
             </h2>
@@ -456,9 +444,7 @@ export default function Home() {
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Comparison
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
               医学部塾・予備校・家庭教師の違いを比較
             </h2>
@@ -633,9 +619,7 @@ export default function Home() {
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Tutors
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
               現役慶應医学部生が1対1で指導する強み
             </h2>
@@ -743,9 +727,7 @@ export default function Home() {
       <section style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Features
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-14" style={{ fontFamily: "var(--font-noto-serif)" }}>
               Medvanceの6つの特徴
             </h2>
@@ -778,9 +760,7 @@ export default function Home() {
       <section className="bg-white py-20 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Coaching & Support
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
               医学部受験の個別サポート体制
             </h2>
@@ -846,7 +826,7 @@ export default function Home() {
           <FadeIn delay={0.15}>
             <div
               className="mt-6 flex flex-col sm:flex-row items-center gap-5 rounded-2xl px-7 py-6"
-              style={{ background: "linear-gradient(135deg, #0c1a33 0%, #17315f 100%)", border: "1px solid rgba(201,146,42,0.3)" }}
+              style={{ backgroundColor: "#0c1a33", border: "1px solid rgba(201,146,42,0.22)" }}
             >
               <div
                 className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
@@ -857,7 +837,7 @@ export default function Home() {
                 </svg>
               </div>
               <div className="flex-1 text-center sm:text-left">
-                <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#c9922a" }}>24h Support</p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#c9922a" }}>24時間サポート</p>
                 <p className="font-bold text-white text-base mb-1">現役医学生が24時間質問に対応</p>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
                   授業外でも疑問が生じたらすぐに質問できます。わからないことをその日のうちに解消し、翌日の学習に持ち越さない仕組みです。
@@ -872,9 +852,7 @@ export default function Home() {
       <section className="bg-white py-24 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Nationwide Online
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
               全国どこからでも受講できます
             </h2>
@@ -939,9 +917,7 @@ export default function Home() {
       <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Flow
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
               お申し込みから指導開始まで
             </h2>
@@ -1052,7 +1028,7 @@ export default function Home() {
       <section className="bg-white py-16 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Pricing</p>
+            
             <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>料金の目安</h2>
             <p className="text-sm mb-8 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
               授業（1コマ80分 15,000円）＋コーチング月20,000円のシンプルな構成です。入塾金は20,000円（初回のみ）。
@@ -1142,9 +1118,7 @@ export default function Home() {
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-3" style={{ color: "#c9922a" }}>
-              Column
-            </p>
+            
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
               医学部受験コラム
             </h2>
@@ -1279,12 +1253,10 @@ export default function Home() {
           <FadeIn delay={0.15}>
             <div
               className="mt-8 grid lg:grid-cols-[1.3fr_0.7fr] gap-6 rounded-2xl p-6 md:p-8"
-              style={{ background: "linear-gradient(135deg, #0c1a33 0%, #17315f 100%)", border: "1px solid rgba(201,146,42,0.25)" }}
+              style={{ backgroundColor: "#0c1a33", border: "1px solid rgba(201,146,42,0.18)" }}
             >
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                  Recommended
-                </p>
+                
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
                   塾・予備校を比較検討している方へ
                 </h3>
@@ -1310,9 +1282,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="rounded-2xl p-5 md:p-6 bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
-                  Site Search
-                </p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>記事を検索</p>
                 <h4 className="text-lg font-bold mb-2" style={{ color: "#0c1a33" }}>
                   大学名やテーマから探す
                 </h4>
@@ -1426,7 +1396,7 @@ export default function Home() {
                 <div
                   className="rounded-lg overflow-hidden shadow-2xl"
                   style={{
-                    background: "linear-gradient(135deg, #0c1a33 0%, #142b57 100%)",
+                    backgroundColor: "#0c1a33",
                     transform: "rotateY(-6deg) rotateX(2deg)",
                     transformStyle: "preserve-3d",
                   }}
@@ -1463,7 +1433,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2">
                 {/* Left */}
                 <div className="p-8 md:p-10" style={{ backgroundColor: "#0c1a33" }}>
-                  <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Tutor Recruitment</p>
+                  <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>講師募集</p>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-snug" style={{ fontFamily: "var(--font-noto-serif)" }}>
                     慶應医学部生の方、<br />講師として働きませんか？
                   </h2>
@@ -1489,7 +1459,7 @@ export default function Home() {
                 </div>
                 {/* Right */}
                 <div className="p-8 md:p-10 bg-white">
-                  <p className="text-xs font-semibold tracking-widest uppercase mb-5" style={{ color: "#9ca3af" }}>Highlights</p>
+                  
                   <div className="space-y-4">
                     {[
                       { icon: "📈", title: "実績に応じて昇給", desc: "継続年数・生徒評価・合格実績で時給アップ" },
@@ -1517,9 +1487,7 @@ export default function Home() {
       <section style={{ backgroundColor: "#0c1a33" }} className="py-28 px-4">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-4" style={{ color: "#c9922a" }}>
-              Free Consultation
-            </p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-4" style={{ color: "#c9922a" }}>無料相談</p>
             <h2 className="text-2xl md:text-4xl font-bold text-white text-center mb-4 leading-snug" style={{ fontFamily: "var(--font-noto-serif)" }}>
               まず、話してみてください。
             </h2>

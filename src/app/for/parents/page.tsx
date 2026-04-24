@@ -132,7 +132,7 @@ export default function ParentsPage() {
 
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             まずは無料相談から
           </h2>

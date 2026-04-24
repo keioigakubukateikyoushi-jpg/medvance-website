@@ -106,9 +106,7 @@ export default function ColumnIndexPage() {
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            Column
-          </p>
+          
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             医学部受験コラム
           </h1>
@@ -127,9 +125,7 @@ export default function ColumnIndexPage() {
           <div className="mb-8 rounded-2xl bg-white p-5 md:p-6" style={{ border: "1px solid #e5e1d8" }}>
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
-                  Search
-                </p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>検索</p>
                 <h2 className="text-lg font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                   記事をキーワードで検索
                 </h2>
@@ -203,9 +199,7 @@ export default function ColumnIndexPage() {
 
       <div className="py-12 px-4 bg-white" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>
-            Search Intent Hubs
-          </p>
+          <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>よくあるテーマから探す</p>
           <div className="grid md:grid-cols-3 gap-5">
             {resolvedColumnTopicClusters.map((cluster) => (
               <div
@@ -372,9 +366,7 @@ export default function ColumnIndexPage() {
       {/* CTA */}
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto rounded-2xl p-8 text-center" style={{ backgroundColor: "#0c1a33" }}>
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            Free Consultation
-          </p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談</p>
           <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
             疑問点は無料相談でお気軽にどうぞ
           </h2>

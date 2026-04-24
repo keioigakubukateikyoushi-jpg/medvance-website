@@ -75,9 +75,7 @@ export default function ContactPage() {
       {/* ── Hero ─────────────────────────────── */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            Free Consultation
-          </p>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             まず、話してみてください。
           </h1>
@@ -454,7 +452,7 @@ export default function ContactPage() {
                   <div
                     className="rounded-lg overflow-hidden shadow-xl"
                     style={{
-                      background: "linear-gradient(135deg, #0c1a33 0%, #142b57 100%)",
+                      backgroundColor: "#0c1a33",
                       border: "1px solid rgba(201,146,42,0.3)",
                       transform: "rotateY(-4deg)",
                       transformStyle: "preserve-3d",

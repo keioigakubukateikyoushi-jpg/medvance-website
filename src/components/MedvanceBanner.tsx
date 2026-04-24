@@ -7,7 +7,7 @@ export default function MedvanceBanner() {
         <div
           className="relative overflow-hidden rounded-3xl px-8 py-10 md:px-14 md:py-12"
           style={{
-            background: "linear-gradient(135deg, #0c1a33 0%, #142b57 60%, #0c1a33 100%)",
+            backgroundColor: "#0c1a33",
             border: "1px solid rgba(201,146,42,0.3)",
           }}
         >

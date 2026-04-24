@@ -214,11 +214,6 @@ export default function HeroAnimated() {
         </div>
       </div>
 
-      {/* Scroll indicator — desktop */}
-      <div className="hidden md:flex flex-col items-center gap-2 absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none">
-        <span className="text-xs tracking-widest" style={{ color: "rgba(255,255,255,0.25)" }}>scroll</span>
-        <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.25), transparent)" }} />
-      </div>
     </section>
   );
 }

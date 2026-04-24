@@ -67,7 +67,7 @@ export default function LinePage() {
       <section
         className="py-20 px-4"
         style={{
-          background: "linear-gradient(135deg, #0c1a33 0%, #142b57 100%)",
+          backgroundColor: "#0c1a33",
         }}
       >
         <div className="max-w-3xl mx-auto text-center">
@@ -357,7 +357,7 @@ export default function LinePage() {
       <section
         className="py-16 px-4"
         style={{
-          background: "linear-gradient(135deg, #0c1a33 0%, #142b57 100%)",
+          backgroundColor: "#0c1a33",
         }}
       >
         <div className="max-w-2xl mx-auto text-center">
