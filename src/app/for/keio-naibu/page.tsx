@@ -1,5 +1,6 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
+import RelatedColumns from "@/components/RelatedColumns";
 
 export const metadata = {
   title: "慶應内部進学で医学部へ｜学校成績を上げる完全1対1指導 | Medvance",

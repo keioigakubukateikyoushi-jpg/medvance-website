@@ -1,6 +1,7 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import { forPageMeta } from "@/lib/forPageMeta";
 import Link from "next/link";
+import RelatedColumns from "@/components/RelatedColumns";
 import type { Metadata } from "next";
 
 

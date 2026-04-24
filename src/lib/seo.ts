@@ -2,7 +2,7 @@ export const siteUrl = "https://medvance-edu.com";
 
 // Published date for all content (static for now, used in Article schema)
 export const SITE_PUBLISHED = "2024-04-01";
-export const SITE_MODIFIED = "2026-04-14";
+export const SITE_MODIFIED = "2026-04-24";
 
 type SchemaListItem = {
   name: string;
@@ -62,7 +62,7 @@ export function buildOrganizationSchema() {
       width: 512,
       height: 512,
     },
-    image: `${siteUrl}/og-image.png`,
+    image: `${siteUrl}/og-image-v2.png`,
     foundingDate: "2024-04-01",
     slogan: "現役慶應医学部生による完全1対1指導",
     contactPoint: {
@@ -196,7 +196,7 @@ export function buildArticleSchema({
     },
     image: {
       "@type": "ImageObject",
-      url: `${siteUrl}/og-image.png`,
+      url: `${siteUrl}/og-image-v2.png`,
       width: 1200,
       height: 630,
     },

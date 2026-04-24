@@ -1,5 +1,6 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
+import RelatedColumns from "@/components/RelatedColumns";
 
 export const metadata = {
   title: "再受験生の医学部合格対策｜社会人・大学生からの医学部挑戦 | Medvance",

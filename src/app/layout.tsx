@@ -137,10 +137,10 @@ export default function RootLayout({
         <FloatingCTA />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VNNSC04YT0"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="ga4-init" strategy="lazyOnload">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VNNSC04YT0');`}
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-VNNSC04YT0',{send_page_view:true});`}
         </Script>
       </body>
     </html>
