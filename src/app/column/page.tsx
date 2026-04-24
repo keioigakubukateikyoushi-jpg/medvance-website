@@ -152,7 +152,7 @@ export default function ColumnIndexPage() {
             </div>
           </div>
           <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>よく読まれている記事</p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid sm:grid-cols-2 gap-3">
             {popular.map((a) => {
               const thumb = getArticleThumbnail(a);
               return (
@@ -163,12 +163,12 @@ export default function ColumnIndexPage() {
                   style={{ border: "1px solid #e5e1d8" }}
                 >
                   {thumb && (
-                    <div className="relative w-20 flex-shrink-0 bg-[#0c1a33]">
+                    <div className="relative w-32 sm:w-36 flex-shrink-0 bg-[#0c1a33]">
                       <Image
                         src={thumb}
                         alt=""
                         fill
-                        sizes="80px"
+                        sizes="144px"
                         className="object-cover"
                         loading="lazy"
                       />
@@ -179,14 +179,14 @@ export default function ColumnIndexPage() {
                       />
                     </div>
                   )}
-                  <div className="flex-1 min-w-0 p-3">
+                  <div className="flex-1 min-w-0 p-4">
                     <span
-                      className="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded mb-1.5"
+                      className="inline-block text-xs font-bold px-2 py-0.5 rounded mb-2"
                       style={{ backgroundColor: categoryColors[a.category] ? `${categoryColors[a.category]}22` : "rgba(201,146,42,0.1)", color: categoryColors[a.category] ?? "#c9922a" }}
                     >
                       {a.category}
                     </span>
-                    <p className="text-xs font-semibold leading-snug line-clamp-3 group-hover:underline" style={{ color: "#0c1a33" }}>
+                    <p className="text-sm font-semibold leading-snug line-clamp-3 group-hover:underline" style={{ color: "#0c1a33" }}>
                       {a.title}
                     </p>
                   </div>
