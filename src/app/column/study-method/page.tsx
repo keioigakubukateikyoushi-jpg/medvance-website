@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import { buildHowToSchema } from "@/lib/seo";
 
 const faqItems = [
   {
@@ -88,12 +89,22 @@ const mistakes = [
   },
 ];
 
+const howToSchema = buildHowToSchema({
+  name: "医学部受験のための科目別 勉強法",
+  description: "英語・数学・物理・化学・生物の5科目について、医学部受験に向けた本質的な学習アプローチを科目ごとに整理。",
+  path: "/column/study-method",
+  steps: subjectMethods.map((s) => ({
+    name: `${s.name}の勉強法`,
+    text: s.body,
+  })),
+});
+
 export default function StudyMethodPage() {
   return (
     <div className="min-h-screen bg-white">
       <ColumnArticleSchemas slug="study-method" articleOnly />
       <script type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, howToSchema]) }}
       />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">

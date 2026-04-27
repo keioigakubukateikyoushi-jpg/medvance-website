@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import { buildHowToSchema } from "@/lib/seo";
 
 const faqItems = [
   {
@@ -92,12 +93,22 @@ const ngActions = [
   },
 ];
 
+const howToSchema = buildHowToSchema({
+  name: "医学部受験ロードマップ｜学年別の進め方",
+  description: "高1・高2・高3・浪人/再受験それぞれの段階で、医学部合格に向けてやるべきことを学年別に整理した受験ロードマップ。",
+  path: "/column/roadmap",
+  steps: roadmap.map((r) => ({
+    name: `${r.grade}｜${r.focus}`,
+    text: `${r.body} 実践: ${r.actions.join("、")}`,
+  })),
+});
+
 export default function RoadmapPage() {
   return (
     <div className="min-h-screen bg-white">
       <ColumnArticleSchemas slug="roadmap" articleOnly />
       <script type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, howToSchema]) }}
       />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
