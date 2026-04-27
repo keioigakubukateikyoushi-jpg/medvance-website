@@ -284,6 +284,8 @@ export function buildColumnPageSchemas({
   category,
   keywords,
   faqItems,
+  datePublished,
+  dateModified,
 }: {
   title: string;
   description: string;
@@ -291,6 +293,8 @@ export function buildColumnPageSchemas({
   category: string;
   keywords?: string[];
   faqItems?: FaqSchemaInput[];
+  datePublished?: string;
+  dateModified?: string;
 }) {
   const path = `/column/${slug}`;
   const schemas: object[] = [
@@ -300,6 +304,8 @@ export function buildColumnPageSchemas({
       path,
       articleSection: category,
       keywords,
+      datePublished,
+      dateModified,
     }),
     buildBreadcrumbSchema([
       { name: "ホーム", url: "/" },

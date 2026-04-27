@@ -8,6 +8,7 @@ import {
   buildBreadcrumbSchema,
   buildFaqSchema,
 } from "@/lib/seo";
+import { getColumnMtimeISO } from "@/lib/gitMtime";
 
 function getSectionBackground(background?: "white" | "sand") {
   return background === "sand" ? "#f7f5f0" : "#ffffff";
@@ -33,13 +34,20 @@ export default function LongformColumnPage({
 }: {
   article: LongformColumnArticle;
 }) {
+  // 記事データに記録された dateModified より、ファイルの git 最終更新日のほうが新しければそちらを採用
+  const gitModified = getColumnMtimeISO(article.slug);
+  const dateModified =
+    gitModified && new Date(gitModified) > new Date(article.dateModified)
+      ? gitModified
+      : article.dateModified;
+
   const schemas = [
     buildArticleSchema({
       headline: article.title,
       description: article.description,
       path: `/column/${article.slug}`,
       datePublished: article.datePublished,
-      dateModified: article.dateModified,
+      dateModified,
       articleSection: article.category,
       keywords: article.keywords,
     }),

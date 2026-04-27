@@ -2,6 +2,29 @@ import { buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema, siteUrl } fr
 
 type FaqItem = { q: string; a: string };
 
+type AudienceSpec = {
+  educationalRole: string;
+  description: string;
+  /** 学齢の最小値・最大値 (years old) — 任意 */
+  suggestedMinAge?: number;
+  suggestedMaxAge?: number;
+};
+
+const audienceBySlug: Record<string, AudienceSpec> = {
+  chugaku: { educationalRole: "middle school student", description: "中学生（医学部受験を視野に入れている）", suggestedMinAge: 12, suggestedMaxAge: 15 },
+  ko1: { educationalRole: "high school student (year 1)", description: "高校1年生", suggestedMinAge: 15, suggestedMaxAge: 16 },
+  ko2: { educationalRole: "high school student (year 2)", description: "高校2年生", suggestedMinAge: 16, suggestedMaxAge: 17 },
+  ko3: { educationalRole: "high school student (year 3)", description: "高校3年生（現役医学部受験生）", suggestedMinAge: 17, suggestedMaxAge: 19 },
+  ronin: { educationalRole: "post-secondary student (gap-year applicant)", description: "浪人生（医学部受験経験者）", suggestedMinAge: 18, suggestedMaxAge: 25 },
+  saijuken: { educationalRole: "adult re-applicant", description: "大学生・社会人の医学部再受験者", suggestedMinAge: 19 },
+  parents: { educationalRole: "parent of high school student", description: "受験生の保護者" },
+  "keio-naibu": { educationalRole: "Keio affiliated school student", description: "慶應義塾内部進学希望者", suggestedMinAge: 15, suggestedMaxAge: 18 },
+  "keio-fuzoku": { educationalRole: "Keio affiliated school student", description: "慶應附属校生（中等部・普通部・高校・SFC含む）", suggestedMinAge: 12, suggestedMaxAge: 18 },
+  "seiseki-up": { educationalRole: "high school student (grade improvement)", description: "学校成績の向上を目指す高校生", suggestedMinAge: 15, suggestedMaxAge: 18 },
+  nangandai: { educationalRole: "competitive university applicant", description: "東大・京大・早慶などの難関大学志望者", suggestedMinAge: 16, suggestedMaxAge: 19 },
+  "suisen-ao": { educationalRole: "recommendation / AO applicant", description: "総合型選抜・推薦入試出願予定者", suggestedMinAge: 16, suggestedMaxAge: 19 },
+};
+
 export const forPageMeta: Record<
   string,
   { name: string; description: string; serviceType: string; label: string; faq?: FaqItem[] }
@@ -144,8 +167,24 @@ export function buildForPageSchemas(slug: string): object[] {
   const meta = forPageMeta[slug];
   if (!meta) return [];
   const path = `/for/${slug}`;
+
+  const baseService = buildServiceSchema(meta.name, meta.description, path, meta.serviceType);
+  const aud = audienceBySlug[slug];
+  const serviceWithAudience = aud
+    ? {
+        ...baseService,
+        audience: {
+          "@type": "EducationalAudience",
+          educationalRole: aud.educationalRole,
+          description: aud.description,
+          ...(aud.suggestedMinAge !== undefined ? { suggestedMinAge: aud.suggestedMinAge } : {}),
+          ...(aud.suggestedMaxAge !== undefined ? { suggestedMaxAge: aud.suggestedMaxAge } : {}),
+        },
+      }
+    : baseService;
+
   const schemas: object[] = [
-    buildServiceSchema(meta.name, meta.description, path, meta.serviceType),
+    serviceWithAudience,
     buildBreadcrumbSchema([
       { name: "ホーム", url: "/" },
       { name: meta.label, url: path },

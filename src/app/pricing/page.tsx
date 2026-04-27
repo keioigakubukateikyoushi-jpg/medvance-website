@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buildBreadcrumbSchema, buildFaqSchema, siteUrl } from "@/lib/seo";
 
 export const metadata = {
   title: "医学部受験専門塾Medvanceの料金｜週1〜週5のプラン目安と始め方",
@@ -62,9 +63,68 @@ const pricingFaqs = [
   },
 ];
 
+const pricingUrl = `${siteUrl}/pricing`;
+
+const offerCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Medvance 月額プラン一覧",
+  url: pricingUrl,
+  itemListElement: plans.map((p, i) => ({
+    "@type": "Offer",
+    "@id": `${pricingUrl}#plan-${p.lessons}`,
+    position: i + 1,
+    name: `${p.weekly}プラン（月${p.lessons}回）`,
+    description: `授業${p.lessons}回／月（1回あたり ¥${p.lessonFee / p.lessons}）と学習コーチング ¥${p.coaching}／月のセット。${p.discount > 0 ? `セット割 ¥${p.discount} 適用後の月額。` : ""}`,
+    price: p.total,
+    priceCurrency: "JPY",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: p.total,
+      priceCurrency: "JPY",
+      unitText: "MONTH",
+      referenceQuantity: {
+        "@type": "QuantitativeValue",
+        value: p.lessons,
+        unitText: "授業回",
+      },
+    },
+    availability: "https://schema.org/InStock",
+    category: "Subscription",
+    seller: {
+      "@type": "EducationalOrganization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Medvance",
+    },
+    itemOffered: {
+      "@type": "Service",
+      name: "完全1対1の医学部受験個別指導",
+      serviceType: "医学部受験個別指導",
+      provider: {
+        "@type": "EducationalOrganization",
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+    url: `${pricingUrl}#plan-${p.lessons}`,
+  })),
+};
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: "ホーム", url: "/" },
+  { name: "コース・料金", url: "/pricing" },
+]);
+
+const pricingFaqSchema = buildFaqSchema(pricingFaqs);
+
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([offerCatalogSchema, breadcrumbSchema, pricingFaqSchema]),
+        }}
+      />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           

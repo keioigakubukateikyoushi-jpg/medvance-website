@@ -1,30 +1,13 @@
 import { MetadataRoute } from "next";
-import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { columnArticles } from "@/lib/columnArticles";
 import { nationalUniversityArticles } from "./universities/national/data";
 import { notices } from "@/lib/notices";
+import { getGitMtimeDate } from "@/lib/gitMtime";
 
 const BASE = "https://medvance-edu.com";
 
-// 実際のコンテンツ更新日を使用（デプロイ日ではなく）
-const D = (s: string) => new Date(s);
-
-// ファイルの git 最終更新日を取得。失敗時は fallback。
-const REPO_ROOT = process.cwd();
-function gitMtime(relPath: string, fallback: string): Date {
-  try {
-    const out = execFileSync(
-      "git",
-      ["log", "-1", "--format=%cI", "--", relPath],
-      { cwd: REPO_ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
-    ).trim();
-    if (out) return new Date(out);
-  } catch {
-    // git 不在 / shallow clone などは fallback
-  }
-  return D(fallback);
-}
+const gitMtime = getGitMtimeDate;
 
 const columnMtime = (slug: string) =>
   gitMtime(path.join("src", "app", "column", slug, "page.tsx"), "2026-03-28");
