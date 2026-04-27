@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buildBreadcrumbSchema, buildFaqSchema, buildServiceSchema } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildFaqSchema, buildServiceSchema, siteUrl } from "@/lib/seo";
 
 export const metadata = {
   title: "AI模試分析サービス｜偏差値を入力するだけで学習ルートを自動生成 | Medvance",
@@ -99,10 +99,42 @@ const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "AI模試分析", url: "/services/moshi" },
 ]);
 
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "AI模試分析・個別最適学習ルート設計",
+  description: "偏差値データから科目別バンド・弱点・参考書・学習タイムラインを即時生成し、現役慶應医学部生がさらに踏み込んだ分析でフォローアップする模試活用プログラム。",
+  url: `${siteUrl}/services/moshi`,
+  provider: {
+    "@type": "EducationalOrganization",
+    "@id": `${siteUrl}/#organization`,
+    name: "Medvance",
+    url: siteUrl,
+  },
+  inLanguage: "ja-JP",
+  educationalLevel: "high school",
+  teaches: "模試分析・学習ルート設計",
+  courseMode: "online",
+  hasCourseInstance: {
+    "@type": "CourseInstance",
+    courseMode: "online",
+    inLanguage: "ja-JP",
+    courseWorkload: "PT30M",
+  },
+  offers: {
+    "@type": "Offer",
+    url: `${siteUrl}/services/moshi/tool`,
+    price: 0,
+    priceCurrency: "JPY",
+    availability: "https://schema.org/InStock",
+    category: "Free",
+  },
+};
+
 export default function MoshiPage() {
   return (
     <div className="min-h-screen bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, serviceSchema, breadcrumbSchema]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, serviceSchema, courseSchema, breadcrumbSchema]) }} />
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">

@@ -1,4 +1,4 @@
-import { buildBreadcrumbSchema, buildFaqSchema, buildServiceSchema } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildFaqSchema, buildServiceSchema, siteUrl } from "@/lib/seo";
 
 type FaqItem = { q: string; a: string };
 
@@ -18,8 +18,40 @@ export default function ServicePageSchemas({
   faq?: FaqItem[];
 }) {
   const path = `/services/${slug}`;
+  const url = `${siteUrl}${path}`;
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name,
+    description,
+    url,
+    provider: {
+      "@type": "EducationalOrganization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Medvance",
+      url: siteUrl,
+    },
+    inLanguage: "ja-JP",
+    educationalLevel: "high school",
+    teaches: serviceType,
+    courseMode: ["online", "onsite"],
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "online",
+      inLanguage: "ja-JP",
+      courseWorkload: "PT1H",
+    },
+    offers: {
+      "@type": "Offer",
+      url: `${siteUrl}/contact`,
+      availability: "https://schema.org/InStock",
+      priceCurrency: "JPY",
+      category: "Paid",
+    },
+  };
   const schemas: object[] = [
     buildServiceSchema(name, description, path, serviceType),
+    courseSchema,
     buildBreadcrumbSchema([
       { name: "ホーム", url: "/" },
       { name: "サービス", url: "/services" },

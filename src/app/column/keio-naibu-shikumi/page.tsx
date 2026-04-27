@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
@@ -73,6 +74,7 @@ export default function KeioNaibuShikumiPage() {
         category="受験情報"
         keywords={["慶應 内部進学 仕組み", "慶應義塾 内部進学 評定", "慶應附属校 医学部 内部進学"]}
       />
+      <ColumnArticleSchemas slug="keio-naibu-shikumi" articleOnly />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 const faqItems = [
   {
@@ -96,6 +97,7 @@ export const metadata = {
 export default function RoninKateikyoushiPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ColumnArticleSchemas slug="ronin-kateikyoushi" articleOnly />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

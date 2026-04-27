@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 import { buildHowToSchema } from "@/lib/seo";
 
 const faqItems = [
@@ -152,8 +153,8 @@ const mistakes = [
 export default function JukuErabiPage() {
   return (
     <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
+      <ColumnArticleSchemas slug="juku-erabi" articleOnly />
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script

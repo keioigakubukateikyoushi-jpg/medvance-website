@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 export const metadata = {
   title: "社会人・大学生からの医学部再受験ガイド｜Medvance",
@@ -89,8 +90,8 @@ const faqSchema = {
 export default function SaijukenPage() {
   return (
     <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
+      <ColumnArticleSchemas slug="saijuken" articleOnly />
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 

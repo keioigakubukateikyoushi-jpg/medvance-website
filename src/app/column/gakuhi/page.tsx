@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 const faqItems = [
   {
@@ -130,8 +131,8 @@ const otherCosts = [
 export default function GakuhiPage() {
   return (
     <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
+      <ColumnArticleSchemas slug="gakuhi" articleOnly />
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

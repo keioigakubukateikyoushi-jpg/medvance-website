@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 export const metadata = {
   title: "医学部合格に必要な偏差値は？現実的な目標設定｜Medvance",
@@ -71,8 +72,8 @@ const faqSchema = {
 export default function HensachiPage() {
   return (
     <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
+      <ColumnArticleSchemas slug="hensachi" articleOnly />
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 

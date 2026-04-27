@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 export const metadata = {
   title: "医学部受験はいつから始めるべきか｜現役慶應医学部生が解説 | Medvance",
@@ -108,8 +109,8 @@ const faqSchema = {
 export default function JukenTimingPage() {
   return (
     <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
+      <ColumnArticleSchemas slug="juken-timing" articleOnly />
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 

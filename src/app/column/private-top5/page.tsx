@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 export const metadata = {
   title: "慶應・慈恵・順天堂など私立医学部トップ5の特徴と対策｜Medvance",
@@ -127,8 +128,8 @@ const faqSchema = {
 export default function PrivateTop5Page() {
   return (
     <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
+      <ColumnArticleSchemas slug="private-top5" articleOnly />
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 

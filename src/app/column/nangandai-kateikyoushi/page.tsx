@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
@@ -63,6 +64,7 @@ export default function NangandaiKateikyoushiPage() {
         category="塾・指導"
         keywords={["難関大受験 家庭教師", "東大受験 個別指導", "早慶 家庭教師 おすすめ"]}
       />
+      <ColumnArticleSchemas slug="nangandai-kateikyoushi" articleOnly />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

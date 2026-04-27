@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
@@ -70,6 +71,7 @@ export default function SuisenAoTaisakuPage() {
         category="入試対策"
         keywords={["推薦入試 対策 家庭教師", "AO入試 志望理由書 書き方", "総合型選抜 面接 対策"]}
       />
+      <ColumnArticleSchemas slug="suisen-ao-taisaku" articleOnly />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

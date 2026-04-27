@@ -1,7 +1,14 @@
 import { columnArticles } from "@/lib/columnArticles";
 import { buildColumnPageSchemas } from "@/lib/seo";
 
-export default function ColumnArticleSchemas({ slug }: { slug: string }) {
+export default function ColumnArticleSchemas({
+  slug,
+  articleOnly = false,
+}: {
+  slug: string;
+  /** 既存ページに別途 FAQ schema が手書きされている場合は true にして重複を避ける */
+  articleOnly?: boolean;
+}) {
   const entry = columnArticles.find((a) => a.slug === slug);
   if (!entry) return null;
 
@@ -11,7 +18,7 @@ export default function ColumnArticleSchemas({ slug }: { slug: string }) {
     slug: entry.slug,
     category: entry.category,
     keywords: entry.keywords,
-    faqItems: entry.faq,
+    faqItems: articleOnly ? undefined : entry.faq,
   });
 
   return (

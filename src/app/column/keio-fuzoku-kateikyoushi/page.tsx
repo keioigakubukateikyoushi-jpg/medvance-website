@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 import ColumnJsonLd from "@/components/ColumnJsonLd";
 
 const faqItems = [
@@ -115,6 +116,7 @@ export default function KeioFuzokuKateikyoushiPage() {
         category="塾・指導"
         keywords={["慶應附属校 家庭教師 おすすめ", "慶應義塾高校 家庭教師", "慶應 内部進学 家庭教師"]}
       />
+      <ColumnArticleSchemas slug="keio-fuzoku-kateikyoushi" articleOnly />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">

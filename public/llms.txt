@@ -1,0 +1,82 @@
+# Medvance（メドバンス）
+
+> 現役慶應義塾大学医学部生による完全1対1の個別指導塾。医学部受験・難関大受験・学校の成績向上・推薦AO入試・慶應内部進学まで対応。全国オンライン。
+
+Medvance は「合格した本人が教える」を実現する医学部受験専門塾です。講師は全員、現役の慶應医学部生。授業・面接・小論文・出願書類・週次の学習計画までを同じ担当が見ます。
+
+## 主要ページ
+
+- [トップ](https://medvance-edu.com/): サービス概要・3つの強み
+- [塾の特徴](https://medvance-edu.com/about): 設立背景と方針
+- [講師紹介](https://medvance-edu.com/tutors): 現役慶應医学部生の講師陣
+- [コース・料金](https://medvance-edu.com/pricing): 月額プラン
+- [無料相談](https://medvance-edu.com/contact): フォーム / LINE
+- [LINE](https://medvance-edu.com/line): LINE 相談導線
+
+## 対象者別ページ
+
+- [中学生向け](https://medvance-edu.com/for/chugaku)
+- [高校1年生向け](https://medvance-edu.com/for/ko1)
+- [高校2年生向け](https://medvance-edu.com/for/ko2)
+- [高校3年生向け](https://medvance-edu.com/for/ko3)
+- [浪人生向け](https://medvance-edu.com/for/ronin)
+- [再受験生向け](https://medvance-edu.com/for/saijuken)
+- [保護者向け](https://medvance-edu.com/for/parents)
+- [慶應内部進学を目指す方](https://medvance-edu.com/for/keio-naibu)
+- [慶應附属校生向け](https://medvance-edu.com/for/keio-fuzoku)
+- [学校の成績を上げたい方](https://medvance-edu.com/for/seiseki-up)
+- [難関大学受験](https://medvance-edu.com/for/nangandai)
+- [推薦・AO入試](https://medvance-edu.com/for/suisen-ao)
+
+## サービス別
+
+- [オンライン指導](https://medvance-edu.com/services/online)
+- [対面指導](https://medvance-edu.com/services/visit)
+- [面接対策](https://medvance-edu.com/services/interview)
+- [模試分析](https://medvance-edu.com/services/moshi)
+- [AI模試分析ツール（無料）](https://medvance-edu.com/services/moshi/tool)
+
+## 大学別ガイド
+
+- [私立医学部一覧](https://medvance-edu.com/universities/private)
+- [国公立医学部一覧](https://medvance-edu.com/universities/national)
+- [慶應義塾大学医学部](https://medvance-edu.com/universities/keio)
+- [東京慈恵会医科大学](https://medvance-edu.com/universities/jikei)
+- [順天堂大学医学部](https://medvance-edu.com/universities/juntendo)
+- [日本医科大学](https://medvance-edu.com/universities/nippon-medical)
+- [昭和大学医学部](https://medvance-edu.com/universities/showa)
+- 他、私立16校・国公立44校の個別ページあり（sitemap 参照）
+
+## 教科別
+
+- [英語](https://medvance-edu.com/subjects/english)
+- [数学](https://medvance-edu.com/subjects/math)
+- [物理](https://medvance-edu.com/subjects/physics)
+- [化学](https://medvance-edu.com/subjects/chemistry)
+- [生物](https://medvance-edu.com/subjects/biology)
+
+## コラム
+
+医学部受験の勉強法・受験戦略・大学選び・入試対策・再受験・塾選びをカバーする 50+ 記事。
+
+- [コラム一覧](https://medvance-edu.com/column)
+- [医学部受験勉強法](https://medvance-edu.com/column/study-method)
+- [医学部受験ロードマップ](https://medvance-edu.com/column/roadmap)
+- [医学部受験はいつから始めるか](https://medvance-edu.com/column/juken-timing)
+- [医学部に受かる人・落ちる人の違い](https://medvance-edu.com/column/difference)
+- [医学部の学費](https://medvance-edu.com/column/gakuhi)
+
+## お知らせ
+
+- [お知らせ一覧](https://medvance-edu.com/news)
+
+## 法的情報
+
+- [プライバシーポリシー](https://medvance-edu.com/privacy)
+- [利用規約](https://medvance-edu.com/terms)
+- [特定商取引法表記](https://medvance-edu.com/tokushoho)
+- [Cookie ポリシー](https://medvance-edu.com/cookies)
+
+## サイトマップ
+
+- [XML sitemap](https://medvance-edu.com/sitemap.xml)
