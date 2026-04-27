@@ -45,6 +45,7 @@ export default function RelatedColumns({
               <Link
                 key={article.slug}
                 href={`/column/${article.slug}`}
+                aria-label={`コラム記事「${article.title}」を読む`}
                 className="group flex flex-col overflow-hidden rounded-2xl bg-white transition-shadow hover:shadow-md"
                 style={{ border: "1px solid #e5e1d8" }}
               >

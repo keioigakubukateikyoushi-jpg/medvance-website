@@ -1,52 +1,10 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { headers } from "next/headers";
+import { resolveBreadcrumbLabel } from "@/lib/breadcrumbResolve";
 
-type LabelMap = Record<string, string>;
-
-const DEFAULT_LABELS: LabelMap = {
-  column: "コラム",
-  universities: "大学別対策",
-  national: "国公立医学部",
-  private: "私立医学部",
-  services: "サービス",
-  online: "オンライン指導",
-  visit: "訪問指導",
-  interview: "面接対策",
-  moshi: "模試",
-  tool: "自動採点ツール",
-  for: "対象者別",
-  subjects: "教科別対策",
-  english: "英語",
-  math: "数学",
-  physics: "物理",
-  chemistry: "化学",
-  biology: "生物",
-  about: "運営会社",
-  tutors: "家庭教師一覧",
-  recruit: "講師募集",
-  pricing: "料金",
-  contact: "お問い合わせ",
-  privacy: "プライバシーポリシー",
-  cookies: "Cookieポリシー",
-  news: "お知らせ",
-};
-
-function toLabel(segment: string, labelOverride?: LabelMap): string {
-  const merged = { ...DEFAULT_LABELS, ...(labelOverride ?? {}) };
-  if (merged[segment]) return merged[segment];
-  return decodeURIComponent(segment).replace(/-/g, " ");
-}
-
-export default function AutoBreadcrumb({
-  labels,
-  lastLabel,
-}: {
-  labels?: LabelMap;
-  lastLabel?: string;
-}) {
-  const pathname = usePathname();
+export default async function AutoBreadcrumb() {
+  const hdrs = await headers();
+  const pathname = hdrs.get("x-pathname") ?? "/";
   if (!pathname || pathname === "/") return null;
 
   const segments = pathname.split("/").filter(Boolean);
@@ -58,7 +16,7 @@ export default function AutoBreadcrumb({
   segments.forEach((seg, i) => {
     const href = "/" + segments.slice(0, i + 1).join("/");
     const isLast = i === segments.length - 1;
-    const label = isLast && lastLabel ? lastLabel : toLabel(seg, labels);
+    const label = resolveBreadcrumbLabel(seg, segments.slice(0, i));
     crumbs.push({ label, href: isLast ? undefined : href });
   });
 

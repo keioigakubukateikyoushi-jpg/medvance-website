@@ -25,6 +25,7 @@ export default function RelatedHubs({ slug }: { slug: string }) {
             <Link
               key={hub.hub}
               href={hub.href}
+              aria-label={`${hub.label}の特集ページへ`}
               className="inline-flex items-center text-sm font-semibold px-4 py-2 rounded-full transition-colors hover:opacity-80"
               style={{
                 backgroundColor: "#f7f5f0",
