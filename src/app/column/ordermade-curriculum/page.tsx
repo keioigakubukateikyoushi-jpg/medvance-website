@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
+import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 export const metadata = {
   title: "医学部受験でオーダーメイドカリキュラムが重要な理由 | Medvance",
@@ -42,6 +43,7 @@ const relatedArticles = [
 export default function OrdermadeCurriculumPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ColumnArticleSchemas slug="ordermade-curriculum" />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>

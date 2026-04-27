@@ -9,6 +9,9 @@ export default function UniversityPageSchemas({
   parentSlug,
   parentLabel,
   faq,
+  alternateNames,
+  universityDescription,
+  area,
 }: {
   name: string;
   slug: string;
@@ -16,8 +19,12 @@ export default function UniversityPageSchemas({
   parentSlug?: string;
   parentLabel?: string;
   faq?: FaqItem[];
+  alternateNames?: string[];
+  universityDescription?: string;
+  area?: string;
 }) {
   const path = parentSlug ? `/universities/${parentSlug}/${slug}` : `/universities/${slug}`;
+  const universityId = `${siteUrl}${path}#university`;
 
   const breadcrumb = buildBreadcrumbSchema([
     { name: "ホーム", url: "/" },
@@ -26,6 +33,27 @@ export default function UniversityPageSchemas({
       : []),
     { name: breadcrumbLabel, url: path },
   ]);
+
+  const collegeSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "CollegeOrUniversity",
+    "@id": universityId,
+    name,
+    url: `${siteUrl}${path}`,
+  };
+  if (alternateNames && alternateNames.length > 0) {
+    collegeSchema.alternateName = alternateNames;
+  }
+  if (universityDescription) {
+    collegeSchema.description = universityDescription;
+  }
+  if (area) {
+    collegeSchema.address = {
+      "@type": "PostalAddress",
+      addressCountry: "JP",
+      addressRegion: area,
+    };
+  }
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -39,10 +67,11 @@ export default function UniversityPageSchemas({
       "@id": `${siteUrl}/#organization`,
       name: "Medvance",
     },
+    about: { "@id": universityId },
     areaServed: { "@type": "Country", name: "Japan" },
   };
 
-  const schemas: object[] = [breadcrumb, serviceSchema];
+  const schemas: object[] = [breadcrumb, collegeSchema, serviceSchema];
   if (faq && faq.length > 0) schemas.push(buildFaqSchema(faq));
 
   return (

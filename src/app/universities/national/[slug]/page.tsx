@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import UniversityHero from "@/components/UniversityHero";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import {
   getNationalUniversityBySlug,
   nationalUniversityArticles,
@@ -299,24 +300,18 @@ export default async function NationalUniversityArticlePage({
   const relatedUniversities = buildRelatedUniversities(entry);
   const relatedArticles = buildRelatedArticles(entry);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
-    })),
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      <UniversityPageSchemas
+        name={entry.name}
+        slug={entry.slug}
+        breadcrumbLabel={entry.name}
+        parentSlug="national"
+        parentLabel="国公立医学部"
+        faq={faqs}
+        alternateNames={entry.keywords}
+        universityDescription={entry.summary}
+        area={entry.area}
       />
 
       <UniversityHero slug={entry.slug}>

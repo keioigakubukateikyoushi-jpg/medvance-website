@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ArticleConsultationBox from "@/components/ArticleConsultationBox";
 import ColumnCTA from "@/components/ColumnCTA";
+import RelatedHubs from "@/components/RelatedHubs";
 import type { LongformColumnArticle } from "@/lib/longformColumnArticles";
 import {
   buildArticleSchema,
@@ -382,6 +383,8 @@ export default function LongformColumnPage({
           </div>
         </div>
       </div>
+
+      <RelatedHubs slug={article.slug} />
 
       <ColumnCTA
         heading={article.cta.heading}
