@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   columnArticlesWithHref,
   columnCategories,
@@ -12,7 +12,6 @@ import { getColumnThumbnail } from "@/lib/columnThumbnails";
 import { getUniversityImage } from "@/lib/universityImages";
 import { buildBreadcrumbSchema, buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
 
-// 大学別対策記事は大学の写真を直接使う。その他はカテゴリ別のサムネイル。
 function getArticleThumbnail(article: { slug: string; category: string }): string | null {
   if (article.category === "大学別対策") {
     const img = getUniversityImage(article.slug);
@@ -21,7 +20,6 @@ function getArticleThumbnail(article: { slug: string; category: string }): strin
   return getColumnThumbnail(article.slug, article.category);
 }
 
-// 大学別対策ページ（/universities/配下）
 const universityArticles: { slug: string; href: string; category: string; title: string; description: string; popular: boolean }[] = [
   { slug: "keio", href: "/universities/keio", category: "大学別対策", title: "慶應義塾大学医学部 入試対策ガイド", description: "思考力・論証力重視の英数理。小論文・面接の比重が高く、医師としての人間性が問われる最難関私立医学部の完全攻略ガイド。", popular: true },
   { slug: "jikei", href: "/universities/jikei", category: "大学別対策", title: "東京慈恵会医科大学 入試対策ガイド", description: "英語が私立医学部最難関レベル。医学系長文読解と英作文の対策が合否を分ける。「慈恵の医師像」を深く理解した面接準備が必須。", popular: true },
@@ -70,6 +68,8 @@ const allArticles = [
   ...columnArticlesWithHref,
 ];
 
+const PAGE_SIZE = 12; // 3カラム × 4行
+
 const columnIndexSchemas = [
   buildCollectionPageSchema(
     "医学部受験コラム一覧",
@@ -87,301 +87,761 @@ const columnIndexSchemas = [
   ),
 ];
 
+// medionスタイル: ダークブラウン代わりにmedvanceネイビー、グレーは#b5b5b5
+const COLOR_BADGE = "#0c1a33";
+const COLOR_GREY = "#b5b5b5";
+const COLOR_TEXT = "#222222";
+const COLOR_BORDER = "#d9d9d9";
+
 export default function ColumnIndexPage() {
   const [activeCategory, setActiveCategory] = useState("すべて");
+  const [page, setPage] = useState(1);
 
-  const filtered = activeCategory === "すべて"
-    ? allArticles
-    : allArticles.filter((a) => a.category === activeCategory);
+  const filtered = useMemo(
+    () =>
+      activeCategory === "すべて"
+        ? allArticles
+        : allArticles.filter((a) => a.category === activeCategory),
+    [activeCategory],
+  );
 
-  const popular = allArticles.filter((a) => a.popular);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const paginated = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  const popularTop5 = allArticles.filter((a) => a.popular).slice(0, 5);
+  const recentArticles = allArticles.slice(0, 5);
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const a of allArticles) {
+      counts[a.category] = (counts[a.category] ?? 0) + 1;
+    }
+    return counts;
+  }, []);
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setPage(1);
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handlePageChange = (next: number) => {
+    setPage(next);
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white min-h-screen" style={{ fontFamily: "var(--font-noto-serif)" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(columnIndexSchemas) }}
       />
 
-      {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            医学部受験コラム
-          </h1>
-          <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-            現役慶應医学部生が、受験に本当に役立つ情報を解説します
-          </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold" style={{ backgroundColor: "rgba(201,146,42,0.2)", color: "#c9922a", border: "1px solid rgba(201,146,42,0.4)" }}>
-            全{allArticles.length}記事
-          </div>
-        </div>
-      </div>
-
-      {/* Popular picks */}
-      <div className="py-12 px-4" style={{ backgroundColor: "#f7f5f0", borderBottom: "1px solid #e5e1d8" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-8 rounded-2xl bg-white p-5 md:p-6" style={{ border: "1px solid #e5e1d8" }}>
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>検索</p>
-                <h2 className="text-lg font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  記事をキーワードで検索
+      <main className="mx-auto" style={{ maxWidth: 1000, padding: "30px 20px 50px" }}>
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* メインカラム */}
+          <section className="flex-1 min-w-0">
+            {/* ヘッダー: タイトル + 金線アクセント + サブテキスト */}
+            <header className="mb-8">
+              <div className="flex items-baseline gap-3 mb-2">
+                <h2
+                  className="text-3xl md:text-[32px]"
+                  style={{ color: COLOR_TEXT, fontWeight: 900 }}
+                >
+                  コラム
                 </h2>
-                <p className="text-sm" style={{ color: "#6b7280" }}>
-                  学費、面接、再受験、塾選びなど、気になるテーマから記事を探せます。
+                <p
+                  className="text-xs tracking-widest uppercase"
+                  style={{ color: "#c9922a", letterSpacing: "0.15em" }}
+                >
+                  COLUMN
                 </p>
+                <span className="text-xs ml-auto" style={{ color: COLOR_GREY }}>
+                  全{allArticles.length}記事
+                </span>
               </div>
-              <form action="/search" className="flex w-full max-w-xl gap-2">
-                <input
-                  type="text"
-                  name="q"
-                  placeholder="例: 医学部専門予備校 / 面接 / 慶應"
-                  className="flex-1 rounded-xl px-4 py-3 text-sm"
-                  style={{ border: "1px solid #d6d1c7", color: "#0c1a33", backgroundColor: "#fff" }}
-                />
-                <button
-                  type="submit"
-                  className="rounded-xl px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#0c1a33" }}
-                >
-                  検索する
-                </button>
-              </form>
-            </div>
-          </div>
-          <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>よく読まれている記事</p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {popular.map((a) => {
-              const thumb = getArticleThumbnail(a);
-              return (
-                <Link
-                  key={a.slug}
-                  href={a.href}
-                  className="group flex overflow-hidden rounded-xl bg-white transition-shadow hover:shadow-md"
-                  style={{ border: "1px solid #e5e1d8" }}
-                >
-                  {thumb && (
-                    <div className="relative w-32 sm:w-36 flex-shrink-0 bg-[#0c1a33]">
-                      <Image
-                        src={thumb}
-                        alt=""
-                        fill
-                        sizes="144px"
-                        className="object-cover"
-                        loading="lazy"
-                      />
-                      <div
-                        aria-hidden
-                        className="absolute inset-0"
-                        style={{ background: "linear-gradient(180deg, rgba(12,26,51,0.1) 0%, rgba(12,26,51,0.4) 100%)" }}
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0 p-4">
-                    <span
-                      className="inline-block text-xs font-bold px-2 py-0.5 rounded mb-2"
-                      style={{ backgroundColor: categoryColors[a.category] ? `${categoryColors[a.category]}22` : "rgba(201,146,42,0.1)", color: categoryColors[a.category] ?? "#c9922a" }}
-                    >
-                      {a.category}
-                    </span>
-                    <p className="text-sm font-semibold leading-snug line-clamp-3 group-hover:underline" style={{ color: "#0c1a33" }}>
-                      {a.title}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      <div className="py-12 px-4 bg-white" style={{ borderBottom: "1px solid #e5e1d8" }}>
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "#c9922a" }}>よくあるテーマから探す</p>
-          <div className="grid md:grid-cols-3 gap-5">
-            {resolvedColumnTopicClusters.map((cluster) => (
               <div
-                key={cluster.title}
-                className="rounded-2xl p-6"
-                style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
-              >
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <h2 className="text-lg font-bold" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                    {cluster.title}
-                  </h2>
-                  <Link
-                    href={`/search?q=${encodeURIComponent(cluster.searchKeyword)}`}
-                    className="text-xs font-semibold whitespace-nowrap"
-                    style={{ color: "#c9922a" }}
-                  >
-                    まとめて探す →
-                  </Link>
-                </div>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
-                  {cluster.description}
-                </p>
-                <div className="space-y-3">
-                  {cluster.articles.map((article) => (
-                    <Link
-                      key={article.slug}
-                      href={article.href}
-                      className="block rounded-xl bg-white p-4 hover:shadow-sm transition-shadow"
-                      style={{ border: "1px solid #e5e1d8" }}
-                    >
-                      <p className="text-xs font-bold mb-2" style={{ color: categoryColors[article.category] ?? "#c9922a" }}>
-                        {article.category}
-                      </p>
-                      <p className="text-sm font-semibold leading-snug" style={{ color: "#0c1a33" }}>
-                        {article.title}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Filter + Articles */}
-      <div className="py-14 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-
-          {/* Category tabs */}
-          <div className="flex flex-wrap gap-2 mb-10">
-            {columnCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className="px-4 py-2 rounded-full text-sm font-semibold transition-colors"
                 style={{
-                  backgroundColor: activeCategory === cat ? "#0c1a33" : "#f7f5f0",
-                  color: activeCategory === cat ? "#fff" : "#6b7280",
-                  border: `1px solid ${activeCategory === cat ? "#0c1a33" : "#e5e1d8"}`,
+                  height: 3,
+                  width: 56,
+                  backgroundColor: "#c9922a",
+                  marginBottom: 12,
                 }}
+              />
+              <p className="text-sm" style={{ color: "#555", lineHeight: 1.7 }}>
+                医学部受験の勉強法・面接・小論文・学費・塾選びまで、現役慶應医学部生が解説。
+              </p>
+            </header>
+
+            {/* ピックアップ記事 (Top3を大きめに) */}
+            {activeCategory === "すべて" && currentPage === 1 && (
+              <section className="mb-10">
+                <div className="flex items-center gap-2 mb-4">
+                  <span
+                    style={{
+                      display: "inline-block",
+                      width: 4,
+                      height: 16,
+                      backgroundColor: "#c9922a",
+                    }}
+                  />
+                  <h3 className="text-base font-bold" style={{ color: COLOR_TEXT }}>
+                    ピックアップ
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  {popularTop5.slice(0, 3).map((a) => {
+                    const thumb = getArticleThumbnail(a);
+                    const catColor = categoryColors[a.category] ?? COLOR_BADGE;
+                    return (
+                      <article key={`pickup-${a.slug}`}>
+                        <Link href={a.href} className="block group">
+                          <figure className="relative m-0 overflow-hidden">
+                            {thumb ? (
+                              <div className="relative w-full" style={{ aspectRatio: "334/188" }}>
+                                <Image
+                                  src={thumb}
+                                  alt=""
+                                  fill
+                                  sizes="(max-width: 768px) 100vw, 334px"
+                                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                  loading="lazy"
+                                />
+                              </div>
+                            ) : (
+                              <div className="w-full bg-gray-200" style={{ aspectRatio: "334/188" }} />
+                            )}
+                            <span
+                              className="absolute font-medium"
+                              style={{
+                                top: 0,
+                                right: 0,
+                                background: catColor,
+                                color: "#fff",
+                                padding: "0px 10px",
+                                fontSize: 12,
+                                borderRadius: 2,
+                              }}
+                            >
+                              {a.category}
+                            </span>
+                            <span
+                              className="absolute font-bold"
+                              style={{
+                                top: 8,
+                                left: 8,
+                                background: "#c9922a",
+                                color: "#fff",
+                                padding: "2px 8px",
+                                fontSize: 11,
+                                borderRadius: 2,
+                                letterSpacing: "0.1em",
+                              }}
+                            >
+                              PICK UP
+                            </span>
+                          </figure>
+                          <h2
+                            className="mt-2.5 leading-snug group-hover:opacity-60 transition-opacity"
+                            style={{ fontSize: 15, fontWeight: 700, color: COLOR_TEXT }}
+                          >
+                            {a.title}
+                          </h2>
+                        </Link>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {/* セクション見出し: 全記事 */}
+            <div className="flex items-center gap-2 mb-4 mt-2">
+              <span
+                style={{
+                  display: "inline-block",
+                  width: 4,
+                  height: 16,
+                  backgroundColor: COLOR_BADGE,
+                }}
+              />
+              <h3 className="text-base font-bold" style={{ color: COLOR_TEXT }}>
+                {activeCategory === "すべて" ? "新着・全記事" : activeCategory}
+              </h3>
+            </div>
+
+            {/* カテゴリタブ */}
+            <div className="mb-6 -mx-1 overflow-x-auto">
+              <div className="flex flex-nowrap gap-1.5 px-1 pb-1">
+                {columnCategories.map((cat) => {
+                  const isActive = activeCategory === cat;
+                  const count = cat === "すべて" ? allArticles.length : categoryCounts[cat] ?? 0;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => handleCategoryChange(cat)}
+                      className="px-3 py-1.5 text-xs whitespace-nowrap transition-colors"
+                      style={{
+                        backgroundColor: isActive ? COLOR_BADGE : "#fff",
+                        color: isActive ? "#fff" : COLOR_TEXT,
+                        border: `1px solid ${isActive ? COLOR_BADGE : COLOR_BORDER}`,
+                        borderRadius: 3,
+                        fontWeight: 600,
+                      }}
+                    >
+                      {cat}
+                      <span className="ml-1 text-[10px] opacity-60">({count})</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 記事一覧 (#article_list_large 相当: 3カラム gap 24px、各カード 334px) */}
+            <div
+              id="article_list_large"
+              className="grid gap-6"
+              style={{
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                justifyContent: "flex-start",
+              }}
+            >
+              {paginated.map((article) => {
+                const thumb = getArticleThumbnail(article);
+                const catColor = categoryColors[article.category] ?? COLOR_BADGE;
+                return (
+                  <article key={`${article.category}-${article.slug}`} className="block">
+                    <Link href={article.href} className="block group">
+                      <figure className="relative m-0 overflow-hidden">
+                        {thumb ? (
+                          <div className="relative w-full" style={{ aspectRatio: "334/188" }}>
+                            <Image
+                              src={thumb}
+                              alt=""
+                              fill
+                              sizes="(max-width: 768px) 100vw, 334px"
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-full bg-gray-200" style={{ aspectRatio: "334/188" }} />
+                        )}
+                        {/* カテゴリバッジ (右上、カテゴリ別カラー) */}
+                        <span
+                          className="column-badge absolute font-medium"
+                          style={{
+                            top: 0,
+                            right: 0,
+                            background: catColor,
+                            color: "#fff",
+                            padding: "0px 10px",
+                            fontSize: 13,
+                            borderRadius: 2,
+                          }}
+                        >
+                          {article.category}
+                        </span>
+                        {article.popular && (
+                          <span
+                            className="absolute font-bold"
+                            style={{
+                              top: 8,
+                              left: 8,
+                              background: "#c9922a",
+                              color: "#fff",
+                              padding: "1px 6px",
+                              fontSize: 10,
+                              borderRadius: 2,
+                              letterSpacing: "0.05em",
+                            }}
+                          >
+                            ★ 人気
+                          </span>
+                        )}
+                      </figure>
+                      <div className="mt-3">
+                        <h2
+                          className="leading-snug group-hover:opacity-50 transition-opacity"
+                          style={{ fontSize: 17, fontWeight: 700, color: COLOR_TEXT }}
+                        >
+                          {article.title}
+                        </h2>
+                        <p
+                          className="mt-2 text-sm leading-relaxed line-clamp-3"
+                          style={{ color: "#444" }}
+                        >
+                          {article.description.length > 70
+                            ? article.description.slice(0, 70) + "……"
+                            : article.description}
+                          <span
+                            className="readmore inline ml-1"
+                            style={{ color: COLOR_GREY }}
+                          >
+                            続きを読む
+                          </span>
+                        </p>
+                        <div
+                          className="addtional-info mt-3 flex justify-between items-center"
+                          style={{ color: COLOR_GREY, fontSize: 12 }}
+                        >
+                          <span style={{ color: catColor, fontWeight: 600, fontSize: 11 }}>
+                            ▸ {article.category}
+                          </span>
+                          <span
+                            className="readmore"
+                            style={{ color: "#c9922a", fontSize: 11, fontWeight: 600 }}
+                          >
+                            続きを読む →
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+
+            {/* ページネーション */}
+            {totalPages > 1 && (
+              <nav
+                aria-label="ページネーション"
+                className="mt-12 flex items-center justify-center gap-1.5 flex-wrap"
               >
-                {cat}
-                {cat !== "すべて" && (
-                  <span className="ml-1.5 text-xs opacity-60">
-                    {allArticles.filter((a) => a.category === cat).length}
-                  </span>
+                <span className="text-sm mr-3" style={{ color: COLOR_GREY }}>
+                  ページ {currentPage} / {totalPages}
+                </span>
+                {currentPage > 1 && (
+                  <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    className="px-3 py-2 text-sm transition-colors"
+                    style={{
+                      border: `1px solid ${COLOR_BORDER}`,
+                      backgroundColor: "#fff",
+                      color: COLOR_TEXT,
+                      borderRadius: 2,
+                    }}
+                  >
+                    « 前へ
+                  </button>
                 )}
-              </button>
-            ))}
-          </div>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => {
+                  const isActive = p === currentPage;
+                  const showEdge = p === 1 || p === totalPages;
+                  const showNear = Math.abs(p - currentPage) <= 1;
+                  if (!showEdge && !showNear) {
+                    if (p === 2 || p === totalPages - 1) {
+                      return (
+                        <span key={p} className="px-1 text-sm" style={{ color: COLOR_GREY }}>
+                          …
+                        </span>
+                      );
+                    }
+                    return null;
+                  }
+                  return (
+                    <button
+                      key={p}
+                      onClick={() => handlePageChange(p)}
+                      className="min-w-[36px] px-2.5 py-2 text-sm transition-colors"
+                      style={{
+                        backgroundColor: isActive ? COLOR_BADGE : "#fff",
+                        color: isActive ? "#fff" : COLOR_TEXT,
+                        border: `1px solid ${isActive ? COLOR_BADGE : COLOR_BORDER}`,
+                        borderRadius: 2,
+                        fontWeight: isActive ? 700 : 400,
+                      }}
+                    >
+                      {p}
+                    </button>
+                  );
+                })}
+                {currentPage < totalPages && (
+                  <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    className="px-3 py-2 text-sm transition-colors"
+                    style={{
+                      border: `1px solid ${COLOR_BORDER}`,
+                      backgroundColor: "#fff",
+                      color: COLOR_TEXT,
+                      borderRadius: 2,
+                    }}
+                  >
+                    次へ »
+                  </button>
+                )}
+                {currentPage < totalPages - 1 && (
+                  <button
+                    onClick={() => handlePageChange(totalPages)}
+                    className="px-3 py-2 text-sm transition-colors"
+                    style={{
+                      border: `1px solid ${COLOR_BORDER}`,
+                      backgroundColor: "#fff",
+                      color: COLOR_TEXT,
+                      borderRadius: 2,
+                    }}
+                  >
+                    最後 »
+                  </button>
+                )}
+              </nav>
+            )}
+          </section>
 
-          {/* Article count */}
-          <p className="text-xs mb-6" style={{ color: "#9ca3af" }}>
-            {filtered.length}件の記事
-          </p>
-
-          {/* Grid */}
-          <div className="grid md:grid-cols-2 gap-5">
-            {filtered.map((article) => {
-              const thumb = getArticleThumbnail(article);
-              return (
-                <Link
-                  key={`${article.category}-${article.slug}`}
-                  href={article.href}
-                  className="group flex overflow-hidden rounded-2xl bg-white transition-shadow hover:shadow-md"
-                  style={{ border: "1px solid #e5e1d8" }}
+          {/* サイドバー (#side_widget aside 相当: 230px幅) */}
+          <aside
+            id="side_widget"
+            className="w-full lg:w-[230px] flex-shrink-0"
+            style={{ paddingTop: 0 }}
+          >
+            <div className="lg:pt-[88px]">
+              {/* 人気記事TOP5 */}
+              <section className="mb-8">
+                <h2
+                  className="font-semibold pb-2 mb-3"
+                  style={{
+                    fontSize: 16,
+                    color: COLOR_TEXT,
+                    borderTop: `1px solid ${COLOR_BORDER}`,
+                    paddingTop: 10,
+                    fontWeight: 600,
+                  }}
                 >
-                  {thumb && (
-                    <div className="relative w-32 sm:w-40 flex-shrink-0 bg-[#0c1a33]">
-                      <Image
-                        src={thumb}
-                        alt=""
-                        fill
-                        sizes="(max-width: 640px) 128px, 160px"
-                        className="object-cover"
-                        loading="lazy"
-                      />
-                      <div
-                        aria-hidden
-                        className="absolute inset-0"
-                        style={{ background: "linear-gradient(180deg, rgba(12,26,51,0.15) 0%, rgba(12,26,51,0.35) 100%)" }}
-                      />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0 p-5">
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span
-                        className="text-xs font-bold px-2.5 py-0.5 rounded-full"
+                  人気記事TOP5
+                </h2>
+                <ul className="space-y-0">
+                  {popularTop5.map((a, idx) => {
+                    const thumb = getArticleThumbnail(a);
+                    return (
+                      <li
+                        key={a.slug}
+                        className="article-list"
                         style={{
-                          backgroundColor: categoryColors[article.category] ? `${categoryColors[article.category]}18` : "rgba(201,146,42,0.1)",
-                          color: categoryColors[article.category] ?? "#c9922a",
+                          fontSize: 12,
+                          lineHeight: 1.5,
+                          marginTop: 10,
+                          paddingTop: 10,
+                          borderTop: idx === 0 ? "none" : `1px dashed ${COLOR_BORDER}`,
                         }}
                       >
-                        {article.category}
+                        <Link href={a.href} className="article-link block hover:opacity-50 transition-opacity">
+                          <article className="flex justify-between gap-2.5">
+                            <div className="relative flex-shrink-0" style={{ width: 60, height: 60 }}>
+                              {thumb && (
+                                <Image
+                                  src={thumb}
+                                  alt=""
+                                  fill
+                                  sizes="60px"
+                                  className="object-cover"
+                                  loading="lazy"
+                                />
+                              )}
+                              <span
+                                className="absolute"
+                                style={{
+                                  background: COLOR_BADGE,
+                                  color: "#fff",
+                                  fontSize: 13,
+                                  fontWeight: 500,
+                                  padding: "2px 5px",
+                                  left: 0,
+                                  top: 0,
+                                }}
+                              >
+                                {idx + 1}
+                              </span>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p
+                                className="title font-semibold leading-tight line-clamp-3"
+                                style={{ color: COLOR_TEXT, fontWeight: 600 }}
+                              >
+                                {a.title}
+                              </p>
+                              <span
+                                className="date block mt-1"
+                                style={{ color: COLOR_GREY, fontSize: 12 }}
+                              >
+                                {a.popular ? "人気記事" : a.category}
+                              </span>
+                            </div>
+                          </article>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+
+              {/* カテゴリー */}
+              <section className="mb-8">
+                <h2
+                  className="font-semibold pb-2 mb-3"
+                  style={{
+                    fontSize: 16,
+                    color: COLOR_TEXT,
+                    borderTop: `1px solid ${COLOR_BORDER}`,
+                    paddingTop: 10,
+                    fontWeight: 600,
+                  }}
+                >
+                  カテゴリー
+                </h2>
+                <ul>
+                  {columnCategories
+                    .filter((c) => c !== "すべて")
+                    .map((cat) => {
+                      const count = categoryCounts[cat] ?? 0;
+                      if (count === 0) return null;
+                      return (
+                        <li
+                          key={cat}
+                          style={{
+                            fontSize: 13,
+                            position: "relative",
+                            marginTop: 5,
+                            display: "block",
+                          }}
+                        >
+                          <button
+                            onClick={() => handleCategoryChange(cat)}
+                            className="block w-full text-left py-1 hover:opacity-50 transition-opacity"
+                            style={{ fontSize: 13, fontWeight: 600, color: COLOR_TEXT }}
+                          >
+                            <span style={{ marginRight: 6 }}>›</span>
+                            {cat} ({count})
+                          </button>
+                        </li>
+                      );
+                    })}
+                </ul>
+              </section>
+
+              {/* 最近の記事 */}
+              <section className="mb-8">
+                <h2
+                  className="font-semibold pb-2 mb-3"
+                  style={{
+                    fontSize: 16,
+                    color: COLOR_TEXT,
+                    borderTop: `1px solid ${COLOR_BORDER}`,
+                    paddingTop: 10,
+                    fontWeight: 600,
+                  }}
+                >
+                  最近の記事
+                </h2>
+                <ul>
+                  {recentArticles.map((a, idx) => (
+                    <li
+                      key={a.slug}
+                      className="article-list"
+                      style={{
+                        fontSize: 12,
+                        lineHeight: 1.5,
+                        marginTop: 10,
+                        paddingTop: 10,
+                        borderTop: idx === 0 ? "none" : `1px dashed ${COLOR_BORDER}`,
+                      }}
+                    >
+                      <Link
+                        href={a.href}
+                        className="article-link block hover:opacity-50 transition-opacity"
+                        style={{ fontWeight: 600 }}
+                      >
+                        <article>
+                          <p
+                            className="title leading-tight line-clamp-2"
+                            style={{ color: COLOR_TEXT, fontWeight: 600, fontSize: 13 }}
+                          >
+                            {a.title}
+                          </p>
+                          <span
+                            className="date block mt-1"
+                            style={{ color: COLOR_GREY, fontSize: 12 }}
+                          >
+                            {a.category}
+                          </span>
+                        </article>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* テーマから探す（medionのアーカイブ枠相当）*/}
+              <section className="mb-12">
+                <h2
+                  className="font-semibold pb-2 mb-3"
+                  style={{
+                    fontSize: 16,
+                    color: COLOR_TEXT,
+                    borderTop: `1px solid ${COLOR_BORDER}`,
+                    paddingTop: 10,
+                    fontWeight: 600,
+                  }}
+                >
+                  テーマから探す
+                </h2>
+                {resolvedColumnTopicClusters.slice(0, 6).map((cluster) => (
+                  <details
+                    key={cluster.title}
+                    className=""
+                    style={{ borderTop: "none" }}
+                  >
+                    <summary
+                      className="cursor-pointer py-1.5 hover:opacity-50 transition-opacity"
+                      style={{ fontSize: 14, fontWeight: 400, color: COLOR_TEXT, paddingLeft: 15, position: "relative" }}
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          left: 0,
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          fontSize: 12,
+                          color: COLOR_GREY,
+                        }}
+                      >
+                        ›
                       </span>
-                      {article.popular && (
-                        <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: "rgba(201,146,42,0.12)", color: "#c9922a" }}>
-                          人気
-                        </span>
-                      )}
-                    </div>
-                    <h2 className="font-bold text-sm leading-snug mb-2 group-hover:underline" style={{ color: "#0c1a33" }}>
-                      {article.title}
-                    </h2>
-                    <p className="text-xs leading-relaxed line-clamp-2" style={{ color: "#6b7280" }}>
-                      {article.description}
+                      {cluster.title}
+                    </summary>
+                    <ul className="pl-4 pb-2">
+                      {cluster.articles.map((a) => (
+                        <li
+                          key={a.slug}
+                          className="ml-2.5 mb-1.5 inline-block"
+                          style={{ display: "block", marginBottom: 6 }}
+                        >
+                          <Link
+                            href={a.href}
+                            className="hover:opacity-50 transition-opacity"
+                            style={{ fontSize: 13, fontWeight: 400, color: COLOR_TEXT }}
+                          >
+                            ・{a.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ))}
+              </section>
+
+              {/* 無料相談CTA (medvanceらしさ) */}
+              <section className="mb-8">
+                <div
+                  className="text-center"
+                  style={{
+                    backgroundColor: COLOR_BADGE,
+                    padding: "20px 16px",
+                    backgroundImage:
+                      "linear-gradient(135deg, #0c1a33 0%, #1a3055 100%)",
+                  }}
+                >
+                  <p
+                    className="text-[10px] tracking-widest uppercase mb-1.5"
+                    style={{ color: "#c9922a", letterSpacing: "0.18em", fontWeight: 600 }}
+                  >
+                    FREE CONSULTATION
+                  </p>
+                  <p
+                    className="text-sm font-bold text-white mb-3 leading-snug"
+                    style={{ fontFamily: "var(--font-noto-serif)" }}
+                  >
+                    医学部受験の悩みを
+                    <br />
+                    無料で個別相談
+                  </p>
+                  <div
+                    style={{
+                      height: 1,
+                      width: 32,
+                      backgroundColor: "#c9922a",
+                      margin: "0 auto 12px",
+                    }}
+                  />
+                  <Link
+                    href="/contact?from=column-sidebar"
+                    className="block w-full px-3 py-2.5 text-white text-xs font-bold hover:opacity-90 transition-opacity"
+                    style={{
+                      backgroundColor: "#c9922a",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    お問い合わせ →
+                  </Link>
+                </div>
+              </section>
+
+              {/* note リンク */}
+              <section className="mb-8">
+                <a
+                  href="https://note.com/igakubu_juken"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 hover:opacity-70 transition-opacity"
+                  style={{ border: `1px solid ${COLOR_BORDER}` }}
+                >
+                  <div
+                    className="flex-shrink-0 flex items-center justify-center text-white font-bold"
+                    style={{
+                      backgroundColor: "#41c9b4",
+                      width: 32,
+                      height: 32,
+                      fontSize: 13,
+                    }}
+                  >
+                    n
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p
+                      className="font-semibold mb-0.5"
+                      style={{ color: COLOR_GREY, fontSize: 10 }}
+                    >
+                      note でも発信中
                     </p>
-                    <p className="text-xs font-semibold mt-3" style={{ color: "#c9922a" }}>
-                      記事を読む →
+                    <p
+                      className="font-bold"
+                      style={{ color: COLOR_TEXT, fontSize: 12 }}
+                    >
+                      noteで読む →
                     </p>
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* note導線 */}
-      <div className="py-10 px-4 bg-white" style={{ borderTop: "1px solid #e5e1d8" }}>
-        <div className="max-w-3xl mx-auto">
-          <a
-            href="https://note.com/igakubu_juken"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between gap-4 p-5 rounded-2xl hover:shadow-md transition-shadow group"
-            style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
-          >
-            <div className="flex items-center gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm" style={{ backgroundColor: "#41c9b4" }}>
-                n
-              </div>
-              <div>
-                <p className="text-xs font-semibold mb-0.5" style={{ color: "#6b7280" }}>note でも発信中</p>
-                <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>医学部受験の情報をnoteでも読む</p>
-              </div>
+                </a>
+              </section>
             </div>
-            <span className="text-sm font-semibold flex-shrink-0 group-hover:underline" style={{ color: "#41c9b4" }}>読む →</span>
-          </a>
+          </aside>
         </div>
-      </div>
+      </main>
 
-      {/* CTA */}
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto rounded-2xl p-8 text-center" style={{ backgroundColor: "#0c1a33" }}>
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談</p>
-          <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            疑問点は無料相談でお気軽にどうぞ
-          </h2>
-          <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-            コラムの内容や受験戦略について、個別にご相談いただけます。
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
-      </div>
+      {/* パンくず (medionの #pankuzu に相当) */}
+      <nav
+        id="pankuzu"
+        className="mx-auto"
+        style={{
+          maxWidth: 1000,
+          padding: "0 20px 30px",
+          fontSize: 12,
+          color: COLOR_GREY,
+        }}
+      >
+        <ul className="flex flex-wrap items-center gap-1">
+          <li>
+            <Link href="/" className="hover:underline">
+              トップ
+            </Link>
+          </li>
+          <li>&nbsp;&gt;&nbsp;</li>
+          <li style={{ color: COLOR_TEXT }}>コラム</li>
+        </ul>
+      </nav>
     </div>
   );
 }
