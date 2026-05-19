@@ -1,12 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+const MIN_FORM_RENDER_MS = 2000;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function POST(req: NextRequest) {
-  const { name, email, phone, status, targetType, targetName, message, source } = await req.json();
+  const { name, email, phone, status, targetType, targetName, message, source, website, renderedAt } = await req.json();
   const target = [targetType, targetName].filter(Boolean).join(" / ") || "未入力";
+
+  // honeypot: ボットだけが埋める隠しフィールド。埋まっていたら 200 を返して送信したフリ
+  if (website) {
+    return NextResponse.json({ success: true });
+  }
+
+  // 送信タイミングガード: フォーム表示から 2 秒未満の submit はボットとみなす
+  if (typeof renderedAt === "number" && Date.now() - renderedAt < MIN_FORM_RENDER_MS) {
+    return NextResponse.json({ success: true });
+  }
 
   if (!name || !email) {
     return NextResponse.json({ error: "必須項目が未入力です" }, { status: 400 });
+  }
+
+  if (!EMAIL_PATTERN.test(email)) {
+    return NextResponse.json({ error: "メールアドレスの形式が正しくありません" }, { status: 400 });
   }
 
   const transporter = nodemailer.createTransport({

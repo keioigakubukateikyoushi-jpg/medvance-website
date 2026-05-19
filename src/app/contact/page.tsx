@@ -22,13 +22,16 @@ export default function ContactPage() {
     targetName: "",
     message: "",
     source: "",
+    website: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showDetails, setShowDetails] = useState(false);
+  const [renderedAt, setRenderedAt] = useState<number | null>(null);
 
   useEffect(() => {
+    setRenderedAt(Date.now());
     const sourceFromQuery = new URLSearchParams(window.location.search).get("from") ?? "";
     if (!sourceFromQuery) return;
 
@@ -46,7 +49,7 @@ export default function ContactPage() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, renderedAt }),
       });
 
       if (!res.ok) {
@@ -217,6 +220,20 @@ export default function ContactPage() {
                   )}
 
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* honeypot — 人間には不可視。ボットだけが埋める */}
+                    <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}>
+                      <label htmlFor="website-url">Website</label>
+                      <input
+                        id="website-url"
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                      />
+                    </div>
+
                     {/* お名前 */}
                     <div>
                       <label className="block text-sm font-semibold mb-1.5" style={{ color: "#0c1a33" }}>
