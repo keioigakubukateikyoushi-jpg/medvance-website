@@ -1,6 +1,9 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import ColumnTableOfContents from "@/components/ColumnTableOfContents";
+import ArticleConsultationBox from "@/components/ArticleConsultationBox";
+import RelatedHubs from "@/components/RelatedHubs";
 
 export const metadata = {
   title: "医学部受験はいつから始めるべきか｜現役慶應医学部生が解説 | Medvance",
@@ -96,6 +99,12 @@ const relatedArticles = [
   { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
 ];
 
+const tocItems = [
+  { id: "guide", label: "学年・状況別スタートガイド" },
+  { id: "early-start", label: "「早く始めれば合格できる」は半分正解" },
+  { id: "faq", label: "よくある質問" },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -144,9 +153,11 @@ export default function JukenTimingPage() {
         </div>
       </div>
 
+      <ColumnTableOfContents items={tocItems} />
+
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="guide" className="text-2xl font-bold text-center mb-10 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             学年・状況別スタートガイド
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -176,9 +187,24 @@ export default function JukenTimingPage() {
         </div>
       </div>
 
+      <div className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ArticleConsultationBox
+            title="「今からでも間に合うか」を一緒に見極めませんか？"
+            description="残り期間と現在の学力から、本当に届くゴールはどこかを冷静に整理します。志望校の科目負担と自分の得意不得意を突き合わせ、現実的な勝ち筋を見つけることが第一歩です。"
+            points={[
+              "学年・残り期間から、現実的な志望校レンジを判定",
+              "1日に必要な勉強時間と科目配分を具体化",
+              "高3夏から / 浪人 / 再受験など、ケース別の合格パターンを共有",
+            ]}
+            source="column-juken-timing-mid"
+          />
+        </div>
+      </div>
+
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="early-start" className="text-2xl font-bold mb-6 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             「早く始めれば合格できる」は半分正解
           </h2>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
@@ -197,7 +223,7 @@ export default function JukenTimingPage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="faq" className="text-2xl font-bold mb-8 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4">
@@ -256,6 +282,8 @@ export default function JukenTimingPage() {
         </div>
       </div>
 
+
+      <RelatedHubs slug="juken-timing" />
 
       <ColumnCTA
         heading="「今からでは遅い？」そう思ったらまず相談を"

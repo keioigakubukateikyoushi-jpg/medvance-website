@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import ArticleConsultationBox from "@/components/ArticleConsultationBox";
+import RelatedHubs from "@/components/RelatedHubs";
 
 export const metadata = {
   title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント | Medvance",
@@ -129,6 +131,21 @@ export default function MedicalYobikoCostPage() {
         </div>
       </div>
 
+      <div className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ArticleConsultationBox
+            title="今の塾・予備校の費用、本当に伴走分まで含まれていますか？"
+            description="高い学費を払っているのに、授業外の質問対応や進捗管理が薄い——よく聞く話です。Medvanceの無料相談では、現状のサポート量を棚卸しして、必要なら別の選択肢も含めて整理します。"
+            points={[
+              "今のサポート内容を、契約書・実際の運用ベースで整理",
+              "1対1個別の質問対応、過去問分析、面接対策の有無を比較",
+              "費用対効果が合わない場合の選択肢（個別 / 併用 / 切り替え）を提示",
+            ]}
+            source="column-medical-yobiko-cost-mid"
+          />
+        </div>
+      </div>
+
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
@@ -172,6 +189,8 @@ export default function MedicalYobikoCostPage() {
           </div>
         </div>
       </div>
+
+      <RelatedHubs slug="medical-yobiko-cost" />
 
       <ColumnCTA
         heading="費用だけではなく、伴走してくれる塾を選びたい方へ"

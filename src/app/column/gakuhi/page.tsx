@@ -1,6 +1,18 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import ColumnTableOfContents from "@/components/ColumnTableOfContents";
+import ArticleConsultationBox from "@/components/ArticleConsultationBox";
+import RelatedHubs from "@/components/RelatedHubs";
+
+const tocItems = [
+  { id: "national", label: "国公立医学部の学費" },
+  { id: "private", label: "私立医学部の学費比較" },
+  { id: "scholarships", label: "学費を減らす：奨学金・特待生制度" },
+  { id: "other-costs", label: "学費以外にかかる費用" },
+  { id: "guide", label: "費用を踏まえた大学選びの考え方" },
+  { id: "faq", label: "よくある質問" },
+];
 
 const faqItems = [
   {
@@ -180,10 +192,13 @@ export default function GakuhiPage() {
         </div>
       </div>
 
+      <ColumnTableOfContents items={tocItems} />
+
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2
-            className="text-2xl font-bold mb-6"
+            id="national"
+            className="text-2xl font-bold mb-6 scroll-mt-20"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             国公立医学部の学費
@@ -224,7 +239,8 @@ export default function GakuhiPage() {
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
           <h2
-            className="text-2xl font-bold mb-4"
+            id="private"
+            className="text-2xl font-bold mb-4 scroll-mt-20"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             私立医学部の学費比較
@@ -288,7 +304,8 @@ export default function GakuhiPage() {
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2
-            className="text-2xl font-bold text-center mb-10"
+            id="scholarships"
+            className="text-2xl font-bold text-center mb-10 scroll-mt-20"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             学費を減らす：奨学金・特待生制度
@@ -318,7 +335,8 @@ export default function GakuhiPage() {
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
           <h2
-            className="text-2xl font-bold mb-4"
+            id="other-costs"
+            className="text-2xl font-bold mb-4 scroll-mt-20"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             学費以外にかかる費用
@@ -359,10 +377,26 @@ export default function GakuhiPage() {
         </div>
       </div>
 
+      <div className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ArticleConsultationBox
+            title="学費の不安で志望校が決まらないなら、一度整理しませんか？"
+            description="特待生・地域枠・奨学金まで含めると、見た目の学費と実質負担は大きく変わります。家計の許容範囲と、第一志望にしたい大学のラインを一緒にすり合わせます。"
+            points={[
+              "特待生制度を狙える大学・成績ラインを共有",
+              "地域枠 / 自治医大 / 防衛医大 など実質低負担の選択肢を提示",
+              "受験校ラインアップを学費・難易度・出題傾向で逆算",
+            ]}
+            source="column-gakuhi-mid"
+          />
+        </div>
+      </div>
+
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2
-            className="text-2xl font-bold mb-6"
+            id="guide"
+            className="text-2xl font-bold mb-6 scroll-mt-20"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
             費用を踏まえた大学選びの考え方
@@ -386,7 +420,7 @@ export default function GakuhiPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="faq" className="text-2xl font-bold mb-8 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4 mb-12">
@@ -439,6 +473,8 @@ export default function GakuhiPage() {
           </div>
         </div>
       </div>
+      <RelatedHubs slug="gakuhi" />
+
       <ColumnCTA
         heading="費用面の相談もMedvanceにお任せください"
         subtext="学費・奨学金・受験校選びの悩みも含め、医学部合格への道を一緒に考えます。"

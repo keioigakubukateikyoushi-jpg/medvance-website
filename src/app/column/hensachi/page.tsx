@@ -1,6 +1,9 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import ColumnTableOfContents from "@/components/ColumnTableOfContents";
+import ArticleConsultationBox from "@/components/ArticleConsultationBox";
+import RelatedHubs from "@/components/RelatedHubs";
 
 export const metadata = {
   title: "医学部合格に必要な偏差値は？現実的な目標設定｜Medvance",
@@ -59,6 +62,13 @@ const relatedArticles = [
   { href: "/column/shigaku-vs-kokuritsu", title: "私立医学部と国公立医学部、どちらを目指すべきか", label: "大学選び" },
 ];
 
+const tocItems = [
+  { id: "national", label: "国公立医学部の偏差値目安" },
+  { id: "private", label: "私立医学部の偏差値目安" },
+  { id: "goal-setting", label: "偏差値だけで判断しない——現実的な目標設定のポイント" },
+  { id: "faq", label: "よくある質問" },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -107,9 +117,11 @@ export default function HensachiPage() {
         </div>
       </div>
 
+      <ColumnTableOfContents items={tocItems} />
+
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="national" className="text-2xl font-bold mb-4 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             国公立医学部の偏差値目安
           </h2>
           <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
@@ -136,7 +148,7 @@ export default function HensachiPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="private" className="text-2xl font-bold mb-4 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             私立医学部の偏差値目安
           </h2>
           <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
@@ -161,9 +173,24 @@ export default function HensachiPage() {
         </div>
       </div>
 
+      <div className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ArticleConsultationBox
+            title="偏差値の数字だけで志望校を決めていませんか？"
+            description="同じ偏差値でも、出題傾向との相性、面接配点、必要な科目数で「実際の難しさ」は大きく変わります。Medvanceの無料相談では、現状の学力と志望校の特性を突き合わせて、現実的な目標と戦略を整理します。"
+            points={[
+              "現在の偏差値から志望校までの距離を、科目ごとに数値化",
+              "出題傾向との相性を分析し、第一志望・併願校を一緒に検討",
+              "残り期間で何を優先すべきかを具体的に決められる",
+            ]}
+            source="column-hensachi-mid"
+          />
+        </div>
+      </div>
+
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="goal-setting" className="text-2xl font-bold mb-6 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             偏差値だけで判断しない——現実的な目標設定のポイント
           </h2>
           <div className="space-y-4">
@@ -194,7 +221,7 @@ export default function HensachiPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="faq" className="text-2xl font-bold mb-8 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4">
@@ -253,6 +280,8 @@ export default function HensachiPage() {
         </div>
       </div>
 
+
+      <RelatedHubs slug="hensachi" />
 
       <ColumnCTA
         heading="今の偏差値から合格までの最短ルートを設計します"

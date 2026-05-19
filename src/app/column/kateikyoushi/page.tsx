@@ -1,6 +1,16 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import ColumnTableOfContents from "@/components/ColumnTableOfContents";
+import ArticleConsultationBox from "@/components/ArticleConsultationBox";
+import RelatedHubs from "@/components/RelatedHubs";
+
+const tocItems = [
+  { id: "merits", label: "医学部受験に家庭教師を選ぶ5つのメリット" },
+  { id: "select", label: "医学部受験家庭教師を選ぶポイント" },
+  { id: "cost", label: "家庭教師の費用相場" },
+  { id: "faq", label: "よくある質問" },
+];
 
 const faqItems = [
   {
@@ -125,9 +135,11 @@ export default function KateikyoushiPage() {
         </div>
       </div>
 
+      <ColumnTableOfContents items={tocItems} />
+
       <div className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="merits" className="text-2xl font-bold text-center mb-10 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             医学部受験に家庭教師を選ぶ5つのメリット
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,7 +156,7 @@ export default function KateikyoushiPage() {
 
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="select" className="text-2xl font-bold mb-4 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             医学部受験家庭教師を選ぶポイント
           </h2>
           <p className="text-sm mb-8" style={{ color: "#6b7280" }}>
@@ -165,7 +177,7 @@ export default function KateikyoushiPage() {
 
       <div className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="cost" className="text-2xl font-bold mb-6 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             家庭教師の費用相場
           </h2>
           <div className="space-y-3 mb-8">
@@ -192,9 +204,24 @@ export default function KateikyoushiPage() {
         </div>
       </div>
 
+      <div className="py-12 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <ArticleConsultationBox
+            title="あなたに合う家庭教師を、無料相談で一緒に見極めませんか？"
+            description="費用相場と選び方は分かっても、実際の相性までは契約前には見えにくいもの。Medvanceの無料相談では、現状の課題と相性を踏まえて、本当に伴走できるかを丁寧に確認します。"
+            points={[
+              "現役慶應医学部生 1対1指導が、自分のケースで効果を出せるか確認",
+              "予備校・塾との併用か単独か、最適な使い方を提案",
+              "面接・小論文まで含めた指導範囲を、契約前に明確化",
+            ]}
+            source="column-kateikyoushi-mid"
+          />
+        </div>
+      </div>
+
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+          <h2 id="faq" className="text-2xl font-bold mb-8 scroll-mt-20" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくある質問
           </h2>
           <div className="space-y-4 mb-12">
@@ -247,6 +274,8 @@ export default function KateikyoushiPage() {
           </div>
         </div>
       </div>
+
+      <RelatedHubs slug="kateikyoushi" />
 
       <ColumnCTA
         heading="Medvanceは現役慶應医学部生による医学部専門の家庭教師サービスです"
