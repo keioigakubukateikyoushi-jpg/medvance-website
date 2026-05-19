@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 /**
  * Injects a tiny vanilla-JS IntersectionObserver once, globally.
  * Watches all .fade-in-el elements and adds .fi-visible to trigger the CSS animation.
@@ -27,9 +29,5 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 else{init();}
 })();`;
 
-  return (
-    <script
-      dangerouslySetInnerHTML={{ __html: script }}
-    />
-  );
+  return <Script id="fade-in-observer" strategy="afterInteractive">{script}</Script>;
 }

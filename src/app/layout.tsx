@@ -46,14 +46,14 @@ const notoSerif = Noto_Serif_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Medvance｜現役慶應医学部生による完全1対1個別指導",
+    default: "Medvance｜現役慶應医学部生による1対1個別指導",
     template: "%s | Medvance",
   },
   verification: {
     google: "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
   },
   description:
-    "現役慶應義塾大学医学部生による完全1対1の個別指導塾Medvance。医学部受験・難関大受験・学校の成績向上・推薦AO入試・慶應内部進学まで全国オンライン対応。無料相談受付中。",
+    "現役慶應義塾大学医学部生による1対1の個別指導塾Medvance。医学部受験・難関大受験・学校の成績向上・推薦AO入試・慶應内部進学まで全国オンライン対応。無料相談受付中。",
   keywords: [
     "医学部受験", "医学部塾", "医学部家庭教師", "医学部個別指導", "慶應医学部",
     "医学部オンライン", "浪人生 医学部", "再受験 医学部", "医学部合格",
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     "Medvance", "メドバンス", "慶應医学部生", "個別指導 オンライン",
   ],
   openGraph: {
-    title: "Medvance｜現役慶應医学部生による完全1対1個別指導",
-    description: "医学部受験・難関大受験・定期テスト対策・推薦AO入試まで。現役慶應医学部生が完全1対1で指導。全国オンライン対応・無料相談受付中。",
+    title: "Medvance｜現役慶應医学部生による1対1個別指導",
+    description: "医学部受験・難関大受験・定期テスト対策・推薦AO入試まで。現役慶應医学部生が1対1で指導。全国オンライン対応・無料相談受付中。",
     url: "https://medvance-edu.com",
     siteName: "Medvance",
     locale: "ja_JP",
@@ -75,13 +75,13 @@ export const metadata: Metadata = {
         url: "https://medvance-edu.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Medvance｜現役慶應医学部生による完全1対1個別指導",
+        alt: "Medvance｜現役慶應医学部生による1対1個別指導",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medvance｜現役慶應医学部生による完全1対1個別指導",
+    title: "Medvance｜現役慶應医学部生による1対1個別指導",
     description: "医学部受験・難関大受験・定期テスト対策・推薦AO入試。現役慶應医学部生が全国オンラインで1対1指導。",
     images: ["https://medvance-edu.com/og-image.png"],
   },
@@ -122,7 +122,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <meta name="format-detection" content="telephone=no" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
