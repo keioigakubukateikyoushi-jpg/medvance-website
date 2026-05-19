@@ -6,7 +6,7 @@ import { buildBreadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "代表メッセージ｜偏差値40から慶應医学部に全勝した代表が、Medvanceを作った理由",
   description:
-    "Medvance代表 竹内が、偏差値40から慶應医学部含む受験校全勝までに辿り着いた道のりと、現役慶應医学部生のみで医学部受験塾を立ち上げた理由を語ります。",
+    "Medvance代表 医学部受験コーチが、偏差値40から慶應医学部含む受験校全勝までに辿り着いた道のりと、現役慶應医学部生のみで医学部受験塾を立ち上げた理由を語ります。",
   alternates: {
     canonical: "/about/founder",
   },
@@ -94,7 +94,7 @@ export default function FounderPage() {
             Medvanceを作った理由。
           </h1>
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
-            Medvance代表 竹内（慶應義塾大学医学部）が、自身の受験体験と、現役慶應医学部生だけで医学部受験塾を立ち上げた背景を、
+            Medvance代表 医学部受験コーチ（慶應義塾大学医学部）が、自身の受験体験と、現役慶應医学部生だけで医学部受験塾を立ち上げた背景を、
             包み隠さずお伝えします。
           </p>
 
@@ -133,7 +133,7 @@ export default function FounderPage() {
           </h2>
           <div className="space-y-5 text-sm leading-relaxed md:text-base" style={{ color: "#3d3d3d" }}>
             <p>
-              はじめまして、Medvance代表の竹内です。慶應義塾大学医学部に在籍しています。
+              はじめまして、Medvance代表の医学部受験コーチです。慶應義塾大学医学部に在籍しています。
             </p>
             <p>
               医学部に合格すると、必ず聞かれる質問があります。「もともと頭が良かったんでしょう？」 ──

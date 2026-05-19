@@ -304,7 +304,7 @@ export default function PrivateNyuushiyasuiPage() {
             <div className="mt-6 inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-xs" style={{ backgroundColor: "rgba(201,146,42,0.18)", border: "1px solid rgba(201,146,42,0.4)", color: "rgba(255,255,255,0.85)" }}>
               <span className="font-bold" style={{ color: "#c9922a" }}>監修</span>
               <Link href="/about/founder?from=column-private-nyuushiyasui" className="underline">
-                Medvance代表 竹内（慶應医学部・偏差値40→全勝）
+                Medvance代表 医学部受験コーチ（慶應医学部・偏差値40→全勝）
               </Link>
             </div>
           </div>

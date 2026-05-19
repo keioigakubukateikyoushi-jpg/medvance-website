@@ -119,7 +119,7 @@ export default function SuccessStoriesPage() {
             className="mb-2 text-2xl font-bold leading-snug md:text-3xl"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
-            代表 竹内が合格した医学部
+            代表 医学部受験コーチが合格した医学部
           </h2>
           <p className="mb-8 text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
             高2春に偏差値40だった代表が、本番までに到達した合格校です。受験校すべてに合格しました。
