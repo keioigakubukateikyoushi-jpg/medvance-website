@@ -19,7 +19,7 @@ const ICON_SIZES = {
 };
 
 export default function LineButton({
-  label = "LINEで相談",
+  label = "LINEで無料相談",
   size = "md",
   className = "",
 }: Props) {

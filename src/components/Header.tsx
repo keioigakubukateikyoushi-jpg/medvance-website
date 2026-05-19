@@ -12,11 +12,11 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
   {
     label: "対象・志望校",
     items: [
-      { label: "中学生の方", href: "/for/chugaku", desc: "医学部への道筋を今から設計" },
-      { label: "高校1年生の方", href: "/for/ko1", desc: "早期スタートで圧倒的有利に" },
+      { label: "中学生の方", href: "/for/chugaku", desc: "医学部受験を早めに準備" },
+      { label: "高校1年生の方", href: "/for/ko1", desc: "早めに科目の土台をつくる" },
       { label: "高校2年生の方", href: "/for/ko2", desc: "部活と両立・高3に備える" },
-      { label: "高校3年生の方", href: "/for/ko3", desc: "現役合格への最短戦略" },
-      { label: "浪人生の方", href: "/for/ronin", desc: "浪人生専用の指導・戦略" },
+      { label: "高校3年生の方", href: "/for/ko3", desc: "残り期間から計画する" },
+      { label: "浪人生の方", href: "/for/ronin", desc: "浪人生専用の指導・学習計画" },
       { label: "再受験生の方", href: "/for/saijuken", desc: "社会人・大学生からの挑戦" },
       { label: "保護者の方", href: "/for/parents", desc: "定期報告・保護者面談あり" },
       { label: "慶應内部進学を目指す方", href: "/for/keio-naibu", desc: "附属校から医学部へ・評定対策" },
@@ -40,10 +40,10 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "オンライン指導", href: "/services/online", desc: "全国どこからでも受講" },
       { label: "訪問・対面指導", href: "/services/visit", desc: "東京・関東エリア対応" },
       { label: "面接・小論文対策", href: "/services/interview", desc: "医学部特有の対策" },
-      { label: "AI模試分析（無料）", href: "/services/moshi", desc: "AIが偏差値から学習ルートを即時生成" },
+      { label: "模試分析（無料）", href: "/services/moshi", desc: "偏差値と科目別結果から学習計画を作成" },
       { label: "家庭教師一覧", href: "/tutors", desc: "講師を科目・エリアから探す" },
       { label: "講師募集", href: "/recruit", desc: "Medvance講師として応募する" },
-      { label: "各教科の指導方法", href: "/subjects", desc: "英数理の本質的指導" },
+      { label: "各教科の指導方法", href: "/subjects", desc: "英数理の進め方" },
     ],
   },
   {
@@ -113,7 +113,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 hover:opacity-85 transition-opacity flex-shrink-0">
-          <Image src="/images/logo.webp" alt="Medvance" width={56} height={32} priority className="object-contain" />
+          <Image
+            src="/images/logo-medvance-white.webp"
+            alt="Medvance"
+            width={56}
+            height={56}
+            priority
+            className="h-11 w-11 rounded-md bg-white object-contain p-0.5 shadow-sm"
+          />
           <span className="text-white font-semibold text-xs hidden sm:block opacity-70 leading-tight">
             慶應医学部生による<br />医学部受験専門塾
           </span>
@@ -203,7 +210,7 @@ export default function Header() {
             className="ml-1 px-5 py-2.5 text-white font-bold rounded-lg text-sm whitespace-nowrap hover:opacity-90 transition-opacity"
             style={{ backgroundColor: "#c9922a" }}
           >
-            無料相談
+            フォーム
           </Link>
           <a
             href={LINE_URL}
@@ -310,10 +317,10 @@ export default function Header() {
             <Link
               href="/contact"
               className="px-4 py-3 text-white font-bold rounded-lg text-sm text-center hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#c9922a" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              無料相談
+            style={{ backgroundColor: "#c9922a" }}
+            onClick={() => setMenuOpen(false)}
+          >
+              フォーム
             </Link>
             <a
               href={LINE_URL}

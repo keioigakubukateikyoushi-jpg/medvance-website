@@ -71,8 +71,8 @@ const SERVICE_LABELS: Record<string, string> = {
   online: "オンライン指導",
   visit: "訪問指導",
   interview: "面接対策",
-  moshi: "AI模試分析",
-  tool: "AI模試分析ツール",
+  moshi: "模試分析",
+  tool: "模試分析ツール",
 };
 
 const UNIVERSITIES_INDEX_LABELS: Record<string, string> = {

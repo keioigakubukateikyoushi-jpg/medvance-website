@@ -24,11 +24,16 @@ export default function FloatingCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 100);
+      const threshold = window.innerWidth < 1024 ? window.innerHeight * 0.7 : 320;
+      setVisible(window.scrollY > threshold);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   if (pathname === "/contact") return null;
@@ -40,12 +45,14 @@ export default function FloatingCTA() {
         className="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex transition-transform duration-300"
         style={{
           transform: visible ? "translateY(0)" : "translateY(100%)",
+          paddingBottom: "env(safe-area-inset-bottom)",
         }}
       >
         <Link
           href="/contact?from=floating-mobile"
-          className="flex-1 flex items-center justify-center gap-2 py-4 text-white font-bold text-sm"
+          className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm"
           style={{ backgroundColor: "#c9922a" }}
+          aria-label="フォームで無料相談"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
@@ -56,8 +63,9 @@ export default function FloatingCTA() {
           href={LINE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 py-4 text-white font-bold text-sm"
+          className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm"
           style={{ backgroundColor: LINE_GREEN }}
+          aria-label="LINEで無料相談"
         >
           <LineIcon />
           LINEで無料相談
@@ -89,7 +97,7 @@ export default function FloatingCTA() {
             </svg>
           </span>
           <div className="leading-tight">
-            <div className="text-[10px] font-semibold tracking-widest uppercase opacity-90">30min / Free</div>
+            <div className="text-[10px] font-semibold tracking-widest opacity-90">フォーム</div>
             <div className="text-sm font-bold whitespace-nowrap">フォームで相談</div>
           </div>
         </Link>
@@ -105,7 +113,7 @@ export default function FloatingCTA() {
         >
           <LineIcon className="w-6 h-6" />
           <div className="leading-tight">
-            <div className="text-[10px] font-semibold tracking-widest uppercase opacity-90">Instant</div>
+            <div className="text-[10px] font-semibold tracking-widest opacity-90">LINE</div>
             <div className="text-sm font-bold whitespace-nowrap">LINEで無料相談</div>
           </div>
         </a>

@@ -11,11 +11,11 @@ interface ArticleConsultationBoxProps {
 }
 
 export default function ArticleConsultationBox({
-  eyebrow = "無料相談で整理できること",
+  eyebrow = "相談前にできること",
   title,
   description,
   points,
-  ctaLabel = "30分無料相談を申し込む",
+  ctaLabel = "フォームで無料相談",
   source,
 }: ArticleConsultationBoxProps) {
   const contactHref = source ? `/contact?from=${encodeURIComponent(source)}` : "/contact";
@@ -55,7 +55,7 @@ export default function ArticleConsultationBox({
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex flex-wrap gap-2 text-xs font-semibold">
-            {["完全無料", "30分オンライン", "勧誘なし", "戦略マニュアル付き"].map((item) => (
+            {["フォーム", "LINE相談", "医学部受験マニュアル", "全国オンライン"].map((item) => (
               <span
                 key={item}
                 className="rounded-full px-3 py-1.5"
@@ -74,7 +74,7 @@ export default function ArticleConsultationBox({
               className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
               style={{ backgroundColor: "#06C755" }}
             >
-              LINEで質問する
+              LINEで無料相談
             </a>
             <Link
               href={contactHref}

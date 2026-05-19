@@ -18,7 +18,7 @@ export default function Footer() {
                 className="inline-block px-5 py-2.5 text-white font-semibold rounded-lg text-sm hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: "#c9922a" }}
               >
-                無料相談はこちら
+                フォーム
               </Link>
               <a
                 href={LINE_URL}
@@ -81,7 +81,7 @@ export default function Footer() {
                 { label: "オンライン指導", href: "/services/online" },
                 { label: "訪問・対面指導", href: "/services/visit" },
                 { label: "面接・小論文対策", href: "/services/interview" },
-                { label: "AI模試分析（無料）", href: "/services/moshi" },
+                { label: "模試分析（無料）", href: "/services/moshi" },
                 { label: "家庭教師一覧", href: "/tutors" },
                 { label: "料金について", href: "/pricing" },
                 { label: "お知らせ", href: "/news" },

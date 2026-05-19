@@ -17,16 +17,6 @@ export default function MedvanceBanner() {
             style={{ background: "linear-gradient(90deg, transparent, #c9922a, #e8b84b, #c9922a, transparent)" }}
           />
 
-          {/* Decorative circle */}
-          <div
-            className="absolute -right-16 -top-16 w-64 h-64 rounded-full opacity-5"
-            style={{ backgroundColor: "#c9922a" }}
-          />
-          <div
-            className="absolute -left-8 -bottom-12 w-48 h-48 rounded-full opacity-5"
-            style={{ backgroundColor: "#c9922a" }}
-          />
-
           <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* Left: text */}
             <div className="flex-1 text-center md:text-left">
@@ -34,14 +24,14 @@ export default function MedvanceBanner() {
                 Medvance — 医学部受験専門塾
               </p>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)", lineHeight: "1.4" }}>
-                医学部合格なら、<br />現役慶應医学部生に相談を。
+                医学部受験を、<br />慶應医学部生に相談できます。
               </h2>
               <ul className="space-y-2 mb-0">
                 {[
                   "現役慶應医学部生が1対1で直接指導",
-                  "各大学の出題傾向に合わせた完全個別対策",
-                  "面接・小論文まで一貫サポート",
-                  "無料相談で現状診断・合格戦略をご提案",
+                  "大学ごとの出題傾向に合わせて指導",
+                  "面接・小論文まで相談可能",
+                  "フォームまたはLINEから連絡できます",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
                     <span
@@ -63,14 +53,14 @@ export default function MedvanceBanner() {
             >
               <p className="text-xs font-semibold mb-1" style={{ color: "#6b7280" }}>まずはここから</p>
               <p className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                無料相談<br />受付中
+                相談・資料<br />受付中
               </p>
               <Link
                 href="/contact"
                 className="block w-full py-3 px-5 text-white font-bold text-sm rounded-xl text-center hover:opacity-90 transition-opacity mb-3"
                 style={{ backgroundColor: "#c9922a" }}
               >
-                無料相談はこちら →
+                フォームで無料相談 →
               </Link>
               <Link
                 href="/pricing"
