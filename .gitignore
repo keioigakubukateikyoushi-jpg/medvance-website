@@ -45,3 +45,8 @@ next-env.d.ts
 
 # image originals (backed up locally, not needed in repo)
 /_backup_images
+
+# local dev/prod server logs and scratch output
+dev-server*.log
+prod-server-*.log
+output/
