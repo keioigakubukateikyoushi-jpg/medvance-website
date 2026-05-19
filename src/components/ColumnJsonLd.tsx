@@ -1,4 +1,4 @@
-import { buildArticleSchema, buildBreadcrumbSchema, siteUrl, SITE_MODIFIED } from "@/lib/seo";
+import { buildArticleSchema, buildBreadcrumbSchema, SITE_MODIFIED } from "@/lib/seo";
 
 type Props = {
   title: string;

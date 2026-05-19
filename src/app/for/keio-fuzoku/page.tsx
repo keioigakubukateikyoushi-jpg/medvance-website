@@ -1,6 +1,5 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
-import RelatedColumns from "@/components/RelatedColumns";
 import type { Metadata } from "next";
 
 const faqItems = [

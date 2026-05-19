@@ -1,7 +1,5 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
-import RelatedColumns from "@/components/RelatedColumns";
-
 export const metadata = {
   title: "高3の医学部受験対策｜現役慶應医学部生による完全1対1指導 | Medvance",
   description:

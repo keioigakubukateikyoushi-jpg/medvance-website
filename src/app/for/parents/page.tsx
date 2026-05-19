@@ -1,7 +1,5 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
-import RelatedColumns from "@/components/RelatedColumns";
-
 export const metadata = {
   title: "保護者の方へ｜お子さまの医学部合格を一緒に目指します | Medvance",
   description:

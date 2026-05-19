@@ -1,4 +1,4 @@
-import { buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema, siteUrl } from "@/lib/seo";
+import { buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from "@/lib/seo";
 
 type FaqItem = { q: string; a: string };
 

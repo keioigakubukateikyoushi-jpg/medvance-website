@@ -1,7 +1,5 @@
 // 英語のEyebrowラベル（SaaS/AI的）を、日本語にするか削除する。
 import fs from "node:fs/promises";
-import path from "node:path";
-
 const TARGETS = [
   // [英語ラベル, 日本語 or null (削除)]
   ["Why Medvance", null], // 下のH2で十分

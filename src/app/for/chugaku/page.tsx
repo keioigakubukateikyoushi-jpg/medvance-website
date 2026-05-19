@@ -1,7 +1,5 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
-import RelatedColumns from "@/components/RelatedColumns";
-
 export const metadata = {
   title: "中学生からの医学部受験ロードマップ｜現役慶應医学部生が解説 | Medvance",
   description:
