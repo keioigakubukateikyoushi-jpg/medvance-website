@@ -122,6 +122,25 @@ export default function FounderPage() {
       {/* Personal note */}
       <section className="bg-white px-4 py-16">
         <div className="mx-auto max-w-3xl">
+          {/* Profile image placeholder — replace with /images/founder.webp when available */}
+          <div className="mb-6 flex items-center gap-4">
+            <div
+              aria-label="代表プロフィール画像（準備中）"
+              className="h-24 w-24 shrink-0 rounded-full"
+              style={{ backgroundColor: "#f3f4f6", border: "1px solid #e5e1d8" }}
+            />
+            <div>
+              <p className="text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
+                Medvance代表
+              </p>
+              <p className="mt-1 text-base font-bold" style={{ color: "#0c1a33" }}>
+                医学部受験コーチ
+              </p>
+              <p className="text-xs" style={{ color: "#6b7280" }}>
+                慶應義塾大学医学部 在籍
+              </p>
+            </div>
+          </div>
           <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
             Personal
           </p>
@@ -314,6 +333,19 @@ export default function FounderPage() {
               フォームで無料戦略相談
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Pen name disclosure */}
+      <section className="bg-white px-4 pb-12">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
+            ※「医学部受験コーチ」はペンネームです。本名は
+            <Link href="/tokushoho" className="underline" style={{ color: "#6b7280" }}>
+              特定商取引法に基づく表示
+            </Link>
+            にて、ご請求いただいた方に開示いたします。
+          </p>
         </div>
       </section>
     </div>
