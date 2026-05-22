@@ -11,31 +11,31 @@ function anim(duration: number, delay: number, name = "fadeUpIn"): React.CSSProp
 }
 
 const heroProofItems = [
-  { label: "講師", value: "慶應医学部生" },
-  { label: "設計", value: "週ごとの課題管理" },
-  { label: "対応", value: "全国オンライン" },
+  { label: "対象", value: "国公立・私立医学部志望" },
+  { label: "指導", value: "1対1個別指導 + 週次学習管理" },
+  { label: "戦略", value: "共通テスト・二次・出願・面接小論文" },
 ];
 
 const heroPersonas = [
   {
-    label: "高校3年生の方へ",
-    desc: "残り期間から逆算した90日プランを直接設計します",
-    href: "/for/ko3?from=hero-persona",
+    label: "国公立医学部を目指す方へ",
+    desc: "共通テスト・二次試験・面接まで、科目別に学習計画を組みます",
+    href: "/universities/national?from=hero-persona",
   },
   {
-    label: "浪人・再受験の方へ",
-    desc: "前年の失敗要因を分解して、伸ばし切る一年に組み直します",
-    href: "/for/ronin?from=hero-persona",
+    label: "私立医学部を目指す方へ",
+    desc: "大学別の科目相性、出願日程、面接小論文まで設計します",
+    href: "/private-medical-strategy?from=hero-persona",
   },
   {
-    label: "保護者の方へ",
-    desc: "学費・受験校・親が陥る不安を、戦略相談で一緒に整理します",
-    href: "/for/parents?from=hero-persona",
+    label: "大手予備校と併用したいご家庭へ",
+    desc: "授業後の復習管理、質問対応、志望校別対策を補完します",
+    href: "/for/prep-school-plus?from=hero-persona",
   },
   {
-    label: "慶應医学部 第一志望の方へ",
-    desc: "慶應医を全勝した代表が、入試ごとの差を踏まえて指導します",
-    href: "/universities/keio?from=hero-persona",
+    label: "集団塾が合わない医学部志望生へ",
+    desc: "1対1指導と週次管理で、本人に合う受験体制を作ります",
+    href: "/for/not-group-school?from=hero-persona",
   },
 ];
 
@@ -67,10 +67,10 @@ function HeroText() {
           className="rounded-sm px-2 py-0.5 text-[10px] font-bold tracking-widest"
           style={{ backgroundColor: "#c9922a", color: "#0c1a33" }}
         >
-          無料相談で90日プラン作成
+          医学部 合格戦略診断
         </span>
         <span className="text-xs leading-snug" style={{ color: "rgba(255,255,255,0.85)" }}>
-          現役慶應医学部生が現在地を確認
+          国公立・私立に対応する個別戦略
         </span>
         <span aria-hidden="true" className="ml-auto text-xs" style={{ color: "#c9922a" }}>
           →
@@ -79,13 +79,13 @@ function HeroText() {
 
       {/* Gold line */}
       <div
-        className="w-12 h-0.5 mb-5"
+        className="mb-4 h-0.5 w-12 sm:mb-5"
         style={{ backgroundColor: "#c9922a", transformOrigin: "left", ...anim(0.5, 0.05, "scaleInX") }}
       />
 
       {/* Micro copy */}
       <div
-        className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-md text-xs tracking-widest w-fit"
+        className="mb-4 inline-flex w-fit items-center gap-2 rounded-md px-3 py-1.5 text-xs tracking-widest sm:mb-5"
         style={{
           backgroundColor: "rgba(255,255,255,0.06)",
           border: "1px solid rgba(255,255,255,0.12)",
@@ -93,28 +93,43 @@ function HeroText() {
           ...anim(0.5, 0.1, "fadeSlideDown"),
         }}
       >
-        医学部受験専門 / 1対1個別指導
+        医学部受験専門 / 1対1伴走
       </div>
+
+      {/* Catch copy */}
+      <p
+        className="mb-4 font-bold leading-snug sm:mb-5"
+        style={{
+          fontFamily: "var(--font-noto-serif)",
+          fontSize: "clamp(1.15rem, 2.7vw, 1.75rem)",
+          color: "#c9922a",
+          maxWidth: "calc(100vw - 40px)",
+          ...anim(0.6, 0.16),
+        }}
+      >
+        <span className="block">医学部合格に、</span>
+        <span className="block">才能は関係ない。</span>
+      </p>
 
       {/* Headline — single sentence, two lines on mobile */}
       <h1
-        className="mb-4 font-bold leading-snug"
+        className="mb-3 font-bold leading-snug sm:mb-4"
         style={{
           fontFamily: "var(--font-noto-serif)",
-          fontSize: "clamp(1.78rem, 4.1vw, 3.05rem)",
+          fontSize: "clamp(1.62rem, 4.1vw, 3.05rem)",
           color: "#ffffff",
           maxWidth: "calc(100vw - 40px)",
           ...anim(0.65, 0.2),
         }}
       >
-        <span className="block">慶應医学部生が、</span>
-        <span className="block">医学部受験を</span>
-        <span className="block">1対1で支える。</span>
+        <span className="block">医学部合格に向けた、</span>
+        <span className="block">個別指導と</span>
+        <span className="block">受験戦略を。</span>
       </h1>
 
       {/* Sub copy */}
       <p
-        className="mb-5 font-semibold"
+        className="mb-4 font-semibold sm:mb-5"
         style={{
           color: "#c9922a",
           fontFamily: "var(--font-noto-serif)",
@@ -125,13 +140,13 @@ function HeroText() {
           ...anim(0.65, 0.28),
         }}
       >
-        授業・自習・面接小論文まで、<br className="sm:hidden" />
-        志望校から逆算して毎週設計します。
+        国公立・私立医学部を目指す受験生へ。<br className="sm:hidden" />
+        予備校併用・1対1指導・志望校別戦略まで一緒に進めます。
       </p>
 
       {/* Description */}
       <p
-        className="mb-8 leading-relaxed"
+        className="mb-7 hidden leading-relaxed sm:block"
         style={{
           color: "rgba(255,255,255,0.62)",
           maxWidth: "calc(100vw - 40px)",
@@ -140,8 +155,7 @@ function HeroText() {
           ...anim(0.65, 0.36),
         }}
       >
-        模試結果・志望校・教材から、授業で扱う内容と自習範囲を具体化。
-        次の1週間でやることまで一緒に決めます。
+        集団塾が合わない方、予備校に通っていても復習・質問・志望校別対策が不安なご家庭へ。共通テスト、二次試験、私立医学部の大学別対策まで、毎週の実行に落とし込みます。
       </p>
 
       {/* CTAs */}
@@ -154,7 +168,7 @@ function HeroText() {
           className="inline-flex w-full items-center justify-center rounded-lg px-7 py-3.5 text-center text-sm font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:w-auto"
           style={{ backgroundColor: "#c9922a" }}
         >
-          フォームで無料相談
+          合格戦略診断を申し込む
         </Link>
         <a
           href={LINE_URL}
@@ -164,14 +178,14 @@ function HeroText() {
           style={{ backgroundColor: "#06C755" }}
         >
           <LineIcon />
-          LINEで30秒相談
+          LINEで相談する
         </a>
       </div>
       <p
-        className="mt-3 hidden text-xs sm:block"
+        className="mt-3 text-xs"
         style={{ color: "rgba(255,255,255,0.48)", ...anim(0.65, 0.48) }}
       >
-        30分・オンライン対応 / 強引な勧誘はありません
+        保護者同席推奨 / 全国オンライン対応 / 国公立・私立医学部に対応
       </p>
 
     </>
@@ -205,7 +219,7 @@ function HeroPersonas() {
           ))}
         </dl>
         <p className="mb-4 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-          For You — まずは自分に合う入口から
+          ご家庭の状況に近い入口から
         </p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {heroPersonas.map((persona) => (
@@ -231,6 +245,13 @@ function HeroPersonas() {
             </Link>
           ))}
         </div>
+        <p className="mt-5 text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
+          当てはまる入口がない場合は{" "}
+          <Link href="/for?from=hero-personas" className="font-bold underline-offset-2 hover:underline" style={{ color: "#c9922a" }}>
+            対象者ページ一覧
+          </Link>
+          {" "}からお探しください。
+        </p>
       </div>
     </section>
   );
@@ -264,7 +285,7 @@ export default function HeroAnimated() {
 
       {/* Mobile: keep tutor and student visible above the copy. */}
       <div className="md:hidden relative overflow-hidden" style={{ backgroundColor: "#0c1a33" }}>
-        <div className="relative aspect-[16/6.3] w-full overflow-hidden sm:aspect-[16/7]">
+        <div className="relative aspect-[16/5.2] w-full overflow-hidden sm:aspect-[16/6]">
           <Image
             src="/images/hero-japan-tutoring-mobile.webp"
             alt="日本の医学部受験に向けて1対1で答案を確認する講師と受験生"
@@ -279,7 +300,7 @@ export default function HeroAnimated() {
             style={{ background: "linear-gradient(to bottom, rgba(12,26,51,0) 0%, #0c1a33 100%)" }}
           />
         </div>
-        <div className="relative z-10 max-w-full overflow-hidden px-5 pb-8 pt-5">
+        <div className="relative z-10 max-w-full overflow-hidden px-5 pb-7 pt-4">
           <HeroText />
         </div>
       </div>

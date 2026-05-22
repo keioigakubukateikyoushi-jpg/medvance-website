@@ -6,17 +6,17 @@ import FadeIn from "@/components/FadeIn";
 import HoverCard from "@/components/HoverCard";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LineButton from "@/components/LineButton";
-import { LINE_URL } from "@/lib/links";
 import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
 } from "@/lib/columnArticles";
 import { getColumnThumbnail } from "@/lib/columnThumbnails";
 import { buildItemListSchema, buildFaqSchema, buildSpeakableSchema } from "@/lib/seo";
+import { notices } from "@/lib/notices";
 
 export const metadata = {
-  title: "医学部受験専門塾 Medvance｜慶應医学部生が1対1で指導",
-  description: "慶應医学部生が担当する医学部受験専門の1対1個別指導。英語・数学・理科の授業、週ごとの課題管理、保護者共有、面接・小論文までオンラインで相談できます。",
+  title: "医学部受験専門塾 Medvance｜慶應医学部生が完全1対1・全国オンライン対応",
+  description: "現役慶應医学部生による完全1対1の医学部受験専門塾。慶應医学部に受かるには何が必要か、面接対策はいつから始めるべきかまで解説。オンラインで全国どこからでも受講可能。",
   alternates: {
     canonical: "/",
   },
@@ -56,34 +56,34 @@ const IconGlobe = () => (
 
 /* ── Data ─────────────────────────────────── */
 const features = [
-  { icon: <IconPerson />, title: "授業は1対1", body: "毎回同じ講師が担当。分からない問題を、その場で止めて聞けます。" },
-  { icon: <IconAcademic />, title: "慶應医学部生が担当", body: "受験を経験した講師が、科目の進め方から本番前の過ごし方まで話します。" },
-  { icon: <IconBook />, title: "医学部受験だけに絞る", body: "英語・数学・理科に加え、小論文・面接・MMI・出願書類まで扱います。" },
-  { icon: <IconClipboard />, title: "週ごとに課題を出す", body: "問題集、復習範囲、次の模試までの目標点を、志望校から決めます。" },
-  { icon: <IconLightbulb />, title: "合格者のやり方を聞ける", body: "何をいつ解いたか、どこで伸びたか。講師自身の経験もそのまま話します。" },
-  { icon: <IconGlobe />, title: "オンライン・対面", body: "全国オンライン対応。関東圏は自宅・カフェ・学習スペースでの対面も相談できます。" },
+  { icon: <IconPerson />, title: "完全1対1指導", body: "集団授業・映像授業は一切なし。担当講師が毎回の授業を直接指導し、理解度に応じて進度を調整します。" },
+  { icon: <IconAcademic />, title: "講師は全員、現役慶應医学部生", body: "東大模試上位経験者、多浪から合格した講師、地方公立出身者など、タイプの異なる講師の中から生徒に合う1人をマッチングします。" },
+  { icon: <IconBook />, title: "医学部入試に限定した指導", body: "英数理に加え、小論文・面接・MMI・出願書類まで、同じ担当講師が見ます。医学部以外の受験指導は行いません。" },
+  { icon: <IconClipboard />, title: "週単位で組む学習計画", body: "使う問題集、1週間のノルマ、模試ごとの目標点を志望校から逆算して決めます。計画は毎週見直します。" },
+  { icon: <IconLightbulb />, title: "合格者本人の勉強法を伝える", body: "どの時期に何を解き、どこでつまずき、どう乗り越えたか。合格者が自分の経験として答えられる形で指導します。" },
+  { icon: <IconGlobe />, title: "オンライン・対面の両対応", body: "全国どこからでもオンラインで受講可能。関東圏であれば対面指導（自宅・カフェ・学習スペース）にも対応します。" },
 ];
 
 const strengths = [
-  { num: "01", title: "講師は慶應医学部の現役生", body: "科目別の時間配分、直前期の過ごし方、本番で焦った時の立て直しまで、受験した本人として話せます。" },
-  { num: "02", title: "1週間の課題まで決める", body: "使う問題集、解く範囲、復習日、模試までの目標点を決めます。遅れた時は、次の週に組み直します。" },
-  { num: "03", title: "医学部受験に絞って見る", body: "英語・数学・理科だけでなく、小論文・面接・MMI・出願書類まで同じ流れで見ます。" },
+  { num: "01", title: "講師は全員、慶應医学部の現役生", body: "自分が1〜2年前に実際に受けた試験について、科目別の時間配分や当日の緊張への対処まで、経験として話せる講師だけが指導します。合格者の思考プロセスを、大学受験産業を通さず直接生徒に伝える形です。" },
+  { num: "02", title: "1日単位の学習計画を組む", body: "使う問題集、どの範囲をいつまでに終わらせるか、模試ごとの目標点まで、志望校から逆算して決めます。毎週の進捗を確認し、遅れが出た時点で計画を組み直します。" },
+  { num: "03", title: "医学部受験のための指導に限定", body: "英数理だけでなく、小論文・面接・MMI・出願書類まで、同じ担当講師が見ます。大学別の傾向（例：慶應の理科2科目、慈恵の英語、MMI導入校）まで踏まえた指導が可能です。" },
 ];
 
 const steps = [
-  { title: "学習相談", body: "フォームから、学年・志望校・模試結果・使用教材をお送りください。" },
-  { title: "担当講師の候補を案内", body: "科目、志望校、質問のしやすさを見て、担当候補を出します。" },
-  { title: "体験指導（60分〜）", body: "担当予定の講師で体験できます。合うかどうかを見てください。" },
-  { title: "本契約・指導開始", body: "授業、宿題、質問、模試の見直しを続けていきます。" },
+  { title: "無料カウンセリング", body: "フォームからご連絡ください。学力・志望校・悩みをヒアリングします。" },
+  { title: "最適な講師をご提案", body: "相性・志望校・科目を考慮し、現役慶應医学部生から最適な講師を選定。" },
+  { title: "体験指導（60分〜）", body: "担当予定の講師による体験指導を実施。相性を確認したうえで本契約へ。" },
+  { title: "本契約・指導スタート", body: "完全1対1の本格指導がスタート。合格まで継続的にサポートします。" },
 ];
 
 const faqs = [
-  { q: "どんな生徒が対象ですか？", a: "現役生・浪人生・再受験生が対象です。中学生、高1・高2からの相談も受けています。" },
-  { q: "どんな学力からでも医学部に合格できますか？", a: "現在の偏差値よりも、ここから残り何ヶ月でどれだけ積み上げられるかが大切です。高3春に偏差値50台から1年で私立医学部に合格した事例、浪人1年で国公立医学部に届いた事例もあります。まずは残り期間、科目ごとの点数、志望校を確認します。" },
-  { q: "料金はどのくらいかかりますか？", a: "授業回数と科目数で変わります。相談時に、月額の目安まで出します。" },
-  { q: "受講場所はどこになりますか？", a: "オンラインが中心です。関東圏では、自宅・カフェ・学習スペースでの対面も相談できます。" },
-  { q: "体験指導はありますか？", a: "あります。担当予定の講師で体験し、合うかどうかを見てから決められます。" },
-  { q: "講師はどのように選ばれますか？", a: "志望校、科目、性格、質問のしやすさを見て、担当候補を出します。希望があれば事前に面談できます。" },
+  { q: "どんな生徒が対象ですか？", a: "現役生・浪人生・再受験生すべてに対応しています。学力や年齢を問わず、医学部合格を目指す方であればどなたでもお申し込みいただけます。" },
+  { q: "どんな学力からでも医学部に合格できますか？", a: "現在の偏差値よりも、そこから残り何ヶ月でどれだけ積み上げられるかで決まります。高3春に偏差値50台から1年で私立医学部に合格した事例、浪人1年で国公立医学部に届いた事例もあります。無料相談で残り期間と志望校の距離を確認してから判断してください。" },
+  { q: "料金はどのくらいかかりますか？", a: "指導頻度・内容・期間によって異なるため、無料相談でヒアリングしたうえでご提案しています。まずはお気軽にご連絡ください。" },
+  { q: "受講場所はどこになりますか？", a: "オンライン・自宅訪問（関東圏）・カフェ・レンタル学習スペースなど、ご希望の場所に対応しています。オンラインなら全国どこからでも受講可能です。" },
+  { q: "体験指導はありますか？", a: "希望があれば、担当予定の講師による体験指導（1回60分〜）を実施しています。相性や指導の質をご確認いただいてから本契約に進めます。" },
+  { q: "講師はどのように選ばれますか？", a: "性格・志望校・得意科目・指導スタイルなどを総合的に考慮し、生徒さんに最も合った慶應医学部生をマッチングします。希望があれば事前の面談も可能です。" },
 ];
 
 const subjects = [
@@ -94,11 +94,20 @@ const subjects = [
   { label: "生物", badge: "生", href: "/subjects/biology" },
 ];
 
+const searchIntentLinks = [
+  { label: "慶應医学部に受かるには", href: "/universities/keio", desc: "科目別配点、小論文、面接、出願戦略まで" },
+  { label: "MMI面接の対策方法を知りたい", href: "/column/mmi-taisaku", desc: "頻出テーマ、大学別傾向、練習の始め方" },
+  { label: "医学部受験は夏から間に合う？", href: "/column/natsu-manikiai", desc: "高3・浪人生それぞれの夏以降の使い方" },
+  { label: "私立医学部の学費を比較したい", href: "/column/gakuhi", desc: "私立30校・国公立との6年間総額の比較" },
+  { label: "無料相談で受験戦略を立てたい", href: "/contact?from=home-search-hub", desc: "志望校・現在地・残り期間から、30分で次の一手をお伝えします" },
+  { label: "保護者向けの情報を知りたい", href: "/for/parents", desc: "費用、保護者面談、成績報告、講師変更制度" },
+];
+
 const decisionLinks = [
   {
     tag: "相談",
-    title: "フォームで無料相談",
-    desc: "学年・志望校・模試結果・使っている教材を送れます。受講科目と回数の目安を相談できます。",
+    title: "無料相談で相性を確かめる",
+    desc: "現在の学力、志望校、残り期間から、次にやるべきことをその場でお伝えします。",
     href: "/contact?from=home-decision-card",
   },
   {
@@ -110,220 +119,23 @@ const decisionLinks = [
   {
     tag: "保護者",
     title: "保護者向け情報を見る",
-    desc: "月々の費用、保護者面談、成績報告、講師変更についてまとめています。",
+    desc: "月々の費用、月1回の保護者面談、成績報告、講師の変更制度まで解説します。",
     href: "/for/parents",
   },
 ];
 
-const serviceOverviewItems = [
-  {
-    label: "01",
-    title: "入試科目と出題傾向から決める",
-    body: "慶應・慈恵・順天堂など、大学ごとの科目、過去問の時期、面接・小論文の有無を見て進めます。",
-  },
-  {
-    label: "02",
-    title: "授業で扱う問題を絞る",
-    body: "英語・数学・理科を中心に、今の点数に直結しやすい単元から扱います。必要に応じて教材も見直します。",
-  },
-  {
-    label: "03",
-    title: "自習範囲と復習日まで残す",
-    body: "次回までに解く範囲、復習する日、質問する問題を毎回決めます。授業時間だけで終わらせません。",
-  },
+const idealForItems = [
+  "予備校に通っているのに、模試の偏差値が半年変わっていない",
+  "英数理のどこを先に仕上げるべきか、自分で判断できない",
+  "面接・小論文・出願書類をどう準備するか決まっていない",
+  "今のやり方で志望校に届くのか、正直に判断してほしい",
 ];
 
-const topServiceItems = [
-  {
-    label: "01",
-    title: "慶應医学部生の1対1授業",
-    body: "医学部受験を経験した講師が、英語・数学・理科を中心に、答案の作り方や解き直しまで確認します。",
-  },
-  {
-    label: "02",
-    title: "週ごとの課題管理",
-    body: "授業で扱う問題、自習で進める範囲、復習日を毎週決めます。遅れた週は、次の週に組み直します。",
-  },
-  {
-    label: "03",
-    title: "保護者への進捗共有",
-    body: "学習状況、次にやること、受験校や科目の見直しを必要に応じて共有します。",
-  },
-  {
-    label: "04",
-    title: "面接・小論文・MMIも相談",
-    body: "志望理由、医師像、小論文テーマ、MMIなど、必要な大学に合わせて準備します。",
-  },
+const consultationBenefits = [
+  "現在の学力と志望校の差を、科目別に数値で整理します",
+  "この1週間・1ヶ月で優先すべき科目と問題集を具体的に提案します",
+  "授業頻度・担当講師・面接対策・出願まで、何をどう進めるか説明します",
 ];
-
-const teachingSystemItems = [
-  {
-    title: "担当講師の選定",
-    body: "科目、志望校、質問のしやすさを見て、担当候補を案内します。",
-  },
-  {
-    title: "体験指導",
-    body: "担当予定の講師で受けられます。説明の合う・合わないを先に確認できます。",
-  },
-  {
-    title: "授業外の質問",
-    body: "宿題で止まったところは、次回授業の内容に入れます。",
-  },
-  {
-    title: "保護者共有",
-    body: "授業の進み具合や次にやることを、保護者の方にも共有できます。",
-  },
-];
-
-const lpAudienceItems = [
-  "慶應・難関私立医学部を目指す現役生",
-  "医学部予備校の費用や通塾に迷っているご家庭",
-  "浪人・再受験で学習計画を立て直したい方",
-  "推薦・総合型、面接・小論文まで見ておきたい方",
-];
-
-const lpConsultationItems = [
-  { title: "受験校の候補", body: "成績、地域、学費、入試科目を見ながら相談できます。" },
-  { title: "受講科目と回数", body: "英語・数学・理科のどこを授業で扱うか、週何回がよいかを相談できます。" },
-  { title: "面接・小論文の開始時期", body: "必要な大学と、準備を始める時期を確認できます。" },
-  { title: "医学部受験マニュアル", body: "希望者には、科目別の進め方や面接・小論文の始め方をまとめた資料を案内します。" },
-];
-
-const serviceScopeItems = [
-  "英語・数学・理科の個別指導",
-  "週ごとの課題設定",
-  "面接・小論文・MMIの準備",
-  "出願校・併願校の相談",
-  "教材選定と週間学習計画",
-  "模試結果の見直し",
-  "保護者への状況共有",
-];
-
-const consultationNotes = [
-  {
-    title: "模試結果",
-    body: "科目別の点数、判定、残り期間を見て、先に直す科目を相談します。",
-  },
-  {
-    title: "使用教材",
-    body: "学校・予備校の進度、参考書、過去問の進み具合を確認します。",
-  },
-  {
-    title: "受講回数",
-    body: "週1回から複数回まで、科目数と残り期間に合わせて目安を出します。",
-  },
-  {
-    title: "面接・小論文",
-    body: "志望校に応じて、一般入試以外の準備時期も確認します。",
-  },
-];
-
-const weeklyReviewItems = [
-  { title: "点数を見る", body: "模試や小テストの結果を科目別に見る" },
-  { title: "課題を決める", body: "次回までに進める範囲と復習内容を指定" },
-  { title: "授業を変える", body: "理解度に応じて扱う単元や教材を変更" },
-  { title: "保護者に共有", body: "学習状況と次にやることを共有" },
-];
-
-const supportFlow = [
-  {
-    label: "授業前",
-    title: "今週の範囲を決める",
-    body: "学校・予備校の進度も見ながら、無理のない量にします。",
-  },
-  {
-    label: "授業中",
-    title: "つまずいた原因を見る",
-    body: "計算ミス、知識不足、方針の立て方を分けて扱います。",
-  },
-  {
-    label: "授業後",
-    title: "復習内容を残す",
-    body: "次回までに解き直す問題と、質問する内容を決めます。",
-  },
-  {
-    label: "月ごと",
-    title: "保護者にも共有",
-    body: "進捗、課題、次にやることを面談や報告で共有します。",
-  },
-];
-
-const earlyMethodItems = [
-  {
-    label: "01",
-    title: "志望校・科目を整理",
-    body: "地域、学費、入試科目、面接・小論文の有無を見て、受験校の候補を広げすぎないようにします。",
-  },
-  {
-    label: "02",
-    title: "授業で扱う内容を決める",
-    body: "英語・数学・理科の中で、今の点数に影響している単元を優先します。",
-  },
-  {
-    label: "03",
-    title: "次の1週間を決める",
-    body: "授業で解く問題、自習で進める範囲、復習日、質問する問題を分けて残します。",
-  },
-  {
-    label: "04",
-    title: "必要に応じて家庭にも共有",
-    body: "進捗、課題、次にやることを保護者にも共有し、科目や回数の見直しにつなげます。",
-  },
-];
-
-const comparisonItems = [
-  {
-    title: "一般的な個別指導で起きやすいこと",
-    points: [
-      "授業中の解説で終わり、自習範囲が曖昧になる",
-      "受験校や面接・小論文の相談が別扱いになる",
-      "保護者が進捗を把握しにくい",
-    ],
-  },
-  {
-    title: "Medvanceで見ること",
-    points: [
-      "授業内容と自習課題を同じ流れで決める",
-      "志望校、科目、推薦・面接小論までまとめて相談する",
-      "必要に応じて保護者にも進捗と次の方針を共有する",
-    ],
-  },
-];
-
-const subjectReviewItems = [
-  { subject: "英語", body: "長文量、語彙、文法、和訳・英作文のどこを優先するか" },
-  { subject: "数学", body: "典型問題の抜け、計算速度、記述で落としている点" },
-  { subject: "理科", body: "知識の穴、計算処理、医学部で差がつく単元" },
-  { subject: "面接・小論文", body: "志望理由、医師像、大学別に問われやすいテーマ" },
-];
-
-const homeVisuals = {
-  consultation: {
-    src: "/images/generated/medvance-strategy-session.webp",
-    alt: "模試結果と志望校を見ながら学習内容を決める図",
-    caption: "初回相談では、志望校・模試結果・教材を見ながら、先に手を付ける科目を決めます。",
-  },
-  weeklyPlan: {
-    src: "/images/generated/medvance-weekly-plan-diagram.webp",
-    alt: "週単位で学習計画を調整する図",
-    caption: "授業内容、課題、質問対応、保護者共有を週ごとに見直します。",
-  },
-  support: {
-    src: "/images/generated/medvance-support-diagram.webp",
-    alt: "医学部受験の授業と学習管理を示す図",
-    caption: "授業、学習計画、質問、保護者共有を分けずに扱います。",
-  },
-  subjectStrategy: {
-    src: "/images/generated/medvance-subject-strategy-chart.webp",
-    alt: "英語・数学・理科と面接小論文の対策内容を示す図",
-    caption: "科目別の穴を見える形にして、先に直す場所を決めます。",
-  },
-  tutorTeam: {
-    src: "/images/japan-medical-exam-desk.webp",
-    alt: "日本の医学部受験に向けた教材と模試資料のイメージ",
-    caption: "模試結果、教材、志望校の出題傾向を見ながら、今やることを決めます。",
-  },
-};
 
 const homeSchemas = [
   buildItemListSchema(
@@ -338,43 +150,79 @@ const homeSchemas = [
   buildSpeakableSchema("/"),
 ];
 
-function HomeVisual({
-  src,
-  alt,
-  caption,
-  variant = "light",
-}: {
-  src: string;
-  alt: string;
-  caption: string;
-  variant?: "light" | "dark";
-}) {
-  const isDark = variant === "dark";
+/* ── Local-rewrite carry-over data ─────────── */
+const audienceItems = [
+  { title: "国公立医学部を目指す方", body: "共通テスト・二次試験・面接まで、科目配分と演習量を週単位で設計します。", href: "/universities/national?from=home-audience" },
+  { title: "私立医学部を目指す方", body: "大学別の科目相性、出願日程、学費、面接小論文まで含めて受験校を設計します。", href: "/private-medical-strategy?from=home-audience" },
+  { title: "大手予備校と併用したい方", body: "予備校授業を活かしながら、復習管理、質問対応、弱点補強をMedvanceで補います。", href: "/for/prep-school-plus?from=home-audience" },
+  { title: "集団塾が合わない方", body: "授業ペースや質問環境が合わない受験生に、1対1指導と週次管理を設計します。", href: "/for/not-group-school?from=home-audience" },
+  { title: "医学部浪人生の方", body: "前年の結果を分析し、同じ失敗を繰り返さない学習計画と志望校戦略を組み直します。", href: "/for/ronin?from=home-audience" },
+  { title: "保護者の方", body: "学習状況、受験校、費用、追加指導の判断材料を見える形で共有します。", href: "/for/parents?from=home-audience" },
+];
 
+const serviceItems = [
+  { title: "1対1個別指導", body: "英語、数学、物理、化学、生物を、医学部受験の得点に直結する形で指導します。" },
+  { title: "週次学習計画", body: "授業、自習、復習、確認テスト、過去問演習を1週間単位で具体化します。" },
+  { title: "模試・答案分析", body: "偏差値だけでなく、失点単元、答案の癖、時間配分から次の打ち手を決めます。" },
+  { title: "国公立医学部対策", body: "共通テストと二次試験の配点を軸に、科目ごとの優先順位を調整します。" },
+  { title: "私立医学部対策", body: "大学別の出題傾向、科目相性、日程、面接小論文まで含めて受験校を組みます。" },
+  { title: "保護者共有", body: "進捗、課題、志望校判断、指導投資の優先順位を保護者にも共有します。" },
+];
+
+const strategyItems = [
+  { label: "国公立", title: "国公立医学部", body: "共通テストの得点設計、二次試験の記述力、面接対策まで。科目数が多い国公立医学部では、捨てる範囲と伸ばす範囲の判断が重要です。", href: "/universities/national?from=home-strategy" },
+  { label: "私立", title: "私立医学部", body: "大学ごとの科目相性、日程、学費、面接小論文、補欠可能性まで。複数校受験を前提に、受験校ポートフォリオを設計します。", href: "/private-medical-strategy?from=home-strategy" },
+  { label: "予備校と併用", title: "予備校併用", body: "大手予備校の授業を否定せず、授業後の復習、質問対応、志望校別演習、保護者共有を補完します。", href: "/for/prep-school-plus?from=home-strategy" },
+];
+
+const differenceItems = [
+  { title: "大手予備校", points: ["講義と教材は強いが、授業後の復習は本人任せになりやすい", "国公立・私立の個別出願戦略まで細かく見えにくい", "保護者が日々の実行状況を把握しづらい"] },
+  { title: "一般的な個別指導", points: ["分からない問題の解説で終わりやすい", "受験校設計、模試分析、保護者共有が分断されやすい", "医学部特有の面接小論文まで一体管理しづらい"] },
+  { title: "Medvance", points: ["医学部合格から逆算して、授業・自習・復習日を毎週設計する", "国公立・私立の志望校別に、科目配分と出願戦略を調整する", "保護者に進捗・課題・次の判断材料を共有する"] },
+];
+
+const flowItemsLocal = [
+  { step: "01", title: "現状入力", body: "学年、模試結果、現在の塾・予備校、志望校、学習時間、保護者同席可否を確認します。" },
+  { step: "02", title: "合格戦略診断", body: "国公立・私立の志望に合わせて、科目別優先順位と必要な指導体制を整理します。" },
+  { step: "03", title: "プラン提案", body: "1対1指導の科目、頻度、週次管理、面接小論文、保護者共有の範囲を決めます。" },
+  { step: "04", title: "伴走開始", body: "毎週の学習計画、個別指導、模試分析、志望校戦略の更新を継続します。" },
+];
+
+const faqItemsLocal = [
+  { q: "国公立医学部にも対応していますか？", a: "します。共通テスト・二次試験の配点比率、科目ごとの演習量配分、面接傾向まで、志望校に合わせて設計します。" },
+  { q: "私立医学部の複数校受験も相談できますか？", a: "できます。出願スケジュール、科目相性、面接負荷のバランスを踏まえ、合格可能性の高い受験校を一緒に選びます。" },
+  { q: "大手予備校に通いながら受講できますか？", a: "問題ありません。週次の復習状況を確認しながら、弱点補強・志望校別演習・質問対応を担います。" },
+  { q: "保護者も面談に参加できますか？", a: "推奨しています。受験校の選定・学費・追加投資の判断は保護者と一緒に行う方が適切なため、初回から同席をお願いしています。" },
+];
+
+function SectionHeading({
+  eyebrow,
+  title,
+  body,
+  align = "center",
+}: {
+  eyebrow: string;
+  title: string;
+  body?: string;
+  align?: "center" | "left";
+}) {
   return (
-    <figure
-      className="overflow-hidden rounded-lg"
-      style={{
-        backgroundColor: isDark ? "rgba(255,255,255,0.04)" : "#f7f5f0",
-        border: isDark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e1d8",
-      }}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        width={1600}
-        height={900}
-        sizes="(max-width: 768px) 100vw, 720px"
-        className="h-auto w-full"
-        loading="lazy"
-      />
-      <figcaption
-        className="px-4 pb-4 text-xs leading-relaxed"
-        style={{ color: isDark ? "rgba(255,255,255,0.5)" : "#6b7280" }}
+    <div className={align === "center" ? "mx-auto mb-10 max-w-3xl text-center" : "mb-8 max-w-2xl"}>
+      <p className="mb-3 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
+        {eyebrow}
+      </p>
+      <h2
+        className="text-2xl font-bold leading-snug md:text-3xl"
+        style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
       >
-        {caption}
-      </figcaption>
-    </figure>
+        {title}
+      </h2>
+      {body && (
+        <p className="mt-4 text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
+          {body}
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -390,475 +238,200 @@ export default function Home() {
       {/* ── 1. HERO ───────────────────────────── */}
       <HeroAnimated />
 
-      {/* ── 1B. WHAT YOU GET FROM A FREE CONSULTATION ─── */}
-      <section className="bg-white px-4 py-12" style={{ borderBottom: "1px solid #dfe6ef" }}>
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-2 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                Free Consultation
-              </p>
-              <h2 className="text-xl font-bold leading-snug md:text-2xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                無料相談（30分）で分かる3つのこと
-              </h2>
-            </div>
-            <p className="max-w-md text-xs leading-relaxed" style={{ color: "#5f6b7a" }}>
-              強引な勧誘は一切ありません。Medvanceが合わないご家庭にはその場で他塾も提案します。
+      {/* ── 1.5 LEAD MAGNET BANNER ────────────── */}
+      <section style={{ backgroundColor: "#c9922a" }} className="py-4 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-white">
+          <div className="flex items-center gap-3">
+            <span className="text-lg flex-shrink-0">📘</span>
+            <p className="text-sm font-bold">
+              無料相談の特典：<span className="font-extrabold">医学部受験戦略マニュアルをプレゼント</span>
+              <span className="hidden sm:inline text-xs font-normal ml-2 opacity-80">— 現役慶應医学部生 監修・6章構成</span>
             </p>
           </div>
-          <div className="grid gap-3 md:grid-cols-3">
-            {[
-              {
-                num: "01",
-                title: "現状の偏差値と志望校との距離",
-                body: "模試結果、得意・苦手科目、残り期間から、いま何点足りないかを一緒に整理します。",
-              },
-              {
-                num: "02",
-                title: "あなただけの90日プラン",
-                body: "次の3ヶ月で何をどの順に解くべきか、慶應医を全勝した代表の視点で具体策を出します。",
-              },
-              {
-                num: "03",
-                title: "Medvanceが本当に合うかの率直な判定",
-                body: "ご家庭の状況、性格、講師との相性まで含めて、合う・合わないを率直にお伝えします。",
-              },
-            ].map((item) => (
-              <div
-                key={item.num}
-                className="rounded-lg p-5"
-                style={{ backgroundColor: "#f6f8fb", border: "1px solid #dfe6ef" }}
-              >
-                <p className="mb-3 text-sm font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
-                  {item.num}
-                </p>
-                <h3 className="mb-2 text-sm font-bold leading-snug" style={{ color: "#0c1a33" }}>
-                  {item.title}
-                </h3>
-                <p className="text-xs leading-relaxed" style={{ color: "#5f6b7a" }}>
-                  {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex-shrink-0 flex items-center gap-2">
             <Link
-              href="/contact?from=home-consultation-cards"
-              className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#c9922a" }}
+              href="/contact"
+              className="px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#fff", color: "#c9922a" }}
             >
-              フォームで無料相談
+              無料相談に申し込む →
             </Link>
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#06C755" }}
-            >
-              LINEで無料相談
-            </a>
-            <Link
-              href="/download"
-              className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90"
-              style={{ border: "1px solid rgba(201,146,42,0.35)", color: "#0c1a33", backgroundColor: "rgba(201,146,42,0.08)" }}
-            >
-              医学部受験マニュアルを見る
-            </Link>
+            <LineButton label="LINE" size="md" />
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:py-20" style={{ borderBottom: "1px solid #dfe6ef" }}>
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <FadeIn>
-            <div className="lg:sticky lg:top-28">
-              <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                Medvanceとは
-              </p>
-              <h2 className="mb-5 text-2xl font-bold leading-snug md:text-4xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                授業だけで終わらせない、医学部受験の個別指導。
-              </h2>
-              <p className="max-w-xl text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
-                Medvanceは、慶應医学部生が1対1で授業を行い、週ごとの課題設定と進捗共有まで扱うオンライン個別指導です。志望校、模試結果、使用教材を見て、受講科目と自習内容を決めます。
-              </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact?from=home-service-intro"
-                  className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#c9922a" }}
-                >
-                  フォームで無料相談
-                </Link>
-                <LineButton label="LINEで無料相談" size="lg" className="!rounded-md !py-3 !px-6" />
+      {/* ── 2. STATS STRIP ────────────────────── */}
+      <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { label: "講師100%", sub: "現役慶應医学部生のみ" },
+            { label: "73校+", sub: "大学別入試対策を掲載" },
+            { label: "56記事+", sub: "医学部受験の戦略コラム" },
+            { label: "30分・無料", sub: "初回相談・勧誘なし" },
+          ].map((s) => (
+            <div key={s.sub}>
+              <p className="text-lg md:text-xl font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{s.label}</p>
+              <p className="text-sm md:text-base font-semibold" style={{ color: "#0c1a33" }}>{s.sub}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 2.3 NEWS STRIP ────────────────────── */}
+      {(() => {
+        const latest = [...notices].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+        const catColor: Record<string, string> = {
+          重要: "#dc2626", サービス情報: "#1d4ed8", キャンペーン: "#d97706", お知らせ: "#16a34a",
+        };
+        const fmtDate = (d: string) => { const [y,m,day] = d.split("-"); return `${y}.${m.padStart(2,"0")}.${day.padStart(2,"0")}`; };
+        return (
+          <section className="bg-white py-6 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
+            <div className="max-w-5xl mx-auto">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#0c1a33" }}>お知らせ</span>
+                <Link href="/news" className="text-xs hover:opacity-80 ml-auto" style={{ color: "#c9922a" }}>一覧を見る →</Link>
               </div>
-            </div>
-          </FadeIn>
-
-          <div className="divide-y" style={{ borderColor: "#dfe6ef" }}>
-            {topServiceItems.map((item, index) => (
-              <FadeIn key={item.title} delay={index * 0.05}>
-                <div className="grid gap-4 py-6 sm:grid-cols-[72px_1fr]">
-                  <p className="text-sm font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
-                    {item.label}
-                  </p>
-                  <div>
-                    <h3 className="mb-2 text-lg font-bold" style={{ color: "#0c1a33" }}>
-                      {item.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
-                      {item.body}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: "#0c1a33" }} className="px-4 py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <FadeIn>
-            <div>
-              <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                よくある相談
-              </p>
-              <h2 className="mb-4 text-2xl font-bold leading-snug text-white md:text-3xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
-                相談が多いのは、この4つです。
-              </h2>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>
-                学力だけでなく、受験校、費用、通塾の負担、推薦・面接小論までまとめて相談したいご家庭が多いです。
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            {lpAudienceItems.map((item, index) => (
-              <FadeIn key={item} delay={index * 0.05}>
-                <div className="flex min-h-[72px] items-center gap-3 rounded-md px-4 py-4" style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <span className="text-sm font-bold" style={{ color: "#c9922a" }}>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.78)" }}>
-                    {item}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20 px-4" style={{ borderBottom: "1px solid #dfe6ef" }}>
-        <div className="mx-auto max-w-6xl">
-          <FadeIn>
-            <div className="mb-10 grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
-              <div>
-                <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                  指導の流れ
-                </p>
-                <h2 className="text-2xl font-bold leading-snug md:text-4xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  授業で解いた問題を、次の1週間につなげる。
-                </h2>
-              </div>
-              <p className="max-w-2xl text-sm leading-relaxed lg:ml-auto" style={{ color: "#5f6b7a" }}>
-                医学部受験は、授業時間だけでは進みません。授業で扱う問題、自習で進める範囲、保護者への共有を分けずに見ます。
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-            <FadeIn>
-              <HomeVisual {...homeVisuals.support} />
-            </FadeIn>
-            <div className="divide-y" style={{ borderColor: "#dfe6ef" }}>
-              {earlyMethodItems.map((item, index) => (
-                <FadeIn key={item.label} delay={index * 0.05}>
-                  <div className="grid gap-4 py-5 sm:grid-cols-[58px_1fr]">
-                    <p className="text-sm font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
-                      {item.label}
-                    </p>
-                    <div>
-                      <h3 className="mb-2 text-base font-bold" style={{ color: "#0c1a33" }}>
-                        {item.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
-                        {item.body}
-                      </p>
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {comparisonItems.map((group, index) => (
-              <FadeIn key={group.title} delay={index * 0.08}>
-                <div
-                  className="h-full rounded-lg p-6"
-                  style={{
-                    backgroundColor: index === 0 ? "#f6f8fb" : "#0c1a33",
-                    border: index === 0 ? "1px solid #dfe6ef" : "1px solid rgba(201,146,42,0.28)",
-                  }}
-                >
-                  <h3
-                    className="mb-4 text-base font-bold"
-                    style={{ color: index === 0 ? "#0c1a33" : "#ffffff" }}
+              <div className="space-y-2">
+                {latest.map((n) => (
+                  <Link
+                    key={n.slug}
+                    href={`/news/${n.slug}`}
+                    className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 py-2 hover:opacity-80 transition-opacity group"
+                    style={{ borderBottom: "1px solid #f3f4f6" }}
                   >
-                    {group.title}
-                  </h3>
-                  <div className="space-y-3">
-                    {group.points.map((point) => (
-                      <div key={point} className="flex gap-3">
-                        <span
-                          className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                          style={{ backgroundColor: index === 0 ? "#8b96a8" : "#c9922a" }}
-                        />
-                        <p
-                          className="text-sm leading-relaxed"
-                          style={{ color: index === 0 ? "#5f6b7a" : "rgba(255,255,255,0.72)" }}
-                        >
-                          {point}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+                    <span className="text-xs flex-shrink-0" style={{ color: "#9ca3af" }}>{fmtDate(n.date)}</span>
+                    <span className="flex-shrink-0 text-xs font-semibold" style={{ color: catColor[n.category] ?? "#16a34a" }}>[{n.category}]</span>
+                    <span className="text-sm group-hover:underline" style={{ color: "#1f2937" }}>{n.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
-      <section style={{ backgroundColor: "#f6f8fb" }} className="py-24 px-4">
-        <div className="mx-auto max-w-6xl">
+      {/* ── 2.5 SEARCH INTENT HUB ─────────────── */}
+      <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start">
-              <div>
-                <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                  指導内容
-                </p>
-                <h2 className="mb-5 text-2xl font-bold leading-snug md:text-4xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  科目指導と受験管理を同じ流れで見ます。
-                </h2>
-                <p className="max-w-2xl text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
-                  医学部入試で必要になる内容を、志望校に合わせて扱います。授業後に進める範囲と復習日も残します。
-                </p>
-                <div className="mt-8 divide-y" style={{ borderColor: "#dfe6ef" }}>
-                  {serviceOverviewItems.map((item) => (
-                    <div key={item.label} className="grid grid-cols-[48px_1fr] gap-4 py-5">
-                      <p className="text-sm font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
-                        {item.label}
+            <div className="text-center mb-10">
+              
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+                慶應医学部に合格した現役生が、直接指導します
+              </h2>
+              <p className="text-sm max-w-3xl mx-auto leading-relaxed" style={{ color: "#6b7280" }}>
+                英語・数学・理科の指導だけでなく、小論文・面接・出願書類まで、医学部入試で必要なものをすべて1人の担当講師が見ます。
+                受験本番で何が問われるかを知っている慶應医学部の現役生が、あなたの志望校と現在地に合わせた学習計画を組みます。
+              </p>
+            </div>
+          </FadeIn>
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
+            <FadeIn>
+              <div className="rounded-2xl bg-white p-7 md:p-8 h-full" style={{ border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>こんな受験生へ</p>
+                <h3 className="text-xl font-bold mb-4" style={{ color: "#0c1a33" }}>
+                  こんな受験生によく選ばれています
+                </h3>
+                <div className="space-y-3">
+                  {idealForItems.map((item, index) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span
+                        className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                        style={{ backgroundColor: "rgba(201,146,42,0.12)", color: "#c9922a" }}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="text-sm leading-relaxed" style={{ color: "#4b5563" }}>
+                        {item}
                       </p>
-                      <div>
-                        <h3 className="mb-2 text-base font-bold" style={{ color: "#0c1a33" }}>{item.title}</h3>
-                        <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
-                      </div>
                     </div>
                   ))}
                 </div>
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.08}>
+              <div
+                className="rounded-2xl p-7 md:p-8 h-full"
+                style={{ backgroundColor: "#0c1a33", border: "1px solid rgba(201,146,42,0.18)" }}
+              >
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談</p>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  無料相談で分かること
+                </h3>
+                <div className="space-y-3 mb-6">
+                  {consultationBenefits.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <span
+                        className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                        style={{ backgroundColor: "rgba(201,146,42,0.16)", color: "#c9922a" }}
+                      >
+                        ✓
+                      </span>
+                      <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.76)" }}>
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
                   <Link
-                    href="/contact?from=home-service-overview"
-                    className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: "#c9922a" }}
+                    href="/contact?from=home-trust-entry"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#c9922a", color: "#fff" }}
                   >
-                    フォームで無料相談
+                    無料相談で話してみる
                   </Link>
+                  <LineButton label="LINEで相談" size="lg" className="!rounded-xl !py-3 !px-6" />
                   <Link
                     href="/pricing"
-                    className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: "#ffffff", color: "#0c1a33", border: "1px solid #dfe6ef" }}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "#fff", border: "1px solid rgba(255,255,255,0.18)" }}
                   >
-                    料金と始め方を見る
+                    料金を見る
                   </Link>
                 </div>
-              </div>
-
-              <div className="space-y-5">
-                <HomeVisual {...homeVisuals.tutorTeam} />
-                <div className="rounded-lg bg-white p-6" style={{ border: "1px solid #dfe6ef" }}>
-                  <p className="mb-4 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                    対応内容
-                  </p>
-                  <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
-                    {serviceScopeItems.map((item) => (
-                      <div key={item} className="flex items-center gap-3 border-b pb-3" style={{ borderColor: "#edf1f5" }}>
-                        <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ backgroundColor: "#c9922a" }} />
-                        <p className="text-sm font-semibold" style={{ color: "#0c1a33" }}>{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      <section className="bg-white py-20 px-4" style={{ borderTop: "1px solid #dfe6ef", borderBottom: "1px solid #dfe6ef" }}>
-        <div className="mx-auto max-w-6xl">
-          <FadeIn>
-            <div className="mb-10 grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
-              <div>
-                <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                  講師・指導体制
+                <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.42)" }}>
+                  入会を前提にした営業は行いません。相談のみで終わって問題ありません。
                 </p>
-                <h2 className="text-2xl font-bold leading-snug md:text-4xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  講師との相性を見てから、入会できます。
-                </h2>
-              </div>
-              <p className="max-w-2xl text-sm leading-relaxed lg:ml-auto" style={{ color: "#5f6b7a" }}>
-                担当予定の講師で体験指導を受けられます。合わないと感じた場合は、無理に進める必要はありません。
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr]">
-            <div className="grid gap-3 sm:grid-cols-2">
-              {teachingSystemItems.map((item, index) => (
-                <FadeIn key={item.title} delay={index * 0.05}>
-                  <div className="h-full rounded-lg bg-white p-5" style={{ border: "1px solid #dfe6ef" }}>
-                    <p className="mb-3 text-xs font-bold" style={{ color: "#c9922a" }}>
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="mb-2 text-base font-bold" style={{ color: "#0c1a33" }}>
-                      {item.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
-                      {item.body}
-                    </p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-
-            <FadeIn delay={0.12}>
-              <div className="rounded-lg p-6 md:p-7" style={{ backgroundColor: "#f6f8fb", border: "1px solid #dfe6ef" }}>
-                <p className="mb-4 text-sm font-bold" style={{ color: "#0c1a33" }}>
-                  相談から指導開始まで
-                </p>
-                <div className="space-y-4">
-                  {steps.map((item, index) => (
-                    <div key={item.title} className="grid grid-cols-[34px_1fr] gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: "#0c1a33" }}>
-                        {index + 1}
-                      </span>
-                      <div>
-                        <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
-                        <p className="mt-1 text-xs leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      <section style={{ backgroundColor: "#0c1a33" }} className="py-16 px-4">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+      <section className="bg-white py-14 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div>
-              <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
-                無料相談
-              </p>
-              <h2 className="mb-4 text-2xl font-bold leading-snug text-white md:text-3xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
-                相談で確認できること
+            <div className="text-center mb-10">
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>よくある検索</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>
+                よく検索される悩みから探す
               </h2>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>
-                学年、志望校、模試結果、使用教材をもとに、受講科目と回数の目安を相談できます。
+              <p className="text-sm" style={{ color: "#6b7280" }}>
+                医学部受験を考える方がよく調べるテーマを、すぐ読める形でまとめました。
               </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact?from=home-trust-entry"
-                  className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#c9922a" }}
-                >
-                  フォームで無料相談
-                </Link>
-                <LineButton label="LINEで無料相談" size="lg" className="!rounded-md !py-3 !px-6" />
-              </div>
             </div>
           </FadeIn>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {lpConsultationItems.map((item, index) => (
-              <FadeIn key={item.title} delay={index * 0.05}>
-                <div className="flex min-h-[88px] items-start gap-3 rounded-md px-4 py-4" style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <span className="mt-0.5 text-sm font-bold" style={{ color: "#c9922a" }}>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <p className="mb-1 text-sm font-bold text-white">{item.title}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
-                      {item.body}
-                    </p>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {searchIntentLinks.map((item, i) => (
+              <FadeIn key={item.href} delay={(i % 3) * 0.07}>
+                <Link
+                  href={item.href}
+                  className="block rounded-2xl p-5 hover:shadow-md transition-shadow"
+                  style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+                >
+                  <p className="text-sm font-bold mb-2" style={{ color: "#0c1a33" }}>{item.label}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.desc}</p>
+                  <p className="text-xs font-semibold mt-4" style={{ color: "#c9922a" }}>詳しく見る →</p>
+                </Link>
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 2.6 CONSULTATION NOTES ────────────── */}
-      <section className="bg-white py-20 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-start">
-            <FadeIn>
-              <div className="max-w-lg">
-                <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>
-                  初回相談の内容
-                </p>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  模試結果や教材があれば相談できます。
-                </h2>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: "#6b7280" }}>
-                  学校や予備校の進度、使っている問題集、過去問の状況を確認します。資料がそろっていない場合も相談できます。
-                </p>
-                <Link
-                  href="/contact?from=home-consultation-notes"
-                  className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: "#0c1a33" }}
-                >
-                  フォームで無料相談
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                  </svg>
-                </Link>
-                <div className="mt-8">
-                  <HomeVisual {...homeVisuals.consultation} />
-                </div>
-              </div>
-            </FadeIn>
-            <div className="space-y-3">
-              {consultationNotes.map((item, index) => (
-                <FadeIn key={item.title} delay={index * 0.07}>
-                  <div
-                    className="grid sm:grid-cols-[56px_1fr] gap-4 rounded-lg bg-white p-5"
-                    style={{ border: "1px solid #e5e1d8" }}
-                  >
-                    <p className="text-sm font-bold" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <div>
-                      <h3 className="text-base font-bold mb-2" style={{ color: "#0c1a33" }}>
-                        {item.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-                        {item.body}
-                      </p>
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── MARQUEE ───────────────────────────── */}
       <Marquee />
@@ -869,13 +442,13 @@ export default function Home() {
           <FadeIn>
             
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-14" style={{ color: "#0c1a33" }}>
-              Medvanceで大事にしていること
+              医学部受験専門塾Medvanceが選ばれる3つの理由
             </h2>
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-6">
             {strengths.map((item, i) => (
               <FadeIn key={item.num} delay={i * 0.1}>
-                <HoverCard className="bg-white rounded-lg p-8 shadow-sm h-full" style={{ border: "1px solid #e5e1d8" }}>
+                <HoverCard className="bg-white rounded-2xl p-8 shadow-sm h-full" style={{ border: "1px solid #e5e1d8" }}>
                   <p className="text-6xl font-bold mb-4 leading-none" style={{ color: "#0c1a33", opacity: 0.07, fontFamily: "var(--font-noto-serif)" }}>{item.num}</p>
                   <h3 className="text-base font-bold mb-3" style={{ color: "#0c1a33" }}>{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
@@ -883,45 +456,6 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-          <FadeIn delay={0.18}>
-            <div
-              className="mt-10 rounded-lg bg-white p-6 md:p-8"
-              style={{ border: "1px solid #e5e1d8" }}
-            >
-              <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-7 items-start">
-                <div>
-                  <p className="text-xs font-bold tracking-widest mb-3" style={{ color: "#c9922a" }}>
-                    指導開始後の管理
-                  </p>
-                  <h3 className="text-xl md:text-2xl font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                    予定どおり進まない前提で、毎週見直します。
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-                    医学部受験では、計画どおりに進まない週もあります。だから授業、宿題、模試結果を見て、次の1週間を組み直します。
-                  </p>
-                  <div className="mt-6">
-                    <HomeVisual {...homeVisuals.weeklyPlan} />
-                  </div>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {weeklyReviewItems.map((item) => (
-                    <div
-                      key={item.title}
-                      className="rounded-md p-4"
-                      style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
-                    >
-                      <p className="text-sm font-bold mb-1" style={{ color: "#0c1a33" }}>
-                        {item.title}
-                      </p>
-                      <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-                        {item.body}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -931,10 +465,10 @@ export default function Home() {
           <FadeIn>
             
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-              先に見ておきたい方へ
+              比較検討でよく見られるページ
             </h2>
             <p className="text-center text-sm mb-12 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-              料金、始め方、保護者向けの情報をまとめています。相談前に見ておきたい方はこちらからどうぞ。
+              申し込み前に、塾の雰囲気・料金・指導方針を確認いただけます。保護者の方は、費用と指導体制のページからご覧ください。
             </p>
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-5 mb-8">
@@ -942,7 +476,7 @@ export default function Home() {
               <FadeIn key={item.href} delay={i * 0.08}>
                 <Link
                   href={item.href}
-                  className="block h-full rounded-lg p-6 bg-white hover:shadow-md transition-shadow"
+                  className="block h-full rounded-2xl p-6 bg-white hover:shadow-md transition-shadow"
                   style={{ border: "1px solid #e5e1d8" }}
                 >
                   <span
@@ -971,12 +505,12 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: "#0c1a33", color: "#fff" }}
               >
-                フォームで無料相談
+                迷っている段階でも無料相談してみる
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
               </Link>
-              <LineButton label="LINEで無料相談" size="lg" className="!px-7 !py-3" />
+              <LineButton label="LINEで相談する" size="lg" className="!px-7 !py-3" />
             </div>
           </FadeIn>
         </div>
@@ -988,10 +522,10 @@ export default function Home() {
           <FadeIn>
             
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-              塾・予備校・家庭教師を比べるときの見方
+              医学部塾・予備校・家庭教師の違いを比較
             </h2>
             <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
-              どれが良いかは、学年・科目数・家庭の状況で変わります。見るべき点だけ先に整理します。
+              Medvanceが選ばれる理由を、他塾と比較してご確認ください
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -1041,51 +575,51 @@ export default function Home() {
                 <tbody>
                   {[
                     {
-                      item: "講師",
-                      medvance: "慶應医学部生が担当候補",
-                      igaku: "プロ講師・チューター",
-                      yobikou: "校舎や講座で異なる",
-                      kateikyoshi: "講師により異なる",
+                      item: "講師の質",
+                      medvance: "慶應医学部生のみ",
+                      igaku: "専任講師（受験経験者）",
+                      yobikou: "様々",
+                      kateikyoshi: "学生バイト多数",
                       highlight: true,
                     },
                     {
                       item: "指導スタイル",
-                      medvance: "1対1",
+                      medvance: "完全1対1",
                       igaku: "少人数〜1対1",
                       yobikou: "集団授業が中心",
-                      kateikyoshi: "1対1が中心",
+                      kateikyoshi: "1対1だが医学部特化なし",
                       highlight: false,
                     },
                     {
-                      item: "受験情報",
-                      medvance: "志望校・科目・面接まで相談",
-                      igaku: "医学部情報が豊富",
-                      yobikou: "コースにより異なる",
-                      kateikyoshi: "講師により異なる",
+                      item: "医学部特化",
+                      medvance: "完全特化",
+                      igaku: "特化",
+                      yobikou: "一部コースのみ",
+                      kateikyoshi: "非特化",
                       highlight: true,
                     },
                     {
-                      item: "学習管理",
-                      medvance: "週ごとの課題まで設定",
-                      igaku: "校舎・担任制で管理",
-                      yobikou: "本人管理が多い",
-                      kateikyoshi: "家庭との相談次第",
+                      item: "面接・小論文対策",
+                      medvance: "対応",
+                      igaku: "対応",
+                      yobikou: "一部対応",
+                      kateikyoshi: "非対応",
                       highlight: false,
                     },
                     {
                       item: "受講エリア",
                       medvance: "全国オンライン対応",
-                      igaku: "校舎中心・一部オンライン",
-                      yobikou: "校舎中心",
-                      kateikyoshi: "地域やオンライン対応次第",
+                      igaku: "通塾が必要（大都市中心）",
+                      yobikou: "通塾が必要",
+                      kateikyoshi: "エリア限定が多い",
                       highlight: true,
                     },
                     {
-                      item: "費用の考え方",
-                      medvance: "科目数・回数で調整",
-                      igaku: "年間費用が大きくなりやすい",
-                      yobikou: "講座数で変わる",
-                      kateikyoshi: "時給・回数で変わる",
+                      item: "料金目安",
+                      medvance: "8万円〜/月",
+                      igaku: "年間400〜1000万円",
+                      yobikou: "年間50〜150万円",
+                      kateikyoshi: "様々",
                       highlight: false,
                     },
                   ].map((row, i) => (
@@ -1157,6 +691,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 4.3 STRATEGY (local) ───────────────── */}
+      <section className="bg-white py-20 px-4">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="志望校別戦略"
+            title="国公立医学部も、私立医学部も、戦い方が違います。"
+            body="同じ医学部受験でも、共通テスト重視、二次記述重視、私立大学別対策では、必要な学習設計が変わります。"
+          />
+          <div className="grid gap-5 md:grid-cols-3">
+            {strategyItems.map((item) => (
+              <FadeIn key={item.title}>
+                <Link
+                  href={item.href}
+                  className="flex h-full flex-col rounded-lg p-6 transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#0c1a33", border: "1px solid rgba(255,255,255,0.12)" }}
+                >
+                  <p className="mb-3 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>{item.label}</p>
+                  <p className="mb-3 text-lg font-bold text-white">{item.title}</p>
+                  <p className="mb-6 flex-1 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>{item.body}</p>
+                  <span className="text-xs font-bold" style={{ color: "#c9922a" }}>対策を見る →</span>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4.6 DIFFERENCE (local) ─────────────── */}
+      <section className="px-4 py-20" style={{ backgroundColor: "#0c1a33" }}>
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 max-w-3xl">
+            <p className="mb-3 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>他との違い</p>
+            <h2 className="text-2xl font-bold leading-snug text-white md:text-3xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
+              授業だけで終わらせず、医学部合格から逆算します。
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.66)" }}>
+              Medvanceは、大手予備校や学校の授業を否定する塾ではありません。足りない復習管理、個別補強、志望校別戦略を補う塾です。
+            </p>
+          </div>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {differenceItems.map((item) => (
+              <FadeIn key={item.title}>
+                <div className="h-full rounded-lg p-6" style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                  <p className="mb-5 text-lg font-bold text-white">{item.title}</p>
+                  <ul className="space-y-3">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex gap-3 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                        <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full" style={{ backgroundColor: "#c9922a" }} />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 5. TUTOR STRENGTHS ────────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
@@ -1166,7 +759,7 @@ export default function Home() {
               現役慶應医学部生が1対1で指導する強み
             </h2>
             <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-              科目、志望校、質問のしやすさを見て担当候補を出します。希望があれば、入会前に面談できます。
+              複数人の現役慶應医学部生から、性格・志望校・得意科目を踏まえて担当を選びます。事前の面談で相性確認も可能です。
             </p>
           </FadeIn>
           {/* Credential Badge */}
@@ -1196,8 +789,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                   </svg>
                 ),
-                title: "難関校の受験経験",
-                desc: "問題の優先順位、時間配分、記述の直し方まで扱います。",
+                title: "東大模試 上位経験者",
+                desc: "最難関レベルの受験戦略を熟知。論理的な指導が強み。",
               },
               {
                 icon: (
@@ -1205,8 +798,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
                 ),
-                title: "浪人経験のある講師",
-                desc: "生活リズムや復習の戻し方まで、本人の経験をもとに話せます。",
+                title: "一浪での慶應合格",
+                desc: "浪人生の気持ちを理解。無駄なく逆転合格したノウハウを伝授。",
               },
               {
                 icon: (
@@ -1215,8 +808,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                   </svg>
                 ),
-                title: "地方公立出身の講師",
-                desc: "学校の進度や情報量の差を前提に、教材と相談先を決めます。",
+                title: "地方公立出身",
+                desc: "独学・情報戦を乗り越えた経験を活かし、地方からの挑戦を応援。",
               },
               {
                 icon: (
@@ -1224,13 +817,13 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                   </svg>
                 ),
-                title: "担当講師の相性",
-                desc: "質問しやすいか、説明が合うかを見てから始められます。",
+                title: "最適マッチング",
+                desc: "生徒の性格・志望校・科目に合わせて最も相性の良い講師を選定。",
               },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <HoverCard
-                  className="bg-white rounded-lg p-6 shadow-sm text-center h-full"
+                  className="bg-white rounded-2xl p-6 shadow-sm text-center h-full"
                   style={{ border: "1px solid #e5e1d8" }}
                 >
                   <div
@@ -1248,12 +841,89 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 6. ABOUT IMAGE ────────────────────── */}
-      <section className="bg-white py-16 px-4">
+      {/* ── 6. FOUNDER STORY ──────────────────── */}
+      <section className="bg-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <HomeVisual {...homeVisuals.tutorTeam} />
-          </FadeIn>
+          <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr]">
+            <FadeIn>
+              <figure className="mx-auto w-full max-w-[340px] lg:mx-0">
+                <div className="relative">
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-3 -right-3 hidden h-full w-full rounded-2xl lg:block"
+                    style={{ border: "1px solid #c9922a" }}
+                  />
+                  <div
+                    className="relative overflow-hidden rounded-2xl"
+                    style={{ border: "1px solid #e5e1d8", boxShadow: "0 18px 40px -22px rgba(12,26,51,0.45)" }}
+                  >
+                    <Image
+                      src="/images/founder-formal.webp"
+                      alt="Medvance代表（慶應義塾大学医学部 在籍）"
+                      width={720}
+                      height={900}
+                      className="h-auto w-full"
+                    />
+                  </div>
+                </div>
+                <figcaption className="mt-4 text-center lg:text-left">
+                  <span className="text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
+                    MEDVANCE 代表
+                  </span>
+                  <span className="mt-1 block text-sm font-bold" style={{ color: "#0c1a33" }}>
+                    慶應義塾大学医学部 在籍
+                  </span>
+                </figcaption>
+              </figure>
+            </FadeIn>
+            <FadeIn delay={0.08}>
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                  Our Story
+                </p>
+                <h2 className="text-2xl md:text-3xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+                  Medvanceが生まれた理由
+                </h2>
+                <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: "#6b7280" }}>
+                  <p>
+                    Medvanceは、現役の慶應義塾大学医学部生である代表が立ち上げた医学部受験専門塾です。代表自身、自らの医学部入試で、受験したすべての医学部に合格しました。
+                  </p>
+                  <p>
+                    合否を分けたのは、生まれ持った才能ではありませんでした。何を・いつ・どの順番で進めるかという<strong style={{ color: "#0c1a33" }}>受験戦略</strong>と、合格者だからこそ確立できた<strong style={{ color: "#0c1a33" }}>勉強法</strong>。Medvanceは、この実体験そのものから生まれています。
+                  </p>
+                  <p>
+                    一方で、医学部受験の確かな情報や戦略は、いまだ十分にオープンになっていません。医学部に合格した人による再現性のある戦略を、医学部を志すすべての受験生へ届けたい——その想いから、現役医学部生が教える医学部受験塾Medvanceは生まれました。
+                  </p>
+                </div>
+                <Link
+                  href="/about?from=home-story"
+                  className="mt-7 inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#0c1a33" }}
+                >
+                  Medvanceとは？
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+          <div className="mt-14 grid gap-4 sm:grid-cols-3">
+            {[
+              { k: "原点", v: "現役の慶應義塾大学医学部生が設立" },
+              { k: "実績", v: "受験したすべての医学部に全勝合格" },
+              { k: "信念", v: "才能ではなく、再現できる戦略と勉強法" },
+            ].map((item, index) => (
+              <FadeIn key={item.k} delay={index * 0.05}>
+                <div className="h-full rounded-2xl p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                  <p className="mb-2 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
+                    {item.k}
+                  </p>
+                  <p className="text-sm font-bold leading-relaxed" style={{ color: "#0c1a33" }}>
+                    {item.v}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1290,50 +960,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 7.15 SERVICES (local) ──────────────── */}
+      <section className="px-4 py-20" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="指導の内容"
+            title="医学部受験塾として提供すること"
+            body="問題を教えるだけではなく、志望校を起点に、毎週の実行量と受験判断まで管理します。"
+          />
+          <div className="grid gap-4 md:grid-cols-3">
+            {serviceItems.map((item, index) => (
+              <FadeIn key={item.title} delay={index * 0.04}>
+                <div className="h-full rounded-lg bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
+                  <p className="mb-3 text-base font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 7.3 SUPPORT CONTENT ───────────────── */}
       <section className="bg-white py-20 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-              授業以外の勉強も見ます
+              医学部受験の個別サポート体制
             </h2>
             <p className="text-center text-sm mb-12 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-              授業で扱った問題、次の宿題、模試の見直しまで一つの流れで進めます。
+              授業だけで終わらない。学習計画の設計から毎日の進捗管理、保護者への報告まで一貫して行います。
             </p>
-          </FadeIn>
-          <FadeIn delay={0.06}>
-            <div className="mx-auto mb-10 max-w-4xl">
-              <HomeVisual {...homeVisuals.support} />
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.08}>
-            <div className="grid md:grid-cols-4 gap-3 mb-10">
-              {supportFlow.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-lg bg-white p-5"
-                  style={{ border: "1px solid #e5e1d8" }}
-                >
-                  <p className="text-xs font-bold mb-3" style={{ color: "#c9922a" }}>
-                    {item.label}
-                  </p>
-                  <h3 className="text-sm font-bold mb-2" style={{ color: "#0c1a33" }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 step: "01",
                 title: "年・月・週・1日単位の学習計画",
-                body: "試験日から考えて年間計画を立て、月・週・1日の単位まで分けます。「今日何をするか」が分かる状態にします。",
+                body: "試験日から逆算した年間計画を設計し、月・週・1日の単位に落とし込みます。「今日何をすべきか」が常に明確な状態をつくります。",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
@@ -1343,7 +1008,7 @@ export default function Home() {
               {
                 step: "02",
                 title: "毎日の学習管理とフィードバック",
-                body: "宿題の進み具合や質問を見て、授業内容を変えます。一人で止まったままにしません。",
+                body: "学習記録を毎日確認し、進捗・理解度・つまずきに応じてその日のうちにフィードバックを返します。一人で抱え込まずに進められます。",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
@@ -1353,7 +1018,7 @@ export default function Home() {
               {
                 step: "03",
                 title: "保護者を交えた学習報告面談",
-                body: "保護者の方にも、学習状況と次にやることを共有できます。費用や受験校の相談もできます。",
+                body: "定期的に保護者も含めた面談を実施。学習状況・志望校への進捗・今後の方針を丁寧にご報告します。家族全体で受験を支える体制をつくります。",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
@@ -1397,11 +1062,54 @@ export default function Home() {
                 </svg>
               </div>
               <div className="flex-1 text-center sm:text-left">
-                <p className="text-xs font-bold tracking-widest mb-1" style={{ color: "#c9922a" }}>授業外の質問</p>
-                <p className="font-bold text-white text-base mb-1">授業外の質問も見ます</p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#c9922a" }}>24時間サポート</p>
+                <p className="font-bold text-white text-base mb-1">現役医学生が24時間質問に対応</p>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-                  宿題で詰まった問題は、次回授業で扱います。質問が多い単元は、予定を変えて戻ります。
+                  授業外でも疑問が生じたらすぐに質問できます。わからないことをその日のうちに解消し、翌日の学習に持ち越さない仕組みです。
                 </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── 7.4 PARENTS (local) ────────────────── */}
+      <section className="px-4 py-20" style={{ backgroundColor: "#f7f5f0" }}>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <FadeIn>
+            <div className="overflow-hidden rounded-lg" style={{ border: "1px solid #e5e1d8" }}>
+              <Image
+                src="/images/generated/medvance-strategy-session.webp"
+                alt="医学部受験の志望校と学習計画を整理する面談イメージ"
+                width={1600}
+                height={900}
+                className="h-auto w-full"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.08}>
+            <div>
+              <SectionHeading
+                align="left"
+                eyebrow="保護者の方へ"
+                title="保護者にも、受験判断に必要な情報を共有します。"
+                body="医学部受験は、学力だけでなく家庭の判断が多い受験です。志望校、受験料、学費、追加指導、浪人可否。Medvanceは、その判断材料を保護者にも届く形で整理します。"
+              />
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/for/parents?from=home-parent"
+                  className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#0c1a33" }}
+                >
+                  保護者向けページを見る
+                </Link>
+                <Link
+                  href="/contact?from=home-parent"
+                  className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90"
+                  style={{ color: "#0c1a33", border: "1px solid #d6d1c7" }}
+                >
+                  保護者同席で相談する
+                </Link>
               </div>
             </div>
           </FadeIn>
@@ -1417,20 +1125,20 @@ export default function Home() {
               全国どこからでも受講できます
             </h2>
             <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-              ZoomやGoogle Meetを使います。通塾が難しい方も、自宅から受講できます。
+              北海道から沖縄まで、海外在住の方も対応。ZoomやGoogle Meetを使った完全オンライン指導で、場所の制約は一切ありません。
             </p>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <FadeIn>
               <div className="space-y-5">
                 {[
-                  { icon: "全国", title: "日本全国どこでも受講可能", body: "東京・大阪・名古屋だけでなく、地方の方も受講できます。学校の進度も前提にします。" },
-                  { icon: "海外", title: "海外在住でも受講可能", body: "帰国後に医学部を目指す方、海外から準備したい方も相談できます。" },
-                  { icon: "共有", title: "画面共有で指導", body: "Zoom・Google Meetで問題を共有します。ノートや参考書も画面越しに見られます。" },
-                  { icon: "端末", title: "スマホ・タブレットでも受講可能", body: "PCがない場合も相談できます。授業内容に合わせて受講方法を決めます。" },
+                  { icon: "🗾", title: "日本全国どこでも受講可能", body: "東京・大阪・名古屋はもちろん、地方の方も歓迎。地方公立出身の講師も在籍しているため、地方からの受験事情も深く理解しています。" },
+                  { icon: "🌏", title: "海外在住でも受講可能", body: "海外からの帰国後に医学部を目指す方、海外在住のまま準備を進めたい方にも対応。時差に配慮したスケジュール調整も可能です。" },
+                  { icon: "💻", title: "画面共有でリアルタイム指導", body: "Zoom・Google Meetで問題を共有しながら指導。ノートや参考書もカメラで見せながら進められるため、対面と変わらない質の指導を提供します。" },
+                  { icon: "📱", title: "スマホ・タブレットでも受講OK", body: "PCがなくても受講可能。外出先やスキマ時間にも柔軟に対応できます。" },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md text-xs font-bold text-white" style={{ backgroundColor: "#0c1a33" }}>{item.icon}</span>
+                    <span className="text-2xl flex-shrink-0">{item.icon}</span>
                     <div>
                       <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>{item.title}</p>
                       <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
@@ -1463,9 +1171,9 @@ export default function Home() {
                     className="flex-1 block text-center py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
                     style={{ backgroundColor: "#c9922a", color: "#fff" }}
                   >
-                    フォームで無料相談
+                    オンラインで無料相談する
                   </Link>
-                  <LineButton label="LINEで無料相談" size="lg" className="!py-3" />
+                  <LineButton label="LINE" size="lg" className="!py-3 sm:!w-28" />
                 </div>
               </div>
             </FadeIn>
@@ -1482,7 +1190,7 @@ export default function Home() {
               お申し込みから指導開始まで
             </h2>
             <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
-              担当予定の講師で体験してから決められます
+              無料相談から最短1週間で指導をスタートできます
             </p>
           </FadeIn>
           <div className="grid md:grid-cols-4 gap-6">
@@ -1510,6 +1218,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 8.5 DIAGNOSIS FLOW (local) ─────────── */}
+      <section className="bg-white px-4 py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <FadeIn>
+            <div>
+              <SectionHeading
+                align="left"
+                eyebrow="診断の流れ"
+                title="まずは、医学部合格に向けた戦略診断から。"
+                body="初回診断では、模試結果、志望校、現在の塾・予備校、学習時間、保護者の方針を確認し、必要な指導体制を整理します。"
+              />
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/contact?from=home-diagnosis"
+                  className="inline-flex items-center justify-center rounded-lg px-7 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#c9922a" }}
+                >
+                  合格戦略診断を申し込む
+                </Link>
+                <Link
+                  href="/pricing?from=home-diagnosis"
+                  className="inline-flex items-center justify-center rounded-lg px-7 py-4 text-sm font-bold transition-opacity hover:opacity-90"
+                  style={{ color: "#0c1a33", border: "1px solid #d6d1c7" }}
+                >
+                  料金を見る
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+          <div className="grid gap-4">
+            {flowItemsLocal.map((item, index) => (
+              <FadeIn key={item.step} delay={index * 0.05}>
+                <div className="flex gap-4 rounded-lg p-5" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                  <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: "#0c1a33" }}>
+                    {item.step}
+                  </span>
+                  <div>
+                    <p className="mb-1 text-sm font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8.7 AUDIENCE (local) ───────────────── */}
+      <section className="bg-white px-4 py-20" style={{ borderTop: "1px solid #dfe6ef" }}>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="対象のご家庭"
+            title="医学部合格に向けて、学習と受験戦略を一体で見ます。"
+            body="国公立・私立、現役・浪人、予備校併用、集団塾が合わないケースまで。受験生の現在地に合わせて、必要な指導と管理を組みます。"
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {audienceItems.map((item, index) => (
+              <FadeIn key={item.title} delay={index * 0.04}>
+                <Link
+                  href={item.href}
+                  className="group flex h-full flex-col rounded-lg p-6 transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
+                >
+                  <p className="mb-3 text-base font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
+                  <p className="mb-5 flex-1 text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
+                  <span className="text-xs font-bold" style={{ color: "#c9922a" }}>詳しく見る →</span>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-sm" style={{ color: "#5f6b7a" }}>
+            上記以外の学年・状況の方は{" "}
+            <Link href="/for?from=home-audience-hub" className="font-bold" style={{ color: "#c9922a" }}>
+              対象者ページ一覧
+            </Link>
+            {" "}からお探しいただけます。
+          </p>
+        </div>
+      </section>
+
       {/* ── 9. TARGET AUDIENCE ────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
@@ -1517,13 +1305,13 @@ export default function Home() {
             こんな方へ
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            Medvanceはこんな方に向いています
+            Medvanceはこんな方を応援します
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { label: "浪人生の方", desc: "現役時代の失敗を分析し、1年で必要な学習量を決めます", href: "/for/ronin" },
-              { label: "再受験生の方", desc: "社会人・大学生からの挑戦も、予定に合わせて相談できます", href: "/for/saijuken" },
-              { label: "保護者の方", desc: "毎月の進捗報告・保護者面談で、状況と今後の予定を共有します", href: "/for/parents" },
+              { label: "浪人生の方", desc: "現役時代の失敗を分析し、正しい戦略で1年以内の合格を目指します", href: "/for/ronin" },
+              { label: "再受験生の方", desc: "社会人・大学生からの挑戦も歓迎。柔軟なスケジュールで全力サポート", href: "/for/saijuken" },
+              { label: "保護者の方", desc: "毎月の進捗報告・保護者面談で、お子さまの状況を透明にご報告", href: "/for/parents" },
               { label: "慶應医学部を目指す方", desc: "現役慶應医学部生だからこそ語れる、リアルな入試対策", href: "/universities/keio" },
               { label: "私立医学部を目指す方", desc: "慈恵・順天堂・日本医科など、大学別の傾向に合わせた専門対策", href: "/universities/private" },
               { label: "国公立医学部を目指す方", desc: "共通テストから二次試験まで、全科目の完成を目指します", href: "/universities/national" },
@@ -1584,6 +1372,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 10.1 FAQ ADDITIONAL (local) ────────── */}
+      <section className="bg-white px-4 py-16" style={{ borderTop: "1px solid #e5e1d8" }}>
+        <div className="mx-auto max-w-3xl">
+          <SectionHeading eyebrow="補足FAQ" title="相談前に確認されることが多い質問" />
+          <div className="space-y-4">
+            {faqItemsLocal.map((item) => (
+              <FadeIn key={item.q}>
+                <div className="rounded-lg p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                  <p className="mb-2 text-sm font-bold" style={{ color: "#0c1a33" }}>Q. {item.q}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>A. {item.a}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 10.2 PRICING SUMMARY ──────────────── */}
       <section className="bg-white py-16 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
         <div className="max-w-3xl mx-auto text-center">
@@ -1638,7 +1443,7 @@ export default function Home() {
               志望校別・入試対策ガイド
             </h2>
             <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
-              各大学の出題傾向、科目別対策、面接・小論文の準備を現役慶應医学部生が解説
+              各大学の出題傾向・合格戦略・科目別対策を現役慶應医学部生が解説
             </p>
           </FadeIn>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
@@ -1690,10 +1495,10 @@ export default function Home() {
             <FadeIn>
               <div className="rounded-2xl bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
                 <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                  相談前に読める記事
+                  相談前に確認できる記事
                 </p>
                 <h3 className="text-lg font-bold mb-3" style={{ color: "#0c1a33" }}>
-                  相談前に読んでおくと選びやすい記事
+                  相談前に読んでおくと判断しやすい記事
                 </h3>
                 <div className="space-y-3">
                   {homeFeaturedColumnArticles.slice(0, 4).map((article) => {
@@ -1780,16 +1585,16 @@ export default function Home() {
               { tag: "計画", title: "医学部受験ロードマップ", href: "/column/roadmap" },
               { tag: "合格分析", title: "医学部に受かる人・落ちる人の違い", href: "/column/difference" },
               { tag: "私立vs国公立", title: "私立医学部 vs 国公立医学部", href: "/column/shigaku-vs-kokuritsu" },
-              { tag: "面接", title: "医学部面接対策の流れ", href: "/column/mensetu" },
+              { tag: "面接", title: "医学部面接対策の完全ガイド", href: "/column/mensetu" },
               { tag: "面接時期", title: "医学部面接対策はいつから始めるべきか", href: "/column/mensetu-timing" },
-              { tag: "学費", title: "私立・国公立の学費を比べる", href: "/column/gakuhi" },
+              { tag: "学費", title: "私立・国公立の学費を徹底比較", href: "/column/gakuhi" },
               { tag: "タイミング", title: "医学部受験はいつから始めるべきか", href: "/column/juken-timing" },
               { tag: "過去問", title: "医学部受験の過去問はいつから始めるべきか", href: "/column/kakomon-timing" },
               { tag: "偏差値", title: "偏差値と医学部合格の関係", href: "/column/hensachi" },
               { tag: "再受験", title: "再受験で医学部に合格する方法", href: "/column/saijuken" },
-              { tag: "塾選び", title: "医学部専門予備校の費用と面倒見を見る", href: "/column/medical-yobiko-cost" },
-              { tag: "個別指導", title: "医学部受験で個別カリキュラムが必要な理由", href: "/column/ordermade-curriculum" },
-              { tag: "面倒見", title: "医学部受験の塾は面倒見で選ぶ", href: "/column/support-juku-choice" },
+              { tag: "塾選び", title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント", href: "/column/medical-yobiko-cost" },
+              { tag: "個別設計", title: "医学部受験でオーダーメイドカリキュラムが重要な理由", href: "/column/ordermade-curriculum" },
+              { tag: "伴走", title: "医学部受験の塾はサポート体制で選ぶべき理由", href: "/column/support-juku-choice" },
             ].map((col, i) => (
               <FadeIn key={i} delay={(i % 3) * 0.07}>
                 <Link
@@ -1821,13 +1626,13 @@ export default function Home() {
                   塾・予備校を比較検討している方へ
                 </h3>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.68)" }}>
-                  塾選びで悩む方がよく見る内容です。先に読んでおくと、比較しやすくなります。
+                  塾選びで悩んでいる方がよく相談される論点を先に読んでおくと、比較や判断がしやすくなります。
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "費用と面倒見を見る", href: "/column/medical-yobiko-cost" },
-                    { label: "個別カリキュラムを見る", href: "/column/ordermade-curriculum" },
-                    { label: "塾の面倒見を見る", href: "/column/support-juku-choice" },
+                    { label: "高いだけ？費用とサポート", href: "/column/medical-yobiko-cost" },
+                    { label: "オーダーメイド型が伸びる理由", href: "/column/ordermade-curriculum" },
+                    { label: "塾はサポート体制で選ぶ", href: "/column/support-juku-choice" },
                     { label: "面接対策はいつ始める？", href: "/column/mensetu-timing" },
                   ].map((item) => (
                     <Link
@@ -1889,30 +1694,9 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
             各教科の指導方法
           </h2>
-          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            どの科目も同じ量を進めるのではなく、志望校の配点と現在地から、先に直す場所を決めます。
+          <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+            「ただ教える」だけでなく、つまずきの根本を見抜いてピンポイントに解消します
           </p>
-          <FadeIn delay={0.08}>
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-8 items-center mb-10">
-              <div className="grid sm:grid-cols-2 gap-3">
-                {subjectReviewItems.map((item) => (
-                  <div
-                    key={item.subject}
-                    className="rounded-lg p-5"
-                    style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
-                  >
-                    <p className="text-sm font-bold mb-2" style={{ color: "#0c1a33" }}>
-                      {item.subject}
-                    </p>
-                    <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-                      {item.body}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <HomeVisual {...homeVisuals.subjectStrategy} />
-            </div>
-          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {subjects.map((subject) => (
               <Link
@@ -1944,17 +1728,17 @@ export default function Home() {
             <div className="grid md:grid-cols-[1fr_260px] gap-10 items-center p-8 md:p-12 rounded-2xl bg-white" style={{ border: "2px solid #c9922a" }}>
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: "rgba(201,146,42,0.1)", color: "#c9922a" }}>
-                  医学部受験マニュアル配布中
+                  📘 無料相談の申し込み特典
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  医学部受験マニュアル
+                  医学部受験戦略マニュアル
                 </h2>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
-                  科目別の勉強法、年間スケジュール、面接・小論文の始め方をまとめています。<br />
-                  フォームまたはLINEから受け取れます。
+                  科目別攻略法・年間スケジュール・面接対策・難関校攻略まで。<br />
+                  現役慶應医学部生が書いた6章構成の合格戦略ガイド。無料相談に申し込むと同時にお届けします。
                 </p>
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {["Chapter 01 入試の全体像", "Chapter 02 科目別の勉強法", "Chapter 03 年間スケジュール", "Chapter 04 面接・小論文", "Chapter 05 合格者の勉強例", "Chapter 06 難関校の見方"].map((ch) => (
+                  {["Chapter 01 入試の全体像", "Chapter 02 科目別攻略法", "Chapter 03 年間スケジュール", "Chapter 04 面接・小論文", "Chapter 05 合格者の共通点", "Chapter 06 難関校別対策"].map((ch) => (
                     <span key={ch} className="text-xs px-2.5 py-1 rounded-full" style={{ backgroundColor: "#f7f5f0", color: "#6b7280", border: "1px solid #e5e1d8" }}>
                       {ch}
                     </span>
@@ -1966,11 +1750,11 @@ export default function Home() {
                     className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
                     style={{ backgroundColor: "#c9922a" }}
                   >
-                    フォームで受け取る →
+                    無料相談に申し込む（マニュアル付き）→
                   </Link>
-                  <LineButton label="LINEで無料相談" size="lg" className="!py-4 !px-6 shadow-md" />
+                  <LineButton label="LINEで相談" size="lg" className="!py-4 !px-6 shadow-md" />
                 </div>
-                <p className="text-xs mt-2" style={{ color: "#9ca3af" }}>フォーム / LINE / 全国オンライン対応</p>
+                <p className="text-xs mt-2" style={{ color: "#9ca3af" }}>完全無料・勧誘なし・全国オンライン対応</p>
               </div>
               {/* Book mockup */}
               <div className="hidden md:block flex-shrink-0">
@@ -1986,10 +1770,10 @@ export default function Home() {
                   <div className="p-5">
                     <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>Medvance</p>
                     <p className="text-white font-bold leading-tight mb-0.5" style={{ fontSize: "1rem", fontFamily: "var(--font-noto-serif)" }}>医学部受験</p>
-                    <p className="font-bold leading-tight mb-4" style={{ fontSize: "1rem", fontFamily: "var(--font-noto-serif)", color: "#e8b84b" }}>受験マニュアル</p>
+                    <p className="font-bold leading-tight mb-4" style={{ fontSize: "1rem", fontFamily: "var(--font-noto-serif)", color: "#e8b84b" }}>戦略マニュアル</p>
                     <div style={{ height: "1px", backgroundColor: "rgba(201,146,42,0.3)", marginBottom: "12px" }} />
                     <div className="space-y-1.5 mb-4">
-                      {["医学部入試の全体像", "科目別の進め方", "合格者の年間スケジュール", "面接・小論文の対策", "合格者の勉強例", "難関校の見方"].map((ch, i) => (
+                      {["医学部入試の全体像", "科目別・最短攻略法", "合格者の年間スケジュール", "面接・小論文の対策", "合格者と不合格者の違い", "難関校別・攻略ポイント"].map((ch, i) => (
                         <div key={i} className="flex items-center gap-2">
                           <span className="text-xs font-bold flex-shrink-0" style={{ color: "#c9922a" }}>{String(i + 1).padStart(2, "0")}</span>
                           <span className="text-xs" style={{ color: "rgba(255,255,255,0.65)" }}>{ch}</span>
@@ -2043,13 +1827,13 @@ export default function Home() {
                   
                   <div className="space-y-4">
                     {[
-                      { icon: "昇給", title: "実績に応じて昇給", desc: "継続年数・生徒評価・合格実績を見て時給を見直します" },
-                      { icon: "時間", title: "スケジュール調整可", desc: "試験・研究の繁忙期はコマ数を調整できます" },
-                      { icon: "遠隔", title: "リモート勤務可", desc: "オンライン指導で全国どこからでも勤務できます" },
-                      { icon: "経験", title: "受験経験を生かせる", desc: "医学部受験の体験談・勉強法を生徒に伝える仕事です" },
+                      { icon: "📈", title: "実績に応じて昇給", desc: "継続年数・生徒評価・合格実績で時給アップ" },
+                      { icon: "🗓", title: "スケジュール自由", desc: "試験・研究の繁忙期はコマ数を調整できます" },
+                      { icon: "💻", title: "完全リモートOK", desc: "オンライン指導で全国どこからでも勤務可" },
+                      { icon: "🎯", title: "経験が武器になる", desc: "医学部受験の体験談・勉強法をそのまま伝授" },
                     ].map((item) => (
                       <div key={item.title} className="flex gap-3">
-                        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md text-[11px] font-bold text-white" style={{ backgroundColor: "#0c1a33" }}>{item.icon}</span>
+                        <span className="text-xl flex-shrink-0">{item.icon}</span>
                         <div>
                           <p className="text-sm font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
                           <p className="text-xs" style={{ color: "#6b7280" }}>{item.desc}</p>
@@ -2064,24 +1848,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 13.9 FINAL CTA (local) ─────────────── */}
+      <section className="px-4 py-24" style={{ backgroundColor: "#0c1a33" }}>
+        <div className="mx-auto max-w-4xl text-center">
+          <FadeIn>
+            <p className="mb-4 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>まずは現在地の確認から</p>
+            <h2 className="mb-4 text-2xl font-bold leading-snug text-white md:text-4xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
+              医学部合格に向けて、まず現在地と戦略を整理しましょう。
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.66)" }}>
+              国公立・私立、現役・浪人、予備校併用の有無を問わず、志望校から必要な学習体制を設計します。
+            </p>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href="/contact?from=home-final-local"
+                className="inline-flex w-full items-center justify-center rounded-lg px-9 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90 sm:w-auto"
+                style={{ backgroundColor: "#c9922a" }}
+              >
+                合格戦略診断を申し込む
+              </Link>
+              <LineButton label="LINEで相談する" size="lg" className="!w-full !px-8 !py-4 sm:!w-auto" />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── 14. FINAL CTA ─────────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-28 px-4">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-4" style={{ color: "#c9922a" }}>相談・資料</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-4" style={{ color: "#c9922a" }}>無料相談</p>
             <h2 className="text-2xl md:text-4xl font-bold text-white text-center mb-4 leading-snug" style={{ fontFamily: "var(--font-noto-serif)" }}>
-              志望校・学年・模試結果を送れます。
+              まず、話してみてください。
             </h2>
             <p className="text-center mb-12" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.9375rem" }}>
-              フォームまたはLINEで相談できます。受講科目、授業回数、医学部受験マニュアルについて案内します。
+              売り込みは一切しません。30分で、あなたの現状と合格への道筋が見えます。
             </p>
 
             {/* What you get */}
             <div className="grid sm:grid-cols-3 gap-4 mb-12">
               {[
-                { num: "01", title: "学習状況", body: "模試結果、使用教材、学習時間を確認します。" },
-                { num: "02", title: "受講内容", body: "受講科目、授業回数、面接・小論文対策の有無を相談できます。" },
-                { num: "03", title: "マニュアル配布", body: "希望者には、医学部受験マニュアルをお送りします。" },
+                { num: "01", title: "現状分析", body: "今の学力・勉強法・使っている時間を整理し、何が足りていないかを明確にします。" },
+                { num: "02", title: "合格プランの提示", body: "志望校・残り時間・学力から、最短で合格するための具体的なステップをお伝えします。" },
+                { num: "03", title: "正直な判断", body: "Medvanceが合っているかどうかも含め、あなたに本当に必要なことを率直にお話しします。" },
               ].map((item) => (
                 <div key={item.num} className="p-6 rounded-xl" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
                   <p className="text-xs font-bold mb-2" style={{ color: "#c9922a" }}>{item.num}</p>
@@ -2098,12 +1907,12 @@ export default function Home() {
                   className="inline-block px-10 py-5 text-white font-bold text-base rounded-lg shadow-lg hover:opacity-90 transition-opacity"
                   style={{ backgroundColor: "#c9922a" }}
                 >
-                  フォームで無料相談
+                  無料相談・お問い合わせ（30分）
                 </Link>
-                <LineButton label="LINEで無料相談" size="lg" className="!py-5 !px-8 shadow-lg" />
+                <LineButton label="LINEで相談する" size="lg" className="!py-5 !px-8 shadow-lg" />
               </div>
               <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-                フォーム / LINEで無料相談 / 医学部受験マニュアル配布中
+                完全無料・勧誘なし・オンライン対応
               </p>
             </div>
           </FadeIn>
