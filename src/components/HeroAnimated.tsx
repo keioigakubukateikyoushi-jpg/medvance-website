@@ -274,7 +274,7 @@ export default function HeroAnimated() {
         />
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(90deg, rgba(12,26,51,0.98) 0%, rgba(12,26,51,0.92) 34%, rgba(12,26,51,0.5) 66%, rgba(12,26,51,0.22) 100%)" }}
+          style={{ background: "linear-gradient(90deg, rgba(12,26,51,0.95) 0%, rgba(12,26,51,0.75) 30%, rgba(12,26,51,0.2) 60%, rgba(12,26,51,0) 100%)" }}
         />
         <div className="relative z-10 flex min-h-[70svh] flex-col justify-center px-12 py-10 lg:px-16 xl:px-20">
           <div className="max-w-2xl">
