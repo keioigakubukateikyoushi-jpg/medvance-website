@@ -160,7 +160,7 @@ function HeroText() {
 
       {/* CTAs */}
       <div
-        className="flex w-[calc(100vw-40px)] max-w-md flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row"
+        className="flex w-full max-w-md flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row"
         style={anim(0.65, 0.44)}
       >
         <Link
