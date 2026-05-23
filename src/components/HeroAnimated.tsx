@@ -285,7 +285,7 @@ export default function HeroAnimated() {
 
       {/* Mobile: keep tutor and student visible above the copy. */}
       <div className="md:hidden relative overflow-hidden" style={{ backgroundColor: "#0c1a33" }}>
-        <div className="relative aspect-[16/5.2] w-full overflow-hidden sm:aspect-[16/6]">
+        <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9]">
           <Image
             src="/images/hero-teaching.webp"
             alt="日本の医学部受験に向けて1対1で答案を確認する講師と受験生"
