@@ -264,7 +264,7 @@ export default function HeroAnimated() {
       {/* ── Desktop: full image background ── */}
       <div className="hidden md:block relative" style={{ minHeight: "70svh" }}>
         <Image
-          src="/images/hero-japan-tutoring.webp"
+          src="/images/hero-teaching.webp"
           alt="日本の医学部受験に向けて1対1で答案を確認する講師と受験生"
           fill
           sizes="(min-width: 768px) 100vw, 0px"
@@ -287,7 +287,7 @@ export default function HeroAnimated() {
       <div className="md:hidden relative overflow-hidden" style={{ backgroundColor: "#0c1a33" }}>
         <div className="relative aspect-[16/5.2] w-full overflow-hidden sm:aspect-[16/6]">
           <Image
-            src="/images/hero-japan-tutoring-mobile.webp"
+            src="/images/hero-teaching.webp"
             alt="日本の医学部受験に向けて1対1で答案を確認する講師と受験生"
             fill
             sizes="100vw"

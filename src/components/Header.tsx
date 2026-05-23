@@ -109,12 +109,12 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 hover:opacity-85 transition-opacity flex-shrink-0">
           <Image
-            src="/images/logo-medvance-icon.webp"
+            src="/images/logo-medvance-mark.webp"
             alt="Medvance"
             width={56}
             height={56}
             priority
-            className="h-11 w-11 rounded-md object-contain"
+            className="h-11 w-11 rounded-md bg-white object-contain p-0.5 shadow-sm"
           />
           <span className="text-white font-semibold text-xs hidden sm:block opacity-70 leading-tight">
             医学部受験の<br />戦略伴走
