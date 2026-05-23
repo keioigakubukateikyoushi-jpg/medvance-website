@@ -10,17 +10,33 @@ function anim(duration: number, delay: number, name = "fadeUpIn"): React.CSSProp
   };
 }
 
-/* ── Shared text content ── */
-const proofPoints = [
-  { label: "講師", value: "慶應医学部生" },
-  { label: "指導体制", value: "完全1対1" },
-  { label: "受講形式", value: "全国オンライン対応" },
+const heroProofItems = [
+  { label: "対象", value: "国公立・私立医学部志望" },
+  { label: "指導", value: "1対1個別指導 + 週次学習管理" },
+  { label: "戦略", value: "共通テスト・二次・出願・面接小論文" },
 ];
 
-const segmentLinks = [
-  { label: "高3生", href: "/for/ko3", note: "残り期間から逆算" },
-  { label: "浪人生", href: "/for/ronin", note: "失敗原因を再設計" },
-  { label: "保護者", href: "/for/parents", note: "費用と進捗を確認" },
+const heroPersonas = [
+  {
+    label: "国公立医学部を目指す方へ",
+    desc: "共通テスト・二次試験・面接まで、科目別に学習計画を組みます",
+    href: "/universities/national?from=hero-persona",
+  },
+  {
+    label: "私立医学部を目指す方へ",
+    desc: "大学別の科目相性、出願日程、面接小論文まで設計します",
+    href: "/private-medical-strategy?from=hero-persona",
+  },
+  {
+    label: "大手予備校と併用したいご家庭へ",
+    desc: "授業後の復習管理、質問対応、志望校別対策を補完します",
+    href: "/for/prep-school-plus?from=hero-persona",
+  },
+  {
+    label: "集団塾が合わない医学部志望生へ",
+    desc: "1対1指導と週次管理で、本人に合う受験体制を作ります",
+    href: "/for/not-group-school?from=hero-persona",
+  },
 ];
 
 function LineIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -37,129 +53,207 @@ function LineIcon({ className = "w-4 h-4" }: { className?: string }) {
 function HeroText() {
   return (
     <>
+      {/* Authority bar — founder credibility upfront */}
+      <Link
+        href="/about/founder?from=hero-authority"
+        className="mb-5 hidden w-full max-w-md items-center gap-3 rounded-md px-3 py-2 transition-colors hover:opacity-95 sm:inline-flex"
+        style={{
+          backgroundColor: "rgba(201,146,42,0.12)",
+          border: "1px solid rgba(201,146,42,0.4)",
+          ...anim(0.55, 0, "fadeSlideDown"),
+        }}
+      >
+        <span
+          className="rounded-sm px-2 py-0.5 text-[10px] font-bold tracking-widest"
+          style={{ backgroundColor: "#c9922a", color: "#0c1a33" }}
+        >
+          医学部 合格戦略診断
+        </span>
+        <span className="text-xs leading-snug" style={{ color: "rgba(255,255,255,0.85)" }}>
+          国公立・私立に対応する個別戦略
+        </span>
+        <span aria-hidden="true" className="ml-auto text-xs" style={{ color: "#c9922a" }}>
+          →
+        </span>
+      </Link>
+
       {/* Gold line */}
       <div
-        className="w-10 h-0.5 mb-7"
-        style={{ backgroundColor: "#c9922a", transformOrigin: "left", ...anim(0.5, 0, "scaleInX") }}
+        className="mb-4 h-0.5 w-12 sm:mb-5"
+        style={{ backgroundColor: "#c9922a", transformOrigin: "left", ...anim(0.5, 0.05, "scaleInX") }}
       />
 
-      {/* Badge */}
+      {/* Micro copy */}
       <div
-        className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full text-xs tracking-widest w-fit"
+        className="mb-4 inline-flex w-fit items-center gap-2 rounded-md px-3 py-1.5 text-xs tracking-widest sm:mb-5"
         style={{
-          backgroundColor: "rgba(255,255,255,0.07)",
-          border: "1px solid rgba(255,255,255,0.14)",
-          color: "rgba(255,255,255,0.6)",
+          backgroundColor: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(255,255,255,0.12)",
+          color: "rgba(255,255,255,0.66)",
           ...anim(0.5, 0.1, "fadeSlideDown"),
         }}
       >
-        医学部受験専門塾 Medvance
+        医学部受験専門 / 1対1伴走
       </div>
 
-      {/* Headline */}
-      <h1
-        className="font-bold leading-snug mb-4"
+      {/* Catch copy */}
+      <p
+        className="mb-4 font-bold leading-snug sm:mb-5"
         style={{
           fontFamily: "var(--font-noto-serif)",
-          fontSize: "clamp(1.75rem, 5vw, 3.6rem)",
+          fontSize: "clamp(1.15rem, 2.7vw, 1.75rem)",
+          color: "#c9922a",
+          maxWidth: "calc(100vw - 40px)",
+          ...anim(0.6, 0.16),
+        }}
+      >
+        <span className="block">医学部合格に、</span>
+        <span className="block">才能は関係ない。</span>
+      </p>
+
+      {/* Headline — single sentence, two lines on mobile */}
+      <h1
+        className="mb-3 font-bold leading-snug sm:mb-4"
+        style={{
+          fontFamily: "var(--font-noto-serif)",
+          fontSize: "clamp(1.62rem, 4.1vw, 3.05rem)",
           color: "#ffffff",
+          maxWidth: "calc(100vw - 40px)",
           ...anim(0.65, 0.2),
         }}
       >
-        医学部合格に、<br />
-        才能は<span style={{ color: "#c9922a" }}>関係ない。</span>
+        <span className="block">医学部合格に向けた、</span>
+        <span className="block">個別指導と</span>
+        <span className="block">受験戦略を。</span>
       </h1>
 
-      {/* Sub headline */}
+      {/* Sub copy */}
       <p
-        className="font-semibold mb-6"
+        className="mb-4 font-semibold sm:mb-5"
         style={{
-          color: "rgba(255,255,255,0.65)",
-          fontSize: "clamp(0.9rem, 1.8vw, 1.1rem)",
+          color: "#c9922a",
           fontFamily: "var(--font-noto-serif)",
+          fontSize: "clamp(0.95rem, 1.8vw, 1.25rem)",
           lineHeight: 1.7,
-          ...anim(0.65, 0.32),
+          maxWidth: "calc(100vw - 40px)",
+          overflowWrap: "anywhere",
+          ...anim(0.65, 0.28),
         }}
       >
-        必要なのは、正しい方法だけだ。
+        国公立・私立医学部を目指す受験生へ。<br className="sm:hidden" />
+        予備校併用・1対1指導・志望校別戦略まで一緒に進めます。
       </p>
 
       {/* Description */}
       <p
-        className="leading-relaxed mb-9"
+        className="mb-7 hidden leading-relaxed sm:block"
         style={{
-          color: "rgba(255,255,255,0.58)",
-          maxWidth: "420px",
-          fontSize: "clamp(0.8125rem, 1.3vw, 0.9rem)",
-          ...anim(0.65, 0.42),
+          color: "rgba(255,255,255,0.62)",
+          maxWidth: "calc(100vw - 40px)",
+          fontSize: "clamp(0.85rem, 1.35vw, 0.95rem)",
+          overflowWrap: "anywhere",
+          ...anim(0.65, 0.36),
         }}
       >
-        現役慶應医学部生が、あなただけの最短合格ルートを設計します。完全1対1・全国オンライン対応。
+        集団塾が合わない方、予備校に通っていても復習・質問・志望校別対策が不安なご家庭へ。共通テスト、二次試験、私立医学部の大学別対策まで、毎週の実行に落とし込みます。
       </p>
 
-      <dl className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-6" style={anim(0.65, 0.48)}>
-        {proofPoints.map((item) => (
-          <div
-            key={item.label}
-            className="rounded-lg px-3 py-3"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.14)",
-            }}
-          >
-            <dt className="text-[10px] font-semibold tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.46)" }}>
-              {item.label}
-            </dt>
-            <dd className="mt-1 text-sm font-bold" style={{ color: "#ffffff" }}>
-              {item.value}
-            </dd>
-          </div>
-        ))}
-      </dl>
-
       {/* CTAs */}
-      <div className="flex flex-col sm:flex-row gap-3 mb-6" style={anim(0.65, 0.56)}>
+      <div
+        className="flex w-[calc(100vw-40px)] max-w-md flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row"
+        style={anim(0.65, 0.44)}
+      >
         <Link
           href="/contact?from=hero-primary"
-          className="inline-flex items-center justify-center px-7 py-3.5 font-bold rounded-lg text-white shadow-lg hover:opacity-90 transition-opacity text-center text-sm"
+          className="inline-flex w-full items-center justify-center rounded-lg px-7 py-3.5 text-center text-sm font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:w-auto"
           style={{ backgroundColor: "#c9922a" }}
         >
-          無料で合格戦略診断を受ける
+          合格戦略診断を申し込む
         </Link>
         <a
           href={LINE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-bold rounded-lg text-white transition-opacity hover:opacity-90 text-center text-sm"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-7 py-3.5 text-center text-sm font-bold text-white transition-opacity hover:opacity-90 sm:w-auto"
           style={{ backgroundColor: "#06C755" }}
         >
           <LineIcon />
-          LINEで質問してみる
+          LINEで相談する
         </a>
       </div>
+      <p
+        className="mt-3 text-xs"
+        style={{ color: "rgba(255,255,255,0.48)", ...anim(0.65, 0.48) }}
+      >
+        保護者同席推奨 / 全国オンライン対応 / 国公立・私立医学部に対応
+      </p>
 
-      {/* Trust badges */}
-      <div className="grid grid-cols-3 gap-2 max-w-xl" style={anim(0.65, 0.64)}>
-        {segmentLinks.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="rounded-lg px-3 py-3 text-center transition-opacity hover:opacity-85"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.13)",
-            }}
-          >
-            <span className="block text-sm font-bold" style={{ color: "#ffffff" }}>
-              {item.label}
-            </span>
-            <span className="mt-1 block text-[10px] leading-snug" style={{ color: "rgba(255,255,255,0.48)" }}>
-              {item.note}
-            </span>
-          </Link>
-        ))}
-      </div>
     </>
+  );
+}
+
+function HeroPersonas() {
+  return (
+    <section
+      className="relative px-4 pt-10 pb-12"
+      style={{ backgroundColor: "#0c1a33", borderTop: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <div className="mx-auto max-w-6xl">
+        <dl className="mb-8 grid gap-3 sm:grid-cols-3">
+          {heroProofItems.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-lg px-4 py-3"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
+            >
+              <dt className="text-[10px] font-semibold tracking-widest" style={{ color: "rgba(255,255,255,0.42)" }}>
+                {item.label}
+              </dt>
+              <dd className="mt-1 text-sm font-bold leading-snug text-white">
+                {item.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <p className="mb-4 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
+          ご家庭の状況に近い入口から
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {heroPersonas.map((persona) => (
+            <Link
+              key={persona.href}
+              href={persona.href}
+              className="group flex h-full flex-col rounded-lg p-5 transition-colors hover:bg-white/5"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.12)",
+              }}
+            >
+              <p className="mb-2 text-sm font-bold text-white">{persona.label}</p>
+              <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+                {persona.desc}
+              </p>
+              <span
+                className="mt-auto pt-3 text-xs font-bold transition-colors"
+                style={{ color: "#c9922a" }}
+              >
+                詳しく見る →
+              </span>
+            </Link>
+          ))}
+        </div>
+        <p className="mt-5 text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
+          当てはまる入口がない場合は{" "}
+          <Link href="/for?from=hero-personas" className="font-bold underline-offset-2 hover:underline" style={{ color: "#c9922a" }}>
+            対象者ページ一覧
+          </Link>
+          {" "}からお探しください。
+        </p>
+      </div>
+    </section>
   );
 }
 
@@ -167,53 +261,51 @@ export default function HeroAnimated() {
   return (
     <section style={{ backgroundColor: "#0c1a33" }}>
 
-      {/* ── Desktop: split layout ── */}
-      <div className="hidden md:grid md:grid-cols-[58%_42%]" style={{ minHeight: "88svh" }}>
-        {/* Text */}
-        <div className="flex flex-col justify-center px-12 lg:px-16 xl:px-20 py-20 relative z-10">
-          <HeroText />
+      {/* ── Desktop: full image background ── */}
+      <div className="hidden md:block relative" style={{ minHeight: "70svh" }}>
+        <Image
+          src="/images/hero-japan-tutoring.webp"
+          alt="日本の医学部受験に向けて1対1で答案を確認する講師と受験生"
+          fill
+          sizes="(min-width: 768px) 100vw, 0px"
+          className="object-cover object-[64%_center]"
+          priority
+          fetchPriority="high"
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(90deg, rgba(12,26,51,0.98) 0%, rgba(12,26,51,0.92) 34%, rgba(12,26,51,0.5) 66%, rgba(12,26,51,0.22) 100%)" }}
+        />
+        <div className="relative z-10 flex min-h-[70svh] flex-col justify-center px-12 py-10 lg:px-16 xl:px-20">
+          <div className="max-w-2xl">
+            <HeroText />
+          </div>
         </div>
-        {/* Image */}
-        <div className="relative">
+      </div>
+
+      {/* Mobile: keep tutor and student visible above the copy. */}
+      <div className="md:hidden relative overflow-hidden" style={{ backgroundColor: "#0c1a33" }}>
+        <div className="relative aspect-[16/5.2] w-full overflow-hidden sm:aspect-[16/6]">
           <Image
-            src="/images/hero.webp"
-            alt="Medvance 医学部受験専門塾"
+            src="/images/hero-japan-tutoring-mobile.webp"
+            alt="日本の医学部受験に向けて1対1で答案を確認する講師と受験生"
             fill
-            sizes="(max-width: 768px) 100vw, 45vw"
+            sizes="100vw"
             className="object-cover object-center"
             priority
             fetchPriority="high"
           />
           <div
-            className="absolute inset-y-0 left-0 pointer-events-none"
-            style={{ width: "200px", background: "linear-gradient(to right, #0c1a33, transparent)" }}
+            className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+            style={{ background: "linear-gradient(to bottom, rgba(12,26,51,0) 0%, #0c1a33 100%)" }}
           />
         </div>
-      </div>
-
-      {/* ── Mobile: image as full background ── */}
-      <div className="md:hidden relative" style={{ minHeight: "86svh" }}>
-        {/* Background image */}
-        <Image
-          src="/images/hero.webp"
-          alt="Medvance 医学部受験専門塾"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-          priority
-          fetchPriority="high"
-        />
-        {/* Dark overlay — strong at top/bottom, lighter in middle */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, #0c1a33 0%, rgba(12,26,51,0.82) 45%, rgba(12,26,51,0.88) 100%)" }}
-        />
-        {/* Text content */}
-        <div className="relative z-10 flex flex-col justify-center min-h-[86svh] px-5 py-20">
+        <div className="relative z-10 max-w-full overflow-hidden px-5 pb-7 pt-4">
           <HeroText />
         </div>
       </div>
 
+      <HeroPersonas />
     </section>
   );
 }
