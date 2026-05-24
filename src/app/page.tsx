@@ -244,6 +244,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 2.2 FOUNDER STORY ─────────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr]">
+            <FadeIn>
+              <figure className="mx-auto w-full max-w-[340px] lg:mx-0">
+                <div className="relative">
+                  <span
+                    aria-hidden
+                    className="absolute -bottom-3 -right-3 hidden h-full w-full rounded-2xl lg:block"
+                    style={{ border: "1px solid #c9922a" }}
+                  />
+                  <div
+                    className="relative overflow-hidden rounded-2xl"
+                    style={{ border: "1px solid #e5e1d8", boxShadow: "0 18px 40px -22px rgba(12,26,51,0.45)" }}
+                  >
+                    <Image
+                      src="/images/founder-formal.webp"
+                      alt="Medvance代表（慶應義塾大学医学部 在籍）"
+                      width={720}
+                      height={900}
+                      className="h-auto w-full"
+                    />
+                  </div>
+                </div>
+                <figcaption className="mt-4 text-center lg:text-left">
+                  <span className="text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
+                    MEDVANCE 代表
+                  </span>
+                  <span className="mt-1 block text-sm font-bold" style={{ color: "#0c1a33" }}>
+                    慶應義塾大学医学部 在籍
+                  </span>
+                </figcaption>
+              </figure>
+            </FadeIn>
+            <FadeIn delay={0.08}>
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+                  Our Story
+                </p>
+                <h2 className="text-2xl md:text-3xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+                  Medvanceが生まれた理由
+                </h2>
+                <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: "#6b7280" }}>
+                  <p>
+                    Medvanceは、現役の慶應義塾大学医学部生である代表が立ち上げた医学部受験専門塾です。代表自身、自らの医学部入試で、受験したすべての医学部に合格しました。
+                  </p>
+                  <p>
+                    合否を分けたのは、生まれ持った才能ではありませんでした。何を・いつ・どの順番で進めるかという<strong style={{ color: "#0c1a33" }}>受験戦略</strong>と、合格者だからこそ確立できた<strong style={{ color: "#0c1a33" }}>勉強法</strong>。Medvanceは、この実体験そのものから生まれています。
+                  </p>
+                  <p>
+                    一方で、医学部受験の確かな情報や戦略は、いまだ十分にオープンになっていません。医学部に合格した人による再現性のある戦略を、医学部を志すすべての受験生へ届けたい——その想いから、現役医学部生が教える医学部受験塾Medvanceは生まれました。
+                  </p>
+                </div>
+                <Link
+                  href="/about?from=home-story"
+                  className="mt-7 inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#0c1a33" }}
+                >
+                  Medvanceとは？
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+          <div className="mt-14 grid gap-4 sm:grid-cols-3">
+            {[
+              { k: "原点", v: "現役の慶應義塾大学医学部生が設立" },
+              { k: "実績", v: "受験したすべての医学部に全勝合格" },
+              { k: "信念", v: "才能ではなく、再現できる戦略と勉強法" },
+            ].map((item, index) => (
+              <FadeIn key={item.k} delay={index * 0.05}>
+                <div className="h-full rounded-2xl p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                  <p className="mb-2 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
+                    {item.k}
+                  </p>
+                  <p className="text-sm font-bold leading-relaxed" style={{ color: "#0c1a33" }}>
+                    {item.v}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 2.5 SEARCH INTENT HUB ─────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
@@ -768,92 +854,6 @@ export default function Home() {
                   <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{t.title}</p>
                   <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{t.desc}</p>
                 </HoverCard>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. FOUNDER STORY ──────────────────── */}
-      <section className="bg-white py-24 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr]">
-            <FadeIn>
-              <figure className="mx-auto w-full max-w-[340px] lg:mx-0">
-                <div className="relative">
-                  <span
-                    aria-hidden
-                    className="absolute -bottom-3 -right-3 hidden h-full w-full rounded-2xl lg:block"
-                    style={{ border: "1px solid #c9922a" }}
-                  />
-                  <div
-                    className="relative overflow-hidden rounded-2xl"
-                    style={{ border: "1px solid #e5e1d8", boxShadow: "0 18px 40px -22px rgba(12,26,51,0.45)" }}
-                  >
-                    <Image
-                      src="/images/founder-formal.webp"
-                      alt="Medvance代表（慶應義塾大学医学部 在籍）"
-                      width={720}
-                      height={900}
-                      className="h-auto w-full"
-                    />
-                  </div>
-                </div>
-                <figcaption className="mt-4 text-center lg:text-left">
-                  <span className="text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
-                    MEDVANCE 代表
-                  </span>
-                  <span className="mt-1 block text-sm font-bold" style={{ color: "#0c1a33" }}>
-                    慶應義塾大学医学部 在籍
-                  </span>
-                </figcaption>
-              </figure>
-            </FadeIn>
-            <FadeIn delay={0.08}>
-              <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-                  Our Story
-                </p>
-                <h2 className="text-2xl md:text-3xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  Medvanceが生まれた理由
-                </h2>
-                <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: "#6b7280" }}>
-                  <p>
-                    Medvanceは、現役の慶應義塾大学医学部生である代表が立ち上げた医学部受験専門塾です。代表自身、自らの医学部入試で、受験したすべての医学部に合格しました。
-                  </p>
-                  <p>
-                    合否を分けたのは、生まれ持った才能ではありませんでした。何を・いつ・どの順番で進めるかという<strong style={{ color: "#0c1a33" }}>受験戦略</strong>と、合格者だからこそ確立できた<strong style={{ color: "#0c1a33" }}>勉強法</strong>。Medvanceは、この実体験そのものから生まれています。
-                  </p>
-                  <p>
-                    一方で、医学部受験の確かな情報や戦略は、いまだ十分にオープンになっていません。医学部に合格した人による再現性のある戦略を、医学部を志すすべての受験生へ届けたい——その想いから、現役医学部生が教える医学部受験塾Medvanceは生まれました。
-                  </p>
-                </div>
-                <Link
-                  href="/about?from=home-story"
-                  className="mt-7 inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#0c1a33" }}
-                >
-                  Medvanceとは？
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </FadeIn>
-          </div>
-          <div className="mt-14 grid gap-4 sm:grid-cols-3">
-            {[
-              { k: "原点", v: "現役の慶應義塾大学医学部生が設立" },
-              { k: "実績", v: "受験したすべての医学部に全勝合格" },
-              { k: "信念", v: "才能ではなく、再現できる戦略と勉強法" },
-            ].map((item, index) => (
-              <FadeIn key={item.k} delay={index * 0.05}>
-                <div className="h-full rounded-2xl p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                  <p className="mb-2 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
-                    {item.k}
-                  </p>
-                  <p className="text-sm font-bold leading-relaxed" style={{ color: "#0c1a33" }}>
-                    {item.v}
-                  </p>
-                </div>
               </FadeIn>
             ))}
           </div>
