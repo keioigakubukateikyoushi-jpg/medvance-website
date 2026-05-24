@@ -1,10 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { headers } from "next/headers";
+import { usePathname } from "next/navigation";
 import { resolveBreadcrumbLabel } from "@/lib/breadcrumbResolve";
 
-export default async function AutoBreadcrumb() {
-  const hdrs = await headers();
-  const pathname = hdrs.get("x-pathname") ?? "/";
+export default function AutoBreadcrumb() {
+  const pathname = usePathname();
   if (!pathname || pathname === "/") return null;
 
   const segments = pathname.split("/").filter(Boolean);
