@@ -4,7 +4,6 @@ import HeroAnimated from "@/components/HeroAnimated";
 import Marquee from "@/components/Marquee";
 import FadeIn from "@/components/FadeIn";
 import HoverCard from "@/components/HoverCard";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import LineButton from "@/components/LineButton";
 import {
   homeFeaturedColumnArticles,
@@ -12,7 +11,6 @@ import {
 } from "@/lib/columnArticles";
 import { getColumnThumbnail } from "@/lib/columnThumbnails";
 import { buildItemListSchema, buildFaqSchema, buildSpeakableSchema } from "@/lib/seo";
-import { notices } from "@/lib/notices";
 
 export const metadata = {
   title: "医学部受験専門塾 Medvance｜慶應医学部生が完全1対1・全国オンライン対応",
@@ -242,10 +240,10 @@ export default function Home() {
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { label: "講師100%", sub: "現役慶應医学部生のみ" },
-            { label: "73校+", sub: "大学別入試対策を掲載" },
-            { label: "56記事+", sub: "医学部受験の戦略コラム" },
-            { label: "30分・無料", sub: "初回相談・勧誘なし" },
+            { label: "完全1対1指導", sub: "集団授業は一切なし" },
+            { label: "現役慶應医学部生", sub: "100%現役在籍が指導" },
+            { label: "全国オンライン対応", sub: "海外からも受講可" },
+            { label: "30分・無料診断", sub: "勧誘なし" },
           ].map((s) => (
             <div key={s.sub}>
               <p className="text-lg md:text-xl font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{s.label}</p>
@@ -254,39 +252,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* ── 2.3 NEWS STRIP ────────────────────── */}
-      {(() => {
-        const latest = [...notices].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
-        const catColor: Record<string, string> = {
-          重要: "#dc2626", サービス情報: "#1d4ed8", キャンペーン: "#d97706", お知らせ: "#16a34a",
-        };
-        const fmtDate = (d: string) => { const [y,m,day] = d.split("-"); return `${y}.${m.padStart(2,"0")}.${day.padStart(2,"0")}`; };
-        return (
-          <section className="bg-white py-6 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center gap-4 mb-3">
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#0c1a33" }}>お知らせ</span>
-                <Link href="/news" className="text-xs hover:opacity-80 ml-auto" style={{ color: "#c9922a" }}>一覧を見る →</Link>
-              </div>
-              <div className="space-y-2">
-                {latest.map((n) => (
-                  <Link
-                    key={n.slug}
-                    href={`/news/${n.slug}`}
-                    className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 py-2 hover:opacity-80 transition-opacity group"
-                    style={{ borderBottom: "1px solid #f3f4f6" }}
-                  >
-                    <span className="text-xs flex-shrink-0" style={{ color: "#9ca3af" }}>{fmtDate(n.date)}</span>
-                    <span className="flex-shrink-0 text-xs font-semibold" style={{ color: catColor[n.category] ?? "#16a34a" }}>[{n.category}]</span>
-                    <span className="text-sm group-hover:underline" style={{ color: "#1f2937" }}>{n.title}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      })()}
 
       {/* ── 2.5 SEARCH INTENT HUB ─────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4">
@@ -733,10 +698,10 @@ export default function Home() {
           <FadeIn>
             
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-              現役慶應医学部生が1対1で指導する強み
+              同じ医学部合格でも、辿った道はそれぞれ違います。
             </h2>
-            <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-              複数人の現役慶應医学部生から、性格・志望校・得意科目を踏まえて担当を選びます。事前の面談で相性確認も可能です。
+            <p className="text-center text-sm mb-14 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+              現役・浪人・地方公立・最難関突破——タイプの異なる現役慶應医学部生が在籍。生徒の性格・志望校・得意科目を踏まえ、最も相性の合う一人をマッチングします。事前面談で相性確認も可能です。
             </p>
           </FadeIn>
           {/* Credential Badge */}
@@ -1311,9 +1276,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── 9.5 TESTIMONIALS (data-driven, hidden until filled) ── */}
-      <TestimonialsSection />
 
       {/* ── 10. FAQ ────────────────────────────── */}
       <section className="bg-white py-24 px-4">
