@@ -149,15 +149,6 @@ const homeSchemas = [
 ];
 
 /* ── Local-rewrite carry-over data ─────────── */
-const audienceItems = [
-  { title: "国公立医学部を目指す方", body: "共通テスト・二次試験・面接まで、科目配分と演習量を週単位で設計します。", href: "/universities/national?from=home-audience" },
-  { title: "私立医学部を目指す方", body: "大学別の科目相性、出願日程、学費、面接小論文まで含めて受験校を設計します。", href: "/private-medical-strategy?from=home-audience" },
-  { title: "大手予備校と併用したい方", body: "予備校授業を活かしながら、復習管理、質問対応、弱点補強をMedvanceで補います。", href: "/for/prep-school-plus?from=home-audience" },
-  { title: "集団塾が合わない方", body: "授業ペースや質問環境が合わない受験生に、1対1指導と週次管理を設計します。", href: "/for/not-group-school?from=home-audience" },
-  { title: "医学部浪人生の方", body: "前年の結果を分析し、同じ失敗を繰り返さない学習計画と志望校戦略を組み直します。", href: "/for/ronin?from=home-audience" },
-  { title: "保護者の方", body: "学習状況、受験校、費用、追加指導の判断材料を見える形で共有します。", href: "/for/parents?from=home-audience" },
-];
-
 const serviceItems = [
   { title: "1対1個別指導", body: "英語、数学、物理、化学、生物を、医学部受験の得点に直結する形で指導します。" },
   { title: "週次学習計画", body: "授業、自習、復習、確認テスト、過去問演習を1週間単位で具体化します。" },
@@ -1204,39 +1195,6 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── 8.7 AUDIENCE (local) ───────────────── */}
-      <section className="bg-white px-4 py-20" style={{ borderTop: "1px solid #dfe6ef" }}>
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            eyebrow="対象のご家庭"
-            title="医学部合格に向けて、学習と受験戦略を一体で見ます。"
-            body="国公立・私立、現役・浪人、予備校併用、集団塾が合わないケースまで。受験生の現在地に合わせて、必要な指導と管理を組みます。"
-          />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {audienceItems.map((item, index) => (
-              <FadeIn key={item.title} delay={index * 0.04}>
-                <Link
-                  href={item.href}
-                  className="group flex h-full flex-col rounded-lg p-6 transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}
-                >
-                  <p className="mb-3 text-base font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
-                  <p className="mb-5 flex-1 text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
-                  <span className="text-xs font-bold" style={{ color: "#c9922a" }}>詳しく見る →</span>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
-          <p className="mt-6 text-center text-sm" style={{ color: "#5f6b7a" }}>
-            上記以外の学年・状況の方は{" "}
-            <Link href="/for?from=home-audience-hub" className="font-bold" style={{ color: "#c9922a" }}>
-              対象者ページ一覧
-            </Link>
-            {" "}からお探しいただけます。
-          </p>
         </div>
       </section>
 
