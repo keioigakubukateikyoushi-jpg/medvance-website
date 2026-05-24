@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PromoStickyBar from "@/components/PromoStickyBar";
 import FloatingCTA from "@/components/FloatingCTA";
 import FadeInObserver from "@/components/FadeInObserver";
 import AutoBreadcrumb from "@/components/AutoBreadcrumb";
@@ -46,26 +47,25 @@ const notoSerif = Noto_Serif_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Medvance｜現役慶應医学部生による1対1個別指導",
+    default: "Medvance｜医学部受験の戦略伴走",
     template: "%s | Medvance",
   },
   verification: {
     google: "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
   },
   description:
-    "現役慶應義塾大学医学部生による1対1の個別指導塾Medvance。医学部受験・難関大受験・学校の成績向上・推薦AO入試・慶應内部進学まで全国オンライン対応。無料相談受付中。",
+    "医学部に何としてでも合格したい受験生とご家庭へ。Medvanceは国公立・私立医学部の受験校選定、大手予備校併用、1対1指導、学習管理、面接小論文、保護者共有まで一体で設計する医学部受験専門塾です。",
   keywords: [
+    "医学部 浪人", "医学部 浪人生", "私立医学部 浪人", "私立医学部 予備校", "私立医学部 個別指導", "医学部 出願戦略", "医学部 保護者 相談",
+    "医学部 予備校併用", "集団塾 合わない", "医学部 合格戦略診断", "国公立医学部 対策",
     "医学部受験", "医学部塾", "医学部家庭教師", "医学部個別指導", "慶應医学部",
-    "医学部オンライン", "浪人生 医学部", "再受験 医学部", "医学部合格",
-    "難関大受験 家庭教師", "東大受験 個別指導", "早慶受験 家庭教師",
-    "定期テスト対策 家庭教師", "学校の成績 上げる 家庭教師", "内申点 家庭教師",
-    "推薦入試 面接 家庭教師", "AO入試 志望理由書", "総合型選抜 対策",
-    "慶應附属校 内部進学", "慶應内部進学 成績",
-    "Medvance", "メドバンス", "慶應医学部生", "個別指導 オンライン",
+    "医学部オンライン", "浪人生 医学部", "再浪人 回避", "再受験 医学部", "医学部合格",
+    "医学部 面接 小論文", "医学部 学習管理", "医学部 受験校 選び方",
+    "Medvance", "メドバンス", "現役医学部生 指導", "個別指導 オンライン",
   ],
   openGraph: {
-    title: "Medvance｜現役慶應医学部生による1対1個別指導",
-    description: "医学部受験・難関大受験・定期テスト対策・推薦AO入試まで。現役慶應医学部生が1対1で指導。全国オンライン対応・無料相談受付中。",
+    title: "Medvance｜医学部受験の戦略伴走",
+    description: "医学部に何としてでも合格したいご家庭へ。国公立・私立医学部の志望校戦略、予備校併用、1対1指導、週次管理、保護者共有まで一体で設計します。",
     url: "https://medvance-edu.com",
     siteName: "Medvance",
     locale: "ja_JP",
@@ -75,14 +75,14 @@ export const metadata: Metadata = {
         url: "https://medvance-edu.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Medvance｜現役慶應医学部生による1対1個別指導",
+        alt: "Medvance｜医学部受験の戦略伴走",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medvance｜現役慶應医学部生による1対1個別指導",
-    description: "医学部受験・難関大受験・定期テスト対策・推薦AO入試。現役慶應医学部生が全国オンラインで1対1指導。",
+    title: "Medvance｜医学部受験の戦略伴走",
+    description: "医学部に何としてでも合格したいご家庭へ。国公立・私立医学部の志望校戦略、予備校併用、1対1指導、週次管理、保護者共有まで一体で設計します。",
     images: ["https://medvance-edu.com/og-image.png"],
   },
   robots: {
@@ -129,6 +129,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
       <body className="antialiased">
+        <PromoStickyBar />
         <Header />
         <AutoBreadcrumb />
         <main>{children}</main>

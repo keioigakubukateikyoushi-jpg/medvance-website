@@ -238,29 +238,6 @@ export default function Home() {
       {/* ── 1. HERO ───────────────────────────── */}
       <HeroAnimated />
 
-      {/* ── 1.5 LEAD MAGNET BANNER ────────────── */}
-      <section style={{ backgroundColor: "#c9922a" }} className="py-4 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-white">
-          <div className="flex items-center gap-3">
-            <span className="text-lg flex-shrink-0">📘</span>
-            <p className="text-sm font-bold">
-              無料相談の特典：<span className="font-extrabold">医学部受験戦略マニュアルをプレゼント</span>
-              <span className="hidden sm:inline text-xs font-normal ml-2 opacity-80">— 現役慶應医学部生 監修・6章構成</span>
-            </p>
-          </div>
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <Link
-              href="/contact"
-              className="px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#fff", color: "#c9922a" }}
-            >
-              無料相談に申し込む →
-            </Link>
-            <LineButton label="LINE" size="md" />
-          </div>
-        </div>
-      </section>
-
       {/* ── 2. STATS STRIP ────────────────────── */}
       <section className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">

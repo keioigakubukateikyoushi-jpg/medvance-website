@@ -104,7 +104,7 @@ export default function Header() {
   };
 
   return (
-    <header style={{ backgroundColor: "#0c1a33" }} className="text-white sticky top-0 z-50 shadow-lg">
+    <header style={{ backgroundColor: "#0c1a33" }} className="text-white sticky top-10 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 hover:opacity-85 transition-opacity flex-shrink-0">
