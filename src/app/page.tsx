@@ -769,6 +769,108 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 4.7 FLOW (moved up) ──────────────────── */}
+      <section className="bg-white py-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
+              お申し込みから指導開始まで
+            </h2>
+            <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
+              無料相談から最短1週間で指導をスタートできます
+            </p>
+          </FadeIn>
+          <div className="grid md:grid-cols-4 gap-6">
+            {steps.map((item, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="relative text-center">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4"
+                    style={{ backgroundColor: "#0c1a33" }}
+                  >
+                    {i + 1}
+                  </div>
+                  {i < steps.length - 1 && (
+                    <div
+                      className="hidden md:block absolute top-6 left-[calc(50%+24px)] right-0 h-px"
+                      style={{ backgroundColor: "#e5e1d8" }}
+                    />
+                  )}
+                  <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4.8 ONLINE SECTION (moved up) ─────────── */}
+      <section className="bg-white py-24 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
+              全国どこからでも受講できます
+            </h2>
+            <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
+              北海道から沖縄まで、海外在住の方も対応。ZoomやGoogle Meetを使った完全オンライン指導で、場所の制約は一切ありません。
+            </p>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <FadeIn>
+              <div className="space-y-5">
+                {[
+                  { icon: "🗾", title: "日本全国どこでも受講可能", body: "東京・大阪・名古屋はもちろん、地方の方も歓迎。地方公立出身の講師も在籍しているため、地方からの受験事情も深く理解しています。" },
+                  { icon: "🌏", title: "海外在住でも受講可能", body: "海外からの帰国後に医学部を目指す方、海外在住のまま準備を進めたい方にも対応。時差に配慮したスケジュール調整も可能です。" },
+                  { icon: "💻", title: "画面共有でリアルタイム指導", body: "Zoom・Google Meetで問題を共有しながら指導。ノートや参考書もカメラで見せながら進められるため、対面と変わらない質の指導を提供します。" },
+                  { icon: "📱", title: "スマホ・タブレットでも受講OK", body: "PCがなくても受講可能。外出先やスキマ時間にも柔軟に対応できます。" },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                    <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                    <div>
+                      <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>{item.title}</p>
+                      <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="rounded-2xl p-8 text-white" style={{ backgroundColor: "#0c1a33" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>受講者の地域</p>
+                <div className="space-y-3 mb-8">
+                  {[
+                    "東京・神奈川・埼玉・千葉（関東）",
+                    "大阪・兵庫・京都（関西）",
+                    "愛知・静岡（東海）",
+                    "北海道・東北・北陸",
+                    "中国・四国・九州・沖縄",
+                    "海外在住の日本人受験生",
+                  ].map((region, i) => (
+                    <div key={i} className="flex items-center gap-3 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#c9922a" }} />
+                      {region}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Link
+                    href="/contact"
+                    className="flex-1 block text-center py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#c9922a", color: "#fff" }}
+                  >
+                    オンラインで無料相談する
+                  </Link>
+                  <LineButton label="LINE" size="lg" className="!py-3 sm:!w-28" />
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ── 5. TUTOR STRENGTHS ────────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-24 px-4">
         <div className="max-w-5xl mx-auto">
@@ -1046,108 +1148,6 @@ export default function Home() {
               </div>
             </div>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* ── 7.5 ONLINE SECTION ────────────────── */}
-      <section className="bg-white py-24 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: "#0c1a33" }}>
-              全国どこからでも受講できます
-            </h2>
-            <p className="text-center text-sm mb-14 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-              北海道から沖縄まで、海外在住の方も対応。ZoomやGoogle Meetを使った完全オンライン指導で、場所の制約は一切ありません。
-            </p>
-          </FadeIn>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <FadeIn>
-              <div className="space-y-5">
-                {[
-                  { icon: "🗾", title: "日本全国どこでも受講可能", body: "東京・大阪・名古屋はもちろん、地方の方も歓迎。地方公立出身の講師も在籍しているため、地方からの受験事情も深く理解しています。" },
-                  { icon: "🌏", title: "海外在住でも受講可能", body: "海外からの帰国後に医学部を目指す方、海外在住のまま準備を進めたい方にも対応。時差に配慮したスケジュール調整も可能です。" },
-                  { icon: "💻", title: "画面共有でリアルタイム指導", body: "Zoom・Google Meetで問題を共有しながら指導。ノートや参考書もカメラで見せながら進められるため、対面と変わらない質の指導を提供します。" },
-                  { icon: "📱", title: "スマホ・タブレットでも受講OK", body: "PCがなくても受講可能。外出先やスキマ時間にも柔軟に対応できます。" },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4 p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                    <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                    <div>
-                      <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>{item.title}</p>
-                      <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <div className="rounded-2xl p-8 text-white" style={{ backgroundColor: "#0c1a33" }}>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#c9922a" }}>受講者の地域</p>
-                <div className="space-y-3 mb-8">
-                  {[
-                    "東京・神奈川・埼玉・千葉（関東）",
-                    "大阪・兵庫・京都（関西）",
-                    "愛知・静岡（東海）",
-                    "北海道・東北・北陸",
-                    "中国・四国・九州・沖縄",
-                    "海外在住の日本人受験生",
-                  ].map((region, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
-                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#c9922a" }} />
-                      {region}
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <Link
-                    href="/contact"
-                    className="flex-1 block text-center py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity"
-                    style={{ backgroundColor: "#c9922a", color: "#fff" }}
-                  >
-                    オンラインで無料相談する
-                  </Link>
-                  <LineButton label="LINE" size="lg" className="!py-3 sm:!w-28" />
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 8. FLOW ───────────────────────────── */}
-      <section className="bg-white py-24 px-4">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-3" style={{ color: "#0c1a33" }}>
-              お申し込みから指導開始まで
-            </h2>
-            <p className="text-center text-sm mb-12" style={{ color: "#6b7280" }}>
-              無料相談から最短1週間で指導をスタートできます
-            </p>
-          </FadeIn>
-          <div className="grid md:grid-cols-4 gap-6">
-            {steps.map((item, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="relative text-center">
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4"
-                    style={{ backgroundColor: "#0c1a33" }}
-                  >
-                    {i + 1}
-                  </div>
-                  {i < steps.length - 1 && (
-                    <div
-                      className="hidden md:block absolute top-6 left-[calc(50%+24px)] right-0 h-px"
-                      style={{ backgroundColor: "#e5e1d8" }}
-                    />
-                  )}
-                  <p className="font-bold text-sm mb-2" style={{ color: "#0c1a33" }}>{item.title}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
         </div>
       </section>
 
