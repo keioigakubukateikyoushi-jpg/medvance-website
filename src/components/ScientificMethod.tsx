@@ -60,8 +60,8 @@ export default function ScientificMethod() {
     // Review at Day 14 brings it back to 100
     retentionWithReview = Math.round(100 - (100 - 95) * ((days - 7) / 7));
   } else {
-    // After 14 days, spaced repetition has successfully solidified memory to 100%
-    retentionWithReview = 100;
+    // After 14 days, spaced repetition has successfully solidified memory to 99%
+    retentionWithReview = 99;
   }
 
   // Ensure 100% on the review days themselves to simulate active rehearsal consolidation
@@ -90,7 +90,7 @@ export default function ScientificMethod() {
     `L ${(7/30*500).toFixed(1)},10.0`,
     `L ${(14/30*500).toFixed(1)},${(120 - (95-10)/90*110).toFixed(1)}`,
     `L ${(14/30*500).toFixed(1)},10.0`,
-    "L 500.0,10.0"
+    `L 500.0,${(120 - (99 - 10) / 90 * 110).toFixed(1)}`
   ].join(" ");
 
   const indicatorX = (days / 30) * 500;
@@ -127,7 +127,7 @@ export default function ScientificMethod() {
     } else {
       return {
         phase: "長期システム固定化の完了",
-        desc: "15日以降。4回のアウトプット復習を終えた脳は、完全に『100%長期記憶化』を達成し、時間が経過しても忘れることはありません。復習なしの脳はわずか10%まで記憶が衰退するのに対し、Medvanceの学習管理では永久忘却されない強固な知識として定着します。",
+        desc: "15日以降。4回のアウトプット復習を終えた脳は、完全に『99%長期記憶化』を達成し、時間が経過しても忘れることはありません。復習なしの脳はわずか10%まで記憶が衰退するのに対し、Medvanceの学習管理では永久忘却されない強固な知識として定着します。",
       };
     }
   };
