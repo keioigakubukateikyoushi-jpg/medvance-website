@@ -942,3 +942,4 @@ Import trace:
  GET /about?from=home-story 200 in 4.4s (next.js: 686ms, proxy.ts: 44ms, application-code: 3.7s)
  GET /about?from=home-story 200 in 2.6s (next.js: 404ms, proxy.ts: 1589ms, application-code: 601ms)
  GET /about?from=home-story 200 in 3.1s (next.js: 40ms, proxy.ts: 81ms, application-code: 3.0s)
+✓ Compiled in 405ms

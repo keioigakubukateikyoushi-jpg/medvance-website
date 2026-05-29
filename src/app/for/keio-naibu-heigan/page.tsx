@@ -2,6 +2,7 @@ import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 import TutorProfiles from "@/components/TutorProfiles";
 import LineButton from "@/components/LineButton";
+import KeioHeiganSimulator from "@/components/KeioHeiganSimulator";
 
 export const metadata = {
   title: "慶應内部進学＆外部一般受験ダブル対策｜医学部推薦と併願合格を両立 | Medvance",
@@ -141,6 +142,13 @@ export default function KeioNaibuHeiganPage() {
               </Link>
               <LineButton label="LINEで気軽に相談する" size="lg" className="!rounded-xl !py-4 !px-8 w-full sm:w-auto" />
             </div>
+          </div>
+        </section>
+
+        {/* ── INTERACTIVE SIMULATOR ───────────────────────────── */}
+        <section className="py-16 px-4 bg-slate-100 border-b border-slate-200">
+          <div className="max-w-4xl mx-auto">
+            <KeioHeiganSimulator />
           </div>
         </section>
 

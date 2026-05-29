@@ -2,6 +2,7 @@ import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 import TutorProfiles from "@/components/TutorProfiles";
 import LineButton from "@/components/LineButton";
+import KeioNaibuSimulator from "@/components/KeioNaibuSimulator";
 
 export const metadata = {
   title: "慶應医学部への内部進学対策｜系列校特化の評定向上＆推薦選考指導 | Medvance",
@@ -205,6 +206,13 @@ export default function KeioNaibuRevampedPage() {
                 <p className="text-xs text-slate-600 font-bold">{stat.label}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── INTERACTIVE SIMULATOR ───────────────────────────── */}
+        <section className="py-16 px-4 bg-slate-100 border-b border-slate-200">
+          <div className="max-w-4xl mx-auto">
+            <KeioNaibuSimulator />
           </div>
         </section>
 
