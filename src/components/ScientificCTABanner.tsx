@@ -100,7 +100,9 @@ export default function ScientificCTABanner() {
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:20px_16px] opacity-10 pointer-events-none"></div>
 
             <div className="flex justify-between items-center mb-3">
-              <span className="text-[9px] font-bold text-slate-300 tracking-widest uppercase">定着率シミュレーター</span>
+              <span className="text-[9px] font-bold text-slate-300 tracking-widest uppercase flex items-center gap-1.5">
+                <span className="inline-block animate-pulse text-[#c9922a]">●</span> 定着率シミュレーター（動かしてみてください）
+              </span>
               <span className="text-xs font-black tracking-tight" style={{ color: GOLD }}>
                 {days === 0 ? "当日" : `${days}日後`}
               </span>

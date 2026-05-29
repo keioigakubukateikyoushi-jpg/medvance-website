@@ -275,8 +275,9 @@ export default function ScientificMethod() {
             >
               記憶保持率シミュレーター
             </h3>
-            <p className="text-xs text-slate-400 mb-6">
-              スライダーを動かして、復習の有無による記憶の定着度の違いをご確認ください。
+            <p className="text-xs text-slate-500 font-medium mb-6 flex items-center gap-1">
+              <span className="inline-block animate-pulse text-[#c9922a]">●</span>
+              スライダーを動かしてみてください。復習の有無による記憶定着率の違いをご確認いただけます。
             </p>
 
             {/* Slider Control Container */}
