@@ -249,7 +249,7 @@ export default function ScientificMethod() {
             </strong>
             Medvanceでは、これら4大原則を単なるスローガンにせず、専属の慶應医学部生コーチが作成する
             <strong className="text-slate-900 font-semibold">「15分単位の計画表」</strong>
-            に復習スケジュールを完全自動で配分。さらに、Notionを用いて公式や問題の定着率をデータベースで一括トラッキングします。
+            に復習スケジュールを完全自動で配分。さらに、学習管理データベースを用いて公式や問題の定着率を一括トラッキングします。
           </div>
         </div>
 

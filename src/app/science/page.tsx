@@ -115,10 +115,10 @@ export default function SciencePage() {
               </div>
               <div>
                 <h3 className="font-bold text-base mb-2" style={{ color: NAVY }}>
-                  Notionと連動した定着率トラッキング
+                  データベースと連動した定着率トラッキング
                 </h3>
                 <p className="text-xs leading-relaxed text-slate-500">
-                  生徒一人ひとりに構築されるNotion学習空間上で、理解度や模試結果、各種必須公式の定着度を一元管理。データベースに記録された『記憶の強さ』に基づいて、個々の弱点や復習期間をリアルタイムで再調整します。
+                  生徒一人ひとりに構築される専用の学習管理データベース上で、理解度や模試結果、各種必須公式の定着度を一元管理。データベースに記録された『記憶の強さ』に基づいて、個々の弱点や復習期間をリアルタイムで再調整します。
                 </p>
               </div>
             </div>
@@ -141,25 +141,25 @@ export default function SciencePage() {
         </div>
       </section>
 
-      {/* ── 4. VISUAL PROMO OF NOTION DATABASE WORKSPACE ─────────────── */}
+      {/* ── 4. VISUAL PROMO OF DATABASE WORKSPACE ─────────────── */}
       <section className="py-24 px-4 bg-white border-t border-slate-200">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
             <div>
               <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
-                Notion Database & Workspace
+                Study Management Database
               </span>
               <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
                 データベースによる学習管理を実現する、<br className="hidden md:block" />
-                Medvance独自の「Notion学習空間」
+                Medvance独自の「学習管理データベース」
               </h2>
               <p className="text-sm text-slate-500 leading-relaxed mb-6">
-                Notionを『学習管理データベース』としてフル活用し、医学部受験に必要な日々の学習タスク、必須公式の自動配信、そして定着度データを完全に一元管理。
+                『学習管理データベース』をフル活用し、医学部受験に必要な日々の学習タスク、必須公式の自動配信、そして定着度データを完全に一元管理。
                 毎週の確認テスト結果から『長期記憶化された知識』と『まだ短期記憶に留まる知識』をデータベース上で色分け管理し、客観的なデータに基づいて苦手克服プランを完全に可視化します。
               </p>
               <div className="space-y-3 mb-8">
                 {[
-                  "学習計画（15分タスク）が学習管理データベース（Notion）上に自動で連携・構築されます",
+                  "学習計画（15分タスク）が専用の学習管理データベース上に自動で連携・構築されます",
                   "英語・数学・理科の『医学部必須公式』やオリジナル解説テキストがデータベースに蓄積",
                   "保護者様用のアカウントも提供され、データベース内の進捗状況をいつでもリアルタイムに共有可能"
                 ].map((point) => (
@@ -170,7 +170,7 @@ export default function SciencePage() {
                 ))}
               </div>
               <Link
-                href="/about?from=science-page-notion"
+                href="/about?from=science-page-database"
                 className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-xs font-bold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: NAVY }}
               >
@@ -180,8 +180,8 @@ export default function SciencePage() {
             
             <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
               <img 
-                src="/images/generated/medvance_notion_workspace_ui.png" 
-                alt="Medvance独自のNotion学習計画・必須公式連携・保護者共有管理画面UI" 
+                src="/images/generated/database_dashboard_mockup.png" 
+                alt="Medvance独自の学習計画・必須公式連携・保護者共有管理画面UI" 
                 className="w-full h-auto object-cover max-h-[380px]"
               />
             </div>
