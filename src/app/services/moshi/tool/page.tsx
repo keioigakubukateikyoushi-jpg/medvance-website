@@ -518,12 +518,12 @@ export default function MoshiToolPage() {
 
             {/* CTA */}
             <div className="p-8 rounded-2xl text-center" style={{ backgroundColor: "#0c1a33" }}>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Next Step</p>
+              <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>次のステップ</p>
               <p className="text-lg font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
                 この分析結果を持って、無料相談へ
               </p>
               <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-                ツールが出した学習ルートをベースに、現役慶應医学部生の講師があなたの状況に合わせてさらに詳しく分析します。
+                ツールが出した学習ルートをベースに、現役医学部生の講師があなたの状況に合わせてさらに詳しく分析します。
               </p>
               <Link
                 href="/contact"

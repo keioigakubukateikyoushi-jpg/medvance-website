@@ -1,9 +1,9 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 export const metadata = {
-  title: "高1から始める医学部受験対策｜現役慶應医学部生による完全1対1指導 | Medvance",
+  title: "高1から始める医学部受験対策｜現役医学部生による完全1対1指導 | Medvance",
   description:
-    "高校1年生から医学部を目指す方へ。早期スタートで圧倒的有利に。Medvanceは現役慶應医学部生が完全1対1で、基礎から志望校合格まで長期的にサポートします。",
+    "高校1年生から医学部を目指す方へ。早期スタートで圧倒的有利に。Medvanceは現役医学部生が完全1対1で、基礎から志望校合格まで長期的にサポートします。",
 
   alternates: {
     canonical: "/for/ko1",

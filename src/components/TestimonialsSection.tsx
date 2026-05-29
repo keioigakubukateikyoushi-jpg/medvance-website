@@ -13,10 +13,10 @@ export default function TestimonialsSection() {
       />
       <div className="max-w-5xl mx-auto">
         <p
-          className="text-xs font-bold tracking-widest uppercase mb-3 text-center"
+          className="text-xs font-bold tracking-widest mb-3 text-center"
           style={{ color: "#c9922a" }}
         >
-          Testimonials
+          受講生の声
         </p>
         <h2
           className="text-2xl md:text-3xl font-bold text-center mb-10"

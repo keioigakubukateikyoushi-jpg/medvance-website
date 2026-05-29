@@ -11,8 +11,7 @@ import AutoBreadcrumb from "@/components/AutoBreadcrumb";
 import { buildWebSiteSchema, buildOrganizationSchema, siteUrl } from "@/lib/seo";
 
 const notoSans = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
   variable: "--font-noto-sans",
   display: "swap",
   preload: false,
@@ -28,7 +27,6 @@ const notoSans = Noto_Sans_JP({
 });
 
 const notoSerif = Noto_Serif_JP({
-  subsets: ["latin"],
   weight: ["700"],
   variable: "--font-noto-serif",
   display: "swap",
@@ -132,7 +130,7 @@ export default function RootLayout({
         <PromoStickyBar />
         <Header />
         <AutoBreadcrumb />
-        <main>{children}</main>
+        <main className="overflow-x-hidden">{children}</main>
         <Footer />
         <FadeInObserver />
         <FloatingCTA />

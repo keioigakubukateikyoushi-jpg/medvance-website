@@ -2,9 +2,9 @@ import Link from "next/link";
 import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
-  title: "オンライン医学部受験指導｜全国どこからでも現役慶應医学部生に習える | Medvance",
+  title: "オンライン医学部受験指導｜全国どこからでも現役医学部生に習える | Medvance",
   description:
-    "全国対応のオンライン医学部受験専門指導。現役慶應医学部生が1対1でオンライン指導。北海道から沖縄まで、地方在住でも最高レベルの医学部受験対策が受けられます。無料相談実施中。",
+    "全国対応のオンライン医学部受験専門指導。現役医学部生が1対1でオンライン指導。北海道から沖縄まで、地方在住でも最高レベルの医学部受験対策が受けられます。無料相談実施中。",
 
   alternates: {
     canonical: "/services/online",
@@ -17,7 +17,7 @@ const features = [
   },
   {
     title: "全国どこからでも受講可能",
-    body: "北海道から沖縄まで、地方在住でも現役慶應医学部生の指導を受けられます。地方にいることで受験情報が不足しがちな方も、最新の入試傾向に基づいた対策が可能です。",
+    body: "北海道から沖縄まで、地方在住でも現役医学部生の指導を受けられます。地方にいることで受験情報が不足しがちな方も、最新の入試傾向に基づいた対策が可能です。",
   },
   {
     title: "柔軟なスケジュール設定",
@@ -38,7 +38,7 @@ const steps = [
   {
     step: "02",
     title: "担当講師のマッチング",
-    body: "ご状況に最も合った現役慶應医学部生の講師をご紹介。相性確認のための初回授業も設けています。",
+    body: "ご状況に最も合った現役医学部生の講師をご紹介。相性確認のための初回授業も設けています。",
   },
   {
     step: "03",
@@ -80,7 +80,7 @@ export default function OnlinePage() {
     <div className="min-h-screen bg-white">
       <ServicePageSchemas
         name="オンライン医学部受験指導"
-        description="全国対応のオンライン医学部受験専門指導。現役慶應医学部生が1対1でオンライン指導。北海道から沖縄まで、地方在住でも最高レベルの医学部受験対策が受けられます。"
+        description="全国対応のオンライン医学部受験専門指導。現役医学部生が1対1でオンライン指導。北海道から沖縄まで、地方在住でも最高レベルの医学部受験対策が受けられます。"
         slug="online"
         serviceType="オンライン医学部受験個別指導"
         breadcrumbLabel="オンライン指導"
@@ -95,7 +95,7 @@ export default function OnlinePage() {
             全国どこからでも、最高の医学部受験指導を。
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            現役慶應医学部生による完全1対1のオンライン指導
+            現役医学部生による完全1対1のオンライン指導
           </p>
         </div>
       </div>
@@ -167,7 +167,7 @@ export default function OnlinePage() {
 
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
+          <p className="text-sm font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>無料相談</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             まずは無料相談から
           </h2>

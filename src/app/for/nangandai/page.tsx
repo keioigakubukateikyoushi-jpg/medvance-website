@@ -38,9 +38,9 @@ const whyMedvance = [
 ];
 
 export const metadata: Metadata = {
-  title: "難関大受験（東大・京大・早慶）の家庭教師｜慶應医学部生が指導 | Medvance",
+  title: "難関大受験（東大・京大・早慶）の家庭教師｜現役医学部生が指導 | Medvance",
   description:
-    "東大・京大・早慶・難関国公立大を目指す受験生向けの完全1対1家庭教師。慶應義塾大学医学部の現役在籍生が英語・数学・物理・化学を本質から指導。全国オンライン対応。",
+    "東大・京大・早慶・難関国公立大を目指す受験生向けの完全1対1家庭教師。医学部受験を勝ち抜いた現役医学部生が英語・数学・物理・化学を本質から指導。全国オンライン対応。",
   keywords: [
     "難関大受験 家庭教師",
     "東大受験 家庭教師",
@@ -67,7 +67,7 @@ export default function NangandaiPage() {
             東大・京大・早慶<br />難関大受験を突破する
           </h1>
           <p className="text-base md:text-lg mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-            慶應義塾大学医学部生が英語・数学・理科を<br />本質から1対1で指導。全国オンライン対応。
+            現役医学部生が英語・数学・理科を<br />本質から1対1で指導。全国オンライン対応。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

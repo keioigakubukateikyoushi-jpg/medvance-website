@@ -50,3 +50,7 @@ next-env.d.ts
 dev-server*.log
 prod-server-*.log
 output/
+.next-dev.log
+.codex-screenshots/
+
+.env*

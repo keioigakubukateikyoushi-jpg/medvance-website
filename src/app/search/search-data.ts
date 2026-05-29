@@ -14,8 +14,8 @@ const corePages: SearchItem[] = [
     href: "/",
     category: "トップ",
     title: "Medvance トップページ",
-    description: "医学部受験専門塾 Medvance のトップページ。サービス概要、強み、合格実績、無料相談への導線を掲載しています。",
-    keywords: ["medvance", "医学部受験", "医学部専門塾", "トップ"],
+    description: "国公立・私立医学部合格に向けた志望校戦略・学習管理・個別指導・保護者共有を行うMedvanceのトップページです。",
+    keywords: ["medvance", "医学部受験", "医学部専門塾", "国公立医学部", "私立医学部", "トップ"],
   },
   {
     href: "/about",
@@ -32,11 +32,18 @@ const corePages: SearchItem[] = [
     keywords: ["料金", "費用", "学費", "価格", "プラン"],
   },
   {
+    href: "/private-medical-strategy",
+    category: "私立医学部",
+    title: "私立医学部受験戦略",
+    description: "私立医学部に何としてでも合格したいご家庭向けに、受験校ポートフォリオ、出願戦略、週次自習管理、保護者共有をまとめたページです。",
+    keywords: ["私立医学部", "受験校選定", "出願戦略", "医学部予備校", "保護者", "浪人生", "大手予備校併用"],
+  },
+  {
     href: "/contact",
     category: "基本情報",
-    title: "お問い合わせ",
-    description: "無料相談やお問い合わせフォームのページです。受験相談や指導相談はこちらから受け付けています。",
-    keywords: ["無料相談", "問い合わせ", "相談", "面談"],
+    title: "医学部 合格戦略診断",
+    description: "予備校利用状況・集団塾との相性・模試結果・志望校・学習時間・保護者の方針から、医学部合格の勝ち筋を診断するフォームです。",
+    keywords: ["合格戦略診断", "問い合わせ", "医学部受験", "国公立医学部", "私立医学部", "予備校併用", "集団塾", "保護者相談"],
   },
 ];
 
@@ -44,9 +51,23 @@ const audiencePages: SearchItem[] = [
   {
     href: "/for/ronin",
     category: "対象別",
-    title: "浪人生向けサポート",
-    description: "浪人生向けの学習計画、生活管理、医学部受験での伸ばし方をまとめたページです。",
-    keywords: ["浪人", "浪人生", "宅浪"],
+    title: "医学部浪人生向けサポート",
+    description: "医学部浪人生向けに、前年度の失敗分析、私立医学部の受験校設計、週次学習管理をまとめたページです。",
+    keywords: ["浪人", "浪人生", "医学部浪人", "宅浪", "再浪人"],
+  },
+  {
+    href: "/for/prep-school-plus",
+    category: "対象別",
+    title: "大手予備校と併用したい医学部志望生向け",
+    description: "大手予備校の授業を活かしながら、復習管理、質問対応、弱点補強、私立医学部の出願戦略、保護者共有を補うページです。",
+    keywords: ["大手予備校", "予備校併用", "医学部予備校", "復習管理", "質問対応", "私立医学部"],
+  },
+  {
+    href: "/for/not-group-school",
+    category: "対象別",
+    title: "集団塾が合わない医学部志望生向け",
+    description: "集団塾や予備校が合わない医学部志望生に、1対1指導、週次学習管理、出願戦略、保護者共有を提案するページです。",
+    keywords: ["集団塾が合わない", "個別指導", "1対1", "医学部受験", "私立医学部", "保護者"],
   },
   {
     href: "/for/saijuken",
@@ -59,8 +80,8 @@ const audiencePages: SearchItem[] = [
     href: "/for/parents",
     category: "対象別",
     title: "保護者向け情報",
-    description: "保護者向けに医学部受験の全体像や塾の選び方、サポートの考え方をまとめています。",
-    keywords: ["保護者", "親", "家庭"],
+    description: "私立医学部合格に向けて、保護者が判断すべき受験校・学習管理・費用感をまとめています。",
+    keywords: ["保護者", "親", "家庭", "私立医学部"],
   },
 ];
 
@@ -232,9 +253,9 @@ const universityPages: SearchItem[] = [
   {
     href: "/universities/private",
     category: "大学別対策",
-    title: "私立医学部一覧",
-    description: "私立医学部ごとの入試形式や対策記事をまとめた一覧ページです。",
-    keywords: ["私立医学部", "大学別対策"],
+    title: "私立医学部大学別対策一覧",
+    description: "私立医学部ごとの入試形式や大学別対策記事をまとめた一覧ページです。",
+    keywords: ["私立医学部", "大学別対策", "大学一覧"],
   },
   {
     href: "/universities/national",
@@ -286,6 +307,9 @@ export const suggestedSearchKeywords = [
   "数学",
   "英語",
   "学費",
+  "予備校併用",
+  "集団塾",
+  "合格戦略診断",
   "再受験",
   "浪人",
   "オンライン",

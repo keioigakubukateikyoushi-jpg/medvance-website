@@ -1,5 +1,6 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import { forPageMeta } from "@/lib/forPageMeta";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -34,9 +35,9 @@ const targetExams = [
 ];
 
 export const metadata: Metadata = {
-  title: "推薦・AO入試対策（志望理由書・面接・小論文）｜慶應医学部生が指導 | Medvance",
+  title: "推薦・AO入試対策（志望理由書・面接・小論文）｜現役医学部生が指導 | Medvance",
   description:
-    "推薦・総合型選抜（AO）入試の志望理由書・面接・小論文を完全1対1で指導。慶應義塾大学医学部の現役在籍生が、書類作成から模擬面接・添削まで徹底サポート。全国オンライン対応。",
+    "推薦・総合型選抜（AO）入試の志望理由書・面接・小論文を完全1対1で指導。医学部受験を勝ち抜いた現役医学部生が、書類作成から模擬面接・添削まで徹底サポート。全国オンライン対応。",
   keywords: [
     "推薦入試 面接対策 家庭教師",
     "AO入試 志望理由書 添削",
@@ -63,7 +64,7 @@ export default function SuisenAoPage() {
             推薦・AO入試を<br />突破する
           </h1>
           <p className="text-base md:text-lg mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-            志望理由書・面接・小論文を現役慶應医学部生が<br />完全1対1で指導。全国オンライン対応。
+            志望理由書・面接・小論文を現役医学部生が<br />完全1対1で指導。全国オンライン対応。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -123,6 +124,31 @@ export default function SuisenAoPage() {
                 <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Visual Section (Mock Interview Practice) */}
+      <div className="py-12 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="overflow-hidden rounded-2xl border bg-[#0c1a33] p-1" style={{ borderColor: "#c9922a" }}>
+            <div className="overflow-hidden rounded-xl">
+              <Image
+                src="/images/generated/medical_interview_japanese.png"
+                alt="面接対策で面接官からの質問に論理的かつ説得力を持って答える練習風景"
+                width={1600}
+                height={900}
+                className="w-full h-auto object-cover max-h-[450px] opacity-95 transition-opacity hover:opacity-100"
+              />
+            </div>
+            <div className="p-5 text-center bg-white">
+              <h3 className="font-bold text-lg mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+                現役医学部生の面接官と対峙する、超実践的な模擬面接演習
+              </h3>
+              <p className="text-sm leading-relaxed max-w-2xl mx-auto" style={{ color: "#5f6b7a" }}>
+                書類選考を通過した受験生に課される「面接・小論文」。Medvanceでは、本番さながらの張り詰めた空気感のなかで模擬面接を実施し、受け答えの論理構成から視線・姿勢にいたるまでプロ視点で徹底的にフィードバックを重ねます。
+              </p>
+            </div>
           </div>
         </div>
       </div>

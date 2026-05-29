@@ -1,9 +1,9 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 export const metadata = {
-  title: "中学生からの医学部受験ロードマップ｜現役慶應医学部生が解説 | Medvance",
+  title: "中学生からの医学部受験ロードマップ｜現役医学部生が解説 | Medvance",
   description:
-    "中学生のうちから医学部を目指すには何をすべきか。高校選び・英数の先取り・志望理由の育て方まで、現役慶應医学部生が中学生向けに医学部合格への道筋を解説します。",
+    "中学生のうちから医学部を目指すには何をすべきか。高校選び・英数の先取り・志望理由の育て方まで、現役医学部生が中学生向けに医学部合格への道筋を解説します。",
 
   alternates: {
     canonical: "/for/chugaku",
@@ -120,7 +120,7 @@ export default function ChugakuPage() {
             中学生からの医学部受験ロードマップ
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            今から何をすべきか。現役慶應医学部生が中学生向けに解説します
+            今から何をすべきか。現役医学部生が中学生向けに解説します
           </p>
         </div>
       </div>

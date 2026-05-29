@@ -11,24 +11,25 @@ interface ColumnCTAProps {
 }
 
 const defaultConcerns = [
-  "科目の優先順位を相談したい",
-  "志望校に合わせて何を進めるか決めたい",
-  "面接・小論文の準備時期を確認したい",
+  "私立医学部の受験校をどう組むべきか相談したい",
+  "大手予備校と個別管理の使い分けを決めたい",
+  "集団塾が合わず、1対1で立て直したい",
+  "保護者にも見える形で進捗を管理したい",
 ];
 
 const defaultBenefits = [
-  "模試結果と志望校をもとに受講科目を決める",
-  "使う教材と1週間の学習量を確認する",
-  "面接・小論文・併願校まで相談可能",
+  "前年度の不合格原因を科目・生活・出願に分けて整理する",
+  "模試結果と志望校をもとに受験校候補を整理する",
+  "科目別にどこへ指導時間を投じるか確認する",
 ];
 
 export default function ColumnCTA({
-  heading = "医学部受験について相談できます",
-  subtext = "Medvanceは慶應医学部生が担当する1対1の個別指導です。志望校、模試結果、使用教材に合わせて、受講科目や面接・小論文の準備を相談できます。",
+  heading = "私立医学部に向けた学習投資の戦略を診断できます",
+  subtext = "Medvanceは、予備校併用・1対1指導・受験校選定・週次学習管理・保護者共有まで一体で設計する戦略伴走型の医学部受験専門塾です。",
   source,
   concerns = defaultConcerns,
   benefits = defaultBenefits,
-  ctaLabel = "フォームで無料相談",
+  ctaLabel = "合格戦略診断を申し込む",
 }: ColumnCTAProps) {
   const contactHref = source ? `/contact?from=${encodeURIComponent(source)}` : "/contact";
 
@@ -36,8 +37,8 @@ export default function ColumnCTA({
     <div className="py-16 px-4" style={{ backgroundColor: "#0c1a33" }}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            About Medvance
+          <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>
+            Medvanceについて
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             {heading}
@@ -99,11 +100,12 @@ export default function ColumnCTA({
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {[
-            "1対1の個別指導",
-            "慶應医学部生による個別指導",
+            "予備校併用設計",
+            "集団塾不適合の立て直し",
+            "現役医学部生による戦略伴走",
             "オンライン全国対応",
-            "面接・小論文まで一貫対応",
-            "医学部受験マニュアル配布中",
+            "面接・小論文まで一体管理",
+            "保護者共有に対応",
           ].map((feat) => (
             <span
               key={feat}
@@ -130,7 +132,7 @@ export default function ColumnCTA({
                   d="M18 3C9.716 3 3 8.476 3 15.224c0 6.03 5.327 11.08 12.525 12.03.487.104 1.15.32 1.318.735.15.377.098.967.049 1.347l-.212 1.276c-.065.377-.302 1.478 1.294.805 1.596-.673 8.618-5.076 11.76-8.691C31.95 20.267 33 17.87 33 15.224 33 8.476 26.284 3 18 3zm-6.18 14.36h-3.4c-.266 0-.483-.217-.483-.484v-5.49c0-.267.217-.484.484-.484.266 0 .483.217.483.484v5.005h2.916c.266 0 .483.216.483.484 0 .267-.217.485-.483.485zm1.935-.484c0 .267-.217.485-.484.485-.267 0-.484-.218-.484-.485v-5.49c0-.267.217-.484.484-.484.267 0 .484.217.484.484v5.49zm6.35 0c0 .208-.133.393-.33.46-.05.015-.102.023-.154.023-.155 0-.3-.07-.393-.191l-2.82-3.86v3.568c0 .267-.217.485-.484.485-.266 0-.482-.218-.482-.485v-5.49c0-.207.132-.392.33-.459.05-.017.103-.024.153-.024.15 0 .297.07.39.192l2.826 3.86v-3.569c0-.267.216-.484.483-.484.267 0 .484.217.484.484v5.49zm3.922-3.228c.267 0 .484.218.484.485 0 .267-.217.485-.484.485h-1.938v.76h1.938c.266 0 .484.217.484.484s-.217.484-.484.484h-2.42c-.266 0-.483-.217-.483-.484v-5.49c0-.267.217-.484.484-.484h2.42c.266 0 .483.217.483.484 0 .268-.217.485-.484.485h-1.938v.76h1.938z"
                 />
               </svg>
-              LINEで無料相談
+              LINEで相談
             </a>
             <Link
               href={contactHref}
@@ -154,8 +156,8 @@ export default function ColumnCTA({
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
-                  Search More
+                <p className="text-xs font-semibold tracking-widest mb-2" style={{ color: "#c9922a" }}>
+                  関連ページを探す
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
                   大学名、面接、数学、学費、再受験などのテーマから、次に読むべきページをサイト内検索で探せます。
@@ -181,7 +183,7 @@ export default function ColumnCTA({
           </div>
 
           <p className="text-center text-xs" style={{ color: "rgba(255,255,255,0.52)" }}>
-            フォーム / LINEで無料相談 / 医学部受験マニュアル配布中
+            合格戦略診断 / LINE相談 / 私立医学部の受験校設計
           </p>
         </div>
       </div>

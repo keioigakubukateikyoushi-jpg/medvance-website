@@ -4,7 +4,7 @@ import { LINE_URL } from "@/lib/links";
 import { buildBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "合格実績・指導事例｜現役慶應医学部生による医学部受験塾 Medvance",
+  title: "合格実績・指導事例｜現役医学部生による医学部受験塾 Medvance",
   description:
     "Medvance代表が全勝した医学部受験校の一覧、現在指導中の受講生の偏差値推移と目標、そして合格者を積み上げていく方針を公開しています。",
   alternates: {
@@ -122,7 +122,7 @@ export default function SuccessStoriesPage() {
             代表 医学部受験コーチが合格した医学部
           </h2>
           <p className="mb-8 text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
-            高2春に偏差値40だった代表が、本番までに到達した合格校です。受験校すべてに合格しました。
+            高2春から計画的に対策を積み上げ、代表が本番までに到達した合格校です。受験校すべてに合格しました。
           </p>
 
           <div className="grid gap-4 md:grid-cols-2">

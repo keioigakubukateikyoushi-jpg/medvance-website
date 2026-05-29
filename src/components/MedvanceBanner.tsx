@@ -21,17 +21,18 @@ export default function MedvanceBanner() {
             {/* Left: text */}
             <div className="flex-1 text-center md:text-left">
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
-                Medvance — 医学部受験専門塾
+                Medvance — 私立医学部の個別戦略
               </p>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)", lineHeight: "1.4" }}>
-                医学部受験を、<br />慶應医学部生に相談できます。
+                予備校だけでは埋まらない、<br />医学部受験の個別設計に。
               </h2>
               <ul className="space-y-2 mb-0">
                 {[
-                  "現役慶應医学部生が1対1で直接指導",
-                  "大学ごとの出題傾向に合わせて指導",
-                  "面接・小論文まで相談可能",
-                  "フォームまたはLINEから連絡できます",
+                  "大手予備校の復習管理を補完",
+                  "週次学習管理と1対1指導を接続",
+                  "私立医学部の出願戦略を設計",
+                  "保護者向けの進捗共有に対応",
+                  "面接・小論文まで一体管理",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
                     <span
@@ -53,14 +54,14 @@ export default function MedvanceBanner() {
             >
               <p className="text-xs font-semibold mb-1" style={{ color: "#6b7280" }}>まずはここから</p>
               <p className="text-lg font-bold mb-4" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                相談・資料<br />受付中
+                合格戦略<br />診断
               </p>
               <Link
-                href="/contact"
+                href="/contact?from=medvance-banner"
                 className="block w-full py-3 px-5 text-white font-bold text-sm rounded-xl text-center hover:opacity-90 transition-opacity mb-3"
                 style={{ backgroundColor: "#c9922a" }}
               >
-                フォームで無料相談 →
+                診断を申し込む
               </Link>
               <Link
                 href="/pricing"

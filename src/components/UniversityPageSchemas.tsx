@@ -59,7 +59,7 @@ export default function UniversityPageSchemas({
     "@context": "https://schema.org",
     "@type": "Service",
     name: `${name}対策 個別指導`,
-    description: `${name}の入試対策を現役慶應医学部生が1対1で指導。`,
+    description: `${name}の入試対策を現役医学部生が1対1で指導。`,
     url: `${siteUrl}${path}`,
     serviceType: "医学部受験個別指導",
     provider: {

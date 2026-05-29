@@ -3,22 +3,22 @@ import { LINE_URL } from "@/lib/links";
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#0c1a33" }} className="text-white pt-14 pb-8">
+    <footer style={{ backgroundColor: "#0c1a33" }} className="text-white pt-14 pb-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-5">
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12 pb-12" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
             <p className="text-xl font-bold mb-2" style={{ fontFamily: "var(--font-noto-serif)" }}>Medvance</p>
             <p className="text-xs mb-5 leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-              現役慶應義塾大学医学部生による<br />医学部受験専門塾
+              医学部合格に本気で向き合う<br />ご家庭の戦略伴走塾
             </p>
             <div className="flex flex-wrap gap-2">
               <Link
-                href="/contact"
+                href="/contact?from=footer"
                 className="inline-block px-5 py-2.5 text-white font-semibold rounded-lg text-sm hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: "#c9922a" }}
               >
-                フォーム
+                戦略診断
               </Link>
               <a
                 href={LINE_URL}
@@ -26,7 +26,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2.5 text-white font-semibold rounded-lg text-sm hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: "#06C755" }}
-                aria-label="LINEで無料相談"
+                aria-label="LINEで相談"
               >
                 <svg viewBox="0 0 36 36" className="w-4 h-4" aria-hidden="true">
                   <path fill="currentColor" d="M18 3C9.716 3 3 8.476 3 15.224c0 6.03 5.327 11.08 12.525 12.03.487.104 1.15.32 1.318.735.15.377.098.967.049 1.347l-.212 1.276c-.065.377-.302 1.478 1.294.805 1.596-.673 8.618-5.076 11.76-8.691C31.95 20.267 33 17.87 33 15.224 33 8.476 26.284 3 18 3zm-6.18 14.36h-3.4c-.266 0-.483-.217-.483-.484v-5.49c0-.267.217-.484.484-.484.266 0 .483.217.483.484v5.005h2.916c.266 0 .483.216.483.484 0 .267-.217.485-.483.485zm1.935-.484c0 .267-.217.485-.484.485-.267 0-.484-.218-.484-.485v-5.49c0-.267.217-.484.484-.484.267 0 .484.217.484.484v5.49zm6.35 0c0 .208-.133.393-.33.46-.05.015-.102.023-.154.023-.155 0-.3-.07-.393-.191l-2.82-3.86v3.568c0 .267-.217.485-.484.485-.266 0-.482-.218-.482-.485v-5.49c0-.207.132-.392.33-.459.05-.017.103-.024.153-.024.15 0 .297.07.39.192l2.826 3.86v-3.569c0-.267.216-.484.483-.484.267 0 .484.217.484.484v5.49zm3.922-3.228c.267 0 .484.218.484.485 0 .267-.217.485-.484.485h-1.938v.76h1.938c.266 0 .484.217.484.484s-.217.484-.484.484h-2.42c-.266 0-.483-.217-.483-.484v-5.49c0-.267.217-.484.484-.484h2.42c.266 0 .483.217.483.484 0 .268-.217.485-.484.485h-1.938v.76h1.938z" />
@@ -39,13 +39,15 @@ export default function Footer() {
           {/* 対象・志望校 */}
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>対象者</p>
-            <nav className="space-y-2 text-sm mb-5">
+            <nav className="space-y-2 text-sm mb-6">
               {[
-                { label: "中学生の方", href: "/for/chugaku" },
                 { label: "高校1年生の方", href: "/for/ko1" },
                 { label: "高校2年生の方", href: "/for/ko2" },
                 { label: "高校3年生の方", href: "/for/ko3" },
-                { label: "浪人生の方", href: "/for/ronin" },
+                { label: "医学部浪人生の方", href: "/for/ronin" },
+                { label: "大手予備校と併用したい方", href: "/for/prep-school-plus" },
+                { label: "集団塾が合わない方", href: "/for/not-group-school" },
+                { label: "私立医学部受験戦略", href: "/private-medical-strategy" },
                 { label: "再受験生の方", href: "/for/saijuken" },
                 { label: "保護者の方", href: "/for/parents" },
               ].map((l) => (
@@ -63,7 +65,7 @@ export default function Footer() {
                 { label: "日本医科大学", href: "/universities/nippon-medical" },
                 { label: "昭和大学医学部", href: "/universities/showa" },
                 { label: "東京医科大学", href: "/universities/tokyo-ika" },
-                { label: "私立医学部（一覧）", href: "/universities/private" },
+                { label: "私立医学部大学別一覧", href: "/universities/private" },
                 { label: "国公立医学部対策", href: "/universities/national" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
@@ -80,12 +82,14 @@ export default function Footer() {
               {[
                 { label: "オンライン指導", href: "/services/online" },
                 { label: "訪問・対面指導", href: "/services/visit" },
+                { label: "医学部 合格戦略診断", href: "/contact?from=footer-service" },
                 { label: "面接・小論文対策", href: "/services/interview" },
                 { label: "模試分析（無料）", href: "/services/moshi" },
                 { label: "家庭教師一覧", href: "/tutors" },
+                { label: "脳科学メソッド", href: "/science" },
                 { label: "料金について", href: "/pricing" },
                 { label: "お知らせ", href: "/news" },
-                { label: "LINEで無料相談", href: "/line" },
+                { label: "LINEで相談", href: "/line" },
                 { label: "お問い合わせ", href: "/contact" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
@@ -95,7 +99,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* コラム */}
+          {/* コラム & 各教科の指導 */}
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>コラム</p>
             <nav className="space-y-2 text-sm mb-6">

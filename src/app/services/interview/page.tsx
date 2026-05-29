@@ -2,9 +2,9 @@ import Link from "next/link";
 import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
-  title: "医学部面接・小論文対策｜現役慶應医学部生が実践的に指導 | Medvance",
+  title: "医学部面接・小論文対策｜現役医学部生が実践的に指導 | Medvance",
   description:
-    "医学部入試の面接・小論文対策を現役慶應医学部生が1対1で指導。実際の試験で問われる質問への回答作り、小論文の書き方、志望理由書の作成まで徹底サポート。",
+    "医学部入試の面接・小論文対策を現役医学部生が1対1で指導。実際の試験で問われる質問への回答作り、小論文の書き方、志望理由書の作成まで徹底サポート。",
 
   alternates: {
     canonical: "/services/interview",
@@ -72,7 +72,7 @@ export default function InterviewPage() {
     <div className="min-h-screen bg-white">
       <ServicePageSchemas
         name="医学部面接・小論文対策"
-        description="医学部入試の面接・小論文対策を現役慶應医学部生が1対1で指導。頻出質問への回答作り、小論文の書き方、志望理由書の作成まで徹底サポート。"
+        description="医学部入試の面接・小論文対策を現役医学部生が1対1で指導。頻出質問への回答作り、小論文の書き方、志望理由書の作成まで徹底サポート。"
         slug="interview"
         serviceType="医学部面接・小論文対策"
         breadcrumbLabel="面接・小論文対策"
@@ -87,7 +87,7 @@ export default function InterviewPage() {
             医学部の面接・小論文は、準備で決まる。
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            現役慶應医学部生が、実際の入試を知り尽くした指導を行います
+            現役医学部生が、実際の入試を知り尽くした指導を行います
           </p>
         </div>
       </div>
@@ -99,7 +99,7 @@ export default function InterviewPage() {
           </h2>
           <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
             <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
-              医学部入試において、面接・小論文の配点は決して小さくありません。学力試験で差がつかない僅差の局面では、面接・小論文の出来が合否を左右することがあります。また、近年は「医師としての適性・倫理観」を重視する大学が増えており、単なる知識ではなく、医師を目指す動機や思考力が問われます。準備なしに臨むと、どれだけ学力が高くても不合格になるケースがあります。Medvanceでは、現役慶應医学部生が自身の入試経験をもとに、実践的な指導を行います。
+              医学部入試において、面接・小論文の配点は決して小さくありません。学力試験で差がつかない僅差の局面では、面接・小論文の出来が合否を左右することがあります。また、近年は「医師としての適性・倫理観」を重視する大学が増えており、単なる知識ではなく、医師を目指す動機や思考力が問われます。準備なしに臨むと、どれだけ学力が高くても不合格になるケースがあります。Medvanceでは、現役医学部生が自身の入試経験をもとに、実践的な指導を行います。
             </p>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function InterviewPage() {
 
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
+          <p className="text-sm font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>無料相談</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             まずは無料相談から
           </h2>

@@ -104,7 +104,7 @@ export default function LongformColumnPage({
               </time>
             )}
             <span style={{ color: "#c9922a" }}>
-              現役慶應医学部生 監修
+              現役医学部生 監修
             </span>
           </div>
         </div>

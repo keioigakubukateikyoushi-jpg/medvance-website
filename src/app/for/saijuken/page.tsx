@@ -1,9 +1,10 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
+import Image from "next/image";
 import Link from "next/link";
 export const metadata = {
   title: "再受験生の医学部合格対策｜社会人・大学生からの医学部挑戦 | Medvance",
   description:
-    "社会人・大学生から医学部を目指す再受験生を完全サポート。現役慶應医学部生が1対1で指導。忙しいあなたに合わせたオーダーメイド学習計画。全国オンライン対応・無料相談実施中。",
+    "社会人・大学生から医学部を目指す再受験生を完全サポート。現役医学部生が1対1で指導。忙しいあなたに合わせたオーダーメイド学習計画。全国オンライン対応・無料相談実施中。",
 
   alternates: {
     canonical: "/for/saijuken",
@@ -72,7 +73,7 @@ export default function SaijukenPage() {
             何歳からでも、医学部合格はできる。
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            社会人・大学生からの挑戦を、現役慶應医学部生が完全サポートします
+            社会人・大学生からの挑戦を、現役医学部生が完全サポートします
           </p>
         </div>
       </div>
@@ -89,6 +90,31 @@ export default function SaijukenPage() {
                 <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Visual Section (Premium Private Library) */}
+      <div className="py-12 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="overflow-hidden rounded-2xl border bg-[#0c1a33] p-1" style={{ borderColor: "#c9922a" }}>
+            <div className="overflow-hidden rounded-xl">
+              <Image
+                src="/images/generated/private_medical_library_japanese.png"
+                alt="落ち着いた空間で静かに医学部受験対策を進める大人の生徒"
+                width={1600}
+                height={900}
+                className="w-full h-auto object-cover max-h-[450px] opacity-95 transition-opacity hover:opacity-100"
+              />
+            </div>
+            <div className="p-5 text-center bg-white">
+              <h3 className="font-bold text-lg mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+                洗練された大人のための、極上の個別指導・自習環境
+              </h3>
+              <p className="text-sm leading-relaxed max-w-2xl mx-auto" style={{ color: "#5f6b7a" }}>
+                仕事や大学との両立を支えるため、静寂でプライベートな学習空間を演出。現役医学部生の専任講師が、あなただけの学習ロードマップに沿って1対1で完全サポートします。
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -176,7 +202,7 @@ export default function SaijukenPage() {
             {[
               {
                 title: "同世代として話せる環境",
-                desc: "慶應医学部の現役学生が講師です。年齢が近い分、学習の悩みだけでなく「医学部に入ってどうだったか」「入試でどんなことを考えていたか」といったリアルな話を聞けます。大手予備校の講師では得られない視点です。",
+                desc: "現役の医学部生が講師です。年齢が近い分、学習の悩みだけでなく「医学部に入ってどうだったか」「入試でどんなことを考えていたか」といったリアルな話を聞けます。大手予備校の講師では得られない視点です。",
               },
               {
                 title: "ライフスタイルに合わせた柔軟さ",

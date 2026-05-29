@@ -1,12 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { LINE_URL } from "@/lib/links";
 import { buildBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "代表メッセージ｜偏差値40から慶應医学部に全勝した代表が、Medvanceを作った理由",
+  title: "代表メッセージ｜私立医学部合格戦略にこだわる理由",
   description:
-    "Medvance代表 医学部受験コーチが、偏差値40から慶應医学部含む受験校全勝までに辿り着いた道のりと、現役慶應医学部生のみで医学部受験塾を立ち上げた理由を語ります。",
+    "Medvance代表が、医学部受験で必要な受験校選定・学習管理・保護者共有への考え方と、慶應医学部生代表直下で私立医学部合格を支える理由を語ります。",
   alternates: {
     canonical: "/about/founder",
   },
@@ -17,17 +18,6 @@ const founderBreadcrumb = buildBreadcrumbSchema([
   { name: "Medvanceについて", url: "/about" },
   { name: "代表メッセージ", url: "/about/founder" },
 ]);
-
-const moshiTimeline = [
-  { stage: "高2 春", hensachi: "40", note: "英数の基礎が抜けたまま、模試は判定E。志望校どころではなかった。" },
-  { stage: "高2 夏", hensachi: "47", note: "中学範囲まで戻して、英文法と数IAを基礎から組み直した。" },
-  { stage: "高2 冬", hensachi: "55", note: "数IIBが追いつき、英語長文が読めるようになった。" },
-  { stage: "高3 春", hensachi: "60", note: "理科を本格化。化学・物理を並行で進めた。" },
-  { stage: "高3 夏", hensachi: "65", note: "夏に過去問へ着手。記述で落としていた癖を直した。" },
-  { stage: "高3 秋", hensachi: "68", note: "慶應医・慈恵・順天堂の傾向別に、解く順を固定。" },
-  { stage: "高3 直前期", hensachi: "70", note: "毎日同じ順序で過去問を回し、本番の心拍を下げた。" },
-  { stage: "本番", hensachi: "全勝", note: "慶應医学部・東京医科歯科大・慈恵医大・順天堂・日本医大に合格。" },
-];
 
 const turningPoints = [
   {
@@ -59,13 +49,14 @@ const beliefItems = [
   },
   {
     title: "合わないご家庭にはMedvanceを勧めない",
-    body: "無料相談で『他塾のほうが合う』と判断したら、その場で他塾を提案します。塾選びを誤らせないことが、最も大切な誠実さだと考えています。",
+    body: "初回診断で『他塾のほうが合う』と判断したら、その場で他塾も提案します。塾選びを誤らせないことが、最も大切な誠実さだと考えています。",
   },
 ];
 
 const passedSchools = [
   "慶應義塾大学医学部",
-  "東京医科歯科大学医学部",
+  "国立医学部",
+  "防衛医科大学校",
   "東京慈恵会医科大学",
   "順天堂大学医学部",
   "日本医科大学",
@@ -89,20 +80,19 @@ export default function FounderPage() {
             className="mb-6 text-3xl font-bold leading-snug text-white md:text-4xl"
             style={{ fontFamily: "var(--font-noto-serif)" }}
           >
-            偏差値40から慶應医学部に全勝した、ひとりの受験生が、
+            医学部受験を、努力論ではなく戦略として設計したい。
             <br />
-            Medvanceを作った理由。
+            それがMedvanceを作った理由です。
           </h1>
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
-            Medvance代表 医学部受験コーチ（慶應義塾大学医学部）が、自身の受験体験と、現役慶應医学部生だけで医学部受験塾を立ち上げた背景を、
-            包み隠さずお伝えします。
+            Medvance代表 医学部受験コーチ（慶應義塾大学医学部）が、自身の受験体験をもとに、なぜ受験校選定・週次管理・保護者共有まで見る塾にしたのかをお伝えします。
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
-              { label: "受験当時の最低偏差値", value: "40" },
-              { label: "本番での偏差値", value: "70" },
-              { label: "受験校", value: "慶應医を含む全勝" },
+              { label: "原点", value: "順序と戦略" },
+              { label: "現在", value: "慶應医学部在籍" },
+              { label: "方針", value: "私立医学部合格に集中" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -122,12 +112,14 @@ export default function FounderPage() {
       {/* Personal note */}
       <section className="bg-white px-4 py-16">
         <div className="mx-auto max-w-3xl">
-          {/* Profile image placeholder — replace with /images/founder.webp when available */}
           <div className="mb-6 flex items-center gap-4">
-            <div
-              aria-label="代表プロフィール画像（準備中）"
-              className="h-24 w-24 shrink-0 rounded-full"
-              style={{ backgroundColor: "#f3f4f6", border: "1px solid #e5e1d8" }}
+            <Image
+              src="/images/founder.webp"
+              alt="Medvance代表"
+              width={128}
+              height={128}
+              className="h-32 w-32 shrink-0 rounded-full object-cover"
+              style={{ border: "1px solid #e5e1d8", objectPosition: "50% 20%" }}
             />
             <div>
               <p className="text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
@@ -171,60 +163,27 @@ export default function FounderPage() {
         </div>
       </section>
 
-      {/* 模試推移 */}
+      {/* 全勝合格 */}
       <section className="px-4 py-16" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-3xl">
           <p className="mb-3 text-xs font-semibold tracking-widest" style={{ color: "#c9922a" }}>
             Track Record
           </p>
           <h2
-            className="mb-8 text-2xl font-bold leading-snug md:text-3xl"
+            className="mb-6 text-2xl font-bold leading-snug md:text-3xl"
             style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
           >
-            偏差値40 → 70の模試推移
+            先取り教育を捨て、医学部合格へ一直線。
           </h2>
-          <div className="overflow-hidden rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-            <table className="w-full text-sm">
-              <thead style={{ backgroundColor: "#0c1a33", color: "#fff" }}>
-                <tr>
-                  <th className="px-4 py-3 text-left text-xs font-bold tracking-widest">時期</th>
-                  <th className="px-4 py-3 text-left text-xs font-bold tracking-widest">偏差値</th>
-                  <th className="px-4 py-3 text-left text-xs font-bold tracking-widest">そのとき直したこと</th>
-                </tr>
-              </thead>
-              <tbody>
-                {moshiTimeline.map((row, idx) => (
-                  <tr
-                    key={row.stage}
-                    style={{
-                      backgroundColor: idx % 2 === 0 ? "#ffffff" : "#faf9f6",
-                      borderTop: "1px solid #e5e1d8",
-                    }}
-                  >
-                    <td className="px-4 py-3 font-semibold" style={{ color: "#0c1a33" }}>
-                      {row.stage}
-                    </td>
-                    <td className="px-4 py-3 font-bold" style={{ color: "#c9922a" }}>
-                      {row.hensachi}
-                    </td>
-                    <td className="px-4 py-3 leading-relaxed" style={{ color: "#3d3d3d" }}>
-                      {row.note}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-xs leading-relaxed" style={{ color: "#6b7280" }}>
-            ※ 偏差値は記述模試（駿台・河合）を基準にした自己申告値です。模試の解き直しと使用教材は、
-            希望者には無料相談で具体的にお見せします。
+          <p className="mb-8 text-sm leading-relaxed md:text-base" style={{ color: "#3d3d3d" }}>
+            代表は、学年を超えて先へ進む“先取り型”の学習方針をあえて手放しました。医学部合格だけを見据え、合格に直結する範囲を最短距離で固める勉強法へ切り替えた結果、受験したすべての医学部に<strong style={{ color: "#0c1a33" }}>全勝で合格</strong>しています。
           </p>
 
-          <div className="mt-8 rounded-xl bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
-            <p className="mb-3 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
+          <div className="rounded-xl bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
+            <p className="mb-4 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
               受験校（全勝）
             </p>
-            <ul className="grid gap-2 text-sm sm:grid-cols-2">
+            <ul className="grid gap-2.5 text-sm sm:grid-cols-2">
               {passedSchools.map((school) => (
                 <li key={school} className="flex items-center gap-2" style={{ color: "#0c1a33" }}>
                   <span
@@ -309,7 +268,7 @@ export default function FounderPage() {
       <section className="bg-white px-4 py-16">
         <div className="mx-auto max-w-3xl rounded-2xl p-8" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
           <h2 className="mb-4 text-xl font-bold leading-snug md:text-2xl" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            無料相談で、あなたの『正しい順序』を一緒に作ります。
+            合格戦略診断で、ご家庭に合う『正しい順序』を一緒に作ります。
           </h2>
           <p className="mb-6 text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
             模試結果、志望校、残り期間、家庭の事情を見て、次の3ヶ月で何をどの順番で解くべきかを30分でお伝えします。
@@ -323,14 +282,14 @@ export default function FounderPage() {
               className="inline-flex w-full items-center justify-center rounded-lg px-6 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90 sm:w-auto"
               style={{ backgroundColor: "#06C755" }}
             >
-              LINEで30秒・無料相談
+              LINEで相談
             </a>
             <Link
               href="/contact?from=founder-cta"
               className="inline-flex w-full items-center justify-center rounded-lg px-6 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90 sm:w-auto"
               style={{ backgroundColor: "#c9922a" }}
             >
-              フォームで無料戦略相談
+              合格戦略診断を申し込む
             </Link>
           </div>
         </div>

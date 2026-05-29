@@ -5,6 +5,7 @@ import Marquee from "@/components/Marquee";
 import FadeIn from "@/components/FadeIn";
 import HoverCard from "@/components/HoverCard";
 import LineButton from "@/components/LineButton";
+import PentagonMethod from "@/components/PentagonMethod";
 import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
@@ -297,6 +298,13 @@ export default function Home() {
                   <p>
                     一方で、医学部受験の確かな情報や戦略は、いまだ十分にオープンになっていません。医学部に合格した人による再現性のある戦略を、医学部を志すすべての受験生へ届けたい——その想いから、現役医学部生が教える医学部受験塾Medvanceは生まれました。
                   </p>
+                   <div className="pt-2">
+                    <div className="p-3.5 rounded-xl border text-xs" style={{ backgroundColor: "#f7f5f0", borderColor: "#e5e1d8", color: "#5f6b7a" }}>
+                      <strong style={{ color: "#0c1a33" }}>管理本部（銀座オフィス）所在地:</strong><br />
+                      〒104-0061 東京都中央区銀座1丁目12番4号<br />
+                      <span style={{ fontSize: "10px", color: "#8fa0b5" }}>※こちらは管理本部オフィスのため、常設校舎としての対面授業等は行っておりません（指導はオンラインおよび各所での個別指導となります）。</span>
+                    </div>
+                  </div>
                 </div>
                 <Link
                   href="/about?from=home-story"
@@ -326,6 +334,34 @@ export default function Home() {
                 </div>
               </FadeIn>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 2.3 MEDVANCE STUDY METHOD (Medvance式勉強法) ─────────── */}
+      <PentagonMethod />
+
+      {/* ── 2.4 SCIENTIFIC METHOD CTA BANNER ──────────────────── */}
+      <section className="bg-white py-12 px-4 border-b border-slate-200">
+        <div className="max-w-4xl mx-auto animate-on-scroll">
+          <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-shadow duration-300">
+            <div className="max-w-xl text-center md:text-left">
+              <span className="inline-block text-[10px] font-bold tracking-[0.2em] px-2.5 py-0.5 rounded-full mb-3 text-white bg-[#0c1a33]">
+                SCIENCE & EVIDENCE
+              </span>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 text-[#0c1a33]" style={{ fontFamily: "var(--font-noto-serif)" }}>
+                医学の脳科学エビデンスに基づく学習方法
+              </h3>
+              <p className="text-xs leading-relaxed text-slate-500">
+                LTP現象を引き起こす「能動的想起」や、忘却曲線を制御する「分散学習」など、最難関入試を突破するための科学的なアプローチと記憶定着シミュレーターを公開しています。
+              </p>
+            </div>
+            <Link
+              href="/science"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-white hover:opacity-90 transition-opacity flex-shrink-0 bg-[#c9922a]"
+            >
+              脳科学メソッドとシミュレーターを見る →
+            </Link>
           </div>
         </div>
       </section>
@@ -1083,6 +1119,7 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+
           <FadeIn delay={0.15}>
             <div
               className="mt-6 flex flex-col sm:flex-row items-center gap-5 rounded-2xl px-7 py-6"
@@ -1097,10 +1134,10 @@ export default function Home() {
                 </svg>
               </div>
               <div className="flex-1 text-center sm:text-left">
-                <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#c9922a" }}>24時間サポート</p>
-                <p className="font-bold text-white text-base mb-1">現役医学生が24時間質問に対応</p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#c9922a" }}>質問サポート</p>
+                <p className="font-bold text-white text-base mb-1">現役医学生がLINEで速やかに質問に対応</p>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-                  授業外でも疑問が生じたらすぐに質問できます。わからないことをその日のうちに解消し、翌日の学習に持ち越さない仕組みです。
+                  授業外でも疑問が生じたらLINEでいつでも質問を送信可能。わからないことを速やかに解消し、翌日の学習に持ち越さない仕組みです（専任講師が順次丁寧に回答いたします）。
                 </p>
               </div>
             </div>
@@ -1293,7 +1330,9 @@ export default function Home() {
             
             <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: "#0c1a33" }}>料金の目安</h2>
             <p className="text-sm mb-8 max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-              授業（1コマ80分 15,000円）＋コーチング月20,000円のシンプルな構成です。入塾金は20,000円（初回のみ）。
+              授業は<span className="font-bold" style={{ color: "#0c1a33" }}>1コマ45分 7,500円</span>
+              <span className="ml-1 text-xs">（1回の授業90分）</span>
+              ＋コーチング月20,000円のシンプルな構成です。入塾金は20,000円（初回のみ）。
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -1810,6 +1849,18 @@ export default function Home() {
               </div>
               <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
                 完全無料・勧誘なし・オンライン対応
+              </p>
+            </div>
+
+            {/* Headquarters Office Info */}
+            <div className="mt-16 pt-8 border-t max-w-xl mx-auto text-center" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: "#c9922a" }}>HEADQUARTERS</p>
+              <p className="font-bold text-white text-sm mb-1">Medvance 本部（銀座オフィス）</p>
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+                〒104-0061 東京都中央区銀座1丁目12番4号
+              </p>
+              <p className="text-[10px] mt-1.5 leading-relaxed" style={{ color: "rgba(255,255,255,0.3)" }}>
+                ※こちらは管理本部オフィスのため、常設校舎としての対面授業等は行っておりません（指導は全国オンラインおよび各所での対面個別指導となります）。
               </p>
             </div>
           </FadeIn>

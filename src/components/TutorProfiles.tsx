@@ -15,16 +15,16 @@ export default function TutorProfiles() {
       />
       <div className="max-w-5xl mx-auto">
         <p
-          className="text-xs font-bold tracking-widest uppercase mb-3 text-center"
+          className="text-xs font-bold tracking-widest mb-3 text-center"
           style={{ color: "#c9922a" }}
         >
-          Our Tutors
+          講師紹介
         </p>
         <h2
           className="text-2xl md:text-3xl font-bold text-center mb-10"
           style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
         >
-          指導する現役慶應医学部生
+          指導する講師陣
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {tutors.map((t) => (

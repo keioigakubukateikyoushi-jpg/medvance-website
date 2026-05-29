@@ -33,6 +33,7 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "日本医科大学", href: "/universities/nippon-medical", desc: "記述難問・2回面接対策" },
       { label: "昭和大学医学部", href: "/universities/showa", desc: "基礎完成・正確性重視" },
       { label: "東京医科大学", href: "/universities/tokyo-ika", desc: "標準問題・思考力重視" },
+      { label: "入試日程カレンダー 📅", href: "/calendar", desc: "私立1次・2次・国公立の試験日と重複確認" },
       { label: "私立医学部大学別一覧 →", href: "/universities/private", desc: "私立医学部の対策をまとめて確認" },
       { label: "国公立医学部対策 →", href: "/universities/national", desc: "共通テスト〜二次まで" },
     ],
@@ -117,7 +118,7 @@ export default function Header() {
             className="h-11 w-11 rounded-md bg-white object-contain p-0.5 shadow-sm"
           />
           <span className="text-white font-semibold text-xs hidden sm:block opacity-70 leading-tight">
-            医学部受験の<br />戦略伴走
+            医学部受験専門塾<br />Medvance
           </span>
         </Link>
 
@@ -125,6 +126,9 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-4 text-sm">
           <Link href="/about" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
             塾について
+          </Link>
+          <Link href="/science" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
+            脳科学メソッド
           </Link>
           <Link href="/pricing" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
             料金
@@ -264,6 +268,7 @@ export default function Header() {
           {[
             { label: "ホーム", href: "/" },
             { label: "塾について", href: "/about" },
+            { label: "脳科学メソッド", href: "/science" },
             { label: "料金", href: "/pricing" },
             { label: "お知らせ", href: "/news" },
           ].map((link) => (

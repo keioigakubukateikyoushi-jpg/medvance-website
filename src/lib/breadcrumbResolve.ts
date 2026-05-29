@@ -57,6 +57,7 @@ const TOP_LEVEL_LABELS: Record<string, string> = {
   tutors: "家庭教師一覧",
   recruit: "講師募集",
   pricing: "料金",
+  "private-medical-strategy": "私立医学部受験戦略",
   contact: "お問い合わせ",
   privacy: "プライバシーポリシー",
   cookies: "Cookieポリシー",

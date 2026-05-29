@@ -63,7 +63,7 @@ const flow = [
   {
     step: "04",
     title: "講師による詳細分析（オプション）",
-    body: "AI分析の結果をもとに、現役慶應医学部生の講師がさらに踏み込んだ分析と個別戦略をご提案します。無料相談からどうぞ。",
+    body: "AI分析の結果をもとに、現役医学部生の講師がさらに踏み込んだ分析と個別戦略をご提案します。無料相談からどうぞ。",
   },
 ];
 
@@ -103,7 +103,7 @@ const courseSchema = {
   "@context": "https://schema.org",
   "@type": "Course",
   name: "AI模試分析・個別最適学習ルート設計",
-  description: "偏差値データから科目別バンド・弱点・参考書・学習タイムラインを即時生成し、現役慶應医学部生がさらに踏み込んだ分析でフォローアップする模試活用プログラム。",
+  description: "偏差値データから科目別バンド・弱点・参考書・学習タイムラインを即時生成し、現役医学部生がさらに踏み込んだ分析でフォローアップする模試活用プログラム。",
   url: `${siteUrl}/services/moshi`,
   provider: {
     "@type": "EducationalOrganization",
@@ -300,7 +300,7 @@ export default function MoshiPage() {
       {/* Final CTA */}
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free AI Analysis</p>
+          <p className="text-sm font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>無料のAI模試分析</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             今すぐAIで模試を分析する
           </h2>

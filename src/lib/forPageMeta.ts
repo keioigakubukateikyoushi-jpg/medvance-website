@@ -16,6 +16,8 @@ const audienceBySlug: Record<string, AudienceSpec> = {
   ko2: { educationalRole: "high school student (year 2)", description: "高校2年生", suggestedMinAge: 16, suggestedMaxAge: 17 },
   ko3: { educationalRole: "high school student (year 3)", description: "高校3年生（現役医学部受験生）", suggestedMinAge: 17, suggestedMaxAge: 19 },
   ronin: { educationalRole: "post-secondary student (gap-year applicant)", description: "浪人生（医学部受験経験者）", suggestedMinAge: 18, suggestedMaxAge: 25 },
+  "prep-school-plus": { educationalRole: "medical school applicant", description: "大手予備校と併用したい医学部志望生", suggestedMinAge: 15, suggestedMaxAge: 25 },
+  "not-group-school": { educationalRole: "medical school applicant", description: "集団塾や予備校が合わない医学部志望生", suggestedMinAge: 15, suggestedMaxAge: 25 },
   saijuken: { educationalRole: "adult re-applicant", description: "大学生・社会人の医学部再受験者", suggestedMinAge: 19 },
   parents: { educationalRole: "parent of high school student", description: "受験生の保護者" },
   "keio-naibu": { educationalRole: "Keio affiliated school student", description: "慶應義塾内部進学希望者", suggestedMinAge: 15, suggestedMaxAge: 18 },
@@ -31,7 +33,7 @@ export const forPageMeta: Record<
 > = {
   chugaku: {
     name: "中学生向け医学部受験個別指導",
-    description: "中学生から始める医学部受験対策。現役慶應医学部生が完全1対1でサポート。",
+    description: "中学生から始める医学部受験対策。現役医学部生が完全1対1でサポート。",
     serviceType: "医学部受験個別指導",
     label: "中学生の方へ",
     faq: [
@@ -42,7 +44,7 @@ export const forPageMeta: Record<
   },
   ko1: {
     name: "高校1年生向け医学部受験個別指導",
-    description: "高1から始める医学部受験の早期対策。現役慶應医学部生が完全1対1で指導。",
+    description: "高1から始める医学部受験の早期対策。現役医学部生が完全1対1で指導。",
     serviceType: "医学部受験個別指導",
     label: "高校1年生の方へ",
     faq: [
@@ -53,7 +55,7 @@ export const forPageMeta: Record<
   },
   ko2: {
     name: "高校2年生向け医学部受験個別指導",
-    description: "高2からの医学部受験対策。部活との両立・高3準備を現役慶應医学部生がサポート。",
+    description: "高2からの医学部受験対策。部活との両立・高3準備を現役医学部生がサポート。",
     serviceType: "医学部受験個別指導",
     label: "高校2年生の方へ",
     faq: [
@@ -64,7 +66,7 @@ export const forPageMeta: Record<
   },
   ko3: {
     name: "高校3年生向け医学部受験個別指導",
-    description: "現役合格を目指す高3向け医学部受験対策。現役慶應医学部生が完全1対1で指導。",
+    description: "現役合格を目指す高3向け医学部受験対策。現役医学部生が完全1対1で指導。",
     serviceType: "医学部受験個別指導",
     label: "高校3年生の方へ",
     faq: [
@@ -75,18 +77,30 @@ export const forPageMeta: Record<
   },
   ronin: {
     name: "浪人生向け医学部受験個別指導",
-    description: "浪人生専門の医学部受験対策。現役慶應医学部生が完全1対1で指導・戦略設計。",
+    description: "浪人生専門の医学部受験対策。現役医学部生が完全1対1で指導・戦略設計。",
     serviceType: "医学部受験個別指導",
     label: "浪人生の方へ",
     faq: [
-      { q: "浪人して医学部に合格できる可能性はありますか？", a: "十分あります。浪人生は学習時間が確保しやすく、正しい戦略で取り組めば偏差値を大幅に伸ばせます。Medvanceでは浪人経験のある慶應医学部生が、自身の経験を踏まえたリアルな指導を行います。" },
+      { q: "浪人して医学部に合格できる可能性はありますか？", a: "十分あります。浪人生は学習時間が確保しやすく、正しい戦略で取り組めば偏差値を大幅に伸ばせます。Medvanceでは浪人を経験した現役医学部生が、自身の経験を踏まえたリアルな指導を行います。" },
       { q: "医学部浪人と大学予備校の違いは何ですか？", a: "予備校は集団授業が中心で、自分のペースに合わせた指導が難しいことがあります。Medvanceは完全1対1なので、現在の弱点・志望校・残り期間に特化した個別戦略を立てられます。" },
       { q: "浪人生はいつから指導をスタートするのが良いですか？", a: "受験が終わったらすぐ（3〜4月）のスタートが理想です。早期に現状分析と年間計画を立て、4〜6月の基礎固め期に最大限の効果を発揮できます。" },
     ],
   },
+  "prep-school-plus": {
+    name: "大手予備校併用 私立医学部合格戦略",
+    description: "大手予備校に通う医学部志望生向けに、復習管理、弱点補強、質問対応、私立医学部の出願戦略、保護者共有まで補完します。",
+    serviceType: "私立医学部受験戦略伴走",
+    label: "大手予備校と併用したい方へ",
+  },
+  "not-group-school": {
+    name: "集団塾が合わない医学部志望生向け個別戦略",
+    description: "集団塾や予備校が合わない医学部志望生向けに、1対1指導、週次学習管理、私立医学部の出願戦略、保護者共有まで伴走します。",
+    serviceType: "私立医学部受験個別指導",
+    label: "集団塾が合わない方へ",
+  },
   saijuken: {
     name: "再受験生向け医学部受験個別指導",
-    description: "社会人・大学生からの医学部再受験を現役慶應医学部生が完全1対1でサポート。",
+    description: "社会人・大学生からの医学部再受験を現役医学部生が完全1対1でサポート。",
     serviceType: "医学部受験個別指導",
     label: "再受験生の方へ",
     faq: [
@@ -141,18 +155,18 @@ export const forPageMeta: Record<
   },
   nangandai: {
     name: "難関大受験（東大・京大・早慶）個別指導",
-    description: "東大・京大・早慶・難関国公立を目指す受験生向け完全1対1家庭教師。現役慶應医学部生が指導。",
+    description: "東大・京大・早慶・難関国公立を目指す受験生向け完全1対1家庭教師。現役医学部生が指導。",
     serviceType: "難関大受験個別指導",
     label: "難関大受験を目指す方へ",
     faq: [
       { q: "東大・早慶など難関大受験に家庭教師は必要ですか？", a: "必須ではありませんが、弱点補強と志望校特化の対策に非常に効果的です。難関大は出題の癖が強く、傾向に合わせた対策が得点を大きく左右します。特に小論文・英語の記述・数学の記述式を個別添削してもらうことが有効です。" },
-      { q: "難関大受験向けの家庭教師はどの科目を頼めますか？", a: "数学・英語・理科（物理・化学）を中心に対応しています。Medvanceでは現役慶應医学部生が担当するため、難関大の出題レベルに対応した本質的な指導が受けられます。" },
+      { q: "難関大受験向けの家庭教師はどの科目を頼めますか？", a: "数学・英語・理科（物理・化学）を中心に対応しています。Medvanceでは医学部受験を勝ち抜いた現役医学部生が担当するため、難関大の出題レベルに対応した本質的な指導が受けられます。" },
       { q: "難関大受験の家庭教師の料金はいくらですか？", a: "指導頻度や対象科目によって異なります。詳細は無料相談時にご案内しますので、まずはお気軽にご相談ください。" },
     ],
   },
   "suisen-ao": {
     name: "推薦・AO入試対策（志望理由書・面接・小論文）",
-    description: "推薦・総合型選抜（AO）入試の志望理由書・面接・小論文対策。現役慶應医学部生が完全1対1で指導。",
+    description: "推薦・総合型選抜（AO）入試の志望理由書・面接・小論文対策。現役医学部生が完全1対1で指導。",
     serviceType: "推薦・AO入試対策",
     label: "推薦・AO入試を目指す方へ",
     faq: [

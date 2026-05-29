@@ -269,7 +269,7 @@ export default function KeioNaibuPage() {
                 "評定・成績の数値管理",
                 "定期試験対策（試験範囲に合わせた指導）",
                 "志望動機・選考書類のサポート",
-                "24時間LINEでの質問対応",
+                "LINEでの速やかな質問対応",
                 "保護者への定期報告",
               ].map((item) => (
                 <li key={item} className="text-xs flex items-center gap-2" style={{ color: "rgba(255,255,255,0.8)" }}>

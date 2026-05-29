@@ -15,7 +15,7 @@ export default function ArticleConsultationBox({
   title,
   description,
   points,
-  ctaLabel = "フォームで無料相談",
+  ctaLabel = "合格戦略診断を申し込む",
   source,
 }: ArticleConsultationBoxProps) {
   const contactHref = source ? `/contact?from=${encodeURIComponent(source)}` : "/contact";
@@ -55,7 +55,7 @@ export default function ArticleConsultationBox({
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex flex-wrap gap-2 text-xs font-semibold">
-            {["フォーム", "LINE相談", "医学部受験マニュアル", "全国オンライン"].map((item) => (
+            {["合格戦略診断", "予備校併用", "受験校設計", "全国オンライン"].map((item) => (
               <span
                 key={item}
                 className="rounded-full px-3 py-1.5"
@@ -74,7 +74,7 @@ export default function ArticleConsultationBox({
               className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white hover:opacity-90 transition-opacity"
               style={{ backgroundColor: "#06C755" }}
             >
-              LINEで無料相談
+              LINEで相談
             </a>
             <Link
               href={contactHref}

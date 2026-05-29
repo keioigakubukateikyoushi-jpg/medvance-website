@@ -52,12 +52,12 @@ export default function FloatingCTA() {
           href="/contact?from=floating-mobile"
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm"
           style={{ backgroundColor: "#c9922a" }}
-          aria-label="フォームで無料相談"
+          aria-label="私立医学部の合格戦略診断を申し込む"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
           </svg>
-          フォームで相談
+          戦略診断
         </Link>
         <a
           href={LINE_URL}
@@ -65,10 +65,10 @@ export default function FloatingCTA() {
           rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm"
           style={{ backgroundColor: LINE_GREEN }}
-          aria-label="LINEで無料相談"
+          aria-label="LINEで相談"
         >
           <LineIcon />
-          LINEで無料相談
+          LINEで相談
         </a>
       </div>
 
@@ -97,8 +97,8 @@ export default function FloatingCTA() {
             </svg>
           </span>
           <div className="leading-tight">
-            <div className="text-[10px] font-semibold tracking-widest opacity-90">フォーム</div>
-            <div className="text-sm font-bold whitespace-nowrap">フォームで相談</div>
+            <div className="text-[10px] font-semibold tracking-widest opacity-90">診断</div>
+            <div className="text-sm font-bold whitespace-nowrap">合格戦略診断</div>
           </div>
         </Link>
         <a
@@ -114,7 +114,7 @@ export default function FloatingCTA() {
           <LineIcon className="w-6 h-6" />
           <div className="leading-tight">
             <div className="text-[10px] font-semibold tracking-widest opacity-90">LINE</div>
-            <div className="text-sm font-bold whitespace-nowrap">LINEで無料相談</div>
+            <div className="text-sm font-bold whitespace-nowrap">LINEで相談</div>
           </div>
         </a>
       </div>

@@ -2,9 +2,9 @@ import Link from "next/link";
 import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
-  title: "訪問・対面医学部受験指導｜自宅・カフェ・学習スペースで慶應医学部生が1対1指導 | Medvance",
+  title: "訪問・対面医学部受験指導｜自宅・カフェ・学習スペースで現役医学部生が1対1指導 | Medvance",
   description:
-    "東京・神奈川・千葉・埼玉などの関東エリアで、現役慶應医学部生が自宅・カフェ・レンタル学習スペースで医学部受験を指導。完全1対1の対面家庭教師。まずは無料相談から。",
+    "東京・神奈川・千葉・埼玉などの関東エリアで、現役医学部生が自宅・カフェ・レンタル学習スペースで医学部受験を指導。完全1対1の対面家庭教師。まずは無料相談から。",
 
   alternates: {
     canonical: "/services/visit",
@@ -90,7 +90,7 @@ export default function VisitPage() {
     <div className="min-h-screen bg-white">
       <ServicePageSchemas
         name="訪問・対面医学部受験指導"
-        description="東京・神奈川・千葉・埼玉などの関東エリアで、現役慶應医学部生が自宅・カフェ・レンタル学習スペースで医学部受験を指導。完全1対1の対面家庭教師。"
+        description="東京・神奈川・千葉・埼玉などの関東エリアで、現役医学部生が自宅・カフェ・レンタル学習スペースで医学部受験を指導。完全1対1の対面家庭教師。"
         slug="visit"
         serviceType="訪問型 医学部受験個別指導"
         breadcrumbLabel="訪問・対面指導"
@@ -102,7 +102,7 @@ export default function VisitPage() {
             訪問・対面指導
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            慶應医学部生が、あなたの場所で1対1指導。
+            現役医学部生が、あなたの場所で1対1指導。
           </h1>
           <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
             自宅・カフェ・レンタル学習スペースに対応｜東京・神奈川・千葉・埼玉など関東エリア
@@ -198,7 +198,7 @@ export default function VisitPage() {
 
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>Free Consultation</p>
+          <p className="text-sm font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>無料相談</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
             まずは無料相談から
           </h2>
