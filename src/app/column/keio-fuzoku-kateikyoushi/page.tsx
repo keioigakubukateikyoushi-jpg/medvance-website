@@ -244,48 +244,50 @@ export default function KeioFuzokuKateikyoushiPage() {
           <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             料金の目安
           </h2>
-          <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
-            契約縛りなし。無料相談後、ご希望に合わせてプランをご提案します
+          <p className="text-sm text-center mb-8" style={{ color: "#6b7280" }}>
+            授業は1コマ45分 7,500円（1回の授業90分 = 15,000円）＋コーチング月20,000円のシンプルな構成です。入塾金は20,000円（初回のみ）。
           </p>
           <div className="grid md:grid-cols-3 gap-5">
             {[
               {
-                plan: "定期試験対策プラン",
-                freq: "月4〜8回",
-                price: "月額 ¥48,000〜",
-                desc: "定期試験前に集中指導。試験日程に合わせてコマ数を調整できます。",
+                plan: "週1回コース (月4回)",
+                freq: "1回90分授業 ＋ コーチング",
+                price: "月額 ¥80,000",
+                desc: "定期試験対策や苦手科目の補強に最適。15分単位の計画管理で日々の自習を徹底サポートします。",
               },
               {
-                plan: "評定向上プラン",
-                freq: "月8〜12回",
-                price: "月額 ¥96,000〜",
-                desc: "年間を通じて継続的に評定を管理。週次で進捗を確認します。",
+                plan: "週2回コース (月8回)",
+                freq: "1回90分授業 ＋ コーチング",
+                price: "月額 ¥140,000",
+                desc: "英数理などの主要科目の評定を確実に引き上げ、医学部内部推薦基準を早期にクリアするための推奨プラン。",
                 highlight: true,
               },
               {
-                plan: "内部進学完全対策",
-                freq: "月12回〜",
-                price: "月額 ¥130,000〜",
-                desc: "評定管理に加え、志望動機の整理・選考対策・面接練習まで対応。",
+                plan: "週3回〜コース (月12回以上)",
+                freq: "1回90分授業 ＋ コーチング",
+                price: "月額 ¥200,000〜",
+                desc: "全科目の指導・評定管理に加え、推薦選考に必要な小論文・志望理由書・面接対策まで一気通貫で行います（割引あり）。",
               },
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-6 rounded-2xl"
+                className="p-6 rounded-2xl flex flex-col justify-between"
                 style={{
                   backgroundColor: item.highlight ? "#0c1a33" : "white",
                   border: item.highlight ? "none" : "1px solid #e5e1d8",
                 }}
               >
-                <p className="text-xs font-semibold mb-2" style={{ color: item.highlight ? "#c9922a" : "#c9922a" }}>{item.plan}</p>
-                <p className="font-bold text-xl mb-1" style={{ color: item.highlight ? "#fff" : "#0c1a33" }}>{item.price}</p>
-                <p className="text-xs mb-3" style={{ color: item.highlight ? "rgba(255,255,255,0.6)" : "#6b7280" }}>{item.freq}</p>
-                <p className="text-sm leading-relaxed" style={{ color: item.highlight ? "rgba(255,255,255,0.75)" : "#6b7280" }}>{item.desc}</p>
+                <div>
+                  <p className="text-xs font-semibold mb-2" style={{ color: item.highlight ? "#c9922a" : "#c9922a" }}>{item.plan}</p>
+                  <p className="font-bold text-xl mb-1" style={{ color: item.highlight ? "#fff" : "#0c1a33" }}>{item.price}</p>
+                  <p className="text-xs mb-3" style={{ color: item.highlight ? "rgba(255,255,255,0.6)" : "#6b7280" }}>{item.freq}</p>
+                  <p className="text-sm leading-relaxed font-medium" style={{ color: item.highlight ? "rgba(255,255,255,0.75)" : "#6b7280" }}>{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
           <p className="text-xs text-center mt-6" style={{ color: "#9ca3af" }}>
-            ※ 上記は目安です。指導頻度・志望目標・現在の成績状況によって最適なプランをご提案します。
+            ※ 生徒の学習状況や目標設定、現在の成績状況によって最適なプランをご提案します。
           </p>
         </div>
       </div>

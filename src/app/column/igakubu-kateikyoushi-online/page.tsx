@@ -9,7 +9,7 @@ const faqItems = [
   },
   {
     q: "オンライン医学部家庭教師の料金はいくらですか？",
-    a: "現役医学部生によるオンライン指導の場合、1コマ（80〜90分）1万〜2万円が相場です。対面指導と料金が変わらないサービスがほとんどです。Medvanceでは週1回コース月8万円（授業4回＋コーチング込み）でご提供しています。",
+    a: "現役医学部生によるオンライン指導の場合、1コマ（45分）7,500円（1回90分 = 15,000円）が指導料の基準になります。Medvanceでは授業料に加えて15分単位の学習計画管理などを行うコーチング（月額20,000円）を組み合わせたシンプルな構成になっており、週1回コース（月4回授業＋コーチング）で月額8万円、週2回コース（月8回授業＋コーチング）で月額14万円から受講いただけます。",
   },
   {
     q: "地方在住でも慶應医学部生に指導してもらえますか？",
@@ -161,9 +161,9 @@ export default function IgakubuKateikyoushiOnlinePage() {
           <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>料金</h2>
           <div className="space-y-3 mb-6">
             {[
-              { label: "週1回コース", price: "月8万円〜", note: "月4回授業（80分）＋コーチング込み。入塾金2万円（初回のみ）。" },
-              { label: "週2回コース", price: "月14万円〜", note: "月8回授業＋コーチング込み。" },
-              { label: "週3回以上", price: "月20万円〜", note: "直前期・浪人生の短期集中向け。" },
+              { label: "週1回コース", price: "月8万円", note: "月4回授業（1回90分）＋コーチング込み。入塾金2万円（初回のみ）。" },
+              { label: "週2回コース", price: "月14万円", note: "月8回授業（1回90分）＋コーチング込み。" },
+              { label: "週3回〜コース", price: "月20万円〜", note: "月12回以上（1回90分授業・割引あり）＋コーチング込み。直前期や浪人生・再受験生向け。" },
             ].map((item, i) => (
               <div key={i} className="flex gap-4 p-4 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
                 <div className="flex-shrink-0 text-xs font-bold pt-0.5" style={{ color: "#0c1a33", minWidth: "110px" }}>{item.label}</div>

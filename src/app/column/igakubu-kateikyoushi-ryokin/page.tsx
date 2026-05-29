@@ -5,7 +5,7 @@ import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 const faqItems = [
   {
     q: "医学部受験の家庭教師はいくらかかりますか？",
-    a: "講師の属性によって異なります。現役医学部生の場合、1コマ（80〜90分）1万〜2万円が相場で、月4回（週1）で4〜8万円程度です。コーチング・学習管理が含まれるサービスは月8〜15万円になることがほとんどです。",
+    a: "講師の属性によって異なります。現役医学部生の場合、1コマ（45分）7,500円（1回90分 = 15,000円）が指導料の基準になります。学習計画管理などを行うコーチング（月額20,000円）を組み合わせたシンプルな構成が特徴です。週1回（月4回）で月額8万円、週2回（月8回）で月額14万円から受講いただけます。",
   },
   {
     q: "安い医学部家庭教師と高い家庭教師の違いは何ですか？",
@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     q: "Medvanceの料金はいくらですか？",
-    a: "週1回コース月8万円（月4回80分授業＋コーチング込み）、週2回コース月14万円、週3回以上月20万円〜です。入塾金は初回2万円のみです。コーチング・学習管理・面接小論文対策が別途料金なしで含まれています。",
+    a: "週1回コース月8万円（月4回90分授業＋コーチング込み）、週2回コース月14万円、週3回〜コース月20万円〜です。入塾金は初回2万円のみです。1コマ45分7,500円（1回90分）＋コーチング月20,000円のシンプルな構成です。コーチング・学習管理・面接小論文対策が別途料金なしで含まれています。",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function IgakubuKateikyoushiRyokinPage() {
                   { type: "一般大学生（理系）", perUnit: "3,000〜5,000円", monthly: "1.2〜2万円", note: "医学部特有の対策が難しい" },
                   { type: "大学院生・一般理系卒", perUnit: "5,000〜1万円", monthly: "2〜4万円", note: "面接・小論文対応に限界がある" },
                   { type: "現役医学部生（一般）", perUnit: "8,000〜1.5万円", monthly: "3.2〜6万円", note: "所属大学・学年で差がある" },
-                  { type: "現役慶應医学部生（Medvance）", perUnit: "1.5〜2万円", monthly: "8万円〜（コーチング込み）", note: "面接・小論文・学習管理まで込み" },
+                  { type: "現役慶應医学部生（Medvance）", perUnit: "1.5万円（90分）", monthly: "8万円（月4回＋コーチング）", note: "面接・小論文・学習管理まで込み" },
                   { type: "医師・医学部卒", perUnit: "2〜3万円", monthly: "8〜12万円", note: "最新の入試情報はやや古い場合も" },
                 ].map((row, i) => (
                   <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "#fff" : "#faf9f6", borderTop: "1px solid #e5e1d8" }}>
@@ -171,9 +171,9 @@ export default function IgakubuKateikyoushiRyokinPage() {
           </h2>
           <div className="space-y-3 mb-6">
             {[
-              { label: "週1回コース", price: "月8万円", detail: "月4回授業（80分）＋コーチング。入塾金2万円（初回のみ）。" },
-              { label: "週2回コース", price: "月14万円", detail: "月8回授業（80分）＋コーチング。" },
-              { label: "週3回以上", price: "月20万円〜", detail: "月12回以上。直前期・浪人生の短期集中向け。" },
+              { label: "週1回コース", price: "月8万円", detail: "月4回授業（1回90分）＋コーチング。入塾金2万円（初回のみ）。" },
+              { label: "週2回コース", price: "月14万円", detail: "月8回授業（1回90分）＋コーチング。" },
+              { label: "週3回〜コース", price: "月20万円〜", detail: "月12回以上（1回90分授業・割引あり）＋コーチング。直前期や浪人生・再受験生向け。" },
             ].map((item, i) => (
               <div key={i} className="p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
                 <div className="flex items-center justify-between mb-2">
