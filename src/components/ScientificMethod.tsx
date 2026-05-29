@@ -36,6 +36,7 @@ const IconDualCoding = () => (
 
 export default function ScientificMethod() {
   const [days, setDays] = useState<number>(0);
+  const [compareTab, setCompareTab] = useState<"compare" | "evidence">("compare");
 
   // 1. Calculate Forgetting Curve without review (Ebbinghaus decay)
   const retentionNoReview = Math.max(
@@ -412,6 +413,21 @@ export default function ScientificMethod() {
               </div>
             </div>
 
+            {/* Dynamic Retention Gain Indicator */}
+            {days > 0 && (
+              <div 
+                className="mb-4 py-2.5 px-4 rounded-xl flex items-center justify-between text-[11px] font-bold border border-[#c9922a]/20 bg-[#c9922a]/5 transition-all duration-300"
+              >
+                <span className="text-[#0c1a33] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c9922a]"></span>
+                  科学的学習による記憶定着の差
+                </span>
+                <span style={{ color: GOLD_SOFT }} className="text-xs font-black">
+                  +{retentionWithReview - retentionNoReview}% 定着率アップ！
+                </span>
+              </div>
+            )}
+
             {/* Compare Gauge Cards */}
             <div className="grid grid-cols-2 gap-4 mb-6">
               {/* Card A: No Review */}
@@ -499,6 +515,258 @@ export default function ScientificMethod() {
                 {commentary.desc}
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── 2.6 INTERACTIVE COMPARISON BOARD ──────────────────── */}
+      <div className="max-w-5xl mx-auto mt-20 pt-16 border-t border-slate-200">
+        <div className="text-center mb-10">
+          <span className="text-xs font-bold tracking-[0.25em] text-[#b88a26] uppercase mb-3 block">METHOD COMPARISON</span>
+          <h3 className="text-2xl md:text-3xl font-bold text-[#0c1a33] mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
+            指導プロセスの徹底対比：一般の指導 vs Medvance式
+          </h3>
+          <p className="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed mb-8">
+            多くの受験生が陥る「非効率な学習プロセス」と、データ・脳科学に基づく「Medvanceの超効率アプローチ」の明確な違い。
+          </p>
+
+          {/* Segmented Control Switch */}
+          <div className="inline-flex p-1 bg-slate-100 rounded-full border border-slate-200">
+            <button
+              onClick={() => setCompareTab("compare")}
+              className={`px-6 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+                compareTab === "compare"
+                  ? "bg-[#0c1a33] text-white shadow-sm"
+                  : "text-slate-500 hover:text-slate-900"
+              }`}
+            >
+              📊 指導プロセスの違いを比較
+            </button>
+            <button
+              onClick={() => setCompareTab("evidence")}
+              className={`px-6 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
+                compareTab === "evidence"
+                  ? "bg-[#0c1a33] text-white shadow-sm"
+                  : "text-slate-500 hover:text-slate-900"
+              }`}
+            >
+              🔬 Medvance式の「脳科学的エビデンス」
+            </button>
+          </div>
+        </div>
+
+        {/* Comparison Grid */}
+        <div className="space-y-6">
+          {/* Row 1: Planning */}
+          <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 pb-3 border-b border-slate-100">
+              <span className="text-xs font-bold text-[#c9922a] tracking-widest uppercase">PILLAR 01</span>
+              <h4 className="text-base font-bold text-[#0c1a33] flex items-center gap-2">
+                📅 学習計画の設計とタイミング
+              </h4>
+            </div>
+
+            {compareTab === "compare" ? (
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* General */}
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-all duration-300">
+                  <div className="text-[10px] font-bold text-slate-400 mb-2 uppercase">一般的な指導・独学</div>
+                  <h5 className="font-bold text-slate-700 text-xs mb-3">「大雑把な課題指定」と「勘に頼る計画」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-500 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 「今週はこれを進めて」というざっくりした指示のみ
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 毎朝「今日何を勉強すべきか」迷い、手が止まる
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 復習スケジュールがなく、一度解いた問題は忘れ去られる
+                    </li>
+                  </ul>
+                </div>
+                {/* Medvance */}
+                <div className="bg-[#0c1a33] border border-[#c9922a]/30 rounded-2xl p-5 hover:border-[#c9922a]/70 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-[#c9922a]/5 rounded-full blur-xl pointer-events-none"></div>
+                  <div className="text-[10px] font-bold text-[#c9922a] mb-2 uppercase">Medvance式</div>
+                  <h5 className="font-bold text-white text-xs mb-3">「15分単位の計画」×「復習スケジュール完全自動化」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-300 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 1週間のタスクを「15分単位」で時間割に完全落とし込み
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 毎朝計画表通りに机に向かうだけで迷いなくスタート
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 忘却曲線に沿った最適な復習タスクを完全自動配置
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-[#faf8f4] border border-amber-200/50 rounded-2xl p-5 text-xs text-slate-600 leading-relaxed">
+                <strong className="text-[#0c1a33] block mb-2 font-bold text-sm">💡 分散学習（Spaced Repetition）の科学</strong>
+                人の記憶は、適切なインターバル（1日、3日、7日、14日）をあけて想起を繰り返すことで、短期記憶を司る「海馬」から、物理的な保存庫である「大脳皮質」へと完全に移行します。Medvanceでは、この脳科学プロセスを日々の15分スケジュールに完全自動で組み込むことで、記憶定着率を99%へ結晶化させます。
+              </div>
+            )}
+          </div>
+
+          {/* Row 2: Management */}
+          <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 pb-3 border-b border-slate-100">
+              <span className="text-xs font-bold text-[#c9922a] tracking-widest uppercase">PILLAR 02</span>
+              <h4 className="text-base font-bold text-[#0c1a33] flex items-center gap-2">
+                📈 計画と進捗のデータ管理
+              </h4>
+            </div>
+
+            {compareTab === "compare" ? (
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* General */}
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-all duration-300">
+                  <div className="text-[10px] font-bold text-slate-400 mb-2 uppercase">一般的な指導・独学</div>
+                  <h5 className="font-bold text-slate-700 text-xs mb-3">「自己申告」と「紙ノートでの曖昧な管理」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-500 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 「先週どこまでやった？」の自己申告のみで客観データなし
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 公式や間違えた問題が手書きノートに埋もれ、再掲できない
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 保護者様から進捗やテスト定着度がまったく見えない
+                    </li>
+                  </ul>
+                </div>
+                {/* Medvance */}
+                <div className="bg-[#0c1a33] border border-[#c9922a]/30 rounded-2xl p-5 hover:border-[#c9922a]/70 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-[#c9922a]/5 rounded-full blur-xl pointer-events-none"></div>
+                  <div className="text-[10px] font-bold text-[#c9922a] mb-2 uppercase">Medvance式</div>
+                  <h5 className="font-bold text-white text-xs mb-3">「学習管理データベースによる一元トラッキング」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-300 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 必須公式や暗記データが一元管理されたデータベースを共有
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 毎週の確認テスト結果から『定着度をカラーコード管理』し苦手可視化
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 保護者用アカウントも提供しデータベース進捗をリアルタイム共有
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-[#faf8f4] border border-amber-200/50 rounded-2xl p-5 text-xs text-slate-600 leading-relaxed">
+                <strong className="text-[#0c1a33] block mb-2 font-bold text-sm">💡 スキーマ構築とデータフィードバック</strong>
+                脳は、情報が整理された構造（スキーマ）になって初めて新しい知識を正しく吸収します。バラバラの手書きノートではなく、一元化された学習管理データベース上に公式や課題データ、定着チェックを蓄積・カラーコード可視化することで、脳に負荷をかけずに「苦手」を抽出し、学習プランを精密に制御します。
+              </div>
+            )}
+          </div>
+
+          {/* Row 3: Lesson Style */}
+          <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 pb-3 border-b border-slate-100">
+              <span className="text-xs font-bold text-[#c9922a] tracking-widest uppercase">PILLAR 03</span>
+              <h4 className="text-base font-bold text-[#0c1a33] flex items-center gap-2">
+                ✍️ 授業のスタイルと脳の活性化
+              </h4>
+            </div>
+
+            {compareTab === "compare" ? (
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* General */}
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-all duration-300">
+                  <div className="text-[10px] font-bold text-slate-400 mb-2 uppercase">一般的な指導・独学</div>
+                  <h5 className="font-bold text-slate-700 text-xs mb-3">「解説を聞くだけの受け身なインプット指導」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-500 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 先生が黒板やホワイトボードに解答を書き、生徒は写すだけ
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 「分かったつもり」になるが、翌日一人で解くと再現できない
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 授業中の脳の活動率が著しく低く、定着に繋がらない
+                    </li>
+                  </ul>
+                </div>
+                {/* Medvance */}
+                <div className="bg-[#0c1a33] border border-[#c9922a]/30 rounded-2xl p-5 hover:border-[#c9922a]/70 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-[#c9922a]/5 rounded-full blur-xl pointer-events-none"></div>
+                  <div className="text-[10px] font-bold text-[#c9922a] mb-2 uppercase">Medvance式</div>
+                  <h5 className="font-bold text-white text-xs mb-3">「解法の逆授業（アクティブリコール）」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-300 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 前半45分インプット ＋ 後半45分は生徒自身の完全再現授業
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 「なぜその解法を適用したか」を口頭説明させ理解の歪みを発見
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 脳を強制的にアクティブ状態に保ち、授業内で定着させる
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-[#faf8f4] border border-amber-200/50 rounded-2xl p-5 text-xs text-slate-600 leading-relaxed">
+                <strong className="text-[#0c1a33] block mb-2 font-bold text-sm">💡 長期増強（LTP現象）と能動的想起</strong>
+                解説を受動的に聞いているとき、脳の神経伝達はほとんど不活性です。逆に「意図的に記憶を取り出そうと想起し、他者へ口頭で説明する（能動的想起）」とき、脳内の神経細胞の接合部で「長期増強（LTP）」が引き起こされます。Medvance独自の「解法の逆授業」は、このLTPを授業内で強制的に発生させ、一回の授業の定着率を劇的に引き上げます。
+              </div>
+            )}
+          </div>
+
+          {/* Row 4: Support */}
+          <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 pb-3 border-b border-slate-100">
+              <span className="text-xs font-bold text-[#c9922a] tracking-widest uppercase">PILLAR 04</span>
+              <h4 className="text-base font-bold text-[#0c1a33] flex items-center gap-2">
+                💬 授業時間外のサポート体制
+              </h4>
+            </div>
+
+            {compareTab === "compare" ? (
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* General */}
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-all duration-300">
+                  <div className="text-[10px] font-bold text-slate-400 mb-2 uppercase">一般的な指導・独学</div>
+                  <h5 className="font-bold text-slate-700 text-xs mb-3">「質問が翌週まで持ち越されるタイムラグ」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-500 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 自習中に発生した疑問が解決せず、翌週の授業まで放置される
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 分からないままの勉強が進まず、モチベーションが著しく低下
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">✗</span> 質問しても「答えの丸暗記」になって応用が効かない
+                    </li>
+                  </ul>
+                </div>
+                {/* Medvance */}
+                <div className="bg-[#0c1a33] border border-[#c9922a]/30 rounded-2xl p-5 hover:border-[#c9922a]/70 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-[#c9922a]/5 rounded-full blur-xl pointer-events-none"></div>
+                  <div className="text-[10px] font-bold text-[#c9922a] mb-2 uppercase">Medvance式</div>
+                  <h5 className="font-bold text-white text-xs mb-3">「即時疑問解決システム ＆ 記述添削」</h5>
+                  <ul className="space-y-2 text-[11px] text-slate-300 font-semibold">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 自習中の疑問はLINEからいつでも即時質問可能
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 慶應医学部生アドバイザーがその日のうちに論理の歪みを解消
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#c9922a] font-bold">✓</span> 英作文や数学記述の「問題添削」もオンラインで随時対応
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-[#faf8f4] border border-amber-200/50 rounded-2xl p-5 text-xs text-slate-600 leading-relaxed">
+                <strong className="text-[#0c1a33] block mb-2 font-bold text-sm">💡 誤ったスキーマの回避</strong>
+                疑問を持った状態で勉強を続けると、脳内に間違った論理構造（不正確なスキーマ）が構築されてしまい、後から修正するのが非常に困難になります。疑問が発生した「その日」のうちに、論理的思考のプロである慶應医学部生コーチが紐解いて解消することで、正しい知識ネットワークを即時に形成します。
+              </div>
+            )}
           </div>
         </div>
       </div>
