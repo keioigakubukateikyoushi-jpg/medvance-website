@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { buildBreadcrumbSchema } from "@/lib/seo";
 import TutorProfiles from "@/components/TutorProfiles";
+import ScientificMethod from "@/components/ScientificMethod";
 
 export const metadata = {
   title: "Medvanceについて | 現役医学部生による医学部受験専門塾",
@@ -247,6 +248,9 @@ export default function AboutPage() {
       </div>
 
       <TutorProfiles />
+
+      {/* 脳科学エビデンスに基づく学習メソッド */}
+      <ScientificMethod />
 
       <div className="py-8 px-4 pb-24">
         <div className="max-w-4xl mx-auto">

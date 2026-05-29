@@ -127,9 +127,6 @@ export default function Header() {
           <Link href="/about" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
             塾について
           </Link>
-          <Link href="/science" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
-            脳科学メソッド
-          </Link>
           <Link href="/pricing" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
             料金
           </Link>
@@ -268,7 +265,6 @@ export default function Header() {
           {[
             { label: "ホーム", href: "/" },
             { label: "塾について", href: "/about" },
-            { label: "脳科学メソッド", href: "/science" },
             { label: "料金", href: "/pricing" },
             { label: "お知らせ", href: "/news" },
           ].map((link) => (
