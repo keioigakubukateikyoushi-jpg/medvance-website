@@ -69,6 +69,34 @@ export default function ScientificMethod() {
     retentionWithReview = 100;
   }
 
+  // Generate SVG path for No Review curve (Ebbinghaus)
+  const pathNoReviewPoints = [];
+  for (let d = 0; d <= 30; d++) {
+    const r = Math.max(10, 100 / (1 + 1.5 * Math.pow(d, 0.6)));
+    const x = (d / 30) * 500;
+    const y = 120 - ((r - 10) / 90) * 110;
+    pathNoReviewPoints.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+  }
+  const pathNoReview = `M ${pathNoReviewPoints.join(" L ")}`;
+
+  // Generate SVG path for Medvance spaced repetition (saw-tooth)
+  const pathMedvance = [
+    "M 0.0,10.0",
+    `L ${(1/30*500).toFixed(1)},${(120 - (80-10)/90*110).toFixed(1)}`,
+    `L ${(1/30*500).toFixed(1)},10.0`,
+    `L ${(3/30*500).toFixed(1)},${(120 - (85-10)/90*110).toFixed(1)}`,
+    `L ${(3/30*500).toFixed(1)},10.0`,
+    `L ${(7/30*500).toFixed(1)},${(120 - (90-10)/90*110).toFixed(1)}`,
+    `L ${(7/30*500).toFixed(1)},10.0`,
+    `L ${(14/30*500).toFixed(1)},${(120 - (95-10)/90*110).toFixed(1)}`,
+    `L ${(14/30*500).toFixed(1)},10.0`,
+    "L 500.0,10.0"
+  ].join(" ");
+
+  const indicatorX = (days / 30) * 500;
+  const indicatorYNoReview = 120 - ((retentionNoReview - 10) / 90) * 110;
+  const indicatorYMedvance = 120 - ((retentionWithReview - 10) / 90) * 110;
+
   // Dynamic scientific commentary based on days
   const getCommentary = (d: number) => {
     if (d === 0) {
@@ -270,6 +298,112 @@ export default function ScientificMethod() {
                 }}
               />
               <div className="flex justify-between text-[10px] text-slate-400 font-semibold mt-2 px-1">
+                <span>当日</span>
+                <span>3日後</span>
+                <span>7日後</span>
+                <span>14日後</span>
+                <span>30日後</span>
+              </div>
+            </div>
+
+            {/* Dynamic Forgetting Curve Graph */}
+            <div className="bg-[#0c1a33] border border-slate-800 rounded-2xl p-4 mb-6 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:25px_20px] opacity-10 pointer-events-none"></div>
+              
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-[10px] font-bold text-slate-300 tracking-wider">30日間の記憶保持率の推移（脳科学モデル）</span>
+                <div className="flex gap-3 text-[9px] font-semibold">
+                  <span className="flex items-center gap-1.5 text-slate-400">
+                    <span className="w-2.5 h-0.5 bg-slate-400 inline-block rounded-xs"></span> 復習なし
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[#c9922a]">
+                    <span className="w-2.5 h-0.5 bg-[#c9922a] inline-block rounded-xs"></span> Medvance
+                  </span>
+                </div>
+              </div>
+
+              {/* Chart SVG */}
+              <div className="relative h-28 w-full mt-2">
+                {/* Y-Axis Grid labels on Left */}
+                <div className="absolute left-0 top-0 text-[8px] text-slate-500 font-bold leading-none">100%</div>
+                <div className="absolute left-0 top-[48%] text-[8px] text-slate-500 font-bold leading-none">50%</div>
+                <div className="absolute left-0 bottom-0 text-[8px] text-slate-500 font-bold leading-none">10%</div>
+
+                <div className="h-full pl-7 pr-2">
+                  <svg className="w-full h-full overflow-visible" viewBox="0 0 500 130" preserveAspectRatio="none">
+                    {/* SVG Filters for glowing effect */}
+                    <defs>
+                      <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+
+                    {/* Grid lines */}
+                    <line x1="0" y1="10" x2="500" y2="10" stroke="#1e293b" strokeWidth="1" strokeDasharray="3 3" />
+                    <line x1="0" y1="65" x2="500" y2="65" stroke="#1e293b" strokeWidth="1" strokeDasharray="3 3" />
+                    <line x1="0" y1="120" x2="500" y2="120" stroke="#1e293b" strokeWidth="1" strokeDasharray="3 3" />
+
+                    {/* curve 1: Forgetting Curve (Ebbinghaus) */}
+                    <path
+                      d={pathNoReview}
+                      fill="none"
+                      stroke="#475569"
+                      strokeWidth="1.5"
+                      strokeDasharray="4 4"
+                      className="transition-all duration-300"
+                    />
+
+                    {/* curve 2: Medvance Curve (Saw-tooth spaced repetition) */}
+                    <path
+                      d={pathMedvance}
+                      fill="none"
+                      stroke="#c9922a"
+                      strokeWidth="2.5"
+                      className="transition-all duration-300"
+                      filter="url(#glow-gold)"
+                    />
+
+                    {/* Active Vertical Timeline Indicator */}
+                    <line
+                      x1={indicatorX}
+                      y1="0"
+                      x2={indicatorX}
+                      y2="130"
+                      stroke="#c9922a"
+                      strokeWidth="1.2"
+                      strokeDasharray="2 2"
+                      className="transition-all duration-75 ease-out"
+                    />
+
+                    {/* Highlighting Dots for active state */}
+                    {/* Circle for No Review */}
+                    <circle
+                      cx={indicatorX}
+                      cy={indicatorYNoReview}
+                      r="4"
+                      fill="#475569"
+                      stroke="#94a3b8"
+                      strokeWidth="1.5"
+                      className="transition-all duration-75 ease-out"
+                    />
+
+                    {/* Circle for Medvance with glow */}
+                    <circle
+                      cx={indicatorX}
+                      cy={indicatorYMedvance}
+                      r="5.5"
+                      fill="#ffffff"
+                      stroke="#c9922a"
+                      strokeWidth="3.5"
+                      className="transition-all duration-75 ease-out shadow-lg"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              {/* X Axis labels */}
+              <div className="flex justify-between text-[8px] text-slate-500 font-bold mt-2 pl-7 pr-2 border-t border-slate-800/80 pt-1.5">
                 <span>当日</span>
                 <span>3日後</span>
                 <span>7日後</span>
