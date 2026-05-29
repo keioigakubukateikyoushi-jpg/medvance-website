@@ -50,8 +50,8 @@ const IconChat = (p: React.SVGProps<SVGSVGElement>) => (
 const items = [
   { num: 1, pillar: "EXPERTISE",  label: "プロ講師エキスパートチーム",     body: "慶應医学部生が代表を務める医学部受験のプロ講師チーム。受験戦略、1対1指導、面接、小論文まで、合格に必要なすべてを一人の担当が一貫して見ます。", Icon: IconExperts },
   { num: 2, pillar: "MENTORSHIP", label: "現役医学部生講師",                   body: "全講師が現役の医学部在籍生。1〜2年前に自ら受験した経験を、科目別の時間配分から当日の心境まで、実体験として直接伝えます。", Icon: IconCap },
-  { num: 3, pillar: "15-MIN PLAN", label: "15分単位のオーダーメイド学習計画", body: "志望校から逆算した個別計画を「15分単位のタスク」にまで細分化。スキマ時間すら無駄にしない圧倒的な学習管理により、迷う時間をゼロにして合格へ導きます。", Icon: IconPlan },
-  { num: 4, pillar: "NOTION & DATABASE", label: "独自データベース × Notion自動連携", body: "全国の医学部データと、生徒個別のNotion・Google Docs学習空間を直結。必須公式やオリジナル対策テキスト、15分タスク計画が自動で配信・同期され、学習教材と進捗管理を完全に一元化します。", Icon: IconDb },
+  { num: 3, pillar: "15-MIN & SCIENCE", label: "15分単位の計画 × 脳科学メソッド", body: "志望校から逆算した学習計画を15分単位のタスクに細分化。さらに忘却曲線を科学的に制御する脳科学メソッド（能動的想起・分散学習）に基づき、最適な復習スケジュールを完全自動で配分します。", Icon: IconPlan },
+  { num: 4, pillar: "STUDY DATABASE", label: "専用学習管理データベース", body: "学習計画、医学部必須公式データ、オリジナル添削テキストなどの進捗データを生徒専用データベースへ一元集約。確認テスト結果による理解度の色分け管理や、保護者様へのリアルタイム共有も可能です。", Icon: IconDb },
   { num: 5, pillar: "CARE & FEEDBACK", label: "LINE質問対応・記述問題添削",     body: "授業外での疑問はLINEでいつでも直接質問可能。さらに、英作文や数学の記述答案、過去問の「問題添削」もオンラインで随時受け付け、弱点や論理のズレをその日のうちに解消します。", Icon: IconChat },
 ];
 
@@ -258,7 +258,7 @@ export default function PentagonMethod() {
           className="mx-auto mb-20 max-w-2xl text-center text-sm leading-relaxed"
           style={{ color: TEXT_BODY }}
         >
-          合格に必要な学習管理、Notionへのテキスト自動同期、LINEでの質問対応・問題添削まで。<br className="hidden md:block" />
+          合格に必要な学習管理、データベースへの進捗自動同期、LINEでの質問対応・問題添削まで。<br className="hidden md:block" />
           単なる個別指導ではなく、自学自習の効率を極限まで引き上げるMedvance独自の勉強法です。
         </p>
 
