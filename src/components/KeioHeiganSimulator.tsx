@@ -73,16 +73,16 @@ export default function KeioHeiganSimulator() {
 
       <div className="text-center mb-8 relative z-10">
         <span 
-          className="inline-block text-[9px] font-black tracking-[0.35em] uppercase mb-3 px-3 py-1 rounded-full border border-[#c9922a]/30"
-          style={{ color: GOLD, backgroundColor: "rgba(201,146,42,0.06)" }}
+          className="inline-block text-[11px] font-black tracking-wide mb-3 px-4 py-1.5 rounded-full border border-[#c9922a]/30 text-amber-800"
+          style={{ color: GOLD, backgroundColor: "rgba(201,146,42,0.08)" }}
         >
-          Study Ratio Calculator
+          両立リスク診断
         </span>
-        <h3 className="text-xl md:text-2xl font-bold" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
-          内部推薦 ＆ 外部一般受験 「学習時間・配分シミュレーター」
+        <h3 className="text-2xl md:text-3xl font-black mb-2 text-slate-900 leading-tight" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+          もし医学部推薦枠から漏れてしまったらどうする？
         </h3>
-        <p className="text-xs text-slate-500 mt-2">
-          学年や進捗フェーズを選択し、両立時に取るべき黄金比率と、今すぐやるべき両立アクションプランを可視化します。
+        <p className="text-xs font-bold text-slate-500 mt-2">
+          【内部推薦 ＆ 外部一般受験 学習配分シミュレーター】学年別の黄金比率と両立アクションを可視化
         </p>
       </div>
 

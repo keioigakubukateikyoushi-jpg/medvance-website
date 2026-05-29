@@ -115,16 +115,16 @@ export default function KeioNaibuSimulator() {
 
       <div className="text-center mb-8 relative z-10">
         <span 
-          className="inline-block text-[9px] font-black tracking-[0.3em] uppercase mb-3 px-3 py-1 rounded-full border border-[#c9922a]/30"
-          style={{ color: GOLD, backgroundColor: "rgba(201,146,42,0.06)" }}
+          className="inline-block text-[11px] font-black tracking-wide mb-3 px-4 py-1.5 rounded-full border border-[#c9922a]/30 text-amber-800"
+          style={{ color: GOLD, backgroundColor: "rgba(201,146,42,0.08)" }}
         >
-          Dynamic Estimator
+          医学部推薦ボーダー診断
         </span>
-        <h3 className="text-xl md:text-2xl font-bold" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
-          慶應医学部 内部推薦確率・評定診断シミュレーター
+        <h3 className="text-2xl md:text-3xl font-black mb-2 text-slate-900 leading-tight" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+          あなたは慶應医学部に内部進学できる？
         </h3>
-        <p className="text-xs text-slate-500 mt-2">
-          現在の所属校・学年・評定値から、医学部推薦ボーダーとのギャップと具体戦略を診断します。
+        <p className="text-xs font-bold text-slate-500 mt-2">
+          【慶應医学部 内部推薦確率・評定診断シミュレーター】現在の所属校・学年・評定値からボーダーギャップを測定
         </p>
       </div>
 
