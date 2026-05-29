@@ -6,6 +6,7 @@ import FadeIn from "@/components/FadeIn";
 import HoverCard from "@/components/HoverCard";
 import LineButton from "@/components/LineButton";
 import PentagonMethod from "@/components/PentagonMethod";
+import ScientificCTABanner from "@/components/ScientificCTABanner";
 import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
@@ -342,29 +343,7 @@ export default function Home() {
       <PentagonMethod />
 
       {/* ── 2.4 SCIENTIFIC METHOD CTA BANNER ──────────────────── */}
-      <section className="bg-white py-12 px-4 border-b border-slate-200">
-        <div className="max-w-4xl mx-auto animate-on-scroll">
-          <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-shadow duration-300">
-            <div className="max-w-xl text-center md:text-left">
-              <span className="inline-block text-[10px] font-bold tracking-[0.2em] px-2.5 py-0.5 rounded-full mb-3 text-white bg-[#0c1a33]">
-                SCIENCE & EVIDENCE
-              </span>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-[#0c1a33]" style={{ fontFamily: "var(--font-noto-serif)" }}>
-                医学の脳科学エビデンスに基づく学習方法
-              </h3>
-              <p className="text-xs leading-relaxed text-slate-500">
-                LTP現象を引き起こす「能動的想起」や、忘却曲線を制御する「分散学習」など、最難関入試を突破するための科学的なアプローチと記憶定着シミュレーターを公開しています。
-              </p>
-            </div>
-            <Link
-              href="/science"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-white hover:opacity-90 transition-opacity flex-shrink-0 bg-[#c9922a]"
-            >
-              脳科学メソッドとシミュレーターを見る →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ScientificCTABanner />
 
       {/* ── 2.5 SEARCH INTENT HUB ─────────────── */}
       <section style={{ backgroundColor: "#f7f5f0" }} className="py-20 px-4">
