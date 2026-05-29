@@ -38,6 +38,12 @@ export const relatedColumnsByHub: Record<string, string[]> = {
     "keio-naibu-kateikyoushi",
     "keio-guide",
   ],
+  "for/keio-naibu-heigan": [
+    "keio-naibu-shikumi",
+    "keio-naibu-seiseki",
+    "keio-naibu-kateikyoushi",
+    "yobiko-hybrid-strategy",
+  ],
   "for/keio-fuzoku": [
     "keio-fuzoku-kateikyoushi",
     "keio-naibu-shikumi",
@@ -95,6 +101,7 @@ export const hubMeta: Record<string, { label: string }> = {
   "for/parents": { label: "保護者の方へ" },
   "for/keio-naibu": { label: "慶應内部進学を目指す方へ" },
   "for/keio-fuzoku": { label: "慶應附属校生の方へ" },
+  "for/keio-naibu-heigan": { label: "内部進学＆外部受験 併願の方へ" },
   "for/seiseki-up": { label: "学校の成績を上げたい方へ" },
   "for/nangandai": { label: "難関大受験を目指す方へ" },
   "for/suisen-ao": { label: "推薦・AO入試を目指す方へ" },

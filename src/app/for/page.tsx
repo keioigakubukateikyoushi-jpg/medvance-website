@@ -85,6 +85,11 @@ const keioCards: AudienceCard[] = [
     href: "/for/keio-naibu?from=for-hub",
   },
   {
+    title: "内部進学＆外部受験 併願の方",
+    body: "系列校内の推薦枠確保と、万が一に備えた国公立・私立医学部一般受験のダブル対策を両立させます。",
+    href: "/for/keio-naibu-heigan?from=for-hub",
+  },
+  {
     title: "慶應附属校生の方",
     body: "義塾高校・女子高・志木・SFC・普通部・中等部の定期テスト対策と評定向上に対応します。",
     href: "/for/keio-fuzoku?from=for-hub",

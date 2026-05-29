@@ -83,6 +83,27 @@ const audiencePages: SearchItem[] = [
     description: "私立医学部合格に向けて、保護者が判断すべき受験校・学習管理・費用感をまとめています。",
     keywords: ["保護者", "親", "家庭", "私立医学部"],
   },
+  {
+    href: "/for/keio-naibu",
+    category: "対象別",
+    title: "慶應内部進学・医学部推薦対策",
+    description: "慶應系列校から医学部への内部推薦推薦枠を勝ち取るための定期試験・評定対策と小論文・面接指導をまとめたページです。",
+    keywords: ["慶應", "内部進学", "評定平均", "塾高", "女子高", "志木", "SFC"],
+  },
+  {
+    href: "/for/keio-fuzoku",
+    category: "対象別",
+    title: "慶應附属校生向け成績向上サポート",
+    description: "慶應附属各校の独自カリキュラムに沿った定期試験対策と評定向上指導をまとめたページです。",
+    keywords: ["慶應附属校", "定期試験", "内申点", "義塾高校", "普通部", "中等部"],
+  },
+  {
+    href: "/for/keio-naibu-heigan",
+    category: "対象別",
+    title: "慶應内部推薦＆外部一般受験ダブル対策",
+    description: "系列校内の推薦枠確保と、万が一に備えた国公立・私立医学部一般受験のダブル対策を両立させるページです。",
+    keywords: ["内部進学", "外部受験", "併願", "ダブル対策", "リスクヘッジ"],
+  },
 ];
 
 const servicePages: SearchItem[] = [

@@ -1227,10 +1227,12 @@ export default function Home() {
             {[
               { label: "浪人生の方", desc: "現役時代の失敗を分析し、正しい戦略で1年以内の合格を目指します", href: "/for/ronin" },
               { label: "再受験生の方", desc: "社会人・大学生からの挑戦も歓迎。柔軟なスケジュールで全力サポート", href: "/for/saijuken" },
-              { label: "保護者の方", desc: "毎月の進捗報告・保護者面談で、お子さまの状況を透明にご報告", href: "/for/parents" },
-              { label: "慶應医学部を目指す方", desc: "現役慶應医学部生だからこそ語れる、リアルな入試対策", href: "/universities/keio" },
+              { label: "慶應内部推薦を目指す方", desc: "塾高・志木・女子・SFC等の評定を上げ、医学部進学枠を死守します", href: "/for/keio-naibu" },
+              { label: "内部進学＆外部受験 併願の方", desc: "系列校内の推薦枠確保と、万が一に備えた国公立・私立医学部一般受験を両立", href: "/for/keio-naibu-heigan" },
+              { label: "慶應医学部（一般）を目指す方", desc: "現役慶應医学部生だからこそ語れる、超難関一般入試のリアル対策", href: "/universities/keio" },
               { label: "私立医学部を目指す方", desc: "慈恵・順天堂・日本医科など、大学別の傾向に合わせた専門対策", href: "/universities/private" },
               { label: "国公立医学部を目指す方", desc: "共通テストから二次試験まで、全科目の完成を目指します", href: "/universities/national" },
+              { label: "保護者の方", desc: "毎月の進捗報告・保護者面談で、お子さまの状況を透明にご報告", href: "/for/parents" },
             ].map((item) => (
               <Link
                 key={item.href}

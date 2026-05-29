@@ -22,6 +22,7 @@ const audienceBySlug: Record<string, AudienceSpec> = {
   parents: { educationalRole: "parent of high school student", description: "受験生の保護者" },
   "keio-naibu": { educationalRole: "Keio affiliated school student", description: "慶應義塾内部進学希望者", suggestedMinAge: 15, suggestedMaxAge: 18 },
   "keio-fuzoku": { educationalRole: "Keio affiliated school student", description: "慶應附属校生（中等部・普通部・高校・SFC含む）", suggestedMinAge: 12, suggestedMaxAge: 18 },
+  "keio-naibu-heigan": { educationalRole: "Keio affiliated school student", description: "慶應義塾内部進学＆外部一般受験の両立希望者", suggestedMinAge: 15, suggestedMaxAge: 18 },
   "seiseki-up": { educationalRole: "high school student (grade improvement)", description: "学校成績の向上を目指す高校生", suggestedMinAge: 15, suggestedMaxAge: 18 },
   nangandai: { educationalRole: "competitive university applicant", description: "東大・京大・早慶などの難関大学志望者", suggestedMinAge: 16, suggestedMaxAge: 19 },
   "suisen-ao": { educationalRole: "recommendation / AO applicant", description: "総合型選抜・推薦入試出願予定者", suggestedMinAge: 16, suggestedMaxAge: 19 },
@@ -173,6 +174,17 @@ export const forPageMeta: Record<
       { q: "推薦・AO入試対策はいつから始めれば良いですか？", a: "高3の4〜5月には準備を開始することをおすすめします。出願書類（志望理由書・活動報告書）の作成に1〜2ヶ月、面接・小論文練習にさらに1〜2ヶ月必要です。夏休み明けの出願に間に合うよう逆算して準備しましょう。" },
       { q: "志望理由書はどうやって書けばいいですか？", a: "①なぜその大学・学部か（具体的な理由）②自分の経験・強みとの結びつき③入学後のビジョン——の3軸が基本構成です。「医師になりたい」だけでなく、自分独自のエピソードと志望校への具体的な関心を盛り込むことが重要です。" },
       { q: "推薦・AO入試で落ちた場合の一般入試との両立はできますか？", a: "できます。推薦・AOは出願時期が早いため、一般入試の勉強と並行して準備することが可能です。MedvanceではAO対策と一般入試対策を同時並行でサポートするプランも提供しています。" },
+    ],
+  },
+  "keio-naibu-heigan": {
+    name: "慶應内部進学＆外部一般受験（ダブル対策）個別指導",
+    description: "慶應系列校から医学部への内部推薦枠確保と、万が一に備えた国公立・私立医学部一般受験の対策を完全1対1で両立させます。",
+    serviceType: "慶應内部進学・外部受験ダブル対策",
+    label: "内部進学＆外部受験 併願の方へ",
+    faq: [
+      { q: "内部推薦の評定対策と一般受験の勉強は両立できますか？", a: "はい、可能です。慶應附属校の定期試験はレベルが高く、その対策は一般受験の基礎力固めに直結します。Medvanceでは、日々の学校カリキュラムを最大限に活つつ、一般受験に必要な応用力を効率的にアドオンするシラバスを個別設計します。" },
+      { q: "どのようなスケジュールで進めるのが理想ですか？", a: "高1〜高2のうちは学校の評定平均（GPA）を最大化する勉強に8割のパワーを割き、残りの2割で一般受験を見据えた英数の先取り学習を行います。高3になって内部推薦の選考が見えてきたら、状況に合わせて過去問演習や併願校対策の比率を調整します。" },
+      { q: "もし推薦枠から漏れてしまった場合、いつ一般受験に切り替えるべきですか？", a: "「切り替える」のではなく、最初から「両方の網を張っておく」のがMedvanceのダブル対策です。常に一般受験で戦える実力を養いながら評定を追うため、推薦枠の確定時期（高3秋〜冬）に万が一選考から漏れたとしても、タイムラグなしで一般受験の直前対策に移行できます。" },
     ],
   },
 };

@@ -1,328 +1,436 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
+import TutorProfiles from "@/components/TutorProfiles";
+import LineButton from "@/components/LineButton";
+
 export const metadata = {
-  title: "慶應内部進学で医学部へ｜学校成績を上げる完全1対1指導 | Medvance",
+  title: "慶應医学部への内部進学対策｜系列校特化の評定向上＆推薦選考指導 | Medvance",
   description:
-    "慶應義塾の附属校から医学部への内部進学を目指す方へ。現役慶應医学部生が学校の定期試験・成績向上を完全1対1でサポート。慶應の授業内容を知り尽くした先輩が、評定を上げるための最短戦略を設計します。",
+    "【慶應内部進学・医学部推薦特化】義塾高校（塾高）・女子高・志木・SFC高等部から限られた慶應医学部への内部推薦枠を勝ち取るための完全個別指導。学校ごとの出題傾向に同調した定期試験・評定対策と、医学部推薦会議で高評価を得る面接・志望動機書指導。",
   keywords: [
     "慶應 内部進学 医学部",
-    "慶應義塾 内部進学 成績",
-    "慶應附属校 医学部 家庭教師",
-    "慶應高校 内部進学 対策",
-    "慶應医学部 内部進学 家庭教師",
+    "塾高 医学部 推薦",
+    "慶應志木 医学部 推薦",
+    "慶應女子 医学部 推薦",
+    "慶應SFC 医学部 推薦",
+    "慶應 評定 上げる",
+    "慶應内部推薦 家庭教師"
   ],
   alternates: {
     canonical: "/for/keio-naibu",
   },
 };
 
-const challenges = [
+const GOLD = "#c9922a";
+const GOLD_SOFT = "#b88a26";
+const NAVY = "#0c1a33";
+const NAVY_LIGHT = "#162540";
+const CREAM = "#f7f5f0";
+
+const keioAffiliateSpecifics = [
   {
-    title: "「評定が足りず、医学部枠に手が届かない」",
-    body: "慶應医学部への内部進学は評定が非常に重要です。「あと少し」という状況で苦しんでいる生徒が多くいます。どの科目でどれだけ点を上げればいいかを数値で明確化し、逆算した対策を立てます。",
+    school: "慶應義塾高校（塾高）",
+    slots: "約740名中「上位約22名」",
+    difficulty: "極めて過酷な順位争い",
+    strategy: "数学・理科（物理・化学・生物）の学内平均点が低く、難問が出題されるため、学校独自のプリント・授業内容を完璧に再現できる対策が必須。高1からの全評定（GPA）の積み上げが命運を分けます。"
   },
   {
-    title: "「学校の授業スピードに追いつけない」",
-    body: "慶應附属校のカリキュラムは独自性が高く、外部の予備校教材が合わないことがあります。慶應医学部生の講師は同じカリキュラムを経験しており、学校の授業に沿った指導が可能です。",
+    school: "慶應義塾志木高校",
+    slots: "約250名中「上位約5名」",
+    difficulty: "枠が非常に狭い超少数精鋭枠",
+    strategy: "自主性を重んじる校風の裏返しとして、提出物や課題論文、自由記述式テストの採点基準が非常に厳しいのが特徴。独自カリキュラムで進む英語・数学の学内順位を常にトップグループに維持する必要があります。"
   },
   {
-    title: "「定期試験対策のやり方がわからない」",
-    body: "内部進学では定期試験の成績が直接評定に影響します。試験範囲の絞り方・効率的なまとめ方・出題傾向の読み方まで、講師が「慶應の試験で通用する勉強法」を伝授します。",
+    school: "慶應義塾女子高校",
+    slots: "約200名中「上位約5名」",
+    difficulty: "最難関女子校のトップ層争い",
+    strategy: "全国トップクラスの秀才が集まる中、評定平均8.5〜9.0以上が実質的な推薦基準になります。定期テストの記述量が多く、小テストの積み重ねも評価対象。理系科目の評定アップと、早期の志望動機構築が合否を分けます。"
   },
   {
-    title: "「医学部に進む意思はあるが戦略が不明確」",
-    body: "「なんとなく医学部に行きたい」という状態では面談・進路選択で弱さが出ます。志望動機の言語化・自己分析・小論文対策まで含めた「医学部進学者として完成する」ための準備を、早期から始めます。",
-  },
+    school: "慶應湘南藤沢高等部（SFC）",
+    slots: "約240名中「上位約5名」",
+    difficulty: "独自性の高い複合評価",
+    strategy: "単なるペーパーテストの成績だけでなく、プレゼンテーション課題、卒業研究、英語によるレポート提出などの比重が大きいです。高いGPA維持に加え、SFC特有の自主研究科目を医学部志望の文脈で構築する指導を行います。"
+  }
 ];
 
-const reasons = [
+const evaluationPillars = [
   {
-    num: "01",
-    title: "指導するのは現役の慶應医学部生",
-    body: "同じ慶應の附属校を経験し、または慶應医学部に合格した先輩が指導します。授業内容・試験の出題傾向・評定の仕組みを熟知しているため、「学校の実態に合った指導」が受けられます。外部の予備校教師には持てないリアルな内部知識があります。",
+    title: "1. 系列校ごとの「独自カリキュラム試験」完全同調",
+    body: "慶應の附属校は検定教科書をほとんど使わず、教員オリジナルのプリントや大学教養レベルの専門書を使用します。Medvanceでは、各学校で実際にその授業を受け、医学部枠を勝ち取った現役慶應医学部生が、授業ノート・過去の出題傾向から「定期試験で高得点を取るためのポイント」を的確に伝授します。"
   },
   {
-    num: "02",
-    title: "成績・評定を数値で管理",
-    body: "「あの科目であと何点取れれば評定がいくつ上がる」という具体的な目標設定を行います。定期試験のたびに結果を分析し、次の試験に向けて戦略を更新。感覚ではなく数字で管理することで、着実に評定を積み上げます。",
+    title: "2. 1点の隙も許さない「15分計画×脳科学復習モデル」",
+    body: "全科目の合算GPAが推薦基準になるため、得意科目だけを伸ばしても医学部推薦は勝ち取れません。Medvanceは週次の指導外の時間も徹底管理。「15分単位の計画表」と忘却曲線を制御する「脳科学復習アプローチ」を組み合わせ、苦手科目の抜け漏れを防ぎ、確実に全科目の評定を底上げします。"
   },
   {
-    num: "03",
-    title: "医学部進学に必要な準備を早期からサポート",
-    body: "内部進学の選考では成績だけでなく、志望理由書や面談が課されることがあります。「なぜ医学部か」「なぜ慶應か」を自分の言葉で語れるよう、早期から自己分析と言語化のサポートを行います。",
+    title: "3. 「独自データベース×AI」による定着率の見える化",
+    body: "日々の小テスト結果や単語・公式の定着レベルを、生徒一人ひとりに構築された「専用学習データベース」に蓄積。独自の分析AIが『長期記憶化された知識』と『短期記憶のままの知識』を色分け可視化し、保護者様へリアルタイムに共有。塾からの『順調です』という曖昧な言葉を一切排除します。"
   },
   {
-    num: "04",
-    title: "完全1対1・オーダーメイドの学習計画",
-    body: "苦手科目・得意科目・残りの学期数・目標評定に応じた、完全個別の学習計画を設計します。週単位でスケジュールを管理し、定期試験前の集中期には指導頻度を増やすことも可能です。",
-  },
+    title: "4. 医学部推薦会議をクリアする「小論文・志望理由・面接」",
+    body: "評定基準をクリアした後に待ち受けるのが、学内の医学部推薦面接と志望理由書の選考です。「なぜ医師を志すのか」「慶應医学部でどのような研究をしたいのか」を、推薦会議で最高評価が得られる水準まで、担当の慶應医学生講師が何度も添削・模擬面接を重ねて磨き上げます。"
+  }
 ];
 
-const schoolList = [
-  { name: "慶應義塾高校", note: "普通部からの進学者も含む上位校。医学部進学枠は成績上位者が対象。" },
-  { name: "慶應義塾女子高校", note: "理系科目の評定向上と志望理由書の準備が重要。" },
-  { name: "慶應義塾志木高校", note: "埼玉・全国からの入学者も多く、医学部進学志望者に対応。" },
-  { name: "慶應義塾湘南藤沢高校（SFC）", note: "独自カリキュラムに精通した講師が対応。" },
-  { name: "慶應義塾普通部", note: "中学生からの早期対策で、高校以降の内部進学を見据えた準備。" },
+const curriculumDetails = [
+  {
+    subject: "数学（解析・幾何）",
+    focus: "学内プリントと高難度記述の再現",
+    details: "各校とも進度が非常に早く、高2までに高校数学の全範囲を終了します。定期試験では誘導なしの記述難問が多いため、部分点をかき集める論理記述力と計算ミスを排除する解法チェックシステムを指導します。"
+  },
+  {
+    subject: "化学・物理・生物",
+    focus: "大学レベルの内容を含む専門問題",
+    details: "高校の枠を超えた大学一般教養のレジュメから出題されることも稀ではありません。原理原則から本質的に理解させ、ただの暗記ではなく『記述式テストで加点される論理展開』が書けるようにサポートします。"
+  },
+  {
+    subject: "英語（リーディング・文法）",
+    focus: "膨大な読解量と精読力の両立",
+    details: "洋書やハイレベルな英文記事が授業教材になることが多く、文法から構文まで高度な読解スキルが試されます。単語テストなどの小さな加点要素も漏らさず回収し、常に評定8以上をキープするための読解スピードを養成します。"
+  },
+  {
+    subject: "小論文・推薦願書",
+    focus: "学内選考を通過する唯一無二の自己アピール",
+    details: "慶應医学部への推薦には、志望動機書（推薦願書）の完成度が直結します。部活動や学校行事での取り組みを『医学部進学後にどう活かすか』という論理的なシナリオに落とし込み、説得力ある小論文が書けるよう一から指導します。"
+  }
 ];
 
-const timeline = [
+const steps = [
   {
-    period: "中1〜中3（普通部）",
-    title: "基礎固め・習慣づくり",
-    desc: "内部進学の土台は中学時代の成績から始まります。定期試験で安定した成績を取る習慣を作り、医学部進学への意識を早期から醸成します。",
+    step: "STEP 01",
+    title: "無料合格戦略診断（現状分析）",
+    body: "現在の評定平均、学年順位、各科目の定期試験結果、学校での学習姿勢を詳細にヒアリング。医学部推薦枠のボーダーラインとのギャップを数字で可視化します。"
   },
   {
-    period: "高1〜高2",
-    title: "評定の積み上げ期",
-    desc: "内部進学に使われる評定の多くは高1〜高2の成績です。この時期に主要科目（英語・数学・理科）の評定を確実に上げることが最重要です。",
+    step: "STEP 02",
+    title: "オーダーメイドカリキュラム設計",
+    body: "所属する系列校（塾高・志木・女子・SFC）の授業進度とシラバスに合わせ、定期試験で何点取れば目標評定に到達するか、逆算した週間指導スケジュールを設計します。"
   },
   {
-    period: "高2後半〜高3前半",
-    title: "選考準備・志望動機の言語化",
-    desc: "志望理由書・面談対策を本格化します。「なぜ医師になりたいか」「慶應医学部で何を学びたいか」を自分の言葉で深く語れるよう、1対1で仕上げます。",
+    step: "STEP 03",
+    title: "1対1の同調指導 ＆ 15分タスク管理",
+    body: "現役の慶應医学生講師が、授業プリントや過去の傾向に完全同調した指導を行います。指導日以外も15分単位の学習計画と脳科学復習メソッドで自習の質を支配します。"
   },
   {
-    period: "高3後半",
-    title: "最終仕上げ・直前対策",
-    desc: "最後の試験・選考に向けて、全体の評定を最終確認し、面談の最終練習を行います。万が一に備えた外部受験の準備も並行して行えます。",
+    step: "STEP 04",
+    title: "定期試験前の集中ブースト",
+    body: "試験の2〜3週間前から指導頻度を上げ、試験範囲に完全に的を絞った総復習と演習を実施。苦手分野をすべて潰し切り、最高のコンディションで本番へ臨ませます。"
   },
+  {
+    step: "STEP 05",
+    title: "志望理由書・学内面接の最終仕上げ",
+    body: "高3の推薦選考期に向け、志望動機の言語化・小論文対策・模擬面接を重ね、推薦会議を自信を持って突破できるクオリティに仕上げます。"
+  }
 ];
 
 const faqs = [
   {
-    q: "慶應の附属校以外でも内部進学対策を受けられますか？",
-    a: "Medvanceのメインサービスは慶應附属校からの内部進学対策ですが、他の附属校（早稲田・明治など）からの内部進学相談も承っています。まずは無料相談でご状況をお聞かせください。",
+    q: "慶應医学部への内部推薦を勝ち取るための最低評定はいくつですか？",
+    a: "学校や年度によって多少前後しますが、塾高では10点満点中8.5以上（できれば9.0以上）、志木・女子高・SFCでも評定平均（GPA）で上位数％以内を維持し続ける必要があります。主要3教科（英・数・理）で極めて高い評定を収めることはもちろん、副教科での取りこぼしを防ぐ全方位的対策が必須です。"
   },
   {
-    q: "内部進学対策と一般受験対策を同時にお願いできますか？",
-    a: "はい、可能です。内部進学がうまくいかなかった場合に備えて、一般受験の準備も並行して行いたいという方も多くいます。内部進学対策をメインにしながら、学科力も同時に高めるプランを設計できます。",
+    q: "学校独自の教材やプリントばかりで市販教材が使えません。対応可能ですか？",
+    a: "はい、Medvanceの最大の強みです。指導を担当するのは同じ系列校の出身または同等以上のカリキュラムを突破した現役慶應医学部生です。学校で配られるプリント、ノート、授業レジュメに完全同調した指導を行うため、市販の予備校教材には載っていない『学校独自の試験のツボ』をピンポイントで解説できます。"
   },
   {
-    q: "定期試験直前だけお願いすることはできますか？",
-    a: "はい、単発での試験対策指導も受け付けています。ただし、継続的に指導を受けることで評定の安定的な向上が期待できるため、月単位での継続指導を推奨しています。",
+    q: "部活が非常に忙しく、勉強時間の確保が難しいです。",
+    a: "Medvanceでは、忙しい生徒のために『15分単位のタスク管理』を実施しています。隙間時間（通学時間や部活前後の15分）に何をすべきかを脳科学的な復習タイミングと連動させてタスク化するため、ダラダラ勉強する時間を排除し、短い時間で最大の記憶定着効率を実現します。"
   },
   {
-    q: "料金はいくらですか？",
-    a: "週1回コース月8万円（月4回80分授業＋コーチング込み）からです。入塾金は初回2万円のみ。定期試験前など指導頻度を増やす場合は週2回コース（月14万円〜）も選べます。まずは無料相談でご状況をお聞かせください。",
-  },
-  {
-    q: "オンラインでも受けられますか？",
-    a: "はい、全国どこからでもオンラインで受講できます。関東圏にお住まいの方は対面指導も選べます。",
-  },
+    q: "万が一、内部推薦の基準に届かなかった場合のサポートはありますか？",
+    a: "はい、もちろんございます。Medvanceでは、内部進学評定を全力で追いながらも、万が一の推薦漏れに備えて他私立医学部（慈恵・順天堂・日本医大など）や国公立医学部の一般受験対策を同時並行で実施する「内部・外部ダブル対策コース」をご用意しています。そちらの選択肢も踏まえ、早期にセーフティネットを張る指導を行います。"
+  }
 ];
 
-
-export default function KeioNaibuPage() {
+export default function KeioNaibuRevampedPage() {
   return (
     <>
       <ForPageSchemas slug="keio-naibu" />
       <div className="min-h-screen bg-white">
+        {/* ── HERO SECTION ───────────────────────────── */}
+        <section style={{ backgroundColor: NAVY }} className="relative py-28 px-4 text-white overflow-hidden">
+          {/* Radial Glow */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#c9922a]/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
-      {/* HERO */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
-            慶應附属校から医学部へ
-          </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            慶應内部進学で医学部へ。<br />評定を上げる完全1対1指導。
-          </h1>
-          <p className="text-base mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
-            同じ慶應を歩んだ現役医学部生が、学校の成績向上から選考準備まで徹底サポート
-          </p>
-          <Link
-            href="/contact?from=keio-naibu"
-            className="inline-block px-8 py-4 font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a", color: "#fff" }}
-          >
-            無料相談に申し込む →
-          </Link>
-        </div>
-      </div>
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            <span 
+              className="inline-block text-[10px] font-black tracking-[0.35em] uppercase mb-6 px-4 py-1.5 rounded-full border border-[#c9922a]/30"
+              style={{ color: GOLD, backgroundColor: "rgba(201,146,42,0.08)" }}
+            >
+              Keio Medical Internal Promotion Program
+            </span>
+            
+            <h1 
+              className="text-3xl md:text-5xl lg:text-[3.5rem] font-black mb-8 leading-tight tracking-wide"
+              style={{ fontFamily: "var(--font-noto-serif)" }}
+            >
+              慶應系列校から<br className="sm:hidden" />
+              <span style={{ color: GOLD }}>医学部内部推薦</span>を勝ち取る<br />
+              完全特化型評定突破システム
+            </h1>
+            
+            <div className="w-20 h-1 bg-[#c9922a] mx-auto mb-8"></div>
+            
+            <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-slate-300 font-medium mb-12">
+              塾高（上位22名）、志木、女子、SFC。限られた最難関推薦枠争いを制する。<br className="hidden md:block" />
+              授業プリントに完全同調する「現役慶應医学生指導」×「15分計画×脳科学復習」×「独自データベース」
+            </p>
 
-      {/* STATS */}
-      <div className="bg-white py-10 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { label: "講師は全員", sub: "現役慶應医学部生" },
-            { label: "慶應附属校の", sub: "カリキュラムに精通" },
-            { label: "学科から", sub: "選考準備まで対応" },
-            { label: "全国", sub: "オンライン対応" },
-          ].map((s) => (
-            <div key={s.sub}>
-              <p className="text-base md:text-lg font-bold mb-0.5" style={{ color: "#c9922a", fontFamily: "var(--font-noto-serif)" }}>{s.label}</p>
-              <p className="text-sm font-semibold" style={{ color: "#0c1a33" }}>{s.sub}</p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <Link
+                href="/contact?from=keio-naibu-hero"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm tracking-wide text-white transition-opacity hover:opacity-90 w-full sm:w-auto shadow-md"
+                style={{ backgroundColor: GOLD }}
+              >
+                医学部推薦合格戦略診断（80分）を申し込む
+              </Link>
+              <LineButton label="LINEで相談する" size="lg" className="!rounded-xl !py-4 !px-8 w-full sm:w-auto" />
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* CHALLENGES */}
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            慶應内部進学で医学部を目指す生徒が<br className="hidden md:block" />抱えている課題
-          </h2>
-          <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
-            これらの悩みをMedvanceは1対1で解決します
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            {challenges.map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <p className="font-bold text-sm mb-3" style={{ color: "#c9922a" }}>{item.title}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
-              </div>
-            ))}
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* WHY MEDVANCE */}
-      <div className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            Medvanceが慶應内部進学対策に選ばれる理由
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {reasons.map((item) => (
-              <div key={item.num} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                <p className="font-bold text-sm mb-2" style={{ color: "#c9922a" }}>{item.num}</p>
-                <p className="font-bold text-base mb-3" style={{ color: "#0c1a33" }}>{item.title}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* SCHOOLS */}
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            対応している慶應附属校
-          </h2>
-          <div className="space-y-3">
-            {schoolList.map((school, i) => (
-              <div key={i} className="flex gap-4 p-4 rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <div className="flex-shrink-0">
-                  <span className="inline-block w-2 h-2 rounded-full mt-1.5" style={{ backgroundColor: "#c9922a" }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm mb-1" style={{ color: "#0c1a33" }}>{school.name}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{school.note}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* TIMELINE */}
-      <div className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            学年別・内部進学準備のロードマップ
-          </h2>
-          <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
-            早く始めるほど、選択肢が広がります
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            {timeline.map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-xs font-bold px-3 py-1 rounded-full text-white" style={{ backgroundColor: "#c9922a" }}>{item.period}</span>
-                  <span className="font-bold text-sm" style={{ color: "#0c1a33" }}>{item.title}</span>
-                </div>
-                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* PRICING */}
-      <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            料金・指導コース
-          </h2>
-          <div className="space-y-3 mb-6">
+        {/* ── KEY PERFORMANCE STATS ───────────────────────────── */}
+        <section className="bg-slate-50 border-b border-slate-200 py-12 px-4">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { label: "週1回コース", price: "月8万円〜", note: "月4回授業（80分）＋コーチング・評定管理込み。入塾金2万円（初回のみ）。" },
-              { label: "週2回コース", price: "月14万円〜", note: "定期試験対策を強化したい方。試験前の集中期に増やす方も多い。" },
-              { label: "試験前集中コース", price: "都度相談", note: "試験2〜3週間前から短期集中で対策。継続コース生の試験前増枠にも対応。" },
-            ].map((item, i) => (
-              <div key={i} className="p-5 rounded-xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-                <div className="flex items-center justify-between mb-2">
-                  <p className="font-bold text-sm" style={{ color: "#0c1a33" }}>{item.label}</p>
-                  <p className="font-bold text-base" style={{ color: "#c9922a" }}>{item.price}</p>
-                </div>
-                <p className="text-xs leading-relaxed" style={{ color: "#6b7280" }}>{item.note}</p>
+              { num: "全員", label: "現役慶應医学生講師" },
+              { num: "完全同調", label: "学校プリント・過去の傾向解析" },
+              { num: "リアルタイム", label: "定着率データベース保護者共有" },
+              { num: "一気通貫", label: "学科＋面接・志望動機対策" }
+            ].map((stat, i) => (
+              <div key={i} className="p-4 rounded-2xl bg-white border border-slate-200/60 shadow-xs">
+                <p className="text-xl md:text-2xl font-black mb-1" style={{ color: GOLD, fontFamily: "var(--font-noto-serif)" }}>{stat.num}</p>
+                <p className="text-xs text-slate-600 font-bold">{stat.label}</p>
               </div>
             ))}
           </div>
-          <div className="p-5 rounded-xl" style={{ backgroundColor: "#0c1a33" }}>
-            <p className="text-sm font-semibold text-white mb-2">全コース共通で含まれるもの</p>
-            <ul className="space-y-1">
-              {[
-                "評定・成績の数値管理",
-                "定期試験対策（試験範囲に合わせた指導）",
-                "志望動機・選考書類のサポート",
-                "LINEでの速やかな質問対応",
-                "保護者への定期報告",
-              ].map((item) => (
-                <li key={item} className="text-xs flex items-center gap-2" style={{ color: "rgba(255,255,255,0.8)" }}>
-                  <span style={{ color: "#c9922a" }}>✓</span>{item}
-                </li>
+        </section>
+
+        {/* ── AFFILIATES SECTION ───────────────────────────── */}
+        <section className="py-24 px-4 bg-white">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
+                School Target Board
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                慶應各系列校における医学部推薦の壁と突破戦略
+              </h2>
+              <p className="text-sm text-slate-500 max-w-xl mx-auto">
+                学校ごとに異なる推薦選考基準・カリキュラム進度に対応。現役慶應医学生だから提供できる最短突破ルート。
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {keioAffiliateSpecifics.map((spec, i) => (
+                <div 
+                  key={i} 
+                  className="p-8 rounded-3xl border border-slate-200 bg-slate-50 hover:bg-white hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="font-extrabold text-lg text-slate-900" style={{ fontFamily: "var(--font-noto-serif)" }}>
+                        {spec.school}
+                      </h3>
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-md text-amber-800 bg-amber-500/10">
+                        {spec.slots}
+                      </span>
+                    </div>
+                    <p className="text-xs font-black text-rose-600 mb-3">
+                      ■ {spec.difficulty}
+                    </p>
+                    <p className="text-xs leading-relaxed text-slate-500">
+                      {spec.strategy}
+                    </p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* FAQ */}
-      <div className="py-16 px-4 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            よくある質問
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <details key={i} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
-                <summary className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm select-none list-none bg-white" style={{ color: "#0c1a33" }}>
-                  <span>Q. {faq.q}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4" style={{ color: "#c9922a" }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.a}</div>
-              </details>
-            ))}
+        {/* ── 4 PILLARS OF MEDVANCE ADVANTAGE ───────────────────────────── */}
+        <section className="py-24 px-4 bg-slate-50 border-t border-b border-slate-200">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
+                Medvance Core Systems
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                他の個別指導・家庭教師サービスと異なる「医学部内部進学」4つの柱
+              </h2>
+              <p className="text-sm text-slate-500">
+                単なる学生のマッチングではなく、指導を高度にシステム化し、結果を必然にします
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {evaluationPillars.map((pillar, i) => (
+                <div 
+                  key={i} 
+                  className="bg-white p-8 rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition-shadow duration-300"
+                >
+                  <span className="text-xs font-black tracking-wider uppercase" style={{ color: GOLD }}>
+                    Pillar {i + 1}
+                  </span>
+                  <h3 className="font-extrabold text-lg text-slate-900 mt-1 mb-3" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                    {pillar.title}
+                  </h3>
+                  <div className="w-12 h-0.5 bg-[#c9922a] mb-4"></div>
+                  <p className="text-xs md:text-sm leading-relaxed text-slate-500">
+                    {pillar.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* CTA */}
-      <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>無料相談</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            まずは無料相談から
-          </h2>
-          <p className="mb-8 text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-            評定の現状・残りの学期数・目標をヒアリングし、最短で医学部進学枠を確保するための戦略をご提案します。
-          </p>
-          <Link
-            href="/contact?from=keio-naibu-cta"
-            className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#c9922a" }}
-          >
-            無料相談・お問い合わせ
-          </Link>
-        </div>
+        {/* ── SUBJECT-SPECIFIC GUIDE ───────────────────────────── */}
+        <section className="py-24 px-4 bg-white">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
+                Subject Master Class
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                慶應医学部推薦に必要な「主要科目の完全攻略」
+              </h2>
+              <p className="text-sm text-slate-500">
+                各系列校の独自シラバスを徹底分析した加点ポイント
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {curriculumDetails.map((curr, i) => (
+                <div key={i} className="p-8 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-extrabold text-base mb-2 text-slate-900" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                      ■ {curr.subject}
+                    </h3>
+                    <p className="text-xs font-bold mb-3 text-slate-400">
+                      対策テーマ：{curr.focus}
+                    </p>
+                    <p className="text-xs leading-relaxed text-slate-500">
+                      {curr.details}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── FLOW TO INTERNAL SUCCESS ───────────────────────────── */}
+        <section className="py-24 px-4 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
+                Study Flow
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                合格に向けたステップと指導開始の流れ
+              </h2>
+            </div>
+
+            <div className="relative border-l border-slate-300 pl-8 space-y-12">
+              {steps.map((item, i) => (
+                <div key={i} className="relative">
+                  {/* Dot */}
+                  <span className="absolute -left-[41px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full text-[9px] font-bold text-white border-2 border-white shadow-sm" style={{ backgroundColor: NAVY }}>
+                    {i + 1}
+                  </span>
+                  <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: GOLD }}>
+                    {item.step}
+                  </p>
+                  <h3 className="text-base font-extrabold text-slate-900 mb-2" style={{ fontFamily: "var(--font-noto-serif)" }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-slate-500">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── TUTOR PROFILES ───────────────────────────── */}
+        <TutorProfiles />
+
+        {/* ── FAQ ACCORDION ───────────────────────────── */}
+        <section className="py-24 px-4 bg-slate-50 border-t border-b border-slate-200">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
+                FAQ
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                慶應医学部内部推薦に関するよくある質問
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="rounded-2xl overflow-hidden bg-white border border-slate-200 hover:shadow-xs transition-shadow duration-300"
+                >
+                  <summary
+                    className="flex items-center justify-between px-6 py-5 cursor-pointer font-bold text-sm select-none list-none text-slate-900 bg-white"
+                  >
+                    <span>Q. {faq.q}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0 ml-4 text-[#c9922a]">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-5 pt-1 text-xs md:text-sm leading-relaxed text-slate-500 bg-slate-50/50 border-t border-slate-100">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── FINAL CALL TO ACTION ───────────────────────────── */}
+        <section style={{ backgroundColor: NAVY }} className="py-24 px-4 text-white relative overflow-hidden text-center">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800/40 via-[#0c1a33] to-[#0c1a33] pointer-events-none"></div>
+
+          <div className="max-w-3xl mx-auto relative z-10">
+            <span className="inline-block text-xs font-bold tracking-[0.25em] text-[#c9922a] uppercase mb-4">
+              Save Your Keio Medical Seat
+            </span>
+            <h2
+              className="text-2xl md:text-4xl font-extrabold mb-6 leading-tight"
+              style={{ fontFamily: "var(--font-noto-serif)" }}
+            >
+              医学部推薦枠の確定に向けて、<br className="hidden md:block" />
+              今学期の評定ギャップを埋める戦略をご提案します
+            </h2>
+            <p className="text-sm md:text-base leading-relaxed mb-10 text-slate-300 max-w-2xl mx-auto">
+              塾高・志木・女子・SFCの現在の評定平均、得意・不得意科目から逆算して、次の試験で何点必要か、現役の慶應医学生アドバイザーがその場でお答えします。強引な勧誘等は一切ございません。
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <Link
+                href="/contact?from=keio-naibu-cta"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm tracking-wide text-white transition-opacity hover:opacity-90 w-full sm:w-auto shadow-md"
+                style={{ backgroundColor: GOLD }}
+              >
+                医学部推薦合格戦略診断（80分）を申し込む
+              </Link>
+              <LineButton label="LINEで相談する" size="lg" className="!rounded-xl !py-4 !px-8 w-full sm:w-auto" />
+            </div>
+
+            <p className="text-[10px] mt-4 text-slate-400">
+              ※保護者様のみ、あるいは親子ご同席での参加も大歓迎です。オンラインまたは対面にて全国からご相談可能です。
+            </p>
+          </div>
+        </section>
       </div>
-    </div>
     </>
   );
 }

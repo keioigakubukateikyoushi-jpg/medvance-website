@@ -49,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/for/saijuken`, lastModified: forMtime("saijuken"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/parents`, lastModified: forMtime("parents"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/for/keio-naibu`, lastModified: forMtime("keio-naibu"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/for/keio-naibu-heigan`, lastModified: forMtime("keio-naibu-heigan"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/for/keio-fuzoku`, lastModified: forMtime("keio-fuzoku"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/seiseki-up`, lastModified: forMtime("seiseki-up"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/nangandai`, lastModified: forMtime("nangandai"), changeFrequency: "monthly", priority: 0.9 },

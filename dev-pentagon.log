@@ -844,3 +844,99 @@ Import trace:
     ./src/app/science/page.tsx 
 ✓ Compiled in 340ms
  GET /about?from=home-story 200 in 4.1s (next.js: 894ms, proxy.ts: 406ms, application-code: 2.8s)
+ GET /images/generated/medvance_notion_workspace_ui.png 404 in 750ms (next.js: 217ms, application-code: 534ms)
+ GET /science 200 in 1645ms (next.js: 107ms, proxy.ts: 5ms, application-code: 1533ms)
+✓ Compiled in 1639ms
+ GET /about?from=home-story 200 in 628ms (next.js: 122ms, proxy.ts: 29ms, application-code: 477ms)
+ GET /science 200 in 306ms (next.js: 150ms, proxy.ts: 16ms, application-code: 140ms)
+✓ Compiled in 707ms
+ GET /science 200 in 670ms (next.js: 262ms, proxy.ts: 38ms, application-code: 370ms)
+ GET /about?from=home-story 200 in 244ms (next.js: 18ms, proxy.ts: 11ms, application-code: 215ms)
+ GET /about?from=home-story 200 in 632ms (next.js: 7ms, proxy.ts: 4ms, application-code: 621ms)
+ GET /science 200 in 483ms (next.js: 36ms, proxy.ts: 66ms, application-code: 381ms)
+✓ Compiled in 211ms
+ GET /science 200 in 1081ms (next.js: 696ms, proxy.ts: 49ms, application-code: 336ms)
+ GET /about?from=home-story 200 in 1098ms (next.js: 125ms, proxy.ts: 47ms, application-code: 926ms)
+✓ Compiled in 315ms
+ GET /about?from=home-story 200 in 1221ms (next.js: 823ms, proxy.ts: 28ms, application-code: 370ms)
+✓ Compiled in 254ms
+ GET /science 200 in 7.8s (next.js: 104ms, proxy.ts: 73ms, application-code: 7.6s)
+ GET /science 200 in 7.4s (next.js: 5ms, proxy.ts: 10ms, application-code: 7.4s)
+ GET /science 200 in 7.1s (next.js: 611ms, proxy.ts: 19ms, application-code: 6.5s)
+ GET /science 200 in 7.1s (next.js: 941ms, proxy.ts: 18ms, application-code: 6.2s)
+ GET /about?from=home-story 200 in 7.2s (next.js: 27ms, proxy.ts: 20ms, application-code: 7.1s)
+ GET /about?from=home-story 200 in 3.9s (next.js: 213ms, proxy.ts: 716ms, application-code: 3.0s)
+ GET /about?from=home-story 200 in 2.4s (next.js: 146ms, proxy.ts: 329ms, application-code: 1958ms)
+ GET /science 200 in 817ms (next.js: 7ms, proxy.ts: 4ms, application-code: 806ms)
+ GET /about?from=home-story 200 in 233ms (next.js: 86ms, proxy.ts: 44ms, application-code: 103ms)
+✓ Compiled in 836ms
+✓ Compiled in 3.4s
+ GET /about?from=home-story 200 in 566ms (next.js: 115ms, proxy.ts: 48ms, application-code: 403ms)
+ GET /about?from=home-story 200 in 273ms (next.js: 10ms, proxy.ts: 14ms, application-code: 248ms)
+ GET /about?from=home-story 200 in 937ms (next.js: 3ms, proxy.ts: 3ms, application-code: 931ms)
+ GET /about?from=home-story 200 in 910ms (next.js: 62ms, proxy.ts: 15ms, application-code: 833ms)
+ GET /about?from=home-story 200 in 385ms (next.js: 17ms, proxy.ts: 48ms, application-code: 320ms)
+✓ Compiled in 2.3s
+ GET /about?from=home-story 200 in 353ms (next.js: 107ms, proxy.ts: 25ms, application-code: 221ms)
+✓ Compiled in 1652ms
+ GET /about?from=home-story 200 in 399ms (next.js: 148ms, proxy.ts: 21ms, application-code: 230ms)
+✓ Compiled in 1116ms
+ GET /about?from=home-story 200 in 1996ms (next.js: 315ms, proxy.ts: 23ms, application-code: 1658ms)
+ GET /about?from=home-story 200 in 1178ms (next.js: 60ms, proxy.ts: 20ms, application-code: 1098ms)
+ GET /about?from=home-story 200 in 823ms (next.js: 16ms, proxy.ts: 24ms, application-code: 783ms)
+ GET /about?from=home-story 200 in 820ms (next.js: 147ms, proxy.ts: 22ms, application-code: 651ms)
+✓ Compiled in 207ms
+ GET /about?from=home-story 200 in 736ms (next.js: 178ms, proxy.ts: 112ms, application-code: 446ms)
+ GET /about?from=home-story 200 in 194ms (next.js: 17ms, proxy.ts: 16ms, application-code: 161ms)
+✓ Compiled in 265ms
+ GET /about?from=home-story 200 in 611ms (next.js: 150ms, proxy.ts: 102ms, application-code: 360ms)
+ GET /about?from=home-story 200 in 204ms (next.js: 15ms, proxy.ts: 15ms, application-code: 174ms)
+✓ Compiled in 885ms
+ GET /about?from=home-story 200 in 1283ms (next.js: 589ms, proxy.ts: 247ms, application-code: 446ms)
+ GET /about?from=home-story 200 in 863ms (next.js: 156ms, proxy.ts: 54ms, application-code: 654ms)
+✓ Compiled in 1452ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /about?from=home-story 200 in 2.3s (next.js: 455ms, proxy.ts: 139ms, application-code: 1750ms)
+ GET /about?from=home-story 200 in 1734ms (next.js: 13ms, proxy.ts: 11ms, application-code: 1709ms)
+ GET /about?from=home-story 200 in 1650ms (next.js: 520ms, proxy.ts: 87ms, application-code: 1043ms)
+ GET /about?from=home-story 200 in 1646ms (next.js: 674ms, proxy.ts: 87ms, application-code: 884ms)
+ GET /about?from=home-story 200 in 1661ms (next.js: 273ms, proxy.ts: 53ms, application-code: 1336ms)
+ GET /about?from=home-story 200 in 1666ms (next.js: 73ms, proxy.ts: 52ms, application-code: 1541ms)
+ GET /about?from=home-story 200 in 2.8s (next.js: 17ms, proxy.ts: 27ms, application-code: 2.7s)
+ GET /about?from=home-story 200 in 4.0s (next.js: 1982ms, proxy.ts: 1777ms, application-code: 275ms)
+ GET /about?from=home-story 200 in 4.2s (next.js: 775ms, proxy.ts: 1883ms, application-code: 1565ms)
+ GET /about?from=home-story 200 in 4.1s (next.js: 1729ms, proxy.ts: 1777ms, application-code: 548ms)
+ GET /about?from=home-story 200 in 4.2s (next.js: 488ms, proxy.ts: 1883ms, application-code: 1853ms)
+ GET /about?from=home-story 200 in 4.8s (next.js: 69ms, proxy.ts: 90ms, application-code: 4.7s)
+✓ Compiled in 928ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /about?from=home-story 200 in 1995ms (next.js: 1255ms, proxy.ts: 281ms, application-code: 459ms)
+ GET /about?from=home-story 200 in 1364ms (next.js: 344ms, proxy.ts: 342ms, application-code: 679ms)
+ GET /about?from=home-story 200 in 3.5s (next.js: 294ms, proxy.ts: 282ms, application-code: 3.0s)
+✓ Compiled in 1417ms
+ GET /about?from=home-story 200 in 1014ms (next.js: 134ms, proxy.ts: 64ms, application-code: 816ms)
+ GET /about?from=home-story 200 in 655ms (next.js: 24ms, proxy.ts: 22ms, application-code: 609ms)
+ GET /about?from=home-story 200 in 450ms (next.js: 17ms, proxy.ts: 20ms, application-code: 413ms)
+ GET /about?from=home-story 200 in 452ms (next.js: 231ms, proxy.ts: 21ms, application-code: 200ms)
+ GET /about?from=home-story 200 in 832ms (next.js: 107ms, proxy.ts: 24ms, application-code: 701ms)
+ GET /about?from=home-story 200 in 494ms (next.js: 10ms, proxy.ts: 12ms, application-code: 472ms)
+ GET /about?from=home-story 200 in 331ms (next.js: 20ms, proxy.ts: 15ms, application-code: 297ms)
+ GET /about?from=home-story 200 in 547ms (next.js: 268ms, proxy.ts: 24ms, application-code: 255ms)
+✓ Compiled in 204ms
+ GET /about?from=home-story 200 in 533ms (next.js: 100ms, proxy.ts: 45ms, application-code: 388ms)
+ GET /about?from=home-story 200 in 138ms (next.js: 10ms, proxy.ts: 23ms, application-code: 104ms)
+✓ Compiled in 458ms
+✓ Compiled in 966ms
+ GET /about?from=home-story 200 in 1390ms (next.js: 193ms, proxy.ts: 78ms, application-code: 1119ms)
+ GET /about?from=home-story 200 in 942ms (next.js: 8ms, proxy.ts: 13ms, application-code: 922ms)
+ GET /about?from=home-story 200 in 852ms (next.js: 137ms, proxy.ts: 25ms, application-code: 689ms)
+ GET /about?from=home-story 200 in 860ms (next.js: 18ms, proxy.ts: 29ms, application-code: 813ms)
+ GET /about?from=home-story 200 in 849ms (next.js: 420ms, proxy.ts: 24ms, application-code: 405ms)
+ GET /about?from=home-story 200 in 856ms (next.js: 291ms, proxy.ts: 27ms, application-code: 538ms)
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /about?from=home-story 200 in 2.9s (next.js: 15ms, proxy.ts: 22ms, application-code: 2.9s)
+ GET /about?from=home-story 200 in 2.9s (next.js: 19ms, proxy.ts: 19ms, application-code: 2.9s)
+ GET /about?from=home-story 200 in 4.4s (next.js: 293ms, proxy.ts: 63ms, application-code: 4.1s)
+ GET /about?from=home-story 200 in 4.4s (next.js: 23ms, proxy.ts: 63ms, application-code: 4.3s)
+ GET /about?from=home-story 200 in 4.4s (next.js: 1326ms, proxy.ts: 23ms, application-code: 3.0s)
+ GET /about?from=home-story 200 in 4.4s (next.js: 686ms, proxy.ts: 44ms, application-code: 3.7s)
