@@ -233,7 +233,7 @@ export default function KeioFuzokuKateikyoushiPage() {
             </table>
           </div>
           <p className="text-xs mt-3 text-center" style={{ color: "#9ca3af" }}>
-            ※ 「附属校特化型」には OLAX など慶應附属校専門の家庭教師サービスを含みます。
+            ※ 「附属校特化型」には慶應附属校専門の一般的な家庭教師サービスを含みます。
           </p>
         </div>
       </div>

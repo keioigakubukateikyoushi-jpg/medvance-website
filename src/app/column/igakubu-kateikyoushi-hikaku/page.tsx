@@ -246,9 +246,9 @@ export default function IgakubuKateikyoushiHikakuPage() {
                 weak: "品質管理がされていない。トラブル時のサポートなし。コーチングなし。",
               },
               {
-                type: "慶應附属校特化型（例：OLAX）",
-                strong: "慶應附属校からの内部進学対策に特化。",
-                weak: "ターゲットが慶應附属校生のみに限定。一般受験・他大学医学部には非対応のことが多い。面接・小論文サポートが不明確。",
+                type: "慶應系列校特化型サービス",
+                strong: "慶應系列校からの内部進学推薦枠対策に特化している点。",
+                weak: "対象生徒が慶應系列生のみに限定されやすく、他大学医学部や外部一般受験の広範な対策ノウハウが薄い。模擬面接・小論文の総合対策が不明確。",
               },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>

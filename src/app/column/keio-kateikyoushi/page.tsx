@@ -169,7 +169,7 @@ export default function KeioKateikyoushiPage() {
       <div className="py-16 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-10" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-            MedvanceがOLAXなど他サービスと異なる4つの理由
+            Medvanceが他サービスと異なる4つの理由
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {whyMedvance.map((item, i) => (

@@ -22,7 +22,7 @@ export const metadata = {
     "慶應志木 医学部 推薦",
     "慶應女子 医学部 推薦",
     "慶應医学部受験 家庭教師",
-    "慶應 家庭教師 OLAX 対抗",
+    "慶應 系列校 特化 家庭教師",
     "keiomedicaltutor",
     "慶應医学部家庭教師センター"
   ],
@@ -63,10 +63,10 @@ const dualPathways = [
   }
 ];
 
-const olaxCounterPoints = [
+const competitorCounterPoints = [
   {
     title: "① 単なる「マッチング」ではなく、全員が共通の合格メソッドを共有",
-    body: "一般的な仲介サービス（OLAXなど）では、講師をアサインした後は学生講師の「個人の経験や我流の指導」に完全にブラックボックス化されます。Medvanceでは、代表（現役慶應医学部生で医学部受験「全勝合格者」）が監修した、どのレベルからでも慶應医学部に合格するための体系化された再現性ある指導メソッドを全講師が共有・実践しています。"
+    body: "一般的な仲介サービスや家庭教師センターでは、講師をアサインした後は学生講師の「個人の経験や我流の指導」に完全にブラックボックス化されます。Medvanceでは、代表（現役慶應医学部生で医学部受験「全勝合格者」）が監修した、どのレベルからでも慶應医学部に合格するための体系化された再現性ある指導メソッドを全講師が共有・実践しています。"
   },
   {
     title: "② 授業外の23時間を支配する「15分単位の計画表」と「脳科学復習モデル」",
@@ -115,7 +115,7 @@ const tableComparison = [
 
 const faqs = [
   {
-    q: "慶應医学部家庭教師センター（OLAXなど）と比べたMedvanceの最大の強みは何ですか？",
+    q: "一般的な慶應医学部家庭教師サービスと比べたMedvanceの最大の強みは何ですか？",
     a: "「指導をシステム化し、ブラックボックスを完全に排除している点」です。一般的な家庭教師マッチングでは、学生講師の個人的な裁量で教え方が左右されますが、Medvanceは全講師が「15分単位のタスク設計」「忘却曲線を制御する脳科学復習アプローチ」を徹底し、さらに「独自データベース×AI」によって日々の宿題定着度や模試結果を可視化します。また、保護者様もリアルタイムに進捗データを確認できるため、圧倒的な安心感と定着率を保証しています。"
   },
   {
@@ -166,7 +166,7 @@ export default function KeioMedicalTutorPage() {
           <div className="w-20 h-1 bg-[#c9922a] mx-auto mb-8"></div>
           
           <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-slate-300 font-medium mb-12">
-            仲介するだけの一般的な家庭教師サービス（OLAX等）に打ち勝つ、圧倒的な指導品質。<br className="hidden md:block" />
+            仲介するだけの一般的な家庭教師サービスに打ち勝つ、圧倒的な指導品質。<br className="hidden md:block" />
             「15分単位の計画表」と「独自データベース×AI」を用い、確実な評定アップと合格力を養成します。
           </p>
 
@@ -276,10 +276,10 @@ export default function KeioMedicalTutorPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
-              Outperform OLAX
+              Systematic Advantage
             </span>
             <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
-              一般的な「慶應生家庭教師仲介（OLAX等）」とMedvanceの決定的な違い
+              一般的な「慶應生家庭教師仲介サービス」とMedvanceの決定的な違い
             </h2>
             <p className="text-sm text-slate-500">
               指導の「再現性」と「管理体制」で、他サービスを圧倒します
@@ -287,7 +287,7 @@ export default function KeioMedicalTutorPage() {
           </div>
 
           <div className="space-y-8">
-            {olaxCounterPoints.map((point, idx) => (
+            {competitorCounterPoints.map((point, idx) => (
               <div 
                 key={idx} 
                 className="bg-white p-8 rounded-3xl border border-slate-200 shadow-xs hover:shadow-sm transition-shadow duration-300"
