@@ -41,6 +41,7 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
   {
     label: "サービス",
     items: [
+      { label: "医学部受験の家庭教師", href: "/igakubu-kateikyoushi", desc: "ご家庭向けの家庭教師型1対1指導" },
       { label: "オンライン指導", href: "/services/online", desc: "全国どこからでも受講" },
       { label: "訪問・対面指導", href: "/services/visit", desc: "東京・関東エリア対応" },
       { label: "医学部 合格戦略診断", href: "/contact?from=nav-service-diagnosis", desc: "国公立・私立の志望校戦略を診断" },

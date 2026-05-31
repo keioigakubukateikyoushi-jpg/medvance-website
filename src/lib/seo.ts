@@ -53,8 +53,8 @@ export function buildOrganizationSchema() {
     "@type": "EducationalOrganization",
     "@id": `${siteUrl}/#organization`,
     name: "Medvance（メドバンス）",
-    alternateName: ["メドバンス", "Medvance"],
-    description: "医学部合格に向けて、国公立・私立医学部の志望校戦略、大手予備校併用、集団塾が合わない方の1対1指導、受験校選定、週次学習管理、面接小論文、保護者共有まで一体で設計する医学部受験専門塾。全国オンライン対応。",
+    alternateName: ["メドバンス", "Medvance", "メドバンス医学部受験専門塾"],
+    description: "医学部合格に向けて、国公立・私立医学部の志望校戦略、大手予備校併用、集団塾が合わない方の完全1対1個別指導、受験校選定、15分単位の学習管理（コーチング）、面接・小論文・願書対策、保護者様への進捗共有まで一体で設計する医学部受験専門塾。現役慶應医学部生が指導を担当し、全国オンラインおよび関東圏対面派遣に対応。",
     url: siteUrl,
     logo: {
       "@type": "ImageObject",
@@ -65,11 +65,29 @@ export function buildOrganizationSchema() {
     image: `${siteUrl}/og-image.png`,
     foundingDate: "2024-04-01",
     slogan: "医学部合格に本気で向き合うご家庭の戦略伴走",
+    brand: {
+      "@type": "Brand",
+      "name": "Medvance"
+    },
+    address: {
+      "@type": "PostalAddress",
+      "postalCode": "104-0061",
+      "addressCountry": "JP",
+      "addressRegion": "東京都",
+      "addressLocality": "中央区",
+      "streetAddress": "銀座1丁目12番4号 N&E BLD.6F"
+    },
+    founder: {
+      "@type": "Person",
+      "name": "現役慶應医学部生代表"
+    },
+    priceRange: "¥80,000 - ¥320,000 / month",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
       availableLanguage: ["Japanese", "ja"],
       url: `${siteUrl}/contact`,
+      email: "support@medvance-edu.com"
     },
     areaServed: {
       "@type": "Country",
@@ -79,25 +97,73 @@ export function buildOrganizationSchema() {
       "医学部受験",
       "医学部入試",
       "私立医学部受験",
+      "国公立医学部受験",
       "大手予備校併用",
       "医学部浪人生",
       "再浪人回避",
       "医学部出願戦略",
       "医学部学習管理",
+      "医学部受験家庭教師",
       "慶應義塾大学医学部",
       "小論文対策",
       "医学部面接",
       "オンライン個別指導",
+      "15分単位の学習計画"
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "医学部受験向け個別戦略サービス",
+      name: "Medvance 料金プラン・指導コース",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "医学部 合格戦略診断" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "予備校併用 戦略伴走プログラム" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "医学部受験 個別指導" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "医学部 面接・小論文対策" } },
-      ],
+        {
+          "@type": "Offer",
+          "name": "通常月額プラン（月4回 / 週1回）",
+          "price": 80000,
+          "priceCurrency": "JPY",
+          "description": "授業料（60,000円）＋コーチング料（20,000円）の標準プラン。1コマ45分 7,500円（1回の授業は90分 = 15,000円）換算。"
+        },
+        {
+          "@type": "Offer",
+          "name": "通常月額プラン（月8回 / 週2回）",
+          "price": 140000,
+          "priceCurrency": "JPY",
+          "description": "授業料（120,000円）＋コーチング料（20,000円）の推奨プラン。1コマ45分 7,500円（1回の授業は90分 = 15,000円）換算。"
+        },
+        {
+          "@type": "Offer",
+          "name": "通常月額プラン（月12回 / 週3回）",
+          "price": 200000,
+          "priceCurrency": "JPY",
+          "description": "授業料（180,000円）＋コーチング料（20,000円）の短期集中プラン（セット割引適用価格）。1コマ45分 7,500円（1回の授業は90分 = 15,000円）換算。"
+        },
+        {
+          "@type": "Offer",
+          "name": "通常月額プラン（月16回 / 週4回）",
+          "price": 260000,
+          "priceCurrency": "JPY",
+          "description": "授業料（240,000円）＋コーチング料（20,000円）の超集中プラン（セット割引適用価格）。1コマ45分 7,500円（1回の授業は90分 = 15,000円）換算。"
+        },
+        {
+          "@type": "Offer",
+          "name": "通常月額プラン（月20回 / 週5回）",
+          "price": 320000,
+          "priceCurrency": "JPY",
+          "description": "授業料（300,000円）＋コーチング料（20,000円）の極限集中プラン（セット割引適用価格）。1コマ45分 7,500円（1回の授業は90分 = 15,000円）換算。"
+        },
+        {
+          "@type": "Offer",
+          "name": "入塾金（初回のみ）",
+          "price": 20000,
+          "priceCurrency": "JPY",
+          "description": "初回入塾時のみ発生する一回限りの費用。"
+        },
+        {
+          "@type": "Offer",
+          "name": "コーチング料（月額）",
+          "price": 20000,
+          "priceCurrency": "JPY",
+          "description": "15分単位の計画作成、毎日の学習進捗管理、LINEでの24時間質問対応、保護者様への進捗共有。"
+        }
+      ]
     },
   };
 }

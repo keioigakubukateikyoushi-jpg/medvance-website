@@ -57,6 +57,11 @@ const situationCards: AudienceCard[] = [
     href: "/for/not-group-school?from=for-hub",
   },
   {
+    title: "医学部受験の家庭教師を探す方",
+    body: "現役医学部生の1対1指導、オンライン家庭教師、訪問指導、保護者共有を比較しながら検討できます。",
+    href: "/igakubu-kateikyoushi?from=for-hub",
+  },
+  {
     title: "私立医学部受験戦略",
     body: "大学別の科目相性、出願日程、学費、面接小論文まで含めて受験校を設計します。",
     href: "/private-medical-strategy?from=for-hub",

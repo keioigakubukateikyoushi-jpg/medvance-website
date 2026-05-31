@@ -108,6 +108,27 @@ const audiencePages: SearchItem[] = [
 
 const servicePages: SearchItem[] = [
   {
+    href: "/igakubu-kateikyoushi",
+    category: "家庭教師",
+    title: "医学部受験の家庭教師",
+    description: "医学部受験の家庭教師を探しているご家庭向けに、現役慶應医学部生の完全1対1指導、週次学習管理、面接小論文、保護者共有をまとめたページです。",
+    keywords: ["医学部 家庭教師", "医学部受験 家庭教師", "医学部専門 家庭教師", "オンライン家庭教師", "訪問指導", "慶應医学部生"],
+  },
+  {
+    href: "/keio-medical-kateikyoushi",
+    category: "家庭教師",
+    title: "慶應医学部生による家庭教師型指導塾",
+    description: "慶應医学部受験に向けて、現役慶應医学部生が英数理、面接、小論文、願書まで1対1で指導するページです。",
+    keywords: ["慶應医学部 家庭教師", "慶應医学部生 家庭教師", "慶應医学部 対策", "医学部受験 家庭教師"],
+  },
+  {
+    href: "/keio-medical-tutor",
+    category: "家庭教師",
+    title: "慶應医学部受験・内部推薦特化の家庭教師",
+    description: "慶應医学部の一般受験と慶應系列校からの内部推薦対策を、家庭教師型の1対1指導で支えるページです。",
+    keywords: ["慶應医学部 家庭教師", "慶應 内部推薦 家庭教師", "塾高 医学部 推薦", "慶應系列校 家庭教師"],
+  },
+  {
     href: "/tutors",
     category: "家庭教師",
     title: "Medvance 家庭教師一覧",

@@ -32,6 +32,7 @@ const faqSchema = {
 };
 
 const relatedArticles = [
+  { href: "/igakubu-kateikyoushi", title: "医学部受験の家庭教師｜Medvanceの1対1指導", label: "相談入口" },
   { href: "/column/kateikyoushi", title: "医学部受験に家庭教師は効果的か？選び方と活用法", label: "家庭教師" },
   { href: "/column/keio-kateikyoushi", title: "慶應医学部の家庭教師｜現役慶應医学部生が1対1で指導", label: "慶應医学部" },
   { href: "/column/juku-erabi", title: "医学部受験の塾・予備校の選び方", label: "塾選び" },
@@ -285,7 +286,7 @@ export default function IgakubuKateikyoushiHikakuPage() {
             ))}
           </div>
           <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>関連記事</h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {relatedArticles.map((article) => (
               <Link key={article.href} href={article.href} className="block p-5 rounded-xl bg-white hover:shadow-md transition-shadow" style={{ border: "1px solid #e5e1d8" }}>
                 <span className="inline-block text-xs font-semibold tracking-wide px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: "#0c1a33", color: "#c9922a" }}>{article.label}</span>
