@@ -281,6 +281,50 @@ export default function Home() {
           details.glass-card-readable[open] .chevron-icon {
             transform: rotate(180deg);
           }
+          .pain-accent {
+            transform: scaleY(0.35);
+            transform-origin: center;
+            opacity: 0;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+          }
+          .pain-card:hover .pain-accent {
+            transform: scaleY(0.75);
+            opacity: 0.7;
+          }
+          details.pain-card[open] .pain-accent {
+            transform: scaleY(1);
+            opacity: 1;
+          }
+          details.pain-card[open] {
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(252,250,246,1) 100%);
+          }
+          .pain-sheen {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(115deg, transparent 35%, rgba(201,146,42,0.13) 50%, transparent 65%);
+            background-size: 250% 100%;
+            background-position: 150% 0;
+            opacity: 0;
+            pointer-events: none;
+          }
+          .pain-card:hover .pain-sheen {
+            opacity: 1;
+            animation: pain-sheen-sweep 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+          @keyframes pain-sheen-sweep {
+            from { background-position: 150% 0; }
+            to { background-position: -60% 0; }
+          }
+          @keyframes pain-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-9px); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .animate-spin-slow,
+            .pain-float-chip,
+            .pain-orbit { animation: none !important; }
+          }
           @keyframes spin-slow {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -299,13 +343,24 @@ export default function Home() {
           
           {/* Header */}
           <div className="mb-16 text-center">
-            <p className="mb-3.5 text-xs font-bold tracking-[0.2em] text-[#c9922a] uppercase">Current Struggles & Solutions</p>
-            <h2 
-              className="text-3xl md:text-[2.25rem] font-bold mb-4 tracking-tight"
+            {/* Eyebrow with flanking gold lines */}
+            <div className="mb-4 flex items-center justify-center gap-3.5">
+              <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#c9922a]/50" />
+              <p className="text-xs font-bold tracking-[0.2em] text-[#c9922a] uppercase">Current Struggles &amp; Solutions</p>
+              <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#c9922a]/50" />
+            </div>
+            <h2
+              className="text-3xl md:text-[2.25rem] font-bold mb-5 tracking-tight"
               style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)", lineHeight: "1.3" }}
             >
-              こんなお悩みありませんか？
+              こんな<span className="relative inline-block">お悩み<span aria-hidden className="absolute -bottom-1 left-0 h-[7px] w-full rounded-full bg-[#c9922a]/15" /></span>ありませんか？
             </h2>
+            {/* Ornamental divider with center diamond */}
+            <div aria-hidden className="mb-5 flex items-center justify-center gap-2.5">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#c9922a]/40" />
+              <span className="h-1.5 w-1.5 rotate-45 rounded-[1px] bg-[#c9922a]/70" />
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#c9922a]/40" />
+            </div>
             <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: "#0c1a33", opacity: 0.8 }}>
               気になるお悩みをタップすると、Medvanceならではの解決方法をご覧いただけます
             </p>
@@ -477,18 +532,29 @@ export default function Home() {
                   ? "hover:shadow-[0_12px_30px_rgba(74,144,226,0.1)]" 
                   : "hover:shadow-[0_12px_30px_rgba(201,146,42,0.1)]";
 
+                const accentColor = isLeft ? "#4a90e2" : "#c9922a";
                 return (
-                  <details 
+                  <details
                     key={item.num}
-                    className={`relative w-full rounded-[20px] border border-black/[0.04] shadow-[0_4px_16px_rgba(12,26,51,0.02)] glass-card-readable group cursor-pointer list-none select-none focus:outline-none ${hoverBorderClass} ${hoverShadowClass}`}
+                    className={`pain-card relative w-full overflow-hidden rounded-[20px] border border-black/[0.04] shadow-[0_4px_16px_rgba(12,26,51,0.02)] glass-card-readable group cursor-pointer list-none select-none focus:outline-none ${hoverBorderClass} ${hoverShadowClass}`}
                   >
-                    <summary className="flex items-center justify-between gap-4 p-4.5 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
+                    {/* Hover sheen sweep */}
+                    <span aria-hidden className="pain-sheen" />
+                    {/* Left accent bar (grows on hover / open) */}
+                    <span aria-hidden className="pain-accent absolute left-0 top-0 h-full w-[3px] rounded-r-full" style={{ background: `linear-gradient(to bottom, ${accentColor}, ${accentColor}00)` }} />
+                    {/* Watermark number */}
+                    <span aria-hidden className="pointer-events-none absolute -top-2 right-3 select-none font-serif text-[44px] font-bold leading-none text-[#0c1a33]/[0.03] group-hover:text-[#c9922a]/[0.07] transition-colors duration-500">{item.num}</span>
+
+                    <summary className="relative flex items-center justify-between gap-4 p-4.5 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
                       <div className="flex items-center gap-4">
-                        {/* Icon container */}
-                        <div className={`flex-shrink-0 w-10.5 h-10.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
-                          {getPainPointIcon(item.icon)}
+                        {/* Icon container with number badge */}
+                        <div className="relative flex-shrink-0">
+                          <div className={`w-10.5 h-10.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
+                            {getPainPointIcon(item.icon)}
+                          </div>
+                          <span className="absolute -bottom-1 -right-1 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-white px-1 font-serif text-[9px] font-bold leading-none shadow-[0_2px_5px_rgba(12,26,51,0.12)] ring-1 ring-black/[0.04]" style={{ color: accentColor }}>{item.num}</span>
                         </div>
-                        
+
                         <div>
                           <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.title}</h3>
                           <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.subtitle}</h3>
@@ -496,7 +562,7 @@ export default function Home() {
                       </div>
 
                       {/* Dynamic Chevron Arrow (Click Indicator) */}
-                      <div className="flex-shrink-0 ml-auto transition-transform duration-300 chevron-icon text-[#c9922a]/60 group-hover:text-[#c9922a]">
+                      <div className="relative flex-shrink-0 ml-auto transition-transform duration-300 chevron-icon text-[#c9922a]/60 group-hover:text-[#c9922a]">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-4 h-4">
                           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -526,25 +592,58 @@ export default function Home() {
 
                     {/* Center Column (Central Illustration with premium radial backglow and glassmorphic pedestal base) */}
                     <div className="relative w-[340px] h-[340px] flex items-center justify-center sticky top-24 select-none">
-                      
+
                       {/* Layer 1: Pulsing Deep Backglows */}
                       <div className="absolute w-[280px] h-[280px] bg-blue-100/30 rounded-full blur-[50px] pointer-events-none animate-pulse" />
                       <div className="absolute w-[320px] h-[320px] bg-amber-100/20 rounded-full blur-[70px] pointer-events-none animate-[pulse_10s_infinite]" />
-                      
+
                       {/* Layer 2: Elegant Concentric Thin Golden Orbit Rings */}
                       <div className="absolute w-[290px] h-[290px] rounded-full border border-[#c9922a]/10 pointer-events-none" />
                       <div className="absolute w-[250px] h-[250px] rounded-full border border-dashed border-[#c9922a]/5 pointer-events-none animate-spin-slow" />
-                      
-                      {/* Layer 3: Glassmorphic Pedestal Base */}
-                      <div className="absolute w-[260px] h-[260px] rounded-full border border-white/60 bg-white/40 backdrop-blur-[8px] shadow-[0_16px_48px_rgba(12,26,51,0.04),inset_0_2px_4px_rgba(255,255,255,0.6)] pointer-events-none" />
-                      
-                      {/* Layer 4: Floating Illustration with drop-shadow & mix-blend-multiply */}
-                      <img 
-                        src="/images/generated/worried_family_option3.png" 
-                        alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                        className="w-[220px] h-auto object-contain relative z-10 transition-transform duration-500 hover:scale-105 mix-blend-multiply"
-                      />
-                      
+
+                      {/* Layer 2.5: Orbiting light points travelling along the rings */}
+                      <div className="pain-orbit absolute w-[290px] h-[290px] pointer-events-none animate-[spin_26s_linear_infinite]">
+                        <span className="absolute left-1/2 -top-[3px] -translate-x-1/2 h-2 w-2 rounded-full bg-[#c9922a] shadow-[0_0_12px_rgba(201,146,42,0.85)]" />
+                      </div>
+                      <div className="pain-orbit absolute w-[250px] h-[250px] pointer-events-none animate-[spin_19s_linear_infinite_reverse]">
+                        <span className="absolute left-1/2 -top-[2px] -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-[#4a90e2] shadow-[0_0_10px_rgba(74,144,226,0.75)]" />
+                      </div>
+
+                      {/* Layer 3+4: Circular medallion framing the illustration (eliminates the square edge) */}
+                      <div
+                        className="group/medallion relative z-10 w-[252px] h-[252px] rounded-full overflow-hidden border border-white/70 shadow-[0_22px_55px_rgba(12,26,51,0.12),inset_0_2px_6px_rgba(255,255,255,0.85)]"
+                        style={{ background: "radial-gradient(circle at 50% 36%, #ffffff 0%, #fbfaf6 68%, #f3f0e8 100%)" }}
+                      >
+                        <img
+                          src="/images/generated/worried_family_option3.png"
+                          alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
+                          className="absolute inset-0 h-full w-full object-cover object-center scale-[1.04] mix-blend-multiply transition-transform duration-700 group-hover/medallion:scale-[1.1]"
+                        />
+                        {/* Soft inner vignette so the artwork melts into the frame */}
+                        <span aria-hidden className="pointer-events-none absolute inset-0 rounded-full" style={{ boxShadow: "inset 0 -26px 44px -22px rgba(12,26,51,0.14), inset 0 14px 30px -20px rgba(255,255,255,0.9)" }} />
+                        {/* Delicate gold inner ring */}
+                        <span aria-hidden className="pointer-events-none absolute inset-[7px] rounded-full ring-1 ring-[#c9922a]/20" />
+                        {/* Top sheen highlight */}
+                        <span aria-hidden className="pointer-events-none absolute -top-6 left-1/2 h-24 w-40 -translate-x-1/2 rounded-full bg-white/40 blur-2xl" />
+                      </div>
+
+                      {/* Layer 5: Floating glassmorphic stat-chips */}
+                      {[
+                        { label: "慶應医学部生講師", dot: "#4a90e2", pos: "top-1 left-0", delay: "0s" },
+                        { label: "完全1対1", dot: "#c9922a", pos: "top-12 right-0", delay: "1.1s" },
+                        { label: "毎日の進捗管理", dot: "#4a90e2", pos: "bottom-12 left-0", delay: "0.6s" },
+                        { label: "合格から逆算", dot: "#c9922a", pos: "bottom-2 right-2", delay: "1.6s" },
+                      ].map((chip) => (
+                        <div
+                          key={chip.label}
+                          className={`pain-float-chip absolute z-20 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/85 px-3 py-1.5 shadow-[0_10px_28px_rgba(12,26,51,0.12)] backdrop-blur-md ${chip.pos}`}
+                          style={{ animation: `pain-float 6s ease-in-out infinite`, animationDelay: chip.delay }}
+                        >
+                          <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: chip.dot }} />
+                          <span className="whitespace-nowrap text-[10.5px] font-bold text-[#0c1a33]">{chip.label}</span>
+                        </div>
+                      ))}
+
                     </div>
 
                     {/* Right Column (06 to 10) */}
@@ -558,20 +657,39 @@ export default function Home() {
                   <div className="lg:hidden flex flex-col items-center gap-8">
                     
                     {/* Central Illustration for Mobile with pedestal framing */}
-                    <div className="relative flex items-center justify-center p-6">
+                    <div className="relative flex items-center justify-center p-8">
                       {/* Backglow */}
                       <div className="absolute w-[200px] h-[200px] bg-blue-100/30 rounded-full blur-2xl animate-pulse pointer-events-none" />
                       <div className="absolute w-[180px] h-[180px] rounded-full border border-[#c9922a]/10 pointer-events-none" />
-                      
-                      {/* Pedestal */}
-                      <div className="absolute w-[170px] h-[170px] rounded-full border border-white bg-white/50 backdrop-blur-sm shadow-md pointer-events-none" />
-                      
-                      {/* Image with mix-blend-multiply */}
-                      <img 
-                        src="/images/generated/worried_family_option3.png" 
-                        alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                        className="w-[140px] h-auto object-contain relative z-10 mix-blend-multiply"
-                      />
+
+                      {/* Orbiting light point */}
+                      <div className="pain-orbit absolute w-[180px] h-[180px] pointer-events-none animate-[spin_22s_linear_infinite]">
+                        <span className="absolute left-1/2 -top-[2px] -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-[#c9922a] shadow-[0_0_10px_rgba(201,146,42,0.8)]" />
+                      </div>
+
+                      {/* Circular medallion (eliminates the square edge) */}
+                      <div
+                        className="relative z-10 w-[166px] h-[166px] rounded-full overflow-hidden border border-white/70 shadow-[0_18px_44px_rgba(12,26,51,0.12),inset_0_2px_5px_rgba(255,255,255,0.85)]"
+                        style={{ background: "radial-gradient(circle at 50% 36%, #ffffff 0%, #fbfaf6 68%, #f3f0e8 100%)" }}
+                      >
+                        <img
+                          src="/images/generated/worried_family_option3.png"
+                          alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
+                          className="absolute inset-0 h-full w-full object-cover object-center scale-[1.04] mix-blend-multiply"
+                        />
+                        <span aria-hidden className="pointer-events-none absolute inset-0 rounded-full" style={{ boxShadow: "inset 0 -20px 34px -18px rgba(12,26,51,0.14)" }} />
+                        <span aria-hidden className="pointer-events-none absolute inset-[6px] rounded-full ring-1 ring-[#c9922a]/20" />
+                      </div>
+
+                      {/* Floating glass chips */}
+                      <div className="pain-float-chip absolute top-2 left-0 z-20 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/85 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.12)] backdrop-blur-md" style={{ animation: "pain-float 6s ease-in-out infinite" }}>
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#4a90e2]" />
+                        <span className="whitespace-nowrap text-[10px] font-bold text-[#0c1a33]">慶應医学部生講師</span>
+                      </div>
+                      <div className="pain-float-chip absolute bottom-2 right-0 z-20 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/85 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.12)] backdrop-blur-md" style={{ animation: "pain-float 6s ease-in-out infinite", animationDelay: "1.2s" }}>
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#c9922a]" />
+                        <span className="whitespace-nowrap text-[10px] font-bold text-[#0c1a33]">完全1対1</span>
+                      </div>
                     </div>
 
                     {/* Clean 2-column or 1-column list */}
@@ -581,15 +699,22 @@ export default function Home() {
                         const iconBg = isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
                         const hoverBorder = isLeft ? "hover:border-blue-200" : "hover:border-amber-200";
                         const hoverShadowClass = isLeft ? "hover:shadow-[0_12px_30px_rgba(74,144,226,0.06)]" : "hover:shadow-[0_12px_30px_rgba(201,146,42,0.06)]";
+                        const accentColor = isLeft ? "#4a90e2" : "#c9922a";
                         return (
-                          <details 
-                            key={item.num} 
-                            className={`relative w-full rounded-[22px] border border-black/[0.04] shadow-sm text-left glass-card-readable transition-all duration-300 focus:outline-none list-none select-none ${hoverBorder} ${hoverShadowClass}`}
+                          <details
+                            key={item.num}
+                            className={`pain-card relative w-full overflow-hidden rounded-[22px] border border-black/[0.04] shadow-sm text-left glass-card-readable transition-all duration-300 focus:outline-none list-none select-none ${hoverBorder} ${hoverShadowClass}`}
                           >
-                            <summary className="flex items-center justify-between gap-3.5 p-4 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
+                            <span aria-hidden className="pain-sheen" />
+                            <span aria-hidden className="pain-accent absolute left-0 top-0 h-full w-[3px] rounded-r-full" style={{ background: `linear-gradient(to bottom, ${accentColor}, ${accentColor}00)` }} />
+                            <span aria-hidden className="pointer-events-none absolute -top-1.5 right-3 select-none font-serif text-[40px] font-bold leading-none text-[#0c1a33]/[0.03]">{item.num}</span>
+                            <summary className="relative flex items-center justify-between gap-3.5 p-4 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
                               <div className="flex items-center gap-3.5">
-                                <div className={`flex-shrink-0 w-9.5 h-9.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
-                                  {getPainPointIcon(item.icon)}
+                                <div className="relative flex-shrink-0">
+                                  <div className={`w-9.5 h-9.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
+                                    {getPainPointIcon(item.icon)}
+                                  </div>
+                                  <span className="absolute -bottom-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-white px-1 font-serif text-[8.5px] font-bold leading-none shadow-[0_2px_5px_rgba(12,26,51,0.12)] ring-1 ring-black/[0.04]" style={{ color: accentColor }}>{item.num}</span>
                                 </div>
                                 <div className="text-left">
                                   <h3 className="font-bold text-[13.5px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.mobileText}</h3>
