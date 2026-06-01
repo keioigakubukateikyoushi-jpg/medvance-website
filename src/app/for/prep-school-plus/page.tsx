@@ -266,12 +266,13 @@ export default function PrepSchoolPlusPage() {
       </section>
 
       {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
-      <section className="bg-white px-4 py-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+      <section className="bg-white px-4 py-12">
+        <div className="mx-auto max-w-4xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+          <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
           <img 
-            src="/images/generated/prep_school_supplement.png" 
+            src="/images/generated/japanese_yobiko_active_discussion.png" 
             alt="大手予備校の教材を使いながらプロ講師とマンツーマンで復習計画を立てる医学部受験生" 
-            className="w-full h-auto object-cover max-h-[400px]"
+            className="w-full h-auto object-cover max-h-[450px] transition-transform duration-700 group-hover:scale-[1.03]"
           />
         </div>
       </section>

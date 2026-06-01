@@ -36,7 +36,7 @@ export default function TutorProfiles() {
             >
               {t.photoUrl ? (
                 <div
-                  className="w-20 h-20 rounded-full overflow-hidden mb-4"
+                  className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-white shadow-[0_4px_12px_rgba(12,26,51,0.08)] ring-2 ring-[#c9922a]/30 transition-transform duration-300 group-hover:scale-105"
                   style={{ backgroundColor: "#e5e1d8" }}
                 >
                   <Image

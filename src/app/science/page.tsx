@@ -189,6 +189,37 @@ export default function SciencePage() {
         </div>
       </section>
 
+      {/* ── Academic Excellence & Lab Rigor Section ── */}
+      <section className="py-24 px-4 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+            <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+              <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
+              <Image
+                src="/images/generated/japanese_student_science_rigor.png"
+                alt="顕微鏡を覗き込みながら論理的思考を深める医学部受験生"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-cover max-h-[380px] transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+            </div>
+            <div>
+              <span className="text-xs font-semibold tracking-widest uppercase mb-3 block" style={{ color: GOLD }}>
+                Deep Academic Rigor
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+                理科・医学部入試で圧倒的差をつける「思考の深さ」
+              </h2>
+              <p className="text-sm text-slate-500 leading-relaxed mb-6">
+                医学部受験の生物・化学・物理は、単なる暗記だけでは通用しない「実験考察問題」が頻出します。
+                Medvanceでは、現役の医学部生講師が「なぜその実験手順を踏むのか」「得られたデータから何を論理的に帰結できるか」という、学問の本質に迫る指導を行います。
+                これにより、初見の難問に対しても揺るがない「強固な応用力」を育みます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── 5. FINAL CALL TO ACTION ───────────────────────────── */}
       <section style={{ backgroundColor: NAVY }} className="py-24 px-4 text-white relative overflow-hidden text-center">
         {/* Dynamic decorative circles */}

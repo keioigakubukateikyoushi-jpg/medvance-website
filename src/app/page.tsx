@@ -818,7 +818,7 @@ export default function Home() {
               </p>
             </div>
           </FadeIn>
-          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
+          <div className="grid lg:grid-cols-[1.1fr_1fr_0.9fr] gap-6">
             <FadeIn>
               <div className="rounded-2xl bg-white p-7 md:p-8 h-full" style={{ border: "1px solid #e5e1d8" }}>
                 <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>こんな受験生へ</p>
@@ -887,6 +887,19 @@ export default function Home() {
                 <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.42)" }}>
                   入会を前提にした営業は行いません。相談のみで終わって問題ありません。
                 </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.16}>
+              <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 h-full min-h-[320px] group flex items-center justify-center bg-white">
+                <div className="absolute inset-0 bg-blue-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
+                <Image
+                  src="/images/generated/japanese_student_focus_bright.png"
+                  alt="真剣かつ明るい表情で医学部受験の勉強に取り組む受験生"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                />
               </div>
             </FadeIn>
           </div>
@@ -1586,13 +1599,14 @@ export default function Home() {
       <section className="px-4 py-20" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <FadeIn>
-            <div className="overflow-hidden rounded-lg" style={{ border: "1px solid #e5e1d8" }}>
+            <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+              <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
               <Image
-                src="/images/generated/medvance-strategy-session.webp"
-                alt="医学部受験の志望校と学習計画を整理する面談イメージ"
+                src="/images/generated/japanese_parents_consultation_smiling.png"
+                alt="医学部受験の志望校と学習計画を整理する親子の相談会"
                 width={1600}
-                height={900}
-                className="h-auto w-full"
+                height={1066}
+                className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </div>
           </FadeIn>

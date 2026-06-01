@@ -155,17 +155,19 @@ export default function AboutPage() {
               </div>
             </div>
             <figure className="mx-auto mt-8 max-w-[300px] md:mx-0 md:mt-0 md:max-w-none">
-              <div className="overflow-hidden rounded-xl shadow-sm" style={{ border: "1px solid #e5e1d8" }}>
+              <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+                <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
                 <Image
                   src="/images/founder.webp"
                   alt="Medvance代表（慶應義塾大学医学部 在籍）"
                   width={640}
                   height={800}
-                  className="h-auto w-full"
+                  className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
-              <figcaption className="mt-2 text-center text-xs md:text-left" style={{ color: "#6b7280" }}>
-                Medvance代表／慶應義塾大学医学部 在籍
+              <figcaption className="mt-4 text-center text-xs md:text-left" style={{ color: "#6b7280" }}>
+                <span className="text-[11px] font-bold tracking-wider" style={{ color: "#c9922a" }}>MEDVANCE 代表</span>
+                <span className="block mt-0.5 font-bold animate-pulse" style={{ color: "#0c1a33" }}>慶應義塾大学医学部 在籍</span>
               </figcaption>
             </figure>
           </div>
@@ -248,6 +250,26 @@ export default function AboutPage() {
       </div>
 
       <TutorProfiles />
+
+      {/* Inspirational Academic Image Banner */}
+      <div className="py-6 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+            <div className="absolute inset-0 bg-amber-100/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
+            <Image
+              src="/images/generated/japanese_student_library_bright.png"
+              alt="光溢れるモダンな医学部図書館で勉学に励む学生"
+              width={1600}
+              height={900}
+              className="w-full h-[320px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white text-left z-20">
+              <p className="text-xs font-bold tracking-widest text-[#c9922a] uppercase mb-1">Aspirational Environment</p>
+              <h3 className="text-lg md:text-xl font-bold" style={{ fontFamily: "var(--font-noto-serif)" }}>知性を磨き、医学の未来を切り拓く場所</h3>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* 脳科学エビデンスに基づく学習メソッド */}
       <ScientificMethod />

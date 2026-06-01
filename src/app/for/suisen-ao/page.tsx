@@ -131,22 +131,21 @@ export default function SuisenAoPage() {
       {/* Visual Section (Mock Interview Practice) */}
       <div className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="overflow-hidden rounded-2xl border bg-[#0c1a33] p-1" style={{ borderColor: "#c9922a" }}>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                src="/images/generated/medical_interview_japanese.png"
-                alt="面接対策で面接官からの質問に論理的かつ説得力を持って答える練習風景"
-                width={1600}
-                height={900}
-                className="w-full h-auto object-cover max-h-[450px] opacity-95 transition-opacity hover:opacity-100"
-              />
-            </div>
-            <div className="p-5 text-center bg-white">
+          <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 bg-white group">
+            <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
+            <Image
+              src="/images/generated/japanese_medical_interview_practice.png"
+              alt="面接対策で面接官からの質問に論理的かつ説得力を持って答える練習風景"
+              width={1600}
+              height={1066}
+              className="w-full h-auto object-cover max-h-[450px] transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+            <div className="p-6 text-center bg-white border-t border-slate-100 relative z-20">
               <h3 className="font-bold text-lg mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
                 現役医学部生の面接官と対峙する、超実践的な模擬面接演習
               </h3>
               <p className="text-sm leading-relaxed max-w-2xl mx-auto" style={{ color: "#5f6b7a" }}>
-                書類選考を通過した受験生に課される「面接・小論文」。Medvanceでは、本番さながらの張り詰めた空気感のなかで模擬面接を実施し、受け答えの論理構成から視線・姿勢にいたるまでプロ視点で徹底的にフィードバックを重ねます。
+                書類選考を通過した受験生に課される「面接・小論文」。Medvanceでは、本番さながらの姿勢や話し方、受け答えの論理構成から視線にいたるまで、合格実績のあるプロ視点で徹底的にフィードバックを重ねます。
               </p>
             </div>
           </div>

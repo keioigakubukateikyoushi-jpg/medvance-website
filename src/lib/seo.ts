@@ -65,6 +65,11 @@ export function buildOrganizationSchema() {
     image: `${siteUrl}/og-image.png`,
     foundingDate: "2024-04-01",
     slogan: "医学部合格に本気で向き合うご家庭の戦略伴走",
+    knowsLanguage: ["ja", "ja-JP"],
+    sameAs: [
+      "https://note.com/igakubu_juken",
+      "https://lin.ee/Wwn1jaL",
+    ],
     brand: {
       "@type": "Brand",
       "name": "Medvance"
@@ -89,10 +94,11 @@ export function buildOrganizationSchema() {
       url: `${siteUrl}/contact`,
       email: "support@medvance-edu.com"
     },
-    areaServed: {
-      "@type": "Country",
-      name: "Japan",
-    },
+    areaServed: [
+      { "@type": "Country", name: "Japan" },
+      { "@type": "AdministrativeArea", name: "東京都" },
+      { "@type": "AdministrativeArea", name: "関東地方" },
+    ],
     knowsAbout: [
       "医学部受験",
       "医学部入試",
@@ -108,7 +114,12 @@ export function buildOrganizationSchema() {
       "小論文対策",
       "医学部面接",
       "オンライン個別指導",
-      "15分単位の学習計画"
+      "15分単位の学習計画",
+      "附属校・中高一貫校の内部生サポート",
+      "定期テスト対策・評定（GPA）向上",
+      "留年回避・進級サポート",
+      "慶應附属校の内部進学対策",
+      "対面・家庭教師型指導（東京）"
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",

@@ -275,13 +275,14 @@ export default function IgakubuKateikyoushiPage() {
               医学部受験では、何を習うかと同じくらい、どの順番で、どの大学に向けて、どの頻度で復習するかが重要です。
               Medvanceは家庭教師の個別性に、受験戦略と学習管理を組み合わせます。
             </p>
-            <div className="overflow-hidden rounded-lg" style={{ border: "1px solid #e5e1d8" }}>
+            <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+              <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
               <Image
-                src="/images/generated/medvance-tutor-team.webp"
-                alt="Medvanceの医学部受験家庭教師チーム"
+                src="/images/generated/japanese_online_coaching_session.png"
+                alt="iPadによるオンライン・対面ハイブリッド指導のイメージ"
                 width={1600}
-                height={900}
-                className="h-auto w-full"
+                height={1066}
+                className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </div>
           </div>

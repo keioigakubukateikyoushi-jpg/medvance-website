@@ -27,7 +27,74 @@ export type Tutor = {
   featuredScore?: number;
 };
 
-export const tutors: Tutor[] = [];
+export const tutors: Tutor[] = [
+  {
+    slug: "tutor-a",
+    name: "Aさん",
+    role: "慶應義塾大学医学部 3年（代表・英語科）",
+    university: "慶應義塾大学",
+    faculty: "医学部",
+    grade: "3年",
+    background: "私立最難関の慶應医学部に塾なし・特待で合格。無駄な暗記を徹底的に排除したロジカルな英語読解指導と学習進捗管理で、数々の生徒を偏差値50台から慶医合格ラインへ引き上げました。",
+    specialties: ["英語", "小論文", "学習管理"],
+    message: "無駄な学習時間は1秒も必要ありません。正しい戦略で最短距離で合格を掴み取りましょう！",
+    photoUrl: "/images/generated/japanese_tutor_smiling_bright.png",
+    status: "approved",
+    areas: ["オンライン", "東京都", "全国"],
+    subjects: ["英語", "面接", "小論文"],
+    formats: ["online", "visit"],
+    regularRateYen: 7500,
+    trialRateYen: 5000,
+    lessonCount: 28,
+    verifiedAt: "2026-04-01",
+    joinedAt: "2026-03-01",
+    updatedAt: "2026-05-30"
+  },
+  {
+    slug: "tutor-b",
+    name: "Bさん",
+    role: "慶應義塾大学医学部 2年（代表・数学・物理科）",
+    university: "慶應義塾大学",
+    faculty: "医学部",
+    grade: "2年",
+    background: "私立医学部（慶應・慈恵・順天堂）全勝合格。圧倒的な過去問・問題分析力と、「なぜその解法になるか」を脳科学的に定着させる1対1の対話型指導に圧倒的な評価があります。",
+    specialties: ["数学", "物理", "化学"],
+    message: "難問もすべて基本の積み重ねです。答えの丸暗記ではなく、解法を見抜くロジックを磨きましょう。",
+    photoUrl: "/images/generated/japanese_yobiko_active_discussion.png",
+    status: "approved",
+    areas: ["オンライン", "東京都", "全国"],
+    subjects: ["数学", "物理", "化学"],
+    formats: ["online", "visit"],
+    regularRateYen: 7500,
+    trialRateYen: 5000,
+    lessonCount: 15,
+    verifiedAt: "2026-04-10",
+    joinedAt: "2026-03-15",
+    updatedAt: "2026-05-28"
+  },
+  {
+    slug: "tutor-c",
+    name: "Cさん",
+    role: "東京医科歯科大学医学部 3年（理科科目担当）",
+    university: "東京医科歯科大学",
+    faculty: "医学部",
+    grade: "3年",
+    background: "地方の公立高校から国公立医学部（医科歯科）に塾なし現役合格。限られた参考書と無駄のない復習サイクルで培った「独学でも勝てる生物・化学の勉強法」を指導します。",
+    specialties: ["生物", "化学", "推薦・AO"],
+    message: "置かれた環境のせいにする必要はありません。正しいアプローチで医学部合格は必ず引き寄せられます。",
+    photoUrl: "/images/generated/japanese_student_cheerful_success.png",
+    status: "approved",
+    areas: ["オンライン", "全国"],
+    subjects: ["化学", "生物", "推薦・AO"],
+    formats: ["online"],
+    regularRateYen: 7500,
+    trialRateYen: 5000,
+    lessonCount: 19,
+    verifiedAt: "2026-04-15",
+    joinedAt: "2026-03-20",
+    updatedAt: "2026-05-29"
+  }
+];
 
 export const tutorAreas = [
   "オンライン",
