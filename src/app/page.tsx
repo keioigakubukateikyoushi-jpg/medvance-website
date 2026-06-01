@@ -453,7 +453,7 @@ export default function Home() {
                   solution: "週間・月間の学習進捗レポートを保護者様へ共有。客観的なデータと進度をもとに、今どの位置にいて合格まで何が足りないかを常にクリアに可視化します。"
                 },
                 {
-                  title: "変化 of 激しい医学部受験の",
+                  title: "変化の激しい医学部受験の",
                   subtitle: "最新情報やトレンドを知りたい",
                   mobileText: "医学部受験の最新情報を知りたい",
                   icon: "info",
@@ -469,9 +469,6 @@ export default function Home() {
                   solution: "最高峰の慶應医学部生講師、24時間のオンライン質問対応、日々の自学自習管理など、合格に必要なすべてのリソースを完備。私たちは「本気で合格したい」生徒と保護者様に全力でコミットします。"
                 },
               ];
-
-              // Correct typo in Japanese text dynamically
-              rightPainPoints[3].title = "変化の激しい医学部受験の";
 
               const renderCard = (item: any, isLeft: boolean) => {
                 const iconBg = isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
@@ -541,11 +538,11 @@ export default function Home() {
                       {/* Layer 3: Glassmorphic Pedestal Base */}
                       <div className="absolute w-[260px] h-[260px] rounded-full border border-white/60 bg-white/40 backdrop-blur-[8px] shadow-[0_16px_48px_rgba(12,26,51,0.04),inset_0_2px_4px_rgba(255,255,255,0.6)] pointer-events-none" />
                       
-                      {/* Layer 4: Floating Illustration with drop-shadow */}
+                      {/* Layer 4: Floating Illustration with drop-shadow & mix-blend-multiply */}
                       <img 
                         src="/images/generated/worried_family_option3.png" 
                         alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                        className="w-[220px] h-auto object-contain relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(12,26,51,0.12)]"
+                        className="w-[220px] h-auto object-contain relative z-10 transition-transform duration-500 hover:scale-105 mix-blend-multiply"
                       />
                       
                     </div>
@@ -569,11 +566,11 @@ export default function Home() {
                       {/* Pedestal */}
                       <div className="absolute w-[170px] h-[170px] rounded-full border border-white bg-white/50 backdrop-blur-sm shadow-md pointer-events-none" />
                       
-                      {/* Image */}
+                      {/* Image with mix-blend-multiply */}
                       <img 
                         src="/images/generated/worried_family_option3.png" 
                         alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                        className="w-[140px] h-auto object-contain relative z-10 filter drop-shadow-[0_8px_16px_rgba(12,26,51,0.08)]"
+                        className="w-[140px] h-auto object-contain relative z-10 mix-blend-multiply"
                       />
                     </div>
 
