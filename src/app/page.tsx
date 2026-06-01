@@ -279,7 +279,7 @@ export default function Home() {
               {/* Central Illustration */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[340px] h-[340px] flex items-center justify-center">
                 <img 
-                  src="/images/generated/japanese_family_thinking.png" 
+                  src="/images/generated/worried_family_option3.png" 
                   alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
                   className="w-full h-auto object-contain scale-[1.05]"
                 />
@@ -366,7 +366,7 @@ export default function Home() {
               {/* Centered Illustration */}
               <div className="w-[200px] h-[200px] flex items-center justify-center p-2 bg-white rounded-full border shadow-md">
                 <img 
-                  src="/images/generated/japanese_family_thinking.png" 
+                  src="/images/generated/worried_family_option3.png" 
                   alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
                   className="w-full h-auto object-contain"
                 />
