@@ -251,7 +251,7 @@ export default function Home() {
       {/* ── 2.1 PAIN POINTS SECTION (🤖 CUTE FRIENDLY FAMILY LINE ART COMPONENT) ── */}
       <section className="relative overflow-hidden bg-[#faf9f6] py-24 px-4 border-b" style={{ borderColor: "#e5e1d8" }}>
         
-        {/* Custom CSS Style Injection for smooth premium hover effects */}
+        {/* Custom CSS Style Injection for smooth details/summary premium transitions */}
         <style dangerouslySetInnerHTML={{ __html: `
           .glass-card-readable {
             background: rgba(255, 255, 255, 0.85);
@@ -261,7 +261,25 @@ export default function Home() {
           }
           .glass-card-readable:hover {
             background: rgba(255, 255, 255, 1);
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-2px);
+            border-color: rgba(201, 146, 42, 0.3);
+          }
+          details.glass-card-readable[open] {
+            background: rgba(255, 255, 255, 1);
+            border-color: rgba(201, 146, 42, 0.4);
+            box-shadow: 0 16px 36px rgba(201, 146, 42, 0.08);
+          }
+          details.glass-card-readable summary::-webkit-details-marker {
+            display: none;
+          }
+          details.glass-card-readable summary {
+            list-style: none;
+          }
+          .chevron-icon {
+            transition: transform 0.3s ease;
+          }
+          details.glass-card-readable[open] .chevron-icon {
+            transform: rotate(180deg);
           }
         `}} />
 
@@ -274,7 +292,7 @@ export default function Home() {
           
           {/* Header */}
           <div className="mb-16 text-center">
-            <p className="mb-3.5 text-xs font-bold tracking-[0.2em] text-[#c9922a] uppercase">Current Struggles</p>
+            <p className="mb-3.5 text-xs font-bold tracking-[0.2em] text-[#c9922a] uppercase">Current Struggles & Solutions</p>
             <h2 
               className="text-3xl md:text-[2.25rem] font-bold mb-4 tracking-tight"
               style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)", lineHeight: "1.3" }}
@@ -282,7 +300,7 @@ export default function Home() {
               こんなお悩みありませんか？
             </h2>
             <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: "#0c1a33", opacity: 0.8 }}>
-              勉強のプロフェッショナルが、お子様の日々の勉強に寄り添います
+              気になるお悩みをタップすると、Medvanceならではの解決方法をご覧いただけます
             </p>
           </div>
 
@@ -366,6 +384,7 @@ export default function Home() {
                   mobileText: "このままの勉強方法で医学部に行けるの？",
                   icon: "help",
                   num: "01",
+                  solution: "現状の学力をAI模試判定で科学的に分析し、慶應医学部生講師が「合格から逆算した専用ロードマップ」を作成。日々の進捗を毎日見直し、学習の無駄を完全に排除します。"
                 },
                 {
                   title: "大人数の集団塾の指導は",
@@ -373,6 +392,7 @@ export default function Home() {
                   mobileText: "集団塾の勉強方法は自分に合っていない",
                   icon: "x-circle",
                   num: "02",
+                  solution: "完全1対1の完全個別カリキュラムを採用。生徒の理解度に合わせて進度や難易度をリアルタイムで微調整し、授業時間を100%密度の濃いものにします。"
                 },
                 {
                   title: "塾・家庭教師の授業外の",
@@ -380,6 +400,7 @@ export default function Home() {
                   mobileText: "塾・家庭教師の授業外の学習を管理してほしい",
                   icon: "clipboard",
                   num: "03",
+                  solution: "授業外の「毎日の自学自習スケジュール」を時間単位で徹底管理。毎日オンラインでの学習報告義務を設け、サボれない・継続できる完璧な学習環境を構築します。"
                 },
                 {
                   title: "医学部に行きたいけれど",
@@ -387,6 +408,7 @@ export default function Home() {
                   mobileText: "医学部に行きたいけれどこのままでは不安",
                   icon: "alert",
                   num: "04",
+                  solution: "合格体験を持つ現役慶應医学部生が伴走し、メンタル面も強力にサポート。「今日何をすべきか」が明確になるため、迷いや不安が一切消え去ります。"
                 },
                 {
                   title: "面接や小論文の対策も",
@@ -394,6 +416,7 @@ export default function Home() {
                   mobileText: "面接小論文対策もしっかり行いたい",
                   icon: "document",
                   num: "05",
+                  solution: "推薦・AO入試や二次試験で必須となる面接・小論文について、早期から専門対策を用意。プロ講師による徹底した添削指導で、表現力と説得力を極限まで高めます。"
                 },
               ];
 
@@ -404,6 +427,7 @@ export default function Home() {
                   mobileText: "医学部に合格する方法を知っている講師に教えてもらいたい",
                   icon: "academic",
                   num: "06",
+                  solution: "最難関を自力で突破した「現役慶應医学部生」のみが指導。彼らが実際に使った参考書、解き方のコツ、合格するためのリアルな思考プロセスをダイレクトに伝授します。"
                 },
                 {
                   title: "お子様の弱点や得意に",
@@ -411,6 +435,7 @@ export default function Home() {
                   mobileText: "お子さんの弱点・得意に焦点を当てた戦略は？",
                   icon: "target",
                   num: "07",
+                  solution: "画一的なカリキュラムは一切排除。生徒の得意・不得意科目の単元レベルのバランスを分析し、合格最低点を最も効率的に超えるための「オーダーメイド戦略」を設計します。"
                 },
                 {
                   title: "今のカリキュラムで効率的に",
@@ -418,6 +443,7 @@ export default function Home() {
                   mobileText: "効率的に合格に進めているの？",
                   icon: "trend",
                   num: "08",
+                  solution: "週間・月間の学習進捗レポートを保護者様へも共有。客観的なデータと進度をもとに、今どの位置にいて合格まで何が足りないかを常にクリアに可視化します。"
                 },
                 {
                   title: "変化の激しい医学部受験の",
@@ -425,6 +451,7 @@ export default function Home() {
                   mobileText: "医学部受験の最新情報を知りたい",
                   icon: "info",
                   num: "09",
+                  solution: "私立・国公立それぞれの最新の出題傾向、配点変更、新設枠などのデータをリアルタイムで収集・分析。併願校選びや出願時期まで、情報戦でも圧倒的優位に立ちます。"
                 },
                 {
                   title: "妥協することなく",
@@ -432,6 +459,7 @@ export default function Home() {
                   mobileText: "絶対に医学部に合格したい",
                   icon: "fire",
                   num: "10",
+                  solution: "私たちは「本気で合格したい」生徒を決して見捨てません。最高峰の指導陣、24時間対応の質問環境、個別指導など、合格に必要なすべてのリソースを揃えて全力でコミットします。"
                 },
               ];
 
@@ -443,34 +471,46 @@ export default function Home() {
                   : "hover:shadow-[0_12px_30px_rgba(201,146,42,0.1)]";
 
                 return (
-                  <div 
+                  <details 
                     key={item.num}
-                    className={`relative w-full p-4.5 rounded-[20px] border border-black/[0.04] shadow-[0_4px_16px_rgba(12,26,51,0.02)] glass-card-readable group ${hoverBorderClass} ${hoverShadowClass}`}
+                    className={`relative w-full rounded-[20px] border border-black/[0.04] shadow-[0_4px_16px_rgba(12,26,51,0.02)] glass-card-readable group cursor-pointer list-none select-none focus:outline-none ${hoverBorderClass} ${hoverShadowClass}`}
                   >
-                    {/* Golden Serif Number Badge */}
-                    <span className="absolute top-3 right-4.5 text-[10px] font-bold tracking-widest text-[#c9922a]/20 group-hover:text-[#c9922a]/70 transition-colors duration-300 font-serif">
-                      {item.num}
-                    </span>
-
-                    <div className="flex items-center gap-4">
-                      {/* Icon container */}
-                      <div className={`flex-shrink-0 w-10.5 h-10.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
-                        {getPainPointIcon(item.icon)}
+                    <summary className="flex items-center justify-between gap-4 p-4.5 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
+                      <div className="flex items-center gap-4">
+                        {/* Icon container */}
+                        <div className={`flex-shrink-0 w-10.5 h-10.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
+                          {getPainPointIcon(item.icon)}
+                        </div>
+                        
+                        <div>
+                          <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.title}</h3>
+                          <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.subtitle}</h3>
+                        </div>
                       </div>
-                      
-                      <div>
-                        <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.title}</h3>
-                        <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.subtitle}</h3>
+
+                      {/* Dynamic Chevron Arrow (Click Indicator) */}
+                      <div className="flex-shrink-0 ml-auto transition-transform duration-300 chevron-icon text-[#c9922a]/60 group-hover:text-[#c9922a]">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-4 h-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                      </div>
+                    </summary>
+
+                    {/* Solution Content Pane */}
+                    <div className="px-4.5 pb-4.5 pt-0">
+                      <div className="border-t border-[#c9922a]/10 pt-3.5 mt-0.5 text-[12.5px] leading-relaxed text-[#5f6b7a] relative pl-6">
+                        <span className="absolute left-0 top-3 text-[12.5px] font-bold text-[#c9922a] font-serif">Ans.</span>
+                        <p className="font-medium text-[#0c1a33]">{item.solution}</p>
                       </div>
                     </div>
-                  </div>
+                  </details>
                 );
               };
 
               return (
                 <>
                   {/* DESKTOP LAYOUT (Extremely clean, structured, and easy-to-read 3-Column Symmetrical Layout) */}
-                  <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-8 items-center w-full select-none">
+                  <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-8 items-start w-full select-none">
                     
                     {/* Left Column (01 to 05) */}
                     <div className="flex flex-col gap-4">
@@ -478,7 +518,7 @@ export default function Home() {
                     </div>
 
                     {/* Center Column (Central Illustration with premium radial backglow) */}
-                    <div className="relative w-[340px] h-[340px] flex items-center justify-center">
+                    <div className="relative w-[340px] h-[340px] flex items-center justify-center sticky top-24">
                       <div className="absolute inset-0 bg-blue-100/30 rounded-full blur-[60px] pointer-events-none animate-pulse" />
                       <div className="absolute inset-0 bg-amber-100/20 rounded-full blur-[80px] pointer-events-none animate-[pulse_8s_infinite]" />
                       <img 
@@ -514,22 +554,36 @@ export default function Home() {
                     <div className="grid gap-3.5 sm:grid-cols-2 w-full max-w-3xl px-2">
                       {[...leftPainPoints, ...rightPainPoints].map((item, idx) => {
                         const isLeft = idx < 5;
-                        const iconBg = isLeft ? "bg-blue-50 text-blue-500" : "bg-amber-50 text-amber-600";
+                        const iconBg = isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
                         const hoverBorder = isLeft ? "hover:border-blue-200" : "hover:border-amber-200";
+                        const hoverShadowClass = isLeft ? "hover:shadow-[0_12px_30px_rgba(74,144,226,0.06)]" : "hover:shadow-[0_12px_30px_rgba(201,146,42,0.06)]";
                         return (
-                          <div 
+                          <details 
                             key={item.num} 
-                            className={`p-4 bg-white rounded-[20px] border border-black/[0.04] shadow-sm text-left transition-all duration-300 ${hoverBorder}`}
+                            className={`relative w-full rounded-[22px] border border-black/[0.04] shadow-sm text-left glass-card-readable transition-all duration-300 focus:outline-none list-none select-none ${hoverBorder} ${hoverShadowClass}`}
                           >
-                            <div className="flex items-center gap-3.5">
-                              <div className={`flex-shrink-0 w-9.5 h-9.5 rounded-full flex items-center justify-center ${iconBg}`}>
-                                {getPainPointIcon(item.icon)}
+                            <summary className="flex items-center justify-between gap-3.5 p-4 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
+                              <div className="flex items-center gap-3.5">
+                                <div className={`flex-shrink-0 w-9.5 h-9.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
+                                  {getPainPointIcon(item.icon)}
+                                </div>
+                                <div className="text-left">
+                                  <h3 className="font-bold text-[13.5px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.mobileText}</h3>
+                                </div>
                               </div>
-                              <div className="text-left">
-                                <h3 className="font-bold text-[13.5px] leading-snug text-[#0c1a33]">{item.mobileText}</h3>
+                              <div className="flex-shrink-0 ml-auto transition-transform duration-300 chevron-icon text-[#c9922a]/60 group-hover:text-[#c9922a]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-4 h-4">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                              </div>
+                            </summary>
+                            <div className="px-4 pb-4 pt-0">
+                              <div className="border-t border-[#c9922a]/10 pt-3 mt-0.5 text-[12.5px] leading-relaxed text-[#5f6b7a] relative pl-6">
+                                <span className="absolute left-0 top-2.5 text-[12.5px] font-bold text-[#c9922a] font-serif">Ans.</span>
+                                <p className="font-medium text-[#0c1a33]">{item.solution}</p>
                               </div>
                             </div>
-                          </div>
+                          </details>
                         );
                       })}
                     </div>
