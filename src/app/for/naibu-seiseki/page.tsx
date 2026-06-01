@@ -85,7 +85,7 @@ const subjects = [
 export const metadata: Metadata = {
   title: "附属校・中高一貫校の内部生へ｜成績向上・留年回避・進級サポート | Medvance",
   description:
-    "附属校・中高一貫校の内部生向け完全1対1個別指導。宿題・課題・レポートの徹底伴走、学校ごとの試験範囲に同調した教科別ピンポイント対策、わからないところの発見から自分で定期テストの点が取れるまで。留年回避・進級・内部進学を現役医学部生がサポート。",
+    "附属校・中高一貫校の内部生向け完全1対1個別指導。宿題・課題・レポートの徹底伴走、学校ごとの試験範囲に同調した教科別ピンポイント対策、わからないところの発見から自分で定期テストの点が取れるまで。オンラインに加え、ご自宅・カフェ・レンタルスペースなど東京エリアの対面（家庭教師型）にも対応。留年回避・進級・内部進学を現役医学部生がサポート。",
   keywords: [
     "附属校 内部生 家庭教師",
     "中高一貫校 成績 上げる",
@@ -94,6 +94,8 @@ export const metadata: Metadata = {
     "内部進学 評定 上げる",
     "定期テスト 学校別 対策",
     "宿題 レポート 伴走 個別指導",
+    "家庭教師 東京 対面",
+    "カフェ レンタルスペース 家庭教師",
   ],
   alternates: {
     canonical: "/for/naibu-seiseki",
@@ -148,7 +150,7 @@ export default function NaibuSeisekiPage() {
               { k: "現役医学部生", v: "が完全1対1で指導" },
               { k: "15分単位", v: "必要な分だけ受講" },
               { k: "1科目〜", v: "苦手の1科目からOK" },
-              { k: "全国オンライン", v: "移動ゼロ・通塾不要" },
+              { k: "オンライン＆対面", v: "全国対応・東京は対面も" },
             ].map((f, i) => (
               <div key={i} className="px-5 py-6 text-center" style={{ borderColor: BORDER }}>
                 <p className="text-base md:text-lg font-bold mb-1" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>{f.k}</p>
@@ -205,6 +207,50 @@ export default function NaibuSeisekiPage() {
                 中学1年生〜高校3年生。<span style={{ color: "#6b7280" }}>医学部・難関大志望に限らず、「学校の成績を上げたい・進級したい」すべてのご家庭が対象です。</span>
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* TEACHING STYLE: online + in-person */}
+        <div className="py-16 px-4" style={{ backgroundColor: CREAM }}>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+              オンラインも、対面も。
+            </h2>
+            <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
+              ご家庭のスタイルに合わせて、指導の受け方を選べます
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Online */}
+              <div className="rounded-2xl p-7 bg-white" style={{ border: `1px solid ${BORDER}` }}>
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white mb-4" style={{ backgroundColor: NAVY }}>オンライン指導</span>
+                <p className="font-bold text-lg mb-2" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>全国どこからでも、移動ゼロ</p>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#6b7280" }}>
+                  Zoomなどを使った完全1対1指導。通塾の必要がなく、部活や習い事とも両立しやすいスタイルです。
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["移動時間ゼロ", "全国対応", "録画復習も可"].map((t) => (
+                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: CREAM, color: "#6b7280", border: `1px solid ${BORDER}` }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+              {/* In-person (highlighted) */}
+              <div className="relative overflow-hidden rounded-2xl p-7" style={{ backgroundColor: NAVY }}>
+                <span aria-hidden className="absolute inset-x-0 top-0 h-[3px]" style={{ background: `linear-gradient(to right, transparent, ${GOLD}, transparent)` }} />
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4" style={{ backgroundColor: GOLD, color: "#fff" }}>対面・家庭教師型</span>
+                <p className="font-bold text-lg mb-2 text-white" style={{ fontFamily: "var(--font-noto-serif)" }}>東京のあらゆる場所で、授業が可能</p>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.72)" }}>
+                  生徒様のご自宅はもちろん、カフェやレンタルスペースなど、ご希望の場所に講師がうかがう家庭教師型にも対応。お子様が集中しやすい環境で受講できます。
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["生徒様のご自宅", "カフェ", "レンタルスペース"].map((t) => (
+                    <span key={t} className="text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.18)" }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-center mt-6" style={{ color: "#9ca3af" }}>
+              ※ 対面・家庭教師型の指導は東京エリアが対象です。ご希望のエリア・場所は無料相談でご相談ください。
+            </p>
           </div>
         </div>
 
@@ -410,7 +456,7 @@ export default function NaibuSeisekiPage() {
             <div className="grid sm:grid-cols-3 gap-4 mt-6">
               {[
                 { t: "1科目・短時間からOK", b: "苦手な1科目、15分の短時間からでも始められます。" },
-                { t: "通塾費・交通費ゼロ", b: "完全オンライン。移動の時間もお金もかかりません。" },
+                { t: "オンラインなら通塾費ゼロ", b: "オンライン指導は移動の時間も交通費もかかりません。" },
                 { t: "テスト前だけ増やせる", b: "定期テスト前に回数を増やすなど、柔軟に調整できます。" },
               ].map((c, i) => (
                 <div key={i} className="rounded-2xl p-5" style={{ backgroundColor: CREAM, border: `1px solid ${BORDER}` }}>
