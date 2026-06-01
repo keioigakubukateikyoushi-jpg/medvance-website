@@ -251,6 +251,17 @@ export default function SeisekiUpPage() {
             ))}
           </div>
 
+      {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
+      <section className="bg-white px-4 py-8">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+          <img 
+            src="/images/generated/highschool_study_smiling.png" 
+            alt="志望校合格に向け自習室で集中して学習計画を組み立てる中高生" 
+            className="w-full h-auto object-cover max-h-[380px]"
+          />
+        </div>
+      </section>
+
           {/* FAQ */}
           <h2 className="text-2xl font-bold mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>よくある質問</h2>
           <div className="space-y-4">

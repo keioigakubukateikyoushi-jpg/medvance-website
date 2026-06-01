@@ -158,6 +158,17 @@ export default function Ko3Page() {
       </div>
 
       <div className="py-16 px-4 bg-white">
+        {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
+        <section className="bg-white px-4 py-8">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+            <img 
+              src="/images/generated/highschool_study_smiling.png" 
+              alt="志望校合格に向け学習計画表を前にモチベーション高く自習に取り組む日本の高校生" 
+              className="w-full h-auto object-cover max-h-[380px]"
+            />
+          </div>
+        </section>
+
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
             よくあるご質問

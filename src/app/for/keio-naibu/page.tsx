@@ -368,6 +368,17 @@ export default function KeioNaibuRevampedPage() {
         {/* ── TUTOR PROFILES ───────────────────────────── */}
         <TutorProfiles />
 
+        {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
+        <section className="bg-white px-4 py-8">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+            <img 
+              src="/images/generated/keio_campus_studying.png" 
+              alt="慶應義塾大学キャンパス前でスマートに勉強を進める慶應医学部・附属校生" 
+              className="w-full h-auto object-cover max-h-[380px]"
+            />
+          </div>
+        </section>
+
         {/* ── FAQ ACCORDION ───────────────────────────── */}
         <section className="py-24 px-4 bg-slate-50 border-t border-b border-slate-200">
           <div className="max-w-3xl mx-auto">

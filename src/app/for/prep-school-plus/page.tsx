@@ -265,6 +265,17 @@ export default function PrepSchoolPlusPage() {
         </div>
       </section>
 
+      {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
+      <section className="bg-white px-4 py-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+          <img 
+            src="/images/generated/prep_school_supplement.png" 
+            alt="大手予備校の教材を使いながらプロ講師とマンツーマンで復習計画を立てる医学部受験生" 
+            className="w-full h-auto object-cover max-h-[400px]"
+          />
+        </div>
+      </section>
+
       {/* Medvance Core Pillars */}
       <section className="bg-white px-4 py-20">
         <div className="mx-auto max-w-6xl">

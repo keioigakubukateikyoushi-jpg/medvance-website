@@ -182,6 +182,17 @@ export default function NotGroupSchoolPage() {
         </div>
       </section>
 
+      {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
+      <section className="bg-white px-4 py-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+          <img 
+            src="/images/generated/individual_coaching_focused.png" 
+            alt="静かで明るい学習空間で現役慶應医学部生講師から完全1対1で個別指導を受ける受験生" 
+            className="w-full h-auto object-cover max-h-[400px]"
+          />
+        </div>
+      </section>
+
       {/* 1to1 vs Group Velocity comparison (Brand new UX component) */}
       <section className="px-4 py-20 bg-white">
         <div className="mx-auto max-w-4xl">
