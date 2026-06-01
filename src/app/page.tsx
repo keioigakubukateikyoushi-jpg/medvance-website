@@ -733,10 +733,13 @@ export default function Home() {
                     Medvanceは、現役の慶應義塾大学医学部生である代表が立ち上げた医学部受験専門塾です。代表自身、自らの医学部入試で、受験したすべての医学部に合格しました。
                   </p>
                   <p>
-                    合否を分けたのは、生まれ持った才能ではありませんでした。何を・いつ・どの順番で進めるかという<strong style={{ color: "#0c1a33" }}>受験戦略</strong>と、合格者だからこそ確立できた<strong style={{ color: "#0c1a33" }}>勉強法</strong>。Medvanceは、この実体験そのものから生まれています。
+                    合否を分けたのは、生まれ持った才能ではありませんでした。「何を・いつ・どの順番で進めるか」という<strong style={{ color: "#0c1a33" }}>受験戦略</strong>と、合格者だからこそ確立できた<strong style={{ color: "#0c1a33" }}>勉強法</strong>。その差は才能ではなく、<strong style={{ color: "#0c1a33" }}>情報の差</strong>でした。
                   </p>
                   <p>
-                    一方で、医学部受験の確かな情報や戦略は、いまだ十分にオープンになっていません。医学部に合格した人による再現性のある戦略を、医学部を志すすべての受験生へ届けたい——その想いから、現役医学部生が教える医学部受験塾Medvanceは生まれました。
+                    医学部受験では、正しい戦略や効率的な勉強法がいまだ十分に共有されていません。だからこそ、<strong style={{ color: "#0c1a33" }}>本気で努力しているのに成果に結びつかない</strong>受験生が後を絶ちません。私たちは、それを才能のせいにしたくありませんでした。
+                  </p>
+                  <p>
+                    必要なのは、限られた時間で最大限の成果を出す戦略と、学力だけでなく精神面まで伴走する存在。医学部に合格した人の再現性ある戦略を、志すすべての受験生へ——Medvanceは<strong style={{ color: "#0c1a33" }}>「努力が正しく報われる受験」</strong>を実現するために生まれました。
                   </p>
                    <div className="pt-2">
                     <div className="p-3.5 rounded-xl border text-xs" style={{ backgroundColor: "#f7f5f0", borderColor: "#e5e1d8", color: "#5f6b7a" }}>
@@ -757,11 +760,27 @@ export default function Home() {
               </div>
             </FadeIn>
           </div>
-          <div className="mt-14 grid gap-4 sm:grid-cols-3">
+          {/* Philosophy pull-quote */}
+          <FadeIn delay={0.12}>
+            <figure className="relative mt-14 overflow-hidden rounded-3xl px-7 py-10 text-center md:px-12 md:py-12" style={{ backgroundColor: "#0c1a33" }}>
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#c9922a] to-transparent" />
+              <span aria-hidden className="absolute -left-2 top-3 select-none font-serif text-[120px] leading-none" style={{ color: "rgba(201,146,42,0.14)", fontFamily: "var(--font-noto-serif)" }}>“</span>
+              <p className="mb-3 text-xs font-bold tracking-[0.22em] uppercase" style={{ color: "#c9922a" }}>Our Philosophy</p>
+              <blockquote className="relative text-2xl md:text-[2rem] font-bold leading-[1.5] tracking-tight" style={{ color: "#ffffff", fontFamily: "var(--font-noto-serif)" }}>
+                努力が、<span style={{ color: "#e7c873" }}>正しく報われる</span>受験を。
+              </blockquote>
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
+                合否を分けるのは才能ではなく、情報と戦略の差。<br className="hidden sm:block" />
+                医学部に合格した人の再現性ある戦略を、志すすべての受験生へ。
+              </p>
+            </figure>
+          </FadeIn>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               { k: "原点", v: "現役の慶應義塾大学医学部生が設立" },
               { k: "実績", v: "受験したすべての医学部に全勝合格" },
-              { k: "信念", v: "才能ではなく、再現できる戦略と勉強法" },
+              { k: "信念", v: "努力が正しく報われる受験を実現する" },
             ].map((item, index) => (
               <FadeIn key={item.k} delay={index * 0.05}>
                 <div className="h-full rounded-2xl p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
