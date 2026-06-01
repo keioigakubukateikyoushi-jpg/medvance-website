@@ -446,6 +446,42 @@ export default function IgakubuKateikyoushiPage() {
         </div>
       </section>
 
+      {/* ── INTERACTIVE AI TOOL BANNER (Tier 4) ── */}
+      <section className="px-4 py-16 bg-white border-t border-b" style={{ borderColor: "#e5e1d8" }}>
+        <div className="mx-auto max-w-4xl">
+          <div className="relative overflow-hidden rounded-3xl p-8 md:p-12 text-white shadow-xl bg-gradient-to-br from-[#060b13] via-[#0c1a33] to-[#04080f]" style={{ border: "1px solid rgba(212, 175, 55, 0.25)" }}>
+            <div className="absolute top-0 right-0 opacity-10 pointer-events-none translate-x-12 -translate-y-12 select-none">
+              <span className="text-9xl font-extrabold text-amber-400 font-serif">AI</span>
+            </div>
+            
+            <div className="relative z-10 max-w-2xl text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-6 text-xs font-bold" style={{ backgroundColor: "rgba(212,175,55,0.15)", color: "#d4af37", border: "1px solid rgba(212,175,55,0.4)", backdropFilter: "blur(8px)" }}>
+                <span>🤖</span>
+                <span>現役慶應医学部生開発システム</span>
+              </div>
+              
+              <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight" style={{ fontFamily: "var(--font-noto-serif)", color: "#fff" }}>
+                模試偏差値から合格ルートを10秒分析<br />
+                <span style={{ color: "#d4af37" }}>AI模試偏差値 自動分析ツール</span>
+              </h3>
+              
+              <p className="text-xs md:text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.76)" }}>
+                医学部受験を勝ち抜いた慶應医学部生が、独自の偏差値補正・判定ロジックを設計。駿台・河合塾・進研模試などの難易度を補正し、科目別6段階バンド評価、おすすめの参考書、志望校との距離を可視化したタイムラインを即座に生成します。
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/services/moshi/tool?from=igakubu-kateikyoushi-moshi-tool-cta" className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-bold transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(212,175,55,0.3)]" style={{ backgroundColor: "#d4af37", color: "#060b13" }}>
+                  AI分析ツールを使ってみる（無料） →
+                </Link>
+                <Link href="/services/moshi" className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90 border border-white/20">
+                  模試分析サービスの詳細を見る
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="px-4 py-24 text-center" style={{ backgroundColor: NAVY }}>
         <div className="mx-auto max-w-4xl">
           <p className="mb-4 text-xs font-bold tracking-widest" style={{ color: GOLD }}>

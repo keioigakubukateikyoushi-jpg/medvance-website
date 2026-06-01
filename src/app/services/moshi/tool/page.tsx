@@ -91,7 +91,7 @@ export default function MoshiToolPage() {
     (["english", "math", "science1", "science2"] as const).forEach((k) => {
       const v = Number(scores[k]);
       if (!scores[k] || isNaN(v) || v < 20 || v > 80) {
-        errs[k] = "20〜80で入力してください";
+        errs[k] = "20〜80の偏差値で入力してください";
       }
     });
     setErrors(errs);
@@ -150,47 +150,48 @@ export default function MoshiToolPage() {
   const labelOf = (s: Subject) => SUBJECT_DATA[s].label;
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 text-xs font-semibold" style={{ backgroundColor: "rgba(201,146,42,0.15)", color: "#c9922a", border: "1px solid rgba(201,146,42,0.4)" }}>
+    <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #050a14 0%, #0c1a33 50%, #03060c 100%)", color: "#f3f4f6" }}>
+      {/* Hero Header */}
+      <div className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
+        <div className="max-w-3xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-bold shadow-lg" style={{ backgroundColor: "rgba(212,175,55,0.12)", color: "#d4af37", border: "1px solid rgba(212,175,55,0.35)", backdropFilter: "blur(8px)" }}>
             <span>🤖</span>
-            <span>AI Mock Exam Analysis Tool</span>
+            <span>現役慶應医学部生 開発AI分析システム</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            AI模試偏差値 自動分析ツール
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-noto-serif)", textShadow: "0 0 20px rgba(255,255,255,0.05)" }}>
+            現役慶應医学部生が開発した<br className="sm:hidden" />
+            <span style={{ color: "#d4af37" }}>AI模試偏差値 自動分析ツール</span>
           </h1>
-          <p className="text-sm mb-2" style={{ color: "rgba(255,255,255,0.8)" }}>
-            偏差値を入力するだけで、AIが学習ルートを即時生成します
-          </p>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-            模試の難易度補正・6段階バンド評価・参考書レコメンド・タイムライン設計まで自動。無料・登録不要。
+          <p className="text-sm md:text-base max-w-2xl mx-auto leading-relaxed" style={{ color: "rgba(243,244,246,0.8)" }}>
+            医学部受験を勝ち抜いた慶應医学部生が、独自の補正・判定ロジックを設計。駿台・河合塾・進研模試などの難易度を自動補正し、科目別6段階バンド評価、おすすめの参考書、志望校との距離を可視化したタイムラインを即座に生成します。
           </p>
         </div>
       </div>
 
-      {/* Form */}
-      <div className="py-12 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+      {/* Form Input Section */}
+      <div className="py-12 px-4 relative">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl p-8" style={{ border: "1px solid #e5e1d8" }}>
-            <h2 className="text-lg font-bold mb-6" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-              情報を入力する
+          <div className="rounded-3xl p-8 backdrop-blur-xl transition-all duration-300" style={{ backgroundColor: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.07)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04)" }}>
+            <h2 className="text-xl font-bold mb-8 flex items-center gap-2.5" style={{ color: "#fff", fontFamily: "var(--font-noto-serif)" }}>
+              <span className="w-1.5 h-6 rounded-full" style={{ backgroundColor: "#d4af37" }} />
+              志望校・模試・現在の偏差値を入力
             </h2>
 
             {/* Grade */}
-            <div className="mb-5">
-              <label className="block text-sm font-semibold mb-2" style={{ color: "#0c1a33" }}>学年</label>
+            <div className="mb-6">
+              <label className="block text-sm font-semibold mb-3 text-gray-300">学年</label>
               <div className="flex flex-wrap gap-2">
                 {GRADES.map((g) => (
                   <button
                     key={g.value}
                     onClick={() => setGrade(g.value)}
-                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all"
+                    className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200"
                     style={{
-                      backgroundColor: grade === g.value ? "#0c1a33" : "#f7f5f0",
-                      color: grade === g.value ? "#fff" : "#4b5563",
-                      border: grade === g.value ? "2px solid #0c1a33" : "2px solid #e5e1d8",
+                      backgroundColor: grade === g.value ? "#d4af37" : "rgba(255, 255, 255, 0.04)",
+                      color: grade === g.value ? "#060b13" : "#d1d5db",
+                      border: grade === g.value ? "1px solid #d4af37" : "1px solid rgba(255,255,255,0.08)",
+                      boxShadow: grade === g.value ? "0 0 15px rgba(212,175,55,0.3)" : "none"
                     }}
                   >
                     {g.label}
@@ -200,36 +201,37 @@ export default function MoshiToolPage() {
             </div>
 
             {/* Exam Type */}
-            <div className="mb-5">
-              <label className="block text-sm font-semibold mb-2" style={{ color: "#0c1a33" }}>受験した模試</label>
+            <div className="mb-6">
+              <label className="block text-sm font-semibold mb-3 text-gray-300">受験した模試の種類</label>
               <select
                 value={examType}
                 onChange={(e) => setExamType(e.target.value as ExamType)}
-                className="w-full rounded-lg px-3 py-2.5 text-sm"
-                style={{ border: "1px solid #d1d5db", color: "#1f2937", backgroundColor: "#fff" }}
+                className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all"
+                style={{ border: "1px solid rgba(255, 255, 255, 0.1)", color: "#fff", backgroundColor: "#091222" }}
               >
                 {EXAM_TYPES.map((e) => (
-                  <option key={e.value} value={e.value}>{e.label}</option>
+                  <option key={e.value} value={e.value} style={{ backgroundColor: "#091222" }}>{e.label}</option>
                 ))}
               </select>
               {examType && (
-                <p className="text-xs mt-1.5" style={{ color: "#9ca3af" }}>{EXAM_INFO[examType].note}</p>
+                <p className="text-xs mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>💡 {EXAM_INFO[examType].note}</p>
               )}
             </div>
 
             {/* Science Combo */}
-            <div className="mb-5">
-              <label className="block text-sm font-semibold mb-2" style={{ color: "#0c1a33" }}>理科の選択科目</label>
+            <div className="mb-6">
+              <label className="block text-sm font-semibold mb-3 text-gray-300">理科の選択科目</label>
               <div className="flex flex-wrap gap-2">
                 {SCIENCE_COMBOS.map((sc) => (
                   <button
                     key={sc.value}
                     onClick={() => setScienceCombo(sc.value)}
-                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all"
+                    className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200"
                     style={{
-                      backgroundColor: scienceCombo === sc.value ? "#0c1a33" : "#f7f5f0",
-                      color: scienceCombo === sc.value ? "#fff" : "#4b5563",
-                      border: scienceCombo === sc.value ? "2px solid #0c1a33" : "2px solid #e5e1d8",
+                      backgroundColor: scienceCombo === sc.value ? "#d4af37" : "rgba(255, 255, 255, 0.04)",
+                      color: scienceCombo === sc.value ? "#060b13" : "#d1d5db",
+                      border: scienceCombo === sc.value ? "1px solid #d4af37" : "1px solid rgba(255,255,255,0.08)",
+                      boxShadow: scienceCombo === sc.value ? "0 0 15px rgba(212,175,55,0.3)" : "none"
                     }}
                   >
                     {sc.label}
@@ -239,18 +241,19 @@ export default function MoshiToolPage() {
             </div>
 
             {/* Target */}
-            <div className="mb-6">
-              <label className="block text-sm font-semibold mb-2" style={{ color: "#0c1a33" }}>志望校の種類</label>
+            <div className="mb-8">
+              <label className="block text-sm font-semibold mb-3 text-gray-300">第一志望校</label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {TARGETS.map((t) => (
                   <button
                     key={t.value}
                     onClick={() => setTarget(t.value)}
-                    className="px-4 py-3 rounded-lg text-sm font-medium text-left transition-all"
+                    className="px-4 py-3 rounded-xl text-xs font-semibold text-left transition-all duration-200"
                     style={{
-                      backgroundColor: target === t.value ? "#0c1a33" : "#f7f5f0",
-                      color: target === t.value ? "#fff" : "#4b5563",
-                      border: target === t.value ? "2px solid #0c1a33" : "2px solid #e5e1d8",
+                      backgroundColor: target === t.value ? "#d4af37" : "rgba(255, 255, 255, 0.04)",
+                      color: target === t.value ? "#060b13" : "#d1d5db",
+                      border: target === t.value ? "1px solid #d4af37" : "1px solid rgba(255,255,255,0.08)",
+                      boxShadow: target === t.value ? "0 0 15px rgba(212,175,55,0.35)" : "none"
                     }}
                   >
                     {t.label}
@@ -258,34 +261,35 @@ export default function MoshiToolPage() {
                 ))}
               </div>
               {target && (
-                <p className="text-xs mt-1.5" style={{ color: "#9ca3af" }}>{TARGET_INFO[target].detail}</p>
+                <p className="text-xs mt-2" style={{ color: "rgba(255,255,255,0.4)" }}>🔍 {TARGET_INFO[target].detail}</p>
               )}
             </div>
 
             {/* Score Inputs */}
-            <div className="mb-6">
-              <label className="block text-sm font-semibold mb-3" style={{ color: "#0c1a33" }}>
-                各科目の偏差値（20〜80）
+            <div className="mb-8">
+              <label className="block text-sm font-semibold mb-4 text-gray-300">
+                各科目の偏差値（20〜80）を半角で入力
               </label>
               <div className="grid grid-cols-2 gap-4">
                 {(["english", "math", "science1", "science2"] as const).map((key, i) => {
                   const labels = ["英語", "数学", labelOf(s1), labelOf(s2)];
                   return (
                     <div key={key}>
-                      <label className="block text-xs font-medium mb-1.5" style={{ color: "#6b7280" }}>
+                      <label className="block text-xs font-semibold mb-2 text-gray-400">
                         {labels[i]}
                       </label>
                       <input
                         type="number"
                         min={20}
                         max={80}
-                        placeholder="例：57"
+                        placeholder="例：58"
                         value={scores[key]}
                         onChange={(e) => setScores({ ...scores, [key]: e.target.value })}
-                        className="w-full rounded-lg px-3 py-2.5 text-sm"
+                        className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all"
                         style={{
-                          border: errors[key] ? "1px solid #ef4444" : "1px solid #d1d5db",
-                          color: "#1f2937",
+                          border: errors[key] ? "1px solid #ef4444" : "1px solid rgba(255, 255, 255, 0.1)",
+                          color: "#fff",
+                          backgroundColor: "#091222"
                         }}
                       />
                       {errors[key] && (
@@ -299,63 +303,134 @@ export default function MoshiToolPage() {
 
             <button
               onClick={handleAnalyze}
-              className="w-full py-4 rounded-xl text-white font-bold text-base transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#c9922a" }}
+              className="w-full py-4 rounded-xl text-[#060b13] font-extrabold text-base transition-all duration-300 hover:scale-[1.01]"
+              style={{
+                background: "linear-gradient(90deg, #d4af37 0%, #f9e5a2 100%)",
+                boxShadow: "0 8px 30px rgba(212,175,55,0.25)"
+              }}
             >
-              分析する
+              慶應医学部生設計AI分析を実行する（無料）
             </button>
           </div>
         </div>
       </div>
 
-      {/* Result */}
+      {/* Result Section */}
       {result && (
-        <div id="result-section" className="py-12 px-4 bg-white">
-          <div className="max-w-3xl mx-auto space-y-8">
+        <div id="result-section" className="py-16 px-4 relative">
+          <div className="max-w-3xl mx-auto space-y-12">
+            
+            {/* Header */}
+            <div className="text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-noto-serif)" }}>
+                AI精密判定ダッシュボード
+              </h2>
+              <p className="text-xs text-gray-400">
+                本判定は、河合塾全統記述模試の偏差値分布スケールに難易度を正規化（難易度補正）して算出されています。
+              </p>
+            </div>
 
-            {/* 模試補正の説明 */}
-            <div className="p-4 rounded-xl text-sm" style={{ backgroundColor: "#fffbeb", border: "1px solid #fcd34d" }}>
-              <span className="font-semibold" style={{ color: "#92400e" }}>補正について：</span>
-              <span style={{ color: "#78350f" }}>
-                {result.examLabel}は河合塾全統記述模試比で{EXAM_INFO[examType].offset > 0 ? `+${EXAM_INFO[examType].offset}` : EXAM_INFO[examType].offset === 0 ? "補正なし（基準模試）" : EXAM_INFO[examType].offset}の補正を適用しています。{EXAM_INFO[examType].note}
+            {/* 模試補正解説 */}
+            <div className="p-5 rounded-2xl text-sm leading-relaxed backdrop-blur-md" style={{ backgroundColor: "rgba(212, 175, 55, 0.05)", border: "1px solid rgba(212, 175, 55, 0.2)", color: "#f9e5a2" }}>
+              <span className="font-bold">⚠️ 模試難易度補正値：</span>
+              <span>
+                {result.examLabel}は、全統基準比で【{EXAM_INFO[examType].offset > 0 ? `+${EXAM_INFO[examType].offset}` : EXAM_INFO[examType].offset === 0 ? "補正なし" : EXAM_INFO[examType].offset}】の難易度差を補正処理しました。{EXAM_INFO[examType].note}
               </span>
             </div>
 
-            {/* 科目別バンド */}
+            {/* 総合判定カード */}
+            <div className="p-8 rounded-3xl backdrop-blur-xl" style={{ backgroundColor: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.08)", boxShadow: "0 20px 40px rgba(0, 0, 0, 0.4)" }}>
+              <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
+                <div
+                  className="text-3xl font-extrabold w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg animate-pulse"
+                  style={{ backgroundColor: BAND_INFO[result.avgBand].color, boxShadow: `0 0 25px ${BAND_INFO[result.avgBand].color}50` }}
+                >
+                  {result.avgBand}
+                </div>
+                <div className="text-center sm:text-left">
+                  <p className="text-lg font-bold text-white leading-tight">
+                    総合バンド評価：{result.avgBand}　［正規化平均偏差値 {result.avgNorm}］
+                  </p>
+                  <p className="text-xs font-medium mt-1.5" style={{ color: "#d4af37" }}>
+                    判定カテゴリー：{BAND_INFO[result.avgBand].desc} ({BAND_INFO[result.avgBand].range})
+                  </p>
+                </div>
+              </div>
+              <p className="text-sm leading-relaxed mb-6 text-gray-300">{result.overallComment}</p>
+              
+              <div className="p-5 rounded-2xl" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+                <p className="text-xs font-bold text-gray-400 mb-2">
+                  📊 志望校（{TARGET_INFO[result.target].label}）合格への距離分析
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#fff" }}>{result.gapComment}</p>
+              </div>
+            </div>
+
+            {/* 科目別分析結果 */}
             <div>
-              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                科目別分析結果
-              </h2>
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2" style={{ color: "#fff", fontFamily: "var(--font-noto-serif)" }}>
+                <span className="w-1.5 h-5 rounded-full" style={{ backgroundColor: "#d4af37" }} />
+                科目別 偏差値補正・進捗度
+              </h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 {result.subjects.map((s) => {
                   const bi = BAND_INFO[s.band];
                   const isWeakest = s.subject === result.weakest;
+                  
+                  // Visual Progress Bar calculation (deviation range from 35 to 75 represents 100%)
+                  const progressPercent = Math.min(100, Math.max(0, ((s.norm - 35) / 40) * 100));
+
                   return (
                     <div
                       key={s.subject}
-                      className="p-5 rounded-xl"
-                      style={{ backgroundColor: bi.bg, border: `2px solid ${isWeakest ? "#f87171" : bi.border}` }}
+                      className="p-6 rounded-2xl backdrop-blur-md transition-all duration-300"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.02)",
+                        border: isWeakest ? "1px solid rgba(239, 68, 68, 0.4)" : "1px solid rgba(255, 255, 255, 0.06)",
+                        boxShadow: isWeakest ? "0 0 20px rgba(239, 68, 68, 0.05)" : "none"
+                      }}
                     >
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="font-bold text-sm" style={{ color: "#1f2937" }}>{s.label}</span>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-bold text-sm text-white">{s.label}</span>
                         <div className="flex items-center gap-2">
                           {isWeakest && (
-                            <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: "#fee2e2", color: "#dc2626" }}>
-                              最弱点
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-950 text-red-400 border border-red-800">
+                              要対策科目
                             </span>
                           )}
                           <span
-                            className="text-lg font-bold w-8 h-8 rounded-full flex items-center justify-center"
-                            style={{ backgroundColor: bi.color, color: "#fff" }}
+                            className="text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center text-white"
+                            style={{ backgroundColor: bi.color }}
                           >
                             {s.band}
                           </span>
                         </div>
                       </div>
-                      <p className="text-xs mb-2" style={{ color: "#6b7280" }}>
-                        入力偏差値 {s.raw} → 補正後 <span className="font-bold" style={{ color: "#1f2937" }}>{s.norm}</span>　{bi.desc}（{bi.range}）
+                      
+                      <p className="text-[11px]" style={{ color: "rgba(243,244,246,0.5)" }}>
+                        入力偏差値 {s.raw} ➡ 補正後 <span className="font-bold text-white">{s.norm}</span>　{bi.desc}
                       </p>
-                      <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+
+                      {/* glowing visual deviation meter */}
+                      <div className="mt-3.5">
+                        <div className="flex justify-between text-[9px] text-gray-500 mb-1">
+                          <span>偏差値35 (基礎)</span>
+                          <span style={{ color: isWeakest ? "#ef4444" : "#d4af37" }}>現在：{s.norm}</span>
+                          <span>75 (最難関)</span>
+                        </div>
+                        <div className="w-full h-1.5 rounded-full overflow-hidden bg-white/5 relative">
+                          <div
+                            className="h-full rounded-full transition-all duration-1000 ease-out"
+                            style={{
+                              width: `${progressPercent}%`,
+                              background: isWeakest ? "linear-gradient(90deg, #ef4444 0%, #b91c1c 100%)" : "linear-gradient(90deg, #d4af37 0%, #5b21b6 100%)",
+                              boxShadow: isWeakest ? "0 0 10px rgba(239,68,68,0.5)" : "0 0 10px rgba(212,175,55,0.4)"
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      <p className="text-xs leading-relaxed text-gray-400 mt-4 pt-3 border-t border-white/[0.04]">
                         {SUBJECT_DATA[s.subject].entries[s.band].comment}
                       </p>
                     </div>
@@ -364,52 +439,33 @@ export default function MoshiToolPage() {
               </div>
             </div>
 
-            {/* 総合評価 */}
-            <div className="p-6 rounded-2xl" style={{ backgroundColor: BAND_INFO[result.avgBand].bg, border: `2px solid ${BAND_INFO[result.avgBand].border}` }}>
-              <div className="flex items-center gap-3 mb-4">
-                <span
-                  className="text-2xl font-bold w-12 h-12 rounded-full flex items-center justify-center text-white"
-                  style={{ backgroundColor: BAND_INFO[result.avgBand].color }}
-                >
-                  {result.avgBand}
-                </span>
-                <div>
-                  <p className="font-bold" style={{ color: "#0c1a33" }}>総合バンド {result.avgBand}　補正後平均偏差値 {result.avgNorm}</p>
-                  <p className="text-xs" style={{ color: "#6b7280" }}>{BAND_INFO[result.avgBand].desc}</p>
-                </div>
-              </div>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>{result.overallComment}</p>
-              <div className="p-4 rounded-xl" style={{ backgroundColor: "rgba(0,0,0,0.04)" }}>
-                <p className="text-xs font-semibold mb-1" style={{ color: "#6b7280" }}>
-                  志望校（{TARGET_INFO[result.target].label}）との差分
-                </p>
-                <p className="text-sm leading-relaxed" style={{ color: "#1f2937" }}>{result.gapComment}</p>
-              </div>
-            </div>
-
-            {/* 優先対策科目の参考書 */}
+            {/* 優先対策参考書 */}
             {result.weakest && (
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                  優先対策：{labelOf(result.weakest)}の学習ルート
-                </h2>
-                <p className="text-sm mb-5" style={{ color: "#6b7280" }}>
-                  最も偏差値が低い{labelOf(result.weakest)}の参考書・問題集を優先的にご紹介します
+                <h3 className="text-xl font-bold mb-2 flex items-center gap-2" style={{ color: "#fff", fontFamily: "var(--font-noto-serif)" }}>
+                  <span className="w-1.5 h-5 rounded-full" style={{ backgroundColor: "#d4af37" }} />
+                  優先対策：{labelOf(result.weakest)} の合格推奨参考書
+                </h3>
+                <p className="text-xs text-gray-400 mb-6">
+                  最もスコアが低く、伸び代の大きい「{labelOf(result.weakest)}」から優先的に着手してください。
                 </p>
                 {(() => {
                   const entry = SUBJECT_DATA[result.weakest!].entries[result.subjects.find(s => s.subject === result.weakest)!.band];
                   return (
                     <div className="space-y-4">
                       {entry.currentBooks.length > 0 && (
-                        <div className="p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                          <p className="text-xs font-bold mb-3" style={{ color: "#c9922a" }}>今すぐ取り組む参考書</p>
-                          <div className="space-y-3">
+                        <div className="p-6 rounded-2xl backdrop-blur-md" style={{ backgroundColor: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.06)" }}>
+                          <p className="text-xs font-bold mb-4 text-[#d4af37] flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]" />
+                            1. 今すぐ完璧にマスターすべき教材
+                          </p>
+                          <div className="space-y-4">
                             {entry.currentBooks.map((book, i) => (
-                              <div key={i} className="flex gap-3">
-                                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-white flex items-center justify-center text-xs font-bold" style={{ color: "#0c1a33", border: "1px solid #d1d5db" }}>{i + 1}</span>
+                              <div key={i} className="flex gap-4">
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-xs font-bold text-[#d4af37]" style={{ border: "1px solid rgba(212,175,55,0.2)" }}>{i + 1}</span>
                                 <div>
-                                  <p className="text-sm font-semibold" style={{ color: "#1f2937" }}>{book.title}</p>
-                                  <p className="text-xs" style={{ color: "#9ca3af" }}>{book.note}</p>
+                                  <p className="text-sm font-semibold text-white leading-snug">{book.title}</p>
+                                  <p className="text-xs text-gray-400 mt-1 leading-relaxed">{book.note}</p>
                                 </div>
                               </div>
                             ))}
@@ -417,15 +473,18 @@ export default function MoshiToolPage() {
                         </div>
                       )}
                       {entry.nextBooks.length > 0 && (
-                        <div className="p-5 rounded-xl" style={{ backgroundColor: "#eff6ff", border: "1px solid #93c5fd" }}>
-                          <p className="text-xs font-bold mb-3" style={{ color: "#1d4ed8" }}>次のステップの参考書</p>
-                          <div className="space-y-3">
+                        <div className="p-6 rounded-2xl backdrop-blur-md" style={{ backgroundColor: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.06)" }}>
+                          <p className="text-xs font-bold mb-4 text-blue-400 flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                            2. 基礎習得後にステップアップする発展教材
+                          </p>
+                          <div className="space-y-4">
                             {entry.nextBooks.map((book, i) => (
-                              <div key={i} className="flex gap-3">
-                                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-white flex items-center justify-center text-xs font-bold" style={{ color: "#1d4ed8", border: "1px solid #93c5fd" }}>{i + 1}</span>
+                              <div key={i} className="flex gap-4">
+                                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-xs font-bold text-blue-400" style={{ border: "1px solid rgba(96,165,250,0.2)" }}>{i + 1}</span>
                                 <div>
-                                  <p className="text-sm font-semibold" style={{ color: "#1e3a8a" }}>{book.title}</p>
-                                  <p className="text-xs" style={{ color: "#6b7280" }}>{book.note}</p>
+                                  <p className="text-sm font-semibold text-white leading-snug">{book.title}</p>
+                                  <p className="text-xs text-gray-400 mt-1 leading-relaxed">{book.note}</p>
                                 </div>
                               </div>
                             ))}
@@ -438,31 +497,32 @@ export default function MoshiToolPage() {
               </div>
             )}
 
-            {/* 全科目の参考書（折りたたみ表示用に簡易表示） */}
+            {/* 全科目の参考書 */}
             <div>
-              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                全科目の学習ルート
-              </h2>
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2" style={{ color: "#fff", fontFamily: "var(--font-noto-serif)" }}>
+                <span className="w-1.5 h-5 rounded-full" style={{ backgroundColor: "#d4af37" }} />
+                全科目の合格推奨参考書・ルート
+              </h3>
               <div className="space-y-4">
                 {result.subjects.map((s) => {
                   const entry = SUBJECT_DATA[s.subject].entries[s.band];
                   const bi = BAND_INFO[s.band];
                   return (
-                    <div key={s.subject} className="rounded-xl overflow-hidden" style={{ border: "1px solid #e5e1d8" }}>
-                      <div className="px-5 py-3 flex items-center gap-3" style={{ backgroundColor: "#f7f5f0" }}>
-                        <span className="text-sm font-bold w-6 h-6 rounded-full flex items-center justify-center text-white text-xs" style={{ backgroundColor: bi.color }}>{s.band}</span>
-                        <span className="font-semibold text-sm" style={{ color: "#0c1a33" }}>{s.label}</span>
-                        <span className="text-xs" style={{ color: "#9ca3af" }}>補正偏差値 {s.norm}</span>
+                    <div key={s.subject} className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255, 255, 255, 0.06)", backgroundColor: "rgba(255, 255, 255, 0.01)" }}>
+                      <div className="px-5 py-4.5 flex items-center gap-3" style={{ backgroundColor: "rgba(255, 255, 255, 0.02)", borderBottom: "1px solid rgba(255, 255, 255, 0.06)" }}>
+                        <span className="text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: bi.color }}>{s.band}</span>
+                        <span className="font-bold text-sm text-white">{s.label}</span>
+                        <span className="text-xs text-gray-500">補正後偏差値：{s.norm} ({bi.desc})</span>
                       </div>
-                      <div className="p-5 bg-white">
+                      <div className="p-6 space-y-4">
                         {entry.currentBooks.length > 0 && (
-                          <div className="mb-3">
-                            <p className="text-xs font-bold mb-2" style={{ color: "#c9922a" }}>今すぐ取り組む</p>
-                            <div className="space-y-1.5">
+                          <div>
+                            <p className="text-[10px] font-bold mb-2 text-[#d4af37] uppercase tracking-wider">▼ 今すぐ取り組む</p>
+                            <div className="space-y-2">
                               {entry.currentBooks.map((book, i) => (
-                                <div key={i}>
-                                  <span className="text-sm font-medium" style={{ color: "#1f2937" }}>{book.title}</span>
-                                  <span className="text-xs ml-2" style={{ color: "#9ca3af" }}>{book.note}</span>
+                                <div key={i} className="text-xs">
+                                  <span className="font-semibold text-white">・ {book.title}</span>
+                                  <span className="text-gray-400 ml-2">({book.note})</span>
                                 </div>
                               ))}
                             </div>
@@ -470,12 +530,12 @@ export default function MoshiToolPage() {
                         )}
                         {entry.nextBooks.length > 0 && (
                           <div>
-                            <p className="text-xs font-bold mb-2" style={{ color: "#1d4ed8" }}>次のステップ</p>
-                            <div className="space-y-1.5">
+                            <p className="text-[10px] font-bold mb-2 text-blue-400 uppercase tracking-wider">▼ 次のステップ</p>
+                            <div className="space-y-2">
                               {entry.nextBooks.map((book, i) => (
-                                <div key={i}>
-                                  <span className="text-sm font-medium" style={{ color: "#1e3a8a" }}>{book.title}</span>
-                                  <span className="text-xs ml-2" style={{ color: "#9ca3af" }}>{book.note}</span>
+                                <div key={i} className="text-xs">
+                                  <span className="font-semibold text-white">・ {book.title}</span>
+                                  <span className="text-gray-400 ml-2">({book.note})</span>
                                 </div>
                               ))}
                             </div>
@@ -490,25 +550,26 @@ export default function MoshiToolPage() {
 
             {/* タイムライン */}
             <div>
-              <h2 className="text-xl font-bold mb-5" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
-                学習タイムライン
-              </h2>
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2" style={{ color: "#fff", fontFamily: "var(--font-noto-serif)" }}>
+                <span className="w-1.5 h-5 rounded-full" style={{ backgroundColor: "#d4af37" }} />
+                合格逆算型 学習ロードマップ
+              </h3>
               <div className="space-y-4">
                 {result.timeline.map((phase, i) => {
-                  const priorityColor = phase.priority === "最高" ? { bg: "#fef2f2", border: "#fca5a5", label: "#dc2626" } :
-                    phase.priority === "高" ? { bg: "#fffbeb", border: "#fcd34d", label: "#d97706" } :
-                    { bg: "#f0fdf4", border: "#86efac", label: "#16a34a" };
+                  const priorityColor = phase.priority === "最高" ? { bg: "rgba(239, 68, 68, 0.03)", border: "rgba(239, 68, 68, 0.15)", label: "#ef4444" } :
+                    phase.priority === "高" ? { bg: "rgba(245, 158, 11, 0.03)", border: "rgba(245, 158, 11, 0.15)", label: "#f59e0b" } :
+                    { bg: "rgba(16, 185, 129, 0.03)", border: "rgba(16, 185, 129, 0.15)", label: "#10b981" };
                   return (
-                    <div key={i} className="flex gap-4 p-5 rounded-xl" style={{ backgroundColor: priorityColor.bg, border: `1px solid ${priorityColor.border}` }}>
+                    <div key={i} className="flex gap-4 p-6 rounded-2xl backdrop-blur-md" style={{ backgroundColor: priorityColor.bg, border: `1px solid ${priorityColor.border}` }}>
                       <div className="flex-shrink-0">
-                        <span className="text-xs font-bold px-2 py-1 rounded-full" style={{ backgroundColor: priorityColor.label, color: "#fff" }}>
-                          {phase.priority}
+                        <span className="text-[10px] font-extrabold px-2 py-1 rounded-md text-white" style={{ backgroundColor: priorityColor.label }}>
+                          優先度：{phase.priority}
                         </span>
                       </div>
                       <div>
-                        <p className="text-xs font-semibold mb-1" style={{ color: "#6b7280" }}>{phase.period}</p>
-                        <p className="font-bold text-sm mb-2" style={{ color: "#1f2937" }}>{phase.title}</p>
-                        <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>{phase.desc}</p>
+                        <p className="text-xs font-bold text-gray-500 mb-1">{phase.period}</p>
+                        <p className="font-bold text-sm text-white mb-2 leading-snug">{phase.title}</p>
+                        <p className="text-xs md:text-sm leading-relaxed text-gray-400">{phase.desc}</p>
                       </div>
                     </div>
                   );
@@ -517,29 +578,34 @@ export default function MoshiToolPage() {
             </div>
 
             {/* CTA */}
-            <div className="p-8 rounded-2xl text-center" style={{ backgroundColor: "#0c1a33" }}>
-              <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>次のステップ</p>
-              <p className="text-lg font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
-                この分析結果を持って、無料相談へ
+            <div className="p-8 rounded-3xl text-center relative overflow-hidden backdrop-blur-xl" style={{ backgroundColor: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.08)", boxShadow: "0 25px 50px rgba(0, 0, 0, 0.4)" }}>
+              <div className="absolute top-0 right-0 opacity-5 pointer-events-none translate-x-6 -translate-y-6">
+                <span className="text-8xl font-black text-white">NEXT</span>
+              </div>
+              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4af37" }}>NEXT STEP</p>
+              <h4 className="text-xl md:text-2xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
+                このAI分析結果をもとに、慶應医学部生と戦略を立てる
+              </h4>
+              <p className="text-xs max-w-xl mx-auto mb-6 leading-relaxed" style={{ color: "rgba(243,244,246,0.6)" }}>
+                AIが出力した学習ルートをベースに、現役慶應医学部生の担当講師が「本当に現在の習慣・時間の使い方で合格まで走り切れるか」をさらに詳しく個別診断します。
               </p>
-              <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-                ツールが出した学習ルートをベースに、現役医学部生の講師があなたの状況に合わせてさらに詳しく分析します。
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block px-8 py-3.5 text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#c9922a" }}
-              >
-                無料相談・お問い合わせ
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link
+                  href="/contact?from=moshi-tool-result-cta"
+                  className="inline-flex items-center justify-center rounded-xl px-8 py-3.5 text-[#060b13] font-bold text-sm transition-all hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+                  style={{ backgroundColor: "#d4af37" }}
+                >
+                  慶應医学部生との無料合格戦略診断に申し込む →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       )}
 
       {/* Back link */}
-      <div className="py-8 px-4 text-center" style={{ backgroundColor: "#f7f5f0" }}>
-        <Link href="/services/moshi" className="text-sm hover:opacity-80" style={{ color: "#6b7280" }}>
+      <div className="py-12 px-4 text-center">
+        <Link href="/services/moshi" className="text-xs hover:text-[#d4af37] transition-colors" style={{ color: "#9ca3af" }}>
           ← 模試分析サービスページへ戻る
         </Link>
       </div>
