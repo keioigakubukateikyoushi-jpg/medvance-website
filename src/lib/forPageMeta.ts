@@ -24,6 +24,7 @@ const audienceBySlug: Record<string, AudienceSpec> = {
   "keio-fuzoku": { educationalRole: "Keio affiliated school student", description: "慶應附属校生（中等部・普通部・高校・SFC含む）", suggestedMinAge: 12, suggestedMaxAge: 18 },
   "keio-naibu-heigan": { educationalRole: "Keio affiliated school student", description: "慶應義塾内部進学＆外部一般受験の両立希望者", suggestedMinAge: 15, suggestedMaxAge: 18 },
   "seiseki-up": { educationalRole: "high school student (grade improvement)", description: "学校成績の向上を目指す高校生", suggestedMinAge: 15, suggestedMaxAge: 18 },
+  "naibu-seiseki": { educationalRole: "affiliated / integrated school student", description: "中高一貫校・附属校の内部生（成績向上・進級・内部進学を目指す）", suggestedMinAge: 12, suggestedMaxAge: 18 },
   nangandai: { educationalRole: "competitive university applicant", description: "東大・京大・早慶などの難関大学志望者", suggestedMinAge: 16, suggestedMaxAge: 19 },
   "suisen-ao": { educationalRole: "recommendation / AO applicant", description: "総合型選抜・推薦入試出願予定者", suggestedMinAge: 16, suggestedMaxAge: 19 },
 };
@@ -153,6 +154,19 @@ export const forPageMeta: Record<
       { q: "学校の成績を短期間で上げることはできますか？", a: "定期テストは範囲が限定されているため、正しいアプローチで3〜4週間集中すれば1回のテストで大幅な点数アップが可能です。まず苦手科目を特定し、優先度をつけて取り組むことが重要です。" },
       { q: "内申点を上げるために何が効果的ですか？", a: "①定期テストの点数向上②提出物の期限厳守③授業態度——の3つが内申に直結します。特に定期テストが最も配点が高いため、テスト対策への集中投資が内申点向上の近道です。" },
       { q: "推薦入試に向けて成績対策はいつから始めるべきですか？", a: "推薦・総合型選抜を目指す場合、高1の段階から内申を意識した学習が理想です。評定は高校3年間の累積で決まるため、早い段階から戦略的に取り組むことが有利に働きます。" },
+    ],
+  },
+  "naibu-seiseki": {
+    name: "附属校・中高一貫校 内部生向け 成績・進級サポート個別指導",
+    description: "附属校・中高一貫校の内部生向けに、宿題・課題・レポートの伴走から教科ごとのピンポイント対策、留年回避・進級・内部進学までを現役医学部生が完全1対1でサポート。",
+    serviceType: "内部生向け成績・進級サポート",
+    label: "附属校・内部生の方へ",
+    faq: [
+      { q: "留年（進級）が心配です。間に合いますか？", a: "進級基準から逆算して、赤点リスクの高い科目・提出物を最優先で立て直します。まず「何が足りないと留年になるのか」を学校の基準に沿って整理し、テストの最低ラインと提出物を確実に押さえることから始めるため、危機的な状況からの立て直しも可能です。早いほど選択肢が増えるので、お早めにご相談ください。" },
+      { q: "学校独自のプリントや課題にも対応できますか？", a: "対応できます。むしろそこが完全1対1の最大の強みです。集団塾は市販教材ベースで進むため、学校ごとの独自プリントや採点基準の細かいレポート課題には対応しきれません。Medvanceは生徒の学校の試験範囲・配布資料・提出物そのものを教材にして、出題者の意図に合わせた対策を行います。" },
+      { q: "宿題やレポートの提出管理までしてもらえますか？", a: "はい。提出物の期限・進捗を一緒に管理し、レポートは「何をどう書けば評価されるか」から指導します。提出物の取りこぼしは評定・進級に直結するため、伴走しながら期限内提出の習慣そのものを作ります。" },
+      { q: "特定の苦手科目だけでもお願いできますか？", a: "1科目から受講可能です。内部生のお悩みは「全体は悪くないが特定科目だけ大きく落ちている」というケースが多く、その1科目を集中的に立て直すだけで進級・評定が安定することが少なくありません。" },
+      { q: "最終的に自分で点が取れるようになりますか？", a: "そこをゴールにしています。指導では「わからない箇所の発見→根本の理解→自力で解けるか確認」までを毎回繰り返し、定期テスト本番で自分の力で得点できる状態を目指します。指導がなくても回る学習習慣の定着までサポートします。" },
     ],
   },
   nangandai: {

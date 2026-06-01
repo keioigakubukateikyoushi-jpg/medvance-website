@@ -72,6 +72,11 @@ const situationCards: AudienceCard[] = [
     href: "/for/seiseki-up?from=for-hub",
   },
   {
+    title: "附属校・内部生の方",
+    body: "宿題・課題・レポートの伴走から教科別ピンポイント対策まで。成績向上・留年回避・進級を完全1対1で支えます。",
+    href: "/for/naibu-seiseki?from=for-hub",
+  },
+  {
     title: "難関大受験を目指す方",
     body: "東大・京大・早慶・難関国公立に向けて、志望校特化の個別対策を行います。",
     href: "/for/nangandai?from=for-hub",
