@@ -79,33 +79,27 @@ const medvanceFeatures = [
 const comparisonItems = [
   {
     metric: "講師の質",
-    medvance: "全員が現役の慶應医学部生（合格の当事者）",
-    yobiko: "指導のプロだが、最新の慶應特有の現場感覚や突破ノウハウは欠ける",
-    center: "一般的な大学生講師（地方国公立や他学部生が多く、慶應医学部専門外）"
+    medvance: "100%現役の慶應医学部生のみ（再現性のある合格メソッドを完全共有して1対1指導）",
+    yobiko: "集団のプロ講師（※鉄緑会は東大・慶應医講師がメインだが集団授業形式）",
+    center: "我流の一般大学生（非医学部中心・授業料の高額な中抜きによる指導品質低下）"
   },
   {
-    metric: "指導システム",
-    medvance: "完全1対1個別指導 ＋ 15分単位の計画管理",
-    yobiko: "一方通行の集団授業がメイン。個別管理は薄い",
-    center: "週に数回授業をするのみで、毎日の自習管理は行わない"
+    metric: "指導システム（自習管理）",
+    medvance: "完全1対1 ＋ 15分単位の計画管理 ＋ 脳科学復習自動配分（自律が苦手でも伴走して脱落させない）",
+    yobiko: "集団授業のみ。自己管理・自律的な勉強が前提（できないと即脱落する）",
+    center: "指導計画がなく、その場しのぎの宿題指示と質問対応のみ"
   },
   {
-    metric: "面接・小論文対策",
-    medvance: "学科と並行して担当講師が初期から一貫サポート",
-    yobiko: "直前期のみ集団での短期講習や形式的な面接練習のみ",
-    center: "対策ノウハウ自体がなく、学科指導のみに限定されるケースが大半"
+    metric: "進捗管理と共有",
+    medvance: "保護者へのリアルタイム進捗共有 ＋ AI×データベースでの定着度徹底分析による『完全オーダーメイド学習計画』",
+    yobiko: "学期ごとの懇談会や紙の成績表送付のみ（日常の学習進捗は不明）",
+    center: "授業報告書が月に一度届くのみで日常の定着率はブラックボックス化"
   },
   {
-    metric: "進捗管理方法",
-    medvance: "独自データベース×AIによる定着度・計画同期",
-    yobiko: "紙の計画シートや個人のモチベーション依存",
-    center: "計画そのものが存在せず、その場しのぎの質問対応"
-  },
-  {
-    metric: "保護者共有",
-    medvance: "データベース上でリアルタイムに進捗・宿題定着率を共有",
-    yobiko: "学期ごとの懇談会や成績表の送付のみ（ブラックボックス化）",
-    center: "授業報告書が月に一度届くのみで詳細が不明"
+    metric: "年間費用目安",
+    medvance: "約80万〜200万円（1コマ7,500円の完全定額制。中抜きや追加料金は一切なし）",
+    yobiko: "約120万〜250万円（鉄緑会）/ 年400万〜1000万円（医学部専門予備校）",
+    center: "約100万円〜（高額な授業料の中抜き・中間マージンが発生）"
   }
 ];
 
@@ -321,9 +315,9 @@ export default function KeioMedicalKateikyoushiPage() {
               <thead>
                 <tr className="text-[10px] font-bold tracking-widest uppercase text-white" style={{ backgroundColor: NAVY }}>
                   <th className="p-5 w-[15%]">比較指標</th>
-                  <th className="p-5 w-[35%] bg-amber-500/5 text-[#c9922a] border-l border-r border-[#c9922a]/30">Medvance（慶應医学部専門家庭教師）</th>
-                  <th className="p-5 w-[25%] opacity-80">大手医学部予備校</th>
-                  <th className="p-5 w-[25%] opacity-80">一般的な家庭教師センター</th>
+                  <th className="p-5 w-[35%] bg-amber-500/5 text-[#c9922a] border-l border-r border-[#c9922a]/30">Medvance（慶應医学部特化・データ管理型）</th>
+                  <th className="p-5 w-[25%] opacity-80">大手・医学部専門予備校（※鉄緑会は東大慶應医メイン）</th>
+                  <th className="p-5 w-[25%] opacity-80">一般家庭教師・中抜き型</th>
                 </tr>
               </thead>
               <tbody className="text-xs divide-y divide-slate-200">
@@ -355,11 +349,11 @@ export default function KeioMedicalKateikyoushiPage() {
                     <p className="text-xs text-slate-800 leading-relaxed font-medium">{item.medvance}</p>
                   </div>
                   <div className="p-3">
-                    <p className="text-[10px] font-bold text-slate-400 mb-1">大手予備校</p>
+                    <p className="text-[10px] font-bold text-slate-400 mb-1">大手・医学部予備校</p>
                     <p className="text-xs text-slate-500 leading-relaxed">{item.yobiko}</p>
                   </div>
                   <div className="p-3">
-                    <p className="text-[10px] font-bold text-slate-400 mb-1">一般的な家庭教師センター</p>
+                    <p className="text-[10px] font-bold text-slate-400 mb-1">一般家庭教師・中抜き型</p>
                     <p className="text-xs text-slate-500 leading-relaxed">{item.center}</p>
                   </div>
                 </div>
@@ -387,17 +381,17 @@ export default function KeioMedicalKateikyoushiPage() {
           <div className="space-y-4 mb-12">
             {[
               {
-                title: "週1回コース (1回90分授業×月4回 + 徹底コーチング)",
+                title: "週1回コース［月4回（8コマ）］＋ 徹底コーチング",
                 price: "月額 80,000円",
                 target: "他予備校と併用したい方、苦手な1科目を徹底的に慶應医学部生に対策してほしい方"
               },
               {
-                title: "週2回コース (1回90分授業×月8回 + 徹底コーチング)",
+                title: "週2回コース［月8回（16コマ）］＋ 徹底コーチング",
                 price: "月額 140,000円",
                 target: "英語・数学の2枚看板を強化したい方、自習計画と記述答案の添削を完全に任せたい方"
               },
               {
-                title: "週3回〜コース (1回90分授業×月12回以上 + 徹底コーチング)",
+                title: "週3回〜コース［月12回（24コマ）以上］＋ 徹底コーチング",
                 price: "月額 200,000円〜",
                 target: "浪人生・再受験生の方で全科目の指導管理を依頼したい方、または直前期の模擬面接・小論文対策を短期間で仕上げたい方（割引あり）"
               }

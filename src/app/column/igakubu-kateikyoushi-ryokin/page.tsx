@@ -99,7 +99,7 @@ export default function IgakubuKateikyoushiRyokinPage() {
                 <tr style={{ backgroundColor: "#0c1a33" }}>
                   <th className="px-4 py-3 text-left font-semibold text-white">講師の属性</th>
                   <th className="px-4 py-3 text-left font-semibold" style={{ color: "#c9922a" }}>1コマ相場</th>
-                  <th className="px-4 py-3 text-left font-semibold text-white">月額目安（週1）</th>
+                  <th className="px-4 py-3 text-left font-semibold text-white">月額目安（月4回（8コマ））</th>
                   <th className="px-4 py-3 text-left font-semibold text-white">注意点</th>
                 </tr>
               </thead>
@@ -108,7 +108,7 @@ export default function IgakubuKateikyoushiRyokinPage() {
                   { type: "一般大学生（理系）", perUnit: "3,000〜5,000円", monthly: "1.2〜2万円", note: "医学部特有の対策が難しい" },
                   { type: "大学院生・一般理系卒", perUnit: "5,000〜1万円", monthly: "2〜4万円", note: "面接・小論文対応に限界がある" },
                   { type: "現役医学部生（一般）", perUnit: "8,000〜1.5万円", monthly: "3.2〜6万円", note: "所属大学・学年で差がある" },
-                  { type: "現役慶應医学部生（Medvance）", perUnit: "1.5万円（90分）", monthly: "8万円（月4回＋コーチング）", note: "面接・小論文・学習管理まで込み" },
+                  { type: "現役慶應医学部生（Medvance）", perUnit: "1.5万円（90分（2コマ））", monthly: "8万円（月4回（8コマ）＋コーチング）", note: "面接・小論文・学習管理まで込み" },
                   { type: "医師・医学部卒", perUnit: "2〜3万円", monthly: "8〜12万円", note: "最新の入試情報はやや古い場合も" },
                 ].map((row, i) => (
                   <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "#fff" : "#faf9f6", borderTop: "1px solid #e5e1d8" }}>
@@ -143,8 +143,8 @@ export default function IgakubuKateikyoushiRyokinPage() {
                 {[
                   { type: "医学部専門予備校（フルコース）", cost: "200〜500万円", custom: "集団授業中心" },
                   { type: "大手予備校（医学部コース）", cost: "100〜200万円", custom: "ほぼ集団授業" },
-                  { type: "Medvance（週1回）", cost: "約100万円（授業+コーチング込み）", custom: "完全1対1" },
-                  { type: "Medvance（週2回）", cost: "約170万円（授業+コーチング込み）", custom: "完全1対1" },
+                  { type: "Medvance（月4回（8コマ））", cost: "約100万円（授業+コーチング込み）", custom: "完全1対1" },
+                  { type: "Medvance（月8回（16コマ））", cost: "約170万円（授業+コーチング込み）", custom: "完全1対1" },
                 ].map((row, i) => (
                   <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "#fff" : "#faf9f6", borderTop: "1px solid #e5e1d8" }}>
                     <td className="px-4 py-4 font-semibold text-xs" style={{ color: "#0c1a33" }}>{row.type}</td>
@@ -171,9 +171,9 @@ export default function IgakubuKateikyoushiRyokinPage() {
           </h2>
           <div className="space-y-3 mb-6">
             {[
-              { label: "週1回コース", price: "月8万円", detail: "月4回授業（1回90分）＋コーチング。入塾金2万円（初回のみ）。" },
-              { label: "週2回コース", price: "月14万円", detail: "月8回授業（1回90分）＋コーチング。" },
-              { label: "週3回〜コース", price: "月20万円〜", detail: "月12回以上（1回90分授業・割引あり）＋コーチング。直前期や浪人生・再受験生向け。" },
+              { label: "週1回コース", price: "月8万円", detail: "月4回（8コマ）の授業（1回90分 = 45分×2コマ）＋コーチング。入塾金2万円（初回のみ）。" },
+              { label: "週2回コース", price: "月14万円", detail: "月8回（16コマ）の授業（1回90分 = 45分×2コマ）＋コーチング。" },
+              { label: "週3回〜コース", price: "月20万円〜", detail: "月12回（24コマ）〜の授業（1回90分 = 45分×2コマ・セット割引適用）＋コーチング。直前期や浪人生・再受験生向け。" },
             ].map((item, i) => (
               <div key={i} className="p-5 rounded-xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
                 <div className="flex items-center justify-between mb-2">

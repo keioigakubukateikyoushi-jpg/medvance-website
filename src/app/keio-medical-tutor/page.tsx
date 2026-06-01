@@ -89,14 +89,14 @@ const affiliateSchools = [
 const tableComparison = [
   {
     metric: "指導・計画システム",
-    medvance: "15分単位の完全計画作成 ＋ 脳科学復習自動配分",
-    competitor: "計画書はなく、授業時に簡単な宿題指示のみ",
+    medvance: "自律が苦手でも問題なし。15分単位の計画表 ＋ 脳科学復習自動スケジュール化",
+    competitor: "計画書はなく、授業時に大まかな宿題指示をするのみ（生徒本人の自律性・自己管理頼み）",
     generic: "講師個人の裁量に依存（指導計画の均一性なし）"
   },
   {
-    metric: "学習データの可視化",
-    medvance: "独自データベース×AIでの進捗・定着率色分け管理（リアルタイム保護者共有）",
-    competitor: "指導後の簡単なメール報告のみ。データの蓄積はなし",
+    metric: "学習データ可視化と共有",
+    medvance: "保護者へのリアルタイム共有 ＋ AI×データベースでの定着度徹底分析による『完全オーダーメイド学習計画』",
+    competitor: "指導後の簡単なメール報告のみ。データの蓄積や分析はなし",
     generic: "指導報告書が月に一度届くのみで進捗はブラックボックス"
   },
   {
@@ -107,9 +107,15 @@ const tableComparison = [
   },
   {
     metric: "面接・小論文・願書",
-    medvance: "学科指導と同等に重視し、担当慶應医学生講師が初期から一気通貫サポート",
-    competitor: "直前期の簡素な練習のみで、詳細な文章添削などは別料金または対応外",
+    medvance: "学科指導と同等に重視し、慶應医学部合格メソッドを持つ担当講師が初期から一気通貫で無償サポート",
+    competitor: "直前期の簡素な練習のみで、詳細な文章添削や自己推薦文作成などは対応外または追加料金",
     generic: "指導ノウハウそのものがなく対応不可"
+  },
+  {
+    metric: "料金システムと透明性",
+    medvance: "約80万〜200万円（1コマ7,500円の完全定額制。高額な中抜きや追加料金は一切なし）",
+    competitor: "約120万〜250万円（講師のマッチングのみで、高額な仲介料・初期費用が上乗せ）",
+    generic: "約100万円〜（高額な授業料の『中抜き』・中間マージンが発生）"
   }
 ];
 
@@ -323,9 +329,9 @@ export default function KeioMedicalTutorPage() {
               <thead>
                 <tr className="text-[10px] font-bold tracking-widest uppercase text-white" style={{ backgroundColor: NAVY }}>
                   <th className="p-5 w-[15%]">比較指標</th>
-                  <th className="p-5 w-[35%] bg-amber-500/5 text-[#c9922a] border-l border-r border-[#c9922a]/30">Medvance（慶應医学部特化指導）</th>
-                  <th className="p-5 w-[25%] opacity-80">大手慶應家庭教師センター</th>
-                  <th className="p-5 w-[25%] opacity-80">一般的な家庭教師センター</th>
+                  <th className="p-5 w-[35%] bg-amber-500/5 text-[#c9922a] border-l border-r border-[#c9922a]/30">Medvance（慶應医学部特化・データ管理型）</th>
+                  <th className="p-5 w-[25%] opacity-80">大手慶應家庭教師センター（OLAX等）</th>
+                  <th className="p-5 w-[25%] opacity-80">一般家庭教師・紹介型</th>
                 </tr>
               </thead>
               <tbody className="text-xs divide-y divide-slate-200">
@@ -353,15 +359,15 @@ export default function KeioMedicalTutorPage() {
                 <p className="font-extrabold text-sm mb-3 text-slate-900 border-b pb-2">{item.metric}</p>
                 <div className="space-y-2">
                   <div className="bg-white p-3 rounded-xl border border-[#c9922a]/20">
-                    <p className="text-[10px] font-bold text-[#c9922a] mb-1">Medvance</p>
+                    <p className="text-[10px] font-bold text-[#c9922a] mb-1">Medvance（データ管理型）</p>
                     <p className="text-xs text-slate-800 leading-relaxed font-medium">{item.medvance}</p>
                   </div>
                   <div className="p-3">
-                    <p className="text-[10px] font-bold text-slate-400 mb-1">大手慶應家庭教師</p>
+                    <p className="text-[10px] font-bold text-slate-400 mb-1">大手慶應家庭教師（OLAX等）</p>
                     <p className="text-xs text-slate-500 leading-relaxed">{item.competitor}</p>
                   </div>
                   <div className="p-3">
-                    <p className="text-[10px] font-bold text-slate-400 mb-1">一般的な家庭教師センター</p>
+                    <p className="text-[10px] font-bold text-slate-400 mb-1">一般家庭教師・紹介型</p>
                     <p className="text-xs text-slate-500 leading-relaxed">{item.generic}</p>
                   </div>
                 </div>

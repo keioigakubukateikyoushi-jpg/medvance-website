@@ -11,19 +11,19 @@ export const metadata = {
   },};
 
 const basicPlans = [
-  { freq: "月4回", weekly: "週1回", lessons: 4, lessonFee: 60000, coaching: 20000, total: 80000, discount: 0 },
-  { freq: "月8回", weekly: "週2回", lessons: 8, lessonFee: 120000, coaching: 20000, total: 140000, discount: 0 },
-  { freq: "月12回", weekly: "週3回", lessons: 12, lessonFee: 180000, coaching: 20000, total: 200000, discount: 20000 },
-  { freq: "月16回", weekly: "週4回", lessons: 16, lessonFee: 240000, coaching: 20000, total: 260000, discount: 20000 },
-  { freq: "月20回", weekly: "週5回", lessons: 20, lessonFee: 300000, coaching: 20000, total: 320000, discount: 20000 },
+  { freq: "月4回（8コマ）", weekly: "週1回", lessons: 4, lessonFee: 60000, coaching: 20000, total: 80000, discount: 0 },
+  { freq: "月8回（16コマ）", weekly: "週2回", lessons: 8, lessonFee: 120000, coaching: 20000, total: 140000, discount: 0 },
+  { freq: "月12回（24コマ）", weekly: "週3回", lessons: 12, lessonFee: 180000, coaching: 20000, total: 200000, discount: 20000 },
+  { freq: "月16回（32コマ）", weekly: "週4回", lessons: 16, lessonFee: 240000, coaching: 20000, total: 260000, discount: 20000 },
+  { freq: "月20回（40コマ）", weekly: "週5回", lessons: 20, lessonFee: 300000, coaching: 20000, total: 320000, discount: 20000 },
 ];
 
 const specializedPlans = [
-  { freq: "月4回", weekly: "週1回", lessons: 4, lessonFee: 90000, coaching: 30000, total: 120000, discount: 0 },
-  { freq: "月8回", weekly: "週2回", lessons: 8, lessonFee: 180000, coaching: 30000, total: 210000, discount: 0 },
-  { freq: "月12回", weekly: "週3回", lessons: 12, lessonFee: 270000, coaching: 30000, total: 300000, discount: 30000 },
-  { freq: "月16回", weekly: "週4回", lessons: 16, lessonFee: 360000, coaching: 30000, total: 390000, discount: 30000 },
-  { freq: "月20回", weekly: "週5回", lessons: 20, lessonFee: 450000, coaching: 30000, total: 480000, discount: 30000 },
+  { freq: "月4回（8コマ）", weekly: "週1回", lessons: 4, lessonFee: 90000, coaching: 30000, total: 120000, discount: 0 },
+  { freq: "月8回（16コマ）", weekly: "週2回", lessons: 8, lessonFee: 180000, coaching: 30000, total: 210000, discount: 0 },
+  { freq: "月12回（24コマ）", weekly: "週3回", lessons: 12, lessonFee: 270000, coaching: 30000, total: 300000, discount: 30000 },
+  { freq: "月16回（32コマ）", weekly: "週4回", lessons: 16, lessonFee: 360000, coaching: 30000, total: 390000, discount: 30000 },
+  { freq: "月20回（40コマ）", weekly: "週5回", lessons: 20, lessonFee: 450000, coaching: 30000, total: 480000, discount: 30000 },
 ];
 
 const included = [
@@ -38,19 +38,19 @@ const included = [
 const fitGuides = [
   {
     title: "まず学習の軸を整えたい方",
-    label: "月4回 / 週1回",
+    label: "月4回（8コマ） / 週1回",
     body:
       "学校の授業や他の集団予備校と両立しながら、まず正しい勉強の方向性と優先順位を整えたい方向けです。授業で弱点を補強しつつ、計画を管理します。",
   },
   {
     title: "最も相談・開始が多い標準パターン",
-    label: "月8回〜12回 / 週2回・週3回",
+    label: "月8回（16コマ）〜月12回（24コマ） / 週2回・週3回",
     body:
       "高3生、浪人生、再受験生の初期相談で最も選ばれる標準的な頻度です。学習内容の改善、複数科目の弱点補強、演習量の確保を最もバランスよく両立できます。",
   },
   {
     title: "短期間で一気に追い上げたい方",
-    label: "月16回〜20回 / 週4回・週5回",
+    label: "月16回（32コマ）〜月20回（40コマ） / 週4回・週5回",
     body:
       "秋以降の直前期の追い上げや、科目数が多く一気にライバルを追い抜きたい方向けの集中指導です。授業回数を増やし、面接・小論文まで徹底管理します。",
   },
