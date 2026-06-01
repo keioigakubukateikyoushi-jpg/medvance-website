@@ -767,7 +767,7 @@ export default function Home() {
               <span aria-hidden className="absolute -left-2 top-3 select-none font-serif text-[120px] leading-none" style={{ color: "rgba(201,146,42,0.14)", fontFamily: "var(--font-noto-serif)" }}>“</span>
               <p className="mb-3 text-xs font-bold tracking-[0.22em] uppercase" style={{ color: "#c9922a" }}>Our Philosophy</p>
               <blockquote className="relative text-2xl md:text-[2rem] font-bold leading-[1.5] tracking-tight" style={{ color: "#ffffff", fontFamily: "var(--font-noto-serif)" }}>
-                努力を、<span style={{ color: "#e7c873" }}>合格</span>という結果へ。
+努力を、<br className="sm:hidden" /><span style={{ color: "#e7c873" }}>合格</span>という結果へ。
               </blockquote>
               <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 合否を分けるのは、才能ではありません。<br className="hidden sm:block" />
