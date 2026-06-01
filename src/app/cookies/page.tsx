@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cookie設定",
+  description:
+    "Medvance（メドバンス）のCookie（クッキー）の利用についてのご案内と設定方法を掲載しています。",
+  alternates: { canonical: "/cookies" },
+};
+
 export default function CookiesPage() {
   return (
     <div className="py-16 px-4 min-h-screen bg-white">

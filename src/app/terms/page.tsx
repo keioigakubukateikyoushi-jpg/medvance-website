@@ -1,5 +1,13 @@
 import Link from "next/link";
 import LegalLayout from "@/components/LegalLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "利用規約",
+  description:
+    "Medvance（メドバンス）の利用規約。本サービスのご利用に際しての規約を掲載しています。",
+  alternates: { canonical: "/terms" },
+};
 
 export default function TermsPage() {
   return (

@@ -1,5 +1,13 @@
 import Link from "next/link";
 import LegalLayout from "@/components/LegalLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー",
+  description:
+    "Medvance（メドバンス）のプライバシーポリシー。お客様からお預かりする個人情報の取扱い方針を掲載しています。",
+  alternates: { canonical: "/privacy" },
+};
 
 export default function PrivacyPage() {
   return (

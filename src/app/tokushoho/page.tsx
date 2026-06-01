@@ -1,5 +1,13 @@
 import Link from "next/link";
 import LegalLayout from "@/components/LegalLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "特定商取引法に基づく表記",
+  description:
+    "Medvance（メドバンス）の特定商取引に関する法律に基づく表記を掲載しています。",
+  alternates: { canonical: "/tokushoho" },
+};
 
 export default function TokushohoPage() {
   return (
