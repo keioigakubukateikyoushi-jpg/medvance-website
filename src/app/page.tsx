@@ -281,6 +281,13 @@ export default function Home() {
           details.glass-card-readable[open] .chevron-icon {
             transform: rotate(180deg);
           }
+          @keyframes spin-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          .animate-spin-slow {
+            animation: spin-slow 180s linear infinite;
+          }
         `}} />
 
         {/* Subtle background light effects */}
@@ -389,7 +396,7 @@ export default function Home() {
                 {
                   title: "大人数の集団塾の指導は",
                   subtitle: "自分に合っていない",
-                  mobileText: "集団塾 of 勉強方法は自分に合っていない",
+                  mobileText: "集団塾の勉強方法は自分に合っていない",
                   icon: "x-circle",
                   num: "02",
                   solution: "完全1対1の完全個別カリキュラムを採用。生徒の理解度に合わせて進度や難易度をリアルタイムで微調整し、授業時間を100%密度の濃いものにします。"
@@ -420,9 +427,6 @@ export default function Home() {
                 },
               ];
 
-              // Correct typo in Japanese text dynamically: "集団塾 of 勉強方法は自分に合っていない" -> "集団塾の勉強方法は自分に合っていない"
-              leftPainPoints[1].mobileText = "集団塾の勉強方法は自分に合っていない";
-
               const rightPainPoints = [
                 {
                   title: "医学部合格法を知り尽くした",
@@ -449,7 +453,7 @@ export default function Home() {
                   solution: "週間・月間の学習進捗レポートを保護者様へ共有。客観的なデータと進度をもとに、今どの位置にいて合格まで何が足りないかを常にクリアに可視化します。"
                 },
                 {
-                  title: "変化の激しい医学部受験の",
+                  title: "変化 of 激しい医学部受験の",
                   subtitle: "最新情報やトレンドを知りたい",
                   mobileText: "医学部受験の最新情報を知りたい",
                   icon: "info",
@@ -465,6 +469,9 @@ export default function Home() {
                   solution: "最高峰の慶應医学部生講師、24時間のオンライン質問対応、日々の自学自習管理など、合格に必要なすべてのリソースを完備。私たちは「本気で合格したい」生徒と保護者様に全力でコミットします。"
                 },
               ];
+
+              // Correct typo in Japanese text dynamically
+              rightPainPoints[3].title = "変化の激しい医学部受験の";
 
               const renderCard = (item: any, isLeft: boolean) => {
                 const iconBg = isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
@@ -520,15 +527,27 @@ export default function Home() {
                       {leftPainPoints.map(item => renderCard(item, true))}
                     </div>
 
-                    {/* Center Column (Central Illustration with premium radial backglow) */}
-                    <div className="relative w-[340px] h-[340px] flex items-center justify-center sticky top-24">
-                      <div className="absolute inset-0 bg-blue-100/30 rounded-full blur-[60px] pointer-events-none animate-pulse" />
-                      <div className="absolute inset-0 bg-amber-100/20 rounded-full blur-[80px] pointer-events-none animate-[pulse_8s_infinite]" />
+                    {/* Center Column (Central Illustration with premium radial backglow and glassmorphic pedestal base) */}
+                    <div className="relative w-[340px] h-[340px] flex items-center justify-center sticky top-24 select-none">
+                      
+                      {/* Layer 1: Pulsing Deep Backglows */}
+                      <div className="absolute w-[280px] h-[280px] bg-blue-100/30 rounded-full blur-[50px] pointer-events-none animate-pulse" />
+                      <div className="absolute w-[320px] h-[320px] bg-amber-100/20 rounded-full blur-[70px] pointer-events-none animate-[pulse_10s_infinite]" />
+                      
+                      {/* Layer 2: Elegant Concentric Thin Golden Orbit Rings */}
+                      <div className="absolute w-[290px] h-[290px] rounded-full border border-[#c9922a]/10 pointer-events-none" />
+                      <div className="absolute w-[250px] h-[250px] rounded-full border border-dashed border-[#c9922a]/5 pointer-events-none animate-spin-slow" />
+                      
+                      {/* Layer 3: Glassmorphic Pedestal Base */}
+                      <div className="absolute w-[260px] h-[260px] rounded-full border border-white/60 bg-white/40 backdrop-blur-[8px] shadow-[0_16px_48px_rgba(12,26,51,0.04),inset_0_2px_4px_rgba(255,255,255,0.6)] pointer-events-none" />
+                      
+                      {/* Layer 4: Floating Illustration with drop-shadow */}
                       <img 
                         src="/images/generated/worried_family_option3.png" 
                         alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                        className="w-full h-auto object-contain scale-[1.05] relative z-10"
+                        className="w-[220px] h-auto object-contain relative z-10 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(12,26,51,0.12)]"
                       />
+                      
                     </div>
 
                     {/* Right Column (06 to 10) */}
@@ -541,16 +560,21 @@ export default function Home() {
                   {/* MOBILE & TABLET LAYOUT (Sleek grid with clean typography) */}
                   <div className="lg:hidden flex flex-col items-center gap-8">
                     
-                    {/* Central Illustration for Mobile */}
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-blue-100/40 rounded-full blur-2xl animate-pulse pointer-events-none" />
-                      <div className="w-[180px] h-[180px] flex items-center justify-center p-2 bg-white rounded-full border border-black/5 shadow-md relative z-10">
-                        <img 
-                          src="/images/generated/worried_family_option3.png" 
-                          alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                          className="w-full h-auto object-contain"
-                        />
-                      </div>
+                    {/* Central Illustration for Mobile with pedestal framing */}
+                    <div className="relative flex items-center justify-center p-6">
+                      {/* Backglow */}
+                      <div className="absolute w-[200px] h-[200px] bg-blue-100/30 rounded-full blur-2xl animate-pulse pointer-events-none" />
+                      <div className="absolute w-[180px] h-[180px] rounded-full border border-[#c9922a]/10 pointer-events-none" />
+                      
+                      {/* Pedestal */}
+                      <div className="absolute w-[170px] h-[170px] rounded-full border border-white bg-white/50 backdrop-blur-sm shadow-md pointer-events-none" />
+                      
+                      {/* Image */}
+                      <img 
+                        src="/images/generated/worried_family_option3.png" 
+                        alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
+                        className="w-[140px] h-auto object-contain relative z-10 filter drop-shadow-[0_8px_16px_rgba(12,26,51,0.08)]"
+                      />
                     </div>
 
                     {/* Clean 2-column or 1-column list */}
