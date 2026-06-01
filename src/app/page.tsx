@@ -730,16 +730,16 @@ export default function Home() {
                 </h2>
                 <div className="space-y-4 text-sm md:text-base leading-relaxed" style={{ color: "#6b7280" }}>
                   <p>
-                    Medvanceは、<strong style={{ color: "#0c1a33" }}>現役の慶應義塾大学医学部生</strong>である代表が立ち上げた医学部受験専門塾です。代表自身、自らの医学部入試で、<strong style={{ color: "#0c1a33" }}>受験したすべての医学部に合格</strong>しました。
+                    Medvanceは、現役の慶應義塾大学医学部生である代表が立ち上げた医学部受験専門塾です。代表自身、自らの医学部入試で、受験したすべての医学部に合格しました。
                   </p>
                   <p>
-                    合否を分けたのは、<strong style={{ color: "#0c1a33" }}>生まれ持った才能ではありませんでした</strong>。何を・いつ・どの順番で進めるかという<strong style={{ color: "#0c1a33" }}>受験戦略</strong>と、合格者だからこそ確立できた<strong style={{ color: "#0c1a33" }}>勉強法</strong>。Medvanceは、この実体験そのものから生まれています。
+                    合否を分けたのは、生まれ持った才能ではありませんでした。何を・いつ・どの順番で進めるかという<strong style={{ color: "#0c1a33" }}>受験戦略</strong>と、合格者だからこそ確立できた<strong style={{ color: "#0c1a33" }}>勉強法</strong>。Medvanceは、この実体験そのものから生まれています。
                   </p>
                   <p>
-                    同じだけ努力しても、<strong style={{ color: "#0c1a33" }}>正しい戦略を知っているか</strong>で結果は大きく変わります。やみくもな努力ではなく、<strong style={{ color: "#0c1a33" }}>合格から逆算した戦略</strong>にもとづく努力こそが、最短距離で実を結ぶ。その確信が、私たちの原点です。
+                    同じ時間を費やしても、戦略の有無で結果は変わります。やみくもに量を積むのではなく、<strong style={{ color: "#0c1a33" }}>合格から逆算して</strong>進むこと。代表自身が実感したこの差が、Medvanceの指導の核にあります。
                   </p>
                   <p>
-                    一方で、医学部受験の確かな情報や戦略は、<strong style={{ color: "#0c1a33" }}>いまだ十分にオープンになっていません</strong>。医学部に合格した人による<strong style={{ color: "#0c1a33" }}>再現性のある戦略</strong>を、医学部を志す<strong style={{ color: "#0c1a33" }}>すべての受験生へ届けたい</strong>——その想いから、現役医学部生が教える医学部受験塾Medvanceは生まれました。
+                    一方で、医学部受験の確かな情報や戦略は、いまだ十分にオープンになっていません。医学部に合格した人による<strong style={{ color: "#0c1a33" }}>再現性のある戦略</strong>を、医学部を志すすべての受験生へ届けたい——その想いから、現役医学部生が教える医学部受験塾Medvanceは生まれました。
                   </p>
                    <div className="pt-2">
                     <div className="p-3.5 rounded-xl border text-xs" style={{ backgroundColor: "#f7f5f0", borderColor: "#e5e1d8", color: "#5f6b7a" }}>
