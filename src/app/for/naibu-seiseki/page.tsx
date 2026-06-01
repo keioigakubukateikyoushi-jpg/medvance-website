@@ -111,7 +111,11 @@ export default function NaibuSeisekiPage() {
         {/* HERO */}
         <div style={{ backgroundColor: NAVY }} className="py-24 px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: GOLD }}>
+            <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5" style={{ backgroundColor: "rgba(201,146,42,0.14)", border: `1px solid rgba(201,146,42,0.45)` }}>
+              <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: GOLD }} />
+              <span className="text-xs md:text-sm font-bold" style={{ color: "#e7c873" }}>現役慶應医学部生が成績を徹底サポート</span>
+            </div>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>
               附属校・中高一貫校 内部生サポート
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "var(--font-noto-serif)" }}>
@@ -119,7 +123,7 @@ export default function NaibuSeisekiPage() {
             </h1>
             <p className="text-base md:text-lg mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
               留年回避・評定維持・内部進学まで。<br />
-              宿題から定期テストまで、現役医学部生が完全1対1で徹底伴走します。
+              宿題から定期テストまで、現役慶應医学部生が完全1対1で徹底伴走します。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -147,7 +151,7 @@ export default function NaibuSeisekiPage() {
         <div className="bg-white border-b" style={{ borderColor: BORDER }}>
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0" style={{ borderColor: BORDER }}>
             {[
-              { k: "現役医学部生", v: "が完全1対1で指導" },
+              { k: "現役慶應医学部生", v: "が完全1対1で指導" },
               { k: "15分単位", v: "必要な分だけ受講" },
               { k: "1科目〜", v: "苦手の1科目からOK" },
               { k: "オンライン＆対面", v: "全国対応・東京は対面も" },
