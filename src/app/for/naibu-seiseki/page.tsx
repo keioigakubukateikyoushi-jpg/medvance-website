@@ -310,8 +310,49 @@ export default function NaibuSeisekiPage() {
           </div>
         </div>
 
-        {/* JOURNEY: わからない → 自力で得点 */}
+        {/* KEIO INTERNAL STRENGTH */}
         <div className="py-16 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative overflow-hidden rounded-3xl p-8 md:p-12" style={{ backgroundColor: NAVY }}>
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px]" style={{ background: `linear-gradient(to right, transparent, ${GOLD}, transparent)` }} />
+              <div className="text-center max-w-2xl mx-auto">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: GOLD }}>慶應附属校の内部生へ</p>
+                <h2 className="text-2xl md:text-[1.9rem] font-bold text-white mb-5 leading-snug" style={{ fontFamily: "var(--font-noto-serif)" }}>
+                  慶應内部生の成績を、<br className="hidden sm:block" />
+                  <span style={{ color: "#e7c873" }}>現役慶應医学部生</span>が徹底サポート
+                </h2>
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
+                  指導するのは、慶應義塾大学医学部に在籍する現役医学部生。塾高・女子高・志木・SFC・中等部・普通部など、系列校の独自カリキュラムや定期試験の特性、内部進学の仕組みを深く理解しています。だからこそ、評定（GPA）維持から医学部への内部推薦まで、的確に伴走できます。
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-4 mt-8">
+                {[
+                  { t: "系列校の試験を熟知", b: "独自プリント・採点傾向に同調した、その学校のための対策。" },
+                  { t: "評定（GPA）を逆算", b: "内部進学に必要な評定から逆算し、全科目をバランス良く底上げ。" },
+                  { t: "医学部内部推薦も視野", b: "将来の医学部内部推薦まで見据えた学習設計にも対応できます。" },
+                ].map((c, i) => (
+                  <div key={i} className="rounded-2xl p-5" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                    <p className="font-bold text-sm mb-2 text-white">{c.t}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>{c.b}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 text-center">
+                <Link
+                  href="/for/keio-naibu?from=naibu-seiseki"
+                  className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: GOLD, color: "#fff" }}
+                >
+                  慶應内部進学・医学部推薦の対策を見る
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* JOURNEY: わからない → 自力で得点 */}
+        <div className="py-16 px-4" style={{ backgroundColor: CREAM }}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
               「わからない」から「自分で点が取れる」へ
@@ -325,7 +366,7 @@ export default function NaibuSeisekiPage() {
                 { k: "理解", t: "根本から解消", b: "暗記でごまかさず、なぜそうなるのかを腹落ちするまで1対1で解きほぐします。" },
                 { k: "再現", t: "自力で得点", b: "自分で解けるかを確認し、テスト本番で再現できる状態まで仕上げます。" },
               ].map((s, i) => (
-                <div key={i} className="relative p-6 rounded-2xl text-center" style={{ backgroundColor: CREAM, border: `1px solid ${BORDER}` }}>
+                <div key={i} className="relative p-6 rounded-2xl text-center bg-white" style={{ border: `1px solid ${BORDER}` }}>
                   <span className="inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold text-white mb-4" style={{ backgroundColor: NAVY, fontFamily: "var(--font-noto-serif)" }}>
                     {i + 1}
                   </span>
