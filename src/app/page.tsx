@@ -248,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 2.1 PAIN POINTS SECTION (🤖 ULTRA-PREMIUM CRAFTED MARKETING COMPONENT) ── */}
+      {/* ── 2.1 PAIN POINTS SECTION (🤖 MATHEMATICAL GEOMETRIC EMPATHY COMPONENT) ── */}
       <section className="relative overflow-hidden bg-[#faf9f6] py-24 px-4 border-b" style={{ borderColor: "#e5e1d8" }}>
         {/* Decorative Grid Mesh & Light Effects */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(#0c1a33 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
@@ -262,7 +262,7 @@ export default function Home() {
               <span>PAIN & EMPATHY</span>
             </div>
             <h2 
-              className="text-3xl md:text-5xl font-bold mb-5 tracking-tight"
+              className="text-3xl md:text-5xl font-bold mb-5 tracking-tight text-center"
               style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)", fontSize: "2.5rem" }}
             >
               こんなお悩みありませんか？
@@ -276,115 +276,134 @@ export default function Home() {
           {/* Interactive Layout */}
           <div className="relative mx-auto max-w-5.5xl">
             
-            {/* DESKTOP LAYOUT (Highly crafted grid with surrounding visual connectors) */}
-            <div className="hidden lg:grid grid-cols-[1.1fr_0.8fr_1.1fr] gap-6 items-center relative">
+            {/* DESKTOP LAYOUT: Highly Crafted 4-Quadrant Symmetrical Diamond Layout with SVG Connecting Spoke Canvas */}
+            <div className="hidden lg:block relative w-full h-[620px] mx-auto max-w-5xl">
               
-              {/* Left Column (Cards 1 & 3) */}
-              <div className="space-y-8 relative z-20">
-                {/* Card 1 */}
-                <div className="group p-6 bg-white/90 backdrop-blur-md rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(12,26,51,0.08)]" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-sky-50 text-sky-600 border border-sky-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <span className="block text-[10px] font-bold tracking-widest mb-1.5" style={{ color: "#c9922a" }}>CASE 01 / 成績と偏差値</span>
-                      <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>いい成績を取って医学部へ進学したい</h3>
-                      <p className="text-xs text-gray-500 font-semibold mb-3">努力が空回りしていませんか？</p>
-                      <p className="text-[12px] leading-relaxed text-gray-400">
-                        「勉強時間は長いのに偏差値が頭打ちになっている」「今の計画のままで本当に合格圏に届くのか不安」という焦りに、確実な合格マップを設計します。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="group p-6 bg-white/90 backdrop-blur-md rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(12,26,51,0.08)]" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-indigo-50 text-indigo-600 border border-indigo-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <span className="block text-[10px] font-bold tracking-widest mb-1.5" style={{ color: "#c9922a" }}>CASE 03 / 内部進学・附属校</span>
-                      <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>内部での進級をサポートしてほしい</h3>
-                      <p className="text-xs text-gray-500 font-semibold mb-3">独自の推薦枠を確実に勝ち取るために</p>
-                      <p className="text-[12px] leading-relaxed text-gray-400">
-                        「医学部推薦枠の評定基準が高く、日々の小テスト対策に追われている」「定期試験の傾向が特殊すぎる」という附属校生に、各校の過去データから徹底対策。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Center Column (Worried Family circular photo with premium styling) */}
-              <div className="relative flex flex-col items-center justify-center z-10 py-12">
-                {/* Glowing neon background circles */}
-                <div className="absolute w-72 h-72 rounded-full border border-dashed animate-spin-slow opacity-25 pointer-events-none -z-10" style={{ borderColor: "#c9922a", animationDuration: "40s" }} />
-                <div className="absolute w-80 h-80 rounded-full border border-[#e5e1d8] opacity-20 pointer-events-none -z-10" />
+              {/* Backing SVG Spokes Canvas */}
+              <svg viewBox="0 0 1000 600" className="absolute inset-0 w-full h-full pointer-events-none z-0" aria-hidden="true">
+                {/* Glowing Concentric Target Rings */}
+                <circle cx="500" cy="300" r="140" fill="none" stroke="rgba(201,146,42,0.18)" strokeWidth="1" />
+                <circle cx="500" cy="300" r="185" fill="none" stroke="rgba(12,26,51,0.06)" strokeWidth="1" strokeDasharray="3 6" />
+                <circle cx="500" cy="300" r="230" fill="none" stroke="rgba(201,146,42,0.08)" strokeWidth="1" />
                 
-                {/* Soft backdrop glow */}
-                <div className="absolute inset-0 bg-radial-gradient from-amber-100/60 via-transparent to-transparent blur-2xl -z-20 pointer-events-none scale-125" />
+                {/* Spokes - Connecting Center to the 4 Card Anchor Points */}
+                <line x1="500" y1="300" x2="220" y2="120" stroke="rgba(201,146,42,0.25)" strokeWidth="1.5" strokeDasharray="4 6" />
+                <line x1="500" y1="300" x2="780" y2="120" stroke="rgba(201,146,42,0.25)" strokeWidth="1.5" strokeDasharray="4 6" />
+                <line x1="500" y1="300" x2="220" y2="480" stroke="rgba(201,146,42,0.25)" strokeWidth="1.5" strokeDasharray="4 6" />
+                <line x1="500" y1="300" x2="780" y2="480" stroke="rgba(201,146,42,0.25)" strokeWidth="1.5" strokeDasharray="4 6" />
                 
-                {/* Main circular frame */}
-                <div className="relative p-2.5 rounded-full bg-white border border-[#e5e1d8] shadow-2xl">
-                  <div className="w-[240px] h-[240px] overflow-hidden rounded-full border-4" style={{ borderColor: "#faf9f6" }}>
+                {/* Target Scope Crosshairs */}
+                <line x1="500" y1="120" x2="500" y2="150" stroke="rgba(201,146,42,0.4)" strokeWidth="1" />
+                <line x1="500" y1="450" x2="500" y2="480" stroke="rgba(201,146,42,0.4)" strokeWidth="1" />
+                <line x1="320" y1="300" x2="350" y2="300" stroke="rgba(201,146,42,0.4)" strokeWidth="1" />
+                <line x1="650" y1="300" x2="680" y2="300" stroke="rgba(201,146,42,0.4)" strokeWidth="1" />
+                
+                {/* Symmetrical Glowing Pulse Node Dots */}
+                <circle cx="220" cy="120" r="4.5" fill="#c9922a" />
+                <circle cx="780" cy="120" r="4.5" fill="#c9922a" />
+                <circle cx="220" cy="480" r="4.5" fill="#c9922a" />
+                <circle cx="780" cy="480" r="4.5" fill="#c9922a" />
+              </svg>
+
+              {/* Central Worried Family circular frame */}
+              <div className="absolute top-[300px] left-[500px] -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center justify-center">
+                {/* Rotating dashboard dashed outer ring */}
+                <div className="absolute w-[290px] h-[290px] rounded-full border border-dashed animate-spin-slow opacity-30 pointer-events-none" style={{ borderColor: "#c9922a", animationDuration: "50s" }} />
+                
+                {/* Main glassmorphic circle container */}
+                <div className="relative p-3 rounded-full bg-white border border-[#e5e1d8] shadow-[0_25px_60px_-15px_rgba(12,26,51,0.25)]">
+                  <div className="w-[220px] h-[220px] overflow-hidden rounded-full border-4" style={{ borderColor: "#faf9f6" }}>
                     <img 
                       src="/images/generated/japanese_family_worried.png" 
-                      alt="医学部受験の進路や学習量について相談している日本人の親子"
+                      alt="医学部受験の進路や計画について少し悩んでいる日本人のご家族"
                       className="w-full h-full object-cover scale-[1.05]"
                     />
                   </div>
                   {/* Small floating badge overlay */}
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4.5 py-1.5 rounded-full bg-[#0c1a33] text-white text-[11px] font-bold shadow-md border" style={{ borderColor: "#c9922a", whiteSpace: "nowrap" }}>
-                    <span>医学部受験における家庭の葛藤</span>
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#0c1a33] text-white text-[10px] font-bold shadow-md border" style={{ borderColor: "#c9922a", whiteSpace: "nowrap", letterSpacing: "1px" }}>
+                    🔍 医学部受験における家庭の葛藤
                   </div>
                 </div>
               </div>
 
-              {/* Right Column (Cards 2 & 4) */}
-              <div className="space-y-8 relative z-20">
-                {/* Card 2 */}
-                <div className="group p-6 bg-white/90 backdrop-blur-md rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(12,26,51,0.08)]" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-blue-50 text-blue-600 border border-blue-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <span className="block text-[10px] font-bold tracking-widest mb-1.5" style={{ color: "#c9922a" }}>CASE 02 / 指導者の質</span>
-                      <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>日本トップレベルの講師に指導されたい</h3>
-                      <p className="text-xs text-gray-500 font-semibold mb-3">誰に教わるかで結果は変わります</p>
-                      <p className="text-[12px] leading-relaxed text-gray-400">
-                        「質問ブースの行列で貴重な自習時間が潰れている」「本物の合格者の思考プロセスを直接学びたい」という声に応え、現役慶應医学部生が完全1対1で伴走します。
-                      </p>
-                    </div>
+              {/* Symmetrical Cards Placed Absolutely in the 4 Corners */}
+              
+              {/* Card 1: Top Left (偏差値・成績) */}
+              <div className="absolute top-0 left-0 w-[350px] z-10 group p-6 bg-white rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_-15px_rgba(12,26,51,0.12)]" style={{ borderColor: "#e5e1d8" }}>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-sky-50 text-sky-600 border border-sky-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                    </svg>
                   </div>
-                </div>
-
-                {/* Card 4 */}
-                <div className="group p-6 bg-white/90 backdrop-blur-md rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(12,26,51,0.08)]" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-emerald-50 text-emerald-600 border border-emerald-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A12.018 12.018 0 0 1 12 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07M9 17.613a4.125 4.125 0 1 1 7.533-2.493M9 17.613v-.003c0-1.113-.285-2.16-.786-3.07M9 17.613v.109A12.018 12.018 0 0 1 6 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07m0 0a2.184 2.184 0 0 1 .284-1.253M9 11.25a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <span className="block text-[10px] font-bold tracking-widest mb-1.5" style={{ color: "#c9922a" }}>CASE 04 / モチベーション</span>
-                      <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>息子や娘のロールモデルが欲しい</h3>
-                      <p className="text-xs text-gray-500 font-semibold mb-3">親の言葉より、憧れの先輩の背中</p>
-                      <p className="text-[12px] leading-relaxed text-gray-400">
-                        「親が言うと反発するが、憧れの現役慶應医学部生の言葉なら素直に聞き入れる」。モチベーションを高め、主体的に机に向かう自立性を引き出します。
-                      </p>
-                    </div>
+                  <div className="text-left">
+                    <span className="block text-[9px] font-bold tracking-widest mb-1" style={{ color: "#c9922a" }}>CASE 01 / 成績と偏差値</span>
+                    <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>いい成績を取って医学部へ進学したい</h3>
+                    <p className="text-[11px] text-gray-400 font-semibold mb-2">努力が空回りしていませんか？</p>
+                    <p className="text-[12px] leading-relaxed text-gray-500">
+                      「勉強時間は長いのに模試の偏差値が伸び悩んでいる」「今の塾で本当に医学部に届くのか不安」という焦りに、確実な合格マップを設計します。
+                    </p>
                   </div>
                 </div>
               </div>
+
+              {/* Card 2: Top Right (指導者の質) */}
+              <div className="absolute top-0 right-0 w-[350px] z-10 group p-6 bg-white rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_-15px_rgba(12,26,51,0.12)]" style={{ borderColor: "#e5e1d8" }}>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-blue-50 text-blue-600 border border-blue-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <span className="block text-[9px] font-bold tracking-widest mb-1" style={{ color: "#c9922a" }}>CASE 02 / 指導者の質</span>
+                    <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>日本トップレベルの講師に指導されたい</h3>
+                    <p className="text-[11px] text-gray-400 font-semibold mb-2">誰に教わるかで結果は変わります</p>
+                    <p className="text-[12px] leading-relaxed text-gray-500">
+                      「質問ブースの行列で貴重な自習時間が潰れている」「本物の合格者の思考プロセスを直接学びたい」という声に応え、現役慶應医学部生が完全マンツーマン指導します。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: Bottom Left (内部進学) */}
+              <div className="absolute bottom-0 left-0 w-[350px] z-10 group p-6 bg-white rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_-15px_rgba(12,26,51,0.12)]" style={{ borderColor: "#e5e1d8" }}>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-indigo-50 text-indigo-600 border border-indigo-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <span className="block text-[9px] font-bold tracking-widest mb-1" style={{ color: "#c9922a" }}>CASE 03 / 内部進学・附属校</span>
+                    <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>内部での進級をサポートしてほしい</h3>
+                    <p className="text-[11px] text-gray-400 font-semibold mb-2">独自の推薦枠を確実に勝ち取るために</p>
+                    <p className="text-[12px] leading-relaxed text-gray-500">
+                      「医学部推薦枠の評定基準が高く、日々の小テスト対策に追われている」「定期試験の傾向が特殊すぎる」という附属校生に、各校の過去データから徹底対策。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4: Bottom Right (モチベーション) */}
+              <div className="absolute bottom-0 right-0 w-[350px] z-10 group p-6 bg-white rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_-15px_rgba(12,26,51,0.12)]" style={{ borderColor: "#e5e1d8" }}>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center bg-emerald-50 text-emerald-600 border border-emerald-100 transition-colors group-hover:bg-[#0c1a33] group-hover:text-white group-hover:border-[#0c1a33]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A12.018 12.018 0 0 1 12 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07M9 17.613a4.125 4.125 0 1 1 7.533-2.493M9 17.613v-.003c0-1.113-.285-2.16-.786-3.07M9 17.613v.109A12.018 12.018 0 0 1 6 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07m0 0a2.184 2.184 0 0 1 .284-1.253M9 11.25a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <span className="block text-[9px] font-bold tracking-widest mb-1" style={{ color: "#c9922a" }}>CASE 04 / モチベーション</span>
+                    <h3 className="font-bold text-base mb-1" style={{ color: "#0c1a33" }}>息子や娘のロールモデルが欲しい</h3>
+                    <p className="text-[11px] text-gray-400 font-semibold mb-2">親の言葉より、憧れの先輩の背中</p>
+                    <p className="text-[12px] leading-relaxed text-gray-500">
+                      「親が言うと反発するが、憧れの現役慶應医学部生の言葉なら素直に聞き入れる」。モチベーションを高め、主体的に机に向かう自立性を引き出します。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             {/* MOBILE & TABLET LAYOUT (Sleek stack layout) */}
@@ -465,7 +484,7 @@ export default function Home() {
                     <div>
                       <span className="block text-[9px] font-bold tracking-widest mb-1" style={{ color: "#c9922a" }}>CASE 04 / モチベーション</span>
                       <h3 className="font-bold text-sm mb-1.5" style={{ color: "#0c1a33" }}>息子や娘のロールモデルが欲しい</h3>
-                      <p className="text-[12px] leading-relaxed text-gray-500">「親が言っても反発するが、現役慶應医学部生の言葉なら素直に聞く」。受験生の志を高め、自律的な学習姿勢を引き出します。</p>
+                      <p className="text-[12px] leading-relaxed text-gray-500">「親が言っても反発するが、現役慶應医学部生の言葉なら素真に聞く」。受験生の志を高め、自律的な学習姿勢を引き出します。</p>
                     </div>
                   </div>
                 </div>
