@@ -253,84 +253,46 @@ export default function Home() {
         
         {/* Custom CSS Style Injection for smooth details/summary premium transitions */}
         <style dangerouslySetInnerHTML={{ __html: `
-          .glass-card-readable {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          /* ── Editorial Q&A card system (calm, legible) ── */
+          .qa-card {
+            background: #ffffff;
+            transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s ease, border-color .45s ease, background-color .45s ease;
           }
-          .glass-card-readable:hover {
-            background: rgba(255, 255, 255, 1);
+          .qa-card:hover {
             transform: translateY(-2px);
-            border-color: rgba(201, 146, 42, 0.3);
+            border-color: rgba(201,146,42,.32);
+            box-shadow: 0 14px 34px rgba(12,26,51,.07);
           }
-          details.glass-card-readable[open] {
-            background: rgba(255, 255, 255, 1);
-            border-color: rgba(201, 146, 42, 0.4);
-            box-shadow: 0 16px 36px rgba(201, 146, 42, 0.08);
+          details.qa-card[open] {
+            background: linear-gradient(180deg, #ffffff 0%, #fbf9f3 100%);
+            border-color: rgba(201,146,42,.42);
+            box-shadow: 0 16px 38px rgba(201,146,42,.10);
           }
-          details.glass-card-readable summary::-webkit-details-marker {
-            display: none;
+          .qa-card summary::-webkit-details-marker { display: none; }
+          .qa-card summary { list-style: none; }
+          .qa-chevron { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+          details.qa-card[open] .qa-chevron { transform: rotate(180deg); }
+          .qa-rule {
+            transform: scaleY(.26);
+            transform-origin: top;
+            opacity: .22;
+            transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .5s ease;
           }
-          details.glass-card-readable summary {
-            list-style: none;
-          }
-          .chevron-icon {
-            transition: transform 0.3s ease;
-          }
-          details.glass-card-readable[open] .chevron-icon {
-            transform: rotate(180deg);
-          }
-          .pain-accent {
-            transform: scaleY(0.35);
-            transform-origin: center;
-            opacity: 0;
-            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
-          }
-          .pain-card:hover .pain-accent {
-            transform: scaleY(0.75);
-            opacity: 0.7;
-          }
-          details.pain-card[open] .pain-accent {
-            transform: scaleY(1);
-            opacity: 1;
-          }
-          details.pain-card[open] {
-            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(252,250,246,1) 100%);
-          }
-          .pain-sheen {
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            background: linear-gradient(115deg, transparent 35%, rgba(201,146,42,0.13) 50%, transparent 65%);
-            background-size: 250% 100%;
-            background-position: 150% 0;
-            opacity: 0;
-            pointer-events: none;
-          }
-          .pain-card:hover .pain-sheen {
-            opacity: 1;
-            animation: pain-sheen-sweep 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-          }
-          @keyframes pain-sheen-sweep {
-            from { background-position: 150% 0; }
-            to { background-position: -60% 0; }
-          }
-          @keyframes pain-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-9px); }
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .animate-spin-slow,
-            .pain-float-chip,
-            .pain-orbit { animation: none !important; }
+          .qa-card:hover .qa-rule { transform: scaleY(.6); opacity: .55; }
+          details.qa-card[open] .qa-rule { transform: scaleY(1); opacity: 1; }
+          details.qa-card[open] .qa-answer { animation: qa-reveal .5s cubic-bezier(.16,1,.3,1); }
+          @keyframes qa-reveal {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
           }
           @keyframes spin-slow {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
           }
-          .animate-spin-slow {
-            animation: spin-slow 180s linear infinite;
+          .animate-spin-slow { animation: spin-slow 220s linear infinite; }
+          @media (prefers-reduced-motion: reduce) {
+            .animate-spin-slow { animation: none !important; }
+            .qa-card, .qa-card:hover { transform: none; }
           }
         `}} />
 
@@ -345,9 +307,9 @@ export default function Home() {
           <div className="mb-16 text-center">
             {/* Eyebrow with flanking gold lines */}
             <div className="mb-4 flex items-center justify-center gap-3.5">
-              <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#c9922a]/50" />
-              <p className="text-xs font-bold tracking-[0.2em] text-[#c9922a] uppercase">Current Struggles &amp; Solutions</p>
-              <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#c9922a]/50" />
+              <span className="hidden sm:block h-px w-8 bg-gradient-to-r from-transparent to-[#c9922a]/50" />
+              <p className="whitespace-nowrap text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.2em] text-[#c9922a] uppercase">Current Struggles &amp; Solutions</p>
+              <span className="hidden sm:block h-px w-8 bg-gradient-to-l from-transparent to-[#c9922a]/50" />
             </div>
             <h2
               className="text-3xl md:text-[2.25rem] font-bold mb-5 tracking-tight"
@@ -526,54 +488,42 @@ export default function Home() {
               ];
 
               const renderCard = (item: any, isLeft: boolean) => {
-                const iconBg = isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
-                const hoverBorderClass = isLeft ? "hover:border-blue-200" : "hover:border-amber-200";
-                const hoverShadowClass = isLeft 
-                  ? "hover:shadow-[0_12px_30px_rgba(74,144,226,0.1)]" 
-                  : "hover:shadow-[0_12px_30px_rgba(201,146,42,0.1)]";
-
-                const accentColor = isLeft ? "#4a90e2" : "#c9922a";
+                const accent = isLeft ? "#3a6ea5" : "#bd8a23";
+                const iconWrap = isLeft ? "bg-[#eef3fa] text-[#3a6ea5]" : "bg-[#f7efda] text-[#bd8a23]";
                 return (
                   <details
                     key={item.num}
-                    className={`pain-card relative w-full overflow-hidden rounded-[20px] border border-black/[0.04] shadow-[0_4px_16px_rgba(12,26,51,0.02)] glass-card-readable group cursor-pointer list-none select-none focus:outline-none ${hoverBorderClass} ${hoverShadowClass}`}
+                    className="qa-card group relative w-full overflow-hidden rounded-2xl border border-[#0c1a33]/[0.07] shadow-[0_2px_10px_rgba(12,26,51,0.03)] cursor-pointer select-none focus:outline-none"
                   >
-                    {/* Hover sheen sweep */}
-                    <span aria-hidden className="pain-sheen" />
-                    {/* Left accent bar (grows on hover / open) */}
-                    <span aria-hidden className="pain-accent absolute left-0 top-0 h-full w-[3px] rounded-r-full" style={{ background: `linear-gradient(to bottom, ${accentColor}, ${accentColor}00)` }} />
-                    {/* Watermark number */}
-                    <span aria-hidden className="pointer-events-none absolute -top-2 right-3 select-none font-serif text-[44px] font-bold leading-none text-[#0c1a33]/[0.03] group-hover:text-[#c9922a]/[0.07] transition-colors duration-500">{item.num}</span>
+                    {/* Left accent rule (fills on open) */}
+                    <span aria-hidden className="qa-rule absolute left-0 top-0 h-full w-[3px]" style={{ background: accent }} />
 
-                    <summary className="relative flex items-center justify-between gap-4 p-4.5 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
-                      <div className="flex items-center gap-4">
-                        {/* Icon container with number badge */}
-                        <div className="relative flex-shrink-0">
-                          <div className={`w-10.5 h-10.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
-                            {getPainPointIcon(item.icon)}
-                          </div>
-                          <span className="absolute -bottom-1 -right-1 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-white px-1 font-serif text-[9px] font-bold leading-none shadow-[0_2px_5px_rgba(12,26,51,0.12)] ring-1 ring-black/[0.04]" style={{ color: accentColor }}>{item.num}</span>
-                        </div>
-
-                        <div>
-                          <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.title}</h3>
-                          <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.subtitle}</h3>
-                        </div>
-                      </div>
-
-                      {/* Dynamic Chevron Arrow (Click Indicator) */}
-                      <div className="relative flex-shrink-0 ml-auto transition-transform duration-300 chevron-icon text-[#c9922a]/60 group-hover:text-[#c9922a]">
+                    <summary className="flex items-center gap-3.5 py-4 pl-5 pr-4 focus:outline-none">
+                      {/* Editorial index number */}
+                      <span className="shrink-0 w-6 text-center text-[15px] font-bold leading-none tabular-nums" style={{ color: accent, fontFamily: "var(--font-noto-serif)" }}>{item.num}</span>
+                      {/* Hairline divider */}
+                      <span aria-hidden className="shrink-0 h-8 w-px bg-[#0c1a33]/10" />
+                      {/* Icon */}
+                      <span className={`shrink-0 flex h-9.5 w-9.5 items-center justify-center rounded-full ${iconWrap}`}>
+                        {getPainPointIcon(item.icon)}
+                      </span>
+                      {/* Question */}
+                      <h3 className="flex-1 text-[14px] font-bold leading-[1.55] tracking-tight text-[#0c1a33]">
+                        {item.title}<br />{item.subtitle}
+                      </h3>
+                      {/* Chevron */}
+                      <span className="qa-chevron shrink-0 text-[#c9922a]/70 group-hover:text-[#c9922a]">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-4 h-4">
                           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
-                      </div>
+                      </span>
                     </summary>
 
-                    {/* Solution Content Pane */}
-                    <div className="px-4.5 pb-4.5 pt-0">
-                      <div className="border-t border-[#c9922a]/10 pt-3.5 mt-0.5 text-[12.5px] leading-relaxed text-[#5f6b7a] relative pl-6">
-                        <span className="absolute left-0 top-3 text-[12.5px] font-bold text-[#c9922a] font-serif">Ans.</span>
-                        <p className="font-medium text-[#0c1a33]">{item.solution}</p>
+                    {/* Answer */}
+                    <div className="qa-answer px-5 pb-5">
+                      <div className="flex gap-3 border-t border-[#c9922a]/15 pt-3.5">
+                        <span className="shrink-0 text-[13px] font-bold leading-[1.9] text-[#c9922a]" style={{ fontFamily: "var(--font-noto-serif)" }}>A.</span>
+                        <p className="text-[13px] font-medium leading-[1.95] text-[#4b5563]">{item.solution}</p>
                       </div>
                     </div>
                   </details>
@@ -597,17 +547,9 @@ export default function Home() {
                       <div className="absolute w-[280px] h-[280px] bg-blue-100/30 rounded-full blur-[50px] pointer-events-none animate-pulse" />
                       <div className="absolute w-[320px] h-[320px] bg-amber-100/20 rounded-full blur-[70px] pointer-events-none animate-[pulse_10s_infinite]" />
 
-                      {/* Layer 2: Elegant Concentric Thin Golden Orbit Rings */}
-                      <div className="absolute w-[290px] h-[290px] rounded-full border border-[#c9922a]/10 pointer-events-none" />
-                      <div className="absolute w-[250px] h-[250px] rounded-full border border-dashed border-[#c9922a]/5 pointer-events-none animate-spin-slow" />
-
-                      {/* Layer 2.5: Orbiting light points travelling along the rings */}
-                      <div className="pain-orbit absolute w-[290px] h-[290px] pointer-events-none animate-[spin_26s_linear_infinite]">
-                        <span className="absolute left-1/2 -top-[3px] -translate-x-1/2 h-2 w-2 rounded-full bg-[#c9922a] shadow-[0_0_12px_rgba(201,146,42,0.85)]" />
-                      </div>
-                      <div className="pain-orbit absolute w-[250px] h-[250px] pointer-events-none animate-[spin_19s_linear_infinite_reverse]">
-                        <span className="absolute left-1/2 -top-[2px] -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-[#4a90e2] shadow-[0_0_10px_rgba(74,144,226,0.75)]" />
-                      </div>
+                      {/* Layer 2: Quiet concentric rings (static, for calm depth) */}
+                      <div className="absolute w-[300px] h-[300px] rounded-full border border-[#c9922a]/[0.12] pointer-events-none" />
+                      <div className="absolute w-[276px] h-[276px] rounded-full border border-dashed border-[#0c1a33]/[0.06] pointer-events-none" />
 
                       {/* Layer 3+4: Circular medallion framing the illustration (eliminates the square edge) */}
                       <div
@@ -627,17 +569,16 @@ export default function Home() {
                         <span aria-hidden className="pointer-events-none absolute -top-6 left-1/2 h-24 w-40 -translate-x-1/2 rounded-full bg-white/40 blur-2xl" />
                       </div>
 
-                      {/* Layer 5: Floating glassmorphic stat-chips */}
+                      {/* Layer 5: Calm glass stat-chips (static, informative) */}
                       {[
-                        { label: "慶應医学部生講師", dot: "#4a90e2", pos: "top-1 left-0", delay: "0s" },
-                        { label: "完全1対1", dot: "#c9922a", pos: "top-12 right-0", delay: "1.1s" },
-                        { label: "毎日の進捗管理", dot: "#4a90e2", pos: "bottom-12 left-0", delay: "0.6s" },
-                        { label: "合格から逆算", dot: "#c9922a", pos: "bottom-2 right-2", delay: "1.6s" },
+                        { label: "慶應医学部生講師", dot: "#3a6ea5", pos: "top-0 left-1" },
+                        { label: "完全1対1", dot: "#bd8a23", pos: "top-14 right-0" },
+                        { label: "毎日の進捗管理", dot: "#3a6ea5", pos: "bottom-14 left-0" },
+                        { label: "合格から逆算", dot: "#bd8a23", pos: "bottom-1 right-2" },
                       ].map((chip) => (
                         <div
                           key={chip.label}
-                          className={`pain-float-chip absolute z-20 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/85 px-3 py-1.5 shadow-[0_10px_28px_rgba(12,26,51,0.12)] backdrop-blur-md ${chip.pos}`}
-                          style={{ animation: `pain-float 6s ease-in-out infinite`, animationDelay: chip.delay }}
+                          className={`absolute z-20 flex items-center gap-1.5 rounded-full border border-[#0c1a33]/[0.06] bg-white/90 px-3 py-1.5 shadow-[0_8px_22px_rgba(12,26,51,0.08)] backdrop-blur-sm ${chip.pos}`}
                         >
                           <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: chip.dot }} />
                           <span className="whitespace-nowrap text-[10.5px] font-bold text-[#0c1a33]">{chip.label}</span>
@@ -659,13 +600,9 @@ export default function Home() {
                     {/* Central Illustration for Mobile with pedestal framing */}
                     <div className="relative flex items-center justify-center p-8">
                       {/* Backglow */}
-                      <div className="absolute w-[200px] h-[200px] bg-blue-100/30 rounded-full blur-2xl animate-pulse pointer-events-none" />
-                      <div className="absolute w-[180px] h-[180px] rounded-full border border-[#c9922a]/10 pointer-events-none" />
-
-                      {/* Orbiting light point */}
-                      <div className="pain-orbit absolute w-[180px] h-[180px] pointer-events-none animate-[spin_22s_linear_infinite]">
-                        <span className="absolute left-1/2 -top-[2px] -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-[#c9922a] shadow-[0_0_10px_rgba(201,146,42,0.8)]" />
-                      </div>
+                      <div className="absolute w-[200px] h-[200px] bg-amber-100/25 rounded-full blur-2xl pointer-events-none" />
+                      <div className="absolute w-[192px] h-[192px] rounded-full border border-[#c9922a]/[0.12] pointer-events-none" />
+                      <div className="absolute w-[176px] h-[176px] rounded-full border border-dashed border-[#0c1a33]/[0.06] pointer-events-none" />
 
                       {/* Circular medallion (eliminates the square edge) */}
                       <div
@@ -681,55 +618,45 @@ export default function Home() {
                         <span aria-hidden className="pointer-events-none absolute inset-[6px] rounded-full ring-1 ring-[#c9922a]/20" />
                       </div>
 
-                      {/* Floating glass chips */}
-                      <div className="pain-float-chip absolute top-2 left-0 z-20 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/85 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.12)] backdrop-blur-md" style={{ animation: "pain-float 6s ease-in-out infinite" }}>
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#4a90e2]" />
+                      {/* Calm glass chips */}
+                      <div className="absolute top-1 left-0 z-20 flex items-center gap-1.5 rounded-full border border-[#0c1a33]/[0.06] bg-white/90 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.08)] backdrop-blur-sm">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#3a6ea5]" />
                         <span className="whitespace-nowrap text-[10px] font-bold text-[#0c1a33]">慶應医学部生講師</span>
                       </div>
-                      <div className="pain-float-chip absolute bottom-2 right-0 z-20 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/85 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.12)] backdrop-blur-md" style={{ animation: "pain-float 6s ease-in-out infinite", animationDelay: "1.2s" }}>
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#c9922a]" />
+                      <div className="absolute bottom-1 right-0 z-20 flex items-center gap-1.5 rounded-full border border-[#0c1a33]/[0.06] bg-white/90 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.08)] backdrop-blur-sm">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#bd8a23]" />
                         <span className="whitespace-nowrap text-[10px] font-bold text-[#0c1a33]">完全1対1</span>
                       </div>
                     </div>
 
-                    {/* Clean 2-column or 1-column list */}
-                    <div className="grid gap-3.5 sm:grid-cols-2 w-full max-w-3xl px-2">
+                    {/* Editorial single/2-column list */}
+                    <div className="grid gap-3 sm:grid-cols-2 w-full max-w-3xl px-2">
                       {[...leftPainPoints, ...rightPainPoints].map((item, idx) => {
                         const isLeft = idx < 5;
-                        const iconBg = isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
-                        const hoverBorder = isLeft ? "hover:border-blue-200" : "hover:border-amber-200";
-                        const hoverShadowClass = isLeft ? "hover:shadow-[0_12px_30px_rgba(74,144,226,0.06)]" : "hover:shadow-[0_12px_30px_rgba(201,146,42,0.06)]";
-                        const accentColor = isLeft ? "#4a90e2" : "#c9922a";
+                        const accent = isLeft ? "#3a6ea5" : "#bd8a23";
+                        const iconWrap = isLeft ? "bg-[#eef3fa] text-[#3a6ea5]" : "bg-[#f7efda] text-[#bd8a23]";
                         return (
                           <details
                             key={item.num}
-                            className={`pain-card relative w-full overflow-hidden rounded-[22px] border border-black/[0.04] shadow-sm text-left glass-card-readable transition-all duration-300 focus:outline-none list-none select-none ${hoverBorder} ${hoverShadowClass}`}
+                            className="qa-card group relative w-full overflow-hidden rounded-2xl border border-[#0c1a33]/[0.07] shadow-[0_2px_10px_rgba(12,26,51,0.03)] text-left focus:outline-none select-none"
                           >
-                            <span aria-hidden className="pain-sheen" />
-                            <span aria-hidden className="pain-accent absolute left-0 top-0 h-full w-[3px] rounded-r-full" style={{ background: `linear-gradient(to bottom, ${accentColor}, ${accentColor}00)` }} />
-                            <span aria-hidden className="pointer-events-none absolute -top-1.5 right-3 select-none font-serif text-[40px] font-bold leading-none text-[#0c1a33]/[0.03]">{item.num}</span>
-                            <summary className="relative flex items-center justify-between gap-3.5 p-4 focus:outline-none list-none [&::-webkit-details-marker]:hidden">
-                              <div className="flex items-center gap-3.5">
-                                <div className="relative flex-shrink-0">
-                                  <div className={`w-9.5 h-9.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
-                                    {getPainPointIcon(item.icon)}
-                                  </div>
-                                  <span className="absolute -bottom-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-white px-1 font-serif text-[8.5px] font-bold leading-none shadow-[0_2px_5px_rgba(12,26,51,0.12)] ring-1 ring-black/[0.04]" style={{ color: accentColor }}>{item.num}</span>
-                                </div>
-                                <div className="text-left">
-                                  <h3 className="font-bold text-[13.5px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.mobileText}</h3>
-                                </div>
-                              </div>
-                              <div className="flex-shrink-0 ml-auto transition-transform duration-300 chevron-icon text-[#c9922a]/60 group-hover:text-[#c9922a]">
+                            <span aria-hidden className="qa-rule absolute left-0 top-0 h-full w-[3px]" style={{ background: accent }} />
+                            <summary className="flex items-center gap-3 py-3.5 pl-4 pr-3.5 focus:outline-none">
+                              <span className="shrink-0 w-5 text-center text-[13.5px] font-bold leading-none tabular-nums" style={{ color: accent, fontFamily: "var(--font-noto-serif)" }}>{item.num}</span>
+                              <span className={`shrink-0 flex h-9 w-9 items-center justify-center rounded-full ${iconWrap}`}>
+                                {getPainPointIcon(item.icon)}
+                              </span>
+                              <h3 className="flex-1 text-[13.5px] font-bold leading-[1.5] tracking-tight text-[#0c1a33]">{item.mobileText}</h3>
+                              <span className="qa-chevron shrink-0 text-[#c9922a]/70 group-hover:text-[#c9922a]">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-4 h-4">
                                   <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
-                              </div>
+                              </span>
                             </summary>
-                            <div className="px-4 pb-4 pt-0">
-                              <div className="border-t border-[#c9922a]/10 pt-3 mt-0.5 text-[12.5px] leading-relaxed text-[#5f6b7a] relative pl-6">
-                                <span className="absolute left-0 top-2.5 text-[12.5px] font-bold text-[#c9922a] font-serif">Ans.</span>
-                                <p className="font-medium text-[#0c1a33]">{item.solution}</p>
+                            <div className="qa-answer px-4 pb-4">
+                              <div className="flex gap-2.5 border-t border-[#c9922a]/15 pt-3">
+                                <span className="shrink-0 text-[12.5px] font-bold leading-[1.9] text-[#c9922a]" style={{ fontFamily: "var(--font-noto-serif)" }}>A.</span>
+                                <p className="text-[12.5px] font-medium leading-[1.9] text-[#4b5563]">{item.solution}</p>
                               </div>
                             </div>
                           </details>
@@ -742,11 +669,17 @@ export default function Home() {
               );
             })()}
 
-            {/* Bottom Support Banner (Premium Glassmorphic Dashboard block) */}
-            <div className="mt-16 p-6 md:p-8 rounded-[24px] text-center border-2 border-dashed bg-[#faf9f6]/60 transition-all hover:bg-[#faf9f6]" style={{ borderColor: "#c9922a" }}>
-              <p className="text-base md:text-lg font-bold" style={{ color: "#0c1a33" }}>
+            {/* Bottom Support Banner (refined editorial closing) */}
+            <div className="relative mt-16 overflow-hidden rounded-3xl border border-[#0c1a33]/[0.07] bg-white px-6 py-9 text-center shadow-[0_12px_34px_rgba(12,26,51,0.05)] md:px-10 md:py-10">
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#c9922a] to-transparent" />
+              <div aria-hidden className="mb-4 flex items-center justify-center gap-2.5">
+                <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#c9922a]/45" />
+                <span className="h-1.5 w-1.5 rotate-45 rounded-[1px] bg-[#c9922a]/70" />
+                <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#c9922a]/45" />
+              </div>
+              <p className="text-base md:text-lg font-bold leading-relaxed" style={{ color: "#0c1a33" }}>
                 一人一人の課題に合わせた最適なサポートで、<br className="hidden sm:block" />
-                <span style={{ color: "#c9922a" }}>お子様の未来を一緒に切り拓きます！</span>
+                <span style={{ color: "#c9922a" }}>お子様の未来を一緒に切り拓きます。</span>
               </p>
             </div>
           </div>
