@@ -273,164 +273,235 @@ export default function Home() {
           {/* Interactive Symmetrical Layout */}
           <div className="relative mx-auto max-w-5xl">
             
-            {/* DESKTOP LAYOUT (Surrounding cards with central illustration, matching user's visual exactly) */}
-            <div className="hidden lg:block relative w-full h-[520px] mx-auto">
-              
-              {/* Central Illustration */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[340px] h-[340px] flex items-center justify-center">
-                <img 
-                  src="/images/generated/worried_family_option3.png" 
-                  alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                  className="w-full h-auto object-contain scale-[1.05]"
-                />
-              </div>
-
-              {/* Surrounding Cards */}
-              
-              {/* Card 1: Top Left */}
-              <div 
-                className="absolute top-4 left-4 w-[280px] z-10 p-6 bg-white rounded-[24px] border shadow-[0_12px_36px_rgba(12,26,51,0.06)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_45px_rgba(12,26,51,0.12)] text-left"
-                style={{ borderColor: "#e5e1d8" }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>いい成績を取って</h3>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>医学部へ進学したい</h3>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2: Top Right */}
-              <div 
-                className="absolute top-4 right-4 w-[280px] z-10 p-6 bg-white rounded-[24px] border shadow-[0_12px_36px_rgba(12,26,51,0.06)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_45px_rgba(12,26,51,0.12)] text-left"
-                style={{ borderColor: "#e5e1d8" }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>日本トップレベルの</h3>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>講師に指導されたい</h3>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 3: Bottom Left */}
-              <div 
-                className="absolute bottom-4 left-4 w-[280px] z-10 p-6 bg-white rounded-[24px] border shadow-[0_12px_36px_rgba(12,26,51,0.06)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_45px_rgba(12,26,51,0.12)] text-left"
-                style={{ borderColor: "#e5e1d8" }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>内部での進級を</h3>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>サポートしてほしい</h3>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 4: Bottom Right */}
-              <div 
-                className="absolute bottom-4 right-4 w-[280px] z-10 p-6 bg-white rounded-[24px] border shadow-[0_12px_36px_rgba(12,26,51,0.06)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_20px_45px_rgba(12,26,51,0.12)] text-left"
-                style={{ borderColor: "#e5e1d8" }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A12.018 12.018 0 0 1 12 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07M9 17.613a4.125 4.125 0 1 1 7.533-2.493M9 17.613v-.003c0-1.113-.285-2.16-.786-3.07M9 17.613v.109A12.018 12.018 0 0 1 6 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07m0 0a2.184 2.184 0 0 1 .284-1.253M9 11.25a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>息子や娘の</h3>
-                    <h3 className="font-bold text-sm leading-snug" style={{ color: "#0c1a33" }}>ロールモデルが欲しい</h3>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            {/* MOBILE & TABLET LAYOUT (Fluid list display) */}
-            <div className="lg:hidden flex flex-col items-center gap-8">
-              {/* Centered Illustration */}
-              <div className="w-[200px] h-[200px] flex items-center justify-center p-2 bg-white rounded-full border shadow-md">
-                <img 
-                  src="/images/generated/worried_family_option3.png" 
-                  alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-
-              {/* Cards Grid */}
-              <div className="grid gap-4 sm:grid-cols-2 w-full max-w-2xl">
-                {/* Card 1 */}
-                <div className="p-5 bg-white rounded-[20px] border shadow-sm text-left" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+            {(() => {
+              // Icon SVG helper
+              const getPainPointIcon = (iconName: string) => {
+                switch (iconName) {
+                  case "help":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
                       </svg>
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-[14px] leading-tight" style={{ color: "#0c1a33" }}>いい成績を取って医学部へ進学したい</h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="p-5 bg-white rounded-[20px] border shadow-sm text-left" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                    );
+                  case "x-circle":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                       </svg>
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-[14px] leading-tight" style={{ color: "#0c1a33" }}>日本トップレベルの講師に指導されたい</h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="p-5 bg-white rounded-[20px] border shadow-sm text-left" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
+                    );
+                  case "clipboard":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2Z" />
+                      </svg>
+                    );
+                  case "alert":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3Z" />
+                      </svg>
+                    );
+                  case "document":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                      </svg>
+                    );
+                  case "academic":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 1 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                      </svg>
+                    );
+                  case "target":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+                      </svg>
+                    );
+                  case "trend":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
                       </svg>
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-[14px] leading-tight" style={{ color: "#0c1a33" }}>内部での進級をサポートしてほしい</h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 4 */}
-                <div className="p-5 bg-white rounded-[20px] border shadow-sm text-left" style={{ borderColor: "#e5e1d8" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A12.018 12.018 0 0 1 12 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07M9 17.613a4.125 4.125 0 1 1 7.533-2.493M9 17.613v-.003c0-1.113-.285-2.16-.786-3.07M9 17.613v.109A12.018 12.018 0 0 1 6 21.25c-1.11 0-2.18-.15-3.2-.435v-.109m0-1.58c0-1.113-.285-2.16-.786-3.07m0 0a2.184 2.184 0 0 1 .284-1.253M9 11.25a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                    );
+                  case "info":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 1 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.852l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                       </svg>
+                    );
+                  case "fire":
+                    return (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5.5 h-5.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z" />
+                      </svg>
+                    );
+                  default:
+                    return null;
+                }
+              };
+
+              const painPoints = [
+                {
+                  title: "このままの勉強方法で",
+                  subtitle: "医学部に合格できるの？",
+                  mobileText: "このままの勉強方法で医学部に行けるの？",
+                  icon: "help",
+                  top: "10px",
+                  left: "0px",
+                },
+                {
+                  title: "大人数の集団塾の指導は",
+                  subtitle: "自分に合っていない",
+                  mobileText: "集団塾の勉強方法は自分に合っていない",
+                  icon: "x-circle",
+                  top: "140px",
+                  left: "35px",
+                },
+                {
+                  title: "塾・家庭教師の授業外の",
+                  subtitle: "学習もしっかり管理してほしい",
+                  mobileText: "塾・家庭教師の授業外の学習を管理してほしい",
+                  icon: "clipboard",
+                  top: "270px",
+                  left: "10px",
+                },
+                {
+                  title: "医学部に行きたいけれど",
+                  subtitle: "今の状態のままでは本当に不安",
+                  mobileText: "医学部に行きたいけれどこのままでは不安",
+                  icon: "alert",
+                  top: "400px",
+                  left: "35px",
+                },
+                {
+                  title: "面接や小論文の対策も",
+                  subtitle: "早期から並行して行いたい",
+                  mobileText: "面接小論文対策もしっかり行いたい",
+                  icon: "document",
+                  top: "530px",
+                  left: "0px",
+                },
+                {
+                  title: "医学部合格法を知り尽くした",
+                  subtitle: "プロ講師から直接教わりたい",
+                  mobileText: "医学部に合格する方法を知っている講師に教えてもらいたい",
+                  icon: "academic",
+                  top: "10px",
+                  right: "0px",
+                },
+                {
+                  title: "お子様の弱点や得意に",
+                  subtitle: "焦点を当てた個人戦略は？",
+                  mobileText: "お子さんの弱点・得意に焦点を当てた戦略は？",
+                  icon: "target",
+                  top: "140px",
+                  right: "35px",
+                },
+                {
+                  title: "今のカリキュラムで効率的に",
+                  subtitle: "合格へと進めているの？",
+                  mobileText: "効率的に合格に進めているの？",
+                  icon: "trend",
+                  top: "270px",
+                  right: "10px",
+                },
+                {
+                  title: "変化の激しい医学部受験の",
+                  subtitle: "最新情報やトレンドを知りたい",
+                  mobileText: "医学部受験 of 最新情報を知りたい",
+                  icon: "info",
+                  top: "400px",
+                  right: "35px",
+                },
+                {
+                  title: "妥協することなく",
+                  subtitle: "絶対に医学部に合格したい！",
+                  mobileText: "絶対に医学部に合格したい",
+                  icon: "fire",
+                  top: "530px",
+                  right: "0px",
+                },
+              ];
+
+              // Correct typo in Japanese text dynamically: "医学部受験 of 最新情報を知りたい" -> "医学部受験の最新情報を知りたい"
+              painPoints[8].mobileText = "医学部受験の最新情報を知りたい";
+
+              return (
+                <>
+                  {/* DESKTOP LAYOUT (Surrounding cards with central illustration) */}
+                  <div className="hidden lg:block relative w-full h-[650px] mx-auto">
+                    
+                    {/* Central Illustration */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[340px] h-[340px] flex items-center justify-center">
+                      <img 
+                        src="/images/generated/worried_family_option3.png" 
+                        alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
+                        className="w-full h-auto object-contain scale-[1.05]"
+                      />
                     </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-[14px] leading-tight" style={{ color: "#0c1a33" }}>息子や娘のロールモデルが欲しい</h3>
+
+                    {/* Surrounding Cards */}
+                    {painPoints.map((item, idx) => {
+                      const isLeft = item.left !== undefined;
+                      const style = {
+                        borderColor: "#e5e1d8",
+                        top: item.top,
+                        ...(isLeft ? { left: item.left } : { right: item.right })
+                      };
+                      return (
+                        <div 
+                          key={idx}
+                          className="absolute w-[290px] z-10 p-5 bg-white rounded-[22px] border shadow-[0_10px_30px_rgba(12,26,51,0.05)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_16px_36px_rgba(12,26,51,0.1)] text-left"
+                          style={style}
+                        >
+                          <div className="flex items-center gap-3.5">
+                            <div className="flex-shrink-0 w-10.5 h-10.5 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
+                              {getPainPointIcon(item.icon)}
+                            </div>
+                            <div>
+                              <h3 className="font-bold text-[13px] leading-snug" style={{ color: "#0c1a33" }}>{item.title}</h3>
+                              <h3 className="font-bold text-[13px] leading-snug" style={{ color: "#0c1a33" }}>{item.subtitle}</h3>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                  </div>
+
+                  {/* MOBILE & TABLET LAYOUT (Fluid list display) */}
+                  <div className="lg:hidden flex flex-col items-center gap-8">
+                    {/* Centered Illustration */}
+                    <div className="w-[200px] h-[200px] flex items-center justify-center p-2 bg-white rounded-full border shadow-md">
+                      <img 
+                        src="/images/generated/worried_family_option3.png" 
+                        alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    {/* Cards Grid */}
+                    <div className="grid gap-4 sm:grid-cols-2 w-full max-w-3xl">
+                      {painPoints.map((item, idx) => (
+                        <div key={idx} className="p-4 bg-white rounded-[20px] border shadow-sm text-left hover:shadow-md transition-shadow duration-300" style={{ borderColor: "#e5e1d8" }}>
+                          <div className="flex items-center gap-3">
+                            <div className="flex-shrink-0 w-9.5 h-9.5 rounded-full flex items-center justify-center bg-[#eef5fc] text-[#4a90e2]">
+                              {getPainPointIcon(item.icon)}
+                            </div>
+                            <div className="text-left">
+                              <h3 className="font-bold text-[13.5px] leading-tight" style={{ color: "#0c1a33" }}>{item.mobileText}</h3>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </>
+              );
+            })()}
 
             {/* Bottom Support Banner (Premium Glassmorphic Dashboard block) */}
             <div className="mt-16 p-6 md:p-8 rounded-[24px] text-center border-2 border-dashed bg-[#faf9f6]/60 transition-all hover:bg-[#faf9f6]" style={{ borderColor: "#c9922a" }}>
