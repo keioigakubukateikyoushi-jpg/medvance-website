@@ -198,7 +198,7 @@ const faqs = [
 export default function KurumePage() {
   return (
     <>
-      <UniversityPageSchemas name="久留米大学医学部" slug="kurume" breadcrumbLabel="久留米大医学部対策" />
+      <UniversityPageSchemas name="久留米大学医学部" slug="kurume" breadcrumbLabel="久留米大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="kurume">

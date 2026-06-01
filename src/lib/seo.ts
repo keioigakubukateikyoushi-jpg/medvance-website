@@ -246,9 +246,18 @@ export function buildArticleSchema({
     dateModified,
     keywords: keywords.join(", "),
     author: {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      name: "Medvance編集部",
+      "@type": "Person",
+      name: "現役慶應医学部生（メドバンス監修）",
+      jobTitle: "メドバンス監修代表",
+      worksFor: {
+        "@type": "EducationalOrganization",
+        "@id": `${siteUrl}/#organization`,
+        name: "Medvance",
+      },
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "慶應義塾大学医学部",
+      },
     },
     publisher: {
       "@type": "Organization",

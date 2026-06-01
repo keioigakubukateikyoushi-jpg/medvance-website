@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
@@ -209,6 +210,7 @@ const faqs = [
 export default function KanazawaIkaPage() {
   return (
     <div className="min-h-screen bg-white">
+      <UniversityPageSchemas name="金沢医科大学" slug="kanazawa-ika" breadcrumbLabel="金沢医科大対策" faq={faqs} />
       {/* Hero */}
       <UniversityHero slug="kanazawa-ika">
         <div className="max-w-3xl mx-auto text-center">

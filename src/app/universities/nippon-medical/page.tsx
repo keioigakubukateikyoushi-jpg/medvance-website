@@ -192,7 +192,7 @@ const faqs = [
 export default function NipponMedicalPage() {
   return (
     <>
-      <UniversityPageSchemas name="日本医科大学" slug="nippon-medical" breadcrumbLabel="日本医科大対策" />
+      <UniversityPageSchemas name="日本医科大学" slug="nippon-medical" breadcrumbLabel="日本医科大対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="nippon-medical">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
@@ -83,6 +84,7 @@ const faqs = [
 export default function IuhwPage() {
   return (
     <div className="min-h-screen bg-white">
+      <UniversityPageSchemas name="国際医療福祉大学医学部" slug="iuhw" breadcrumbLabel="国際医療福祉大対策" faq={faqs} />
       {/* Hero */}
       <UniversityHero slug="iuhw">
         <div className="max-w-3xl mx-auto text-center">

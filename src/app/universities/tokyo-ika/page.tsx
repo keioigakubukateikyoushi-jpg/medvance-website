@@ -192,7 +192,7 @@ const faqs = [
 export default function TokyoIkaPage() {
   return (
     <>
-      <UniversityPageSchemas name="東京医科大学" slug="tokyo-ika" breadcrumbLabel="東京医科大対策" />
+      <UniversityPageSchemas name="東京医科大学" slug="tokyo-ika" breadcrumbLabel="東京医科大対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="tokyo-ika">

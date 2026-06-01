@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
 export const metadata = { title: "川崎医科大学受験対策｜入試傾向・合格戦略 | Medvance", description: "川崎医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。岡山県の私立医学部合格への完全ガイド。", 
   alternates: {
@@ -25,6 +26,7 @@ const faqs = [
 export default function KawasakiIkaPage() {
   return (
     <div className="min-h-screen bg-white">
+      <UniversityPageSchemas name="川崎医科大学" slug="kawasaki-ika" breadcrumbLabel="川崎医科大対策" faq={faqs} />
       <UniversityHero slug="kawasaki-ika">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>大学別対策ガイド</p>

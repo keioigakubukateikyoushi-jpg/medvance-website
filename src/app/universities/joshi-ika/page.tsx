@@ -84,7 +84,7 @@ const faqs = [
 export default function JoshiIkaPage() {
   return (
     <>
-      <UniversityPageSchemas name="東京女子医科大学" slug="joshi-ika" breadcrumbLabel="女子医科大対策" />
+      <UniversityPageSchemas name="東京女子医科大学" slug="joshi-ika" breadcrumbLabel="女子医科大対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="joshi-ika">

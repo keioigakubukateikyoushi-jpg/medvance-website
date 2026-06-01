@@ -94,7 +94,7 @@ const faqs = [
 export default function TohoPage() {
   return (
     <>
-      <UniversityPageSchemas name="東邦大学医学部" slug="toho" breadcrumbLabel="東邦大医学部対策" />
+      <UniversityPageSchemas name="東邦大学医学部" slug="toho" breadcrumbLabel="東邦大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="toho">

@@ -171,7 +171,7 @@ const faqs = [
 export default function KeioPage() {
   return (
     <>
-      <UniversityPageSchemas name="慶應義塾大学医学部" slug="keio" breadcrumbLabel="慶應義塾大学医学部対策" />
+      <UniversityPageSchemas name="慶應義塾大学医学部" slug="keio" breadcrumbLabel="慶應義塾大学医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="keio">

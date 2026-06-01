@@ -193,7 +193,7 @@ const faqs = [
 export default function KindaiPage() {
   return (
     <>
-      <UniversityPageSchemas name="近畿大学医学部" slug="kindai" breadcrumbLabel="近畿大医学部対策" />
+      <UniversityPageSchemas name="近畿大学医学部" slug="kindai" breadcrumbLabel="近畿大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="kindai">

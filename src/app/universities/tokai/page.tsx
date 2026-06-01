@@ -166,7 +166,7 @@ const faqs = [
 export default function TokaiPage() {
   return (
     <>
-      <UniversityPageSchemas name="東海大学医学部" slug="tokai" breadcrumbLabel="東海大医学部対策" />
+      <UniversityPageSchemas name="東海大学医学部" slug="tokai" breadcrumbLabel="東海大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="tokai">

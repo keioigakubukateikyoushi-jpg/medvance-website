@@ -192,7 +192,7 @@ const faqs = [
 export default function ShowaPage() {
   return (
     <>
-      <UniversityPageSchemas name="昭和大学医学部" slug="showa" breadcrumbLabel="昭和大医学部対策" />
+      <UniversityPageSchemas name="昭和大学医学部" slug="showa" breadcrumbLabel="昭和大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="showa">

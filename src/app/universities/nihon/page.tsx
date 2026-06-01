@@ -97,7 +97,7 @@ const faqs = [
 export default function NihonPage() {
   return (
     <>
-      <UniversityPageSchemas name="日本大学医学部" slug="nihon" breadcrumbLabel="日本大医学部対策" />
+      <UniversityPageSchemas name="日本大学医学部" slug="nihon" breadcrumbLabel="日本大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="nihon">

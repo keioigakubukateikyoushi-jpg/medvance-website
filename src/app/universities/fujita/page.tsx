@@ -84,7 +84,7 @@ const faqs = [
 export default function FujitaPage() {
   return (
     <>
-      <UniversityPageSchemas name="藤田医科大学" slug="fujita" breadcrumbLabel="藤田医科大対策" />
+      <UniversityPageSchemas name="藤田医科大学" slug="fujita" breadcrumbLabel="藤田医科大対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="fujita">

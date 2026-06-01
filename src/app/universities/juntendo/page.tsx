@@ -192,7 +192,7 @@ const faqs = [
 export default function JuntendoPage() {
   return (
     <>
-      <UniversityPageSchemas name="順天堂大学医学部" slug="juntendo" breadcrumbLabel="順天堂大医学部対策" />
+      <UniversityPageSchemas name="順天堂大学医学部" slug="juntendo" breadcrumbLabel="順天堂大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="juntendo">

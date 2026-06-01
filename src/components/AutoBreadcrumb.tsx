@@ -24,12 +24,15 @@ export default function AutoBreadcrumb() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: crumbs.map((c, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: c.label,
-      ...(c.href ? { item: `https://medvance-edu.com${c.href}` } : {}),
-    })),
+    itemListElement: crumbs.map((c, i) => {
+      const path = c.href || pathname;
+      return {
+        "@type": "ListItem",
+        position: i + 1,
+        name: c.label,
+        item: `https://medvance-edu.com${path}`,
+      };
+    }),
   };
 
   return (

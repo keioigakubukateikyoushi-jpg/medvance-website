@@ -186,7 +186,7 @@ const faqs = [
 export default function JikeiPage() {
   return (
     <>
-      <UniversityPageSchemas name="東京慈恵会医科大学" slug="jikei" breadcrumbLabel="慈恵医科大対策" />
+      <UniversityPageSchemas name="東京慈恵会医科大学" slug="jikei" breadcrumbLabel="慈恵医科大対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="jikei">

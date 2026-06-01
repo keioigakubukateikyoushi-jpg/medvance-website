@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
 export const metadata = { title: "岩手医科大学受験対策｜入試傾向・合格戦略 | Medvance", description: "岩手医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。東北地方の地域密着型私立医学部への合格ガイド。", 
   alternates: {
@@ -25,6 +26,7 @@ const faqs = [
 export default function IwatePage() {
   return (
     <div className="min-h-screen bg-white">
+      <UniversityPageSchemas name="岩手医科大学" slug="iwate" breadcrumbLabel="岩手医科大対策" faq={faqs} />
       <UniversityHero slug="iwate">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>大学別対策ガイド</p>

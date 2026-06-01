@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
@@ -197,6 +198,7 @@ const faqs = [
 export default function FukuokaPage() {
   return (
     <div className="min-h-screen bg-white">
+      <UniversityPageSchemas name="福岡大学医学部" slug="fukuoka" breadcrumbLabel="福岡大医学部対策" faq={faqs} />
       {/* Hero */}
       <UniversityHero slug="fukuoka">
         <div className="max-w-3xl mx-auto text-center">

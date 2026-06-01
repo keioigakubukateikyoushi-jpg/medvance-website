@@ -166,7 +166,7 @@ const faqs = [
 export default function KitasatoPage() {
   return (
     <>
-      <UniversityPageSchemas name="北里大学医学部" slug="kitasato" breadcrumbLabel="北里大医学部対策" />
+      <UniversityPageSchemas name="北里大学医学部" slug="kitasato" breadcrumbLabel="北里大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="kitasato">

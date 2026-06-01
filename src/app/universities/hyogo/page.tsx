@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
@@ -83,6 +84,7 @@ const faqs = [
 export default function HyogoPage() {
   return (
     <div className="min-h-screen bg-white">
+      <UniversityPageSchemas name="兵庫医科大学" slug="hyogo" breadcrumbLabel="兵庫医科大対策" faq={faqs} />
       {/* Hero */}
       <UniversityHero slug="hyogo">
         <div className="max-w-3xl mx-auto text-center">

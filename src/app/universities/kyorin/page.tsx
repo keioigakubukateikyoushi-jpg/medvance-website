@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
@@ -165,6 +166,7 @@ const faqs = [
 export default function KyorinPage() {
   return (
     <div className="min-h-screen bg-white">
+      <UniversityPageSchemas name="杏林大学医学部" slug="kyorin" breadcrumbLabel="杏林大医学部対策" faq={faqs} />
       {/* Hero */}
       <UniversityHero slug="kyorin">
         <div className="max-w-3xl mx-auto text-center">

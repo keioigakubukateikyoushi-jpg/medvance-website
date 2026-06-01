@@ -166,7 +166,7 @@ const faqs = [
 export default function MariannaPage() {
   return (
     <>
-      <UniversityPageSchemas name="聖マリアンナ医科大学" slug="marianna" breadcrumbLabel="聖マリアンナ医科大対策" />
+      <UniversityPageSchemas name="聖マリアンナ医科大学" slug="marianna" breadcrumbLabel="聖マリアンナ医科大対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="marianna">

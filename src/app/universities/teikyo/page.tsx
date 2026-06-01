@@ -166,7 +166,7 @@ const faqs = [
 export default function TeikyoPage() {
   return (
     <>
-      <UniversityPageSchemas name="帝京大学医学部" slug="teikyo" breadcrumbLabel="帝京大医学部対策" />
+      <UniversityPageSchemas name="帝京大学医学部" slug="teikyo" breadcrumbLabel="帝京大医学部対策"  faq={faqs} />
           <div className="min-h-screen bg-white">
       {/* Hero */}
       <UniversityHero slug="teikyo">
