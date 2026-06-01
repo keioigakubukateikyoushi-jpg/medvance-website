@@ -141,6 +141,23 @@ export default function NaibuSeisekiPage() {
           </div>
         </div>
 
+        {/* TRUST STRIP */}
+        <div className="bg-white border-b" style={{ borderColor: BORDER }}>
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0" style={{ borderColor: BORDER }}>
+            {[
+              { k: "現役医学部生", v: "が完全1対1で指導" },
+              { k: "15分単位", v: "必要な分だけ受講" },
+              { k: "1科目〜", v: "苦手の1科目からOK" },
+              { k: "全国オンライン", v: "移動ゼロ・通塾不要" },
+            ].map((f, i) => (
+              <div key={i} className="px-5 py-6 text-center" style={{ borderColor: BORDER }}>
+                <p className="text-base md:text-lg font-bold mb-1" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>{f.k}</p>
+                <p className="text-xs" style={{ color: "#6b7280" }}>{f.v}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* WHO IS THIS FOR */}
         <div className="py-16 px-4" style={{ backgroundColor: CREAM }}>
           <div className="max-w-3xl mx-auto">
@@ -157,6 +174,36 @@ export default function NaibuSeisekiPage() {
                   <p className="text-sm" style={{ color: "#3d3d3d" }}>{item}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* TARGET (schools / grades) */}
+        <div className="py-16 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+              対応している学校・学年
+            </h2>
+            <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
+              学校の種類や学年を問わず、内部生の「学校の勉強」に対応します
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4 mb-6">
+              {[
+                { t: "中高一貫校", b: "進度が速い独自カリキュラムに合わせ、取りこぼしを防ぎます。" },
+                { t: "大学附属校", b: "内部進学に必要な評定（GPA）を見据えて成績を底上げします。" },
+                { t: "国公私立校", b: "学校ごとの試験範囲・課題に同調した対策で得点に直結させます。" },
+              ].map((c, i) => (
+                <div key={i} className="rounded-2xl p-6" style={{ backgroundColor: CREAM, border: `1px solid ${BORDER}` }}>
+                  <p className="font-bold text-base mb-2" style={{ color: NAVY }}>{c.t}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{c.b}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-2xl px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style={{ backgroundColor: "#fffdf7", border: `1px solid ${GOLD}55` }}>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white self-start" style={{ backgroundColor: GOLD }}>対象学年</span>
+              <p className="text-sm font-medium" style={{ color: NAVY }}>
+                中学1年生〜高校3年生。<span style={{ color: "#6b7280" }}>医学部・難関大志望に限らず、「学校の成績を上げたい・進級したい」すべてのご家庭が対象です。</span>
+              </p>
             </div>
           </div>
         </div>
@@ -324,31 +371,58 @@ export default function NaibuSeisekiPage() {
         <div className="py-16 px-4 bg-white">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
-              料金の目安
+              お得な料金設定
             </h2>
             <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
-              1科目からOK。無料相談後に最適なプランをご提案します
+              学校の成績アップ目的の授業は、受講しやすい価格でご用意しています
             </p>
-            <div className="grid md:grid-cols-3 gap-5">
+
+            {/* Featured value card */}
+            <div className="relative overflow-hidden rounded-3xl px-6 py-10 md:px-12" style={{ backgroundColor: NAVY }}>
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px]" style={{ background: `linear-gradient(to right, transparent, ${GOLD}, transparent)` }} />
+              <div className="text-center">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: GOLD }}>成績アップ・定期テスト対策</p>
+                <div className="flex items-end justify-center gap-2">
+                  <span className="text-lg font-bold text-white pb-2">15分</span>
+                  <span className="text-5xl md:text-6xl font-bold leading-none" style={{ color: "#e7c873", fontFamily: "var(--font-noto-serif)" }}>1,750</span>
+                  <span className="text-lg font-bold text-white pb-2">円</span>
+                </div>
+                <p className="mt-4 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  必要な分だけ、<span className="text-white font-bold">15分単位</span>で受講できるから、一切ムダがありません。
+                </p>
+                {/* example durations */}
+                <div className="mt-7 grid grid-cols-3 gap-3 max-w-md mx-auto">
+                  {[
+                    { m: "30分", p: "3,500円" },
+                    { m: "60分", p: "7,000円" },
+                    { m: "90分", p: "10,500円" },
+                  ].map((e, i) => (
+                    <div key={i} className="rounded-xl py-4" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                      <p className="text-xs mb-1" style={{ color: "rgba(255,255,255,0.55)" }}>{e.m}</p>
+                      <p className="text-base font-bold text-white">{e.p}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* value points */}
+            <div className="grid sm:grid-cols-3 gap-4 mt-6">
               {[
-                { plan: "進級・赤点対策プラン", freq: "月4〜6回", price: "月額 ¥38,000〜", desc: "危険科目と提出物に集中。まずは進級ラインの確保を最優先します。" },
-                { plan: "成績継続プラン", freq: "月8〜10回", price: "月額 ¥76,000〜", desc: "毎週の伴走で評定・成績を安定的に底上げ。内部進学にも備えます。", highlight: true },
-                { plan: "複数科目強化プラン", freq: "月12回〜", price: "月額 ¥110,000〜", desc: "2〜3科目を並行指導。全体の評定の底上げを狙います。" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="p-6 rounded-2xl"
-                  style={{ backgroundColor: (item as { highlight?: boolean }).highlight ? NAVY : "white", border: (item as { highlight?: boolean }).highlight ? "none" : `1px solid ${BORDER}` }}
-                >
-                  <p className="text-xs font-semibold mb-2" style={{ color: GOLD }}>{item.plan}</p>
-                  <p className="font-bold text-xl mb-1" style={{ color: (item as { highlight?: boolean }).highlight ? "#fff" : NAVY }}>{item.price}</p>
-                  <p className="text-xs mb-3" style={{ color: (item as { highlight?: boolean }).highlight ? "rgba(255,255,255,0.6)" : "#6b7280" }}>{item.freq}</p>
-                  <p className="text-sm leading-relaxed" style={{ color: (item as { highlight?: boolean }).highlight ? "rgba(255,255,255,0.75)" : "#6b7280" }}>{item.desc}</p>
+                { t: "1科目・短時間からOK", b: "苦手な1科目、15分の短時間からでも始められます。" },
+                { t: "通塾費・交通費ゼロ", b: "完全オンライン。移動の時間もお金もかかりません。" },
+                { t: "テスト前だけ増やせる", b: "定期テスト前に回数を増やすなど、柔軟に調整できます。" },
+              ].map((c, i) => (
+                <div key={i} className="rounded-2xl p-5" style={{ backgroundColor: CREAM, border: `1px solid ${BORDER}` }}>
+                  <p className="flex items-center gap-2 font-bold text-sm mb-1" style={{ color: NAVY }}>
+                    <span style={{ color: GOLD }}>✓</span>{c.t}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{c.b}</p>
                 </div>
               ))}
             </div>
             <p className="text-xs text-center mt-6" style={{ color: "#9ca3af" }}>
-              ※ 上記は目安です。学年・科目数・状況によって最適なプランをご提案します。
+              ※ 表示は学校成績アップ目的の授業料金です。お支払い方法・回数の目安は無料相談時にご案内します。
             </p>
           </div>
         </div>
@@ -381,6 +455,30 @@ export default function NaibuSeisekiPage() {
                   </summary>
                   <div className="px-6 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#4a5568", backgroundColor: "#faf9f6" }}>{faq.a}</div>
                 </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* PARENT SUPPORT */}
+        <div className="py-16 px-4 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-2 text-center" style={{ color: NAVY, fontFamily: "var(--font-noto-serif)" }}>
+              保護者の方も、安心して任せられる
+            </h2>
+            <p className="text-sm text-center mb-10" style={{ color: "#6b7280" }}>
+              お子様の状況が見えるから、ご家庭で抱え込まずに済みます
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {[
+                { t: "毎回の指導後に報告", b: "その日の内容・できたこと・次の課題を共有。進捗が常に見えます。" },
+                { t: "つまずきを可視化", b: "どこが弱点で何を直せば点になるかを、保護者にも分かる形でお伝えします。" },
+                { t: "勧誘なしの無料相談", b: "まずは現状をお聞かせください。無理な勧誘は一切いたしません。" },
+              ].map((c, i) => (
+                <div key={i} className="rounded-2xl p-6" style={{ backgroundColor: CREAM, border: `1px solid ${BORDER}` }}>
+                  <p className="font-bold text-sm mb-2" style={{ color: NAVY }}>{c.t}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>{c.b}</p>
+                </div>
               ))}
             </div>
           </div>
