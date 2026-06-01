@@ -251,33 +251,17 @@ export default function Home() {
       {/* ── 2.1 PAIN POINTS SECTION (🤖 CUTE FRIENDLY FAMILY LINE ART COMPONENT) ── */}
       <section className="relative overflow-hidden bg-[#faf9f6] py-24 px-4 border-b" style={{ borderColor: "#e5e1d8" }}>
         
-        {/* Custom CSS Style Injection for elaborate keyframes & animations */}
+        {/* Custom CSS Style Injection for smooth premium hover effects */}
         <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes float-1 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-7px) rotate(0.3deg); }
-          }
-          @keyframes float-2 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(-0.3deg); }
-          }
-          @keyframes float-3 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-9px) rotate(0.5deg); }
-          }
-          .animate-float-1 { animation: float-1 6.5s ease-in-out infinite; }
-          .animate-float-2 { animation: float-2 8s ease-in-out infinite; }
-          .animate-float-3 { animation: float-3 7.2s ease-in-out infinite; }
-          
-          .glass-card {
-            background: rgba(255, 255, 255, 0.82);
+          .glass-card-readable {
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           }
-          .glass-card:hover {
-            background: rgba(255, 255, 255, 0.98);
-            transform: translateY(-10px) scale(1.035);
+          .glass-card-readable:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-4px) scale(1.02);
           }
         `}} />
 
@@ -302,8 +286,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Interactive Symmetrical Layout */}
-          <div className="relative mx-auto max-w-5xl">
+          {/* Interactive Structured Symmetrical Grid Layout */}
+          <div className="relative mx-auto max-w-6xl">
             
             {(() => {
               // Icon SVG helper
@@ -375,186 +359,149 @@ export default function Home() {
                 }
               };
 
-              const painPoints = [
+              const leftPainPoints = [
                 {
                   title: "このままの勉強方法で",
                   subtitle: "医学部に合格できるの？",
                   mobileText: "このままの勉強方法で医学部に行けるの？",
                   icon: "help",
-                  top: "10px",
-                  left: "5px",
                   num: "01",
-                  isLeft: true,
-                  floatClass: "animate-float-1"
                 },
                 {
                   title: "大人数の集団塾の指導は",
                   subtitle: "自分に合っていない",
                   mobileText: "集団塾の勉強方法は自分に合っていない",
                   icon: "x-circle",
-                  top: "135px",
-                  left: "55px",
                   num: "02",
-                  isLeft: true,
-                  floatClass: "animate-float-2"
                 },
                 {
                   title: "塾・家庭教師の授業外の",
                   subtitle: "学習もしっかり管理してほしい",
                   mobileText: "塾・家庭教師の授業外の学習を管理してほしい",
                   icon: "clipboard",
-                  top: "260px",
-                  left: "15px",
                   num: "03",
-                  isLeft: true,
-                  floatClass: "animate-float-3"
                 },
                 {
                   title: "医学部に行きたいけれど",
                   subtitle: "今の状態のままでは本当に不安",
                   mobileText: "医学部に行きたいけれどこのままでは不安",
                   icon: "alert",
-                  top: "385px",
-                  left: "55px",
                   num: "04",
-                  isLeft: true,
-                  floatClass: "animate-float-1"
                 },
                 {
                   title: "面接や小論文の対策も",
                   subtitle: "早期から並行して行いたい",
                   mobileText: "面接小論文対策もしっかり行いたい",
                   icon: "document",
-                  top: "510px",
-                  left: "5px",
                   num: "05",
-                  isLeft: true,
-                  floatClass: "animate-float-2"
                 },
+              ];
+
+              const rightPainPoints = [
                 {
                   title: "医学部合格法を知り尽くした",
                   subtitle: "プロ講師から直接教わりたい",
                   mobileText: "医学部に合格する方法を知っている講師に教えてもらいたい",
                   icon: "academic",
-                  top: "10px",
-                  right: "5px",
                   num: "06",
-                  isLeft: false,
-                  floatClass: "animate-float-3"
                 },
                 {
                   title: "お子様の弱点や得意に",
                   subtitle: "焦点を当てた個人戦略は？",
                   mobileText: "お子さんの弱点・得意に焦点を当てた戦略は？",
                   icon: "target",
-                  top: "135px",
-                  right: "55px",
                   num: "07",
-                  isLeft: false,
-                  floatClass: "animate-float-1"
                 },
                 {
                   title: "今のカリキュラムで効率的に",
                   subtitle: "合格へと進めているの？",
                   mobileText: "効率的に合格に進めているの？",
                   icon: "trend",
-                  top: "260px",
-                  right: "15px",
                   num: "08",
-                  isLeft: false,
-                  floatClass: "animate-float-2"
                 },
                 {
                   title: "変化の激しい医学部受験の",
                   subtitle: "最新情報やトレンドを知りたい",
                   mobileText: "医学部受験の最新情報を知りたい",
                   icon: "info",
-                  top: "385px",
-                  right: "55px",
                   num: "09",
-                  isLeft: false,
-                  floatClass: "animate-float-3"
                 },
                 {
                   title: "妥協することなく",
                   subtitle: "絶対に医学部に合格したい！",
                   mobileText: "絶対に医学部に合格したい",
                   icon: "fire",
-                  top: "510px",
-                  right: "5px",
                   num: "10",
-                  isLeft: false,
-                  floatClass: "animate-float-1"
                 },
               ];
 
+              const renderCard = (item: any, isLeft: boolean) => {
+                const iconBg = isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
+                const hoverBorderClass = isLeft ? "hover:border-blue-200" : "hover:border-amber-200";
+                const hoverShadowClass = isLeft 
+                  ? "hover:shadow-[0_12px_30px_rgba(74,144,226,0.1)]" 
+                  : "hover:shadow-[0_12px_30px_rgba(201,146,42,0.1)]";
+
+                return (
+                  <div 
+                    key={item.num}
+                    className={`relative w-full p-4.5 rounded-[20px] border border-black/[0.04] shadow-[0_4px_16px_rgba(12,26,51,0.02)] glass-card-readable group ${hoverBorderClass} ${hoverShadowClass}`}
+                  >
+                    {/* Golden Serif Number Badge */}
+                    <span className="absolute top-3 right-4.5 text-[10px] font-bold tracking-widest text-[#c9922a]/20 group-hover:text-[#c9922a]/70 transition-colors duration-300 font-serif">
+                      {item.num}
+                    </span>
+
+                    <div className="flex items-center gap-4">
+                      {/* Icon container */}
+                      <div className={`flex-shrink-0 w-10.5 h-10.5 rounded-full flex items-center justify-center transition-all duration-300 ${iconBg}`}>
+                        {getPainPointIcon(item.icon)}
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.title}</h3>
+                        <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.subtitle}</h3>
+                      </div>
+                    </div>
+                  </div>
+                );
+              };
+
               return (
                 <>
-                  {/* DESKTOP LAYOUT (Elegant glassmorphic floating cards with connected double pulsing backglows) */}
-                  <div className="hidden lg:block relative w-full h-[650px] mx-auto select-none">
+                  {/* DESKTOP LAYOUT (Extremely clean, structured, and easy-to-read 3-Column Symmetrical Layout) */}
+                  <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-8 items-center w-full select-none">
                     
-                    {/* Glowing Double Pulse Backdrops for Illustration */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] bg-blue-100/30 rounded-full blur-[70px] pointer-events-none animate-pulse z-0" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] bg-amber-100/20 rounded-full blur-[90px] pointer-events-none animate-[pulse_10s_infinite] z-0" />
-                    
-                    {/* Floating Central Illustration */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[360px] h-[360px] flex items-center justify-center animate-float-2">
+                    {/* Left Column (01 to 05) */}
+                    <div className="flex flex-col gap-4">
+                      {leftPainPoints.map(item => renderCard(item, true))}
+                    </div>
+
+                    {/* Center Column (Central Illustration with premium radial backglow) */}
+                    <div className="relative w-[340px] h-[340px] flex items-center justify-center">
+                      <div className="absolute inset-0 bg-blue-100/30 rounded-full blur-[60px] pointer-events-none animate-pulse" />
+                      <div className="absolute inset-0 bg-amber-100/20 rounded-full blur-[80px] pointer-events-none animate-[pulse_8s_infinite]" />
                       <img 
                         src="/images/generated/worried_family_option3.png" 
                         alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                        className="w-full h-auto object-contain scale-[1.05]"
+                        className="w-full h-auto object-contain scale-[1.05] relative z-10"
                       />
                     </div>
 
-                    {/* Dynamic Symmetrical Surrounding Cards */}
-                    {painPoints.map((item, idx) => {
-                      const style = {
-                        top: item.top,
-                        ...(item.isLeft ? { left: item.left } : { right: item.right })
-                      };
-                      
-                      // Theme-specific border highlights & glows
-                      // Left is Blue accent (worry), Right is Gold accent (strategy/goal)
-                      const iconBg = item.isLeft ? "bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white" : "bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white";
-                      const hoverShadowClass = item.isLeft 
-                        ? "hover:shadow-[0_20px_45px_rgba(74,144,226,0.14)] hover:border-blue-300/60" 
-                        : "hover:shadow-[0_20px_45px_rgba(201,146,42,0.14)] hover:border-[#c9922a]/50";
-
-                      return (
-                        <div 
-                          key={idx}
-                          className={`absolute w-[290px] z-10 p-5 rounded-[24px] border border-black/5 shadow-[0_12px_36px_rgba(12,26,51,0.03)] glass-card group ${item.floatClass} ${hoverShadowClass}`}
-                          style={style}
-                        >
-                          {/* Serif elegant number badge that shines on hover */}
-                          <span className="absolute top-3.5 right-4.5 text-[11px] font-bold tracking-widest text-[#c9922a]/20 group-hover:text-[#c9922a]/70 transition-colors duration-300 font-serif">
-                            {item.num}
-                          </span>
-
-                          <div className="flex items-center gap-4 relative">
-                            {/* Accentuated Icon container with dynamic background swap */}
-                            <div className={`flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-500 ${iconBg}`}>
-                              {getPainPointIcon(item.icon)}
-                            </div>
-                            
-                            <div>
-                              <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.title}</h3>
-                              <h3 className="font-bold text-[13px] leading-snug text-[#0c1a33] group-hover:text-black transition-colors duration-300">{item.subtitle}</h3>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    {/* Right Column (06 to 10) */}
+                    <div className="flex flex-col gap-4">
+                      {rightPainPoints.map(item => renderCard(item, false))}
+                    </div>
 
                   </div>
 
-                  {/* MOBILE & TABLET LAYOUT (Sleek card grid with rich dynamic icons) */}
+                  {/* MOBILE & TABLET LAYOUT (Sleek grid with clean typography) */}
                   <div className="lg:hidden flex flex-col items-center gap-8">
                     
-                    {/* Pulsing Backdrop for Mobile */}
+                    {/* Central Illustration for Mobile */}
                     <div className="relative">
                       <div className="absolute inset-0 bg-blue-100/40 rounded-full blur-2xl animate-pulse pointer-events-none" />
-                      <div className="w-[200px] h-[200px] flex items-center justify-center p-2 bg-white rounded-full border border-black/5 shadow-md relative z-10">
+                      <div className="w-[180px] h-[180px] flex items-center justify-center p-2 bg-white rounded-full border border-black/5 shadow-md relative z-10">
                         <img 
                           src="/images/generated/worried_family_option3.png" 
                           alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
@@ -563,18 +510,19 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Cards Grid */}
-                    <div className="grid gap-4 sm:grid-cols-2 w-full max-w-3xl px-2">
-                      {painPoints.map((item, idx) => {
-                        const iconBg = item.isLeft ? "bg-blue-50 text-blue-500" : "bg-amber-50 text-amber-600";
-                        const cardBorder = item.isLeft ? "hover:border-blue-200" : "hover:border-amber-200";
+                    {/* Clean 2-column or 1-column list */}
+                    <div className="grid gap-3.5 sm:grid-cols-2 w-full max-w-3xl px-2">
+                      {[...leftPainPoints, ...rightPainPoints].map((item, idx) => {
+                        const isLeft = idx < 5;
+                        const iconBg = isLeft ? "bg-blue-50 text-blue-500" : "bg-amber-50 text-amber-600";
+                        const hoverBorder = isLeft ? "hover:border-blue-200" : "hover:border-amber-200";
                         return (
                           <div 
-                            key={idx} 
-                            className={`p-4.5 bg-white rounded-[22px] border border-black/[0.04] shadow-sm text-left hover:shadow-md transition-all duration-300 ${cardBorder}`}
+                            key={item.num} 
+                            className={`p-4 bg-white rounded-[20px] border border-black/[0.04] shadow-sm text-left transition-all duration-300 ${hoverBorder}`}
                           >
                             <div className="flex items-center gap-3.5">
-                              <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${iconBg}`}>
+                              <div className={`flex-shrink-0 w-9.5 h-9.5 rounded-full flex items-center justify-center ${iconBg}`}>
                                 {getPainPointIcon(item.icon)}
                               </div>
                               <div className="text-left">
