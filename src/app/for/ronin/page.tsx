@@ -3,9 +3,9 @@ import Link from "next/link";
 import RelatedColumns from "@/components/RelatedColumns";
 
 export const metadata = {
-  title: "医学部浪人生の私立医学部合格戦略｜再浪人を避ける戦略伴走",
+  title: "【医学部浪人生の対策】今年で決める合格戦略と再浪人回避の個別指導 | Medvance",
   description:
-    "医学部受験で浪人し、今年こそ私立医学部に合格したい受験生とご家庭へ。Medvanceは前年度の失敗分析、受験校設計、週次学習管理、個別指導、保護者共有まで一体で伴走します。",
+    "医学部受験で浪人・多浪し、今年こそ私立・国公立医学部に合格したい受験生とご家庭へ。現役慶應医学部生が完全1対1で、前年度の失敗分析、受験校設計、週次学習計画作成、自学自習管理、保護者共有まで一体で伴走します。",
   alternates: {
     canonical: "/for/ronin",
   },

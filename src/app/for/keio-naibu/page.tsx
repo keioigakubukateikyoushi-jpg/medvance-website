@@ -5,9 +5,9 @@ import LineButton from "@/components/LineButton";
 import KeioNaibuSimulator from "@/components/KeioNaibuSimulator";
 
 export const metadata = {
-  title: "慶應医学部への内部進学対策｜系列校特化の評定向上＆推薦選考指導 | Medvance",
+  title: "【慶應医学部への内部進学】系列校特化の評定アップと推薦枠獲得対策 | Medvance",
   description:
-    "【慶應内部進学・医学部推薦特化】義塾高校（塾高）・女子高・志木・SFC高等部から限られた慶應医学部への内部推薦枠を勝ち取るための完全個別指導。学校ごとの出題傾向に同調した定期試験・評定対策と、医学部推薦会議で高評価を得る面接・志望動機書指導。",
+    "【慶應内部進学・医学部推薦特化】塾高・女子高・志木・SFC高等部から限られた慶應医学部への内部推薦枠を勝ち取るための個別指導。各校シラバスに完全同調した定期試験・評定（GPA）向上対策と、推薦選考を突破する面接・自己推薦書指導。",
   keywords: [
     "慶應 内部進学 医学部",
     "塾高 医学部 推薦",
