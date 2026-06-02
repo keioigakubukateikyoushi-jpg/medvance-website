@@ -15,8 +15,8 @@ import { getColumnThumbnail } from "@/lib/columnThumbnails";
 import { buildItemListSchema, buildFaqSchema, buildSpeakableSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "医学部受験専門塾 Medvance｜慶應医学部生が完全1対1・全国オンライン対応",
-  description: "現役慶應医学部生による完全1対1の医学部受験専門塾・家庭教師型指導。慶應医学部に受かるには何が必要か、面接対策はいつから始めるべきかまで解説。オンラインで全国どこからでも受講可能。",
+  title: "医学部受験塾 Medvance｜現役慶應医学部生による完全1対1個別指導・オンライン",
+  description: "現役慶應医学部生が完全1対1で指導・伴走する医学部受験塾「Medvance（メドバンス）」。合格から逆算した週次の精密な学習計画、自学自習管理、大学別出願戦略（国公立・私立）で合格へ導きます。全国オンライン対応。",
   alternates: {
     canonical: "/",
   },

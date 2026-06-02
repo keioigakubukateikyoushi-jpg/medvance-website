@@ -122,9 +122,9 @@ function HeroText() {
           ...anim(0.65, 0.2),
         }}
       >
-        <span className="block">医学部合格に向けた、</span>
-        <span className="block">個別指導と</span>
-        <span className="block">受験戦略を。</span>
+        <span className="block">医学部受験塾 Medvance｜</span>
+        <span className="block">完全1対1個別指導と</span>
+        <span className="block">合格戦略</span>
       </h1>
 
       {/* Sub copy */}
