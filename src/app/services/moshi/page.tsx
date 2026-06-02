@@ -2,9 +2,9 @@ import Link from "next/link";
 import { buildBreadcrumbSchema, buildFaqSchema, buildServiceSchema, siteUrl } from "@/lib/seo";
 
 export const metadata = {
-  title: "AI模試分析サービス｜偏差値を入力するだけで学習ルートを自動生成 | Medvance",
+  title: "【無料】医学部模試分析ツール｜偏差値から合格計画・参考書ルートをAI判定 | Medvance",
   description:
-    "偏差値を入力するだけで、AIが科目別バンド・弱点・参考書・学習タイムラインを即時生成。駿台・河合塾・進研・東進など模試の難易度補正も自動対応。無料・登録不要で今すぐ使えます。",
+    "【無料・登録不要】駿台・河合塾・進研・東進など模試の偏差値を入力するだけで、AIが志望医学部との差分・科目別弱点・おすすめ参考書ルートを即時判定。医学部受験の学習計画作成に役立ちます。",
 
   alternates: {
     canonical: "/services/moshi",
