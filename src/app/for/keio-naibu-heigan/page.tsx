@@ -266,12 +266,13 @@ export default function KeioNaibuHeiganPage() {
         <TutorProfiles />
 
         {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
-        <section className="bg-white px-4 py-8">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+        <section className="bg-white px-4 py-12">
+          <div className="mx-auto max-w-3xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+            <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
             <img 
-              src="/images/generated/keio_campus_studying.png" 
-              alt="慶應義塾大学キャンパス前でスマートに勉強を進める慶應医学部・附属校生" 
-              className="w-full h-auto object-cover max-h-[380px]"
+              src="/images/generated/japanese_student_keio_heigan.png" 
+              alt="慶應内部推薦の維持と他大一般一般受験の両立に向け、赤本や計画表を開き集中して取り組む受験生" 
+              className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
             />
           </div>
         </section>

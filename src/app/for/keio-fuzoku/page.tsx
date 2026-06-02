@@ -228,12 +228,13 @@ export default function KeioFuzokuPage() {
           </div>
 
         {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
-        <section className="bg-white px-4 py-8">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+        <section className="bg-white px-4 py-12">
+          <div className="mx-auto max-w-3xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+            <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
             <img 
-              src="/images/generated/keio_campus_studying.png" 
-              alt="慶應義塾大学キャンパス前でスマートに勉強を進める慶應医学部・附属校生" 
-              className="w-full h-auto object-cover max-h-[380px]"
+              src="/images/generated/japanese_student_keio_fuzoku.png" 
+              alt="慶應附属校の制服を着て、目標の慶応医学部内部推薦獲得に向け笑顔で立つ日本の高校生" 
+              className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
             />
           </div>
         </section>

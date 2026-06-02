@@ -2,6 +2,7 @@ import ForPageSchemas from "@/components/ForPageSchemas";
 import { forPageMeta } from "@/lib/forPageMeta";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 const GOLD = "#c9922a";
 const NAVY = "#0c1a33";
@@ -210,6 +211,20 @@ export default function NaibuSeisekiPage() {
           </div>
         </div>
 
+        {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO ── */}
+        <section className="bg-white px-4 py-8">
+          <div className="mx-auto max-w-4xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+            <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
+            <Image 
+              src="/images/generated/japanese_middle_school_study_smiling.png" 
+              alt="個別指導で意欲的に勉強する明るい笑顔の生徒" 
+              width={1600}
+              height={900}
+              className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </div>
+        </section>
+
         {/* TEACHING STYLE: online + in-person */}
         <div className="py-16 px-4" style={{ backgroundColor: CREAM }}>
           <div className="max-w-4xl mx-auto">
@@ -408,6 +423,20 @@ export default function NaibuSeisekiPage() {
             </p>
           </div>
         </div>
+
+        {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO ── */}
+        <section className="bg-white px-4 py-8">
+          <div className="mx-auto max-w-4xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+            <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
+            <Image 
+              src="/images/generated/japanese_tutor_group_discussion_active.png" 
+              alt="講師と生徒の活発な学習コミュニケーションシーン" 
+              width={1600}
+              height={900}
+              className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </div>
+        </section>
 
         {/* SUBJECTS */}
         <div className="py-16 px-4 bg-white">

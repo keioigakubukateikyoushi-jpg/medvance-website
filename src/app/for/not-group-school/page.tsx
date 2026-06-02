@@ -183,12 +183,13 @@ export default function NotGroupSchoolPage() {
       </section>
 
       {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
-      <section className="bg-white px-4 py-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+      <section className="bg-white px-4 py-12">
+        <div className="mx-auto max-w-4xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+          <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
           <img 
-            src="/images/generated/individual_coaching_focused.png" 
-            alt="静かで明るい学習空間で現役慶應医学部生講師から完全1対1で個別指導を受ける受験生" 
-            className="w-full h-auto object-cover max-h-[400px]"
+            src="/images/generated/japanese_student_despair_resolved.png" 
+            alt="集団授業での伸び悩みを解消し、自分専用の学習習慣を手に入れて明るい表情で勉強に取り組む生徒" 
+            className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
           />
         </div>
       </section>

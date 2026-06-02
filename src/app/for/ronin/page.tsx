@@ -228,11 +228,12 @@ export default function RoninPage() {
               </p>
               
               {/* Embedding realistic Japanese ronin study coaching photo */}
-              <div className="mt-8 overflow-hidden rounded-xl border bg-white" style={{ borderColor: "#e5e1d8" }}>
+              <div className="mt-8 relative overflow-hidden rounded-[20px] md:rounded-[24px] shadow-[0_15px_40px_rgba(12,26,51,0.1)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+                <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
                 <img 
-                  src="/images/generated/ronin_study_management.png" 
+                  src="/images/generated/japanese_student_ronin_grit_desk.png" 
                   alt="15分単位の計画表を使いながら講師と学習計画を確認する日本人の浪人生" 
-                  className="w-full h-auto object-cover max-h-[300px]"
+                  className="w-full h-auto object-cover max-h-[300px] transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
             </div>

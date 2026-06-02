@@ -145,12 +145,13 @@ export default function Ko1Page() {
       </div>
 
         {/* ── HIGH QUALITY JAPANESE REALISTIC PHOTO (Tier 4) ── */}
-        <section className="bg-white px-4 py-8">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
+        <section className="bg-white px-4 py-12">
+          <div className="mx-auto max-w-3xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+            <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
             <img 
-              src="/images/generated/highschool_study_smiling.png" 
-              alt="志望校合格に向け学習計画表を前にモチベーション高く自習に取り組む日本の高校生" 
-              className="w-full h-auto object-cover max-h-[380px]"
+              src="/images/generated/japanese_student_highschool_ko1.png" 
+              alt="高1からの医学部合格ルートを視野に入れ、笑顔で数学の学習に取り組む日本の高校1年生" 
+              className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
             />
           </div>
         </section>

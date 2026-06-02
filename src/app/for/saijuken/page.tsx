@@ -97,14 +97,15 @@ export default function SaijukenPage() {
       {/* Visual Section (Premium Private Library) */}
       <div className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="overflow-hidden rounded-2xl border bg-[#0c1a33] p-1" style={{ borderColor: "#c9922a" }}>
+          <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
+            <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
             <div className="overflow-hidden rounded-xl">
               <Image
-                src="/images/generated/private_medical_library_japanese.png"
+                src="/images/generated/japanese_student_library_bright.png"
                 alt="落ち着いた空間で静かに医学部受験対策を進める大人の生徒"
                 width={1600}
                 height={900}
-                className="w-full h-auto object-cover max-h-[450px] opacity-95 transition-opacity hover:opacity-100"
+                className="w-full h-auto object-cover max-h-[450px] transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </div>
             <div className="p-5 text-center bg-white">
