@@ -106,7 +106,30 @@ const keioCards: AudienceCard[] = [
   },
 ];
 
-const allAudiences = [...stageCards, ...situationCards, ...keioCards];
+const medicalRelatedCards: AudienceCard[] = [
+  {
+    title: "歯学部受験を目指す方",
+    body: "東京科学大（旧医科歯科大）や東京歯科大、昭和大などの傾向対策、学費・国試対策を含む合格ロードマップをご案内します。",
+    href: "/column/shigakubu-juken?from=for-hub",
+  },
+  {
+    title: "薬学部受験を目指す方",
+    body: "慶応・北里・東京理科などの難関私立から国公立まで、数III不要などの戦略的な科目絞り込み指導を行います。",
+    href: "/column/yakugakubu-juken?from=for-hub",
+  },
+  {
+    title: "獣医学部受験を目指す方",
+    body: "全国17校のみの超高難度・激戦区。志望校別（麻布、日本獣医生命科学、北里等）の配点に合わせた個別対策を設計します。",
+    href: "/column/juigakubu-juken?from=for-hub",
+  },
+  {
+    title: "看護学部受験を目指す方",
+    body: "慶應や国公立・私立難関看護の対策に加え、配点比率が極めて高い面接・小論文の表現力を徹底的に磨き上げます。",
+    href: "/column/kangogakubu-juken?from=for-hub",
+  },
+];
+
+const allAudiences = [...stageCards, ...situationCards, ...keioCards, ...medicalRelatedCards];
 
 const schemas = [
   buildBreadcrumbSchema([
@@ -202,6 +225,17 @@ export default function ForHubPage() {
       </section>
 
       <section className="bg-white px-4 py-16">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrow="他医療系・難関学部受験"
+            title="他医療系（歯学・薬学・獣医・看護）学部受験から探す"
+            body="医学部受験で培った個別指導メソッドを、他の医療系難関学部対策にも適用します。"
+          />
+          <AudienceGrid cards={medicalRelatedCards} />
+        </div>
+      </section>
+
+      <section className="px-4 py-16" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="慶應内部進学・附属校"
