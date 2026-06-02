@@ -4,13 +4,14 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "順天堂大学医学部に受かるには｜入試対策・合格戦略 | Medvance",
+  title: "【順天堂医学部受験】受かるには？一般A方式の配点攻略と合格ロードマップ | Medvance",
   description:
-    "順天堂大学医学部の入試対策を公式要項ベースで解説。2026年度一般選抜A方式は一次で英語・数学・理科2科目・小論文、二次で面接を実施します。",
+    "順天堂大学医学部の一般選抜A方式を突破する合格戦略。配点200点の英語長文読解、標準問題を確実に仕留める数学、一次試験日に行われる小論文（二次合格者選抜で使用）から、2次試験の面接対策まで徹底サポート。",
 
   alternates: {
     canonical: "/universities/juntendo",
-  },};
+  },
+};
 
 const subjects = [
   {

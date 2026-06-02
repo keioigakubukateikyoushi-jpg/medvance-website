@@ -4,13 +4,14 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "慶應医学部に受かるには｜入試対策・合格戦略を現役生が解説 | Medvance",
+  title: "【慶應医学部受験】受かるには？入試傾向・配点対策と合格戦略 | Medvance",
   description:
-    "慶應義塾大学医学部の一般選抜を、2026年度入学試験要項ベースで整理。1次試験の理科2科目・数学・英語、2次試験の小論文・面接まで、押さえるべきポイントを解説します。",
+    "現役慶應医学部生が完全1対1で教える慶應医学部受験の合格戦略。英語超長文の速読法、記述数学の論証・減点されない答案作成術、理科（物理・化学・生物）の選択方針から、二次試験（面接・小論文）の徹底対策まで解説。",
 
   alternates: {
     canonical: "/universities/keio",
-  },};
+  },
+};
 
 const subjects = [
   {
