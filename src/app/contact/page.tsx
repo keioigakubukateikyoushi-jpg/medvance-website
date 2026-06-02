@@ -53,7 +53,7 @@ const quickFields = [
 ];
 
 const sideChecks = [
-  "医学部に何としても入りたい意思がある",
+  "医学部・歯学部に何としても入りたい意思がある",
   "国公立・私立を含めて志望校を現実的に設計したい",
   "保護者が初回診断に同席できる",
   "大手予備校の授業外をどう補うか整理したい",
@@ -153,10 +153,10 @@ export default function ContactPage() {
             お申し込み
           </p>
           <h1 className="mb-4 text-3xl font-bold leading-snug text-white md:text-4xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            医学部 合格戦略診断
+            医学部・歯学部 合格戦略診断
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.66)" }}>
-            予備校の利用状況、集団塾との相性、模試結果、志望校、保護者の投資方針をもとに、国公立・私立医学部合格に向けた受験校選定・科目別優先順位・必要な伴走体制を整理します。
+            予備校の利用状況、集団塾との相性、模試結果、志望校、保護者の投資方針をもとに、国公立・私立の医学部・歯学部合格に向けた受験校選定・科目別優先順位・必要な伴走体制を整理します。
           </p>
           <div className="mx-auto grid max-w-3xl gap-3 sm:grid-cols-3">
             {quickFields.map((item) => (
@@ -200,7 +200,7 @@ export default function ContactPage() {
                   診断フォーム
                 </h2>
                 <p className="mb-6 text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>
-                  初回診断を一般論で終わらせないために、予備校利用状況・集団塾との相性・医学部受験の方針・保護者同席・投資方針を先に確認します。
+                  初回診断を一般論で終わらせないために、予備校利用状況・集団塾との相性・医学部や歯学部受験の方針・保護者同席・投資方針を先に確認します。
                 </p>
 
                 {formData.source && (
@@ -369,7 +369,7 @@ export default function ContactPage() {
                         style={{ border: "1px solid #e5e1d8", color: formData.thisYearIntent ? "#0c1a33" : "#9ca3af" }}
                       >
                         <option value="">選択してください</option>
-                        <option value="今年で必ず医学部に入りたい">今年で必ず医学部に入りたい</option>
+                        <option value="今年で必ず医学部・歯学部に入りたい">今年で必ず医学部・歯学部に入りたい</option>
                         <option value="再浪人は避けたい">再浪人は避けたい</option>
                         <option value="状況次第で再浪人も検討">状況次第で再浪人も検討</option>
                         <option value="まだ方針が定まっていない">まだ方針が定まっていない</option>
@@ -379,10 +379,10 @@ export default function ContactPage() {
 
                   <div>
                     <label className="mb-2 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                      医学部の受験方針 <span className="ml-2 rounded px-2 py-0.5 text-xs text-white" style={{ backgroundColor: "#c9922a" }}>必須</span>
+                      志望学部・受験方針 <span className="ml-2 rounded px-2 py-0.5 text-xs text-white" style={{ backgroundColor: "#c9922a" }}>必須</span>
                     </label>
-                    <div className="grid gap-3 md:grid-cols-4">
-                      {["国公立医学部が第一志望", "私立医学部が第一志望", "国公立・私立を併願", "まだ検討中"].map((value) => (
+                    <div className="grid gap-3 grid-cols-2 md:grid-cols-5">
+                      {["国公立医学部が第一志望", "私立医学部が第一志望", "国公立・私立併願（医）", "歯学部志望（国公立/私立）", "まだ検討中"].map((value) => (
                         <button
                           key={value}
                           type="button"
@@ -415,7 +415,7 @@ export default function ContactPage() {
                         onChange={(e) => updateField("targetName", e.target.value)}
                         className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
                         style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="例: 東北大、千葉大、慈恵、順天堂、日医など"
+                        placeholder="例: 東大、東京科学大、東京歯科大、昭和歯など"
                       />
                     </div>
 
@@ -563,7 +563,7 @@ export default function ContactPage() {
                     className="w-full rounded-lg py-4 text-base font-bold text-white shadow-md transition-opacity hover:opacity-90 disabled:opacity-50"
                     style={{ backgroundColor: "#c9922a" }}
                   >
-                    {loading ? "送信中..." : "医学部 合格戦略診断を申し込む"}
+                    {loading ? "送信中..." : "合格戦略診断を申し込む"}
                   </button>
                   <p className="text-center text-xs leading-relaxed" style={{ color: "#9ca3af" }}>
                     送信後2営業日以内にご連絡します。診断前に、可能であれば模試結果・受験予定校・現在利用している塾や予備校の情報共有をお願いする場合があります。
