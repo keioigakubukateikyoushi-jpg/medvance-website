@@ -86,6 +86,11 @@ const situationCards: AudienceCard[] = [
     body: "志望理由書、面接、小論文を、一般入試対策と並行して設計します。",
     href: "/for/suisen-ao?from=for-hub",
   },
+  {
+    title: "外国人・留学生の方",
+    body: "日本語と英語のバイリンガル指導で、日本の医学部受験に必要な数学・理科等の徹底対策やEJU対策、英語枠受験（国際医療福祉大など）をサポートします。",
+    href: "/for/international?from=for-hub",
+  },
 ];
 
 const keioCards: AudienceCard[] = [

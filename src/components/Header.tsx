@@ -20,6 +20,7 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "集団塾が合わない方", href: "/for/not-group-school", desc: "1対1指導と週次管理で立て直す" },
       { label: "私立医学部受験戦略", href: "/private-medical-strategy", desc: "出願校・学費・週次管理を設計" },
       { label: "再受験生の方", href: "/for/saijuken", desc: "社会人・大学生からの挑戦" },
+      { label: "外国人・留学生の方", href: "/for/international", desc: "日本の医学部を世界から目指す" },
       { label: "保護者の方", href: "/for/parents", desc: "定期報告・保護者面談あり" },
       { label: "対象者ページ一覧を見る →", href: "/for", desc: "中学生・慶應内部進学なども含めて探す" },
     ],

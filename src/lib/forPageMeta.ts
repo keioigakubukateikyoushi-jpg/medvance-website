@@ -27,6 +27,7 @@ const audienceBySlug: Record<string, AudienceSpec> = {
   "naibu-seiseki": { educationalRole: "affiliated / integrated school student", description: "中高一貫校・附属校の内部生（成績向上・進級・内部進学を目指す）", suggestedMinAge: 12, suggestedMaxAge: 18 },
   nangandai: { educationalRole: "competitive university applicant", description: "東大・京大・早慶などの難関大学志望者", suggestedMinAge: 16, suggestedMaxAge: 19 },
   "suisen-ao": { educationalRole: "recommendation / AO applicant", description: "総合型選抜・推薦入試出願予定者", suggestedMinAge: 16, suggestedMaxAge: 19 },
+  international: { educationalRole: "international medical school applicant", description: "日本の医学部を目指す外国人・留学生", suggestedMinAge: 16 },
 };
 
 export const forPageMeta: Record<
@@ -201,6 +202,18 @@ export const forPageMeta: Record<
       { q: "どのようなスケジュールで進めるのが理想ですか？", a: "高1〜高2のうちは学校の評定平均（GPA）を最大化する勉強に8割のパワーを割き、残りの2割で一般受験を見据えた英数の先取り学習を行います。高3になって内部推薦の選考が見えてきたら、状況に合わせて過去問演習や併願校対策の比率を調整します。" },
       { q: "もし推薦枠から漏れてしまった場合、いつ一般受験に切り替えるべきですか？", a: "「切り替える」のではなく、最初から「両方の網を張っておく」のがMedvanceのダブル対策です。常に一般受験で戦える実力を養いながら評定を追うため、推薦枠の確定時期（高3秋〜冬）に万が一選考から漏れたとしても、タイムラグなしで一般受験の直前対策に移行できます。" },
     ],
+  },
+  international: {
+    name: "外国人・留学生向け医学部受験対策個別指導",
+    description: "日本の医学部を目指す外国人・留学生向けに、英語と日本語のハイブリッド授業で数学・理科・英語・面接小論文まで徹底指導。",
+    serviceType: "外国人向け医学部受験個別指導",
+    label: "外国人・留学生の方へ",
+    faq: [
+      { q: "日本語能力試験（JLPT）でどの程度のレベルが必要ですか？", a: "講義やテキストは英語と日本語を併用して進めることができますが、最終的な医学部入試（EJUや一般入試）や面接、そして将来の医師国家試験は日本語で行われるため、実質的にJLPT N1相当以上の高い日本語理解力が目標となります。現在の日本語力に不安がある方には、学習開始初期は英語中心で指導し、段階的に日本語での専門用語解説へとシフトする指導を行います。" },
+      { q: "日本の医学部受験に必要な理数科目の指導も受けられますか？", a: "はい。医学部受験の合否を分ける数学、物理、化学、生物の全科目を徹底指導します。特に日本留学試験（EJU）の理数科目は、出題形式や範囲が他国のカリキュラムと異なるため、志望校の傾向に合わせて英語と日本語を交えて分かりやすく解説します。" },
+      { q: "英語で受験できる医学部（国際医療福祉大学など）の対策は可能ですか？", a: "可能です。国際医療福祉大学（IUHW）医学部をはじめ、英語での出願（SAT/ACT/IBなど）や英語面接を課す特別枠がある大学の対策に完全対応しています。英語での志望理由書（Essay）の添削や、MMI（マルチプル・ミニ・インタビュー）形式の英語面接のシミュレーションなどを、実際に現役で医学部に通う優秀な講師陣が個別指導します。" },
+      { q: "海外からのオンライン受講は可能ですか？", a: "可能です。時差を考慮した指導スケジュールの調整に対応しており、SkypeやZoom等を通じて世界中のどこからでも受講いただけます。出願書類の選定や受験スケジュールのご相談もオンラインで一貫してサポートします。" }
+    ]
   },
 };
 
