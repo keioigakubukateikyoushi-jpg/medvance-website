@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import RelatedColumns from "@/components/RelatedColumns";
 
@@ -363,7 +364,23 @@ const translations: Record<Language, {
 };
 
 export default function InternationalClient() {
+  const searchParams = useSearchParams();
   const [lang, setLang] = useState<Language>("ja");
+
+  useEffect(() => {
+    const queryLang = searchParams.get("lang") as Language;
+    if (queryLang && ["ja", "en", "zh", "ko"].includes(queryLang)) {
+      setLang(queryLang);
+    } else {
+      if (typeof navigator !== "undefined") {
+        const browserLang = navigator.language.toLowerCase();
+        if (browserLang.startsWith("zh")) setLang("zh");
+        else if (browserLang.startsWith("ko")) setLang("ko");
+        else if (browserLang.startsWith("en")) setLang("en");
+      }
+    }
+  }, [searchParams]);
+
   const t = translations[lang];
 
   return (
