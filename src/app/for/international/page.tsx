@@ -2,9 +2,9 @@ import ForPageSchemas from "@/components/ForPageSchemas";
 import InternationalClient from "./InternationalClient";
 
 export const metadata = {
-  title: "【外国人・留学生の日本医学部受験】英语・日本語ハイブリッド個別指導と理数徹底対策 | Medvance",
+  title: "【留学生の日本医学部受験】EJU理数徹底指導・日英バイリンガル個別指導 | Study Medicine in Japan | Medvance",
   description:
-    "日本の医学部を目指す外国人・留学生のための専門個別指導。現役医学部生（東大・慶應・国際医療福祉大等）のバイリンガル講師が、日本語と英語の両方でEJU理数科目・数学・面接小論文・出願エッセイまで徹底指導します。",
+    "日本の医学部を目指す外国人・留学生のための専門個別指導。EJU理数（数学・物理・化学・生物）や英語枠（国際医療福祉大学等）を日英で徹底対策。Study Medicine in Japan / 日本留学考试医学部 / 일본 의대 입학 1:1 과외.",
   alternates: {
     canonical: "/for/international",
   },
