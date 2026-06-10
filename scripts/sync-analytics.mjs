@@ -288,21 +288,32 @@ async function fetchSearchConsole(date) {
   try {
     const sc = google.searchconsole({ version: "v1", auth: await scAuth.getClient() });
     const siteUrl = await resolveSearchConsoleSiteUrl(sc, date);
-    const [summaryRes, kwRes] = await Promise.all([
-      sc.searchanalytics.query({ siteUrl, requestBody: { startDate: date, endDate: date } }),
-      sc.searchanalytics.query({ siteUrl, requestBody: { startDate: date, endDate: date, dimensions: ["query"], rowLimit: 5 } }),
-    ]);
-    const row = summaryRes.data.rows?.[0];
-    const topKw = (kwRes.data.rows ?? [])
+    // SCのデータは確定まで2〜3日遅れるため、対象日そのままでは常に0件になる。
+    // 2日前→3日前の順で実データのある日を探す。
+    let row;
+    let kwRows = [];
+    let scDate = date;
+    for (const lag of [2, 3]) {
+      scDate = minusDays(date, lag);
+      const [summaryRes, kwRes] = await Promise.all([
+        sc.searchanalytics.query({ siteUrl, requestBody: { startDate: scDate, endDate: scDate } }),
+        sc.searchanalytics.query({ siteUrl, requestBody: { startDate: scDate, endDate: scDate, dimensions: ["query"], rowLimit: 5 } }),
+      ]);
+      row = summaryRes.data.rows?.[0];
+      kwRows = kwRes.data.rows ?? [];
+      if (row) break;
+    }
+    const topKw = kwRows
       .map((r, i) => `${i + 1}. ${r.keys[0]}  ${r.clicks}クリック / ${parseFloat(r.position.toFixed(1))}位`)
       .join("\n");
     return {
+      scDate,
       impressions: row?.impressions ?? 0,
       clicks:      row?.clicks ?? 0,
       ctr:         parseFloat(((row?.ctr ?? 0) * 100).toFixed(2)),
       position:    parseFloat((row?.position ?? 0).toFixed(1)),
-      topKw:       topKw || "（データなし）",
-      indexCount:  kwRes.data.rows?.length ?? 0,
+      topKw:       topKw ? `（${scDate}分）\n${topKw}` : "（データなし）",
+      indexCount:  kwRows.length,
     };
   } catch (err) {
     console.warn("  ⚠️  Search Console:", err.message.slice(0, 80));
