@@ -60,7 +60,7 @@ const publishDate = "2026-04-01";
 function buildArticleMetadata(article: LongformColumnArticle): Metadata {
   const ogImageUrl = `https://medvance-edu.com/api/og?title=${encodeURIComponent(article.title)}&cat=${encodeURIComponent(article.category)}`;
   return {
-    title: `${article.title} | Medvance`,
+    title: article.title,
     description: article.description,
     alternates: {
       canonical: `/column/${article.slug}`,

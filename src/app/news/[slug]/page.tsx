@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const notice = notices.find((n) => n.slug === slug);
   if (!notice) return {};
   return {
-    title: `${notice.title} | Medvance`,
+    title: notice.title,
     description: notice.body.replace(/\n/g, " ").slice(0, 120),
     alternates: {
       canonical: `/news/${slug}`,

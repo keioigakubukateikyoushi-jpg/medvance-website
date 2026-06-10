@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buildBreadcrumbSchema, buildFaqSchema, buildServiceSchema, siteUrl } from "@/lib/seo";
 
 export const metadata = {
-  title: "【無料】医学部模試分析ツール｜偏差値から合格計画・参考書ルートをAI判定",
+  title: "【無料】医学部AI模試分析ツール｜偏差値から合格可能性・参考書ルートを即判定",
   description:
     "【無料・登録不要】駿台・河合塾・進研・東進など模試の偏差値を入力するだけで、AIが志望医学部との差分・科目別弱点・おすすめ参考書ルートを即時判定。医学部受験の学習計画作成に役立ちます。",
 
