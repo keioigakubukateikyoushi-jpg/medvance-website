@@ -60,7 +60,12 @@ export default function TokushohoPage() {
         <tbody>
           <tr>
             <th>授業料</th>
-            <td>1コマ45分 7,500円（税込）<br /><span style={{ fontSize: "11px", color: "#6b7280" }}>（1回の授業90分）</span></td>
+            <td>
+              1コマ45分 7,500円（税込）<br />
+              <span style={{ fontSize: "11px", color: "#6b7280" }}>
+                （1回の授業90分（45分×2）：15,000円（税込））
+              </span>
+            </td>
           </tr>
           <tr>
             <th>入塾金</th>
