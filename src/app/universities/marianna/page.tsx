@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "聖マリアンナ医科大学受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "聖マリアンナ医科大学受験対策｜入試傾向・合格戦略",
   description: "聖マリアンナ医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。キリスト教建学精神に基づく面接重視の選考を徹底解説します。",
 
   alternates: {

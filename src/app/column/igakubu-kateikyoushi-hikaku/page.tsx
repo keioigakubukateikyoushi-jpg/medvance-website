@@ -106,7 +106,7 @@ const checkPoints = [
 ];
 
 export const metadata = {
-  title: "医学部受験の家庭教師を比較・選び方まとめ【2026年版】 | Medvance",
+  title: "医学部受験の家庭教師を比較・選び方まとめ【2026年版】",
   description:
     "医学部受験向け家庭教師サービスを徹底比較。指導者の質・面接小論文対応・コーチング・料金で選ぶポイントを解説。現役慶應医学部生による完全1対1指導のMedvanceが選ばれる理由。",
   keywords: [

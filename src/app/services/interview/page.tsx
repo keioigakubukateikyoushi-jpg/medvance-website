@@ -2,7 +2,7 @@ import Link from "next/link";
 import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
-  title: "医学部面接・小論文対策｜現役医学部生が実践的に指導 | Medvance",
+  title: "医学部面接・小論文対策｜現役医学部生が実践的に指導",
   description:
     "医学部入試の面接・小論文対策を現役医学部生が1対1で指導。実際の試験で問われる質問への回答作り、小論文の書き方、志望理由書の作成まで徹底サポート。",
 

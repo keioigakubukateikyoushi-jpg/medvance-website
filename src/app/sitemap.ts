@@ -41,7 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/terms`, lastModified: pageMtime("terms"), changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/tokushoho`, lastModified: pageMtime("tokushoho"), changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/cookies`, lastModified: pageMtime("cookies"), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/success-stories`, lastModified: pageMtime("success-stories"), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/diagnosis`, lastModified: pageMtime("diagnosis"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/science`, lastModified: pageMtime("science"), changeFrequency: "monthly", priority: 0.7 },
     // 対象者別
+    { url: `${BASE}/for`, lastModified: pageMtime("for"), changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/for/chugaku`, lastModified: forMtime("chugaku"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/ko1`, lastModified: forMtime("ko1"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/for/ko2`, lastModified: forMtime("ko2"), changeFrequency: "monthly", priority: 0.8 },

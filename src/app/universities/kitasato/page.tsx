@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "北里大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "北里大学医学部受験対策｜入試傾向・合格戦略",
   description: "北里大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。2026年度の公式Q&Aと出題意図をもとに、学力検査と論文・面接の総合判定を整理します。",
 
   alternates: {

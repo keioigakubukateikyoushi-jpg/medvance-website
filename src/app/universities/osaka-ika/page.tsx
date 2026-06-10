@@ -3,7 +3,7 @@ import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "大阪医科薬科大学受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "大阪医科薬科大学受験対策｜入試傾向・合格戦略",
   description: "大阪医科薬科大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。関西圏名門で全体的に難易度が高い対策を詳しく紹介します。",
 
   alternates: {

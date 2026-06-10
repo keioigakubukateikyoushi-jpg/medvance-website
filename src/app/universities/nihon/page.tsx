@@ -3,7 +3,7 @@ import Link from "next/link";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "日本大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "日本大学医学部受験対策｜入試傾向・合格戦略",
   description: "日本大学医学部の一般選抜N全学統一方式を、2026年度入学者選抜案内ベースで整理。1次試験の理科2科目・英語・数学と、2次試験の数学・英語・面接まで、押さえるべきポイントを解説します。",
 
   alternates: {

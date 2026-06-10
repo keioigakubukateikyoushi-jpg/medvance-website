@@ -3,7 +3,7 @@ import Link from "next/link";
 import { buildFaqSchema, buildForPageSchemas, buildItemListSchema, buildSpeakableSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "【集団塾が合わない医学部受験生へ】完全1対1指導と週次学習管理で立て直す | Medvance",
+  title: "【集団塾が合わない医学部受験生へ】完全1対1指導と週次学習管理で立て直す",
   description:
     "大人数の集団授業でついていけない、質問ができない、自習が進まない医学部志望生へ。Medvanceは、生徒のつまずきに1対1で向き合い、週次計画と確認テストで『何をやり何を捨てるか』を完全個別設計する戦略伴走塾です。",
   alternates: {

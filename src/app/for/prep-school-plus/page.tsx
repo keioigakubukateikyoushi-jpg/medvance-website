@@ -3,7 +3,7 @@ import Link from "next/link";
 import { buildFaqSchema, buildForPageSchemas, buildItemListSchema, buildSpeakableSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "【大手予備校と併用】医学部受験の個別指導＆復習管理で予備校を活かす | Medvance",
+  title: "【大手予備校と併用】医学部受験の個別指導＆復習管理で予備校を活かす",
   description:
     "駿台・河合塾・東進などの大手予備校に通う医学部受験生へ。授業の消化不良を防ぐ徹底的な復習管理、弱点単元の完全1対1指導、私立・国公立医学部の出願戦略まで、予備校授業の投資対効果を最大化するMedvanceの併用プラン。",
   alternates: {

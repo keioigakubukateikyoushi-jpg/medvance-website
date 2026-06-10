@@ -51,7 +51,7 @@ const gakubuData = [
 ];
 
 export const metadata = {
-  title: "慶應内部進学の仕組みと評定の上げ方を徹底解説 | Medvance",
+  title: "慶應内部進学の仕組みと評定の上げ方を徹底解説",
   description:
     "慶應義塾大学への内部進学の仕組み・評定基準・学部別難易度を解説。医学部をはじめ希望学部への進学枠を確保するための成績対策を現役慶應医学部生が指導します。",
   keywords: [

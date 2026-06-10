@@ -31,7 +31,7 @@ const schemas = buildColumnPageSchemas({
 });
 
 export const metadata = {
-  title: "医学部の小論文対策・書き方・頻出テーマを徹底解説 | Medvance",
+  title: "医学部の小論文対策・書き方・頻出テーマを徹底解説",
   description:
     "医学部入試の小論文対策。合格に必要な3つの要素・書き方の型・頻出テーマ（医療倫理・地域医療・AI）と練習法を現役慶應医学部生が解説します。",
   alternates: { canonical: "/column/shoronbun-taisaku" },

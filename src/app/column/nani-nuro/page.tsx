@@ -31,7 +31,7 @@ const schemas = buildColumnPageSchemas({
 });
 
 export const metadata = {
-  title: "医学部は何浪まで大丈夫？浪人回数と合格の関係を解説 | Medvance",
+  title: "医学部は何浪まで大丈夫？浪人回数と合格の関係を解説",
   description:
     "医学部受験で何浪まで挑戦すべきか。長浪化の原因・私立医学部の年齢制限・浪人中の戦略転換のタイミングまで、現役慶應医学部生の視点で解説します。",
   alternates: { canonical: "/column/nani-nuro" },

@@ -36,7 +36,7 @@ const reasons = [
 ];
 
 export const metadata: Metadata = {
-  title: "学校の成績を上げたい中学生・高校生へ｜定期テスト対策・内申点向上 | Medvance",
+  title: "学校の成績を上げたい中学生・高校生へ｜定期テスト対策・内申点向上",
   description:
     "定期テスト対策・内申点向上・推薦入試準備を個別指導でサポート。現役医学部生が1対1で全科目に対応。中学生・高校生向け完全オンライン家庭教師。",
   keywords: [

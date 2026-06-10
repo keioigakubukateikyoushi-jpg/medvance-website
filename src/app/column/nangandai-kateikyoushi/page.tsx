@@ -39,7 +39,7 @@ const relatedArticles = [
 ];
 
 export const metadata = {
-  title: "難関大受験（東大・京大・早慶）に家庭教師が効果的な理由 | Medvance",
+  title: "難関大受験（東大・京大・早慶）に家庭教師が効果的な理由",
   description:
     "難関大受験（東大・京大・早慶・難関国公立）に家庭教師が効果的な理由と選び方を解説。慶應義塾大学医学部生が数学・英語・理科を本質から1対1で指導するMedvanceの特徴も紹介。",
   keywords: [

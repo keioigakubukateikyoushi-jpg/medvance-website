@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "帝京大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "帝京大学医学部受験対策｜入試傾向・合格戦略",
   description: "帝京大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。マークシート中心・受験者数最多レベルの試験で勝ち抜く戦略を紹介します。",
 
   alternates: {

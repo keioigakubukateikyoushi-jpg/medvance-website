@@ -3,7 +3,7 @@ import { notices } from "@/lib/notices";
 import { buildBreadcrumbSchema, buildCollectionPageSchema, buildItemListSchema } from "@/lib/seo";
 
 export const metadata = {
-  title: "お知らせ一覧 | Medvance",
+  title: "お知らせ一覧",
   description: "Medvanceからのお知らせ・サービス情報・キャンペーン情報の一覧です。",
 
   alternates: {

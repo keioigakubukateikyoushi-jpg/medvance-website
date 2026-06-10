@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "近畿大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "近畿大学医学部受験対策｜入試傾向・合格戦略",
   description: "近畿大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。近年難化傾向で英語重視。高倍率を突破するための戦略を詳しく解説します。",
 
   alternates: {

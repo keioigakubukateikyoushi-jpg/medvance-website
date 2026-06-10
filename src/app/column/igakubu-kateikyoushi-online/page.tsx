@@ -65,7 +65,7 @@ const onlineMerits = [
 ];
 
 export const metadata = {
-  title: "医学部受験のオンライン家庭教師｜全国対応・慶應医学部生が指導 | Medvance",
+  title: "医学部受験のオンライン家庭教師｜全国対応・慶應医学部生が指導",
   description:
     "医学部受験専門のオンライン家庭教師サービス。現役慶應医学部生が全国どこからでも完全1対1で指導。面接・小論文・学習管理まで対応。無料相談受付中。",
   keywords: [

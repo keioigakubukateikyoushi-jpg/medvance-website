@@ -3,14 +3,14 @@ import type { ReactNode } from "react";
 import { buildBreadcrumbSchema, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "医学部模試判定ツール | Medvance",
+  title: "医学部模試判定ツール",
   description:
     "模試成績を入力すると、医学部受験に向けた現在地、弱点科目、優先順位付きの学習方針を確認できるMedvanceの無料模試判定ツールです。",
   alternates: {
     canonical: "/services/moshi/tool",
   },
   openGraph: {
-    title: "医学部模試判定ツール | Medvance",
+    title: "医学部模試判定ツール",
     description:
       "模試成績を入力すると、医学部受験に向けた現在地、弱点科目、優先順位付きの学習方針を確認できる無料模試判定ツールです。",
     url: "https://medvance-edu.com/services/moshi/tool",

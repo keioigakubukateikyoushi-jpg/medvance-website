@@ -38,7 +38,7 @@ const relatedArticles = [
 ];
 
 export const metadata = {
-  title: "医学部受験の家庭教師料金・費用相場【2026年版】 | Medvance",
+  title: "医学部受験の家庭教師料金・費用相場【2026年版】",
   description:
     "医学部受験向け家庭教師の料金・費用相場を解説。講師の属性別（大学生・医学部生・プロ）の相場比較、予備校との費用比較、コスパの見方まで詳しく解説します。",
   keywords: [

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { searchSite, suggestedSearchKeywords } from "./search-data";
 
 export const metadata = {
-  title: "サイト内検索 | Medvance",
+  title: "サイト内検索",
   description:
     "Medvance サイト内の大学別対策、コラム、料金、教科別対策、サービス情報をキーワードで検索できます。",
   alternates: {

@@ -46,7 +46,7 @@ const timeline = [
 ];
 
 export const metadata = {
-  title: "推薦・AO入試対策の完全ガイド｜志望理由書・面接・小論文 | Medvance",
+  title: "推薦・AO入試対策の完全ガイド｜志望理由書・面接・小論文",
   description:
     "推薦・総合型選抜（AO入試）の対策方法を解説。志望理由書の書き方・面接準備・小論文対策・スケジュール設計まで。現役慶應医学部生による個別指導で志望校合格を目指す。",
   keywords: [

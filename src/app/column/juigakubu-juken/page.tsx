@@ -80,7 +80,7 @@ const roadmapSchema = buildHowToSchema({
 });
 
 export const metadata = {
-  title: "【獣医学部受験】受かるには？国公立・私立17校の難易度と合格ロードマップ | Medvance",
+  title: "【獣医学部受験】受かるには？国公立・私立17校の難易度と合格ロードマップ",
   description:
     "全国17校のみの超激戦区・獣医学部受験を突破する合格戦略。麻布・日本獣医生命科学・北里など私立6校と国公立の偏差値・倍率・学費比較、数学III不要の科目対策、動物倫理を問う面接・小論文対策を解説。",
   alternates: {

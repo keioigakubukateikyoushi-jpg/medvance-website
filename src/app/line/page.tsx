@@ -7,12 +7,12 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "LINEで無料相談｜医学部受験の戦略を30分で整理 | Medvance",
+  title: "LINEで無料相談｜医学部受験の戦略を30分で整理",
   description:
     "LINEで医学部受験の無料相談。現役慶應医学部生が志望校・学力・残り期間から次の一手を30分で整理。勧誘なし・オンライン全国対応・戦略マニュアル進呈。",
   alternates: { canonical: "/line" },
   openGraph: {
-    title: "LINEで無料相談 | Medvance",
+    title: "LINEで無料相談",
     description:
       "LINE友だち追加で医学部受験の無料相談。現役慶應医学部生が30分で戦略を整理します。",
     url: "/line",

@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "金沢医科大学受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "金沢医科大学受験対策｜入試傾向・合格戦略",
   description:
     "金沢医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。北陸唯一の私立医学部で地域医療を重視した入試への完全対策ガイドです。",
 

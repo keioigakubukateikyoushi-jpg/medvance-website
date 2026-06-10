@@ -42,7 +42,7 @@ const relatedArticles = [
 ];
 
 export const metadata = {
-  title: "医学部に受かる人・落ちる人の違い｜慶應医学部生が解説 | Medvance",
+  title: "医学部に受かる人・落ちる人の違い｜慶應医学部生が解説",
   description:
     "医学部合格者と不合格者の決定的な違いを現役慶應医学部生が解説。勉強法・メンタル・戦略の違いとは？医学部に受からない人がやりがちなNG行動も紹介。",
 

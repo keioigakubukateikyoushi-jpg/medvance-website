@@ -6,7 +6,7 @@ import ArticleConsultationBox from "@/components/ArticleConsultationBox";
 import RelatedHubs from "@/components/RelatedHubs";
 
 export const metadata = {
-  title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント | Medvance",
+  title: "医学部専門予備校は高いだけ？費用とサポートを見極めるポイント",
   description:
     "医学部専門予備校の学費はなぜ高いのか。本当にサポート体制に見合っているのか。費用対効果で塾を選ぶための判断基準を解説します。",
 

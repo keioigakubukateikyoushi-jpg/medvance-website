@@ -1,7 +1,7 @@
 import Link from "next/link";
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
-export const metadata = { title: "東北医科薬科大学受験対策｜入試傾向・合格戦略 | Medvance", description: "東北医科薬科大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。2016年新設の東北の私立医学部への合格ガイド。", 
+export const metadata = { title: "東北医科薬科大学受験対策｜入試傾向・合格戦略", description: "東北医科薬科大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。2016年新設の東北の私立医学部への合格ガイド。", 
   alternates: {
     canonical: "/universities/tohoku-ika",
   },};

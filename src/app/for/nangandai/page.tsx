@@ -38,7 +38,7 @@ const whyMedvance = [
 ];
 
 export const metadata: Metadata = {
-  title: "難関大受験（東大・京大・早慶）の家庭教師｜現役医学部生が指導 | Medvance",
+  title: "難関大受験（東大・京大・早慶）の家庭教師｜現役医学部生が指導",
   description:
     "東大・京大・早慶・難関国公立大を目指す受験生向けの完全1対1家庭教師。医学部受験を勝ち抜いた現役医学部生が英語・数学・物理・化学を本質から指導。全国オンライン対応。",
   keywords: [

@@ -1,7 +1,7 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 export const metadata = {
-  title: "高2から始める医学部受験対策｜現役医学部生による完全1対1指導 | Medvance",
+  title: "高2から始める医学部受験対策｜現役医学部生による完全1対1指導",
   description:
     "高校2年生から医学部を目指す方へ。受験まで残り2年。今から本気で動けば十分間に合います。Medvanceは現役医学部生が完全1対1で、合格まで戦略的にサポートします。",
 

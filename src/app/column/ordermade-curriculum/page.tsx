@@ -4,7 +4,7 @@ import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
 
 export const metadata = {
-  title: "医学部受験でオーダーメイドカリキュラムが重要な理由 | Medvance",
+  title: "医学部受験でオーダーメイドカリキュラムが重要な理由",
   description:
     "医学部受験では全員同じカリキュラムより、志望校・苦手科目・生活リズムに合わせた個別設計のほうが伸びやすい理由を解説します。",
 

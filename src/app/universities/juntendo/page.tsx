@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "【順天堂医学部受験】受かるには？一般A方式の配点攻略と合格ロードマップ | Medvance",
+  title: "【順天堂医学部受験】受かるには？一般A方式の配点攻略と合格ロードマップ",
   description:
     "順天堂大学医学部の一般選抜A方式を突破する合格戦略。配点200点の英語長文読解、標準問題を確実に仕留める数学、一次試験日に行われる小論文（二次合格者選抜で使用）から、2次試験の面接対策まで徹底サポート。",
 

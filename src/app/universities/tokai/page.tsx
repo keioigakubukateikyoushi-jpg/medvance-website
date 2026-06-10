@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "東海大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "東海大学医学部受験対策｜入試傾向・合格戦略",
   description: "東海大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。全科目バランス型・地域医療重視の伊勢原キャンパスの試験を徹底攻略します。",
 
   alternates: {

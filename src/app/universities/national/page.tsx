@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema, buildCollectionPageSchema, buildItemListSchema, 
 import { nationalUniversityArticles } from "./data";
 
 export const metadata = {
-  title: "国公立大学医学部・防衛医科大学校の受験対策・大学一覧 | Medvance",
+  title: "国公立大学医学部・防衛医科大学校の受験対策・大学一覧",
   description:
     "国公立大学医学部と防衛医科大学校の合格を掴むための総合受験戦略。共通テストと二次試験の配点比率タイプ別の勝ち筋、記述答案の添削指導、地域枠・推薦対策までMedvanceが徹底解説します。",
   alternates: {

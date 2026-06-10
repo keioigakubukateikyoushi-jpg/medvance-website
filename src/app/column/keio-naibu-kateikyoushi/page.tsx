@@ -61,7 +61,7 @@ const naibuProcess = [
 ];
 
 export const metadata = {
-  title: "慶應医学部への内部進学に家庭教師が最適な理由 | Medvance",
+  title: "慶應医学部への内部進学に家庭教師が最適な理由",
   description:
     "慶應附属校から医学部への内部進学を目指す方に家庭教師が効果的な理由を解説。評定管理・定期試験対策・選考準備を現役慶應医学部生が1対1でサポート。",
   keywords: [

@@ -31,7 +31,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  title: "私立医学部と国公立医学部、どちらを目指すべきか | Medvance",
+  title: "私立医学部と国公立医学部、どちらを目指すべきか",
   description:
     "私立医学部と国公立医学部の学費・難易度・環境の違いを徹底比較。自分のタイプ別にどちらを目指すべきかアドバイスします。",
 

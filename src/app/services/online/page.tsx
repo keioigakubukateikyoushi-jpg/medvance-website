@@ -2,7 +2,7 @@ import Link from "next/link";
 import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
-  title: "オンライン医学部受験指導｜全国どこからでも現役医学部生に習える | Medvance",
+  title: "オンライン医学部受験指導｜全国どこからでも現役医学部生に習える",
   description:
     "全国対応のオンライン医学部受験専門指導。現役医学部生が1対1でオンライン指導。北海道から沖縄まで、地方在住でも最高レベルの医学部受験対策が受けられます。無料相談実施中。",
 

@@ -54,7 +54,7 @@ const schemas = buildColumnPageSchemas({
 });
 
 export const metadata = {
-  title: "【2026最新】入りやすい私立医学部ランキングTOP10｜偏差値・倍率・科目配点で徹底比較 | Medvance",
+  title: "【2026最新】入りやすい私立医学部ランキングTOP10｜偏差値・倍率・科目配点で徹底比較",
   description:
     "私立医学部の中で偏差値が比較的低く「入りやすい」とされる大学TOP10を、偏差値・倍率・問題難易度・科目配点・学費の5軸で比較。慶應医学部全勝の現役医学生監修。",
   alternates: { canonical: "/column/private-nyuushiyasui" },

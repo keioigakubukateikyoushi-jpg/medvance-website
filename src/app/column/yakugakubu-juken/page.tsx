@@ -80,7 +80,7 @@ const roadmapSchema = buildHowToSchema({
 });
 
 export const metadata = {
-  title: "【薬学部受験】受かるには？私立・国公立薬学部の難易度・学費と合格ロードマップ | Medvance",
+  title: "【薬学部受験】受かるには？私立・国公立薬学部の難易度・学費と合格ロードマップ",
   description:
     "国公立・私立薬学部（6年制）の合格ロードマップ。慶應・北里・東京理科などの難易度・偏差値・学費・薬剤師国試合格率の比較、数学IIIを必要としない私立の科目戦略から推薦・小論文対策まで完全解説。",
   alternates: {

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "医学部受験の勉強法・学費・過去問・面接・小論文・推薦AO対策を現役慶應医学部生が解説。浪人・再受験・内部進学・大学別対策まで。",
   alternates: { canonical: "/column" },
   openGraph: {
-    title: "医学部受験コラム | Medvance",
+    title: "医学部受験コラム",
     description: "医学部受験の勉強法・学費・過去問・面接・推薦AO対策を現役慶應医学部生が解説。",
     url: "/column",
     type: "website",

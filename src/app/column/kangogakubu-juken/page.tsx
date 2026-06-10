@@ -80,7 +80,7 @@ const roadmapSchema = buildHowToSchema({
 });
 
 export const metadata = {
-  title: "【看護学部受験】受かるには？難関看護の難易度・科目対策と合格ロードマップ | Medvance",
+  title: "【看護学部受験】受かるには？難関看護の難易度・科目対策と合格ロードマップ",
   description:
     "国公立・難関私立看護学部受験の合格ロードマップ。慶應・聖路加などの難易度・学費比較、数学III不要の科目対策、合否を分ける面接（適性アピール）や医療テーマ小論文の記述対策を完全解説。",
   alternates: {

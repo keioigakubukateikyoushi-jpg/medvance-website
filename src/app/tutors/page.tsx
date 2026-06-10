@@ -15,7 +15,7 @@ import {
 } from "@/lib/tutors";
 
 export const metadata: Metadata = {
-  title: "家庭教師一覧 | Medvance",
+  title: "家庭教師一覧",
   description:
     "Medvanceに掲載されている医学部受験向け家庭教師を、大学・科目・対応エリア・指導形式から探せます。掲載順の基準も公開しています。",
   alternates: {

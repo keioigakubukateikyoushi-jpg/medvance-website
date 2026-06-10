@@ -1,7 +1,7 @@
 import Link from "next/link";
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
-export const metadata = { title: "岩手医科大学受験対策｜入試傾向・合格戦略 | Medvance", description: "岩手医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。東北地方の地域密着型私立医学部への合格ガイド。", 
+export const metadata = { title: "岩手医科大学受験対策｜入試傾向・合格戦略", description: "岩手医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。東北地方の地域密着型私立医学部への合格ガイド。", 
   alternates: {
     canonical: "/universities/iwate",
   },};

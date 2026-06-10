@@ -80,7 +80,7 @@ const roadmapSchema = buildHowToSchema({
 });
 
 export const metadata = {
-  title: "【歯学部受験】受かるには？難関を突破する合格ロードマップと対策戦略 | Medvance",
+  title: "【歯学部受験】受かるには？難関を突破する合格ロードマップと対策戦略",
   description:
     "国公立・私立歯学部受験の合格ロードマップを解説。偏差値・難易度の比較、6年間の学費や歯科医師国家試験合格率の一覧、一般選抜・推薦（AO）対策からMedvanceの完全1対1指導の強みまで網羅。",
   alternates: {

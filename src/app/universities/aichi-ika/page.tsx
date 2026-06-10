@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "愛知医科大学受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "愛知医科大学受験対策｜入試傾向・合格戦略",
   description:
     "愛知医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。標準問題中心で基礎力完成が合否を左右する対策を詳しく紹介します。",
 

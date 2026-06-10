@@ -5,7 +5,7 @@ import LineButton from "@/components/LineButton";
 import KeioHeiganSimulator from "@/components/KeioHeiganSimulator";
 
 export const metadata = {
-  title: "慶應内部進学＆外部一般受験ダブル対策｜医学部推薦と併願合格を両立 | Medvance",
+  title: "慶應内部進学＆外部一般受験ダブル対策｜医学部推薦と併願合格を両立",
   description:
     "【慶應医学部推薦＆一般受験両立専門】系列校（塾高・志木・女子・SFC）での医学部内部進学枠の死守と、万が一推薦枠から漏れた場合に備えた国公立・私立医学部（慈恵・順天堂・日本医大等）一般入試のダブル対策。現役慶應医学部生が完全伴走指導。",
   keywords: [

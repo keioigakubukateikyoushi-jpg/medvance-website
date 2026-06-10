@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "【慈恵医大受験】受かるには？難関を突破する入試対策と合格戦略 | Medvance",
+  title: "【慈恵医大受験】受かるには？難関を突破する入試対策と合格戦略",
   description:
     "現役医学部生が東京慈恵会医科大学の入試傾向を完全攻略。60分で解き切る英語超速読、数III・C記述の論証指導、配点最大200点の理科2科目対策から、2次試験の小論文（課題文要約）とMMI面接の模擬指導まで解説。",
 

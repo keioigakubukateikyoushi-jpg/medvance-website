@@ -80,7 +80,7 @@ const shoronbunPoints = [
 ];
 
 export const metadata = {
-  title: "医学部の面接・小論文対策に家庭教師が最適な理由 | Medvance",
+  title: "医学部の面接・小論文対策に家庭教師が最適な理由",
   description:
     "医学部受験の面接・小論文こそ個別指導が最も効果的です。現役慶應医学部生が模擬面接・小論文添削・MMI対策まで完全1対1で指導。全国オンライン対応・無料相談受付中。",
   keywords: [

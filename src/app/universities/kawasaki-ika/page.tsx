@@ -1,7 +1,7 @@
 import Link from "next/link";
 import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
-export const metadata = { title: "川崎医科大学受験対策｜入試傾向・合格戦略 | Medvance", description: "川崎医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。岡山県の私立医学部合格への完全ガイド。", 
+export const metadata = { title: "川崎医科大学受験対策｜入試傾向・合格戦略", description: "川崎医科大学の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。岡山県の私立医学部合格への完全ガイド。", 
   alternates: {
     canonical: "/universities/kawasaki-ika",
   },};

@@ -6,7 +6,7 @@ import ArticleConsultationBox from "@/components/ArticleConsultationBox";
 import RelatedHubs from "@/components/RelatedHubs";
 
 export const metadata = {
-  title: "医学部受験はいつから始めるべきか｜現役慶應医学部生が解説 | Medvance",
+  title: "医学部受験はいつから始めるべきか｜現役慶應医学部生が解説",
   description:
     "医学部受験はいつから始めるべきか？高1・高2・高3・浪人・再受験生それぞれの最適なスタート時期と準備内容を現役慶應医学部生が解説。「何年生から始めれば間に合う？」という疑問に完全回答します。",
   keywords: ["医学部受験 いつから", "医学部 何年生から", "医学部受験 スタート", "医学部 高1から", "医学部 高2から"],

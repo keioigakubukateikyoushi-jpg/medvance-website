@@ -57,7 +57,7 @@ const subjectStrategies = [
 ];
 
 export const metadata = {
-  title: "慶應附属校の成績を上げて医学部内部進学へ｜科目別対策 | Medvance",
+  title: "慶應附属校の成績を上げて医学部内部進学へ｜科目別対策",
   description:
     "慶應附属校の定期試験・成績向上のための対策を解説。評定の上げ方、科目別の勉強法、内部進学選考への備えを現役慶應医学部生が指導。全国オンライン対応。",
   keywords: [

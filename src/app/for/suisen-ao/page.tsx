@@ -35,7 +35,7 @@ const targetExams = [
 ];
 
 export const metadata: Metadata = {
-  title: "推薦・AO入試対策（志望理由書・面接・小論文）｜現役医学部生が指導 | Medvance",
+  title: "推薦・AO入試対策（志望理由書・面接・小論文）｜現役医学部生が指導",
   description:
     "推薦・総合型選抜（AO）入試の志望理由書・面接・小論文を完全1対1で指導。医学部受験を勝ち抜いた現役医学部生が、書類作成から模擬面接・添削まで徹底サポート。全国オンライン対応。",
   keywords: [

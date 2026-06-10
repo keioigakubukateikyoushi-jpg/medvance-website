@@ -48,7 +48,7 @@ const comparison = [
 ];
 
 export const metadata = {
-  title: "学校の成績を上げるための家庭教師の選び方｜中学・高校生向け | Medvance",
+  title: "学校の成績を上げるための家庭教師の選び方｜中学・高校生向け",
   description:
     "学校の成績向上・定期テスト対策・内申点アップに家庭教師が効果的な理由を解説。塾・映像授業との違い、家庭教師の選び方、現役慶應医学部生によるMedvanceの指導内容を紹介。",
   keywords: [

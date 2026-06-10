@@ -4,7 +4,7 @@ import MedvanceBanner from "@/components/MedvanceBanner";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "東京医科大学に受かるには｜入試対策・合格戦略 | Medvance",
+  title: "東京医科大学に受かるには｜入試対策・合格戦略",
   description:
     "東京医科大学の入試対策を徹底解説。全科目バランス型の出題に対応した合格戦略を現役慶應医学部生が紹介します。",
 

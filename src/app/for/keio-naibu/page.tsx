@@ -5,7 +5,7 @@ import LineButton from "@/components/LineButton";
 import KeioNaibuSimulator from "@/components/KeioNaibuSimulator";
 
 export const metadata = {
-  title: "【慶應医学部への内部進学】系列校特化の評定アップと推薦枠獲得対策 | Medvance",
+  title: "【慶應医学部への内部進学】系列校特化の評定アップと推薦枠獲得対策",
   description:
     "【慶應内部進学・医学部推薦特化】塾高・女子高・志木・SFC高等部から限られた慶應医学部への内部推薦枠を勝ち取るための個別指導。各校シラバスに完全同調した定期試験・評定（GPA）向上対策と、推薦選考を突破する面接・自己推薦書指導。",
   keywords: [

@@ -2,7 +2,7 @@ import Link from "next/link";
 import ServicePageSchemas from "@/components/ServicePageSchemas";
 
 export const metadata = {
-  title: "訪問・対面医学部受験指導｜自宅・カフェ・学習スペースで現役医学部生が1対1指導 | Medvance",
+  title: "訪問・対面医学部受験指導｜自宅・カフェ・学習スペースで現役医学部生が1対1指導",
   description:
     "東京・神奈川・千葉・埼玉などの関東エリアで、現役医学部生が自宅・カフェ・レンタル学習スペースで医学部受験を指導。完全1対1の対面家庭教師。まずは無料相談から。",
 

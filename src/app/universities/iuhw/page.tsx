@@ -3,7 +3,7 @@ import UniversityPageSchemas from "@/components/UniversityPageSchemas";
 import UniversityHero from "@/components/UniversityHero";
 
 export const metadata = {
-  title: "国際医療福祉大学医学部受験対策｜入試傾向・合格戦略 | Medvance",
+  title: "国際医療福祉大学医学部受験対策｜入試傾向・合格戦略",
   description: "国際医療福祉大学医学部の入試傾向・科目別対策・合格戦略を現役慶應医学部生が解説。英語重視のグローバル教育と英語高配点の対策を詳しく紹介します。",
 
   alternates: {

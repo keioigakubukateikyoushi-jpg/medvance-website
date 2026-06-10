@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "/contact",
   },
   openGraph: {
-    title: "医学部 合格戦略診断 | Medvance",
+    title: "医学部 合格戦略診断",
     description:
       "予備校併用、集団塾不適合、国公立・私立医学部の志望校選定、科目別優先順位、必要な伴走体制を診断します。",
     url: "https://medvance-edu.com/contact",

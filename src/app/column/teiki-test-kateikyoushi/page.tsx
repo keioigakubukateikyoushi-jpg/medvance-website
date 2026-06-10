@@ -62,7 +62,7 @@ const testStrategies = [
 ];
 
 export const metadata = {
-  title: "定期テスト対策に家庭教師が最も効果的な理由｜中学・高校生向け | Medvance",
+  title: "定期テスト対策に家庭教師が最も効果的な理由｜中学・高校生向け",
   description:
     "定期テスト対策に家庭教師を使うべき理由を解説。学校ごとの試験範囲への対応、テスト前の集中指導スケジュール、塾との違いまで。現役慶應医学部生による完全1対1指導のMedvanceが選ばれる理由。",
   keywords: [
