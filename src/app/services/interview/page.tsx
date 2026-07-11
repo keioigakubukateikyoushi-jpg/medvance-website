@@ -3,7 +3,7 @@ import ServicePageSchemas from "@/components/ServicePageSchemas";
 import { NOTE_MENSETSU_KIT_URL } from "@/lib/links";
 
 export const metadata = {
-  title: "医学部面接で落ちる人の特徴と対策｜面接・小論文・MMI | Medvance",
+  title: "医学部面接で落ちる人の特徴と対策｜面接・小論文・MMI",
   description:
     "医学部面接で落ちる人に共通する7つの特徴と、「落とされない」準備の型。現役慶應医学部生が1対1指導と教材で、回答作り・MMI・志望理由書・小論文まで支援します。",
   keywords: [

@@ -45,44 +45,73 @@ const notoSerif = Noto_Serif_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Medvance｜医学部受験の戦略伴走",
+    default: "Medvance｜現役慶應医学部生の医学部受験専門・完全1対1",
     template: "%s | Medvance",
   },
   verification: {
     google: "k16LIidMUysJ2OAzYQwAjTWN9r6-tx065m8P1alPCQI",
   },
   description:
-    "医学部に何としてでも合格したい受験生とご家庭へ。Medvanceは国公立・私立医学部の受験校選定、大手予備校併用、1対1指導、学習管理、面接小論文、保護者共有まで一体で設計する医学部受験専門塾です。",
+    "現役慶應医学部生が完全1対1で伴走する医学部受験専門塾Medvance。国公立・私立の出願戦略、予備校併用、週次学習管理、面接・小論文・MMI、保護者共有まで一体設計。全国オンライン対応。無料の合格戦略診断あり。",
   keywords: [
-    "医学部 浪人", "医学部 浪人生", "私立医学部 浪人", "私立医学部 予備校", "私立医学部 個別指導", "医学部 出願戦略", "医学部 保護者 相談",
-    "医学部 予備校併用", "集団塾 合わない", "医学部 合格戦略診断", "国公立医学部 対策",
-    "医学部受験", "医学部塾", "医学部家庭教師", "医学部個別指導", "慶應医学部",
-    "医学部オンライン", "浪人生 医学部", "再浪人 回避", "再受験 医学部", "医学部合格",
-    "医学部 面接 小論文", "医学部 学習管理", "医学部 受験校 選び方",
-    "Medvance", "メドバンス", "現役医学部生 指導", "個別指導 オンライン",
-    "鉄緑会 併用 医学部", "駿台 河合塾 併用", "医学部予備校 料金比較", "慶應医学部家庭教師 OLAX 比較",
+    "医学部受験塾",
+    "医学部 浪人",
+    "医学部 浪人生",
+    "私立医学部 浪人",
+    "私立医学部 予備校",
+    "私立医学部 個別指導",
+    "医学部 出願戦略",
+    "医学部 保護者 相談",
+    "医学部 予備校併用",
+    "集団塾 合わない",
+    "医学部 合格戦略診断",
+    "国公立医学部 対策",
+    "医学部受験",
+    "医学部塾",
+    "医学部家庭教師",
+    "医学部個別指導",
+    "慶應医学部",
+    "医学部オンライン",
+    "浪人生 医学部",
+    "再浪人 回避",
+    "再受験 医学部",
+    "医学部合格",
+    "医学部 面接",
+    "医学部 MMI",
+    "医学部 小論文",
+    "医学部 学習管理",
+    "医学部 受験校 選び方",
+    "Medvance",
+    "メドバンス",
+    "現役医学部生 指導",
+    "個別指導 オンライン",
+    "鉄緑会 併用 医学部",
+    "駿台 河合塾 併用",
+    "医学部予備校 料金比較",
   ],
   openGraph: {
-    title: "Medvance｜医学部受験の戦略伴走",
-    description: "医学部に何としてでも合格したいご家庭へ。国公立・私立医学部の志望校戦略、予備校併用、1対1指導、週次管理、保護者共有まで一体で設計します。",
-    url: "https://medvance-edu.com",
-    siteName: "Medvance",
+    title: "Medvance｜現役慶應医学部生の医学部受験専門・完全1対1",
+    description:
+      "国公立・私立医学部の志望校戦略、予備校併用、1対1指導、週次管理、面接小論文まで一体設計。全国オンライン。",
+    url: siteUrl,
+    siteName: "Medvance 医学部受験塾",
     locale: "ja_JP",
     type: "website",
     images: [
       {
-        url: "https://medvance-edu.com/og-image.png",
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Medvance｜医学部受験の戦略伴走",
+        alt: "Medvance｜現役慶應医学部生の医学部受験専門・完全1対1",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medvance｜医学部受験の戦略伴走",
-    description: "医学部に何としてでも合格したいご家庭へ。国公立・私立医学部の志望校戦略、予備校併用、1対1指導、週次管理、保護者共有まで一体で設計します。",
-    images: ["https://medvance-edu.com/og-image.png"],
+    title: "Medvance｜現役慶應医学部生の医学部受験専門・完全1対1",
+    description:
+      "国公立・私立医学部の志望校戦略、予備校併用、1対1指導、週次管理、面接小論文まで一体設計。",
+    images: [`${siteUrl}/og-image.png`],
   },
   robots: {
     index: true,
@@ -101,7 +130,14 @@ export const metadata: Metadata = {
       "ja-JP": siteUrl,
       "x-default": siteUrl,
     },
+    types: {
+      "text/plain": [
+        { url: `${siteUrl}/llms.txt`, title: "llms.txt" },
+        { url: `${siteUrl}/llms-full.txt`, title: "llms-full" },
+      ],
+    },
   },
+  category: "education",
 };
 
 const schemaGraph = {
@@ -126,6 +162,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        {/* LLMO: discoverable fact endpoints for generative engines */}
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full facts" />
+        <link rel="alternate" href="/for-ai" hrefLang="ja" title="AI fact sheet" />
       </head>
       <body className="antialiased">
         <PromoStickyBar />

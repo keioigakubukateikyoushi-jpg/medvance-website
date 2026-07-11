@@ -2,7 +2,7 @@ export const siteUrl = "https://medvance-edu.com";
 
 // Published date for all content (static for now, used in Article schema)
 export const SITE_PUBLISHED = "2024-04-01";
-export const SITE_MODIFIED = "2026-04-24";
+export const SITE_MODIFIED = "2026-07-12";
 
 type SchemaListItem = {
   name: string;
@@ -113,13 +113,18 @@ export function buildOrganizationSchema() {
       "慶應義塾大学医学部",
       "小論文対策",
       "医学部面接",
+      "医学部MMI",
+      "志望理由書",
       "オンライン個別指導",
       "15分単位の学習計画",
+      "合格戦略診断",
       "附属校・中高一貫校の内部生サポート",
       "定期テスト対策・評定（GPA）向上",
       "留年回避・進級サポート",
       "慶應附属校の内部進学対策",
-      "対面・家庭教師型指導（東京）"
+      "対面・家庭教師型指導（東京）",
+      "医学部浪人",
+      "私立医学部併願",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
