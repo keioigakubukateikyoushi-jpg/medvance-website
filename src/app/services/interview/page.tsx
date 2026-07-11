@@ -1,14 +1,54 @@
 import Link from "next/link";
 import ServicePageSchemas from "@/components/ServicePageSchemas";
+import { NOTE_MENSETSU_KIT_URL } from "@/lib/links";
 
 export const metadata = {
-  title: "医学部面接・小論文対策｜現役医学部生が実践的に指導 | Medvance",
+  title: "医学部面接で落ちる人の特徴と対策｜面接・小論文・MMI | Medvance",
   description:
-    "医学部入試の面接・小論文対策を現役医学部生が1対1で指導。実際の試験で問われる質問への回答作り、小論文の書き方、志望理由書の作成まで徹底サポート。",
-
+    "医学部面接で落ちる人に共通する7つの特徴と、「落とされない」準備の型。現役慶應医学部生が1対1指導と教材で、回答作り・MMI・志望理由書・小論文まで支援します。",
+  keywords: [
+    "医学部 面接",
+    "医学部 面接落ち 特徴",
+    "医学部 MMI",
+    "医学部 小論文",
+    "志望理由書",
+    "医学部 面接対策",
+  ],
   alternates: {
     canonical: "/services/interview",
-  },};
+  },
+};
+
+const failChecklist = [
+  {
+    title: "暗記口調",
+    body: "目線が泳ぎ、文章を思い出して話す。覚えるのは「型と自分の素材」だけで、毎回言葉を変えて練習する。",
+  },
+  {
+    title: "書類との矛盾",
+    body: "志望理由書・調査書と発言がズレる。提出前のコピーを面接直前に必ず読み返す。",
+  },
+  {
+    title: "質問の意図を外す",
+    body: "聞かれていない話が長い。結論を1文目に置き、迷ったら確認してから答える。",
+  },
+  {
+    title: "知ったかぶり",
+    body: "知らない用語に適当に答える。「不勉強で存じません」は誠実さの加点になりうる。",
+  },
+  {
+    title: "倫理テーマの極端な断定",
+    body: "一方を断罪して終わる。複数の立場に触れてから、自分の考えと留保を述べる。",
+  },
+  {
+    title: "追及での態度の崩れ",
+    body: "圧迫気味の質問はストレス耐性のテスト。感情を乗せず立て直す練習が本体。",
+  },
+  {
+    title: "逆質問ゼロ",
+    body: "「特にありません」は機会損失。大学ごとに前向きな質問を2つ用意する。",
+  },
+];
 
 const interviewItems = [
   {
@@ -84,10 +124,54 @@ export default function InterviewPage() {
             面接・小論文対策
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            医学部の面接・小論文は、準備で決まる。
+            医学部の面接は、「落とす理由」を消す試験。
           </h1>
-          <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            現役医学部生が、実際の入試を知り尽くした指導を行います
+          <p className="text-base mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
+            学科で届いても面接で落ちる人には共通点があります。現役慶應医学部生が、1対1指導と教材で対策します。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/contact?from=services-interview-hero"
+              className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#c9922a" }}
+            >
+              無料の合格戦略診断を申し込む
+            </Link>
+            <a
+              href={`${NOTE_MENSETSU_KIT_URL}${NOTE_MENSETSU_KIT_URL.includes("?") ? "&" : "?"}from=site-interview`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 font-bold text-base rounded-lg hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.25)" }}
+            >
+              面接対策キットを見る（note）
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-3" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+            医学部面接で落ちる人の7つの特徴
+          </h2>
+          <p className="text-center text-sm mb-10 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+            面接官は「すごい人」を探しているのではなく、「医師にしてはいけない人」を除外しています。減点の大半は知識不足ではなく準備不足です。3つ以上当てはまるなら、学科を1日止めてでも面接準備に充てる価値があります。
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {failChecklist.map((item, i) => (
+              <div key={item.title} className="p-5 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+                <p className="text-xs font-semibold mb-1" style={{ color: "#c9922a" }}>
+                  {i + 1}. {item.title}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-sm mt-8" style={{ color: "#6b7280" }}>
+            型・頻出質問30・MMI手順までまとめた教材は note で公開しています。個別の現在地整理は無料診断へ。
           </p>
         </div>
       </div>
@@ -190,21 +274,55 @@ export default function InterviewPage() {
         </div>
       </div>
 
+      <div className="py-16 px-4 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="p-8 rounded-2xl" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
+            <p className="text-xs font-semibold tracking-widest mb-2" style={{ color: "#c9922a" }}>
+              自習用教材
+            </p>
+            <h2 className="text-xl font-bold mb-3" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+              教材で先に整えたい方へ（note）
+            </h2>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: "#3d3d3d" }}>
+              「医学部面接・MMI完全対策キット」では、落ちる人の特徴チェック、頻出質問30の回答の型、MMIの思考手順、志望理由書テンプレをまとめています。無料部分だけでも自己診断できます。教材を読んだうえで、個別の穴は無料の合格戦略診断で潰せます。
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={`${NOTE_MENSETSU_KIT_URL}${NOTE_MENSETSU_KIT_URL.includes("?") ? "&" : "?"}from=site-interview`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 text-center text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#0c1a33" }}
+              >
+                noteでキットを見る
+              </a>
+              <Link
+                href="/contact?from=services-interview-kit"
+                className="inline-block px-6 py-3 text-center font-bold text-sm rounded-lg hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#fff", color: "#0c1a33", border: "1px solid #e5e1d8" }}
+              >
+                先に無料診断を申し込む
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="py-20 px-4" style={{ backgroundColor: "#0c1a33" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>無料相談</p>
+          <p className="text-sm font-semibold tracking-widest mb-3" style={{ color: "#c9922a" }}>合格戦略診断</p>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            まずは無料相談から
+            まずは無料の合格戦略診断から
           </h2>
           <p className="mb-8 text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-            面接・小論文の不安をお気軽にご相談ください。
+            面接・小論文の不安も含め、現在地と残り期間の作戦を整理します。無理な勧誘はしません。
           </p>
           <Link
-            href="/contact"
+            href="/contact?from=services-interview"
             className="inline-block px-8 py-4 text-white font-bold text-base rounded-lg shadow-md hover:opacity-90 transition-opacity"
             style={{ backgroundColor: "#c9922a" }}
           >
-            無料相談・お問い合わせ
+            合格戦略診断を申し込む
           </Link>
         </div>
       </div>
