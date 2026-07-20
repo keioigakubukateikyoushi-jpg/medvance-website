@@ -92,20 +92,27 @@ async function ensureDbProperties(databaseId, desired, label) {
   console.log(`  📐 ${label} プロパティ追加: ${Object.keys(toAdd).join(", ")}`);
 }
 
-/** Resolve actual property names from a database schema (title column is often not "Name"). */
+/** Resolve actual property names/ids from a database schema. */
 async function loadDbSchema(databaseId) {
   const db = await nFetch(`/databases/${databaseId}`, "GET");
   const props = db.properties ?? {};
   const byType = {};
+  let titleProp = null;
+  let titlePropId = null;
   for (const [name, def] of Object.entries(props)) {
     const t = def?.type;
     if (!t) continue;
     if (!byType[t]) byType[t] = [];
     byType[t].push(name);
+    if (t === "title") {
+      titleProp = name;
+      titlePropId = def.id ?? "title";
+    }
   }
-  const titleProp = byType.title?.[0] ?? null;
-  console.log(`  🔑 DB ${databaseId.slice(0, 8)}… title列="${titleProp}" props=[${Object.keys(props).join(", ")}]`);
-  return { props, byType, titleProp };
+  console.log(
+    `  🔑 DB ${databaseId.slice(0, 8)}… title列="${titleProp}" (id=${titlePropId}) props=[${Object.keys(props).join(", ")}]`,
+  );
+  return { props, byType, titleProp, titlePropId };
 }
 
 let DAILY_SCHEMA = null;
@@ -213,18 +220,57 @@ function pageTitle(page, fallback = "") {
 
 /**
  * Move page into database without touching body blocks.
- * Notion preserves children when only parent/properties change.
+ * Notion can reject combined parent+title updates, so:
+ *   1) parent only
+ *   2) then non-title properties
+ *   3) then title via property id / name fallbacks
  */
-async function movePageToDatabase(pageId, databaseId, properties, label) {
+async function movePageToDatabase(pageId, databaseId, { title, titleKeys, extraProps }, label) {
   if (DRY_RUN) {
     console.log(`  [dry-run] ${label}`);
     return { ok: true, dryRun: true };
   }
   try {
+    // 1) parent only (preserves body blocks)
     await nFetch(`/pages/${pageId}`, "PATCH", {
-      parent: { database_id: databaseId },
-      properties,
+      parent: { type: "database_id", database_id: databaseId },
     });
+    await sleep(200);
+
+    // 2) non-title properties (date etc.)
+    if (extraProps && Object.keys(extraProps).length > 0) {
+      try {
+        await nFetch(`/pages/${pageId}`, "PATCH", { properties: extraProps });
+      } catch (err) {
+        console.warn(`  ⚠️  プロパティ一部失敗 (${label}): ${err.message}`);
+      }
+      await sleep(200);
+    }
+
+    // 3) title — try each key (name / id / "title")
+    if (title) {
+      const titleValue = {
+        title: [{ type: "text", text: { content: String(title).slice(0, 2000) } }],
+      };
+      const keys = [...new Set((titleKeys ?? []).filter(Boolean))];
+      let titled = false;
+      let lastErr = null;
+      for (const key of keys) {
+        try {
+          await nFetch(`/pages/${pageId}`, "PATCH", {
+            properties: { [key]: titleValue },
+          });
+          titled = true;
+          break;
+        } catch (err) {
+          lastErr = err;
+        }
+      }
+      if (!titled && lastErr) {
+        console.warn(`  ⚠️  タイトル更新スキップ (${label}): ${lastErr.message}`);
+      }
+    }
+
     console.log(`  ✅ ${label}`);
     return { ok: true };
   } catch (err) {
@@ -292,34 +338,35 @@ async function migrateChildren(parentPageId, kind) {
 
     if (treatAsWeekly) {
       const { start, end } = parseWeeklyRange(title, created);
-      const titleKey = WEEKLY_SCHEMA.titleProp;
-      const props = {
-        [titleKey]: { title: [{ type: "text", text: { content: title.slice(0, 2000) } }] },
-      };
-      // only set columns that exist
-      if (start && WEEKLY_SCHEMA.props["期間開始"]) props["期間開始"] = { date: { start } };
-      if (end && WEEKLY_SCHEMA.props["期間終了"]) props["期間終了"] = { date: { start: end } };
+      const extraProps = {};
+      if (start && WEEKLY_SCHEMA.props["期間開始"]) extraProps["期間開始"] = { date: { start } };
+      if (end && WEEKLY_SCHEMA.props["期間終了"]) extraProps["期間終了"] = { date: { start: end } };
 
       const r = await movePageToDatabase(
         pageId,
         NOTION_WEEKLY_REPORTS_DB_ID,
-        props,
+        {
+          title,
+          titleKeys: [WEEKLY_SCHEMA.titlePropId, WEEKLY_SCHEMA.titleProp, "title", "Name"],
+          extraProps,
+        },
         `週次「${title}」→ DB`,
       );
       if (r.ok) moved++;
       else failed++;
     } else {
       const date = parseDailyDate(title, created);
-      const titleKey = DAILY_SCHEMA.titleProp;
-      const props = {
-        [titleKey]: { title: [{ type: "text", text: { content: title.slice(0, 2000) } }] },
-      };
-      if (date && DAILY_SCHEMA.props["日付"]) props["日付"] = { date: { start: date } };
+      const extraProps = {};
+      if (date && DAILY_SCHEMA.props["日付"]) extraProps["日付"] = { date: { start: date } };
 
       const r = await movePageToDatabase(
         pageId,
         NOTION_DAILY_REPORTS_DB_ID,
-        props,
+        {
+          title,
+          titleKeys: [DAILY_SCHEMA.titlePropId, DAILY_SCHEMA.titleProp, "title", "Name"],
+          extraProps,
+        },
         `デイリー「${title}」→ DB`,
       );
       if (r.ok) moved++;
