@@ -239,6 +239,35 @@ const SKIP_BLOCK_TYPES = new Set([
   "external_object_instance_page",
 ]);
 
+/** Drop nulls / empty optionals that Notion rejects on create (e.g. icon: null). */
+function scrubForCreate(value) {
+  if (Array.isArray(value)) {
+    return value.map(scrubForCreate).filter((v) => v !== undefined);
+  }
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) {
+      if (v === null || v === undefined) continue;
+      // Notion create rejects these read-only / empty fields
+      if (["id", "created_time", "last_edited_time", "created_by", "last_edited_by", "has_children", "archived", "parent", "object"].includes(k)) {
+        continue;
+      }
+      const cleaned = scrubForCreate(v);
+      if (cleaned === undefined) continue;
+      if (typeof cleaned === "object" && !Array.isArray(cleaned) && Object.keys(cleaned).length === 0 && k !== "divider") {
+        // keep empty text structures carefully; skip truly empty junk
+        if (k === "text" || k === "rich_text" || k === "caption" || k === "annotations") {
+          out[k] = cleaned;
+        }
+        continue;
+      }
+      out[k] = cleaned;
+    }
+    return out;
+  }
+  return value;
+}
+
 /** Clone block tree for create/append (strip read-only fields). Content preserved. */
 function sanitizeBlock(block) {
   if (!block?.type || SKIP_BLOCK_TYPES.has(block.type)) return null;
@@ -248,7 +277,10 @@ function sanitizeBlock(block) {
   // shallow clone type payload without nested children (added separately)
   const payload = { ...raw };
   delete payload.children;
-  return { type, [type]: payload };
+  // callout/paragraph often return icon:null — strip nulls
+  const scrubbed = scrubForCreate(payload);
+  if (!scrubbed || typeof scrubbed !== "object") return null;
+  return { type, [type]: scrubbed };
 }
 
 async function fetchBlocksForClone(blockId, depth = 0) {
