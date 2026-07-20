@@ -3,8 +3,8 @@
  *
  * 機能:
  *   1. 日次アクセスログDB に全データを保存（原本）
- *   2. 毎日: デイリーレポートページを自動作成（詳細付き）
- *   3. 日曜日: 週次レポートページを自動作成（7日間集計）
+ *   2. 毎日: デイリーレポートを「DB行」として作成（親ページ配下の子ページではなくDB形式のリンク集）
+ *   3. 日曜日: 週次レポートも同様に週次レポートDBへ
  *
  * 詳細ディメンション（匿名集計のみ・個人特定なし）:
  *   - ページ TOP20 / 都道府県 TOP10 / 市区町村 TOP10
@@ -14,7 +14,9 @@
  * 環境変数:
  *   GA4_PROPERTY_ID, GA4_SERVICE_ACCOUNT, SC_SITE_URL,
  *   NOTION_API_KEY, NOTION_DATABASE_ID,
- *   NOTION_DAILY_PAGE_ID, NOTION_WEEKLY_PAGE_ID (optional),
+ *   NOTION_DAILY_PAGE_ID, NOTION_WEEKLY_PAGE_ID
+ *     → レポートDBを置く親ページ（無ければその下に「📊 デイリーレポート」DBを自動作成）
+ *   NOTION_DAILY_REPORTS_DB_ID, NOTION_WEEKLY_REPORTS_DB_ID (optional, 固定ID指定時)
  *   PAGESPEED_API_KEY (optional)
  *
  * 実行例:
@@ -32,6 +34,9 @@ const NOTION_DATABASE_ID    = process.env.NOTION_DATABASE_ID;
 const NOTION_API_KEY        = process.env.NOTION_API_KEY;
 const NOTION_DAILY_PAGE_ID  = process.env.NOTION_DAILY_PAGE_ID  || "336791ed-0116-813a-9933-e375c6ad34f0";
 const NOTION_WEEKLY_PAGE_ID = process.env.NOTION_WEEKLY_PAGE_ID || "336791ed-0116-8100-a336-f4eac2a2a4ff";
+// レポート本体を入れる「データベース」（未設定なら親ページ下に自動作成/再利用）
+let NOTION_DAILY_REPORTS_DB_ID  = process.env.NOTION_DAILY_REPORTS_DB_ID  || "";
+let NOTION_WEEKLY_REPORTS_DB_ID = process.env.NOTION_WEEKLY_REPORTS_DB_ID || "";
 const DEFAULT_SC_SITE_URL   = "https://medvance-edu.com/";
 const SC_SITE_URL           = process.env.SC_SITE_URL   || DEFAULT_SC_SITE_URL;
 const PAGESPEED_URL         = process.env.PAGESPEED_URL || "https://medvance-edu.com/";
@@ -610,6 +615,119 @@ function notionPageUrl(page) {
   return `https://www.notion.so/${String(page.id).replace(/-/g, "")}`;
 }
 
+/** List child databases under a page; return id whose title includes `needle`. */
+async function findChildDatabase(parentPageId, needle) {
+  let cursor;
+  do {
+    const qs = new URLSearchParams({ page_size: "100" });
+    if (cursor) qs.set("start_cursor", cursor);
+    const res = await nFetch(`/blocks/${parentPageId}/children?${qs}`, "GET");
+    for (const block of res.results ?? []) {
+      if (block.type !== "child_database") continue;
+      const title = block.child_database?.title ?? "";
+      if (title.includes(needle)) return block.id;
+    }
+    cursor = res.has_more ? res.next_cursor : undefined;
+  } while (cursor);
+  return null;
+}
+
+async function ensureDbProperties(databaseId, desired, label) {
+  try {
+    const db = await nFetch(`/databases/${databaseId}`, "GET");
+    const existing = db.properties ?? {};
+    const toAdd = {};
+    for (const [name, schema] of Object.entries(desired)) {
+      if (!existing[name]) toAdd[name] = schema;
+    }
+    if (Object.keys(toAdd).length === 0) {
+      console.log(`  📐 ${label}: 追加プロパティなし（既存）`);
+      return existing;
+    }
+    await nFetch(`/databases/${databaseId}`, "PATCH", { properties: toAdd });
+    console.log(`  📐 ${label} プロパティ追加: ${Object.keys(toAdd).join(", ")}`);
+    return { ...existing, ...toAdd };
+  } catch (err) {
+    console.warn(`  ⚠️  ${label} schema update skipped: ${(err?.message ?? String(err)).slice(0, 120)}`);
+    return null;
+  }
+}
+
+/**
+ * Resolve daily/weekly report databases.
+ * Prefer env ID → existing child DB under parent page → create new DB under parent.
+ * Parent pages become containers for a database (リンク集), not a tree of weekly pages.
+ */
+async function ensureReportDatabases() {
+  const dailyProps = {
+    "Name": { title: {} },
+    "日付": { date: {} },
+    "PV": { number: { format: "number" } },
+    "UU": { number: { format: "number" } },
+    "セッション": { number: { format: "number" } },
+    "リード": { number: { format: "number" } },
+    "Contact PV": { number: { format: "number" } },
+    "SCクリック": { number: { format: "number" } },
+    "前日比PV(%)": { number: { format: "number" } },
+    "アクセスログ": { url: {} },
+    "メモ": { rich_text: {} },
+  };
+  const weeklyProps = {
+    "Name": { title: {} },
+    "期間開始": { date: {} },
+    "期間終了": { date: {} },
+    "総PV": { number: { format: "number" } },
+    "総UU": { number: { format: "number" } },
+    "リード": { number: { format: "number" } },
+    "SCクリック": { number: { format: "number" } },
+    "メモ": { rich_text: {} },
+  };
+
+  if (!NOTION_DAILY_REPORTS_DB_ID) {
+    const found = await findChildDatabase(NOTION_DAILY_PAGE_ID, "デイリーレポート");
+    if (found) {
+      NOTION_DAILY_REPORTS_DB_ID = found;
+      console.log(`  📚 デイリーレポートDB: 既存 ${found}`);
+    } else {
+      const created = await nFetch("/databases", "POST", {
+        parent: { type: "page_id", page_id: NOTION_DAILY_PAGE_ID },
+        is_inline: true,
+        title: [{ type: "text", text: { content: "📊 デイリーレポート" } }],
+        icon: { type: "emoji", emoji: "📊" },
+        properties: dailyProps,
+      });
+      NOTION_DAILY_REPORTS_DB_ID = created.id;
+      console.log(`  📚 デイリーレポートDB 新規作成: ${created.id}`);
+      console.log("     → 固定したい場合は GitHub Secret NOTION_DAILY_REPORTS_DB_ID に設定");
+    }
+  } else {
+    console.log(`  📚 デイリーレポートDB: env ${NOTION_DAILY_REPORTS_DB_ID}`);
+  }
+  await ensureDbProperties(NOTION_DAILY_REPORTS_DB_ID, dailyProps, "デイリーレポートDB");
+
+  if (!NOTION_WEEKLY_REPORTS_DB_ID) {
+    const found = await findChildDatabase(NOTION_WEEKLY_PAGE_ID, "週次レポート");
+    if (found) {
+      NOTION_WEEKLY_REPORTS_DB_ID = found;
+      console.log(`  📚 週次レポートDB: 既存 ${found}`);
+    } else {
+      const created = await nFetch("/databases", "POST", {
+        parent: { type: "page_id", page_id: NOTION_WEEKLY_PAGE_ID },
+        is_inline: true,
+        title: [{ type: "text", text: { content: "📈 週次レポート" } }],
+        icon: { type: "emoji", emoji: "📈" },
+        properties: weeklyProps,
+      });
+      NOTION_WEEKLY_REPORTS_DB_ID = created.id;
+      console.log(`  📚 週次レポートDB 新規作成: ${created.id}`);
+      console.log("     → 固定したい場合は GitHub Secret NOTION_WEEKLY_REPORTS_DB_ID に設定");
+    }
+  } else {
+    console.log(`  📚 週次レポートDB: env ${NOTION_WEEKLY_REPORTS_DB_ID}`);
+  }
+  await ensureDbProperties(NOTION_WEEKLY_REPORTS_DB_ID, weeklyProps, "週次レポートDB");
+}
+
 async function ensureNotionProperties() {
   const desired = {
     "リード数": { number: { format: "number" } },
@@ -624,22 +742,8 @@ async function ensureNotionProperties() {
     "SC上位ページ": { rich_text: {} },
     "チャネル内訳": { rich_text: {} },
   };
-  try {
-    const db = await nFetch(`/databases/${NOTION_DATABASE_ID}`, "GET");
-    const existing = db.properties ?? {};
-    const toAdd = {};
-    for (const [name, schema] of Object.entries(desired)) {
-      if (!existing[name]) toAdd[name] = schema;
-    }
-    if (Object.keys(toAdd).length === 0) {
-      console.log("  📐 Notion DB: 追加プロパティなし（既存）");
-      return;
-    }
-    await nFetch(`/databases/${NOTION_DATABASE_ID}`, "PATCH", { properties: toAdd });
-    console.log(`  📐 Notion DB プロパティ追加: ${Object.keys(toAdd).join(", ")}`);
-  } catch (err) {
-    console.warn(`  ⚠️  Notion schema update skipped: ${(err?.message ?? String(err)).slice(0, 120)}`);
-  }
+  await ensureDbProperties(NOTION_DATABASE_ID, desired, "日次アクセスログDB");
+  await ensureReportDatabases();
 }
 
 async function checkDuplicate(date) {
@@ -647,13 +751,27 @@ async function checkDuplicate(date) {
   return res.results.length > 0;
 }
 
-async function archiveExistingRecords(date) {
-  const res = await nFetch(`/databases/${NOTION_DATABASE_ID}/query`, "POST", { filter: { property: "日付", date: { equals: date } } });
-  for (const page of res.results ?? []) {
-    await nFetch(`/pages/${page.id}`, "PATCH", { archived: true });
-    console.log(`  🗑️  アーカイブ: ${page.id.slice(0, 8)}… (${date})`);
+async function archiveDbByDate(databaseId, date, label) {
+  if (!databaseId) return 0;
+  try {
+    const res = await nFetch(`/databases/${databaseId}/query`, "POST", {
+      filter: { property: "日付", date: { equals: date } },
+    });
+    for (const page of res.results ?? []) {
+      await nFetch(`/pages/${page.id}`, "PATCH", { archived: true });
+      console.log(`  🗑️  ${label}アーカイブ: ${page.id.slice(0, 8)}… (${date})`);
+    }
+    return res.results?.length ?? 0;
+  } catch (err) {
+    console.warn(`  ⚠️  ${label} archive skipped: ${(err?.message ?? String(err)).slice(0, 100)}`);
+    return 0;
   }
-  return res.results?.length ?? 0;
+}
+
+async function archiveExistingRecords(date) {
+  const n1 = await archiveDbByDate(NOTION_DATABASE_ID, date, "アクセスログ");
+  const n2 = await archiveDbByDate(NOTION_DAILY_REPORTS_DB_ID, date, "デイリーレポート");
+  return n1 + n2;
 }
 
 // ─── Notion: 日次アクセスログDB に保存（原本） ─────────────────────────────
@@ -903,18 +1021,29 @@ async function createDailyPage(data) {
 
   // Notion create page accepts max 100 children
   const children = blocks.slice(0, 100);
+  const memoLine = `PV ${today.pv} / UU ${today.uu} / 直帰 ${today.bounceRate}% / リード ${leads}`;
 
+  // 親ページの「子ページ」ではなく、デイリーレポートDBの1行として作成（DB＝リンク集）
   const created = await nFetch("/pages", "POST", {
-    parent: { page_id: NOTION_DAILY_PAGE_ID },
+    parent: { database_id: NOTION_DAILY_REPORTS_DB_ID },
     icon: { type: "emoji", emoji: "📊" },
     properties: {
-      title: { title: [{ type: "text", text: { content: `📊 ${mm}/${dd} デイリーレポート` } }] },
+      "Name": { title: [{ type: "text", text: { content: `📊 ${mm}/${dd} デイリーレポート` } }] },
+      "日付": { date: { start: date } },
+      "PV": { number: today.pv },
+      "UU": { number: today.uu },
+      "セッション": { number: today.sessions },
+      "リード": { number: leads },
+      "Contact PV": { number: contactPV },
+      "SCクリック": { number: sc.clicks },
+      "前日比PV(%)": { number: pvChange },
+      "メモ": { rich_text: rt(memoLine) },
     },
     children,
   });
 
   const url = notionPageUrl(created);
-  console.log(`  📊 デイリーページ作成: ${mm}/${dd} → ${url}`);
+  console.log(`  📊 デイリーレポートDB行: ${mm}/${dd} → ${url}`);
   return { id: created.id, url };
 }
 
@@ -1051,16 +1180,23 @@ async function createWeeklyPage(sunday) {
   ];
 
   const created = await nFetch("/pages", "POST", {
-    parent: { page_id: NOTION_WEEKLY_PAGE_ID },
+    parent: { database_id: NOTION_WEEKLY_REPORTS_DB_ID },
     icon: { type: "emoji", emoji: "📈" },
     properties: {
-      title: { title: [{ type: "text", text: { content: `📈 週次レポート ${sm}/${sd}〜${em}/${ed}` } }] },
+      "Name": { title: [{ type: "text", text: { content: `📈 週次レポート ${sm}/${sd}〜${em}/${ed}` } }] },
+      "期間開始": { date: { start: startDate } },
+      "期間終了": { date: { start: endDate } },
+      "総PV": { number: totalPV },
+      "総UU": { number: totalUU },
+      "リード": { number: totalLeads },
+      "SCクリック": { number: totalClicks },
+      "メモ": { rich_text: rt(`平均PV ${avgPV} / モバイル ${avgMobile}% / CTR ${weekCTR}%`) },
     },
     children: blocks.slice(0, 100),
   });
 
   const url = notionPageUrl(created);
-  console.log(`  📈 週次ページ作成: ${sm}/${sd}〜${em}/${ed} → ${url}`);
+  console.log(`  📈 週次レポートDB行: ${sm}/${sd}〜${em}/${ed} → ${url}`);
   return { id: created.id, url };
 }
 
@@ -1137,16 +1273,26 @@ async function main() {
     exitPages, browsers, hourly, leads, ctaClicks, sc, pageSpeed,
   };
 
-  // 1) まとめページを先に作り、URL を DB 行に載せる
-  console.log("\n📝 [1/3] デイリーレポートページ作成中...");
+  // 1) レポートは「DB行」として作成 → 2) アクセスログDBにそのURLを載せる
+  console.log("\n📝 [1/3] デイリーレポートDBへ行を作成中...");
   const dailyPage = await createDailyPage(data);
   data.dailyReportUrl = dailyPage?.url || null;
 
-  console.log("📝 [2/3] 日次DBに保存中（レポートURL付き）...");
+  console.log("📝 [2/3] 日次アクセスログDBに保存中（レポートURL付き）...");
   const dbRow = await postToNotion(data);
-  console.log(`  ✅ DB保存完了${data.dailyReportUrl ? ` / レポート列 → ${data.dailyReportUrl}` : ""}`);
+  console.log(`  ✅ アクセスログ保存完了${data.dailyReportUrl ? ` / レポート列 → ${data.dailyReportUrl}` : ""}`);
   if (dbRow?.url) {
-    console.log(`  🔗 DB行: ${dbRow.url}`);
+    console.log(`  🔗 アクセスログ行: ${dbRow.url}`);
+    // レポートDB側にも逆リンク（アクセスログへのURL）
+    if (dailyPage?.id) {
+      try {
+        await nFetch(`/pages/${dailyPage.id}`, "PATCH", {
+          properties: { "アクセスログ": { url: dbRow.url } },
+        });
+      } catch (err) {
+        console.warn(`  ⚠️  レポート→ログ逆リンク失敗: ${(err?.message ?? String(err)).slice(0, 80)}`);
+      }
+    }
   }
 
   const dayOfWeek = new Date(targetDate).getDay();
