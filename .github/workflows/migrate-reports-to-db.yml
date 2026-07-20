@@ -1,0 +1,44 @@
+name: 📦 レポート子ページ→DB移行
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "dry-run (true=移動せず一覧のみ)"
+        required: false
+        default: "false"
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+      NOTION_DAILY_PAGE_ID: ${{ secrets.NOTION_DAILY_PAGE_ID }}
+      NOTION_WEEKLY_PAGE_ID: ${{ secrets.NOTION_WEEKLY_PAGE_ID }}
+      NOTION_DAILY_REPORTS_DB_ID: ${{ secrets.NOTION_DAILY_REPORTS_DB_ID }}
+      NOTION_WEEKLY_REPORTS_DB_ID: ${{ secrets.NOTION_WEEKLY_REPORTS_DB_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Notion token
+        run: |
+          if [ -z "$NOTION_API_KEY" ]; then
+            echo "::error::NOTION_API_KEY secret is missing"
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Migrate child pages into report databases
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node scripts/migrate-reports-to-db.mjs --dry-run
+          else
+            node scripts/migrate-reports-to-db.mjs
+          fi

@@ -109,6 +109,20 @@ gh run view --log --repo keioigakubukateikyoushi-jpg/medvance-website
 - `NOTION_DAILY_REPORTS_DB_ID`
 - `NOTION_WEEKLY_REPORTS_DB_ID`
 
+### 過去の子ページをDBへ移行（本文そのまま）
+
+以前親ページの下に溜まったレポート子ページは、次で **DB行へ移動**できる（本文ブロックは変更しない）。
+
+```bash
+# dry-run
+gh workflow run migrate-reports-to-db.yml -f dry_run=true --repo keioigakubukateikyoushi-jpg/medvance-website
+
+# 本番移行
+gh workflow run migrate-reports-to-db.yml -f dry_run=false --repo keioigakubukateikyoushi-jpg/medvance-website
+```
+
+スクリプト: `scripts/migrate-reports-to-db.mjs`
+
 ## トラブルシュート
 
 - `Skipping GA4→Notion sync because required secrets are missing: ...` の warning が残る
