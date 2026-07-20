@@ -10,6 +10,10 @@ on:
         description: "取得日 (YYYY-MM-DD)。空欄なら昨日"
         required: false
         default: ""
+      force:
+        description: "既存レコードを上書き (true/false)"
+        required: false
+        default: "false"
 
 jobs:
   sync:
@@ -67,11 +71,15 @@ jobs:
       - name: Run sync
         if: steps.secrets.outputs.configured == 'true'
         run: |
+          EXTRA_FLAGS=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            EXTRA_FLAGS="--force"
+          fi
           if [ -n "${{ github.event.inputs.date }}" ]; then
-            node scripts/sync-analytics.mjs --date ${{ github.event.inputs.date }}
+            node scripts/sync-analytics.mjs --date ${{ github.event.inputs.date }} $EXTRA_FLAGS
           else
             TARGET_DATE=$(TZ=Asia/Tokyo date -d "1 day ago" "+%Y-%m-%d")
-            node scripts/sync-analytics.mjs --date $TARGET_DATE
+            node scripts/sync-analytics.mjs --date $TARGET_DATE $EXTRA_FLAGS
           fi
 
       - name: Report skipped sync
