@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LINE_URL } from "@/lib/links";
+import { trackCtaClick } from "@/lib/analytics";
 
 const LINE_GREEN = "#06C755";
 
@@ -53,6 +54,7 @@ export default function FloatingCTA() {
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm"
           style={{ backgroundColor: "#c9922a" }}
           aria-label="私立医学部の合格戦略診断を申し込む"
+          onClick={() => trackCtaClick("floating_mobile_contact", { page_path: pathname })}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
@@ -66,6 +68,7 @@ export default function FloatingCTA() {
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm"
           style={{ backgroundColor: LINE_GREEN }}
           aria-label="LINEで相談"
+          onClick={() => trackCtaClick("floating_mobile_line", { page_path: pathname })}
         >
           <LineIcon />
           LINEで相談
@@ -87,6 +90,7 @@ export default function FloatingCTA() {
             backgroundColor: "#c9922a",
             boxShadow: "0 10px 30px -10px rgba(201,146,42,0.55), 0 4px 12px rgba(12,26,51,0.12)",
           }}
+          onClick={() => trackCtaClick("floating_desktop_contact", { page_path: pathname })}
         >
           <span
             className="flex items-center justify-center w-9 h-9 rounded-full flex-shrink-0"
@@ -110,6 +114,7 @@ export default function FloatingCTA() {
             backgroundColor: LINE_GREEN,
             boxShadow: "0 10px 30px -10px rgba(6,199,85,0.55), 0 4px 12px rgba(0,0,0,0.1)",
           }}
+          onClick={() => trackCtaClick("floating_desktop_line", { page_path: pathname })}
         >
           <LineIcon className="w-6 h-6" />
           <div className="leading-tight">

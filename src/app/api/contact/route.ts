@@ -89,6 +89,19 @@ export async function POST(req: NextRequest) {
     source,
     website,
     renderedAt,
+    // Attribution (anonymous journey — no PII)
+    landingPath,
+    landingUrl,
+    referrer,
+    lastPath,
+    submitPath,
+    utm_source,
+    utm_medium,
+    utm_campaign,
+    utm_content,
+    utm_term,
+    gclid,
+    firstTouchAt,
   } = await req.json();
   const nameText = toText(name);
   const emailText = toText(email);
@@ -136,6 +149,18 @@ export async function POST(req: NextRequest) {
   const safePaidDiagnosisReadiness = valueOrFallback(paidDiagnosisReadiness, "未選択");
   const safeSource = valueOrFallback(source, "不明");
   const safeMessage = valueOrFallback(message, "未入力");
+  const safeLandingPath = valueOrFallback(landingPath, "不明");
+  const safeLandingUrl = valueOrFallback(landingUrl, "—");
+  const safeReferrer = valueOrFallback(referrer, "なし");
+  const safeLastPath = valueOrFallback(lastPath, "—");
+  const safeSubmitPath = valueOrFallback(submitPath, "/contact");
+  const safeUtmSource = valueOrFallback(utm_source, "—");
+  const safeUtmMedium = valueOrFallback(utm_medium, "—");
+  const safeUtmCampaign = valueOrFallback(utm_campaign, "—");
+  const safeUtmContent = valueOrFallback(utm_content, "—");
+  const safeUtmTerm = valueOrFallback(utm_term, "—");
+  const safeGclid = toText(gclid) ? "あり" : "なし";
+  const safeFirstTouchAt = valueOrFallback(firstTouchAt, "—");
   const safeLeadRank = escapeHtml(getLeadRank({
     privateMedicalPlan,
     parentJoin,
@@ -182,7 +207,23 @@ export async function POST(req: NextRequest) {
   <tr><td style="font-weight:bold;color:#142b57;">保護者同席</td><td>${safeParentJoin}</td></tr>
   <tr><td style="font-weight:bold;color:#142b57;">指導投資イメージ</td><td>${safeInvestmentReadiness}</td></tr>
   <tr><td style="font-weight:bold;color:#142b57;">診断への参加意思</td><td>${safePaidDiagnosisReadiness}</td></tr>
-  <tr><td style="font-weight:bold;color:#142b57;">流入元</td><td>${safeSource}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">流入元(申告)</td><td>${safeSource}</td></tr>
+</table>
+<br>
+<p style="font-weight:bold;color:#142b57;">アクセス経路（自動・個人非特定）</p>
+<table border="0" cellpadding="8" style="border-collapse:collapse;background:#f8fafc;width:100%;">
+  <tr><td style="font-weight:bold;color:#142b57;">初回ランディング</td><td>${safeLandingPath}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">初回URL</td><td style="word-break:break-all;">${safeLandingUrl}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">送信ページ</td><td>${safeSubmitPath}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">最終閲覧ページ</td><td>${safeLastPath}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">リファラ</td><td style="word-break:break-all;">${safeReferrer}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">utm_source</td><td>${safeUtmSource}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">utm_medium</td><td>${safeUtmMedium}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">utm_campaign</td><td>${safeUtmCampaign}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">utm_content</td><td>${safeUtmContent}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">utm_term</td><td>${safeUtmTerm}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">Google広告(gclid)</td><td>${safeGclid}</td></tr>
+  <tr><td style="font-weight:bold;color:#142b57;">初回接触時刻</td><td>${safeFirstTouchAt}</td></tr>
 </table>
 <br>
 <p style="font-weight:bold;color:#142b57;">ご相談内容</p>

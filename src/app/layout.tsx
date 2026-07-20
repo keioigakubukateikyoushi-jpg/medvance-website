@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -8,6 +9,8 @@ import PromoStickyBar from "@/components/PromoStickyBar";
 import FloatingCTA from "@/components/FloatingCTA";
 import FadeInObserver from "@/components/FadeInObserver";
 import AutoBreadcrumb from "@/components/AutoBreadcrumb";
+import AttributionCapture from "@/components/AttributionCapture";
+import ClarityScript from "@/components/ClarityScript";
 import { buildWebSiteSchema, buildOrganizationSchema, siteUrl } from "@/lib/seo";
 
 const notoSans = Noto_Sans_JP({
@@ -176,6 +179,10 @@ export default function RootLayout({
         <Footer />
         <FadeInObserver />
         <FloatingCTA />
+        <Suspense fallback={null}>
+          <AttributionCapture />
+        </Suspense>
+        <ClarityScript />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VNNSC04YT0"
           strategy="afterInteractive"

@@ -2,6 +2,24 @@
 
 `.github/workflows/sync-analytics.yml` は毎日 JST 1:00 に GA4 / Search Console / PageSpeed のデータを Notion DB へ同期するワークフロー。GitHub Secrets が揃っていない間は skip 状態で動かない。本書はその Secrets を 1 回だけ登録して稼働させる手順。
 
+## 詳細ディメンション（2026-07-20〜）
+
+日次同期は次も取得して Notion に保存する（すべて**匿名集計**。個人特定はしない）。
+
+| 項目 | 内容 |
+|------|------|
+| ページ | TOP20（PV/UU/滞在/直帰） |
+| 地域 | 都道府県 TOP10、市区町村 TOP10 |
+| クロス | ページ×地域、流入元×ランディング |
+| イベント | `generate_lead`、`cta_click` |
+| その他 | ブラウザ、時間帯、SC上位KW/ページ、チャネル内訳 |
+
+サイト側（別デプロイ）:
+
+- 初回ランディング / UTM / リファラを localStorage に保持し、問い合わせメールへ付与
+- Floating CTA の `cta_click` を GA4 へ送信
+- Microsoft Clarity は `NEXT_PUBLIC_CLARITY_ID` を Vercel に設定したときのみ有効
+
 ## 前提
 
 - GitHub repo: `keioigakubukateikyoushi-jpg/medvance-website`

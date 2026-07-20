@@ -2,15 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { LINE_URL } from "@/lib/links";
-
-type GtagParams = {
-  event_category: string;
-  event_label: string;
-};
-
-type AnalyticsWindow = Window & typeof globalThis & {
-  gtag?: (command: "event", action: string, params: GtagParams) => void;
-};
+import { trackGenerateLead } from "@/lib/analytics";
+import { captureAttribution, getAttribution, type Attribution } from "@/lib/attribution";
 
 type ChoiceFieldErrors = Partial<Record<"privateMedicalPlan" | "parentJoin" | "paidDiagnosisReadiness", string>>;
 
@@ -82,6 +75,7 @@ export default function ContactPage() {
 
   useEffect(() => {
     setRenderedAt(Date.now());
+    captureAttribution();
     const sourceFromQuery = new URLSearchParams(window.location.search).get("from") ?? "";
     if (!sourceFromQuery) return;
 
@@ -119,10 +113,32 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
+      const attr: Attribution = getAttribution();
+      const submitPath =
+        typeof window !== "undefined"
+          ? `${window.location.pathname}${window.location.search}`
+          : "/contact";
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, renderedAt }),
+        body: JSON.stringify({
+          ...formData,
+          renderedAt,
+          // Anonymous journey only (no PII)
+          landingPath: attr.landingPath,
+          landingUrl: attr.landingUrl,
+          referrer: attr.referrer,
+          lastPath: attr.lastPath || submitPath,
+          submitPath,
+          utm_source: attr.utm_source,
+          utm_medium: attr.utm_medium,
+          utm_campaign: attr.utm_campaign,
+          utm_content: attr.utm_content,
+          utm_term: attr.utm_term,
+          gclid: attr.gclid ? "1" : "",
+          firstTouchAt: attr.firstTouchAt,
+        }),
       });
 
       if (!res.ok) {
@@ -131,13 +147,14 @@ export default function ContactPage() {
       }
 
       setSubmitted(true);
-      const analyticsWindow = typeof window !== "undefined" ? (window as AnalyticsWindow) : undefined;
-      if (analyticsWindow?.gtag) {
-        analyticsWindow.gtag("event", "generate_lead", {
-          event_category: "contact",
-          event_label: "医学部合格戦略診断",
-        });
-      }
+      trackGenerateLead({
+        landing_path: attr.landingPath || submitPath,
+        page_path: submitPath,
+        utm_source: attr.utm_source,
+        utm_medium: attr.utm_medium,
+        utm_campaign: attr.utm_campaign,
+        traffic_source: formData.source || attr.utm_source || "direct",
+      });
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "エラーが発生しました。しばらく経ってからお試しください。");
     } finally {

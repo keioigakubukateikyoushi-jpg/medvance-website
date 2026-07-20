@@ -33,7 +33,9 @@ export default function CookiesPage() {
             </h2>
             <ul className="space-y-2 list-disc ml-5">
               <li>必須Cookie：サイトの基本機能に必要なCookie</li>
-              <li>分析Cookie：サイトの利用状況を把握するためのCookie（Google Analytics等）</li>
+              <li>分析Cookie：サイトの利用状況を把握するためのCookie（Google Analytics 4 等）</li>
+              <li>行動分析Cookie：ヒートマップ等（Microsoft Clarity を有効にしている場合）</li>
+              <li>流入経路の保存：初回ランディング・UTM 等をブラウザの localStorage に保持し、お問い合わせ時の経路把握に利用（氏名等の個人情報は含みません）</li>
             </ul>
           </section>
           <section>
