@@ -232,68 +232,123 @@ function pageTitle(page, fallback = "") {
   return fallback;
 }
 
+const SKIP_BLOCK_TYPES = new Set([
+  "unsupported",
+  "child_page",
+  "child_database",
+  "external_object_instance_page",
+]);
+
+/** Clone block tree for create/append (strip read-only fields). Content preserved. */
+function sanitizeBlock(block) {
+  if (!block?.type || SKIP_BLOCK_TYPES.has(block.type)) return null;
+  const type = block.type;
+  const raw = block[type];
+  if (!raw || typeof raw !== "object") return null;
+  // shallow clone type payload without nested children (added separately)
+  const payload = { ...raw };
+  delete payload.children;
+  return { type, [type]: payload };
+}
+
+async function fetchBlocksForClone(blockId, depth = 0) {
+  if (depth > 5) return [];
+  const children = await listAllChildren(blockId);
+  const out = [];
+  for (const block of children) {
+    const clean = sanitizeBlock(block);
+    if (!clean) continue;
+    if (block.has_children && !SKIP_BLOCK_TYPES.has(block.type)) {
+      await sleep(120);
+      try {
+        const nested = await fetchBlocksForClone(block.id, depth + 1);
+        if (nested.length) clean[block.type] = { ...clean[block.type], children: nested };
+      } catch {
+        // nested fetch optional
+      }
+    }
+    out.push(clean);
+  }
+  return out;
+}
+
+async function appendBlocks(pageId, blocks) {
+  // Notion: max 100 children per request
+  for (let i = 0; i < blocks.length; i += 100) {
+    const chunk = blocks.slice(i, i + 100);
+    await nFetch(`/blocks/${pageId}/children`, "PATCH", { children: chunk });
+    await sleep(250);
+  }
+}
+
 /**
- * Move page into database without touching body blocks.
- * Notion can reject combined parent+title updates, so:
- *   1) parent only
- *   2) then non-title properties
- *   3) then title via property id / name fallbacks
+ * Put a report into the DB as a row.
+ * Strategy:
+ *   A) Try real parent move (same page id, body intact)
+ *   B) If not actually in DB, clone body into a new DB row and archive the old page
+ *      (old page content is not edited; new row gets the same blocks)
  */
-async function movePageToDatabase(pageId, databaseId, { title, titleKeys, extraProps }, label) {
+async function movePageToDatabase(pageId, databaseId, { title, titleKeys, extraProps, schema }, label) {
   if (DRY_RUN) {
     console.log(`  [dry-run] ${label}`);
     return { ok: true, dryRun: true };
   }
+
+  const titleValue = {
+    title: [{ type: "text", text: { content: String(title || "レポート").slice(0, 2000) } }],
+  };
+  const titleKeysTry = [...new Set((titleKeys ?? ["title", "Name"]).filter(Boolean))];
+
+  // --- A) try in-place parent move ---
   try {
-    // 1) parent only (preserves body blocks)
+    const propsA = { ...(extraProps || {}) };
+    // include title if we can
+    if (titleKeysTry[0]) propsA[titleKeysTry[0]] = titleValue;
+
     await nFetch(`/pages/${pageId}`, "PATCH", {
       parent: { type: "database_id", database_id: databaseId },
+      properties: propsA,
     });
     await sleep(200);
+    const after = await getPage(pageId);
+    if (after.parent?.type === "database_id" && after.parent.database_id?.replace(/-/g, "") === databaseId.replace(/-/g, "")) {
+      console.log(`  ✅ ${label} (move)`);
+      return { ok: true, mode: "move" };
+    }
+    console.warn(`  ⚠️  move未反映 → clone に切替: ${title}`);
+  } catch (err) {
+    console.warn(`  ⚠️  move失敗 → clone に切替: ${err.message}`);
+  }
 
-    // 2) non-title properties (date etc.) — try name keys then id keys
-    if (extraProps && Object.keys(extraProps).length > 0) {
-      try {
-        await nFetch(`/pages/${pageId}`, "PATCH", { properties: extraProps });
-      } catch (err) {
-        try {
-          // fallback: property id keys
-          const byId = {};
-          for (const [k, v] of Object.entries(extraProps)) byId[k] = v;
-          await nFetch(`/pages/${pageId}`, "PATCH", { properties: byId });
-        } catch (err2) {
-          console.warn(`  ⚠️  プロパティ一部失敗 (${label}): ${err.message}`);
-        }
-      }
-      await sleep(200);
+  // --- B) clone into new DB row (body copy, then archive original) ---
+  try {
+    await sleep(200);
+    const bodyBlocks = await fetchBlocksForClone(pageId);
+    const properties = { ...(extraProps || {}) };
+    // set title via real title column name
+    const tKey = schema?.titleProp || titleKeysTry[0] || "Name";
+    properties[tKey] = titleValue;
+
+    // create with first 100 blocks
+    const first = bodyBlocks.slice(0, 100);
+    const rest = bodyBlocks.slice(100);
+    const created = await nFetch("/pages", "POST", {
+      parent: { database_id: databaseId },
+      icon: { type: "emoji", emoji: label.includes("週次") ? "📈" : "📊" },
+      properties,
+      children: first,
+    });
+    if (rest.length) await appendBlocks(created.id, rest);
+
+    // archive original (content untouched; just hidden from parent list)
+    try {
+      await nFetch(`/pages/${pageId}`, "PATCH", { archived: true });
+    } catch (err) {
+      console.warn(`  ⚠️  元ページのアーカイブ失敗: ${err.message}`);
     }
 
-    // 3) title — try each key (name / id / "title")
-    if (title) {
-      const titleValue = {
-        title: [{ type: "text", text: { content: String(title).slice(0, 2000) } }],
-      };
-      const keys = [...new Set((titleKeys ?? []).filter(Boolean))];
-      let titled = false;
-      let lastErr = null;
-      for (const key of keys) {
-        try {
-          await nFetch(`/pages/${pageId}`, "PATCH", {
-            properties: { [key]: titleValue },
-          });
-          titled = true;
-          break;
-        } catch (err) {
-          lastErr = err;
-        }
-      }
-      if (!titled && lastErr) {
-        console.warn(`  ⚠️  タイトル更新スキップ (${label}): ${lastErr.message}`);
-      }
-    }
-
-    console.log(`  ✅ ${label}`);
-    return { ok: true };
+    console.log(`  ✅ ${label} (clone ${bodyBlocks.length} blocks → ${created.id.slice(0, 8)}…)`);
+    return { ok: true, mode: "clone", newId: created.id };
   } catch (err) {
     console.error(`  ❌ ${label}: ${err.message}`);
     return { ok: false, error: err.message };
@@ -359,18 +414,18 @@ async function migrateChildren(parentPageId, kind) {
 
     if (treatAsWeekly) {
       const { start, end } = parseWeeklyRange(title, created);
-      const named = {};
-      if (start && WEEKLY_SCHEMA.props["期間開始"]) named["期間開始"] = { date: { start } };
-      if (end && WEEKLY_SCHEMA.props["期間終了"]) named["期間終了"] = { date: { start: end } };
-      const extraProps = propsWithIds(WEEKLY_SCHEMA, named);
+      const extraProps = {};
+      if (start && WEEKLY_SCHEMA.props["期間開始"]) extraProps["期間開始"] = { date: { start } };
+      if (end && WEEKLY_SCHEMA.props["期間終了"]) extraProps["期間終了"] = { date: { start: end } };
 
       const r = await movePageToDatabase(
         pageId,
         NOTION_WEEKLY_REPORTS_DB_ID,
         {
           title,
-          titleKeys: [WEEKLY_SCHEMA.titlePropId, WEEKLY_SCHEMA.titleProp, "title", "Name"],
+          titleKeys: [WEEKLY_SCHEMA.titleProp, WEEKLY_SCHEMA.titlePropId, "title", "Name"],
           extraProps,
+          schema: WEEKLY_SCHEMA,
         },
         `週次「${title}」→ DB`,
       );
@@ -380,15 +435,20 @@ async function migrateChildren(parentPageId, kind) {
       const date = parseDailyDate(title, created);
       const named = {};
       if (date && DAILY_SCHEMA.props["日付"]) named["日付"] = { date: { start: date } };
-      const extraProps = propsWithIds(DAILY_SCHEMA, named);
+      // use property NAMES for create (clone path); ids often break create
+      const extraProps = {};
+      for (const [k, v] of Object.entries(named)) {
+        if (DAILY_SCHEMA.props[k]) extraProps[k] = v;
+      }
 
       const r = await movePageToDatabase(
         pageId,
         NOTION_DAILY_REPORTS_DB_ID,
         {
           title,
-          titleKeys: [DAILY_SCHEMA.titlePropId, DAILY_SCHEMA.titleProp, "title", "Name"],
+          titleKeys: [DAILY_SCHEMA.titleProp, DAILY_SCHEMA.titlePropId, "title", "Name"],
           extraProps,
+          schema: DAILY_SCHEMA,
         },
         `デイリー「${title}」→ DB`,
       );

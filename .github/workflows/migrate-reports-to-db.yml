@@ -15,7 +15,7 @@ on:
 jobs:
   migrate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     env:
       NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       NOTION_DAILY_PAGE_ID: ${{ secrets.NOTION_DAILY_PAGE_ID }}
