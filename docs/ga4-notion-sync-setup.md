@@ -85,6 +85,17 @@ gh run view --log --repo keioigakubukateikyoushi-jpg/medvance-website
 
 成功すると Notion 側の日次アクセスログ DB に当該日の行が 1 件追加される。
 
+### DB ↔ まとめページのリンク
+
+同期のたびに:
+
+1. 先に `📊 MM/DD デイリーレポート` ページを作成
+2. 日次アクセスログ DB の同じ日付の行に、**URL 列「デイリーレポート」** へそのページ URL を保存
+3. 日曜日は **URL 列「週次レポート」** も同様に保存
+
+DB テーブル上で「デイリーレポート」列をクリックすると、まとめページが開く。
+プロパティが無い場合はスクリプトが自動で `url` 型を追加する。
+
 ## トラブルシュート
 
 - `Skipping GA4→Notion sync because required secrets are missing: ...` の warning が残る

@@ -603,10 +603,19 @@ const nFetch = (path, method, body) =>
   fetch(`https://api.notion.com/v1${path}`, { method, headers: NH, body: body ? JSON.stringify(body) : undefined })
     .then(r => r.json()).then(j => { if (j.object === "error") throw new Error(j.message); return j; });
 
+/** Notion page URL (API returns `url`; fallback for safety). */
+function notionPageUrl(page) {
+  if (page?.url) return page.url;
+  if (!page?.id) return "";
+  return `https://www.notion.so/${String(page.id).replace(/-/g, "")}`;
+}
+
 async function ensureNotionProperties() {
   const desired = {
     "リード数": { number: { format: "number" } },
     "CTAクリック数": { number: { format: "number" } },
+    "デイリーレポート": { url: {} },
+    "週次レポート": { url: {} },
     "市区町村TOP": { rich_text: {} },
     "ページ×地域": { rich_text: {} },
     "流入×LP": { rich_text: {} },
@@ -653,6 +662,7 @@ async function postToNotion(data) {
     date, today, prev, channels, topPages, contactPV, devices, regions, cities,
     pageRegion, sourceLanding, referrals, landingPages, exitPages, browsers,
     hourly, leads, ctaClicks, sc, pageSpeed,
+    dailyReportUrl, weeklyReportUrl,
   } = data;
 
   const pct      = (a, b) => b > 0 ? parseFloat(((a - b) / b * 100).toFixed(1)) : 0;
@@ -718,10 +728,29 @@ async function postToNotion(data) {
     "メモ":                    { rich_text: rt(memo) },
   };
 
-  await nFetch("/pages", "POST", {
+  // まとめページへのクリック可能なURL（DBの列から1クリックで詳細へ）
+  if (dailyReportUrl) {
+    properties["デイリーレポート"] = { url: dailyReportUrl };
+  }
+  if (weeklyReportUrl) {
+    properties["週次レポート"] = { url: weeklyReportUrl };
+  }
+
+  const created = await nFetch("/pages", "POST", {
     parent: { database_id: NOTION_DATABASE_ID },
     properties,
   });
+  return { id: created.id, url: notionPageUrl(created) };
+}
+
+/** Patch URL columns on an existing DB row (e.g. after weekly page is created). */
+async function patchDbReportLinks(pageId, { dailyReportUrl, weeklyReportUrl } = {}) {
+  if (!pageId) return;
+  const properties = {};
+  if (dailyReportUrl) properties["デイリーレポート"] = { url: dailyReportUrl };
+  if (weeklyReportUrl) properties["週次レポート"] = { url: weeklyReportUrl };
+  if (Object.keys(properties).length === 0) return;
+  await nFetch(`/pages/${pageId}`, "PATCH", { properties });
 }
 
 function codeBlock(content) {
@@ -875,7 +904,7 @@ async function createDailyPage(data) {
   // Notion create page accepts max 100 children
   const children = blocks.slice(0, 100);
 
-  await nFetch("/pages", "POST", {
+  const created = await nFetch("/pages", "POST", {
     parent: { page_id: NOTION_DAILY_PAGE_ID },
     icon: { type: "emoji", emoji: "📊" },
     properties: {
@@ -884,7 +913,9 @@ async function createDailyPage(data) {
     children,
   });
 
-  console.log(`  📊 デイリーページ作成: ${mm}/${dd}`);
+  const url = notionPageUrl(created);
+  console.log(`  📊 デイリーページ作成: ${mm}/${dd} → ${url}`);
+  return { id: created.id, url };
 }
 
 // ─── Notion DB から指定期間のデータを取得 ─────────────────────────────────
@@ -1019,7 +1050,7 @@ async function createWeeklyPage(sunday) {
     { type: "to_do", to_do: { checked: false, color: "default", rich_text: [{ type: "text", text: { content: "PageSpeedスコアが低ければ画像最適化を確認する" } }] } },
   ];
 
-  await nFetch("/pages", "POST", {
+  const created = await nFetch("/pages", "POST", {
     parent: { page_id: NOTION_WEEKLY_PAGE_ID },
     icon: { type: "emoji", emoji: "📈" },
     properties: {
@@ -1028,7 +1059,9 @@ async function createWeeklyPage(sunday) {
     children: blocks.slice(0, 100),
   });
 
-  console.log(`  📈 週次ページ作成: ${sm}/${sd}〜${em}/${ed}`);
+  const url = notionPageUrl(created);
+  console.log(`  📈 週次ページ作成: ${sm}/${sd}〜${em}/${ed} → ${url}`);
+  return { id: created.id, url };
 }
 
 // ─── メイン ────────────────────────────────────────────────────────────────
@@ -1104,19 +1137,28 @@ async function main() {
     exitPages, browsers, hourly, leads, ctaClicks, sc, pageSpeed,
   };
 
-  console.log("\n📝 [1/3] 日次DBに保存中...");
-  await postToNotion(data);
-  console.log(`  ✅ DB保存完了`);
+  // 1) まとめページを先に作り、URL を DB 行に載せる
+  console.log("\n📝 [1/3] デイリーレポートページ作成中...");
+  const dailyPage = await createDailyPage(data);
+  data.dailyReportUrl = dailyPage?.url || null;
 
-  console.log("📝 [2/3] デイリーレポートページ作成中...");
-  await createDailyPage(data);
+  console.log("📝 [2/3] 日次DBに保存中（レポートURL付き）...");
+  const dbRow = await postToNotion(data);
+  console.log(`  ✅ DB保存完了${data.dailyReportUrl ? ` / レポート列 → ${data.dailyReportUrl}` : ""}`);
+  if (dbRow?.url) {
+    console.log(`  🔗 DB行: ${dbRow.url}`);
+  }
 
   const dayOfWeek = new Date(targetDate).getDay();
   if (NO_WEEKLY) {
     console.log("📝 [3/3] 週次レポートはスキップ（--no-weekly）");
   } else if (dayOfWeek === 0) {
     console.log("📝 [3/3] 週次レポートページ作成中（日曜日）...");
-    await createWeeklyPage(targetDate);
+    const weeklyPage = await createWeeklyPage(targetDate);
+    if (weeklyPage?.url && dbRow?.id) {
+      await patchDbReportLinks(dbRow.id, { weeklyReportUrl: weeklyPage.url });
+      console.log(`  🔗 DB「週次レポート」列を更新: ${weeklyPage.url}`);
+    }
   } else {
     console.log(`📝 [3/3] 週次レポートはスキップ（日曜日のみ作成 / 今日は${["日","月","火","水","木","金","土"][dayOfWeek]}曜日）`);
   }
