@@ -23,6 +23,7 @@ let NOTION_DAILY_REPORTS_DB_ID  = process.env.NOTION_DAILY_REPORTS_DB_ID  || "";
 let NOTION_WEEKLY_REPORTS_DB_ID = process.env.NOTION_WEEKLY_REPORTS_DB_ID || "";
 
 const DRY_RUN = process.argv.includes("--dry-run");
+const BACKFILL_DATES = process.argv.includes("--backfill-dates");
 const SLEEP_MS = 350;
 
 if (!NOTION_API_KEY) {
@@ -97,11 +98,13 @@ async function loadDbSchema(databaseId) {
   const db = await nFetch(`/databases/${databaseId}`, "GET");
   const props = db.properties ?? {};
   const byType = {};
+  const idByName = {};
   let titleProp = null;
   let titlePropId = null;
   for (const [name, def] of Object.entries(props)) {
     const t = def?.type;
     if (!t) continue;
+    idByName[name] = def.id ?? name;
     if (!byType[t]) byType[t] = [];
     byType[t].push(name);
     if (t === "title") {
@@ -112,7 +115,18 @@ async function loadDbSchema(databaseId) {
   console.log(
     `  🔑 DB ${databaseId.slice(0, 8)}… title列="${titleProp}" (id=${titlePropId}) props=[${Object.keys(props).join(", ")}]`,
   );
-  return { props, byType, titleProp, titlePropId };
+  return { props, byType, titleProp, titlePropId, idByName };
+}
+
+/** Prefer property id keys when PATCHing (more reliable after parent move). */
+function propsWithIds(schema, namedProps) {
+  const out = {};
+  for (const [name, value] of Object.entries(namedProps)) {
+    if (!schema.props[name]) continue;
+    const key = schema.idByName?.[name] || name;
+    out[key] = value;
+  }
+  return out;
 }
 
 let DAILY_SCHEMA = null;
@@ -237,12 +251,19 @@ async function movePageToDatabase(pageId, databaseId, { title, titleKeys, extraP
     });
     await sleep(200);
 
-    // 2) non-title properties (date etc.)
+    // 2) non-title properties (date etc.) — try name keys then id keys
     if (extraProps && Object.keys(extraProps).length > 0) {
       try {
         await nFetch(`/pages/${pageId}`, "PATCH", { properties: extraProps });
       } catch (err) {
-        console.warn(`  ⚠️  プロパティ一部失敗 (${label}): ${err.message}`);
+        try {
+          // fallback: property id keys
+          const byId = {};
+          for (const [k, v] of Object.entries(extraProps)) byId[k] = v;
+          await nFetch(`/pages/${pageId}`, "PATCH", { properties: byId });
+        } catch (err2) {
+          console.warn(`  ⚠️  プロパティ一部失敗 (${label}): ${err.message}`);
+        }
       }
       await sleep(200);
     }
@@ -338,9 +359,10 @@ async function migrateChildren(parentPageId, kind) {
 
     if (treatAsWeekly) {
       const { start, end } = parseWeeklyRange(title, created);
-      const extraProps = {};
-      if (start && WEEKLY_SCHEMA.props["期間開始"]) extraProps["期間開始"] = { date: { start } };
-      if (end && WEEKLY_SCHEMA.props["期間終了"]) extraProps["期間終了"] = { date: { start: end } };
+      const named = {};
+      if (start && WEEKLY_SCHEMA.props["期間開始"]) named["期間開始"] = { date: { start } };
+      if (end && WEEKLY_SCHEMA.props["期間終了"]) named["期間終了"] = { date: { start: end } };
+      const extraProps = propsWithIds(WEEKLY_SCHEMA, named);
 
       const r = await movePageToDatabase(
         pageId,
@@ -356,8 +378,9 @@ async function migrateChildren(parentPageId, kind) {
       else failed++;
     } else {
       const date = parseDailyDate(title, created);
-      const extraProps = {};
-      if (date && DAILY_SCHEMA.props["日付"]) extraProps["日付"] = { date: { start: date } };
+      const named = {};
+      if (date && DAILY_SCHEMA.props["日付"]) named["日付"] = { date: { start: date } };
+      const extraProps = propsWithIds(DAILY_SCHEMA, named);
 
       const r = await movePageToDatabase(
         pageId,
@@ -379,14 +402,87 @@ async function migrateChildren(parentPageId, kind) {
   return { moved, skipped, failed, total: pages.length };
 }
 
+async function queryAllDbPages(databaseId) {
+  const out = [];
+  let cursor;
+  do {
+    const body = { page_size: 100 };
+    if (cursor) body.start_cursor = cursor;
+    const res = await nFetch(`/databases/${databaseId}/query`, "POST", body);
+    out.push(...(res.results ?? []));
+    cursor = res.has_more ? res.next_cursor : undefined;
+  } while (cursor);
+  return out;
+}
+
+/** Fill 日付 / 期間 from title for rows already in report DBs (body untouched). */
+async function backfillDates() {
+  console.log("\n📅 DB行の日付プロパティをタイトルから埋める（本文は変更しない）");
+  let ok = 0;
+  let fail = 0;
+
+  const dailies = await queryAllDbPages(NOTION_DAILY_REPORTS_DB_ID);
+  console.log(`  デイリー行: ${dailies.length}`);
+  for (const page of dailies) {
+    if (page.archived) continue;
+    const title = pageTitle(page, "");
+    const date = parseDailyDate(title, page.created_time);
+    if (!date) continue;
+    const props = propsWithIds(DAILY_SCHEMA, { 日付: { date: { start: date } } });
+    if (!Object.keys(props).length) continue;
+    try {
+      if (!DRY_RUN) await nFetch(`/pages/${page.id}`, "PATCH", { properties: props });
+      ok++;
+      if (ok % 20 === 0) console.log(`  … daily dates ${ok}`);
+    } catch (err) {
+      fail++;
+      console.warn(`  ⚠️  daily date fail ${title}: ${err.message}`);
+    }
+    await sleep(SLEEP_MS);
+  }
+
+  const weeklies = await queryAllDbPages(NOTION_WEEKLY_REPORTS_DB_ID);
+  console.log(`  週次行: ${weeklies.length}`);
+  for (const page of weeklies) {
+    if (page.archived) continue;
+    const title = pageTitle(page, "");
+    const { start, end } = parseWeeklyRange(title, page.created_time);
+    const named = {};
+    if (start) named["期間開始"] = { date: { start } };
+    if (end) named["期間終了"] = { date: { start: end } };
+    const props = propsWithIds(WEEKLY_SCHEMA, named);
+    if (!Object.keys(props).length) continue;
+    try {
+      if (!DRY_RUN) await nFetch(`/pages/${page.id}`, "PATCH", { properties: props });
+      ok++;
+    } catch (err) {
+      fail++;
+      console.warn(`  ⚠️  weekly date fail ${title}: ${err.message}`);
+    }
+    await sleep(SLEEP_MS);
+  }
+
+  console.log(`  日付埋込: ok=${ok} fail=${fail}`);
+  return { ok, fail };
+}
+
 async function main() {
-  console.log(DRY_RUN ? "🧪 DRY-RUN（移動しません）" : "🚚 本番移行: 子ページ → レポートDB");
+  console.log(DRY_RUN ? "🧪 DRY-RUN（変更しません）" : BACKFILL_DATES ? "📅 日付backfill" : "🚚 本番移行: 子ページ → レポートDB");
   console.log("   本文ブロックは変更しません（parent / プロパティのみ）\n");
 
   await ensureReportDatabases();
 
+  if (BACKFILL_DATES) {
+    const r = await backfillDates();
+    if (r.fail > 0) process.exit(1);
+    return;
+  }
+
   const daily = await migrateChildren(NOTION_DAILY_PAGE_ID, "daily");
   const weekly = await migrateChildren(NOTION_WEEKLY_PAGE_ID, "weekly");
+
+  // 移動直後に日付も可能な範囲で埋める
+  await backfillDates();
 
   console.log("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
   console.log(`デイリー親: moved=${daily.moved} skipped=${daily.skipped} failed=${daily.failed} (pages=${daily.total})`);

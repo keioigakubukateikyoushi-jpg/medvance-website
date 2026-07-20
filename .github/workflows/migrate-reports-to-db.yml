@@ -7,6 +7,10 @@ on:
         description: "dry-run (true=移動せず一覧のみ)"
         required: false
         default: "false"
+      backfill_dates:
+        description: "already-in-DB の日付列だけ埋める (true/false)"
+        required: false
+        default: "false"
 
 jobs:
   migrate:
@@ -37,8 +41,11 @@ jobs:
 
       - name: Migrate child pages into report databases
         run: |
+          FLAGS=""
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            node scripts/migrate-reports-to-db.mjs --dry-run
-          else
-            node scripts/migrate-reports-to-db.mjs
+            FLAGS="$FLAGS --dry-run"
           fi
+          if [ "${{ github.event.inputs.backfill_dates }}" = "true" ]; then
+            FLAGS="$FLAGS --backfill-dates"
+          fi
+          node scripts/migrate-reports-to-db.mjs $FLAGS
