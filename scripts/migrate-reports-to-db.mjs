@@ -92,9 +92,28 @@ async function ensureDbProperties(databaseId, desired, label) {
   console.log(`  📐 ${label} プロパティ追加: ${Object.keys(toAdd).join(", ")}`);
 }
 
+/** Resolve actual property names from a database schema (title column is often not "Name"). */
+async function loadDbSchema(databaseId) {
+  const db = await nFetch(`/databases/${databaseId}`, "GET");
+  const props = db.properties ?? {};
+  const byType = {};
+  for (const [name, def] of Object.entries(props)) {
+    const t = def?.type;
+    if (!t) continue;
+    if (!byType[t]) byType[t] = [];
+    byType[t].push(name);
+  }
+  const titleProp = byType.title?.[0] ?? null;
+  console.log(`  🔑 DB ${databaseId.slice(0, 8)}… title列="${titleProp}" props=[${Object.keys(props).join(", ")}]`);
+  return { props, byType, titleProp };
+}
+
+let DAILY_SCHEMA = null;
+let WEEKLY_SCHEMA = null;
+
 async function ensureReportDatabases() {
   const dailyProps = {
-    Name: { title: {} },
+    // title は既存の title 列を使う（Name と限らない）
     日付: { date: {} },
     PV: { number: { format: "number" } },
     UU: { number: { format: "number" } },
@@ -107,7 +126,6 @@ async function ensureReportDatabases() {
     メモ: { rich_text: {} },
   };
   const weeklyProps = {
-    Name: { title: {} },
     期間開始: { date: {} },
     期間終了: { date: {} },
     総PV: { number: { format: "number" } },
@@ -124,6 +142,8 @@ async function ensureReportDatabases() {
   }
   console.log(`📚 デイリーレポートDB: ${NOTION_DAILY_REPORTS_DB_ID}`);
   await ensureDbProperties(NOTION_DAILY_REPORTS_DB_ID, dailyProps, "デイリーレポートDB");
+  DAILY_SCHEMA = await loadDbSchema(NOTION_DAILY_REPORTS_DB_ID);
+  if (!DAILY_SCHEMA.titleProp) throw new Error("デイリーレポートDBに title 列がありません");
 
   if (!NOTION_WEEKLY_REPORTS_DB_ID) {
     const found = await findChildDatabase(NOTION_WEEKLY_PAGE_ID, "週次レポート");
@@ -132,6 +152,8 @@ async function ensureReportDatabases() {
   }
   console.log(`📚 週次レポートDB: ${NOTION_WEEKLY_REPORTS_DB_ID}`);
   await ensureDbProperties(NOTION_WEEKLY_REPORTS_DB_ID, weeklyProps, "週次レポートDB");
+  WEEKLY_SCHEMA = await loadDbSchema(NOTION_WEEKLY_REPORTS_DB_ID);
+  if (!WEEKLY_SCHEMA.titleProp) throw new Error("週次レポートDBに title 列がありません");
 }
 
 function yearFromIso(iso) {
@@ -270,11 +292,13 @@ async function migrateChildren(parentPageId, kind) {
 
     if (treatAsWeekly) {
       const { start, end } = parseWeeklyRange(title, created);
+      const titleKey = WEEKLY_SCHEMA.titleProp;
       const props = {
-        Name: { title: [{ type: "text", text: { content: title.slice(0, 2000) } }] },
+        [titleKey]: { title: [{ type: "text", text: { content: title.slice(0, 2000) } }] },
       };
-      if (start) props["期間開始"] = { date: { start } };
-      if (end) props["期間終了"] = { date: { start: end } };
+      // only set columns that exist
+      if (start && WEEKLY_SCHEMA.props["期間開始"]) props["期間開始"] = { date: { start } };
+      if (end && WEEKLY_SCHEMA.props["期間終了"]) props["期間終了"] = { date: { start: end } };
 
       const r = await movePageToDatabase(
         pageId,
@@ -286,10 +310,11 @@ async function migrateChildren(parentPageId, kind) {
       else failed++;
     } else {
       const date = parseDailyDate(title, created);
+      const titleKey = DAILY_SCHEMA.titleProp;
       const props = {
-        Name: { title: [{ type: "text", text: { content: title.slice(0, 2000) } }] },
+        [titleKey]: { title: [{ type: "text", text: { content: title.slice(0, 2000) } }] },
       };
-      if (date) props["日付"] = { date: { start: date } };
+      if (date && DAILY_SCHEMA.props["日付"]) props["日付"] = { date: { start: date } };
 
       const r = await movePageToDatabase(
         pageId,
