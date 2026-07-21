@@ -68,3 +68,4 @@ public/academy/media/**/nlm_*.mp4
 public/academy/media/**/*_frames/**
 public/academy/media/**/audio*.m4a
 public/academy/media/**/video*.mp4
+public/academy/media/**/*.pptx
