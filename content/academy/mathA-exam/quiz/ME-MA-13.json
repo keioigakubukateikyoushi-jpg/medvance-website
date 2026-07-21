@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-MA-13",
+  "title": "約数・倍数・素数",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "約数個数・素因数分解の基本を使える"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "1と自分以外に正の約数がない1より大きい整数"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "1を素数",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "1を素数"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "素因数分解"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "素因数分解"
+    }
+  ]
+}

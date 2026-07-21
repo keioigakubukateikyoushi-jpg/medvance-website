@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-MB-12",
+  "title": "標本調査と推定の考え方",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "母集団・標本・推定の言葉を使える"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "母集団から抜き出した一部分。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "標本＝母集団と思う",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "標本＝母集団と思う"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "用語定義"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "母集団"
+    }
+  ]
+}

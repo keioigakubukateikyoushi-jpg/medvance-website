@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-PH-01",
+  "title": "物理量・単位・有効数字",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "SI単位と次元の感覚で式の正しさを検算できる"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "物理量の種類（長さL、質量M、時間T など）で式の整合を見る考え方。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "単位の混在（km/h と m/s）",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "単位の混在（km/h と m/s）"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "量の定義を書く"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "長さ・質量・時間の基本単位"
+    }
+  ]
+}

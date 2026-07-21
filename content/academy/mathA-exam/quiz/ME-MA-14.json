@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-MA-14",
+  "title": "ユークリッド互除法と最大公約数",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "互除法で gcd を求め一次不定方程式の入口に立つ"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "余りで置き換えて gcd を求める"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "余り計算ミス",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "余り計算ミス"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "割る"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "gcd(a,b)=gcd(b,a mod b)"
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "subject": "医学部面接",
+  "track": "exam",
+  "trackLabel": "基礎講座",
+  "brand": "Medvance",
+  "unit_count": 18,
+  "full_count": 18,
+  "outline_count": 0,
+  "design": "落とす理由を消す面接準備。志望動機・MMI・グループ討論・属性別まで原子スキル分割。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "評価の基本",
+    "志望動機",
+    "自己理解",
+    "知識の土台",
+    "形式別",
+    "属性別",
+    "実践"
+  ],
+  "units": [
+    {
+      "id": "ME-IV-01",
+      "chapter": "評価の基本",
+      "title": "面接は「落とす試験」である",
+      "minutes": 16,
+      "goal": "評価軸が適性・誠実さ・一貫性だと説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-IV-01.md",
+      "storyboard": "storyboard/ME-IV-01.md",
+      "slides": "slides/ME-IV-01.md",
+      "quiz": "quiz/ME-IV-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-02",
+      "chapter": "評価の基本",
+      "title": "第一印象・礼儀・話し方",
+      "minutes": 16,
+      "goal": "入退室と基本マナーを再現できる",
+      "prereq": [
+        "ME-IV-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-02.md",
+      "storyboard": "storyboard/ME-IV-02.md",
+      "slides": "slides/ME-IV-02.md",
+      "quiz": "quiz/ME-IV-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-03",
+      "chapter": "志望動機",
+      "title": "志望動機の骨格（なぜ医師か）",
+      "minutes": 18,
+      "goal": "動機を「経験→気づき→医師→大学」で組める",
+      "prereq": [
+        "ME-IV-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-03.md",
+      "storyboard": "storyboard/ME-IV-03.md",
+      "slides": "slides/ME-IV-03.md",
+      "quiz": "quiz/ME-IV-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-04",
+      "chapter": "志望動機",
+      "title": "深掘り質問への耐性",
+      "minutes": 16,
+      "goal": "なぜその経験か／他職種ではだめか答えられる",
+      "prereq": [
+        "ME-IV-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-04.md",
+      "storyboard": "storyboard/ME-IV-04.md",
+      "slides": "slides/ME-IV-04.md",
+      "quiz": "quiz/ME-IV-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-05",
+      "chapter": "志望動機",
+      "title": "大学志望理由と学部の理解",
+      "minutes": 16,
+      "goal": "大学ごとの特色と自分の接点を言える",
+      "prereq": [
+        "ME-IV-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-05.md",
+      "storyboard": "storyboard/ME-IV-05.md",
+      "slides": "slides/ME-IV-05.md",
+      "quiz": "quiz/ME-IV-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-06",
+      "chapter": "自己理解",
+      "title": "長所・短所の答え方",
+      "minutes": 16,
+      "goal": "短所を改善行動付きで話せる",
+      "prereq": [
+        "ME-IV-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-06.md",
+      "storyboard": "storyboard/ME-IV-06.md",
+      "slides": "slides/ME-IV-06.md",
+      "quiz": "quiz/ME-IV-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-07",
+      "chapter": "自己理解",
+      "title": "高校生活・課外・失敗経験",
+      "minutes": 16,
+      "goal": "エピソードをSTARで整理できる",
+      "prereq": [
+        "ME-IV-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-07.md",
+      "storyboard": "storyboard/ME-IV-07.md",
+      "slides": "slides/ME-IV-07.md",
+      "quiz": "quiz/ME-IV-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-08",
+      "chapter": "知識の土台",
+      "title": "医療ニュースの読み方",
+      "minutes": 16,
+      "goal": "ニュースを「事実／論点／自分の立場」に分けられる",
+      "prereq": [
+        "ME-IV-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-08.md",
+      "storyboard": "storyboard/ME-IV-08.md",
+      "slides": "slides/ME-IV-08.md",
+      "quiz": "quiz/ME-IV-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-09",
+      "chapter": "知識の土台",
+      "title": "医療倫理の入口（原則）",
+      "minutes": 18,
+      "goal": "自律・善行・無危害・正義を例で説明できる",
+      "prereq": [
+        "ME-IV-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-09.md",
+      "storyboard": "storyboard/ME-IV-09.md",
+      "slides": "slides/ME-IV-09.md",
+      "quiz": "quiz/ME-IV-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-10",
+      "chapter": "知識の土台",
+      "title": "チーム医療とコミュニケーション",
+      "minutes": 16,
+      "goal": "多職種連携の意義を自分の言葉で言える",
+      "prereq": [
+        "ME-IV-09"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-10.md",
+      "storyboard": "storyboard/ME-IV-10.md",
+      "slides": "slides/ME-IV-10.md",
+      "quiz": "quiz/ME-IV-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-11",
+      "chapter": "形式別",
+      "title": "個人面接の進行と質問タイプ",
+      "minutes": 16,
+      "goal": "質問タイプ別に答えの型を選べる",
+      "prereq": [
+        "ME-IV-04",
+        "ME-IV-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-11.md",
+      "storyboard": "storyboard/ME-IV-11.md",
+      "slides": "slides/ME-IV-11.md",
+      "quiz": "quiz/ME-IV-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-12",
+      "chapter": "形式別",
+      "title": "MMI（Multiple Mini Interview）とは",
+      "minutes": 18,
+      "goal": "ステーション形式の目的と心構えを説明できる",
+      "prereq": [
+        "ME-IV-11",
+        "ME-IV-09"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-12.md",
+      "storyboard": "storyboard/ME-IV-12.md",
+      "slides": "slides/ME-IV-12.md",
+      "quiz": "quiz/ME-IV-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-13",
+      "chapter": "形式別",
+      "title": "MMIの思考手順（課題カード）",
+      "minutes": 16,
+      "goal": "課題を見て60秒で整理する型を使える",
+      "prereq": [
+        "ME-IV-12"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-13.md",
+      "storyboard": "storyboard/ME-IV-13.md",
+      "slides": "slides/ME-IV-13.md",
+      "quiz": "quiz/ME-IV-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-14",
+      "chapter": "形式別",
+      "title": "グループ討論の型",
+      "minutes": 16,
+      "goal": "発言・傾聴・まとめの役割を取れる",
+      "prereq": [
+        "ME-IV-10",
+        "ME-IV-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-14.md",
+      "storyboard": "storyboard/ME-IV-14.md",
+      "slides": "slides/ME-IV-14.md",
+      "quiz": "quiz/ME-IV-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-15",
+      "chapter": "属性別",
+      "title": "浪人・再受験の答え方",
+      "minutes": 16,
+      "goal": "経歴を責めではなく学びに変換できる",
+      "prereq": [
+        "ME-IV-06",
+        "ME-IV-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-15.md",
+      "storyboard": "storyboard/ME-IV-15.md",
+      "slides": "slides/ME-IV-15.md",
+      "quiz": "quiz/ME-IV-15.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-16",
+      "chapter": "属性別",
+      "title": "提出書類との一貫性",
+      "minutes": 16,
+      "goal": "志望理由書・活動と発言の矛盾を消せる",
+      "prereq": [
+        "ME-IV-05",
+        "ME-IV-07"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-16.md",
+      "storyboard": "storyboard/ME-IV-16.md",
+      "slides": "slides/ME-IV-16.md",
+      "quiz": "quiz/ME-IV-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-17",
+      "chapter": "実践",
+      "title": "模擬面接の回し方とフィードバック",
+      "minutes": 16,
+      "goal": "模擬を記録し改善点を3つに絞れる",
+      "prereq": [
+        "ME-IV-11",
+        "ME-IV-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-17.md",
+      "storyboard": "storyboard/ME-IV-17.md",
+      "slides": "slides/ME-IV-17.md",
+      "quiz": "quiz/ME-IV-17.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IV-18",
+      "chapter": "実践",
+      "title": "当日チェックリストとメンタル",
+      "minutes": 16,
+      "goal": "当日の準備と緊張時の対処を言える",
+      "prereq": [
+        "ME-IV-17",
+        "ME-IV-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IV-18.md",
+      "storyboard": "storyboard/ME-IV-18.md",
+      "slides": "slides/ME-IV-18.md",
+      "quiz": "quiz/ME-IV-18.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

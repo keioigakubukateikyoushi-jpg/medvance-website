@@ -54,3 +54,17 @@ output/
 .codex-screenshots/
 
 .env*
+
+# Academy: 大容量バイナリはリポジトリに載せない（PDFは /api/academy/pdf で生成）
+# lesson.html / manifest.json / 軽量アセットのみコミット対象
+public/academy/media/**/*.mp4
+public/academy/media/**/*.m4a
+public/academy/media/**/*.mov
+public/academy/media/**/lesson.pdf
+public/academy/media/**/slides.pdf
+public/academy/media/**/nlm_*.pdf
+public/academy/media/**/nlm_*.m4a
+public/academy/media/**/nlm_*.mp4
+public/academy/media/**/*_frames/**
+public/academy/media/**/audio*.m4a
+public/academy/media/**/video*.mp4

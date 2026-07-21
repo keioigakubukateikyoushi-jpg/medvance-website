@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-M3-11",
+  "title": "置換積分・部分積分の入口",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "置換と部分の型を選べる"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "合成の逆。内側の微分が見えるとき。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "du を忘れる",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "du を忘れる"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "うまい u"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "u=g(x)"
+    }
+  ]
+}

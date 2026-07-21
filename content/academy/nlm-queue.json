@@ -1,0 +1,2921 @@
+{
+  "description": "NotebookLM細分化キュー。priority 1=数学I欠損, 2=他科目欠損, 9=メディア揃い",
+  "total": 224,
+  "pending": 220,
+  "complete": 4,
+  "generated_at": "2026-07-21T13:34:01.795Z",
+  "units": [
+    {
+      "id": "ME-M1-04",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "展開公式 (a±b)² と (a+b)(a-b)",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-05",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "展開公式 (a±b)³ と (x+a)(x+b)",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-06",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "因数分解：共通因数と公式の逆",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-07",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "因数分解：x²+(a+b)x+ab 型とたすきがけ",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-08",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "因数分解：置換・複二次式",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-09",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "実数の分類と絶対値の定義",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-10",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "絶対値を含む方程式",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-11",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "絶対値を含む不等式",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-12",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "平方根の計算と有理化",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-13",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "二重根号と式の値",
+      "chapter": "数と式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-14",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "2次関数のグラフと平行移動",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-16",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "定義域なしの最大・最小",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-17",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "定義域つき最大・最小（軸が区間内）",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-18",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "定義域つき最大・最小（軸が区間外）",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-19",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "2次関数の決定（条件から式）",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-20",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "2次方程式の解と判別式",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-21",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "2次不等式の解法（グラフ対応）",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-22",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "2次不等式：係数が文字の場合",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-23",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "グラフの上下関係と共通接線の入口",
+      "chapter": "2次関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-24",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "鋭角の三角比の定義",
+      "chapter": "図形と計量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-25",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "三角比の相互関係",
+      "chapter": "図形と計量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-26",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "三角比の拡張（0°〜180°）",
+      "chapter": "図形と計量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-27",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "正弦定理",
+      "chapter": "図形と計量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-28",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "余弦定理",
+      "chapter": "図形と計量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-29",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "三角形の面積とヘロン",
+      "chapter": "図形と計量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-30",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "空間図形への三角比応用（基礎）",
+      "chapter": "図形と計量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-31",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "代表値：平均・中央値・最頻値",
+      "chapter": "データの分析",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-32",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "四分位数・箱ひげ図",
+      "chapter": "データの分析",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-33",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "分散・標準偏差の定義計算",
+      "chapter": "データの分析",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-34",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "散布図・相関係数の意味",
+      "chapter": "データの分析",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-35",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "仮説検定の考え方（共通テスト向け入口）",
+      "chapter": "データの分析",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-36",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "数と式 総合：符号と整理の減点ゼロ",
+      "chapter": "受験接続",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-37",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "2次関数 総合：定義域つき最大最小の判定フロー",
+      "chapter": "受験接続",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-M1-38",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "三角比 総合：正弦・余弦の使い分け",
+      "chapter": "受験接続",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ME-BI-01",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "細胞の構造と細胞小器官",
+      "chapter": "細胞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-02",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "細胞膜と輸送（拡散・浸透・能動輸送）",
+      "chapter": "細胞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-03",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "酵素の性質",
+      "chapter": "代謝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-04",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "呼吸と光合成の全体像",
+      "chapter": "代謝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-05",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "DNA・遺伝子・染色体",
+      "chapter": "遺伝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-06",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "メンデルの法則と遺伝の基本計算",
+      "chapter": "遺伝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-07",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "血統図と伴性遺伝の入口",
+      "chapter": "遺伝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-08",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "体液と恒常性",
+      "chapter": "体内環境",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-09",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "免疫の基本（自然・獲得）",
+      "chapter": "体内環境",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-10",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "神経と興奮伝導",
+      "chapter": "動物の反応",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-11",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "受容器と効果器・ホルモン",
+      "chapter": "動物の反応",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-12",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "植物ホルモンと環境応答",
+      "chapter": "植物・生態",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-13",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "生態系の物質循環とエネルギー",
+      "chapter": "植物・生態",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-14",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "個体群と生物間関係",
+      "chapter": "植物・生態",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-15",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "タンパク質合成（転写・翻訳）の入口",
+      "chapter": "遺伝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-16",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "細胞分裂（体細胞分裂）",
+      "chapter": "細胞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-17",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "減数分裂と受精",
+      "chapter": "細胞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-18",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "呼吸の詳細（解糖・クエン酸・電子伝達）",
+      "chapter": "代謝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-19",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "光合成の詳細（光化学系・カルビン）",
+      "chapter": "代謝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-20",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "遺伝子発現の調節の入口",
+      "chapter": "遺伝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-21",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "バイオテクノロジーの入口",
+      "chapter": "遺伝",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-22",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "血液循環と心臓",
+      "chapter": "体内環境",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-23",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "腎臓と浸透圧調節",
+      "chapter": "体内環境",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-24",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "肝臓の機能",
+      "chapter": "体内環境",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-25",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "筋肉と収縮の入口",
+      "chapter": "動物の反応",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-26",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "眼・耳の受容器",
+      "chapter": "動物の反応",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-27",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "被子植物の生殖",
+      "chapter": "植物・生態",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-28",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "進化と系統の入口",
+      "chapter": "植物・生態",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-BI-29",
+      "subject": "高校生物（受験）",
+      "dir": "biology-exam",
+      "title": "実験考察問題の読み方",
+      "chapter": "総合",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-01",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "原子・分子・イオンと周期表",
+      "chapter": "物質の構成",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-02",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "化学式と化学反応式のつくり方",
+      "chapter": "物質の構成",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-03",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "モル・分子量・物質量",
+      "chapter": "化学量論",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-04",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "反応式と量的関係（限界反応）",
+      "chapter": "化学量論",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-05",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "気体の体積と状態方程式",
+      "chapter": "気体・溶液",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-06",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "濃度（mol/L・質量パーセント）",
+      "chapter": "気体・溶液",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-07",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "反応熱と熱化学方程式",
+      "chapter": "反応と平衡",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-08",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "化学平衡と平衡移動",
+      "chapter": "反応と平衡",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-09",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "酸塩基と pH の基礎",
+      "chapter": "反応と平衡",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-10",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "酸化還元と半反応",
+      "chapter": "反応と平衡",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-11",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "典型元素の性質（Na, Cl, ハロゲン等）",
+      "chapter": "無機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-12",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "遷移元素と錯イオンの入り口",
+      "chapter": "無機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-13",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "炭化水素の分類と命名の入口",
+      "chapter": "有機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-14",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "官能基とアルコール・カルボン酸",
+      "chapter": "有機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-15",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "油脂・アミノ酸・糖の受験ポイント",
+      "chapter": "有機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-16",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "化学結合（イオン・共有・金属）",
+      "chapter": "物質の構成",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-17",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "分子の形と極性",
+      "chapter": "物質の構成",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-18",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "溶解度と希薄溶液の性質",
+      "chapter": "気体・溶液",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-19",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "反応速度と触媒",
+      "chapter": "反応と平衡",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-20",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "溶解度積と沈殿",
+      "chapter": "反応と平衡",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-21",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "電気分解と電池",
+      "chapter": "反応と平衡",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-22",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "非金属元素（S,N,C の酸化物など）",
+      "chapter": "無機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-23",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "金属イオンの分離・沈殿の型",
+      "chapter": "無機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-24",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "異性体（構造・立体の入口）",
+      "chapter": "有機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-25",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "芳香族化合物の入口",
+      "chapter": "有機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-26",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "高分子（合成・天然）の入口",
+      "chapter": "有機",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-CH-27",
+      "subject": "高校化学（受験）",
+      "dir": "chemistry-exam",
+      "title": "化学計算の検算と有効数字",
+      "chapter": "総合",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-01",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "5文型の判別",
+      "chapter": "文型と基本構造",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-02",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "自動詞他動詞と目的語",
+      "chapter": "文型と基本構造",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-03",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "現在・過去・未来の基本",
+      "chapter": "時制",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-04",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "完了形の核心（経験・完了・継続）",
+      "chapter": "時制",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-05",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "完了進行と時制の一致",
+      "chapter": "時制",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-06",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "法助動詞の核（can may must will）",
+      "chapter": "助動詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-07",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "推量と義務の助動詞",
+      "chapter": "助動詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-08",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "不定詞の3用法",
+      "chapter": "不定詞・動名詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-09",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "動名詞と不定詞の選択",
+      "chapter": "不定詞・動名詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-10",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "現在分詞・過去分詞の形容詞用法",
+      "chapter": "分詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-11",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "分詞構文の基本",
+      "chapter": "分詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-12",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "関係代名詞 who which that",
+      "chapter": "関係詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-13",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "関係副詞と非制限用法",
+      "chapter": "関係詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-14",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "原級比較級最上級の基本",
+      "chapter": "比較",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-15",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "比較の応用（倍数・最上級言い換え）",
+      "chapter": "比較",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-16",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "仮定法過去・過去完了",
+      "chapter": "仮定法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-17",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "I wish / as if / if の省略",
+      "chapter": "仮定法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-18",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "段落構造とディスコースマーカー",
+      "chapter": "読解技法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-19",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "Finding the main idea（要旨）",
+      "chapter": "読解技法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-20",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "Finding detail と言い換えトラップ",
+      "chapter": "読解技法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-21",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "受動態の核心",
+      "chapter": "文型と基本構造",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-22",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "間接疑問・強調・倒置の入口",
+      "chapter": "文型と基本構造",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-23",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "未来表現 will / be going to / 現在形",
+      "chapter": "時制",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-24",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "完了形との結合（should have 等）",
+      "chapter": "助動詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-25",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "関係形容詞 what / 複合関係詞",
+      "chapter": "関係詞",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-26",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "比較構文の応用（no sooner 等）",
+      "chapter": "比較",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-27",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "仮定法の応用（if 除去・with）",
+      "chapter": "仮定法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-28",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "論理展開とパラフレーズ",
+      "chapter": "読解技法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-29",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "長文の時間配分と設問先読み",
+      "chapter": "読解技法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-EN-30",
+      "subject": "高校英語（受験）",
+      "dir": "english-exam",
+      "title": "英作文の型（意見・理由・例）",
+      "chapter": "総合",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-01",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "整式の除法と余りの定理",
+      "chapter": "式と証明",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-02",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "因数定理と高次方程式の入口",
+      "chapter": "式と証明",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-03",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "等式・不等式の証明の型",
+      "chapter": "式と証明",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-04",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "複素数の四則と共役",
+      "chapter": "複素数と方程式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-05",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "2次方程式の解と判別式（複素数範囲）",
+      "chapter": "複素数と方程式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-06",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "解と係数の関係",
+      "chapter": "複素数と方程式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-07",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "点と直線の距離・内分外分",
+      "chapter": "図形と方程式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-08",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "直線の方程式と平行垂直",
+      "chapter": "図形と方程式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-09",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "円の方程式",
+      "chapter": "図形と方程式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-10",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "円と直線の共有点・接線",
+      "chapter": "図形と方程式",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-11",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "一般角と弧度法",
+      "chapter": "三角関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-12",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "三角関数の定義と相互関係",
+      "chapter": "三角関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-13",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "加法定理",
+      "chapter": "三角関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-14",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "倍角・半角・合成",
+      "chapter": "三角関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-15",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "指数法則と指数関数のグラフ",
+      "chapter": "指数関数・対数関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-16",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "対数の定義と性質",
+      "chapter": "指数関数・対数関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-17",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "指数・対数方程式と不等式",
+      "chapter": "指数関数・対数関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-18",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "平均変化率と微分係数",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-19",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "導関数と接線",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-20",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "増減・極値・最大最小",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-21",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "不定積分と定数C",
+      "chapter": "積分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M2-22",
+      "subject": "高校数学II",
+      "dir": "math2-exam",
+      "title": "定積分と面積",
+      "chapter": "積分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-01",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "数列の極限の基本",
+      "chapter": "極限",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-02",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "関数の極限と連続",
+      "chapter": "極限",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-03",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "無限大・無限小と漸近",
+      "chapter": "極限",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-04",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "導関数の定義と基本公式",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-05",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "積・商・合成関数の微分",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-06",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "三角関数・指数・対数の微分",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-07",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "接線・法線と近似",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-08",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "増減・凹凸・グラフ概形",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-09",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "最大最小・速度・関連変化率",
+      "chapter": "微分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-10",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "不定積分の基本",
+      "chapter": "積分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-11",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "置換積分・部分積分の入口",
+      "chapter": "積分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-12",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "定積分と面積・体積の入口",
+      "chapter": "積分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-13",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "体積（回転体）の入口",
+      "chapter": "積分法",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-14",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "複素数平面と極形式",
+      "chapter": "複素数平面",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-15",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "ド・モアブルと n 乗根の入口",
+      "chapter": "複素数平面",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-16",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "2次曲線の入口（放物線・楕円）",
+      "chapter": "式と曲線",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-17",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "パラメータ表示と微分",
+      "chapter": "式と曲線",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M3-18",
+      "subject": "高校数学III（受験）",
+      "dir": "math3-exam",
+      "title": "分数関数・無理関数・逆関数",
+      "chapter": "関数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-01",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "集合の要素とベン図の読み方",
+      "chapter": "場合の数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-02",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "包除原理（2集合・3集合）",
+      "chapter": "場合の数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-03",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "樹形図と場合分けの原則",
+      "chapter": "場合の数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-04",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "順列 P の定義と計算",
+      "chapter": "場合の数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-05",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "円順列・重複順列",
+      "chapter": "場合の数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-06",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "組合せ C と同じものを含む順列",
+      "chapter": "場合の数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-07",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "組分け・条件付き場合の数",
+      "chapter": "場合の数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-08",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "確率の定義と同様に確からしい",
+      "chapter": "確率",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-09",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "余事象・排反・和の確率",
+      "chapter": "確率",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-10",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "独立試行と反復試行",
+      "chapter": "確率",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-11",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "条件付き確率と乗法定理",
+      "chapter": "確率",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-12",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "ベイズの定理の入口",
+      "chapter": "確率",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-13",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "約数・倍数・素数",
+      "chapter": "整数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-14",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "ユークリッド互除法と最大公約数",
+      "chapter": "整数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-15",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "剰余と合同式の考え方",
+      "chapter": "整数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-16",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "n進法",
+      "chapter": "整数",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-17",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "三角形の重心・内心・外心",
+      "chapter": "図形の性質",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-18",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "チェバ・メネラウスの入口",
+      "chapter": "図形の性質",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-19",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "円周角と中心角",
+      "chapter": "図形の性質",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MA-20",
+      "subject": "高校数学A",
+      "dir": "mathA-exam",
+      "title": "接弦定理・方べき",
+      "chapter": "図形の性質",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-01",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "数列の定義と一般項",
+      "chapter": "数列",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-02",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "等差数列",
+      "chapter": "数列",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-03",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "等比数列",
+      "chapter": "数列",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-04",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "Σ記号と和の公式",
+      "chapter": "数列",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-05",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "漸化式（隣項型）の入口",
+      "chapter": "数列",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-06",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "数学的帰納法の型",
+      "chapter": "数列",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-07",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "平面ベクトルの演算",
+      "chapter": "ベクトル",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-08",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "一次独立・分解",
+      "chapter": "ベクトル",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-09",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "内積と垂直・大きさ",
+      "chapter": "ベクトル",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-10",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "位置ベクトルと線分の内分",
+      "chapter": "ベクトル",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-11",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "空間ベクトルの入口",
+      "chapter": "ベクトル",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-12",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "標本調査と推定の考え方",
+      "chapter": "統計的な推測",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-13",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "正規分布と確率の入口",
+      "chapter": "統計的な推測",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-MB-14",
+      "subject": "高校数学B（受験）",
+      "dir": "mathB-exam",
+      "title": "仮説検定の型（数B）",
+      "chapter": "統計的な推測",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-01",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "物理量・単位・有効数字",
+      "chapter": "力学の基礎",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-02",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "位置・変位・速度・加速度",
+      "chapter": "力学の基礎",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-03",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "等速直線運動と等加速度直線運動",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-04",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "自由落下・鉛直投射",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-05",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "力のつり合いと作用反作用",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-06",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "運動方程式 ma=F",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-07",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "摩擦力（静止・運動）",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-08",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "仕事と運動エネルギー",
+      "chapter": "エネルギーと運動量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-09",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "力学的エネルギー保存",
+      "chapter": "エネルギーと運動量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-10",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "運動量と力積",
+      "chapter": "エネルギーと運動量",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-11",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "波の基本量（振幅・周期・波長）",
+      "chapter": "波動",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-12",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "音波・弦・気柱の基礎",
+      "chapter": "波動",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-13",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "電荷・電場・電位のイメージ",
+      "chapter": "電気",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-14",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "オームの法則と電力",
+      "chapter": "電気",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-15",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "温度・熱量・比熱",
+      "chapter": "熱・気体",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-16",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "理想気体の状態方程式",
+      "chapter": "熱・気体",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-17",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "水平投射・斜方投射",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-18",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "等速円運動",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-19",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "単振動の入口",
+      "chapter": "運動と力",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-20",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "光の反射・屈折・全反射",
+      "chapter": "波動",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-21",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "ヤングの干渉・薄膜の入口",
+      "chapter": "波動",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-22",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "コンデンサー",
+      "chapter": "電気",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-23",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "磁場と電流が受ける力",
+      "chapter": "電気",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-24",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "電磁誘導と誘導起電力",
+      "chapter": "電気",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-25",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "熱力学第一法則",
+      "chapter": "熱・気体",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-PH-26",
+      "subject": "高校物理（受験）",
+      "dir": "physics-exam",
+      "title": "物理の次元解析と近似",
+      "chapter": "総合",
+      "media": {
+        "video": false,
+        "audio": false,
+        "slides": false
+      },
+      "priority": 2
+    },
+    {
+      "id": "ME-M1-01",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "整式・項・係数・次数の厳密定義",
+      "chapter": "数と式",
+      "media": {
+        "video": true,
+        "audio": true,
+        "slides": true
+      },
+      "priority": 9
+    },
+    {
+      "id": "ME-M1-02",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "多項式の加減と同類項",
+      "chapter": "数と式",
+      "media": {
+        "video": true,
+        "audio": true,
+        "slides": true
+      },
+      "priority": 9
+    },
+    {
+      "id": "ME-M1-03",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "展開の基本：分配法則と整理",
+      "chapter": "数と式",
+      "media": {
+        "video": true,
+        "audio": true,
+        "slides": true
+      },
+      "priority": 9
+    },
+    {
+      "id": "ME-M1-15",
+      "subject": "高校数学I",
+      "dir": "math1-exam",
+      "title": "平方完成の完全習得",
+      "chapter": "2次関数",
+      "media": {
+        "video": true,
+        "audio": true,
+        "slides": true
+      },
+      "priority": 9
+    }
+  ]
+}

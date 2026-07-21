@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ME-M1-01 スライド | Medvance</title>
+
+<link rel="stylesheet" href="../../vendor/katex/katex.min.css"/>
+<script src="../../vendor/katex/katex.min.js"></script>
+<script src="../../vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+  (function () {
+    function run() {
+      if (typeof renderMathInElement !== "function") return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+          ],
+          throwOnError: false,
+          strict: "ignore",
+          trust: false
+        });
+      } catch (e) { console.warn("katex", e); }
+      document.documentElement.setAttribute("data-katex-done", "1");
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+</script>
+<style>
+  :root { --navy:#0c1a33; --gold:#c9922a; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; background:#0b1220; color:#e8eef8; }
+  .bar { display:flex; gap:0.5rem; align-items:center; padding:0.7rem 1rem; background:#121a2b; border-bottom:1px solid #2a3a55; position:sticky; top:0; z-index:10; }
+  button { background:#3d8bfd; color:#fff; border:0; border-radius:8px; padding:0.45rem 0.85rem; font:inherit; cursor:pointer; font-weight:600; }
+  button.ghost { background:#24324a; }
+  button.gold { background:var(--gold); color:#0c1a33; }
+  .meta { margin-left:auto; font-size:0.8rem; color:#9aadc7; }
+  .stage { max-width:900px; margin:0 auto; padding:1rem; min-height:70vh; }
+  .slide { display:none; background:linear-gradient(160deg,#162033,#0f172a); border:1px solid #2a3a55; border-radius:18px; padding:1.5rem 1.6rem 1.4rem; min-height:520px; }
+  .slide.on { display:block; animation: fade .25s ease; }
+  @keyframes fade { from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none} }
+  .slide-top { display:flex; justify-content:space-between; color:#5eead4; font-size:0.8rem; font-weight:700; margin-bottom:0.6rem; }
+  .slide h2 { margin:0 0 0.5rem; font-size:1.35rem; color:#fff; }
+  .screen { color:#cbd5e1; font-size:1rem; margin:0.3rem 0 0.8rem; }
+  .math-block { background:rgba(255,255,255,0.04); border:1px solid #334155; border-radius:12px; padding:0.9rem; margin:0.75rem 0; text-align:center; color:#f8fafc; overflow-x:auto; }
+  .math-block .katex { font-size:1.25em; }
+  .narr { margin-top:1.1rem; padding-top:0.85rem; border-top:1px solid #334155; color:#94a3b8; font-size:0.92rem; line-height:1.7; }
+  .narr strong { color:var(--gold); display:block; font-size:0.75rem; margin-bottom:0.25rem; letter-spacing:0.06em; }
+  @media print {
+    body { background:#fff; color:#000; }
+    .bar { display:none; }
+    .slide { display:block !important; break-after:page; min-height:auto; background:#fff; border:1px solid #ddd; color:#000; }
+    .screen,.narr { color:#333; }
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <button type="button" id="prev">← 前</button>
+    <button type="button" id="next">次 →</button>
+    <button type="button" class="ghost" id="play">自動再生</button>
+    <button type="button" class="gold" id="print">PDF用に印刷</button>
+    <span class="meta">ME-M1-01 · 台本連動 12枚</span>
+  </div>
+  <div class="stage" id="stage">
+    <section class="slide on" data-i="0">
+      <div class="slide-top">
+        <span class="idx">1 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>タイトル</h2>
+      <p class="screen">ME-M1-01 整式の定義</p>
+      <div class="math-block">$$a_n x^n+\cdots+a_0$$</div>
+      <p class="narr"><strong>ナレーション</strong> ゴールは、整式の判別と、項・係数・次数を正確に答えることです。</p>
+    </section>
+
+    <section class="slide" data-i="1">
+      <div class="slide-top">
+        <span class="idx">2 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>受験での位置づけ</h2>
+      <p class="screen">なぜ定義から入るか</p>
+      
+      <p class="narr"><strong>ナレーション</strong> 展開も因数分解も、まず整式として整理できるかが前提です。</p>
+    </section>
+
+    <section class="slide" data-i="2">
+      <div class="slide-top">
+        <span class="idx">3 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>前提</h2>
+      <p class="screen">章の入口</p>
+      
+      <p class="narr"><strong>ナレーション</strong> 本ユニットは数と式の入口です。用語を固定してから計算に入ります。</p>
+    </section>
+
+    <section class="slide" data-i="3">
+      <div class="slide-top">
+        <span class="idx">4 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>定義</h2>
+      <p class="screen">整式とは</p>
+      <div class="math-block">$$a_n x^n+a_{n-1}x^{n-1}+\cdots+a_0$$</div>
+      <p class="narr"><strong>ナレーション</strong> 指数は非負整数。係数は定数ならルートを含んでも構いません。</p>
+    </section>
+
+    <section class="slide" data-i="4">
+      <div class="slide-top">
+        <span class="idx">5 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>用語</h2>
+      <p class="screen">項・係数・次数</p>
+      <div class="math-block">$$3x^2\text{ の係数は }3,\quad \text{次数は最大指数}$$</div>
+      <p class="narr"><strong>ナレーション</strong> 符号は項に含めます。マイナス3x の係数はマイナス3です。</p>
+    </section>
+
+    <section class="slide" data-i="5">
+      <div class="slide-top">
+        <span class="idx">6 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>手順</h2>
+      <p class="screen">判別と整理</p>
+      
+      <p class="narr"><strong>ナレーション</strong> 項を切る、指数を読む、最大が次数、必要なら降べき。</p>
+    </section>
+
+    <section class="slide" data-i="6">
+      <div class="slide-top">
+        <span class="idx">7 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>例題A</h2>
+      <p class="screen">整式か？</p>
+      <div class="math-block">$$2x^3-\sqrt{2}x+1,\quad x^2+\frac{1}{x}$$</div>
+      <p class="narr"><strong>ナレーション</strong> 1番は整式、2番は1/x があるので整式ではありません。</p>
+    </section>
+
+    <section class="slide" data-i="7">
+      <div class="slide-top">
+        <span class="idx">8 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>例題A 解答</h2>
+      <p class="screen">答え</p>
+      <div class="math-block">$$(1)(3)\text{ が整式},\;\deg=3$$</div>
+      <p class="narr"><strong>ナレーション</strong> 定数5も次数0の整式です。根号の中に x があるものは整式ではありません。</p>
+    </section>
+
+    <section class="slide" data-i="8">
+      <div class="slide-top">
+        <span class="idx">9 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>例題B</h2>
+      <p class="screen">展開して係数</p>
+      <div class="math-block">$$f(x)=(2x-1)(x^2+3)-x(x^2-4)$$</div>
+      <p class="narr"><strong>ナレーション</strong> 展開の符号ミスが最大の敵です。かっこを外すとき全体にマイナス。</p>
+    </section>
+
+    <section class="slide" data-i="9">
+      <div class="slide-top">
+        <span class="idx">10 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>例題B 解答</h2>
+      <p class="screen">結果</p>
+      <div class="math-block">$$f(x)=x^3-x^2+10x-3$$</div>
+      <p class="narr"><strong>ナレーション</strong> 次数3、x の係数は10。</p>
+    </section>
+
+    <section class="slide" data-i="10">
+      <div class="slide-top">
+        <span class="idx">11 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>演習</h2>
+      <p class="screen">自分で</p>
+      <div class="math-block">$$g(x)=4-3x+x^3-2x^2$$</div>
+      <p class="narr"><strong>ナレーション</strong> 降べきに直して、次数・最高次係数・定数項を答えてください。</p>
+    </section>
+
+    <section class="slide" data-i="11">
+      <div class="slide-top">
+        <span class="idx">12 / 12</span>
+        <span class="uid">ME-M1-01</span>
+      </div>
+      <h2>まとめ</h2>
+      <p class="screen">次へ</p>
+      <div class="math-block">$$x^3-2x^2-3x+4$$</div>
+      <p class="narr"><strong>ナレーション</strong> 答えは x 3乗マイナス2x 2乗マイナス3x プラス4。次は同類項、ME-M1-02です。</p>
+    </section></div>
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const narr = ["ゴールは、整式の判別と、項・係数・次数を正確に答えることです。","展開も因数分解も、まず整式として整理できるかが前提です。","本ユニットは数と式の入口です。用語を固定してから計算に入ります。","指数は非負整数。係数は定数ならルートを含んでも構いません。","符号は項に含めます。マイナス3x の係数はマイナス3です。","項を切る、指数を読む、最大が次数、必要なら降べき。","1番は整式、2番は1/x があるので整式ではありません。","定数5も次数0の整式です。根号の中に x があるものは整式ではありません。","展開の符号ミスが最大の敵です。かっこを外すとき全体にマイナス。","次数3、x の係数は10。","降べきに直して、次数・最高次係数・定数項を答えてください。","答えは x 3乗マイナス2x 2乗マイナス3x プラス4。次は同類項、ME-M1-02です。"];
+    let i = 0, timer = null;
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, j) => s.classList.toggle('on', j === i));
+    }
+    document.getElementById('prev').onclick = () => show(i - 1);
+    document.getElementById('next').onclick = () => show(i + 1);
+    document.getElementById('play').onclick = () => {
+      if (timer) { clearInterval(timer); timer = null; document.getElementById('play').textContent = '自動再生'; return; }
+      document.getElementById('play').textContent = '停止';
+      timer = setInterval(() => show(i + 1), 12000);
+    };
+    document.getElementById('print').onclick = () => window.print();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); show(i + 1); }
+      if (e.key === 'ArrowLeft') show(i - 1);
+    });
+    show(0);
+    // capture mode: ?slide=N shows only that slide full page
+    const m = location.search.match(/[?&]slide=(\d+)/);
+    if (m) {
+      const n = Math.max(0, Math.min(slides.length - 1, parseInt(m[1], 10)));
+      document.querySelector('.bar').style.display = 'none';
+      show(n);
+      document.body.style.background = '#0b1220';
+    }
+  </script>
+</body>
+</html>

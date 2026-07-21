@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-M1-25",
+  "title": "三角比の相互関係",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "sin²+cos²=1 と tan=sin/cos を使いこなす"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "三角比の相互関係を扱うための中心概念。受験では定義を答案の一文目に置けることが得点の土台になる。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "符号をすべて正にする",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "符号をすべて正にする"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "与えられた比・値を整理"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "sin²θ+cos²θ=1"
+    }
+  ]
+}

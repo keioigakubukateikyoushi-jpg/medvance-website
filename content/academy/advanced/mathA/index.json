@@ -1,0 +1,217 @@
+{
+  "subject": "高校数学A・発展",
+  "track": "advanced",
+  "trackLabel": "発展講座",
+  "brand": "Medvance",
+  "unit_count": 12,
+  "full_count": 12,
+  "outline_count": 0,
+  "chapters": [
+    "場合の数・発展",
+    "確率・発展",
+    "整数・発展",
+    "図形性質・発展",
+    "融合・発展"
+  ],
+  "design": "細分化・前提明示・12ブロック",
+  "units": [
+    {
+      "id": "ADV-MA-01",
+      "chapter": "場合の数・発展",
+      "title": "包除と条件付き数え上げ",
+      "minutes": 24,
+      "goal": "3集合包除と条件を段階分解できる",
+      "prereq": [
+        "ME-MA-02",
+        "ME-MA-07"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-01.md",
+      "storyboard": "storyboard/ADV-MA-01.md",
+      "slides": "slides/ADV-MA-01.md",
+      "quiz": "quiz/ADV-MA-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-02",
+      "chapter": "場合の数・発展",
+      "title": "組分けと同一視",
+      "minutes": 24,
+      "goal": "組内順序・組の区別を正しく割れる",
+      "prereq": [
+        "ME-MA-06",
+        "ME-MA-07"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-02.md",
+      "storyboard": "storyboard/ADV-MA-02.md",
+      "slides": "slides/ADV-MA-02.md",
+      "quiz": "quiz/ADV-MA-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-03",
+      "chapter": "場合の数・発展",
+      "title": "格子経路と制約",
+      "minutes": 22,
+      "goal": "最短経路と障害条件を数えられる",
+      "prereq": [
+        "ME-MA-04"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-03.md",
+      "storyboard": "storyboard/ADV-MA-03.md",
+      "slides": "slides/ADV-MA-03.md",
+      "quiz": "quiz/ADV-MA-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-04",
+      "chapter": "確率・発展",
+      "title": "条件付き確率の樹形図",
+      "minutes": 24,
+      "goal": "多段試行でP(A|B)を求められる",
+      "prereq": [
+        "ME-MA-11"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-04.md",
+      "storyboard": "storyboard/ADV-MA-04.md",
+      "slides": "slides/ADV-MA-04.md",
+      "quiz": "quiz/ADV-MA-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-05",
+      "chapter": "確率・発展",
+      "title": "ベイズ型の定石",
+      "minutes": 24,
+      "goal": "原因の確率を正規化できる",
+      "prereq": [
+        "ME-MA-12",
+        "ADV-MA-04"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-05.md",
+      "storyboard": "storyboard/ADV-MA-05.md",
+      "slides": "slides/ADV-MA-05.md",
+      "quiz": "quiz/ADV-MA-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-06",
+      "chapter": "確率・発展",
+      "title": "独立と従属の見極め",
+      "minutes": 22,
+      "goal": "独立判定と積の可否を説明できる",
+      "prereq": [
+        "ME-MA-10"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-06.md",
+      "storyboard": "storyboard/ADV-MA-06.md",
+      "slides": "slides/ADV-MA-06.md",
+      "quiz": "quiz/ADV-MA-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-07",
+      "chapter": "整数・発展",
+      "title": "一次不定方程式",
+      "minutes": 24,
+      "goal": "ax+by=c の整数解を互除法で求める",
+      "prereq": [
+        "ME-MA-14"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-07.md",
+      "storyboard": "storyboard/ADV-MA-07.md",
+      "slides": "slides/ADV-MA-07.md",
+      "quiz": "quiz/ADV-MA-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-08",
+      "chapter": "整数・発展",
+      "title": "合同式での場合分け",
+      "minutes": 24,
+      "goal": "mod で周期性を処理できる",
+      "prereq": [
+        "ME-MA-15"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-08.md",
+      "storyboard": "storyboard/ADV-MA-08.md",
+      "slides": "slides/ADV-MA-08.md",
+      "quiz": "quiz/ADV-MA-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-09",
+      "chapter": "整数・発展",
+      "title": "n進と桁の制約",
+      "minutes": 22,
+      "goal": "n進の変換と桁条件を扱える",
+      "prereq": [
+        "ME-MA-16"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-09.md",
+      "storyboard": "storyboard/ADV-MA-09.md",
+      "slides": "slides/ADV-MA-09.md",
+      "quiz": "quiz/ADV-MA-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-10",
+      "chapter": "図形性質・発展",
+      "title": "チェバ・メネラウス実戦",
+      "minutes": 25,
+      "goal": "比を置いて共点共線を示す",
+      "prereq": [
+        "ME-MA-18"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-10.md",
+      "storyboard": "storyboard/ADV-MA-10.md",
+      "slides": "slides/ADV-MA-10.md",
+      "quiz": "quiz/ADV-MA-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-11",
+      "chapter": "図形性質・発展",
+      "title": "方べき・接弦の融合",
+      "minutes": 24,
+      "goal": "円の長さ問題で定理を選ぶ",
+      "prereq": [
+        "ME-MA-20"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-11.md",
+      "storyboard": "storyboard/ADV-MA-11.md",
+      "slides": "slides/ADV-MA-11.md",
+      "quiz": "quiz/ADV-MA-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-MA-12",
+      "chapter": "融合・発展",
+      "title": "確率×場合の数の文章題",
+      "minutes": 26,
+      "goal": "分母分子を同じ視点で数える",
+      "prereq": [
+        "ADV-MA-02",
+        "ADV-MA-04"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-MA-12.md",
+      "storyboard": "storyboard/ADV-MA-12.md",
+      "slides": "slides/ADV-MA-12.md",
+      "quiz": "quiz/ADV-MA-12.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+}

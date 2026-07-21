@@ -1,0 +1,255 @@
+{
+  "subject": "共通テスト国語",
+  "track": "common-test",
+  "trackLabel": "共通テスト対策",
+  "brand": "Medvance",
+  "unit_count": 15,
+  "full_count": 15,
+  "outline_count": 0,
+  "design": "現代文・古文・漢文を共通テストの得点源に。主張根拠・識別・句法を型で固定。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "現代文",
+    "古文",
+    "漢文"
+  ],
+  "units": [
+    {
+      "id": "ME-JA-01",
+      "chapter": "現代文",
+      "title": "評論文の読み方・主張と根拠",
+      "minutes": 20,
+      "goal": "評論文で「筆者の主張」と「根拠」を区別して抜き出せる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-JA-01.md",
+      "storyboard": "storyboard/ME-JA-01.md",
+      "slides": "slides/ME-JA-01.md",
+      "quiz": "quiz/ME-JA-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-02",
+      "chapter": "現代文",
+      "title": "論理展開（対比・因果・例示）",
+      "minutes": 18,
+      "goal": "対比・因果・例示の印を追い、段落関係を図にできる",
+      "prereq": [
+        "ME-JA-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-02.md",
+      "storyboard": "storyboard/ME-JA-02.md",
+      "slides": "slides/ME-JA-02.md",
+      "quiz": "quiz/ME-JA-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-03",
+      "chapter": "現代文",
+      "title": "指示語・段落要旨のとり方",
+      "minutes": 18,
+      "goal": "「これ・それ・このような」の指す内容を前から特定できる",
+      "prereq": [
+        "ME-JA-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-03.md",
+      "storyboard": "storyboard/ME-JA-03.md",
+      "slides": "slides/ME-JA-03.md",
+      "quiz": "quiz/ME-JA-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-04",
+      "chapter": "現代文",
+      "title": "小説・随筆の心情と情景",
+      "minutes": 18,
+      "goal": "心情を「行動・情景・会話」から根拠付きで言える",
+      "prereq": [
+        "ME-JA-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-04.md",
+      "storyboard": "storyboard/ME-JA-04.md",
+      "slides": "slides/ME-JA-04.md",
+      "quiz": "quiz/ME-JA-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-05",
+      "chapter": "現代文",
+      "title": "選択肢の切り方（言い換え・範囲・極端語）",
+      "minutes": 20,
+      "goal": "誤選択肢のパターン（言い過ぎ・範囲ずれ・逆転）を切れる",
+      "prereq": [
+        "ME-JA-02",
+        "ME-JA-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-05.md",
+      "storyboard": "storyboard/ME-JA-05.md",
+      "slides": "slides/ME-JA-05.md",
+      "quiz": "quiz/ME-JA-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-06",
+      "chapter": "現代文",
+      "title": "漢字・語彙と時間配分",
+      "minutes": 16,
+      "goal": "知識問題を短時間で処理し、読解に時間を残せる",
+      "prereq": [
+        "ME-JA-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-06.md",
+      "storyboard": "storyboard/ME-JA-06.md",
+      "slides": "slides/ME-JA-06.md",
+      "quiz": "quiz/ME-JA-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-07",
+      "chapter": "古文",
+      "title": "歴史的仮名遣いと品詞の入口",
+      "minutes": 18,
+      "goal": "歴史的仮名遣いを現代仮名に直し、品詞のざっくり分類ができる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-JA-07.md",
+      "storyboard": "storyboard/ME-JA-07.md",
+      "slides": "slides/ME-JA-07.md",
+      "quiz": "quiz/ME-JA-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-08",
+      "chapter": "古文",
+      "title": "用言の活用と識別の型",
+      "minutes": 20,
+      "goal": "動詞・形容詞・形容動詞の活用の型を識別できる",
+      "prereq": [
+        "ME-JA-07"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-08.md",
+      "storyboard": "storyboard/ME-JA-08.md",
+      "slides": "slides/ME-JA-08.md",
+      "quiz": "quiz/ME-JA-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-09",
+      "chapter": "古文",
+      "title": "助動詞（る・らる／す・さす／む・けり 等）",
+      "minutes": 22,
+      "goal": "頻出助動詞の意味・接続を文脈で使い分けられる",
+      "prereq": [
+        "ME-JA-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-09.md",
+      "storyboard": "storyboard/ME-JA-09.md",
+      "slides": "slides/ME-JA-09.md",
+      "quiz": "quiz/ME-JA-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-10",
+      "chapter": "古文",
+      "title": "敬語と主語の復元",
+      "minutes": 20,
+      "goal": "尊敬・謙譲・丁寧から動作の主体・対象を復元できる",
+      "prereq": [
+        "ME-JA-09"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-10.md",
+      "storyboard": "storyboard/ME-JA-10.md",
+      "slides": "slides/ME-JA-10.md",
+      "quiz": "quiz/ME-JA-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-11",
+      "chapter": "古文",
+      "title": "和歌・修辞と読解手順",
+      "minutes": 18,
+      "goal": "掛詞・縁語の入口を踏まえ、古文読解の手順を固定できる",
+      "prereq": [
+        "ME-JA-10"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-11.md",
+      "storyboard": "storyboard/ME-JA-11.md",
+      "slides": "slides/ME-JA-11.md",
+      "quiz": "quiz/ME-JA-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-12",
+      "chapter": "漢文",
+      "title": "返り点・送り仮名の読み下し",
+      "minutes": 18,
+      "goal": "レ点・一二点などを用いて正しく読み下せる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-JA-12.md",
+      "storyboard": "storyboard/ME-JA-12.md",
+      "slides": "slides/ME-JA-12.md",
+      "quiz": "quiz/ME-JA-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-13",
+      "chapter": "漢文",
+      "title": "句法の核心（否定・使役・受身・疑問）",
+      "minutes": 20,
+      "goal": "否定・使役・受身・疑問の基本句法を訳し分けられる",
+      "prereq": [
+        "ME-JA-12"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-13.md",
+      "storyboard": "storyboard/ME-JA-13.md",
+      "slides": "slides/ME-JA-13.md",
+      "quiz": "quiz/ME-JA-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-14",
+      "chapter": "漢文",
+      "title": "再読文字と置き字",
+      "minutes": 18,
+      "goal": "未・将・須・宜 などの再読文字を正しく二度読める",
+      "prereq": [
+        "ME-JA-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-14.md",
+      "storyboard": "storyboard/ME-JA-14.md",
+      "slides": "slides/ME-JA-14.md",
+      "quiz": "quiz/ME-JA-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-JA-15",
+      "chapter": "漢文",
+      "title": "漢文読解の総合手順と選択肢",
+      "minutes": 18,
+      "goal": "書き下し→現代語→設問根拠の順で安定して解ける",
+      "prereq": [
+        "ME-JA-14",
+        "ME-JA-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-JA-15.md",
+      "storyboard": "storyboard/ME-JA-15.md",
+      "slides": "slides/ME-JA-15.md",
+      "quiz": "quiz/ME-JA-15.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

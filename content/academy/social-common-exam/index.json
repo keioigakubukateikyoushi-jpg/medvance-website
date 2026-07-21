@@ -1,0 +1,257 @@
+{
+  "subject": "共通テスト社会",
+  "track": "common-test",
+  "trackLabel": "共通テスト対策",
+  "brand": "Medvance",
+  "unit_count": 15,
+  "full_count": 15,
+  "outline_count": 0,
+  "design": "地理総合・歴史総合・公共を資料読解中心に。暗記より根拠と因果の型。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "地理総合",
+    "歴史総合",
+    "公共"
+  ],
+  "units": [
+    {
+      "id": "ME-SO-01",
+      "chapter": "地理総合",
+      "title": "地図・GIS・球面上の世界",
+      "minutes": 18,
+      "goal": "緯度経度・縮尺・GISの基本を用いて資料を読める",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-SO-01.md",
+      "storyboard": "storyboard/ME-SO-01.md",
+      "slides": "slides/ME-SO-01.md",
+      "quiz": "quiz/ME-SO-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-02",
+      "chapter": "地理総合",
+      "title": "気候・地形と生活",
+      "minutes": 18,
+      "goal": "ケッペン的気候区分の骨格と地形の生活への影響を説明できる",
+      "prereq": [
+        "ME-SO-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-02.md",
+      "storyboard": "storyboard/ME-SO-02.md",
+      "slides": "slides/ME-SO-02.md",
+      "quiz": "quiz/ME-SO-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-03",
+      "chapter": "地理総合",
+      "title": "人口・都市・村落",
+      "minutes": 18,
+      "goal": "人口ピラミッドと都市問題の資料を読み取れる",
+      "prereq": [
+        "ME-SO-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-03.md",
+      "storyboard": "storyboard/ME-SO-03.md",
+      "slides": "slides/ME-SO-03.md",
+      "quiz": "quiz/ME-SO-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-04",
+      "chapter": "地理総合",
+      "title": "資源・エネルギー・産業立地",
+      "minutes": 18,
+      "goal": "資源分布と産業立地の理由を資料から説明できる",
+      "prereq": [
+        "ME-SO-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-04.md",
+      "storyboard": "storyboard/ME-SO-04.md",
+      "slides": "slides/ME-SO-04.md",
+      "quiz": "quiz/ME-SO-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-05",
+      "chapter": "地理総合",
+      "title": "防災・持続可能な社会",
+      "minutes": 18,
+      "goal": "ハザードマップと防災・ESDの視点で資料を読める",
+      "prereq": [
+        "ME-SO-01",
+        "ME-SO-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-05.md",
+      "storyboard": "storyboard/ME-SO-05.md",
+      "slides": "slides/ME-SO-05.md",
+      "quiz": "quiz/ME-SO-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-06",
+      "chapter": "歴史総合",
+      "title": "歴史の見方・資料の読み方",
+      "minutes": 18,
+      "goal": "一次資料と二次資料を区別し、時代の問いを立てられる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-SO-06.md",
+      "storyboard": "storyboard/ME-SO-06.md",
+      "slides": "slides/ME-SO-06.md",
+      "quiz": "quiz/ME-SO-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-07",
+      "chapter": "歴史総合",
+      "title": "近代化と世界の一体化",
+      "minutes": 20,
+      "goal": "産業革命・国民国家・帝国主義のつながりを説明できる",
+      "prereq": [
+        "ME-SO-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-07.md",
+      "storyboard": "storyboard/ME-SO-07.md",
+      "slides": "slides/ME-SO-07.md",
+      "quiz": "quiz/ME-SO-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-08",
+      "chapter": "歴史総合",
+      "title": "二つの大戦と戦間期",
+      "minutes": 20,
+      "goal": "第一次・第二次大戦の原因と総力戦の特徴を資料で説明できる",
+      "prereq": [
+        "ME-SO-07"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-08.md",
+      "storyboard": "storyboard/ME-SO-08.md",
+      "slides": "slides/ME-SO-08.md",
+      "quiz": "quiz/ME-SO-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-09",
+      "chapter": "歴史総合",
+      "title": "冷戦・脱植民地化・グローバル化",
+      "minutes": 20,
+      "goal": "冷戦構造と脱植民地化、グローバル化の論点を整理できる",
+      "prereq": [
+        "ME-SO-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-09.md",
+      "storyboard": "storyboard/ME-SO-09.md",
+      "slides": "slides/ME-SO-09.md",
+      "quiz": "quiz/ME-SO-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-10",
+      "chapter": "歴史総合",
+      "title": "日本と世界の近現代（総合演習）",
+      "minutes": 18,
+      "goal": "日本の近現代の転換点を世界史の文脈で説明できる",
+      "prereq": [
+        "ME-SO-07",
+        "ME-SO-08",
+        "ME-SO-09"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-10.md",
+      "storyboard": "storyboard/ME-SO-10.md",
+      "slides": "slides/ME-SO-10.md",
+      "quiz": "quiz/ME-SO-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-11",
+      "chapter": "公共",
+      "title": "公共的な空間と倫理の入口",
+      "minutes": 18,
+      "goal": "公共性・正義・自由の対立を具体例で整理できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-SO-11.md",
+      "storyboard": "storyboard/ME-SO-11.md",
+      "slides": "slides/ME-SO-11.md",
+      "quiz": "quiz/ME-SO-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-12",
+      "chapter": "公共",
+      "title": "人権・憲法の骨格",
+      "minutes": 20,
+      "goal": "基本的人権の分類と憲法の役割を説明できる",
+      "prereq": [
+        "ME-SO-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-12.md",
+      "storyboard": "storyboard/ME-SO-12.md",
+      "slides": "slides/ME-SO-12.md",
+      "quiz": "quiz/ME-SO-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-13",
+      "chapter": "公共",
+      "title": "民主政治と政治制度",
+      "minutes": 18,
+      "goal": "国会・内閣・司法の関係と選挙の意味を説明できる",
+      "prereq": [
+        "ME-SO-12"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-13.md",
+      "storyboard": "storyboard/ME-SO-13.md",
+      "slides": "slides/ME-SO-13.md",
+      "quiz": "quiz/ME-SO-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-14",
+      "chapter": "公共",
+      "title": "経済の基礎（市場・財政・金融）",
+      "minutes": 20,
+      "goal": "需要供給・物価・財政金融の基本関係を資料で読める",
+      "prereq": [
+        "ME-SO-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-14.md",
+      "storyboard": "storyboard/ME-SO-14.md",
+      "slides": "slides/ME-SO-14.md",
+      "quiz": "quiz/ME-SO-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-SO-15",
+      "chapter": "公共",
+      "title": "国際政治経済と現代の課題",
+      "minutes": 18,
+      "goal": "国際法・国際機構・グローバル課題を公共の概念で説明できる",
+      "prereq": [
+        "ME-SO-12",
+        "ME-SO-14"
+      ],
+      "status": "full",
+      "file": "lessons/ME-SO-15.md",
+      "storyboard": "storyboard/ME-SO-15.md",
+      "slides": "slides/ME-SO-15.md",
+      "quiz": "quiz/ME-SO-15.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ELI-M-05 通過領域・存在条件 | Medvance</title>
+
+<link rel="stylesheet" href="../../vendor/katex/katex.min.css"/>
+<script src="../../vendor/katex/katex.min.js"></script>
+<script src="../../vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+(function(){
+  function run(){
+    if (typeof renderMathInElement !== "function") return;
+    try {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left:"$$", right:"$$", display:true},
+          {left:"$", right:"$", display:false}
+        ],
+        throwOnError: false,
+        strict: "ignore"
+      });
+    } catch(e) {}
+    document.documentElement.setAttribute("data-katex-done","1");
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
+})();
+</script>
+<style>
+  :root { --navy:#0c1a33; --gold:#c9922a; --bg:#f7f5f0; --ink:#1f2937; --muted:#6b7280; --line:#e5e1d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", sans-serif; color:var(--ink); background:#fff; line-height:1.8; }
+  .topbar { background:var(--navy); color:#fff; padding:1.75rem 1.25rem 1.5rem; }
+  .topbar .brand { color:var(--gold); font-size:0.72rem; letter-spacing:0.14em; font-weight:700; }
+  .topbar h1 { margin:0.45rem 0 0.35rem; font-size:1.4rem; font-weight:800; line-height:1.4; }
+  .topbar .meta { font-size:0.85rem; opacity:0.75; }
+  .goal { background:rgba(201,146,42,0.16); border-left:3px solid var(--gold); padding:0.7rem 0.95rem; margin-top:0.95rem; border-radius:0 10px 10px 0; font-size:0.95rem; }
+  .wrap { max-width:720px; margin:0 auto; padding:1.25rem 1.1rem 3rem; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:1.15rem 1.25rem; margin:1rem 0; }
+  .card.example { background:#fffefb; }
+  .card.traps { background:#fff8f7; border-color:#f0d4d0; }
+  .card.traps h2 { color:#7f1d1d; }
+  h2 { margin:0 0 0.65rem; font-size:1.05rem; color:var(--navy); border-bottom:1px solid var(--line); padding-bottom:0.4rem; }
+  h3 { margin:0.85rem 0 0.35rem; font-size:0.95rem; color:#374151; }
+  p { margin:0.4rem 0; font-size:0.94rem; }
+  ul, ol { margin:0.4rem 0 0.4rem 1.15rem; padding:0; }
+  li { margin:0.3rem 0; font-size:0.94rem; }
+  .callout { background:var(--bg); border-radius:10px; padding:0.7rem 0.9rem; }
+  code { background:#f3f4f6; padding:0.1rem 0.35rem; border-radius:4px; font-size:0.88em; }
+  .uid { font-family: ui-monospace, monospace; font-size:0.85em; color:var(--navy); background:#eef2ff; padding:0.05rem 0.3rem; border-radius:4px; }
+  .math-block, .katex-display { overflow-x:auto; margin:0.55rem 0; }
+  .footer { margin-top:2rem; font-size:0.75rem; color:#9ca3af; text-align:center; }
+  @media print {
+    .topbar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MEDVANCE · 難関大講座</div>
+    <div class="meta">数学・難関大（医含む） · 2次関数 · 約32分</div>
+    <h1>ELI-M-05 · 通過領域・存在条件</h1>
+    <div class="goal"><strong>ゴール</strong> 「存在するa」を逆像・判別式で処理できる</div>
+  </header>
+  <main class="wrap">
+    <section class="card"><h2>概要</h2><ul>
+<li>講座: 難関大講座</li>
+<li>科目: 数学・難関大（医含む）</li>
+<li>章: 2次関数</li>
+<li>目安: <strong>32分</strong></li>
+<li>前提: <span class="uid">ADV-M1-07</span>, <span class="uid">ADV-M1-09</span></li>
+<li>次: <span class="uid">ELI-M-06</span></li>
+</ul></section>
+<section class="card"><h2>今日のゴール</h2><p>「存在するa」を逆像・判別式で処理できる</p></section>
+<section class="card"><h2>この型が測っている力</h2><p>通過領域・存在条件は難関・医学部記述で差がつく型。「存在するa」を逆像・判別式で処理できる</p>
+<h3>攻略の方針</h3>
+<p>「a を求める」のか「(x,y) の範囲」のかを一文で固定してから計算。</p></section>
+<section class="card"><h2>前提チェック</h2><ul>
+<li><code><span class="uid">ADV-M1-07</span></code> の到達チェックを満たしている</li>
+<li><code><span class="uid">ADV-M1-09</span></code> の到達チェックを満たしている</li>
+</ul></section>
+<section class="card"><h2>この回のポイント</h2><ul>
+<li>存在条件は逆に見る</li>
+<li>判別式・値域・逆像</li>
+<li>「あるa」と「すべてのa」を区別</li>
+</ul></section>
+<section class="card"><h2>定義・用語</h2><h3>通過領域・存在条件</h3>
+<p>曲線群が通過する点の集合や、「そのような a が存在するか」を判別式・値域で扱う問題。</p></section>
+<section class="card"><h2>核となる手順（答案でこの順）</h2><ol>
+<li>条件を f(x,a)=0 等の形に</li>
+<li>a について解くか D≧0 を書く</li>
+<li>x の動く範囲と合わせる</li>
+<li>境界の等号を検証</li>
+</ol></section>
+<section class="card example"><h2>例題A（標準・型の確認）</h2><p>直線 y=ax+1 が円 x²+y²=1 と共有点を持つ a の条件を求めよ。</p>
+<h3>解答A</h3>
+<ul>
+<li>代入: x²+(ax+1)²=1 → (1+a²)x²+2ax=0 → x{(1+a²)x+2a}=0。</li>
+<li>x=0 は常に解（点 (0,1)）。他の交点は問わなければ「常に共有点あり」。</li>
+<li>接線条件など別問なら D を別に立てる。</li>
+</ul></section>
+<section class="card example"><h2>例題B（受験・実戦）</h2><p>「すべての実数 x で f(x)≧0」と「ある x で f(x)=0」の違いは？</p>
+<h3>解答B</h3>
+<ul>
+<li>前者は全実数条件（a&gt;0 かつ D≦0 等）。後者は存在（D≧0 等）。必要十分の向きが逆になりやすい。</li>
+</ul></section>
+<section class="card example"><h2>演習（自力再現）</h2><p>存在条件を書くとき答案冒頭で宣言すべきこと。</p>
+<h3>解答</h3>
+<ul>
+<li>何が存在するか（変数）と、同値に変形する条件</li>
+</ul></section>
+<section class="card traps"><h2>落とし穴（減点パターン）</h2><ul>
+<li>必要と十分を混同</li>
+<li>境界を落とす</li>
+<li>逆像を描かず senseless に D だけ</li>
+</ul></section>
+<section class="card"><h2>到達チェック（完璧の条件）</h2><ul>
+<li>ゴールを何も見ずに言える</li>
+<li>例題A・Bを白紙で手順から再現できる</li>
+<li>落とし穴を「なぜダメか」まで説明できる</li>
+<li>確認クイズで合格点（4/5以上）</li>
+</ul></section>
+<section class="card"><h2>次へ</h2><p>次は <code><span class="uid">ELI-M-06</span></code>。本単元の到達チェックをすべて満たしてから進む。</p>
+<p>---</p>
+<p>© Medvance · 無断転載禁止</p></section>
+    <p class="footer">Medvance · ELI-M-05 · 教材PDF · 無断転載禁止</p>
+  </main>
+</body>
+</html>

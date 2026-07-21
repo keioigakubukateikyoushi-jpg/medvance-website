@@ -1,0 +1,5 @@
+ALIGNMENT LOCK for ME-M1-04
+Goal: 3公式を見極めて適用し、係数・符号ミスを防げる
+Prereq: ME-M1-03
+Rule: storyboard order is mandatory. No invented exam problems.
+Deep research sources are secondary; lesson+storyboard are primary.

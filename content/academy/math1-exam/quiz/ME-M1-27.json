@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-M1-27",
+  "title": "正弦定理",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "a/sinA=2R を使い辺・角・外接円半径を求められる"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "三角形の頂点を通る円の半径。a/sin A=2R。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "度とラジアン混在（高校は度）",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "度とラジアン混在（高校は度）"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "既知の辺角を特定"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "a/sin A = b/sin B = c/sin C = 2R"
+    }
+  ]
+}

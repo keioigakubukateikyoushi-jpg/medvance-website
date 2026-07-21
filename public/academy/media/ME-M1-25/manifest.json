@@ -1,0 +1,13 @@
+{
+  "unit_id": "ME-M1-25",
+  "brand": "Medvance",
+  "lesson_html": "lesson.html",
+  "lesson_pdf": "lesson.pdf",
+  "slides_html": null,
+  "slides_pdf": null,
+  "files": [
+    "lesson.html",
+    "lesson.pdf",
+    "manifest.json"
+  ]
+}

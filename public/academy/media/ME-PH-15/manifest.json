@@ -1,0 +1,13 @@
+{
+  "unit_id": "ME-PH-15",
+  "brand": "Medvance",
+  "lesson_html": "lesson.html",
+  "lesson_pdf": "lesson.pdf",
+  "slides_html": null,
+  "slides_pdf": null,
+  "files": [
+    "lesson.html",
+    "lesson.pdf",
+    "manifest.json"
+  ]
+}

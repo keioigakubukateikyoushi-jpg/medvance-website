@@ -1,0 +1,210 @@
+{
+  "subject": "共通テスト情報",
+  "track": "common-test",
+  "trackLabel": "共通テスト対策",
+  "brand": "Medvance",
+  "unit_count": 12,
+  "full_count": 12,
+  "outline_count": 0,
+  "design": "情報Iの4領域を受験で使える判断・手順に分割。データとアルゴリズムを重視。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "情報社会の問題解決",
+    "コミュニケーションと情報デザイン",
+    "コンピュータとプログラミング",
+    "情報通信ネットワークとデータの活用"
+  ],
+  "units": [
+    {
+      "id": "ME-IF-01",
+      "chapter": "情報社会の問題解決",
+      "title": "問題解決の手順と情報の信頼性",
+      "minutes": 18,
+      "goal": "問題の明確化→情報収集→整理→提案の型を使え、情報源を吟味できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-IF-01.md",
+      "storyboard": "storyboard/ME-IF-01.md",
+      "slides": "slides/ME-IF-01.md",
+      "quiz": "quiz/ME-IF-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-02",
+      "chapter": "情報社会の問題解決",
+      "title": "知的財産・個人情報・規範",
+      "minutes": 18,
+      "goal": "著作権・プライバシー・情報倫理の基本を事例で判定できる",
+      "prereq": [
+        "ME-IF-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-02.md",
+      "storyboard": "storyboard/ME-IF-02.md",
+      "slides": "slides/ME-IF-02.md",
+      "quiz": "quiz/ME-IF-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-03",
+      "chapter": "コミュニケーションと情報デザイン",
+      "title": "情報デザインとメディアの特性",
+      "minutes": 18,
+      "goal": "受け手・目的・媒体に応じて情報の見せ方を設計できる",
+      "prereq": [
+        "ME-IF-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-03.md",
+      "storyboard": "storyboard/ME-IF-03.md",
+      "slides": "slides/ME-IF-03.md",
+      "quiz": "quiz/ME-IF-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-04",
+      "chapter": "コミュニケーションと情報デザイン",
+      "title": "モデル化とシミュレーションの入口",
+      "minutes": 18,
+      "goal": "現実の問題をモデルに落とし、仮定の影響を説明できる",
+      "prereq": [
+        "ME-IF-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-04.md",
+      "storyboard": "storyboard/ME-IF-04.md",
+      "slides": "slides/ME-IF-04.md",
+      "quiz": "quiz/ME-IF-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-05",
+      "chapter": "コンピュータとプログラミング",
+      "title": "コンピュータの仕組みとデジタル表現",
+      "minutes": 18,
+      "goal": "2進法・ビット・サンプリングの基本を説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-IF-05.md",
+      "storyboard": "storyboard/ME-IF-05.md",
+      "slides": "slides/ME-IF-05.md",
+      "quiz": "quiz/ME-IF-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-06",
+      "chapter": "コンピュータとプログラミング",
+      "title": "アルゴリズムとフローチャート",
+      "minutes": 20,
+      "goal": "順次・分岐・反復で手順を設計し、流れ図にできる",
+      "prereq": [
+        "ME-IF-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-06.md",
+      "storyboard": "storyboard/ME-IF-06.md",
+      "slides": "slides/ME-IF-06.md",
+      "quiz": "quiz/ME-IF-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-07",
+      "chapter": "コンピュータとプログラミング",
+      "title": "プログラミングの基本（変数・配列・関数）",
+      "minutes": 20,
+      "goal": "変数・配列・関数の役割を説明し、簡単な処理を読める",
+      "prereq": [
+        "ME-IF-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-07.md",
+      "storyboard": "storyboard/ME-IF-07.md",
+      "slides": "slides/ME-IF-07.md",
+      "quiz": "quiz/ME-IF-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-08",
+      "chapter": "コンピュータとプログラミング",
+      "title": "整列・探索と計算量の感覚",
+      "minutes": 18,
+      "goal": "線形探索・二分探索・基本的な整列の考え方を説明できる",
+      "prereq": [
+        "ME-IF-07"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-08.md",
+      "storyboard": "storyboard/ME-IF-08.md",
+      "slides": "slides/ME-IF-08.md",
+      "quiz": "quiz/ME-IF-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-09",
+      "chapter": "情報通信ネットワークとデータの活用",
+      "title": "ネットワークの基本（IP・プロトコル）",
+      "minutes": 18,
+      "goal": "インターネットの階層的な考え方とプロトコルの役割を説明できる",
+      "prereq": [
+        "ME-IF-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-09.md",
+      "storyboard": "storyboard/ME-IF-09.md",
+      "slides": "slides/ME-IF-09.md",
+      "quiz": "quiz/ME-IF-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-10",
+      "chapter": "情報通信ネットワークとデータの活用",
+      "title": "セキュリティの基本",
+      "minutes": 18,
+      "goal": "脅威と対策（認証・暗号化・更新）を対応づけられる",
+      "prereq": [
+        "ME-IF-09",
+        "ME-IF-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-10.md",
+      "storyboard": "storyboard/ME-IF-10.md",
+      "slides": "slides/ME-IF-10.md",
+      "quiz": "quiz/ME-IF-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-11",
+      "chapter": "情報通信ネットワークとデータの活用",
+      "title": "データベースとデータの活用",
+      "minutes": 18,
+      "goal": "表形式データ・主キー・基本集計の意味を説明できる",
+      "prereq": [
+        "ME-IF-04",
+        "ME-IF-07"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-11.md",
+      "storyboard": "storyboard/ME-IF-11.md",
+      "slides": "slides/ME-IF-11.md",
+      "quiz": "quiz/ME-IF-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-IF-12",
+      "chapter": "情報通信ネットワークとデータの活用",
+      "title": "統計の基礎とデータの見極め",
+      "minutes": 20,
+      "goal": "代表値・相関と因果の違い・誤ったグラフを見抜ける",
+      "prereq": [
+        "ME-IF-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-IF-12.md",
+      "storyboard": "storyboard/ME-IF-12.md",
+      "slides": "slides/ME-IF-12.md",
+      "quiz": "quiz/ME-IF-12.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

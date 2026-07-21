@@ -1,0 +1,21 @@
+{
+  "unit_id": "ADV-M1-06",
+  "premium": true,
+  "title": "定義域が動く最大最小",
+  "minutes": 26,
+  "lesson_html": "lesson.html",
+  "slides_html": "slides.html",
+  "pdf": "lesson.pdf",
+  "video": "video.mp4",
+  "audio": null,
+  "brand": "Medvance",
+  "lesson_pdf": "lesson.pdf",
+  "slides_pdf": null,
+  "files": [
+    "lesson.html",
+    "lesson.pdf",
+    "manifest.json",
+    "slides.html",
+    "video.mp4"
+  ]
+}

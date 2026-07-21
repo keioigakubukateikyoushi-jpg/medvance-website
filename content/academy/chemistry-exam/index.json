@@ -1,0 +1,457 @@
+{
+  "subject": "高校化学（受験）",
+  "track": "exam",
+  "trackLabel": "基礎講座",
+  "brand": "Medvance",
+  "unit_count": 27,
+  "full_count": 27,
+  "outline_count": 0,
+  "design": "化学基礎＋化学の受験範囲。理論・無機・有機を抜けなく。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "物質の構成",
+    "化学量論",
+    "気体・溶液",
+    "反応と平衡",
+    "無機",
+    "有機",
+    "総合"
+  ],
+  "units": [
+    {
+      "id": "ME-CH-01",
+      "chapter": "物質の構成",
+      "title": "原子・分子・イオンと周期表",
+      "minutes": 16,
+      "goal": "原子番号・質量数・イオンを説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-CH-01.md",
+      "storyboard": "storyboard/ME-CH-01.md",
+      "slides": "slides/ME-CH-01.md",
+      "quiz": "quiz/ME-CH-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-02",
+      "chapter": "物質の構成",
+      "title": "化学式と化学反応式のつくり方",
+      "minutes": 16,
+      "goal": "係数で原子数を合わせられる",
+      "prereq": [
+        "ME-CH-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-02.md",
+      "storyboard": "storyboard/ME-CH-02.md",
+      "slides": "slides/ME-CH-02.md",
+      "quiz": "quiz/ME-CH-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-03",
+      "chapter": "化学量論",
+      "title": "モル・分子量・物質量",
+      "minutes": 18,
+      "goal": "n=m/M, n=N/NA を使える",
+      "prereq": [
+        "ME-CH-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-03.md",
+      "storyboard": "storyboard/ME-CH-03.md",
+      "slides": "slides/ME-CH-03.md",
+      "quiz": "quiz/ME-CH-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-04",
+      "chapter": "化学量論",
+      "title": "反応式と量的関係（限界反応）",
+      "minutes": 18,
+      "goal": "係数比で量を換算し限界反応を判定できる",
+      "prereq": [
+        "ME-CH-03",
+        "ME-CH-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-04.md",
+      "storyboard": "storyboard/ME-CH-04.md",
+      "slides": "slides/ME-CH-04.md",
+      "quiz": "quiz/ME-CH-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-05",
+      "chapter": "気体・溶液",
+      "title": "気体の体積と状態方程式",
+      "minutes": 16,
+      "goal": "標準状態と pV=nRT を使える",
+      "prereq": [
+        "ME-CH-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-05.md",
+      "storyboard": "storyboard/ME-CH-05.md",
+      "slides": "slides/ME-CH-05.md",
+      "quiz": "quiz/ME-CH-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-06",
+      "chapter": "気体・溶液",
+      "title": "濃度（mol/L・質量パーセント）",
+      "minutes": 16,
+      "goal": "mol/L と希釈計算ができる",
+      "prereq": [
+        "ME-CH-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-06.md",
+      "storyboard": "storyboard/ME-CH-06.md",
+      "slides": "slides/ME-CH-06.md",
+      "quiz": "quiz/ME-CH-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-07",
+      "chapter": "反応と平衡",
+      "title": "反応熱と熱化学方程式",
+      "minutes": 16,
+      "goal": "発熱・吸熱と係数の意味を読める",
+      "prereq": [
+        "ME-CH-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-07.md",
+      "storyboard": "storyboard/ME-CH-07.md",
+      "slides": "slides/ME-CH-07.md",
+      "quiz": "quiz/ME-CH-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-08",
+      "chapter": "反応と平衡",
+      "title": "化学平衡と平衡移動",
+      "minutes": 18,
+      "goal": "ルシャトリエの原理で平衡のずれを説明できる",
+      "prereq": [
+        "ME-CH-07"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-08.md",
+      "storyboard": "storyboard/ME-CH-08.md",
+      "slides": "slides/ME-CH-08.md",
+      "quiz": "quiz/ME-CH-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-09",
+      "chapter": "反応と平衡",
+      "title": "酸塩基と pH の基礎",
+      "minutes": 16,
+      "goal": "H+ と pH の関係を使える",
+      "prereq": [
+        "ME-CH-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-09.md",
+      "storyboard": "storyboard/ME-CH-09.md",
+      "slides": "slides/ME-CH-09.md",
+      "quiz": "quiz/ME-CH-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-10",
+      "chapter": "反応と平衡",
+      "title": "酸化還元と半反応",
+      "minutes": 18,
+      "goal": "酸化数の増減で酸化還元を判定できる",
+      "prereq": [
+        "ME-CH-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-10.md",
+      "storyboard": "storyboard/ME-CH-10.md",
+      "slides": "slides/ME-CH-10.md",
+      "quiz": "quiz/ME-CH-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-11",
+      "chapter": "無機",
+      "title": "典型元素の性質（Na, Cl, ハロゲン等）",
+      "minutes": 16,
+      "goal": "族の性質の傾向を説明できる",
+      "prereq": [
+        "ME-CH-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-11.md",
+      "storyboard": "storyboard/ME-CH-11.md",
+      "slides": "slides/ME-CH-11.md",
+      "quiz": "quiz/ME-CH-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-12",
+      "chapter": "無機",
+      "title": "遷移元素と錯イオンの入り口",
+      "minutes": 16,
+      "goal": "遷移元素の特徴を挙げられる",
+      "prereq": [
+        "ME-CH-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-12.md",
+      "storyboard": "storyboard/ME-CH-12.md",
+      "slides": "slides/ME-CH-12.md",
+      "quiz": "quiz/ME-CH-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-13",
+      "chapter": "有機",
+      "title": "炭化水素の分類と命名の入口",
+      "minutes": 16,
+      "goal": "アルカン・アルケン・アルキンを区別できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-CH-13.md",
+      "storyboard": "storyboard/ME-CH-13.md",
+      "slides": "slides/ME-CH-13.md",
+      "quiz": "quiz/ME-CH-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-14",
+      "chapter": "有機",
+      "title": "官能基とアルコール・カルボン酸",
+      "minutes": 18,
+      "goal": "官能基から性質を予測できる",
+      "prereq": [
+        "ME-CH-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-14.md",
+      "storyboard": "storyboard/ME-CH-14.md",
+      "slides": "slides/ME-CH-14.md",
+      "quiz": "quiz/ME-CH-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-15",
+      "chapter": "有機",
+      "title": "油脂・アミノ酸・糖の受験ポイント",
+      "minutes": 16,
+      "goal": "生体関連有機の型を説明できる",
+      "prereq": [
+        "ME-CH-14"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-15.md",
+      "storyboard": "storyboard/ME-CH-15.md",
+      "slides": "slides/ME-CH-15.md",
+      "quiz": "quiz/ME-CH-15.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-16",
+      "chapter": "物質の構成",
+      "title": "化学結合（イオン・共有・金属）",
+      "minutes": 18,
+      "goal": "結合の種類と性質を対応づけられる",
+      "prereq": [
+        "ME-CH-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-16.md",
+      "storyboard": "storyboard/ME-CH-16.md",
+      "slides": "slides/ME-CH-16.md",
+      "quiz": "quiz/ME-CH-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-17",
+      "chapter": "物質の構成",
+      "title": "分子の形と極性",
+      "minutes": 16,
+      "goal": "極性分子と分子間力を説明できる",
+      "prereq": [
+        "ME-CH-16"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-17.md",
+      "storyboard": "storyboard/ME-CH-17.md",
+      "slides": "slides/ME-CH-17.md",
+      "quiz": "quiz/ME-CH-17.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-18",
+      "chapter": "気体・溶液",
+      "title": "溶解度と希薄溶液の性質",
+      "minutes": 16,
+      "goal": "溶解度曲線と沸点上昇の言葉を使える",
+      "prereq": [
+        "ME-CH-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-18.md",
+      "storyboard": "storyboard/ME-CH-18.md",
+      "slides": "slides/ME-CH-18.md",
+      "quiz": "quiz/ME-CH-18.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-19",
+      "chapter": "反応と平衡",
+      "title": "反応速度と触媒",
+      "minutes": 16,
+      "goal": "濃度・温度・触媒の影響を説明できる",
+      "prereq": [
+        "ME-CH-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-19.md",
+      "storyboard": "storyboard/ME-CH-19.md",
+      "slides": "slides/ME-CH-19.md",
+      "quiz": "quiz/ME-CH-19.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-20",
+      "chapter": "反応と平衡",
+      "title": "溶解度積と沈殿",
+      "minutes": 16,
+      "goal": "Ksp の考え方で沈殿の有無を判定できる",
+      "prereq": [
+        "ME-CH-08",
+        "ME-CH-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-20.md",
+      "storyboard": "storyboard/ME-CH-20.md",
+      "slides": "slides/ME-CH-20.md",
+      "quiz": "quiz/ME-CH-20.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-21",
+      "chapter": "反応と平衡",
+      "title": "電気分解と電池",
+      "minutes": 18,
+      "goal": "陽極陰極での反応を書ける",
+      "prereq": [
+        "ME-CH-10"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-21.md",
+      "storyboard": "storyboard/ME-CH-21.md",
+      "slides": "slides/ME-CH-21.md",
+      "quiz": "quiz/ME-CH-21.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-22",
+      "chapter": "無機",
+      "title": "非金属元素（S,N,C の酸化物など）",
+      "minutes": 16,
+      "goal": "重要な酸化物と酸塩基を対応できる",
+      "prereq": [
+        "ME-CH-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-22.md",
+      "storyboard": "storyboard/ME-CH-22.md",
+      "slides": "slides/ME-CH-22.md",
+      "quiz": "quiz/ME-CH-22.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-23",
+      "chapter": "無機",
+      "title": "金属イオンの分離・沈殿の型",
+      "minutes": 16,
+      "goal": "沈殿試薬と色の対応を使える",
+      "prereq": [
+        "ME-CH-12",
+        "ME-CH-20"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-23.md",
+      "storyboard": "storyboard/ME-CH-23.md",
+      "slides": "slides/ME-CH-23.md",
+      "quiz": "quiz/ME-CH-23.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-24",
+      "chapter": "有機",
+      "title": "異性体（構造・立体の入口）",
+      "minutes": 16,
+      "goal": "構造異性体と立体異性体を区別できる",
+      "prereq": [
+        "ME-CH-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-24.md",
+      "storyboard": "storyboard/ME-CH-24.md",
+      "slides": "slides/ME-CH-24.md",
+      "quiz": "quiz/ME-CH-24.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-25",
+      "chapter": "有機",
+      "title": "芳香族化合物の入口",
+      "minutes": 16,
+      "goal": "ベンゼンの置換反応の型を説明できる",
+      "prereq": [
+        "ME-CH-13",
+        "ME-CH-14"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-25.md",
+      "storyboard": "storyboard/ME-CH-25.md",
+      "slides": "slides/ME-CH-25.md",
+      "quiz": "quiz/ME-CH-25.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-26",
+      "chapter": "有機",
+      "title": "高分子（合成・天然）の入口",
+      "minutes": 16,
+      "goal": "付加重合と縮合重合を区別できる",
+      "prereq": [
+        "ME-CH-14",
+        "ME-CH-15"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-26.md",
+      "storyboard": "storyboard/ME-CH-26.md",
+      "slides": "slides/ME-CH-26.md",
+      "quiz": "quiz/ME-CH-26.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-CH-27",
+      "chapter": "総合",
+      "title": "化学計算の検算と有効数字",
+      "minutes": 16,
+      "goal": "mol 計算を検算できる",
+      "prereq": [
+        "ME-CH-04",
+        "ME-CH-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-CH-27.md",
+      "storyboard": "storyboard/ME-CH-27.md",
+      "slides": "slides/ME-CH-27.md",
+      "quiz": "quiz/ME-CH-27.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

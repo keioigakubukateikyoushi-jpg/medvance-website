@@ -909,6 +909,118 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 動画・PDF教材（よく検索される悩みの直前） ───── */}
+      <section className="py-12 md:py-14 px-4" style={{ backgroundColor: "#0c1a33" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>
+                Medvance 教材
+              </p>
+              <h2
+                className="text-2xl md:text-3xl font-bold text-white leading-snug"
+                style={{ fontFamily: "var(--font-noto-serif)" }}
+              >
+                動画・PDF教材
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+                講座 → 教科 → 単元の順で選べます。授業動画・教材PDF・スライドを公開。無料お試しは数本のみです。
+              </p>
+            </div>
+            <Link
+              href="/academy"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold shrink-0 text-white"
+              style={{ border: "1px solid rgba(255,255,255,0.3)" }}
+            >
+              教科から選ぶ →
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              {
+                label: "高校数学I",
+                href: "/academy/subject/math1-exam",
+                desc: "整式・2次関数など · 無料あり",
+              },
+              {
+                label: "高校英語",
+                href: "/academy/subject/english-exam",
+                desc: "文型・構文の基礎 · 無料あり",
+              },
+              {
+                label: "高校物理",
+                href: "/academy/subject/physics-exam",
+                desc: "力学・波動・電磁気 · 無料あり",
+              },
+              {
+                label: "高校化学",
+                href: "/academy/subject/chemistry-exam",
+                desc: "理論・無機・有機 · 無料あり",
+              },
+              {
+                label: "高校生物",
+                href: "/academy/subject/biology-exam",
+                desc: "細胞・遺伝・体内環境 · 無料あり",
+              },
+              {
+                label: "医学部面接",
+                href: "/academy/subject/interview-exam",
+                desc: "志望動機・MMI · 無料あり",
+              },
+              {
+                label: "医学部小論文",
+                href: "/academy/subject/essay-exam",
+                desc: "構成・倫理 · 無料あり",
+              },
+              {
+                label: "共通テスト国語",
+                href: "/academy/subject/japanese-common-exam",
+                desc: "現代文・古文・漢文 · 無料あり",
+              },
+              {
+                label: "共通テスト社会",
+                href: "/academy/subject/social-common-exam",
+                desc: "地理・歴史・公共 · 無料あり",
+              },
+              {
+                label: "共通テスト情報",
+                href: "/academy/subject/info-common-exam",
+                desc: "情報I 4領域 · 無料あり",
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl p-4 transition-opacity hover:opacity-90"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              >
+                <p className="text-sm font-semibold text-white mb-1">{item.label}</p>
+                <p className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
+                  {item.desc}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-4 text-xs">
+            <Link href="/academy" className="underline underline-offset-2" style={{ color: "rgba(255,255,255,0.55)" }}>
+              全教科一覧
+            </Link>
+            <Link
+              href="/academy/unit/ME-M1-01?subject=math1-exam"
+              className="underline underline-offset-2"
+              style={{ color: "rgba(255,255,255,0.55)" }}
+            >
+              無料お試し（数学I）
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-14 px-4" style={{ borderBottom: "1px solid #e5e1d8" }}>
         <div className="max-w-5xl mx-auto">
           <FadeIn>

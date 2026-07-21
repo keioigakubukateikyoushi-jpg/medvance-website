@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-M1-05",
+  "title": "展開公式 (a±b)³ と (x+a)(x+b)",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "三次の展開とたして○かけて□の展開ができる"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "x² + (和)x + (積) の展開・因数分解対応。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "3a²b と 3ab² の係数を混同",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "3a²b と 3ab² の係数を混同"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "公式選択"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "(a+b)³= a³+3a²b+3ab²+b³"
+    }
+  ]
+}

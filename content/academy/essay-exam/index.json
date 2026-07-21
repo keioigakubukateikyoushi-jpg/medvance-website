@@ -1,0 +1,313 @@
+{
+  "subject": "医学部小論文",
+  "track": "exam",
+  "trackLabel": "基礎講座",
+  "brand": "Medvance",
+  "unit_count": 18,
+  "full_count": 18,
+  "outline_count": 0,
+  "design": "構成・論理・医療テーマ・資料読み取り・推敲を原子スキル分割。特定年の入試問題は創作しない。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "小論文の型",
+    "論理",
+    "テーマ",
+    "技法",
+    "実践"
+  ],
+  "units": [
+    {
+      "id": "ME-ES-01",
+      "chapter": "小論文の型",
+      "title": "医学部小論文で見られる力",
+      "minutes": 16,
+      "goal": "知識・論理・配慮の3点で評価されると説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-ES-01.md",
+      "storyboard": "storyboard/ME-ES-01.md",
+      "slides": "slides/ME-ES-01.md",
+      "quiz": "quiz/ME-ES-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-02",
+      "chapter": "小論文の型",
+      "title": "序論・本論・結論の設計",
+      "minutes": 16,
+      "goal": "制限字数に合わせて三段構成を組める",
+      "prereq": [
+        "ME-ES-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-02.md",
+      "storyboard": "storyboard/ME-ES-02.md",
+      "slides": "slides/ME-ES-02.md",
+      "quiz": "quiz/ME-ES-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-03",
+      "chapter": "小論文の型",
+      "title": "時間配分と下書き",
+      "minutes": 16,
+      "goal": "読解→構成→執筆→推敲の時間配分ができる",
+      "prereq": [
+        "ME-ES-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-03.md",
+      "storyboard": "storyboard/ME-ES-03.md",
+      "slides": "slides/ME-ES-03.md",
+      "quiz": "quiz/ME-ES-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-04",
+      "chapter": "論理",
+      "title": "主張・理由・具体例の接続",
+      "minutes": 16,
+      "goal": "一段落を「主張→理由→例」で書ける",
+      "prereq": [
+        "ME-ES-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-04.md",
+      "storyboard": "storyboard/ME-ES-04.md",
+      "slides": "slides/ME-ES-04.md",
+      "quiz": "quiz/ME-ES-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-05",
+      "chapter": "論理",
+      "title": "反対意見の扱い方",
+      "minutes": 16,
+      "goal": "反論を認めたうえで再反論できる",
+      "prereq": [
+        "ME-ES-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-05.md",
+      "storyboard": "storyboard/ME-ES-05.md",
+      "slides": "slides/ME-ES-05.md",
+      "quiz": "quiz/ME-ES-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-06",
+      "chapter": "テーマ",
+      "title": "医療倫理キーワード（必須語彙）",
+      "minutes": 18,
+      "goal": "IC・プライバシー・パターナリズム等を短く定義できる",
+      "prereq": [
+        "ME-ES-01",
+        "ME-IV-09"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-06.md",
+      "storyboard": "storyboard/ME-ES-06.md",
+      "slides": "slides/ME-ES-06.md",
+      "quiz": "quiz/ME-ES-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-07",
+      "chapter": "テーマ",
+      "title": "生命倫理（終末期・意思決定）",
+      "minutes": 18,
+      "goal": "終末期の論点を原則で整理できる",
+      "prereq": [
+        "ME-ES-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-07.md",
+      "storyboard": "storyboard/ME-ES-07.md",
+      "slides": "slides/ME-ES-07.md",
+      "quiz": "quiz/ME-ES-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-08",
+      "chapter": "テーマ",
+      "title": "少子高齢化と社会保障",
+      "minutes": 16,
+      "goal": "生産年齢人口と医療需要の関係を論じられる",
+      "prereq": [
+        "ME-ES-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-08.md",
+      "storyboard": "storyboard/ME-ES-08.md",
+      "slides": "slides/ME-ES-08.md",
+      "quiz": "quiz/ME-ES-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-09",
+      "chapter": "テーマ",
+      "title": "地域医療と医師偏在",
+      "minutes": 16,
+      "goal": "偏在の要因と対策の論点を整理できる",
+      "prereq": [
+        "ME-ES-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-09.md",
+      "storyboard": "storyboard/ME-ES-09.md",
+      "slides": "slides/ME-ES-09.md",
+      "quiz": "quiz/ME-ES-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-10",
+      "chapter": "テーマ",
+      "title": "感染症・公衆衛生の視点",
+      "minutes": 16,
+      "goal": "個人の自由と公衆衛生の緊張を論じられる",
+      "prereq": [
+        "ME-ES-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-10.md",
+      "storyboard": "storyboard/ME-ES-10.md",
+      "slides": "slides/ME-ES-10.md",
+      "quiz": "quiz/ME-ES-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-11",
+      "chapter": "テーマ",
+      "title": "医療におけるAI・情報技術",
+      "minutes": 16,
+      "goal": "利便性と責任・プライバシーを両論できる",
+      "prereq": [
+        "ME-ES-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-11.md",
+      "storyboard": "storyboard/ME-ES-11.md",
+      "slides": "slides/ME-ES-11.md",
+      "quiz": "quiz/ME-ES-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-12",
+      "chapter": "テーマ",
+      "title": "患者中心・コミュニケーション",
+      "minutes": 16,
+      "goal": "Shared Decision Making を短く説明できる",
+      "prereq": [
+        "ME-ES-06",
+        "ME-IV-10"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-12.md",
+      "storyboard": "storyboard/ME-ES-12.md",
+      "slides": "slides/ME-ES-12.md",
+      "quiz": "quiz/ME-ES-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-13",
+      "chapter": "技法",
+      "title": "資料・グラフ読み取り型",
+      "minutes": 16,
+      "goal": "図表から言えることと言えないことを分けられる",
+      "prereq": [
+        "ME-ES-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-13.md",
+      "storyboard": "storyboard/ME-ES-13.md",
+      "slides": "slides/ME-ES-13.md",
+      "quiz": "quiz/ME-ES-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-14",
+      "chapter": "技法",
+      "title": "課題文型（要約＋意見）",
+      "minutes": 16,
+      "goal": "筆者の主張を要約してから意見を述べられる",
+      "prereq": [
+        "ME-ES-04",
+        "ME-ES-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-14.md",
+      "storyboard": "storyboard/ME-ES-14.md",
+      "slides": "slides/ME-ES-14.md",
+      "quiz": "quiz/ME-ES-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-15",
+      "chapter": "技法",
+      "title": "推敲チェックリスト",
+      "minutes": 16,
+      "goal": "提出前に論理・表現・字数を点検できる",
+      "prereq": [
+        "ME-ES-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-15.md",
+      "storyboard": "storyboard/ME-ES-15.md",
+      "slides": "slides/ME-ES-15.md",
+      "quiz": "quiz/ME-ES-15.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-16",
+      "chapter": "実践",
+      "title": "テーマ別ストックの作り方",
+      "minutes": 16,
+      "goal": "頻出テーマごとに定義・両論・自分の接点を持てる",
+      "prereq": [
+        "ME-ES-06",
+        "ME-ES-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-16.md",
+      "storyboard": "storyboard/ME-ES-16.md",
+      "slides": "slides/ME-ES-16.md",
+      "quiz": "quiz/ME-ES-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-17",
+      "chapter": "実践",
+      "title": "過去問の使い方（創作禁止）",
+      "minutes": 16,
+      "goal": "公開情報の過去問で型を練習する手順を言える",
+      "prereq": [
+        "ME-ES-15",
+        "ME-ES-16"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-17.md",
+      "storyboard": "storyboard/ME-ES-17.md",
+      "slides": "slides/ME-ES-17.md",
+      "quiz": "quiz/ME-ES-17.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-ES-18",
+      "chapter": "実践",
+      "title": "面接と小論文の連動",
+      "minutes": 16,
+      "goal": "同じテーマを口述と文章で一貫して語れる",
+      "prereq": [
+        "ME-ES-16",
+        "ME-IV-16"
+      ],
+      "status": "full",
+      "file": "lessons/ME-ES-18.md",
+      "storyboard": "storyboard/ME-ES-18.md",
+      "slides": "slides/ME-ES-18.md",
+      "quiz": "quiz/ME-ES-18.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

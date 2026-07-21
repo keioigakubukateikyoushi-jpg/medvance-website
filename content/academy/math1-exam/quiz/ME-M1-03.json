@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-M1-03",
+  "title": "展開の基本：分配法則と整理",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "(a+b)(c+d) 型を分配法則で展開し降べきで整理できる"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "A(B+C)= AB+AC。多項式同士は一方の各項を他方全体にかける。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "符号の付け忘れ（負×負）",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "符号の付け忘れ（負×負）"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "形を見る（何項×何項か）"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "(a+b)(c+d)= ac+ad+bc+bd"
+    }
+  ]
+}

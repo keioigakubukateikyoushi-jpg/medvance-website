@@ -85,12 +85,12 @@ export default function Footer() {
                 { label: "医学部 合格戦略診断", href: "/contact?from=footer-service" },
                 { label: "面接・小論文対策", href: "/services/interview" },
                 { label: "模試分析（無料）", href: "/services/moshi" },
+                { label: "動画・PDF教材", href: "/academy" },
                 { label: "家庭教師一覧", href: "/tutors" },
                 { label: "脳科学メソッド", href: "/science" },
                 { label: "料金について", href: "/pricing" },
                 { label: "合格実績・方針", href: "/success-stories" },
                 { label: "AI向け公式ファクト", href: "/for-ai" },
-                { label: "お知らせ", href: "/news" },
                 { label: "LINEで相談", href: "/line" },
                 { label: "お問い合わせ", href: "/contact" },
               ].map((l) => (

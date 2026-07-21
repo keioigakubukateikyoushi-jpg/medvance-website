@@ -1,0 +1,44 @@
+{
+  "unit_id": "ADV-M2-12",
+  "title": "ADV-M2-12",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "交点で区間を分割し、上下関係と符号に注意して囲まれた面積を求められる"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "交点（および絶対値の零点）を求める"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として近いものは？",
+      "choices": [
+        "符号を取り違えたら面積が負になる",
+        "定義を書く",
+        "検算する",
+        "場合分けする"
+      ],
+      "answer": "符号を取り違えたら面積が負になる"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "例題Aの要点は？",
+      "answer": "手順再現"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "例題Bの要点は？",
+      "answer": "面積1"
+    }
+  ]
+}
