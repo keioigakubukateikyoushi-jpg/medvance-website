@@ -47,6 +47,7 @@ const megaMenus: { label: string; items: DropdownItem[] }[] = [
       { label: "医学部 合格戦略診断", href: "/contact?from=nav-service-diagnosis", desc: "国公立・私立の志望校戦略を診断" },
       { label: "面接・小論文対策", href: "/services/interview", desc: "医学部特有の対策" },
       { label: "模試分析（無料）", href: "/services/moshi", desc: "偏差値と科目別結果から学習計画を作成" },
+      { label: "動画・PDF教材", href: "/academy", desc: "授業動画・教材PDF・スライド。一部無料／それ以外は塾生見放題・質問し放題" },
       { label: "家庭教師一覧", href: "/tutors", desc: "講師を科目・エリアから探す" },
       { label: "講師募集", href: "/recruit", desc: "Medvance講師として応募する" },
       { label: "各教科の指導方法", href: "/subjects", desc: "英数理の進め方" },
@@ -131,8 +132,8 @@ export default function Header() {
           <Link href="/pricing" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
             料金
           </Link>
-          <Link href="/news" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
-            お知らせ
+          <Link href="/academy" className="text-white opacity-75 hover:opacity-100 transition-opacity whitespace-nowrap">
+            動画・PDF教材
           </Link>
           {/* Dropdowns — button + menu share the same hover zone */}
           {megaMenus.map((menu) => (
@@ -267,7 +268,7 @@ export default function Header() {
             { label: "ホーム", href: "/" },
             { label: "塾について", href: "/about" },
             { label: "料金", href: "/pricing" },
-            { label: "お知らせ", href: "/news" },
+            { label: "動画・PDF教材", href: "/academy" },
           ].map((link) => (
             <Link
               key={link.href}

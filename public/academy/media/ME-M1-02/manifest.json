@@ -1,0 +1,20 @@
+{
+  "unit_id": "ME-M1-02",
+  "brand": "Medvance",
+  "files": [
+    "audio.m4a",
+    "lesson.html",
+    "lesson.pdf",
+    "manifest.json",
+    "nlm_audio.m4a",
+    "nlm_video.mp4",
+    "slides.pdf",
+    "video.mp4"
+  ],
+  "audio": "audio.m4a",
+  "video": "video.mp4",
+  "slides_pdf": "slides.pdf",
+  "lesson_pdf": "lesson.pdf",
+  "lesson_html": "lesson.html",
+  "slides_html": null
+}

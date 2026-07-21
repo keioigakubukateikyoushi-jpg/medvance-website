@@ -1,0 +1,44 @@
+{
+  "unit_id": "ADV-M2-06",
+  "title": "ADV-M2-06",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "$a\\sin\\theta+b\\cos\\theta$ を $R\\sin(\\theta+\\alpha)$ の形に合成し、最大・最小を求められる"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "$R=\\sqrt{a^2+b^2}$ を計算する"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として近いものは？",
+      "choices": [
+        "$R$ を $a+b$ と誤る",
+        "定義を書く",
+        "検算する",
+        "場合分けする"
+      ],
+      "answer": "$R$ を $a+b$ と誤る"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "例題Aの要点は？",
+      "answer": "手順再現"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "例題Bの要点は？",
+      "answer": "最大5"
+    }
+  ]
+}

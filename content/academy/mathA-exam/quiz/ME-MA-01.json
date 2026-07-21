@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-MA-01",
+  "title": "集合の要素とベン図の読み方",
+  "pass_score": 4,
+  "quality": "perfect-v1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "今日のゴールを書け。",
+      "answer": "和集合・積集合・補集合を記号とベン図で扱える"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "中心用語・定義の要点は？",
+      "answer": "$A$ または $B$ に属する要素全体 $A$ と $B$ の両方に属する要素全体 全体集合 $U$ のうち $A$ に入らない要素全体 - $a\\in A$：$a$ は集合 $A$ の要素 - $A\\subseteq B$：集合 $A$"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "落とし穴として最も近いものは？",
+      "choices": [
+        "$\\in$ と $\\subseteq$ の混同（「$2\\subseteq A$」と書いてしまう）",
+        "定義を答案に書く",
+        "検算する",
+        "場合分けを宣言する"
+      ],
+      "answer": "$\\in$ と $\\subseteq$ の混同（「$2\\subseteq A$」と書いてしまう）"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "手順の第1手は？",
+      "answer": "全体集合 $U$ を明示する"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "この回のポイントを1つ書け。",
+      "answer": "$A\\cup B$（和）、$A\\cap B$（積）、$\\overline{A}$（補）"
+    }
+  ]
+}

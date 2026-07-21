@@ -2,13 +2,13 @@ import Link from "next/link";
 import { buildBreadcrumbSchema, buildFaqSchema, siteUrl } from "@/lib/seo";
 
 export const metadata = {
-  title: "医学部受験専門塾Medvanceの料金｜週1〜週5のプラン目安と始め方",
+  title: "医学部受験専門塾Medvanceの料金｜全プラン動画使い放題・質問し放題",
   description:
-    "Medvanceの料金ページです。授業料、コーチング料、入塾金、週1〜週5の月額プラン目安、無料相談で決まることまでまとめています。",
-
+    "Medvanceの料金。全プランで動画使い放題・質問し放題（追加料金なし）。授業料・コーチング料・入塾金、週1〜週5の月額プラン目安、無料相談で決まることまでまとめています。",
   alternates: {
     canonical: "/pricing",
-  },};
+  },
+};
 
 const basicPlans = [
   { freq: "月4回（8コマ）", weekly: "週1回", lessons: 4, lessonFee: 60000, coaching: 20000, total: 80000, discount: 0 },
@@ -26,8 +26,24 @@ const specializedPlans = [
   { freq: "月20回（40コマ）", weekly: "週5回", lessons: 20, lessonFee: 450000, coaching: 30000, total: 480000, discount: 30000 },
 ];
 
+/** 全プラン共通の目玉特典（料金ページで最優先表示） */
+const unlimitedBenefits = [
+  {
+    title: "動画使い放題",
+    short: "使い放題",
+    body: "授業動画・解説動画を契約中いつでも何回でも視聴。教科横断の単元教材も追加料金なし。",
+    detail: "動画・PDF・スライド",
+  },
+  {
+    title: "質問し放題",
+    short: "質問し放題",
+    body: "学習中の疑問をLINE・メールで随時質問。わからないまま放置しない仕組みです。",
+    detail: "学習の疑問を随時",
+  },
+];
+
 const included = [
-  "完全1対1の個別指導（対面・オンライン）",
+  "完全1対1の個別指導（対面・オンライン）※コーチング単体を除く",
   "オーダーメイド学習計画の作成・更新",
   "進捗管理・定期面談",
   "面接・小論文・願書対策",
@@ -80,6 +96,10 @@ const pricingFaqs = [
   {
     q: "無料相談ではどこまで決まりますか？",
     a: "志望校、現在地、使える時間、優先すべき科目、開始プランの目安まで整理できます。すぐ契約する必要はなく、相談内容をもとに持ち帰って検討していただけます。",
+  },
+  {
+    q: "動画・PDF教材はどのプランで使えますか？",
+    a: "Medvance塾生は動画・PDF教材の使い放題・質問し放題です（通常の授業＋コーチング、私立医学部特化、コーチング単体など）。一部ユニットは未契約でも無料公開しています。契約後にアクセスコードをお渡しします。",
   },
 ];
 
@@ -146,25 +166,82 @@ export default function PricingPage() {
           __html: JSON.stringify([offerCatalogSchema, breadcrumbSchema, pricingFaqSchema]),
         }}
       />
-      <div style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-noto-serif)" }}>
-            料金について
+      {/* Hero：料金より先に「使い放題・質問し放題」を大きく */}
+      <div style={{ backgroundColor: "#0c1a33" }} className="pt-16 pb-10 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: "#e8c56a" }}>
+            全プラン共通 · 追加料金なし
+          </p>
+          <h1 className="text-3xl md:text-5xl font-black text-white mb-3 leading-tight" style={{ fontFamily: "var(--font-noto-serif)" }}>
+            動画使い放題
+            <span className="mx-2 md:mx-3" style={{ color: "#e8c56a" }}>·</span>
+            質問し放題
           </h1>
-          <p className="text-base" style={{ color: "rgba(255,255,255,0.65)" }}>
-            授業だけでなく、学習計画と進捗管理まで含めて合格まで伴走します。
+          <p className="text-base md:text-lg font-semibold mb-2" style={{ color: "rgba(255,255,255,0.85)" }}>
+            Medvance塾生なら、月額に含まれます
+          </p>
+          <p className="text-sm mb-8 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.55)" }}>
+            授業プラン・特化プラン・コーチング単体、どれを選んでも同じ。料金ページの数字の前に、まずここを確認してください。
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto text-left">
+            {unlimitedBenefits.map((b) => (
+              <div
+                key={b.title}
+                className="rounded-2xl p-5 md:p-6"
+                style={{
+                  background: "linear-gradient(145deg, #c9922a 0%, #e3b763 55%, #f0d48a 100%)",
+                  boxShadow: "0 10px 28px rgba(201,146,42,0.35)",
+                }}
+              >
+                <p className="text-[10px] font-bold tracking-widest uppercase mb-1" style={{ color: "rgba(12,26,51,0.55)" }}>
+                  全プラン込み
+                </p>
+                <p className="text-2xl md:text-3xl font-black leading-none mb-2" style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}>
+                  {b.title}
+                </p>
+                <p className="text-xs md:text-sm font-medium leading-relaxed" style={{ color: "rgba(12,26,51,0.78)" }}>
+                  {b.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-xs">
+            <Link href="/academy" className="font-bold underline underline-offset-4" style={{ color: "#e8c56a" }}>
+              動画・PDF教材の内容を見る →
+            </Link>
           </p>
         </div>
       </div>
 
-      <div className="py-20 px-4" style={{ backgroundColor: "#f7f5f0" }}>
+      {/* 料金表の直前にもう一度、帯で断言 */}
+      <div
+        className="px-4 py-3 text-center border-y"
+        style={{
+          backgroundColor: "#fff8e8",
+          borderColor: "rgba(201,146,42,0.35)",
+        }}
+      >
+        <p className="text-sm md:text-base font-black tracking-wide" style={{ color: "#0c1a33" }}>
+          <span style={{ color: "#c9922a" }}>全プラン共通</span>
+          <span className="mx-2 opacity-30">|</span>
+          動画使い放題
+          <span className="mx-1.5" style={{ color: "#c9922a" }}>·</span>
+          質問し放題
+          <span className="mx-2 opacity-30">|</span>
+          <span className="font-bold" style={{ color: "#6b7280" }}>追加料金なし</span>
+        </p>
+      </div>
+
+      <div className="py-10 px-4" style={{ backgroundColor: "#f7f5f0" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d3d3d" }}>
-              塾選びでは、料金そのものより「その料金で何が含まれているか」を整理することが大切です。医学部受験は授業だけで完結せず、学習計画、進捗管理、面接・小論文、出願まで含めて全体設計が必要になります。
+          <div className="p-6 md:p-8 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+            <p className="text-sm leading-relaxed mb-3" style={{ color: "#3d3d3d" }}>
+              料金は「授業回数」だけを見るのではなく、<strong style={{ color: "#0c1a33" }}>動画使い放題・質問し放題が月額に含まれるか</strong>を先に確認するのがおすすめです。Medvanceは全プランで両方込みです。
             </p>
             <p className="text-sm leading-relaxed" style={{ color: "#3d3d3d" }}>
-              Medvanceでは、授業とコーチングを分けて考えず、合格まで必要なサポートを一つの流れとして提供しています。通常プランに加え、私立医学部合格に極限までフォーカスした完全特化プランもご用意しています。
+              そのうえで、学習計画・進捗管理・面接・小論文・出願まで含めた伴走が月額に入ります。通常プランに加え、私立医学部完全特化プランもご用意しています。
             </p>
           </div>
         </div>
@@ -210,6 +287,20 @@ export default function PricingPage() {
               </div>
               <span className="text-xs font-bold px-3 py-1.5 rounded-full w-fit" style={{ backgroundColor: "#fff0d6", color: "#c9922a", border: "1px solid #c9922a" }}>
                 入塾から3ヶ月間・2万円引き実施中
+              </span>
+            </div>
+            {/* プラン直下の特典バー（一目でわかる） */}
+            <div
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl px-4 py-3.5"
+              style={{ backgroundColor: "#0c1a33", border: "2px solid #c9922a" }}
+            >
+              <p className="text-sm md:text-base font-black text-white">
+                <span style={{ color: "#e8c56a" }}>このプランに含まれる</span>
+                <span className="mx-2 opacity-40">—</span>
+                動画使い放題 · 質問し放題
+              </p>
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded w-fit" style={{ backgroundColor: "#c9922a", color: "#0c1a33" }}>
+                追加料金なし
               </span>
             </div>
             <p className="text-sm" style={{ color: "#5f6b7a" }}>
@@ -296,6 +387,20 @@ export default function PricingPage() {
                 </p>
               </div>
             </div>
+
+            <div
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl px-4 py-3.5"
+              style={{ backgroundColor: "#0c1a33", border: "2px solid #c9922a" }}
+            >
+              <p className="text-sm md:text-base font-black text-white">
+                <span style={{ color: "#e8c56a" }}>このプランに含まれる</span>
+                <span className="mx-2 opacity-40">—</span>
+                動画使い放題 · 質問し放題
+              </p>
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded w-fit" style={{ backgroundColor: "#c9922a", color: "#0c1a33" }}>
+                追加料金なし
+              </span>
+            </div>
             
             <p className="text-sm" style={{ color: "#475569" }}>
               「個別指導の授業は必要ないが、プロによる学習管理や志望校選定の戦略だけを指導してほしい」「すでに他の予備校に通っているが、自学自習のペースメイクや出願戦略だけ医学部専門のプロに頼りたい」という方向けの単体プランです。
@@ -323,13 +428,14 @@ export default function PricingPage() {
                   <li>・LINEやメールでの質問・相談対応（順次速やかに回答）</li>
                   <li>・志望理由書の添削・願書作成サポート</li>
                   <li>・面接対策・小論文の書き方添削指導</li>
+                  <li>・動画・PDF教材の使い放題・質問し放題（Medvance塾生）</li>
                   <li>※こちらのプランには1対1個別授業は含まれません</li>
                 </ul>
               </div>
             </div>
 
             <p className="text-xs" style={{ color: "#94a3b8" }}>
-              ※通常月額プラン（STANDARD）および私立医学部完全特化プラン（PREMIUM SPECIAL）には、上記のコーチングプランと同等以上の内容がすべて標準で含まれています。授業と併せて受講される場合は、パッケージとしてよりお得な料金設計となっています。
+              ※通常月額プラン（STANDARD）および私立医学部完全特化プラン（PREMIUM SPECIAL）には、上記のコーチングプランと同等以上の内容がすべて標準で含まれています（動画・PDF教材の使い放題・質問し放題含む）。授業と併せて受講される場合は、パッケージとしてよりお得な料金設計となっています。
             </p>
           </div>
 
@@ -372,6 +478,20 @@ export default function PricingPage() {
                 }}
               >
                 <i className="fas fa-crown mr-1.5"></i> 独自テキスト ＋ 予想問題 ＋ 特化講師
+              </span>
+            </div>
+
+            <div
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl px-4 py-3.5"
+              style={{ backgroundColor: "#0c1a33", border: "2px solid #c9922a" }}
+            >
+              <p className="text-sm md:text-base font-black text-white">
+                <span style={{ color: "#e8c56a" }}>このプランに含まれる</span>
+                <span className="mx-2 opacity-40">—</span>
+                動画使い放題 · 質問し放題
+              </p>
+              <span className="text-[11px] font-bold px-2.5 py-1 rounded w-fit" style={{ backgroundColor: "#c9922a", color: "#0c1a33" }}>
+                追加料金なし
               </span>
             </div>
 
@@ -519,7 +639,41 @@ export default function PricingPage() {
       <div className="py-20 px-4 bg-white">
         <div className="max-w-3xl mx-auto space-y-8">
           <div className="p-8 rounded-2xl" style={{ border: "1px solid #e5e1d8" }}>
-            <h2 className="text-xl font-bold mb-6" style={{ color: "#0c1a33" }}>料金に含まれるもの</h2>
+            <h2 className="text-xl font-bold mb-2" style={{ color: "#0c1a33" }}>料金に含まれるもの</h2>
+            <p className="text-sm mb-6" style={{ color: "#6b7280" }}>
+              まず確認してほしい2つ。いずれも<strong style={{ color: "#0c1a33" }}>全プラン共通・追加料金なし</strong>です。
+            </p>
+
+            {/* 目玉2点をカードで大きく */}
+            <div className="grid sm:grid-cols-2 gap-3 mb-8">
+              {unlimitedBenefits.map((b) => (
+                <div
+                  key={b.title}
+                  className="rounded-2xl p-5 relative overflow-hidden"
+                  style={{
+                    backgroundColor: "#0c1a33",
+                    border: "2px solid #c9922a",
+                  }}
+                >
+                  <span
+                    className="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded"
+                    style={{ backgroundColor: "#c9922a", color: "#0c1a33" }}
+                  >
+                    全プラン
+                  </span>
+                  <p className="text-2xl font-black mb-2" style={{ color: "#e8c56a", fontFamily: "var(--font-noto-serif)" }}>
+                    {b.title}
+                  </p>
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
+                    {b.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#c9922a" }}>
+              その他の標準サポート
+            </p>
             <ul className="space-y-3">
               {included.map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm" style={{ color: "#3d3d3d" }}>
@@ -565,6 +719,9 @@ export default function PricingPage() {
           </div>
 
           <div className="p-8 rounded-2xl text-center" style={{ backgroundColor: "#0c1a33" }}>
+            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#e8c56a" }}>
+              全プラン · 動画使い放題 · 質問し放題
+            </p>
             <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-noto-serif)" }}>
               まずは無料相談から
             </h2>

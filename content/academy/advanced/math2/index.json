@@ -1,0 +1,253 @@
+{
+  "subject": "高校数学II・発展",
+  "track": "advanced",
+  "trackLabel": "発展講座",
+  "brand": "Medvance",
+  "unit_count": 14,
+  "full_count": 14,
+  "outline_count": 0,
+  "chapters": [
+    "式と証明・発展",
+    "複素数・発展",
+    "図形と方程式・発展",
+    "三角・発展",
+    "指数対数・発展",
+    "微分・発展",
+    "積分・発展",
+    "融合・発展"
+  ],
+  "design": "細分化・前提明示・12ブロック",
+  "units": [
+    {
+      "id": "ADV-M2-01",
+      "chapter": "式と証明・発展",
+      "title": "剰余の定理の応用",
+      "minutes": 24,
+      "goal": "複数条件から係数決定できる",
+      "prereq": [
+        "ME-M2-01",
+        "ME-M2-02"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-01.md",
+      "storyboard": "storyboard/ADV-M2-01.md",
+      "slides": "slides/ADV-M2-01.md",
+      "quiz": "quiz/ADV-M2-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-02",
+      "chapter": "式と証明・発展",
+      "title": "不等式証明の定石",
+      "minutes": 25,
+      "goal": "相加相乗・平方・差を選べる",
+      "prereq": [
+        "ME-M2-03"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-02.md",
+      "storyboard": "storyboard/ADV-M2-02.md",
+      "slides": "slides/ADV-M2-02.md",
+      "quiz": "quiz/ADV-M2-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-03",
+      "chapter": "複素数・発展",
+      "title": "解と係数と対称式",
+      "minutes": 24,
+      "goal": "対称式を基本対称式へ落とす",
+      "prereq": [
+        "ME-M2-06"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-03.md",
+      "storyboard": "storyboard/ADV-M2-03.md",
+      "slides": "slides/ADV-M2-03.md",
+      "quiz": "quiz/ADV-M2-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-04",
+      "chapter": "図形と方程式・発展",
+      "title": "円と直線の距離・接線",
+      "minutes": 24,
+      "goal": "d=r で接線を判定できる",
+      "prereq": [
+        "ME-M2-10"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-04.md",
+      "storyboard": "storyboard/ADV-M2-04.md",
+      "slides": "slides/ADV-M2-04.md",
+      "quiz": "quiz/ADV-M2-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-05",
+      "chapter": "図形と方程式・発展",
+      "title": "軌跡と領域の入口",
+      "minutes": 25,
+      "goal": "条件を方程式不等式に落とす",
+      "prereq": [
+        "ME-M2-08",
+        "ME-M2-09"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-05.md",
+      "storyboard": "storyboard/ADV-M2-05.md",
+      "slides": "slides/ADV-M2-05.md",
+      "quiz": "quiz/ADV-M2-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-06",
+      "chapter": "三角・発展",
+      "title": "加法定理と合成",
+      "minutes": 25,
+      "goal": "a sin+b cos を合成できる",
+      "prereq": [
+        "ME-M2-14"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-06.md",
+      "storyboard": "storyboard/ADV-M2-06.md",
+      "slides": "slides/ADV-M2-06.md",
+      "quiz": "quiz/ADV-M2-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-07",
+      "chapter": "三角・発展",
+      "title": "三角方程式の一般解",
+      "minutes": 24,
+      "goal": "一般角で解を書き切る",
+      "prereq": [
+        "ME-M2-12",
+        "ADV-M2-06"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-07.md",
+      "storyboard": "storyboard/ADV-M2-07.md",
+      "slides": "slides/ADV-M2-07.md",
+      "quiz": "quiz/ADV-M2-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-08",
+      "chapter": "指数対数・発展",
+      "title": "底の変換と方程式",
+      "minutes": 24,
+      "goal": "真数条件込みで解ける",
+      "prereq": [
+        "ME-M2-17"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-08.md",
+      "storyboard": "storyboard/ADV-M2-08.md",
+      "slides": "slides/ADV-M2-08.md",
+      "quiz": "quiz/ADV-M2-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-09",
+      "chapter": "指数対数・発展",
+      "title": "対数不等式の場合分け",
+      "minutes": 25,
+      "goal": "底の範囲で不等号を処理",
+      "prereq": [
+        "ADV-M2-08"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-09.md",
+      "storyboard": "storyboard/ADV-M2-09.md",
+      "slides": "slides/ADV-M2-09.md",
+      "quiz": "quiz/ADV-M2-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-10",
+      "chapter": "微分・発展",
+      "title": "接線条件と決定",
+      "minutes": 24,
+      "goal": "接線条件から係数決定",
+      "prereq": [
+        "ME-M2-19"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-10.md",
+      "storyboard": "storyboard/ADV-M2-10.md",
+      "slides": "slides/ADV-M2-10.md",
+      "quiz": "quiz/ADV-M2-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-11",
+      "chapter": "微分・発展",
+      "title": "増減と最大の文章題",
+      "minutes": 26,
+      "goal": "モデル関数の最大を求める",
+      "prereq": [
+        "ME-M2-20"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-11.md",
+      "storyboard": "storyboard/ADV-M2-11.md",
+      "slides": "slides/ADV-M2-11.md",
+      "quiz": "quiz/ADV-M2-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-12",
+      "chapter": "積分・発展",
+      "title": "面積の工夫",
+      "minutes": 26,
+      "goal": "分割と符号で面積を足す",
+      "prereq": [
+        "ME-M2-22"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-12.md",
+      "storyboard": "storyboard/ADV-M2-12.md",
+      "slides": "slides/ADV-M2-12.md",
+      "quiz": "quiz/ADV-M2-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-13",
+      "chapter": "融合・発展",
+      "title": "三角×最大",
+      "minutes": 26,
+      "goal": "合成後に最大を取る",
+      "prereq": [
+        "ADV-M2-06",
+        "ME-M2-20"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-13.md",
+      "storyboard": "storyboard/ADV-M2-13.md",
+      "slides": "slides/ADV-M2-13.md",
+      "quiz": "quiz/ADV-M2-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-M2-14",
+      "chapter": "融合・発展",
+      "title": "指数×増減",
+      "minutes": 26,
+      "goal": "指数型の増減を扱う",
+      "prereq": [
+        "ME-M2-15",
+        "ME-M2-20"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-M2-14.md",
+      "storyboard": "storyboard/ADV-M2-14.md",
+      "slides": "slides/ADV-M2-14.md",
+      "quiz": "quiz/ADV-M2-14.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+}

@@ -1,0 +1,629 @@
+{
+  "subject": "高校数学I",
+  "track": "exam",
+  "trackLabel": "大学受験（医学部・難関大）",
+  "brand": "Medvance",
+  "unit_count": 38,
+  "full_count": 38,
+  "outline_count": 0,
+  "design": "単元を原子スキル単位で細分化。15–25分講義。PDF=スライド=動画=音声は同一台本。飛び飛び禁止。",
+  "media_policy": {
+    "min_minutes": 15,
+    "target_minutes": "15-25",
+    "storyboard_blocks": 12,
+    "alignment": "storyboard is single source of truth"
+  },
+  "chapters": [
+    "数と式",
+    "2次関数",
+    "図形と計量",
+    "データの分析",
+    "受験接続"
+  ],
+  "units": [
+    {
+      "id": "ME-M1-01",
+      "chapter": "数と式",
+      "title": "整式・項・係数・次数の厳密定義",
+      "minutes": 16,
+      "goal": "整式と整式でないものを判別し、項・係数・次数を正確に答えられる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-M1-01.md",
+      "storyboard": "storyboard/ME-M1-01.md",
+      "slides": "slides/ME-M1-01.md",
+      "quiz": "quiz/ME-M1-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-02",
+      "chapter": "数と式",
+      "title": "多項式の加減と同類項",
+      "minutes": 16,
+      "goal": "同類項をまとめて多項式の加減をミスなく実行できる",
+      "prereq": [
+        "ME-M1-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-02.md",
+      "storyboard": "storyboard/ME-M1-02.md",
+      "slides": "slides/ME-M1-02.md",
+      "quiz": "quiz/ME-M1-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-03",
+      "chapter": "数と式",
+      "title": "展開の基本：分配法則と整理",
+      "minutes": 18,
+      "goal": "(a+b)(c+d) 型を分配法則で展開し降べきで整理できる",
+      "prereq": [
+        "ME-M1-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-03.md",
+      "storyboard": "storyboard/ME-M1-03.md",
+      "slides": "slides/ME-M1-03.md",
+      "quiz": "quiz/ME-M1-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-04",
+      "chapter": "数と式",
+      "title": "展開公式 (a±b)² と (a+b)(a-b)",
+      "minutes": 18,
+      "goal": "3公式を見極めて適用し、係数・符号ミスを防げる",
+      "prereq": [
+        "ME-M1-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-04.md",
+      "storyboard": "storyboard/ME-M1-04.md",
+      "slides": "slides/ME-M1-04.md",
+      "quiz": "quiz/ME-M1-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-05",
+      "chapter": "数と式",
+      "title": "展開公式 (a±b)³ と (x+a)(x+b)",
+      "minutes": 18,
+      "goal": "三次の展開とたして○かけて□の展開ができる",
+      "prereq": [
+        "ME-M1-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-05.md",
+      "storyboard": "storyboard/ME-M1-05.md",
+      "slides": "slides/ME-M1-05.md",
+      "quiz": "quiz/ME-M1-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-06",
+      "chapter": "数と式",
+      "title": "因数分解：共通因数と公式の逆",
+      "minutes": 18,
+      "goal": "共通因数と公式の逆で因数分解できる",
+      "prereq": [
+        "ME-M1-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-06.md",
+      "storyboard": "storyboard/ME-M1-06.md",
+      "slides": "slides/ME-M1-06.md",
+      "quiz": "quiz/ME-M1-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-07",
+      "chapter": "数と式",
+      "title": "因数分解：x²+(a+b)x+ab 型とたすきがけ",
+      "minutes": 20,
+      "goal": "たして○かけて□とたすきがけを使い分けられる",
+      "prereq": [
+        "ME-M1-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-07.md",
+      "storyboard": "storyboard/ME-M1-07.md",
+      "slides": "slides/ME-M1-07.md",
+      "quiz": "quiz/ME-M1-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-08",
+      "chapter": "数と式",
+      "title": "因数分解：置換・複二次式",
+      "minutes": 18,
+      "goal": "置換や複二次式を因数分解できる",
+      "prereq": [
+        "ME-M1-07"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-08.md",
+      "storyboard": "storyboard/ME-M1-08.md",
+      "slides": "slides/ME-M1-08.md",
+      "quiz": "quiz/ME-M1-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-09",
+      "chapter": "数と式",
+      "title": "実数の分類と絶対値の定義",
+      "minutes": 16,
+      "goal": "有理・無理の判別と |A| の定義に基づく場合分けができる",
+      "prereq": [
+        "ME-M1-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-09.md",
+      "storyboard": "storyboard/ME-M1-09.md",
+      "slides": "slides/ME-M1-09.md",
+      "quiz": "quiz/ME-M1-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-10",
+      "chapter": "数と式",
+      "title": "絶対値を含む方程式",
+      "minutes": 18,
+      "goal": "|f(x)|=k および |f|=|g| を場合分けで解ける",
+      "prereq": [
+        "ME-M1-09"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-10.md",
+      "storyboard": "storyboard/ME-M1-10.md",
+      "slides": "slides/ME-M1-10.md",
+      "quiz": "quiz/ME-M1-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-11",
+      "chapter": "数と式",
+      "title": "絶対値を含む不等式",
+      "minutes": 18,
+      "goal": "|f(x)|≦a, |f(x)|≧a を数直線と場合分けで処理できる",
+      "prereq": [
+        "ME-M1-10"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-11.md",
+      "storyboard": "storyboard/ME-M1-11.md",
+      "slides": "slides/ME-M1-11.md",
+      "quiz": "quiz/ME-M1-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-12",
+      "chapter": "数と式",
+      "title": "平方根の計算と有理化",
+      "minutes": 16,
+      "goal": "根号の加減乗除と分母の有理化ができる",
+      "prereq": [
+        "ME-M1-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-12.md",
+      "storyboard": "storyboard/ME-M1-12.md",
+      "slides": "slides/ME-M1-12.md",
+      "quiz": "quiz/ME-M1-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-13",
+      "chapter": "数と式",
+      "title": "二重根号と式の値",
+      "minutes": 18,
+      "goal": "二重根号の簡略化と代入計算ができる",
+      "prereq": [
+        "ME-M1-12"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-13.md",
+      "storyboard": "storyboard/ME-M1-13.md",
+      "slides": "slides/ME-M1-13.md",
+      "quiz": "quiz/ME-M1-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-14",
+      "chapter": "2次関数",
+      "title": "2次関数のグラフと平行移動",
+      "minutes": 18,
+      "goal": "y=a(x-p)²+q の頂点・軸・開閉を即座に言える",
+      "prereq": [
+        "ME-M1-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-14.md",
+      "storyboard": "storyboard/ME-M1-14.md",
+      "slides": "slides/ME-M1-14.md",
+      "quiz": "quiz/ME-M1-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-15",
+      "chapter": "2次関数",
+      "title": "平方完成の完全習得",
+      "minutes": 20,
+      "goal": "任意の y=ax²+bx+c を平方完成できる",
+      "prereq": [
+        "ME-M1-14"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-15.md",
+      "storyboard": "storyboard/ME-M1-15.md",
+      "slides": "slides/ME-M1-15.md",
+      "quiz": "quiz/ME-M1-15.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-16",
+      "chapter": "2次関数",
+      "title": "定義域なしの最大・最小",
+      "minutes": 16,
+      "goal": "頂点の y が最大/最小になる条件を説明できる",
+      "prereq": [
+        "ME-M1-15"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-16.md",
+      "storyboard": "storyboard/ME-M1-16.md",
+      "slides": "slides/ME-M1-16.md",
+      "quiz": "quiz/ME-M1-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-17",
+      "chapter": "2次関数",
+      "title": "定義域つき最大・最小（軸が区間内）",
+      "minutes": 18,
+      "goal": "軸が定義域内のとき端点と頂点を比較できる",
+      "prereq": [
+        "ME-M1-16"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-17.md",
+      "storyboard": "storyboard/ME-M1-17.md",
+      "slides": "slides/ME-M1-17.md",
+      "quiz": "quiz/ME-M1-17.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-18",
+      "chapter": "2次関数",
+      "title": "定義域つき最大・最小（軸が区間外）",
+      "minutes": 18,
+      "goal": "軸が外のとき端点だけで最大最小を決められる",
+      "prereq": [
+        "ME-M1-17"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-18.md",
+      "storyboard": "storyboard/ME-M1-18.md",
+      "slides": "slides/ME-M1-18.md",
+      "quiz": "quiz/ME-M1-18.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-19",
+      "chapter": "2次関数",
+      "title": "2次関数の決定（条件から式）",
+      "minutes": 18,
+      "goal": "頂点・通過点・軸などの条件から式を決定できる",
+      "prereq": [
+        "ME-M1-15"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-19.md",
+      "storyboard": "storyboard/ME-M1-19.md",
+      "slides": "slides/ME-M1-19.md",
+      "quiz": "quiz/ME-M1-19.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-20",
+      "chapter": "2次関数",
+      "title": "2次方程式の解と判別式",
+      "minutes": 18,
+      "goal": "D の符号と実数解の個数を対応づけられる",
+      "prereq": [
+        "ME-M1-15"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-20.md",
+      "storyboard": "storyboard/ME-M1-20.md",
+      "slides": "slides/ME-M1-20.md",
+      "quiz": "quiz/ME-M1-20.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-21",
+      "chapter": "2次関数",
+      "title": "2次不等式の解法（グラフ対応）",
+      "minutes": 20,
+      "goal": "放物線と x 軸の位置から不等式の解を書ける",
+      "prereq": [
+        "ME-M1-20"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-21.md",
+      "storyboard": "storyboard/ME-M1-21.md",
+      "slides": "slides/ME-M1-21.md",
+      "quiz": "quiz/ME-M1-21.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-22",
+      "chapter": "2次関数",
+      "title": "2次不等式：係数が文字の場合",
+      "minutes": 20,
+      "goal": "a の符号で場合分けして2次不等式を解ける",
+      "prereq": [
+        "ME-M1-21"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-22.md",
+      "storyboard": "storyboard/ME-M1-22.md",
+      "slides": "slides/ME-M1-22.md",
+      "quiz": "quiz/ME-M1-22.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-23",
+      "chapter": "2次関数",
+      "title": "グラフの上下関係と共通接線の入口",
+      "minutes": 18,
+      "goal": "f-g の符号と共通点の個数を扱える",
+      "prereq": [
+        "ME-M1-21"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-23.md",
+      "storyboard": "storyboard/ME-M1-23.md",
+      "slides": "slides/ME-M1-23.md",
+      "quiz": "quiz/ME-M1-23.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-24",
+      "chapter": "図形と計量",
+      "title": "鋭角の三角比の定義",
+      "minutes": 16,
+      "goal": "sin cos tan を直角三角形で定義どおり使える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-M1-24.md",
+      "storyboard": "storyboard/ME-M1-24.md",
+      "slides": "slides/ME-M1-24.md",
+      "quiz": "quiz/ME-M1-24.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-25",
+      "chapter": "図形と計量",
+      "title": "三角比の相互関係",
+      "minutes": 18,
+      "goal": "sin²+cos²=1 と tan=sin/cos を使いこなす",
+      "prereq": [
+        "ME-M1-24"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-25.md",
+      "storyboard": "storyboard/ME-M1-25.md",
+      "slides": "slides/ME-M1-25.md",
+      "quiz": "quiz/ME-M1-25.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-26",
+      "chapter": "図形と計量",
+      "title": "三角比の拡張（0°〜180°）",
+      "minutes": 18,
+      "goal": "鈍角での符号と値を正しく扱える",
+      "prereq": [
+        "ME-M1-25"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-26.md",
+      "storyboard": "storyboard/ME-M1-26.md",
+      "slides": "slides/ME-M1-26.md",
+      "quiz": "quiz/ME-M1-26.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-27",
+      "chapter": "図形と計量",
+      "title": "正弦定理",
+      "minutes": 18,
+      "goal": "a/sinA=2R を使い辺・角・外接円半径を求められる",
+      "prereq": [
+        "ME-M1-26"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-27.md",
+      "storyboard": "storyboard/ME-M1-27.md",
+      "slides": "slides/ME-M1-27.md",
+      "quiz": "quiz/ME-M1-27.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-28",
+      "chapter": "図形と計量",
+      "title": "余弦定理",
+      "minutes": 18,
+      "goal": "辺から角、角から辺を余弦定理で求められる",
+      "prereq": [
+        "ME-M1-27"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-28.md",
+      "storyboard": "storyboard/ME-M1-28.md",
+      "slides": "slides/ME-M1-28.md",
+      "quiz": "quiz/ME-M1-28.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-29",
+      "chapter": "図形と計量",
+      "title": "三角形の面積とヘロン",
+      "minutes": 16,
+      "goal": "(1/2)ab sinC とヘロンの公式を使い分けられる",
+      "prereq": [
+        "ME-M1-28"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-29.md",
+      "storyboard": "storyboard/ME-M1-29.md",
+      "slides": "slides/ME-M1-29.md",
+      "quiz": "quiz/ME-M1-29.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-30",
+      "chapter": "図形と計量",
+      "title": "空間図形への三角比応用（基礎）",
+      "minutes": 18,
+      "goal": "空間の線分・角度を平面に落として計算できる",
+      "prereq": [
+        "ME-M1-29"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-30.md",
+      "storyboard": "storyboard/ME-M1-30.md",
+      "slides": "slides/ME-M1-30.md",
+      "quiz": "quiz/ME-M1-30.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-31",
+      "chapter": "データの分析",
+      "title": "代表値：平均・中央値・最頻値",
+      "minutes": 15,
+      "goal": "代表値を計算し、どれを使うべきか判断できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-M1-31.md",
+      "storyboard": "storyboard/ME-M1-31.md",
+      "slides": "slides/ME-M1-31.md",
+      "quiz": "quiz/ME-M1-31.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-32",
+      "chapter": "データの分析",
+      "title": "四分位数・箱ひげ図",
+      "minutes": 16,
+      "goal": "四分位数と箱ひげ図を読み書きできる",
+      "prereq": [
+        "ME-M1-31"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-32.md",
+      "storyboard": "storyboard/ME-M1-32.md",
+      "slides": "slides/ME-M1-32.md",
+      "quiz": "quiz/ME-M1-32.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-33",
+      "chapter": "データの分析",
+      "title": "分散・標準偏差の定義計算",
+      "minutes": 18,
+      "goal": "分散と標準偏差を定義どおり計算できる",
+      "prereq": [
+        "ME-M1-31"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-33.md",
+      "storyboard": "storyboard/ME-M1-33.md",
+      "slides": "slides/ME-M1-33.md",
+      "quiz": "quiz/ME-M1-33.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-34",
+      "chapter": "データの分析",
+      "title": "散布図・相関係数の意味",
+      "minutes": 16,
+      "goal": "相関の強弱を読み、因果と混同しない",
+      "prereq": [
+        "ME-M1-33"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-34.md",
+      "storyboard": "storyboard/ME-M1-34.md",
+      "slides": "slides/ME-M1-34.md",
+      "quiz": "quiz/ME-M1-34.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-35",
+      "chapter": "データの分析",
+      "title": "仮説検定の考え方（共通テスト向け入口）",
+      "minutes": 18,
+      "goal": "帰無仮説・有意のイメージを説明できる",
+      "prereq": [
+        "ME-M1-34"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-35.md",
+      "storyboard": "storyboard/ME-M1-35.md",
+      "slides": "slides/ME-M1-35.md",
+      "quiz": "quiz/ME-M1-35.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-36",
+      "chapter": "受験接続",
+      "title": "数と式 総合：符号と整理の減点ゼロ",
+      "minutes": 20,
+      "goal": "数と式の典型減点パターンを自己点検できる",
+      "prereq": [
+        "ME-M1-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-36.md",
+      "storyboard": "storyboard/ME-M1-36.md",
+      "slides": "slides/ME-M1-36.md",
+      "quiz": "quiz/ME-M1-36.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-37",
+      "chapter": "受験接続",
+      "title": "2次関数 総合：定義域つき最大最小の判定フロー",
+      "minutes": 20,
+      "goal": "定義域問題を30秒で方針分岐できる",
+      "prereq": [
+        "ME-M1-18"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-37.md",
+      "storyboard": "storyboard/ME-M1-37.md",
+      "slides": "slides/ME-M1-37.md",
+      "quiz": "quiz/ME-M1-37.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-M1-38",
+      "chapter": "受験接続",
+      "title": "三角比 総合：正弦・余弦の使い分け",
+      "minutes": 18,
+      "goal": "辺角条件から定理を選べる",
+      "prereq": [
+        "ME-M1-29"
+      ],
+      "status": "full",
+      "file": "lessons/ME-M1-38.md",
+      "storyboard": "storyboard/ME-M1-38.md",
+      "slides": "slides/ME-M1-38.md",
+      "quiz": "quiz/ME-M1-38.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+}

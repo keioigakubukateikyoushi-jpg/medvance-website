@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   compress: true,
+  // pdfkit loads .afm font metrics from disk; must not be bundled
+  serverExternalPackages: ["pdfkit", "fontkit", "linebreak", "png-js"],
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000, // 1 year

@@ -1,0 +1,504 @@
+{
+  "subject": "高校英語（受験）",
+  "track": "exam",
+  "trackLabel": "基礎講座",
+  "brand": "Medvance",
+  "unit_count": 30,
+  "full_count": 30,
+  "outline_count": 0,
+  "design": "文法・語法・読解・英作文の受験技能を原子スキルでカバー。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "文型と基本構造",
+    "時制",
+    "助動詞",
+    "不定詞・動名詞",
+    "分詞",
+    "関係詞",
+    "比較",
+    "仮定法",
+    "読解技法",
+    "総合"
+  ],
+  "units": [
+    {
+      "id": "ME-EN-01",
+      "chapter": "文型と基本構造",
+      "title": "5文型の判別",
+      "minutes": 16,
+      "goal": "S V O C を見分け文型を判定できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-01.md",
+      "storyboard": "storyboard/ME-EN-01.md",
+      "slides": "slides/ME-EN-01.md",
+      "quiz": "quiz/ME-EN-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-02",
+      "chapter": "文型と基本構造",
+      "title": "自動詞他動詞と目的語",
+      "minutes": 16,
+      "goal": "自動詞他動詞を見誤りなく処理できる",
+      "prereq": [
+        "ME-EN-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-02.md",
+      "storyboard": "storyboard/ME-EN-02.md",
+      "slides": "slides/ME-EN-02.md",
+      "quiz": "quiz/ME-EN-02.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-03",
+      "chapter": "時制",
+      "title": "現在・過去・未来の基本",
+      "minutes": 16,
+      "goal": "基本時制を文脈に合わせて使える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-03.md",
+      "storyboard": "storyboard/ME-EN-03.md",
+      "slides": "slides/ME-EN-03.md",
+      "quiz": "quiz/ME-EN-03.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-04",
+      "chapter": "時制",
+      "title": "完了形の核心（経験・完了・継続）",
+      "minutes": 18,
+      "goal": "現在完了の3用法を区別できる",
+      "prereq": [
+        "ME-EN-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-04.md",
+      "storyboard": "storyboard/ME-EN-04.md",
+      "slides": "slides/ME-EN-04.md",
+      "quiz": "quiz/ME-EN-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-05",
+      "chapter": "時制",
+      "title": "完了進行と時制の一致",
+      "minutes": 18,
+      "goal": "完了進行と時制の一致を適用できる",
+      "prereq": [
+        "ME-EN-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-05.md",
+      "storyboard": "storyboard/ME-EN-05.md",
+      "slides": "slides/ME-EN-05.md",
+      "quiz": "quiz/ME-EN-05.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-06",
+      "chapter": "助動詞",
+      "title": "法助動詞の核（can may must will）",
+      "minutes": 16,
+      "goal": "基本助動詞の意味差を説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-06.md",
+      "storyboard": "storyboard/ME-EN-06.md",
+      "slides": "slides/ME-EN-06.md",
+      "quiz": "quiz/ME-EN-06.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-07",
+      "chapter": "助動詞",
+      "title": "推量と義務の助動詞",
+      "minutes": 18,
+      "goal": "must/have to/should 等を文脈で使い分けられる",
+      "prereq": [
+        "ME-EN-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-07.md",
+      "storyboard": "storyboard/ME-EN-07.md",
+      "slides": "slides/ME-EN-07.md",
+      "quiz": "quiz/ME-EN-07.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-08",
+      "chapter": "不定詞・動名詞",
+      "title": "不定詞の3用法",
+      "minutes": 18,
+      "goal": "名詞的・形容詞的・副詞的用法を判別できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-08.md",
+      "storyboard": "storyboard/ME-EN-08.md",
+      "slides": "slides/ME-EN-08.md",
+      "quiz": "quiz/ME-EN-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-09",
+      "chapter": "不定詞・動名詞",
+      "title": "動名詞と不定詞の選択",
+      "minutes": 18,
+      "goal": "動詞の後ろに来る形を正しく選べる",
+      "prereq": [
+        "ME-EN-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-09.md",
+      "storyboard": "storyboard/ME-EN-09.md",
+      "slides": "slides/ME-EN-09.md",
+      "quiz": "quiz/ME-EN-09.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-10",
+      "chapter": "分詞",
+      "title": "現在分詞・過去分詞の形容詞用法",
+      "minutes": 16,
+      "goal": "分詞の前後関係を読み取れる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-10.md",
+      "storyboard": "storyboard/ME-EN-10.md",
+      "slides": "slides/ME-EN-10.md",
+      "quiz": "quiz/ME-EN-10.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-11",
+      "chapter": "分詞",
+      "title": "分詞構文の基本",
+      "minutes": 18,
+      "goal": "分詞構文を接続詞つき文に直せる",
+      "prereq": [
+        "ME-EN-10"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-11.md",
+      "storyboard": "storyboard/ME-EN-11.md",
+      "slides": "slides/ME-EN-11.md",
+      "quiz": "quiz/ME-EN-11.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-12",
+      "chapter": "関係詞",
+      "title": "関係代名詞 who which that",
+      "minutes": 18,
+      "goal": "制限用法の関係代名詞を正しく使える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-12.md",
+      "storyboard": "storyboard/ME-EN-12.md",
+      "slides": "slides/ME-EN-12.md",
+      "quiz": "quiz/ME-EN-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-13",
+      "chapter": "関係詞",
+      "title": "関係副詞と非制限用法",
+      "minutes": 18,
+      "goal": "where when why とカンマ用法を扱える",
+      "prereq": [
+        "ME-EN-12"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-13.md",
+      "storyboard": "storyboard/ME-EN-13.md",
+      "slides": "slides/ME-EN-13.md",
+      "quiz": "quiz/ME-EN-13.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-14",
+      "chapter": "比較",
+      "title": "原級比較級最上級の基本",
+      "minutes": 16,
+      "goal": "比較の基本形と注意語を使える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-14.md",
+      "storyboard": "storyboard/ME-EN-14.md",
+      "slides": "slides/ME-EN-14.md",
+      "quiz": "quiz/ME-EN-14.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-15",
+      "chapter": "比較",
+      "title": "比較の応用（倍数・最上級言い換え）",
+      "minutes": 18,
+      "goal": "倍数表現と比較の言い換えができる",
+      "prereq": [
+        "ME-EN-14"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-15.md",
+      "storyboard": "storyboard/ME-EN-15.md",
+      "slides": "slides/ME-EN-15.md",
+      "quiz": "quiz/ME-EN-15.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-16",
+      "chapter": "仮定法",
+      "title": "仮定法過去・過去完了",
+      "minutes": 18,
+      "goal": "現実と反する仮定を時制で表せる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-16.md",
+      "storyboard": "storyboard/ME-EN-16.md",
+      "slides": "slides/ME-EN-16.md",
+      "quiz": "quiz/ME-EN-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-17",
+      "chapter": "仮定法",
+      "title": "I wish / as if / if の省略",
+      "minutes": 18,
+      "goal": "仮定法の定型を読み書きできる",
+      "prereq": [
+        "ME-EN-16"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-17.md",
+      "storyboard": "storyboard/ME-EN-17.md",
+      "slides": "slides/ME-EN-17.md",
+      "quiz": "quiz/ME-EN-17.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-18",
+      "chapter": "読解技法",
+      "title": "段落構造とディスコースマーカー",
+      "minutes": 16,
+      "goal": "接続語で論理展開を追える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-EN-18.md",
+      "storyboard": "storyboard/ME-EN-18.md",
+      "slides": "slides/ME-EN-18.md",
+      "quiz": "quiz/ME-EN-18.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-19",
+      "chapter": "読解技法",
+      "title": "Finding the main idea（要旨）",
+      "minutes": 16,
+      "goal": "要旨を選択肢から根拠つきで選べる",
+      "prereq": [
+        "ME-EN-18"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-19.md",
+      "storyboard": "storyboard/ME-EN-19.md",
+      "slides": "slides/ME-EN-19.md",
+      "quiz": "quiz/ME-EN-19.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-20",
+      "chapter": "読解技法",
+      "title": "Finding detail と言い換えトラップ",
+      "minutes": 18,
+      "goal": "細部問題の言い換えに騙されない",
+      "prereq": [
+        "ME-EN-19"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-20.md",
+      "storyboard": "storyboard/ME-EN-20.md",
+      "slides": "slides/ME-EN-20.md",
+      "quiz": "quiz/ME-EN-20.json",
+      "subject_label": "高校英語（受験）",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-21",
+      "chapter": "文型と基本構造",
+      "title": "受動態の核心",
+      "minutes": 16,
+      "goal": "能動⇔受動を正しく変換できる",
+      "prereq": [
+        "ME-EN-02"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-21.md",
+      "storyboard": "storyboard/ME-EN-21.md",
+      "slides": "slides/ME-EN-21.md",
+      "quiz": "quiz/ME-EN-21.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-22",
+      "chapter": "文型と基本構造",
+      "title": "間接疑問・強調・倒置の入口",
+      "minutes": 16,
+      "goal": "間接疑問の語順を正しく書ける",
+      "prereq": [
+        "ME-EN-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-22.md",
+      "storyboard": "storyboard/ME-EN-22.md",
+      "slides": "slides/ME-EN-22.md",
+      "quiz": "quiz/ME-EN-22.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-23",
+      "chapter": "時制",
+      "title": "未来表現 will / be going to / 現在形",
+      "minutes": 16,
+      "goal": "未来表現を場面で使い分けられる",
+      "prereq": [
+        "ME-EN-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-23.md",
+      "storyboard": "storyboard/ME-EN-23.md",
+      "slides": "slides/ME-EN-23.md",
+      "quiz": "quiz/ME-EN-23.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-24",
+      "chapter": "助動詞",
+      "title": "完了形との結合（should have 等）",
+      "minutes": 16,
+      "goal": "助動詞+完了の意味を取れる",
+      "prereq": [
+        "ME-EN-07",
+        "ME-EN-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-24.md",
+      "storyboard": "storyboard/ME-EN-24.md",
+      "slides": "slides/ME-EN-24.md",
+      "quiz": "quiz/ME-EN-24.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-25",
+      "chapter": "関係詞",
+      "title": "関係形容詞 what / 複合関係詞",
+      "minutes": 16,
+      "goal": "what の名詞節を読める",
+      "prereq": [
+        "ME-EN-12"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-25.md",
+      "storyboard": "storyboard/ME-EN-25.md",
+      "slides": "slides/ME-EN-25.md",
+      "quiz": "quiz/ME-EN-25.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-26",
+      "chapter": "比較",
+      "title": "比較構文の応用（no sooner 等）",
+      "minutes": 16,
+      "goal": "特殊比較構文の型を取れる",
+      "prereq": [
+        "ME-EN-15"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-26.md",
+      "storyboard": "storyboard/ME-EN-26.md",
+      "slides": "slides/ME-EN-26.md",
+      "quiz": "quiz/ME-EN-26.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-27",
+      "chapter": "仮定法",
+      "title": "仮定法の応用（if 除去・with）",
+      "minutes": 16,
+      "goal": "If のない仮定・with 構文を読める",
+      "prereq": [
+        "ME-EN-17"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-27.md",
+      "storyboard": "storyboard/ME-EN-27.md",
+      "slides": "slides/ME-EN-27.md",
+      "quiz": "quiz/ME-EN-27.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-28",
+      "chapter": "読解技法",
+      "title": "論理展開とパラフレーズ",
+      "minutes": 16,
+      "goal": "言い換えと接続関係で正答を取れる",
+      "prereq": [
+        "ME-EN-18",
+        "ME-EN-20"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-28.md",
+      "storyboard": "storyboard/ME-EN-28.md",
+      "slides": "slides/ME-EN-28.md",
+      "quiz": "quiz/ME-EN-28.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-29",
+      "chapter": "読解技法",
+      "title": "長文の時間配分と設問先読み",
+      "minutes": 16,
+      "goal": "設問先読みで読む型を固定できる",
+      "prereq": [
+        "ME-EN-19"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-29.md",
+      "storyboard": "storyboard/ME-EN-29.md",
+      "slides": "slides/ME-EN-29.md",
+      "quiz": "quiz/ME-EN-29.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-EN-30",
+      "chapter": "総合",
+      "title": "英作文の型（意見・理由・例）",
+      "minutes": 16,
+      "goal": "意見文の骨格を1段落で書ける",
+      "prereq": [
+        "ME-EN-18"
+      ],
+      "status": "full",
+      "file": "lessons/ME-EN-30.md",
+      "storyboard": "storyboard/ME-EN-30.md",
+      "slides": "slides/ME-EN-30.md",
+      "quiz": "quiz/ME-EN-30.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

@@ -1,0 +1,485 @@
+{
+  "subject": "高校生物（受験）",
+  "track": "exam",
+  "trackLabel": "基礎講座",
+  "brand": "Medvance",
+  "unit_count": 29,
+  "full_count": 29,
+  "outline_count": 0,
+  "design": "生物基礎＋生物の受験範囲。細胞〜進化・実験考察まで。",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "chapters": [
+    "細胞",
+    "代謝",
+    "遺伝",
+    "体内環境",
+    "動物の反応",
+    "植物・生態",
+    "総合"
+  ],
+  "units": [
+    {
+      "id": "ME-BI-01",
+      "chapter": "細胞",
+      "title": "細胞の構造と細胞小器官",
+      "minutes": 16,
+      "goal": "核・ミトコンドリア・リボソーム等の役割を言える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-BI-01.md",
+      "storyboard": "storyboard/ME-BI-01.md",
+      "slides": "slides/ME-BI-01.md",
+      "quiz": "quiz/ME-BI-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-02",
+      "chapter": "細胞",
+      "title": "細胞膜と輸送（拡散・浸透・能動輸送）",
+      "minutes": 18,
+      "goal": "受動輸送と能動輸送を区別できる",
+      "prereq": [
+        "ME-BI-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-02.md",
+      "storyboard": "storyboard/ME-BI-02.md",
+      "slides": "slides/ME-BI-02.md",
+      "quiz": "quiz/ME-BI-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-03",
+      "chapter": "代謝",
+      "title": "酵素の性質",
+      "minutes": 16,
+      "goal": "基質特異性・最適条件を説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-BI-03.md",
+      "storyboard": "storyboard/ME-BI-03.md",
+      "slides": "slides/ME-BI-03.md",
+      "quiz": "quiz/ME-BI-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-04",
+      "chapter": "代謝",
+      "title": "呼吸と光合成の全体像",
+      "minutes": 18,
+      "goal": "呼吸と光合成の関係を物質・エネルギーで説明できる",
+      "prereq": [
+        "ME-BI-03",
+        "ME-BI-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-04.md",
+      "storyboard": "storyboard/ME-BI-04.md",
+      "slides": "slides/ME-BI-04.md",
+      "quiz": "quiz/ME-BI-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-05",
+      "chapter": "遺伝",
+      "title": "DNA・遺伝子・染色体",
+      "minutes": 16,
+      "goal": "遺伝情報の階層を説明できる",
+      "prereq": [
+        "ME-BI-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-05.md",
+      "storyboard": "storyboard/ME-BI-05.md",
+      "slides": "slides/ME-BI-05.md",
+      "quiz": "quiz/ME-BI-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-06",
+      "chapter": "遺伝",
+      "title": "メンデルの法則と遺伝の基本計算",
+      "minutes": 18,
+      "goal": "分離の法則で表現型比を求められる",
+      "prereq": [
+        "ME-BI-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-06.md",
+      "storyboard": "storyboard/ME-BI-06.md",
+      "slides": "slides/ME-BI-06.md",
+      "quiz": "quiz/ME-BI-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-07",
+      "chapter": "遺伝",
+      "title": "血統図と伴性遺伝の入口",
+      "minutes": 16,
+      "goal": "血統図の記号と伴性の特徴を読める",
+      "prereq": [
+        "ME-BI-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-07.md",
+      "storyboard": "storyboard/ME-BI-07.md",
+      "slides": "slides/ME-BI-07.md",
+      "quiz": "quiz/ME-BI-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-08",
+      "chapter": "体内環境",
+      "title": "体液と恒常性",
+      "minutes": 16,
+      "goal": "内部環境の一定維持を説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-BI-08.md",
+      "storyboard": "storyboard/ME-BI-08.md",
+      "slides": "slides/ME-BI-08.md",
+      "quiz": "quiz/ME-BI-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-09",
+      "chapter": "体内環境",
+      "title": "免疫の基本（自然・獲得）",
+      "minutes": 18,
+      "goal": "自然免疫と獲得免疫を区別できる",
+      "prereq": [
+        "ME-BI-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-09.md",
+      "storyboard": "storyboard/ME-BI-09.md",
+      "slides": "slides/ME-BI-09.md",
+      "quiz": "quiz/ME-BI-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-10",
+      "chapter": "動物の反応",
+      "title": "神経と興奮伝導",
+      "minutes": 16,
+      "goal": "活動電位とシナプスの概要を言える",
+      "prereq": [
+        "ME-BI-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-10.md",
+      "storyboard": "storyboard/ME-BI-10.md",
+      "slides": "slides/ME-BI-10.md",
+      "quiz": "quiz/ME-BI-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-11",
+      "chapter": "動物の反応",
+      "title": "受容器と効果器・ホルモン",
+      "minutes": 16,
+      "goal": "神経系と内分泌の役割分担を説明できる",
+      "prereq": [
+        "ME-BI-10",
+        "ME-BI-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-11.md",
+      "storyboard": "storyboard/ME-BI-11.md",
+      "slides": "slides/ME-BI-11.md",
+      "quiz": "quiz/ME-BI-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-12",
+      "chapter": "植物・生態",
+      "title": "植物ホルモンと環境応答",
+      "minutes": 16,
+      "goal": "オーキシン等の働きを説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-BI-12.md",
+      "storyboard": "storyboard/ME-BI-12.md",
+      "slides": "slides/ME-BI-12.md",
+      "quiz": "quiz/ME-BI-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-13",
+      "chapter": "植物・生態",
+      "title": "生態系の物質循環とエネルギー",
+      "minutes": 18,
+      "goal": "食物網と炭素循環の骨格を説明できる",
+      "prereq": [
+        "ME-BI-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-13.md",
+      "storyboard": "storyboard/ME-BI-13.md",
+      "slides": "slides/ME-BI-13.md",
+      "quiz": "quiz/ME-BI-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-14",
+      "chapter": "植物・生態",
+      "title": "個体群と生物間関係",
+      "minutes": 16,
+      "goal": "競争・捕食・共生を区別できる",
+      "prereq": [
+        "ME-BI-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-14.md",
+      "storyboard": "storyboard/ME-BI-14.md",
+      "slides": "slides/ME-BI-14.md",
+      "quiz": "quiz/ME-BI-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-15",
+      "chapter": "遺伝",
+      "title": "タンパク質合成（転写・翻訳）の入口",
+      "minutes": 18,
+      "goal": "転写と翻訳の場所・役割を言える",
+      "prereq": [
+        "ME-BI-05",
+        "ME-BI-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-15.md",
+      "storyboard": "storyboard/ME-BI-15.md",
+      "slides": "slides/ME-BI-15.md",
+      "quiz": "quiz/ME-BI-15.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-16",
+      "chapter": "細胞",
+      "title": "細胞分裂（体細胞分裂）",
+      "minutes": 16,
+      "goal": "間期と分裂期の要点を説明できる",
+      "prereq": [
+        "ME-BI-01",
+        "ME-BI-05"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-16.md",
+      "storyboard": "storyboard/ME-BI-16.md",
+      "slides": "slides/ME-BI-16.md",
+      "quiz": "quiz/ME-BI-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-17",
+      "chapter": "細胞",
+      "title": "減数分裂と受精",
+      "minutes": 18,
+      "goal": "染色体数が半減する意味を説明できる",
+      "prereq": [
+        "ME-BI-16",
+        "ME-BI-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-17.md",
+      "storyboard": "storyboard/ME-BI-17.md",
+      "slides": "slides/ME-BI-17.md",
+      "quiz": "quiz/ME-BI-17.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-18",
+      "chapter": "代謝",
+      "title": "呼吸の詳細（解糖・クエン酸・電子伝達）",
+      "minutes": 18,
+      "goal": "呼吸の3過程の場所と大枠を言える",
+      "prereq": [
+        "ME-BI-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-18.md",
+      "storyboard": "storyboard/ME-BI-18.md",
+      "slides": "slides/ME-BI-18.md",
+      "quiz": "quiz/ME-BI-18.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-19",
+      "chapter": "代謝",
+      "title": "光合成の詳細（光化学系・カルビン）",
+      "minutes": 16,
+      "goal": "明反応と暗反応の役割を区別できる",
+      "prereq": [
+        "ME-BI-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-19.md",
+      "storyboard": "storyboard/ME-BI-19.md",
+      "slides": "slides/ME-BI-19.md",
+      "quiz": "quiz/ME-BI-19.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-20",
+      "chapter": "遺伝",
+      "title": "遺伝子発現の調節の入口",
+      "minutes": 16,
+      "goal": "すべてが常に発現しない理由を説明できる",
+      "prereq": [
+        "ME-BI-15"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-20.md",
+      "storyboard": "storyboard/ME-BI-20.md",
+      "slides": "slides/ME-BI-20.md",
+      "quiz": "quiz/ME-BI-20.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-21",
+      "chapter": "遺伝",
+      "title": "バイオテクノロジーの入口",
+      "minutes": 16,
+      "goal": "PCR・制限酵素・電気泳動の目的を言える",
+      "prereq": [
+        "ME-BI-05",
+        "ME-BI-15"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-21.md",
+      "storyboard": "storyboard/ME-BI-21.md",
+      "slides": "slides/ME-BI-21.md",
+      "quiz": "quiz/ME-BI-21.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-22",
+      "chapter": "体内環境",
+      "title": "血液循環と心臓",
+      "minutes": 16,
+      "goal": "体循環・肺循環を説明できる",
+      "prereq": [
+        "ME-BI-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-22.md",
+      "storyboard": "storyboard/ME-BI-22.md",
+      "slides": "slides/ME-BI-22.md",
+      "quiz": "quiz/ME-BI-22.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-23",
+      "chapter": "体内環境",
+      "title": "腎臓と浸透圧調節",
+      "minutes": 16,
+      "goal": "ろ過・再吸収の大枠を言える",
+      "prereq": [
+        "ME-BI-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-23.md",
+      "storyboard": "storyboard/ME-BI-23.md",
+      "slides": "slides/ME-BI-23.md",
+      "quiz": "quiz/ME-BI-23.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-24",
+      "chapter": "体内環境",
+      "title": "肝臓の機能",
+      "minutes": 16,
+      "goal": "解毒・血糖・胆汁の役割を言える",
+      "prereq": [
+        "ME-BI-08",
+        "ME-BI-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-24.md",
+      "storyboard": "storyboard/ME-BI-24.md",
+      "slides": "slides/ME-BI-24.md",
+      "quiz": "quiz/ME-BI-24.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-25",
+      "chapter": "動物の反応",
+      "title": "筋肉と収縮の入口",
+      "minutes": 16,
+      "goal": "骨格筋の収縮の大枠を説明できる",
+      "prereq": [
+        "ME-BI-10"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-25.md",
+      "storyboard": "storyboard/ME-BI-25.md",
+      "slides": "slides/ME-BI-25.md",
+      "quiz": "quiz/ME-BI-25.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-26",
+      "chapter": "動物の反応",
+      "title": "眼・耳の受容器",
+      "minutes": 16,
+      "goal": "光・音の受容の流れを説明できる",
+      "prereq": [
+        "ME-BI-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-26.md",
+      "storyboard": "storyboard/ME-BI-26.md",
+      "slides": "slides/ME-BI-26.md",
+      "quiz": "quiz/ME-BI-26.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-27",
+      "chapter": "植物・生態",
+      "title": "被子植物の生殖",
+      "minutes": 16,
+      "goal": "花粉・胚珠・被子の流れを説明できる",
+      "prereq": [
+        "ME-BI-12",
+        "ME-BI-17"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-27.md",
+      "storyboard": "storyboard/ME-BI-27.md",
+      "slides": "slides/ME-BI-27.md",
+      "quiz": "quiz/ME-BI-27.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-28",
+      "chapter": "植物・生態",
+      "title": "進化と系統の入口",
+      "minutes": 16,
+      "goal": "自然選択と系統樹の読み方を説明できる",
+      "prereq": [
+        "ME-BI-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-BI-28.md",
+      "storyboard": "storyboard/ME-BI-28.md",
+      "slides": "slides/ME-BI-28.md",
+      "quiz": "quiz/ME-BI-28.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-BI-29",
+      "chapter": "総合",
+      "title": "実験考察問題の読み方",
+      "minutes": 16,
+      "goal": "対照実験と考察の型を使える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-BI-29.md",
+      "storyboard": "storyboard/ME-BI-29.md",
+      "slides": "slides/ME-BI-29.md",
+      "quiz": "quiz/ME-BI-29.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1"
+}

@@ -1,0 +1,406 @@
+{
+  "brand": "Medvance",
+  "system": "4-track: foundation / common-test / advanced / elite",
+  "totals": {
+    "foundation_units": 260,
+    "common_test_units": 42,
+    "advanced_units": 54,
+    "elite_units": 32,
+    "all_units": 388,
+    "all_full": 388
+  },
+  "tracks": [
+    {
+      "id": "foundation",
+      "label": "基礎講座",
+      "description": "高校課程を受験精度で完全カバー。原子スキル単位。",
+      "subjects": [
+        {
+          "id": "english-exam",
+          "path": "curriculum/english-exam",
+          "subject": "高校英語（受験）",
+          "unit_count": 30,
+          "full_count": 30,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "math1-exam",
+          "path": "curriculum/math1-exam",
+          "subject": "高校数学I",
+          "unit_count": 38,
+          "full_count": 38,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "mathA-exam",
+          "path": "curriculum/mathA-exam",
+          "subject": "高校数学A",
+          "unit_count": 20,
+          "full_count": 20,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "math2-exam",
+          "path": "curriculum/math2-exam",
+          "subject": "高校数学II",
+          "unit_count": 22,
+          "full_count": 22,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "mathB-exam",
+          "path": "curriculum/mathB-exam",
+          "subject": "高校数学B（受験）",
+          "unit_count": 14,
+          "full_count": 14,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "math3-exam",
+          "path": "curriculum/math3-exam",
+          "subject": "高校数学III（受験）",
+          "unit_count": 18,
+          "full_count": 18,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "physics-exam",
+          "path": "curriculum/physics-exam",
+          "subject": "高校物理（受験）",
+          "unit_count": 26,
+          "full_count": 26,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "chemistry-exam",
+          "path": "curriculum/chemistry-exam",
+          "subject": "高校化学（受験）",
+          "unit_count": 27,
+          "full_count": 27,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "biology-exam",
+          "path": "curriculum/biology-exam",
+          "subject": "高校生物（受験）",
+          "unit_count": 29,
+          "full_count": 29,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "interview-exam",
+          "path": "curriculum/interview-exam",
+          "subject": "医学部面接",
+          "unit_count": 18,
+          "full_count": 18,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        },
+        {
+          "id": "essay-exam",
+          "path": "curriculum/essay-exam",
+          "subject": "医学部小論文",
+          "unit_count": 18,
+          "full_count": 18,
+          "outline_count": 0,
+          "trackLabel": "基礎講座"
+        }
+      ]
+    },
+    {
+      "id": "common-test",
+      "label": "共通テスト対策",
+      "description": "国語・社会・情報を分野別に。資料読解と型で一次の足場を固める。",
+      "subjects": [
+        {
+          "id": "japanese-common-exam",
+          "path": "curriculum/japanese-common-exam",
+          "subject": "共通テスト国語",
+          "unit_count": 15,
+          "full_count": 15,
+          "outline_count": 0,
+          "trackLabel": "共通テスト対策"
+        },
+        {
+          "id": "social-common-exam",
+          "path": "curriculum/social-common-exam",
+          "subject": "共通テスト社会",
+          "unit_count": 15,
+          "full_count": 15,
+          "outline_count": 0,
+          "trackLabel": "共通テスト対策"
+        },
+        {
+          "id": "info-common-exam",
+          "path": "curriculum/info-common-exam",
+          "subject": "共通テスト情報",
+          "unit_count": 12,
+          "full_count": 12,
+          "outline_count": 0,
+          "trackLabel": "共通テスト対策"
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "label": "発展講座",
+      "description": "基礎の上の問題型。応用・融合・証明。",
+      "subjects": [
+        {
+          "id": "advanced/english",
+          "path": "curriculum/advanced/english",
+          "subject": "高校英語・発展",
+          "unit_count": 10,
+          "full_count": 10,
+          "outline_count": 0,
+          "trackLabel": "発展講座"
+        },
+        {
+          "id": "advanced/math1",
+          "path": "curriculum/advanced/math1",
+          "subject": "高校数学I・発展",
+          "unit_count": 18,
+          "full_count": 18,
+          "outline_count": 0,
+          "trackLabel": "発展講座"
+        },
+        {
+          "id": "advanced/math2",
+          "path": "curriculum/advanced/math2",
+          "subject": "高校数学II・発展",
+          "unit_count": 14,
+          "full_count": 14,
+          "outline_count": 0,
+          "trackLabel": "発展講座"
+        },
+        {
+          "id": "advanced/mathA",
+          "path": "curriculum/advanced/mathA",
+          "subject": "高校数学A・発展",
+          "unit_count": 12,
+          "full_count": 12,
+          "outline_count": 0,
+          "trackLabel": "発展講座"
+        }
+      ]
+    },
+    {
+      "id": "elite",
+      "label": "難関大講座",
+      "description": "医学部・最難関の問題型を精読。Deep Research対応。",
+      "subjects": [
+        {
+          "id": "elite/english",
+          "path": "curriculum/elite/english",
+          "subject": "英語・難関大",
+          "unit_count": 8,
+          "full_count": 8,
+          "outline_count": 0,
+          "trackLabel": "難関大講座"
+        },
+        {
+          "id": "elite/math",
+          "path": "curriculum/elite/math",
+          "subject": "数学・難関大（医含む）",
+          "unit_count": 24,
+          "full_count": 24,
+          "outline_count": 0,
+          "trackLabel": "難関大講座"
+        }
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "id": "english-exam",
+      "path": "curriculum/english-exam",
+      "subject": "高校英語（受験）",
+      "unit_count": 30,
+      "full_count": 30,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "math1-exam",
+      "path": "curriculum/math1-exam",
+      "subject": "高校数学I",
+      "unit_count": 38,
+      "full_count": 38,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "mathA-exam",
+      "path": "curriculum/mathA-exam",
+      "subject": "高校数学A",
+      "unit_count": 20,
+      "full_count": 20,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "math2-exam",
+      "path": "curriculum/math2-exam",
+      "subject": "高校数学II",
+      "unit_count": 22,
+      "full_count": 22,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "mathB-exam",
+      "path": "curriculum/mathB-exam",
+      "subject": "高校数学B（受験）",
+      "unit_count": 14,
+      "full_count": 14,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "math3-exam",
+      "path": "curriculum/math3-exam",
+      "subject": "高校数学III（受験）",
+      "unit_count": 18,
+      "full_count": 18,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "physics-exam",
+      "path": "curriculum/physics-exam",
+      "subject": "高校物理（受験）",
+      "unit_count": 26,
+      "full_count": 26,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "chemistry-exam",
+      "path": "curriculum/chemistry-exam",
+      "subject": "高校化学（受験）",
+      "unit_count": 27,
+      "full_count": 27,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "biology-exam",
+      "path": "curriculum/biology-exam",
+      "subject": "高校生物（受験）",
+      "unit_count": 29,
+      "full_count": 29,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "interview-exam",
+      "path": "curriculum/interview-exam",
+      "subject": "医学部面接",
+      "unit_count": 18,
+      "full_count": 18,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "essay-exam",
+      "path": "curriculum/essay-exam",
+      "subject": "医学部小論文",
+      "unit_count": 18,
+      "full_count": 18,
+      "outline_count": 0,
+      "trackLabel": "基礎講座"
+    },
+    {
+      "id": "japanese-common-exam",
+      "path": "curriculum/japanese-common-exam",
+      "subject": "共通テスト国語",
+      "unit_count": 15,
+      "full_count": 15,
+      "outline_count": 0,
+      "trackLabel": "共通テスト対策"
+    },
+    {
+      "id": "social-common-exam",
+      "path": "curriculum/social-common-exam",
+      "subject": "共通テスト社会",
+      "unit_count": 15,
+      "full_count": 15,
+      "outline_count": 0,
+      "trackLabel": "共通テスト対策"
+    },
+    {
+      "id": "info-common-exam",
+      "path": "curriculum/info-common-exam",
+      "subject": "共通テスト情報",
+      "unit_count": 12,
+      "full_count": 12,
+      "outline_count": 0,
+      "trackLabel": "共通テスト対策"
+    },
+    {
+      "id": "advanced/english",
+      "path": "curriculum/advanced/english",
+      "subject": "高校英語・発展",
+      "unit_count": 10,
+      "full_count": 10,
+      "outline_count": 0,
+      "trackLabel": "発展講座"
+    },
+    {
+      "id": "advanced/math1",
+      "path": "curriculum/advanced/math1",
+      "subject": "高校数学I・発展",
+      "unit_count": 18,
+      "full_count": 18,
+      "outline_count": 0,
+      "trackLabel": "発展講座"
+    },
+    {
+      "id": "advanced/math2",
+      "path": "curriculum/advanced/math2",
+      "subject": "高校数学II・発展",
+      "unit_count": 14,
+      "full_count": 14,
+      "outline_count": 0,
+      "trackLabel": "発展講座"
+    },
+    {
+      "id": "advanced/mathA",
+      "path": "curriculum/advanced/mathA",
+      "subject": "高校数学A・発展",
+      "unit_count": 12,
+      "full_count": 12,
+      "outline_count": 0,
+      "trackLabel": "発展講座"
+    },
+    {
+      "id": "elite/english",
+      "path": "curriculum/elite/english",
+      "subject": "英語・難関大",
+      "unit_count": 8,
+      "full_count": 8,
+      "outline_count": 0,
+      "trackLabel": "難関大講座"
+    },
+    {
+      "id": "elite/math",
+      "path": "curriculum/elite/math",
+      "subject": "数学・難関大（医含む）",
+      "unit_count": 24,
+      "full_count": 24,
+      "outline_count": 0,
+      "trackLabel": "難関大講座"
+    }
+  ],
+  "promise": "全単元を perfect-v1（到達チェック付き）で整備。基礎・共通テスト・発展・難関を指定順で完了すれば受験に必要な範囲を抜けなくマスターできる設計。",
+  "quality": "perfect-v1"
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ADV-M1-06 定義域が動く最大最小 | Medvance</title>
+
+<link rel="stylesheet" href="../../vendor/katex/katex.min.css"/>
+<script src="../../vendor/katex/katex.min.js"></script>
+<script src="../../vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+  (function () {
+    function run() {
+      if (typeof renderMathInElement !== "function") return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+          ],
+          throwOnError: false,
+          strict: "ignore",
+          trust: false
+        });
+      } catch (e) { console.warn("katex", e); }
+      document.documentElement.setAttribute("data-katex-done", "1");
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+</script>
+<style>
+  :root { --navy:#0c1a33; --gold:#c9922a; --bg:#f7f5f0; --ink:#1f2937; --muted:#6b7280; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", sans-serif; color:var(--ink); background:#fff; line-height:1.75; }
+  .formula-body { font-size:0.98rem; padding:0.45rem 0.2rem; }
+  .formula-body .katex { font-size:1.05em; }
+  .topbar { background:var(--navy); color:#fff; padding:1.75rem 1.25rem 1.5rem; }
+  .topbar .brand { color:var(--gold); font-size:0.75rem; letter-spacing:0.12em; font-weight:700; }
+  .topbar h1 { margin:0.4rem 0 0.35rem; font-size:1.45rem; font-weight:800; line-height:1.35; }
+  .topbar .meta { font-size:0.85rem; opacity:0.75; }
+  .goal { background:rgba(201,146,42,0.15); border-left:3px solid var(--gold); padding:0.65rem 0.9rem; margin-top:0.9rem; border-radius:0 8px 8px 0; font-size:0.95rem; }
+  .wrap { max-width:720px; margin:0 auto; padding:1.25rem 1.1rem 3rem; }
+  .card { background:#fff; border:1px solid #e5e1d8; border-radius:14px; padding:1.15rem 1.2rem; margin:1rem 0; }
+  h2 { margin:0 0 0.6rem; font-size:1.05rem; color:var(--navy); border-bottom:1px solid #e5e1d8; padding-bottom:0.35rem; }
+  h3 { margin:0.8rem 0 0.35rem; font-size:0.95rem; color:#374151; }
+  .problem { background:var(--bg); border-radius:10px; padding:0.85rem 1rem; margin:0.5rem 0; }
+  .steps { margin:0.4rem 0 0.4rem 1.1rem; }
+  .steps li { margin:0.35rem 0; }
+  .answer { margin-top:0.75rem; padding:0.7rem 0.9rem; background:#eef8f0; border-radius:10px; color:#14532d; font-size:0.92rem; }
+  .math-block { overflow-x:auto; margin:0.65rem 0; padding:0.55rem 0.4rem; background:#f8fafc; border-radius:8px; text-align:center; }
+  .formula-row { margin:0.55rem 0; }
+  .flab { display:block; font-size:0.8rem; color:var(--muted); margin-bottom:0.2rem; }
+  .traps { color:#7f1d1d; }
+  .proc-list { list-style:none; padding:0; margin:0; }
+  .proc-list li { display:flex; gap:0.6rem; margin:0.45rem 0; align-items:flex-start; }
+  .proc-list .num { flex-shrink:0; width:1.4rem; height:1.4rem; border-radius:999px; background:var(--navy); color:#fff; font-size:0.75rem; font-weight:700; display:inline-flex; align-items:center; justify-content:center; margin-top:0.15rem; }
+  .footer { margin-top:2rem; font-size:0.75rem; color:#9ca3af; text-align:center; }
+  @media print {
+    .topbar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card { break-inside: avoid; }
+    body { background:#fff; }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MEDVANCE · 発展講座</div>
+    <div class="meta">高校数学I・発展 · 2次関数・発展 · 約26分</div>
+    <h1>ADV-M1-06 · 定義域が動く最大最小</h1>
+    <div class="goal"><strong>ゴール</strong> 定義域 $[t,\,t+\ell]$ が動くとき、軸との位置関係で最大・最小を場合分けできる</div>
+  </header>
+  <main class="wrap">
+    <section class="card">
+      <h2>受験での位置づけ</h2>
+      <p>軸と区間の相対位置がパラメータで動く型は、医学部・難関の2次関数で頻出。分類を機械にできるかが得点差になる。</p>
+    </section>
+    <section class="card">
+      <h2>この回のポイント</h2>
+      <ul><li>まず平方完成して軸 $x=p$ を固定する</li>
+<li>区間が軸の左／含む／右で場合分けする</li>
+<li>下に凸なら最小は頂点か端点、最大は必ず端点</li></ul>
+    </section>
+    <section class="card">
+      <h2>定義 · 動く定義域</h2>
+      <p>パラメータ $t$ に対し定義域が $[t,t+\ell]$（$\ell&gt;0$ は長さ）と動くとき、最大値 $M(t)$・最小値 $m(t)$ を $t$ の式として求める問題。</p>
+    </section>
+    <section class="card">
+      <h2>公式ボックス</h2>
+      <div class="formula-row"><span class="flab">$a&gt;0$</span><div class="formula-body">$y=a(x-p)^2+q$ は下に凸</div></div>
+<div class="formula-row"><div class="formula-body">軸を含む ⇔ $t\le p\le t+\ell$</div></div>
+<div class="formula-row"><div class="formula-body">最大は端点、最小は頂点または端点</div></div>
+    </section>
+    <section class="card">
+      <h2>核となる手順</h2>
+      <ol class="proc-list"><li><span class="num">1</span> $y=a(x-p)^2+q$ に平方完成（$a&gt;0$ を典型とする）</li>
+<li><span class="num">2</span> 軸 $x=p$ が区間に入る条件 $t\le p\le t+\ell$ ⇔ $p-\ell\le t\le p$</li>
+<li><span class="num">3</span> 場合1：区間が軸より左（$t+\ell&lt;p$）→ 区間内で単調減少（$a&gt;0$）</li>
+<li><span class="num">4</span> 場合2：軸を含む → 最小は頂点、最大は両端の大きい方</li>
+<li><span class="num">5</span> 場合3：区間が軸より右（$t&gt;p$）→ 区間内で単調増加</li>
+<li><span class="num">6</span> 境界 $t=p-\ell,\,t=p$ で式がつながることを確認</li></ol>
+    </section>
+    
+      <section class="card">
+        <h2>例題A（標準）</h2>
+        <div class="problem"><p>$y=x^2-2x$ を $t\le x\le t+1$ で考える。最小値を $t$ で場合分けせよ。</p></div>
+        <h3>解答の流れ</h3>
+        <ol class="steps"><li>$y=(x-1)^2-1$。軸 $x=1$、$a&gt;0$</li>
+<li>軸を含む条件：$t\le 1\le t+1$ ⇔ $0\le t\le 1$</li>
+<li>$t+1&lt;1$ ⇔ $t&lt;0$：区間は軸の左。減少なので最小は右端 $x=t+1$：$m=(t+1-1)^2-1=t^2-1$</li>
+<li>$0\le t\le 1$：最小は頂点 $-1$</li>
+<li>$t&gt;1$：区間は軸の右。増加なので最小は左端 $x=t$：$m=(t-1)^2-1$</li></ol>
+        <div class="answer"><strong>答え</strong> $t&lt;0$ で $t^2-1$；$0\le t\le 1$ で $-1$；$t&gt;1$ で $(t-1)^2-1$。</div>
+      </section>
+
+      <section class="card">
+        <h2>例題B（受験）</h2>
+        <div class="problem"><p>同じ設定で最大値 $M(t)$ を場合分けせよ。</p></div>
+        <h3>解答の流れ</h3>
+        <ol class="steps"><li>下に凸なので最大は常に端点比較</li>
+<li>軸を含むとき：$M=\max\{f(t),f(t+1)\}$</li>
+<li>軸より左（減少）：最大は左端 $f(t)$</li>
+<li>軸より右（増加）：最大は右端 $f(t+1)$</li></ol>
+        <div class="answer"><strong>答え</strong> 最大は端点の大きい方。軸の左右では単調性から一端に決まる。</div>
+      </section>
+
+      <section class="card">
+        <h2>演習</h2>
+        <div class="problem"><p>$y=(x-2)^2+1$（$0\le x\le 3$）の最大・最小を求めよ（定義域固定の確認）。</p></div>
+        <h3>解答の流れ</h3>
+        <ol class="steps"><li>軸 $x=2$ は $[0,3]$ 内。最小は頂点 $1$（$x=2$）</li>
+<li>端点 $f(0)=5$、$f(3)=2$。最大 $5$（$x=0$）</li></ol>
+        <div class="answer"><strong>答え</strong> 最小 $1$（$x=2$）、最大 $5$（$x=0$）。</div>
+      </section>
+    <section class="card traps">
+      <h2>落とし穴（減点パターン）</h2>
+      <ul><li>下に凸なのに頂点を最大と答える</li>
+<li>軸を含む条件を $t\le p$ だけにして長さ $\ell$ を忘れる</li>
+<li>境界で場合を二重に数え、式が不連続に見える書き方をする</li></ul>
+    </section>
+    <p class="footer">Medvance · ADV-M1-06 · 本文・スライド・PDF・動画は同一台本 · 無断転載禁止</p>
+  </main>
+</body>
+</html>

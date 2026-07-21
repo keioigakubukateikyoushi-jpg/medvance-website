@@ -1,0 +1,332 @@
+{
+  "subject": "高校数学A",
+  "track": "exam",
+  "trackLabel": "大学受験（医学部・難関大）",
+  "brand": "Medvance",
+  "unit_count": 20,
+  "full_count": 20,
+  "outline_count": 0,
+  "design": "数Iと同じ細分化・15分以上・同一台本12ブロック",
+  "chapters": [
+    "場合の数",
+    "確率",
+    "整数",
+    "図形の性質"
+  ],
+  "units": [
+    {
+      "id": "ME-MA-01",
+      "chapter": "場合の数",
+      "title": "集合の要素とベン図の読み方",
+      "minutes": 16,
+      "goal": "和集合・積集合・補集合を記号とベン図で扱える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-MA-01.md",
+      "storyboard": "storyboard/ME-MA-01.md",
+      "slides": "slides/ME-MA-01.md",
+      "quiz": "quiz/ME-MA-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-02",
+      "chapter": "場合の数",
+      "title": "包除原理（2集合・3集合）",
+      "minutes": 18,
+      "goal": "包除原理で要素数を求められる",
+      "prereq": [
+        "ME-MA-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-02.md",
+      "storyboard": "storyboard/ME-MA-02.md",
+      "slides": "slides/ME-MA-02.md",
+      "quiz": "quiz/ME-MA-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-03",
+      "chapter": "場合の数",
+      "title": "樹形図と場合分けの原則",
+      "minutes": 16,
+      "goal": "漏れ・ダブりなく場合を数えられる",
+      "prereq": [
+        "ME-MA-01"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-03.md",
+      "storyboard": "storyboard/ME-MA-03.md",
+      "slides": "slides/ME-MA-03.md",
+      "quiz": "quiz/ME-MA-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-04",
+      "chapter": "場合の数",
+      "title": "順列 P の定義と計算",
+      "minutes": 18,
+      "goal": "nPr を定義どおり計算し文章題に落とせる",
+      "prereq": [
+        "ME-MA-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-04.md",
+      "storyboard": "storyboard/ME-MA-04.md",
+      "slides": "slides/ME-MA-04.md",
+      "quiz": "quiz/ME-MA-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-05",
+      "chapter": "場合の数",
+      "title": "円順列・重複順列",
+      "minutes": 18,
+      "goal": "円順列と重複順列を使い分けられる",
+      "prereq": [
+        "ME-MA-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-05.md",
+      "storyboard": "storyboard/ME-MA-05.md",
+      "slides": "slides/ME-MA-05.md",
+      "quiz": "quiz/ME-MA-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-06",
+      "chapter": "場合の数",
+      "title": "組合せ C と同じものを含む順列",
+      "minutes": 18,
+      "goal": "nCr と同一物を含む順列を処理できる",
+      "prereq": [
+        "ME-MA-04"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-06.md",
+      "storyboard": "storyboard/ME-MA-06.md",
+      "slides": "slides/ME-MA-06.md",
+      "quiz": "quiz/ME-MA-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-07",
+      "chapter": "場合の数",
+      "title": "組分け・条件付き場合の数",
+      "minutes": 20,
+      "goal": "条件付きの数え上げを段階に分解できる",
+      "prereq": [
+        "ME-MA-06"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-07.md",
+      "storyboard": "storyboard/ME-MA-07.md",
+      "slides": "slides/ME-MA-07.md",
+      "quiz": "quiz/ME-MA-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-08",
+      "chapter": "確率",
+      "title": "確率の定義と同様に確からしい",
+      "minutes": 16,
+      "goal": "根元事象を列挙して確率を求められる",
+      "prereq": [
+        "ME-MA-03"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-08.md",
+      "storyboard": "storyboard/ME-MA-08.md",
+      "slides": "slides/ME-MA-08.md",
+      "quiz": "quiz/ME-MA-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-09",
+      "chapter": "確率",
+      "title": "余事象・排反・和の確率",
+      "minutes": 18,
+      "goal": "余事象と排反を使って確率を求められる",
+      "prereq": [
+        "ME-MA-08"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-09.md",
+      "storyboard": "storyboard/ME-MA-09.md",
+      "slides": "slides/ME-MA-09.md",
+      "quiz": "quiz/ME-MA-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-10",
+      "chapter": "確率",
+      "title": "独立試行と反復試行",
+      "minutes": 18,
+      "goal": "独立な試行の積の確率を使える",
+      "prereq": [
+        "ME-MA-09"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-10.md",
+      "storyboard": "storyboard/ME-MA-10.md",
+      "slides": "slides/ME-MA-10.md",
+      "quiz": "quiz/ME-MA-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-11",
+      "chapter": "確率",
+      "title": "条件付き確率と乗法定理",
+      "minutes": 20,
+      "goal": "条件付き確率を定義どおり扱える",
+      "prereq": [
+        "ME-MA-10"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-11.md",
+      "storyboard": "storyboard/ME-MA-11.md",
+      "slides": "slides/ME-MA-11.md",
+      "quiz": "quiz/ME-MA-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-12",
+      "chapter": "確率",
+      "title": "ベイズの定理の入口",
+      "minutes": 18,
+      "goal": "原因の確率をベイズ型で求められる",
+      "prereq": [
+        "ME-MA-11"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-12.md",
+      "storyboard": "storyboard/ME-MA-12.md",
+      "slides": "slides/ME-MA-12.md",
+      "quiz": "quiz/ME-MA-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-13",
+      "chapter": "整数",
+      "title": "約数・倍数・素数",
+      "minutes": 16,
+      "goal": "約数個数・素因数分解の基本を使える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-MA-13.md",
+      "storyboard": "storyboard/ME-MA-13.md",
+      "slides": "slides/ME-MA-13.md",
+      "quiz": "quiz/ME-MA-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-14",
+      "chapter": "整数",
+      "title": "ユークリッド互除法と最大公約数",
+      "minutes": 18,
+      "goal": "互除法で gcd を求め一次不定方程式の入口に立つ",
+      "prereq": [
+        "ME-MA-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-14.md",
+      "storyboard": "storyboard/ME-MA-14.md",
+      "slides": "slides/ME-MA-14.md",
+      "quiz": "quiz/ME-MA-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-15",
+      "chapter": "整数",
+      "title": "剰余と合同式の考え方",
+      "minutes": 18,
+      "goal": "mod の基本計算と余りで分類できる",
+      "prereq": [
+        "ME-MA-14"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-15.md",
+      "storyboard": "storyboard/ME-MA-15.md",
+      "slides": "slides/ME-MA-15.md",
+      "quiz": "quiz/ME-MA-15.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-16",
+      "chapter": "整数",
+      "title": "n進法",
+      "minutes": 16,
+      "goal": "n進⇔10進の変換ができる",
+      "prereq": [
+        "ME-MA-13"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-16.md",
+      "storyboard": "storyboard/ME-MA-16.md",
+      "slides": "slides/ME-MA-16.md",
+      "quiz": "quiz/ME-MA-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-17",
+      "chapter": "図形の性質",
+      "title": "三角形の重心・内心・外心",
+      "minutes": 18,
+      "goal": "主要心の定義と基本性質を説明できる",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-MA-17.md",
+      "storyboard": "storyboard/ME-MA-17.md",
+      "slides": "slides/ME-MA-17.md",
+      "quiz": "quiz/ME-MA-17.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-18",
+      "chapter": "図形の性質",
+      "title": "チェバ・メネラウスの入口",
+      "minutes": 20,
+      "goal": "比の条件を定理に載せられる",
+      "prereq": [
+        "ME-MA-17"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-18.md",
+      "storyboard": "storyboard/ME-MA-18.md",
+      "slides": "slides/ME-MA-18.md",
+      "quiz": "quiz/ME-MA-18.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-19",
+      "chapter": "図形の性質",
+      "title": "円周角と中心角",
+      "minutes": 16,
+      "goal": "円周角の定理を証明レベルで使える",
+      "prereq": [],
+      "status": "full",
+      "file": "lessons/ME-MA-19.md",
+      "storyboard": "storyboard/ME-MA-19.md",
+      "slides": "slides/ME-MA-19.md",
+      "quiz": "quiz/ME-MA-19.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ME-MA-20",
+      "chapter": "図形の性質",
+      "title": "接弦定理・方べき",
+      "minutes": 18,
+      "goal": "接弦と方べきを識別して使える",
+      "prereq": [
+        "ME-MA-19"
+      ],
+      "status": "full",
+      "file": "lessons/ME-MA-20.md",
+      "storyboard": "storyboard/ME-MA-20.md",
+      "slides": "slides/ME-MA-20.md",
+      "quiz": "quiz/ME-MA-20.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ME-M1-24 鋭角の三角比の定義 | Medvance</title>
+
+<link rel="stylesheet" href="../../vendor/katex/katex.min.css"/>
+<script src="../../vendor/katex/katex.min.js"></script>
+<script src="../../vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+(function(){
+  function run(){
+    if (typeof renderMathInElement !== "function") return;
+    try {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left:"$$", right:"$$", display:true},
+          {left:"$", right:"$", display:false}
+        ],
+        throwOnError: false,
+        strict: "ignore"
+      });
+    } catch(e) {}
+    document.documentElement.setAttribute("data-katex-done","1");
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
+})();
+</script>
+<style>
+  :root { --navy:#0c1a33; --gold:#c9922a; --bg:#f7f5f0; --ink:#1f2937; --muted:#6b7280; --line:#e5e1d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", sans-serif; color:var(--ink); background:#fff; line-height:1.8; }
+  .topbar { background:var(--navy); color:#fff; padding:1.75rem 1.25rem 1.5rem; }
+  .topbar .brand { color:var(--gold); font-size:0.72rem; letter-spacing:0.14em; font-weight:700; }
+  .topbar h1 { margin:0.45rem 0 0.35rem; font-size:1.4rem; font-weight:800; line-height:1.4; }
+  .topbar .meta { font-size:0.85rem; opacity:0.75; }
+  .goal { background:rgba(201,146,42,0.16); border-left:3px solid var(--gold); padding:0.7rem 0.95rem; margin-top:0.95rem; border-radius:0 10px 10px 0; font-size:0.95rem; }
+  .wrap { max-width:720px; margin:0 auto; padding:1.25rem 1.1rem 3rem; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:1.15rem 1.25rem; margin:1rem 0; }
+  .card.example { background:#fffefb; }
+  .card.traps { background:#fff8f7; border-color:#f0d4d0; }
+  .card.traps h2 { color:#7f1d1d; }
+  h2 { margin:0 0 0.65rem; font-size:1.05rem; color:var(--navy); border-bottom:1px solid var(--line); padding-bottom:0.4rem; }
+  h3 { margin:0.85rem 0 0.35rem; font-size:0.95rem; color:#374151; }
+  p { margin:0.4rem 0; font-size:0.94rem; }
+  ul, ol { margin:0.4rem 0 0.4rem 1.15rem; padding:0; }
+  li { margin:0.3rem 0; font-size:0.94rem; }
+  .callout { background:var(--bg); border-radius:10px; padding:0.7rem 0.9rem; }
+  code { background:#f3f4f6; padding:0.1rem 0.35rem; border-radius:4px; font-size:0.88em; }
+  .uid { font-family: ui-monospace, monospace; font-size:0.85em; color:var(--navy); background:#eef2ff; padding:0.05rem 0.3rem; border-radius:4px; }
+  .math-block, .katex-display { overflow-x:auto; margin:0.55rem 0; }
+  .footer { margin-top:2rem; font-size:0.75rem; color:#9ca3af; text-align:center; }
+  @media print {
+    .topbar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MEDVANCE · 大学受験（医学部・難関大）</div>
+    <div class="meta">高校数学I · 図形と計量 · 約16分</div>
+    <h1>ME-M1-24 · 鋭角の三角比の定義</h1>
+    <div class="goal"><strong>ゴール</strong> sin cos tan を直角三角形で定義どおり使える</div>
+  </header>
+  <main class="wrap">
+    <section class="card"><h2>概要</h2><ul>
+<li>講座: 大学受験（医学部・難関大）</li>
+<li>科目: 高校数学I</li>
+<li>章: 図形と計量</li>
+<li>目安: <strong>16分</strong></li>
+<li>前提: なし</li>
+<li>次: <span class="uid">ME-M1-25</span></li>
+</ul></section>
+<section class="card"><h2>今日のゴール</h2><p>sin cos tan を直角三角形で定義どおり使える</p></section>
+<section class="card"><h2>受験での位置づけ</h2><p>図形と計量の中核スキル。ここが曖昧だと模試で同じ失点をくり返す。</p>
+<h3>攻略の方針</h3>
+<p>医学部・難関大では用語の定義と手順の再現がそのまま得点になる。</p></section>
+<section class="card"><h2>前提チェック</h2><ul>
+<li>入口単元（ここから開始してよい）</li>
+</ul></section>
+<section class="card"><h2>この回のポイント</h2><ul>
+<li>直角三角形での sin cos tan</li>
+<li>対辺・隣辺・斜辺</li>
+<li>0°&lt;θ&lt;90° の基本</li>
+</ul></section>
+<section class="card"><h2>定義・用語</h2><h3>sin θ</h3>
+<p>対辺/斜辺 隣辺/斜辺 対辺/隣辺</p></section>
+<section class="card"><h2>核となる手順（答案でこの順）</h2><ol>
+<li>直角を見つける</li>
+<li>着目角の対・隣・斜を特定</li>
+<li>比を書く</li>
+<li>約分</li>
+</ol></section>
+<section class="card example"><h2>例題A（標準・型の確認）</h2><p>直角三角形で斜辺5、対辺3のとき sin θ と cos θ。</p>
+<h3>解答A</h3>
+<ul>
+<li>要点: sin θ=3/5。隣辺=4（三平方）より cos θ=4/5。</li>
+<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+</ul></section>
+<section class="card example"><h2>例題B（受験・実戦）</h2><p>tan θ=3/4 のとき sin θ, cos θ を求めよ（鋭角）。</p>
+<h3>解答B</h3>
+<ul>
+<li>要点: 対3・隣4・斜5 の型。sin=3/5, cos=4/5。</li>
+<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+</ul></section>
+<section class="card example"><h2>演習（自力再現）</h2><p>対辺12、斜辺13の sin。</p>
+<h3>解答</h3>
+<ul>
+<li>要点: sin cos tan を直角三角形で定義どおり使える</li>
+<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+</ul></section>
+<section class="card traps"><h2>落とし穴（減点パターン）</h2><ul>
+<li>対辺と隣辺を逆にする</li>
+<li>斜辺を底辺と誤認</li>
+<li>鈍角を鋭角の定義のまま使う（次ユニット）</li>
+</ul></section>
+<section class="card"><h2>到達チェック（完璧の条件）</h2><ul>
+<li>ゴールを何も見ずに言える</li>
+<li>例題A・Bを白紙で手順から再現できる</li>
+<li>落とし穴を「なぜダメか」まで説明できる</li>
+<li>確認クイズで合格点（4/5以上）</li>
+</ul></section>
+<section class="card"><h2>次へ</h2><p>次は <code><span class="uid">ME-M1-25</span></code>。本単元の到達チェックをすべて満たしてから進む。</p>
+<p>---</p>
+<p>© Medvance · 無断転載禁止</p></section>
+    <p class="footer">Medvance · ME-M1-24 · 教材PDF · 無断転載禁止</p>
+  </main>
+</body>
+</html>

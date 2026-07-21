@@ -10,8 +10,10 @@
     "sc:health": "node scripts/check-sc-health.mjs"
   },
   "dependencies": {
+    "katex": "^0.18.1",
     "next": "^16.2.4",
     "nodemailer": "^8.0.2",
+    "pdfkit": "^0.19.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -21,6 +23,7 @@
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/nodemailer": "^7.0.11",
+    "@types/pdfkit": "^0.17.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

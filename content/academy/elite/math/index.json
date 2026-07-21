@@ -1,0 +1,419 @@
+{
+  "subject": "数学・難関大（医含む）",
+  "track": "elite",
+  "trackLabel": "難関大講座",
+  "brand": "Medvance",
+  "unit_count": 24,
+  "full_count": 24,
+  "outline_count": 0,
+  "chapters": [
+    "数と式・方程式",
+    "2次関数",
+    "三角法",
+    "指数・対数",
+    "微分法",
+    "積分法",
+    "場合の数・確率",
+    "整数",
+    "座標幾何",
+    "総合・記述"
+  ],
+  "design": "問題型ごとに細分化。前提は発展ID。特定年問題の捏造禁止。",
+  "units": [
+    {
+      "id": "ELI-M-01",
+      "chapter": "数と式・方程式",
+      "title": "パラメータ絶対値の全場合",
+      "minutes": 30,
+      "goal": "文字定数を含む絶対値方程式・不等式を漏れなく場合分けできる",
+      "prereq": [
+        "ADV-M1-02"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-01.md",
+      "storyboard": "storyboard/ELI-M-01.md",
+      "slides": "slides/ELI-M-01.md",
+      "quiz": "quiz/ELI-M-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-02",
+      "chapter": "数と式・方程式",
+      "title": "対称式と条件付き最大最小",
+      "minutes": 30,
+      "goal": "制約下で対称式の最大最小を取れる",
+      "prereq": [
+        "ADV-M1-03"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-02.md",
+      "storyboard": "storyboard/ELI-M-02.md",
+      "slides": "slides/ELI-M-02.md",
+      "quiz": "quiz/ELI-M-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-03",
+      "chapter": "数と式・方程式",
+      "title": "高次・置換の見えない構造",
+      "minutes": 28,
+      "goal": "置換の発見から実数解の個数まで一貫できる",
+      "prereq": [
+        "ADV-M1-04"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-03.md",
+      "storyboard": "storyboard/ELI-M-03.md",
+      "slides": "slides/ELI-M-03.md",
+      "quiz": "quiz/ELI-M-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-04",
+      "chapter": "2次関数",
+      "title": "定義域が動く最大の完全分類",
+      "minutes": 32,
+      "goal": "軸と区間の全配置をパラメータで分類できる",
+      "prereq": [
+        "ADV-M1-06"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-04.md",
+      "storyboard": "storyboard/ELI-M-04.md",
+      "slides": "slides/ELI-M-04.md",
+      "quiz": "quiz/ELI-M-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-05",
+      "chapter": "2次関数",
+      "title": "通過領域・存在条件",
+      "minutes": 32,
+      "goal": "「存在するa」を逆像・判別式で処理できる",
+      "prereq": [
+        "ADV-M1-07",
+        "ADV-M1-09"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-05.md",
+      "storyboard": "storyboard/ELI-M-05.md",
+      "slides": "slides/ELI-M-05.md",
+      "quiz": "quiz/ELI-M-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-06",
+      "chapter": "2次関数",
+      "title": "2次関数族と共通接線",
+      "minutes": 30,
+      "goal": "共有・接線条件をDと微分的発想で扱う",
+      "prereq": [
+        "ADV-M1-10"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-06.md",
+      "storyboard": "storyboard/ELI-M-06.md",
+      "slides": "slides/ELI-M-06.md",
+      "quiz": "quiz/ELI-M-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-07",
+      "chapter": "三角法",
+      "title": "三角方程式の一般解と絞り込み",
+      "minutes": 30,
+      "goal": "一般解から指定区間の個数を数え切れる",
+      "prereq": [
+        "ADV-M2-07"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-07.md",
+      "storyboard": "storyboard/ELI-M-07.md",
+      "slides": "slides/ELI-M-07.md",
+      "quiz": "quiz/ELI-M-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-08",
+      "chapter": "三角法",
+      "title": "合成と最大・最小の融合",
+      "minutes": 30,
+      "goal": "合成後の値域と追加条件を両立できる",
+      "prereq": [
+        "ADV-M2-06",
+        "ADV-M2-13"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-08.md",
+      "storyboard": "storyboard/ELI-M-08.md",
+      "slides": "slides/ELI-M-08.md",
+      "quiz": "quiz/ELI-M-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-09",
+      "chapter": "三角法",
+      "title": "図形計量の難問型（辺角と面積）",
+      "minutes": 32,
+      "goal": "正弦余弦面積を往復し一意性まで示す",
+      "prereq": [
+        "ADV-M1-11",
+        "ADV-M1-12"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-09.md",
+      "storyboard": "storyboard/ELI-M-09.md",
+      "slides": "slides/ELI-M-09.md",
+      "quiz": "quiz/ELI-M-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-10",
+      "chapter": "指数・対数",
+      "title": "真数条件と対数方程式の難所",
+      "minutes": 30,
+      "goal": "底・真数・定義域を落とさず解ける",
+      "prereq": [
+        "ADV-M2-08",
+        "ADV-M2-09"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-10.md",
+      "storyboard": "storyboard/ELI-M-10.md",
+      "slides": "slides/ELI-M-10.md",
+      "quiz": "quiz/ELI-M-10.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-11",
+      "chapter": "指数・対数",
+      "title": "指数不等式の場合分け",
+      "minutes": 30,
+      "goal": "底の大小で向きを誤りなく処理できる",
+      "prereq": [
+        "ADV-M2-09"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-11.md",
+      "storyboard": "storyboard/ELI-M-11.md",
+      "slides": "slides/ELI-M-11.md",
+      "quiz": "quiz/ELI-M-11.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-12",
+      "chapter": "微分法",
+      "title": "接線の本数とパラメータ",
+      "minutes": 32,
+      "goal": "点から引ける接線の本数をf'で議論できる",
+      "prereq": [
+        "ADV-M2-10"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-12.md",
+      "storyboard": "storyboard/ELI-M-12.md",
+      "slides": "slides/ELI-M-12.md",
+      "quiz": "quiz/ELI-M-12.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-13",
+      "chapter": "微分法",
+      "title": "増減と方程式の実数解個数",
+      "minutes": 32,
+      "goal": "グラフとf'で解の個数を確定できる",
+      "prereq": [
+        "ADV-M2-11"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-13.md",
+      "storyboard": "storyboard/ELI-M-13.md",
+      "slides": "slides/ELI-M-13.md",
+      "quiz": "quiz/ELI-M-13.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-14",
+      "chapter": "積分法",
+      "title": "面積・体積の入口（回転なしでも高度分割）",
+      "minutes": 32,
+      "goal": "絶対値・交点多数でも分割を設計できる",
+      "prereq": [
+        "ADV-M2-12"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-14.md",
+      "storyboard": "storyboard/ELI-M-14.md",
+      "slides": "slides/ELI-M-14.md",
+      "quiz": "quiz/ELI-M-14.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-15",
+      "chapter": "積分法",
+      "title": "積分方程式の型",
+      "minutes": 30,
+      "goal": "積分で定義された関数を微分して戻せる",
+      "prereq": [
+        "ME-M2-21",
+        "ME-M2-19"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-15.md",
+      "storyboard": "storyboard/ELI-M-15.md",
+      "slides": "slides/ELI-M-15.md",
+      "quiz": "quiz/ELI-M-15.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-16",
+      "chapter": "場合の数・確率",
+      "title": "条件付き確率の多段ベイズ",
+      "minutes": 32,
+      "goal": "3段以上の樹形図で事後まで正規化できる",
+      "prereq": [
+        "ADV-MA-05"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-16.md",
+      "storyboard": "storyboard/ELI-M-16.md",
+      "slides": "slides/ELI-M-16.md",
+      "quiz": "quiz/ELI-M-16.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-17",
+      "chapter": "場合の数・確率",
+      "title": "期待値の線型性と数え上げ",
+      "minutes": 30,
+      "goal": "指示関数的に分解して期待値を取る",
+      "prereq": [
+        "ADV-MA-12",
+        "ME-MA-10"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-17.md",
+      "storyboard": "storyboard/ELI-M-17.md",
+      "slides": "slides/ELI-M-17.md",
+      "quiz": "quiz/ELI-M-17.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-18",
+      "chapter": "場合の数・確率",
+      "title": "同一視を含む確率",
+      "minutes": 30,
+      "goal": "対称性を壊さず分母分子を数える",
+      "prereq": [
+        "ADV-MA-02",
+        "ADV-MA-12"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-18.md",
+      "storyboard": "storyboard/ELI-M-18.md",
+      "slides": "slides/ELI-M-18.md",
+      "quiz": "quiz/ELI-M-18.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-19",
+      "chapter": "整数",
+      "title": "不定方程式の一般解と条件",
+      "minutes": 30,
+      "goal": "一般解に不等式条件を載せて数えられる",
+      "prereq": [
+        "ADV-MA-07"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-19.md",
+      "storyboard": "storyboard/ELI-M-19.md",
+      "slides": "slides/ELI-M-19.md",
+      "quiz": "quiz/ELI-M-19.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-20",
+      "chapter": "整数",
+      "title": "合同と剰余の総合",
+      "minutes": 30,
+      "goal": "法を選んで場合分けを圧縮できる",
+      "prereq": [
+        "ADV-MA-08"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-20.md",
+      "storyboard": "storyboard/ELI-M-20.md",
+      "slides": "slides/ELI-M-20.md",
+      "quiz": "quiz/ELI-M-20.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-21",
+      "chapter": "座標幾何",
+      "title": "軌跡の条件整理",
+      "minutes": 30,
+      "goal": "点の条件をx,yの方程式に落とせる",
+      "prereq": [
+        "ADV-M2-05"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-21.md",
+      "storyboard": "storyboard/ELI-M-21.md",
+      "slides": "slides/ELI-M-21.md",
+      "quiz": "quiz/ELI-M-21.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-22",
+      "chapter": "座標幾何",
+      "title": "領域と最大最小",
+      "minutes": 32,
+      "goal": "線形・二次の領域上で最大を取れる",
+      "prereq": [
+        "ADV-M2-05",
+        "ADV-M1-06"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-22.md",
+      "storyboard": "storyboard/ELI-M-22.md",
+      "slides": "slides/ELI-M-22.md",
+      "quiz": "quiz/ELI-M-22.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-23",
+      "chapter": "総合・記述",
+      "title": "答案設計：何をどの順で書くか",
+      "minutes": 28,
+      "goal": "小問の誘導を読み、使う定理を宣言してから計算できる",
+      "prereq": [
+        "ADV-M1-18",
+        "ADV-M2-02"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-23.md",
+      "storyboard": "storyboard/ELI-M-23.md",
+      "slides": "slides/ELI-M-23.md",
+      "quiz": "quiz/ELI-M-23.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ELI-M-24",
+      "chapter": "総合・記述",
+      "title": "見直しチェックリスト（医・難関）",
+      "minutes": 25,
+      "goal": "定義域・等号・個数・単位の漏れを自己点検できる",
+      "prereq": [
+        "ELI-M-23"
+      ],
+      "status": "full",
+      "file": "lessons/ELI-M-24.md",
+      "storyboard": "storyboard/ELI-M-24.md",
+      "slides": "slides/ELI-M-24.md",
+      "quiz": "quiz/ELI-M-24.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+}

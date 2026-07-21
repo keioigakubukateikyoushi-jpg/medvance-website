@@ -1,0 +1,18 @@
+{
+  "unit_id": "ME-M1-04",
+  "brand": "Medvance",
+  "source": "notebooklm-unit-factory",
+  "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
+  "alignment": "lesson+storyboard primary; research secondary",
+  "files": [
+    "lesson.html",
+    "lesson.pdf",
+    "manifest.json"
+  ],
+  "audio": null,
+  "video": null,
+  "slides_pdf": null,
+  "lesson_pdf": "lesson.pdf",
+  "lesson_html": "lesson.html",
+  "slides_html": null
+}

@@ -1,0 +1,183 @@
+{
+  "subject": "高校英語・発展",
+  "track": "advanced",
+  "trackLabel": "発展講座",
+  "brand": "Medvance",
+  "unit_count": 10,
+  "full_count": 10,
+  "outline_count": 0,
+  "chapters": [
+    "構文・発展",
+    "語法・発展",
+    "読解・発展",
+    "英作・発展",
+    "融合・発展"
+  ],
+  "design": "細分化・前提明示・12ブロック",
+  "units": [
+    {
+      "id": "ADV-EN-01",
+      "chapter": "構文・発展",
+      "title": "比較の言い換え総練",
+      "minutes": 22,
+      "goal": "倍数・最上級言い換えが双方向でできる",
+      "prereq": [
+        "ME-EN-15"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-01.md",
+      "storyboard": "storyboard/ADV-EN-01.md",
+      "slides": "slides/ADV-EN-01.md",
+      "quiz": "quiz/ADV-EN-01.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-02",
+      "chapter": "構文・発展",
+      "title": "分詞構文の意味上の主語",
+      "minutes": 22,
+      "goal": "垂れ下がりを避けて書き換える",
+      "prereq": [
+        "ME-EN-11"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-02.md",
+      "storyboard": "storyboard/ADV-EN-02.md",
+      "slides": "slides/ADV-EN-02.md",
+      "quiz": "quiz/ADV-EN-02.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-03",
+      "chapter": "構文・発展",
+      "title": "関係詞の非制限",
+      "minutes": 22,
+      "goal": "カンマ関係詞を和訳・英作できる",
+      "prereq": [
+        "ME-EN-13"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-03.md",
+      "storyboard": "storyboard/ADV-EN-03.md",
+      "slides": "slides/ADV-EN-03.md",
+      "quiz": "quiz/ADV-EN-03.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-04",
+      "chapter": "構文・発展",
+      "title": "仮定法の混合時制",
+      "minutes": 24,
+      "goal": "ifと帰結の時制ズレを処理できる",
+      "prereq": [
+        "ME-EN-16",
+        "ME-EN-17"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-04.md",
+      "storyboard": "storyboard/ADV-EN-04.md",
+      "slides": "slides/ADV-EN-04.md",
+      "quiz": "quiz/ADV-EN-04.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-05",
+      "chapter": "語法・発展",
+      "title": "動詞型の迷いどころ",
+      "minutes": 22,
+      "goal": "toV/Ving/that を語法で選ぶ",
+      "prereq": [
+        "ME-EN-09"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-05.md",
+      "storyboard": "storyboard/ADV-EN-05.md",
+      "slides": "slides/ADV-EN-05.md",
+      "quiz": "quiz/ADV-EN-05.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-06",
+      "chapter": "読解・発展",
+      "title": "パラグラフ要旨の精密化",
+      "minutes": 22,
+      "goal": "段落機能で要旨を固定できる",
+      "prereq": [
+        "ME-EN-19"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-06.md",
+      "storyboard": "storyboard/ADV-EN-06.md",
+      "slides": "slides/ADV-EN-06.md",
+      "quiz": "quiz/ADV-EN-06.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-07",
+      "chapter": "読解・発展",
+      "title": "言い換えトラップ",
+      "minutes": 22,
+      "goal": "detail不正解パターンを言語化できる",
+      "prereq": [
+        "ME-EN-20"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-07.md",
+      "storyboard": "storyboard/ADV-EN-07.md",
+      "slides": "slides/ADV-EN-07.md",
+      "quiz": "quiz/ADV-EN-07.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-08",
+      "chapter": "読解・発展",
+      "title": "論理マーカーのスコープ",
+      "minutes": 20,
+      "goal": "however系の範囲を誤らない",
+      "prereq": [
+        "ME-EN-18"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-08.md",
+      "storyboard": "storyboard/ADV-EN-08.md",
+      "slides": "slides/ADV-EN-08.md",
+      "quiz": "quiz/ADV-EN-08.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-09",
+      "chapter": "英作・発展",
+      "title": "因果・対比の型作文",
+      "minutes": 24,
+      "goal": "論理接続で短文を組み立てられる",
+      "prereq": [
+        "ADV-EN-08"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-09.md",
+      "storyboard": "storyboard/ADV-EN-09.md",
+      "slides": "slides/ADV-EN-09.md",
+      "quiz": "quiz/ADV-EN-09.json",
+      "quality": "perfect-v1"
+    },
+    {
+      "id": "ADV-EN-10",
+      "chapter": "融合・発展",
+      "title": "長文中の文法設問",
+      "minutes": 24,
+      "goal": "文脈と文法を同時に見る",
+      "prereq": [
+        "ADV-EN-05",
+        "ADV-EN-07"
+      ],
+      "status": "full",
+      "file": "lessons/ADV-EN-10.md",
+      "storyboard": "storyboard/ADV-EN-10.md",
+      "slides": "slides/ADV-EN-10.md",
+      "quiz": "quiz/ADV-EN-10.json",
+      "quality": "perfect-v1"
+    }
+  ],
+  "quality": "perfect-v1",
+  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+}

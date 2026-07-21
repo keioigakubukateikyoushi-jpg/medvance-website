@@ -1,0 +1,265 @@
+{
+  "title": "Polynomial Quiz",
+  "questions": [
+    {
+      "question": "Which of the following expressions is strictly defined as a polynomial (整式) according to the Medvance materials?",
+      "answerOptions": [
+        {
+          "text": "$2x^3 - \\sqrt{2}x + 1$",
+          "isCorrect": true,
+          "rationale": "A polynomial consists of terms where the variable has non-negative integer exponents, and the coefficients (like $\\sqrt{2}$) can be any constant."
+        },
+        {
+          "text": "$x^2 + \\frac{1}{x}$",
+          "isCorrect": false,
+          "rationale": "The term $\\frac{1}{x}$ is equivalent to $x^{-1}$, and polynomials cannot have negative integer exponents."
+        },
+        {
+          "text": "$\\sqrt{x^2 + 1}$",
+          "isCorrect": false,
+          "rationale": "Expressions where the variable is inside a radical (root) are not considered polynomials."
+        },
+        {
+          "text": "$x^2 + \\sqrt{x}$",
+          "isCorrect": false,
+          "rationale": "The square root of $x$ represents $x$ raised to the power of $\\frac{1}{2}$, which is not a non-negative integer."
+        }
+      ],
+      "hint": "Focus on the definition of exponents for the variables in a polynomial."
+    },
+    {
+      "question": "What is the degree (次数) of a non-zero constant term, such as the polynomial $f(x) = 5$?",
+      "answerOptions": [
+        {
+          "text": "$0$",
+          "isCorrect": true,
+          "rationale": "A constant can be viewed as being multiplied by $x^0$, making the highest power of the variable zero."
+        },
+        {
+          "text": "$1$",
+          "isCorrect": false,
+          "rationale": "A degree of 1 would imply the variable $x$ appears with an exponent of 1, which is not the case for a pure constant."
+        },
+        {
+          "text": "$5$",
+          "isCorrect": false,
+          "rationale": "This confuses the value of the constant with the degree of the polynomial."
+        },
+        {
+          "text": "Undefined",
+          "isCorrect": false,
+          "rationale": "Only the zero polynomial is typically treated as an exception regarding degree; non-zero constants have a specific degree."
+        }
+      ],
+      "hint": "Consider the variable $x$ as having an exponent of zero."
+    },
+    {
+      "question": "In the polynomial $g(x) = 4 - 3x + x^3 - 2x^2$, what is the coefficient (係数) of the $x$ term?",
+      "answerOptions": [
+        {
+          "text": "$-3$",
+          "isCorrect": true,
+          "rationale": "The coefficient of a term must include the sign associated with it in the sum."
+        },
+        {
+          "text": "$3$",
+          "isCorrect": false,
+          "rationale": "A common mistake is to ignore the negative sign when identifying coefficients."
+        },
+        {
+          "text": "$-3x$",
+          "isCorrect": false,
+          "rationale": "The coefficient refers only to the constant factor, not the variable itself."
+        },
+        {
+          "text": "$4$",
+          "isCorrect": false,
+          "rationale": "This is the constant term, not the coefficient of the linear term $x$."
+        }
+      ],
+      "hint": "Remember that signs are part of the term's identity."
+    },
+    {
+      "question": "After expanding and simplifying the expression $f(x) = (2x-1)(x^2+3) - x(x^2-4)$, what is the resulting coefficient of $x$?",
+      "answerOptions": [
+        {
+          "text": "$10$",
+          "isCorrect": true,
+          "rationale": "Expanding yields $6x$ from the first part and $-(-4x) = +4x$ from the second, totaling $10x$."
+        },
+        {
+          "text": "$2$",
+          "isCorrect": false,
+          "rationale": "This result stems from failing to correctly distribute the negative sign to the $-4x$ term in the second part of the expression."
+        },
+        {
+          "text": "$6$",
+          "isCorrect": false,
+          "rationale": "This only accounts for the $x$ term from the first expanded product and ignores the second."
+        },
+        {
+          "text": "$-10$",
+          "isCorrect": false,
+          "rationale": "This would result if the signs of both $x$ terms in the expansion were miscalculated."
+        }
+      ],
+      "hint": "Be careful with the subtraction of the entire second product."
+    },
+    {
+      "question": "What is the first step in completing the square (平方完成) for the quadratic function $y = ax^2 + bx + c$ where $a \\ne 1$?",
+      "answerOptions": [
+        {
+          "text": "Factor out $a$ from the $x^2$ and $x$ terms.",
+          "isCorrect": true,
+          "rationale": "To create a perfect square, the leading coefficient of the squared term inside the parentheses must be simplified by factoring out $a$."
+        },
+        {
+          "text": "Divide the entire equation by $b$.",
+          "isCorrect": false,
+          "rationale": "Dividing by $b$ does not help in reaching the vertex form $a(x-p)^2 + q$."
+        },
+        {
+          "text": "Move the constant $c$ to the other side of the equation.",
+          "isCorrect": false,
+          "rationale": "While sometimes done in solving equations, the goal here is a functional form, and $c$ remains part of the constant adjustment."
+        },
+        {
+          "text": "Find the square root of $a$.",
+          "isCorrect": false,
+          "rationale": "The process requires factoring $a$, not taking its square root."
+        }
+      ],
+      "hint": "Consider how you isolate the $x^2$ term to make it easier to form a square."
+    },
+    {
+      "question": "When completing the square for $y = x^2 - 6x + 5$, what value must be added and then subtracted to form the perfect square?",
+      "answerOptions": [
+        {
+          "text": "$9$",
+          "isCorrect": true,
+          "rationale": "The value to add and subtract is the square of half the coefficient of $x$, which is $(\\frac{-6}{2})^2 = 9$."
+        },
+        {
+          "text": "$3$",
+          "isCorrect": false,
+          "rationale": "This is half of the coefficient, but it has not been squared yet."
+        },
+        {
+          "text": "$36$",
+          "isCorrect": false,
+          "rationale": "This is the square of the coefficient itself, rather than the square of half the coefficient."
+        },
+        {
+          "text": "$6$",
+          "isCorrect": false,
+          "rationale": "Using the coefficient itself without halving or squaring is a procedural error."
+        }
+      ],
+      "hint": "Look at the coefficient of the linear term and remember the 'half and square' rule."
+    },
+    {
+      "question": "Which of the following is the correct vertex form of $y = 2x^2 + 8x + 3$?",
+      "answerOptions": [
+        {
+          "text": "$y = 2(x+2)^2 - 5$",
+          "isCorrect": true,
+          "rationale": "Factoring 2 gives $2(x^2 + 4x) + 3$, then $2\\{(x+2)^2 - 4\\} + 3 = 2(x+2)^2 - 8 + 3 = 2(x+2)^2 - 5$."
+        },
+        {
+          "text": "$y = 2(x+2)^2 - 1$",
+          "isCorrect": false,
+          "rationale": "This error occurs if you forget to multiply the subtracted 4 by the leading coefficient 2 before adding it to 3."
+        },
+        {
+          "text": "$y = 2(x+4)^2 - 5$",
+          "isCorrect": false,
+          "rationale": "This suggests a failure to halve the coefficient of $x$ (which was 4 after factoring out the 2)."
+        },
+        {
+          "text": "$y = 2(x+2)^2 + 3$",
+          "isCorrect": false,
+          "rationale": "This forgets to subtract the constant adjustment entirely, leaving only the original constant."
+        }
+      ],
+      "hint": "Don't forget to distribute the leading coefficient to the constant created inside the square."
+    },
+    {
+      "question": "What is the minimum value of the function $y = 2(x+2)^2 - 5$?",
+      "answerOptions": [
+        {
+          "text": "$-5$",
+          "isCorrect": true,
+          "rationale": "In the form $a(x-p)^2 + q$, $q$ represents the minimum value when $a > 0$."
+        },
+        {
+          "text": "$2$",
+          "isCorrect": false,
+          "rationale": "This is the leading coefficient, which determines the direction of the parabola but not the minimum value itself."
+        },
+        {
+          "text": "$-2$",
+          "isCorrect": false,
+          "rationale": "This is the $x$-value where the minimum occurs, not the minimum value of the function itself."
+        },
+        {
+          "text": "$5$",
+          "isCorrect": false,
+          "rationale": "This is a sign error regarding the constant term $q$."
+        }
+      ],
+      "hint": "The minimum value is the $y$-coordinate of the vertex."
+    },
+    {
+      "question": "Which of the following describes a common 'pitfall' identified in the Medvance script for completing the square?",
+      "answerOptions": [
+        {
+          "text": "Forgetting to multiply the constant adjustment by the leading coefficient $a$.",
+          "isCorrect": true,
+          "rationale": "When moving the subtracted square term outside the parentheses, it must be multiplied by the factor $a$ that was originally pulled out."
+        },
+        {
+          "text": "Dividing by zero when the constant term $c$ is zero.",
+          "isCorrect": false,
+          "rationale": "The constant term being zero does not lead to division by zero in this procedure."
+        },
+        {
+          "text": "Mistaking a polynomial for a quadratic equation.",
+          "isCorrect": false,
+          "rationale": "While a distinction exists, it is not the primary procedural pitfall discussed for the completion of the square."
+        },
+        {
+          "text": "Using a calculator to find the square root of $b$.",
+          "isCorrect": false,
+          "rationale": "The procedure relies on halving and squaring $b/a$, not taking the square root of $b$."
+        }
+      ],
+      "hint": "Think about the step where you adjust the constant outside the parentheses."
+    },
+    {
+      "question": "According to the materials, why is it important to master definitions like 'degree' and 'coefficient' for medical school entrance exams?",
+      "answerOptions": [
+        {
+          "text": "They form the foundation for expansion, factoring, and equations, and appear in specific calculation questions.",
+          "isCorrect": true,
+          "rationale": "The text emphasizes that these definitions are the 'total foundation' and errors here lead to losing points immediately."
+        },
+        {
+          "text": "They are required for writing mathematical essays.",
+          "isCorrect": false,
+          "rationale": "The focus is on calculation accuracy and foundational understanding for solving higher-level problems, not essays."
+        },
+        {
+          "text": "They are only used in high-level calculus problems.",
+          "isCorrect": false,
+          "rationale": "The material states they are the foundation for more basic operations like expansion and factoring."
+        },
+        {
+          "text": "Medical schools check if you can memorize long definitions.",
+          "isCorrect": false,
+          "rationale": "The emphasis is on correct application and precision to avoid 'falling at the first step' in calculations."
+        }
+      ],
+      "hint": "Consider the role of these terms in the 'all-important foundation' of math."
+    }
+  ]
+}

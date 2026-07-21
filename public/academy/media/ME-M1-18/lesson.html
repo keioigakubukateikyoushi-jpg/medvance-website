@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ME-M1-18 定義域つき最大・最小（軸が区間外） | Medvance</title>
+
+<link rel="stylesheet" href="../../vendor/katex/katex.min.css"/>
+<script src="../../vendor/katex/katex.min.js"></script>
+<script src="../../vendor/katex/contrib/auto-render.min.js"></script>
+<script>
+(function(){
+  function run(){
+    if (typeof renderMathInElement !== "function") return;
+    try {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left:"$$", right:"$$", display:true},
+          {left:"$", right:"$", display:false}
+        ],
+        throwOnError: false,
+        strict: "ignore"
+      });
+    } catch(e) {}
+    document.documentElement.setAttribute("data-katex-done","1");
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
+})();
+</script>
+<style>
+  :root { --navy:#0c1a33; --gold:#c9922a; --bg:#f7f5f0; --ink:#1f2937; --muted:#6b7280; --line:#e5e1d8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", sans-serif; color:var(--ink); background:#fff; line-height:1.8; }
+  .topbar { background:var(--navy); color:#fff; padding:1.75rem 1.25rem 1.5rem; }
+  .topbar .brand { color:var(--gold); font-size:0.72rem; letter-spacing:0.14em; font-weight:700; }
+  .topbar h1 { margin:0.45rem 0 0.35rem; font-size:1.4rem; font-weight:800; line-height:1.4; }
+  .topbar .meta { font-size:0.85rem; opacity:0.75; }
+  .goal { background:rgba(201,146,42,0.16); border-left:3px solid var(--gold); padding:0.7rem 0.95rem; margin-top:0.95rem; border-radius:0 10px 10px 0; font-size:0.95rem; }
+  .wrap { max-width:720px; margin:0 auto; padding:1.25rem 1.1rem 3rem; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:1.15rem 1.25rem; margin:1rem 0; }
+  .card.example { background:#fffefb; }
+  .card.traps { background:#fff8f7; border-color:#f0d4d0; }
+  .card.traps h2 { color:#7f1d1d; }
+  h2 { margin:0 0 0.65rem; font-size:1.05rem; color:var(--navy); border-bottom:1px solid var(--line); padding-bottom:0.4rem; }
+  h3 { margin:0.85rem 0 0.35rem; font-size:0.95rem; color:#374151; }
+  p { margin:0.4rem 0; font-size:0.94rem; }
+  ul, ol { margin:0.4rem 0 0.4rem 1.15rem; padding:0; }
+  li { margin:0.3rem 0; font-size:0.94rem; }
+  .callout { background:var(--bg); border-radius:10px; padding:0.7rem 0.9rem; }
+  code { background:#f3f4f6; padding:0.1rem 0.35rem; border-radius:4px; font-size:0.88em; }
+  .uid { font-family: ui-monospace, monospace; font-size:0.85em; color:var(--navy); background:#eef2ff; padding:0.05rem 0.3rem; border-radius:4px; }
+  .math-block, .katex-display { overflow-x:auto; margin:0.55rem 0; }
+  .footer { margin-top:2rem; font-size:0.75rem; color:#9ca3af; text-align:center; }
+  @media print {
+    .topbar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MEDVANCE · 大学受験（医学部・難関大）</div>
+    <div class="meta">高校数学I · 2次関数 · 約18分</div>
+    <h1>ME-M1-18 · 定義域つき最大・最小（軸が区間外）</h1>
+    <div class="goal"><strong>ゴール</strong> 軸が外のとき端点だけで最大最小を決められる</div>
+  </header>
+  <main class="wrap">
+    <section class="card"><h2>概要</h2><ul>
+<li>講座: 大学受験（医学部・難関大）</li>
+<li>科目: 高校数学I</li>
+<li>章: 2次関数</li>
+<li>目安: <strong>18分</strong></li>
+<li>前提: <span class="uid">ME-M1-17</span></li>
+<li>次: <span class="uid">ME-M1-19</span></li>
+</ul></section>
+<section class="card"><h2>今日のゴール</h2><p>軸が外のとき端点だけで最大最小を決められる</p></section>
+<section class="card"><h2>受験での位置づけ</h2><p>2次関数の中核スキル。ここが曖昧だと模試で同じ失点をくり返す。</p>
+<h3>攻略の方針</h3>
+<p>医学部・難関大では用語の定義と手順の再現がそのまま得点になる。</p></section>
+<section class="card"><h2>前提チェック</h2><ul>
+<li><code><span class="uid">ME-M1-17</span></code> の到達チェックを満たしている</li>
+</ul></section>
+<section class="card"><h2>この回のポイント</h2><ul>
+<li>軸が左外 → 区間は右上がり/下がりを a で判定</li>
+<li>軸が右外も同様</li>
+<li>端点2点の y だけで決まる</li>
+</ul></section>
+<section class="card"><h2>定義・用語</h2><h3>定義域つき最大</h3>
+<p>定義域つき最大・最小（軸が区間外）を扱うための中心概念。受験では定義を答案の一文目に置けることが得点の土台になる。</p></section>
+<section class="card"><h2>核となる手順（答案でこの順）</h2><ol>
+<li>軸の位置を定義域と比較</li>
+<li>外なら端点のみ評価</li>
+<li>a の符号で増減を確認</li>
+<li>最大・最小を答える</li>
+</ol></section>
+<section class="card example"><h2>例題A（標準・型の確認）</h2><p>y=x²−6x+4（0≦x≦2）の最大・最小。</p>
+<h3>解答A</h3>
+<ul>
+<li>軸 x=3 は区間の右外。a&gt;0 で軸より左は減少。</li>
+<li>x=0:4, x=2:−4。最大4、最小−4。</li>
+</ul></section>
+<section class="card example"><h2>例題B（受験・実戦）</h2><p>y=−x²+2x（3≦x≦5）の最大・最小。</p>
+<h3>解答B</h3>
+<ul>
+<li>軸 x=1 は左外。a&lt;0 で軸より右は減少。</li>
+<li>x=3:−3, x=5:−15。最大−3、最小−15。</li>
+</ul></section>
+<section class="card example"><h2>演習（自力再現）</h2><p>y=(x+1)²（−3≦x≦−2）の最大・最小。</p>
+<h3>解答</h3>
+<ul>
+<li>要点: 軸が外のとき端点だけで最大最小を決められる</li>
+<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+</ul></section>
+<section class="card traps"><h2>落とし穴（減点パターン）</h2><ul>
+<li>軸が外なのに頂点を使う</li>
+<li>増減を逆にする</li>
+<li>定義域の端の代入ミス</li>
+</ul></section>
+<section class="card"><h2>到達チェック（完璧の条件）</h2><ul>
+<li>ゴールを何も見ずに言える</li>
+<li>例題A・Bを白紙で手順から再現できる</li>
+<li>落とし穴を「なぜダメか」まで説明できる</li>
+<li>確認クイズで合格点（4/5以上）</li>
+</ul></section>
+<section class="card"><h2>次へ</h2><p>次は <code><span class="uid">ME-M1-19</span></code>。本単元の到達チェックをすべて満たしてから進む。</p>
+<p>---</p>
+<p>© Medvance · 無断転載禁止</p></section>
+    <p class="footer">Medvance · ME-M1-18 · 教材PDF · 無断転載禁止</p>
+  </main>
+</body>
+</html>
