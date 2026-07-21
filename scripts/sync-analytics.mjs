@@ -3,8 +3,9 @@
  *
  * 機能:
  *   1. 日次アクセスログDB に全データを保存（原本）
- *   2. 毎日: デイリーレポートを「DB行」として作成（親ページ配下の子ページではなくDB形式のリンク集）
- *   3. 日曜日: 週次レポートも同様に週次レポートDBへ
+ *   2. 毎日: デイリーレポートを「DB行」として作成（先頭＝今日のKPIでぱっと見）
+ *   3. 毎日: アクセス推移ダッシュボード（30日グラフ）を更新
+ *   4. 日曜日: 週次レポートも同様に週次レポートDBへ
  *
  * 詳細ディメンション（匿名集計のみ・個人特定なし）:
  *   - ページ TOP20 / 都道府県 TOP10 / 市区町村 TOP10
@@ -890,8 +891,86 @@ function h3(text) {
   return { type: "heading_3", heading_3: { rich_text: [{ type: "text", text: { content: text } }] } };
 }
 
+function callout(emoji, color, text) {
+  return {
+    type: "callout",
+    callout: {
+      icon: { type: "emoji", emoji },
+      color,
+      rich_text: [{ type: "text", text: { content: text } }],
+    },
+  };
+}
+
+/** Horizontal bar chart lines for Notion code block (ぱっと見用). */
+function barChart(items, { width = 24, empty = "（データなし）" } = {}) {
+  if (!items?.length) return empty;
+  const max = Math.max(...items.map((x) => x.value), 1);
+  return items
+    .map((x) => {
+      const n = Math.max(0, Math.min(width, Math.round((x.value / max) * width)));
+      const bar = "█".repeat(n) + "░".repeat(width - n);
+      const label = String(x.label).padEnd(6, " ");
+      return `${label} ${bar} ${x.value}${x.suffix ?? ""}`;
+    })
+    .join("\n");
+}
+
+function sparkline(values) {
+  const blocks = "▁▂▃▄▅▆▇█";
+  if (!values?.length) return "—";
+  const max = Math.max(...values, 1);
+  return values
+    .map((v) => {
+      const i = Math.max(0, Math.min(7, Math.round((v / max) * 7)));
+      return blocks[i];
+    })
+    .join("");
+}
+
+function mmdd(dateStr) {
+  return `${dateStr.slice(5, 7)}/${dateStr.slice(8, 10)}`;
+}
+
+/** Paginated fetch of access-log rows (for graphs). */
+async function fetchAccessLogRows(startDate, endDate) {
+  const rows = [];
+  let cursor;
+  do {
+    const body = {
+      filter: {
+        and: [
+          { property: "日付", date: { on_or_after: startDate } },
+          { property: "日付", date: { on_or_before: endDate } },
+        ],
+      },
+      sorts: [{ property: "日付", direction: "ascending" }],
+      page_size: 100,
+    };
+    if (cursor) body.start_cursor = cursor;
+    const res = await nFetch(`/databases/${NOTION_DATABASE_ID}/query`, "POST", body);
+    rows.push(...(res.results ?? []));
+    cursor = res.has_more ? res.next_cursor : undefined;
+  } while (cursor);
+  return rows;
+}
+
+function rowMetrics(page) {
+  return {
+    date: dateProp(page),
+    pv: numProp(page, "PV（ページビュー）"),
+    uu: numProp(page, "UU（ユニークユーザー）"),
+    sessions: numProp(page, "セッション数"),
+    contact: numProp(page, "コンタクトページPV"),
+    leads: numProp(page, "リード数"),
+    organic: numProp(page, "Organic流入"),
+    scClicks: numProp(page, "SCクリック数"),
+    bounce: numProp(page, "直帰率(%)"),
+  };
+}
+
 // ─── Notion: デイリーレポートページ作成 ───────────────────────────────────
-async function createDailyPage(data) {
+async function createDailyPage(data, history7 = []) {
   const {
     date, today, prev, channels, topPages, contactPV, devices, regions, cities,
     pageRegion, sourceLanding, referrals, landingPages, exitPages, browsers,
@@ -899,6 +978,7 @@ async function createDailyPage(data) {
   } = data;
 
   const pvChange = prev.pv > 0 ? parseFloat(((today.pv - prev.pv) / prev.pv * 100).toFixed(1)) : 0;
+  const uuChange = prev.uu > 0 ? parseFloat(((today.uu - prev.uu) / prev.uu * 100).toFixed(1)) : 0;
   const sign     = (v) => (v >= 0 ? `+${v}%` : `${v}%`);
   const [mm, dd] = [date.slice(5, 7), date.slice(8, 10)];
 
@@ -915,69 +995,44 @@ async function createDailyPage(data) {
     : "red_background";
   const cvIcon  = contactPV > 0 || leads > 0 ? "🟢" : "⚪";
 
+  // 直近7日（履歴+今日）のスパークライン
+  const histPv = [...history7.map((h) => h.pv), today.pv];
+  const histUu = [...history7.map((h) => h.uu), today.uu];
+  const weekChart = barChart(
+    [
+      ...history7.map((h) => ({ label: mmdd(h.date), value: h.pv })),
+      { label: mmdd(date), value: today.pv, suffix: " ←今日" },
+    ],
+    { width: 20 },
+  );
+
+  // ★ 一番上＝今日のKPI（ぱっと見専用）。詳細はその下。
   const blocks = [
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: "📅" },
-        color: "gray_background",
-        rich_text: [{ type: "text", text: { content: `集計日: ${date}　自動取得: GA4 + Search Console + PageSpeed（詳細ディメンション）` } }],
-      },
-    },
+    callout(
+      "⚡",
+      pvChange >= 0 ? "blue_background" : "red_background",
+      `今日のKPI  ${mm}/${dd}（${date}）\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `PV        ${String(today.pv).padStart(4)}   前日比 ${sign(pvChange)}（前日 ${prev.pv}）\n` +
+        `UU        ${String(today.uu).padStart(4)}   前日比 ${sign(uuChange)}（前日 ${prev.uu}）\n` +
+        `新規      ${String(today.newUsers).padStart(4)}   新規率 ${today.newUserRate}%\n` +
+        `セッション ${String(today.sessions).padStart(4)}   直帰 ${today.bounceRate}% / 滞在 ${today.avgSessionSec}秒\n` +
+        `Contact   ${String(contactPV).padStart(4)}   リード ${leads} / CTA ${ctaClicks}\n` +
+        `Organic   ${String(channels.organic).padStart(4)}   SCクリック ${sc.clicks}（表示 ${sc.impressions}）\n` +
+        `スマホ ${devices.mobile}% / PC ${devices.desktop}%\n` +
+        `PV推移(7日) ${sparkline(histPv)}\n` +
+        `UU推移(7日) ${sparkline(histUu)}`,
+    ),
+    callout(pvIcon, pvChange >= 0 ? "blue_background" : "red_background", `📄 PV  ${today.pv}　　前日比 ${sign(pvChange)}`),
+    callout("👤", "green_background", `👥 UU  ${today.uu} 人　　新規 ${today.newUsers}（${today.newUserRate}%）`),
+    callout("📞", (contactPV > 0 || leads > 0) ? "yellow_background" : "gray_background", `Contact ${contactPV}　リード ${leads}　CTA ${ctaClicks}`),
+    callout("🔍", "purple_background", `Organic ${channels.organic} / Direct ${channels.direct} / Social ${channels.social} / Referral ${channels.referral}`),
+    callout(scIcon, sc.clicks > 0 ? "green_background" : "gray_background", `SC  表示 ${sc.impressions}　クリック ${sc.clicks}　CTR ${sc.ctr}%　順位 ${sc.position}`),
+    h3("直近PV（7日）"),
+    codeBlock(weekChart),
     { type: "divider", divider: {} },
 
-    h2("⚡ 今日のKPI"),
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: pvIcon },
-        color: pvChange >= 0 ? "blue_background" : "red_background",
-        rich_text: [{ type: "text", text: { content: `PV  ${today.pv}  （前日比 ${sign(pvChange)}  /  前日 ${prev.pv}PV）` } }],
-      },
-    },
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: "👤" },
-        color: "green_background",
-        rich_text: [{ type: "text", text: { content: `ユニークユーザー  ${today.uu} 人　新規 ${today.newUsers} 人（新規率 ${today.newUserRate}%）` } }],
-      },
-    },
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: "🔍" },
-        color: "purple_background",
-        rich_text: [{ type: "text", text: { content: `流入  Organic ${channels.organic}　Direct ${channels.direct}　Social ${channels.social}　Referral ${channels.referral}　Paid ${channels.paid}` } }],
-      },
-    },
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: "📊" },
-        color: "gray_background",
-        rich_text: [{ type: "text", text: { content: `セッション ${today.sessions}　直帰率 ${today.bounceRate}%　平均滞在 ${today.avgSessionSec}秒` } }],
-      },
-    },
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: cvIcon },
-        color: (contactPV > 0 || leads > 0) ? "yellow_background" : "gray_background",
-        rich_text: [{ type: "text", text: { content: `Contact PV ${contactPV}　generate_lead ${leads}　cta_click ${ctaClicks}　スマホ ${devices.mobile}%  PC ${devices.desktop}%` } }],
-      },
-    },
-
-    h2("🔍 Search Console"),
-    { type: "divider", divider: {} },
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: scIcon },
-        color: sc.clicks > 0 ? "green_background" : "gray_background",
-        rich_text: [{ type: "text", text: { content: `表示 ${sc.impressions}回　クリック ${sc.clicks}回　CTR ${sc.ctr}%　平均順位 ${sc.position}位` } }],
-      },
-    },
+    h2("🔍 Search Console 詳細"),
     h3("上位キーワード"),
     codeBlock(sc.topKw),
     h3("検索経由の上位ページ"),
@@ -1009,26 +1064,21 @@ async function createDailyPage(data) {
 
     h2("⚡ PageSpeed Insights"),
     { type: "divider", divider: {} },
-    {
-      type: "callout",
-      callout: {
-        icon: { type: "emoji", emoji: psIcon },
-        color: psColor,
-        rich_text: [{ type: "text", text: { content: psText } }],
-      },
-    },
+    callout(psIcon, psColor, psText),
   ];
 
   // Notion create page accepts max 100 children
   const children = blocks.slice(0, 100);
-  const memoLine = `PV ${today.pv} / UU ${today.uu} / 直帰 ${today.bounceRate}% / リード ${leads}`;
+  // 表でぱっと見できるタイトル＋メモ
+  const titleGlance = `📊 ${mm}/${dd}  PV${today.pv} UU${today.uu} ${sign(pvChange)}`;
+  const memoLine = `⚡PV ${today.pv}(${sign(pvChange)}) UU ${today.uu} 新規${today.newUsers} Contact${contactPV} リード${leads} Org${channels.organic} SC${sc.clicks}`;
 
   // 親ページの「子ページ」ではなく、デイリーレポートDBの1行として作成（DB＝リンク集）
   const created = await nFetch("/pages", "POST", {
     parent: { database_id: NOTION_DAILY_REPORTS_DB_ID },
     icon: { type: "emoji", emoji: "📊" },
     properties: {
-      "Name": { title: [{ type: "text", text: { content: `📊 ${mm}/${dd} デイリーレポート` } }] },
+      "Name": { title: [{ type: "text", text: { content: titleGlance } }] },
       "日付": { date: { start: date } },
       "PV": { number: today.pv },
       "UU": { number: today.uu },
@@ -1045,6 +1095,126 @@ async function createDailyPage(data) {
   const url = notionPageUrl(created);
   console.log(`  📊 デイリーレポートDB行: ${mm}/${dd} → ${url}`);
   return { id: created.id, url };
+}
+
+/**
+ * アクセス推移ダッシュボード（毎回作り直し＝常に最新の30日グラフ）
+ * 親: NOTION_DAILY_PAGE_ID 直下の固定タイトルページ
+ */
+async function updateAccessDashboard(asOfDate) {
+  const end = asOfDate;
+  const startD = new Date(asOfDate);
+  startD.setDate(startD.getDate() - 29);
+  const start = startD.toISOString().slice(0, 10);
+
+  const raw = await fetchAccessLogRows(start, end);
+  const series = raw.map(rowMetrics).filter((r) => r.date);
+  // 同一日は新しい方を優先
+  const byDate = new Map();
+  for (const r of series) byDate.set(r.date, r);
+  const days = [...byDate.values()].sort((a, b) => a.date.localeCompare(b.date));
+
+  const sum = (key) => days.reduce((s, d) => s + (d[key] || 0), 0);
+  const avg = (key) => (days.length ? Math.round(sum(key) / days.length) : 0);
+  const last = days[days.length - 1];
+  const prev = days.length >= 2 ? days[days.length - 2] : null;
+
+  const pvChart = barChart(days.map((d) => ({ label: mmdd(d.date), value: d.pv })));
+  const uuChart = barChart(days.map((d) => ({ label: mmdd(d.date), value: d.uu })));
+  const contactChart = barChart(days.map((d) => ({ label: mmdd(d.date), value: d.contact })));
+  const scChart = barChart(days.map((d) => ({ label: mmdd(d.date), value: d.scClicks })));
+  const organicChart = barChart(days.map((d) => ({ label: mmdd(d.date), value: d.organic })));
+
+  const table = [
+    "日付     PV   UU  ｾｯｼｮﾝ Contact ﾘｰﾄﾞ Org SC",
+    "------ ---- ---- ------ ------- ---- --- ---",
+    ...days.map((d) => {
+      const pad = (n, w) => String(n ?? 0).padStart(w);
+      return `${mmdd(d.date)}  ${pad(d.pv, 4)} ${pad(d.uu, 4)} ${pad(d.sessions, 6)} ${pad(d.contact, 7)} ${pad(d.leads, 4)} ${pad(d.organic, 3)} ${pad(d.scClicks, 3)}`;
+    }),
+  ].join("\n");
+
+  const trendNote = (() => {
+    if (!last || !prev) return "比較対象の前日データがまだ少ないです。";
+    const dp = prev.pv > 0 ? (((last.pv - prev.pv) / prev.pv) * 100).toFixed(0) : "—";
+    const du = prev.uu > 0 ? (((last.uu - prev.uu) / prev.uu) * 100).toFixed(0) : "—";
+    const sign = (v) => (String(v).startsWith("-") || v === "—" ? `${v}%` : `+${v}%`);
+    return `最新 ${mmdd(last.date)}: PV ${last.pv}（前日比 ${sign(dp)}） / UU ${last.uu}（前日比 ${sign(du)}）`;
+  })();
+
+  const blocks = [
+    callout(
+      "📈",
+      "blue_background",
+      `アクセス推移ダッシュボード（直近${days.length}日）\n` +
+        `更新: ${asOfDate}\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `期間合計  PV ${sum("pv")}  /  UU ${sum("uu")}  /  Contact ${sum("contact")}  /  リード ${sum("leads")}\n` +
+        `1日平均  PV ${avg("pv")}  /  UU ${avg("uu")}\n` +
+        `${trendNote}\n` +
+        `PVスパーク ${sparkline(days.map((d) => d.pv))}\n` +
+        `UUスパーク ${sparkline(days.map((d) => d.uu))}`,
+    ),
+    h2("📄 PV（ページビュー）"),
+    codeBlock(pvChart),
+    h2("👥 UU（ユニークユーザー）"),
+    codeBlock(uuChart),
+    h2("🔍 Organic 流入"),
+    codeBlock(organicChart),
+    h2("📞 Contact PV"),
+    codeBlock(contactChart),
+    h2("🖱️ Search Console クリック"),
+    codeBlock(scChart),
+    h2("📋 日次一覧（数値）"),
+    codeBlock(table),
+    callout(
+      "💡",
+      "gray_background",
+      "見方: 棒が長いほどその日の数値が高い。空の日は計測ゼロ or 未同期。\n" +
+        "デイリー詳細は「📊 デイリーレポート」DBの各行を開く。",
+    ),
+  ];
+
+  // 旧ダッシュボードをアーカイブして常に1枚に保つ
+  try {
+    const children = await (async () => {
+      const out = [];
+      let cursor;
+      do {
+        const qs = new URLSearchParams({ page_size: "100" });
+        if (cursor) qs.set("start_cursor", cursor);
+        const res = await nFetch(`/blocks/${NOTION_DAILY_PAGE_ID}/children?${qs}`, "GET");
+        out.push(...(res.results ?? []));
+        cursor = res.has_more ? res.next_cursor : undefined;
+      } while (cursor);
+      return out;
+    })();
+    for (const b of children) {
+      if (b.type !== "child_page") continue;
+      const t = b.child_page?.title ?? "";
+      if (t.includes("アクセス推移") || t.includes("ぱっと見ダッシュボード")) {
+        await nFetch(`/pages/${b.id}`, "PATCH", { archived: true });
+        console.log(`  🗑️  旧ダッシュボードをアーカイブ: ${t}`);
+      }
+    }
+  } catch (err) {
+    console.warn(`  ⚠️  旧ダッシュボード探索: ${(err?.message ?? String(err)).slice(0, 100)}`);
+  }
+
+  const created = await nFetch("/pages", "POST", {
+    parent: { page_id: NOTION_DAILY_PAGE_ID },
+    icon: { type: "emoji", emoji: "📈" },
+    properties: {
+      title: {
+        title: [{ type: "text", text: { content: `📈 アクセス推移（ぱっと見）｜更新 ${asOfDate}` } }],
+      },
+    },
+    children: blocks.slice(0, 100),
+  });
+
+  const url = notionPageUrl(created);
+  console.log(`  📈 アクセス推移ダッシュボード更新: ${url}`);
+  return { id: created.id, url, days: days.length };
 }
 
 // ─── Notion DB から指定期間のデータを取得 ─────────────────────────────────
@@ -1273,17 +1443,35 @@ async function main() {
     exitPages, browsers, hourly, leads, ctaClicks, sc, pageSpeed,
   };
 
-  // 1) レポートは「DB行」として作成 → 2) アクセスログDBにそのURLを載せる
-  console.log("\n📝 [1/3] デイリーレポートDBへ行を作成中...");
-  const dailyPage = await createDailyPage(data);
+  // 直近6日（KPIスパークライン用）
+  let history7 = [];
+  try {
+    const hStart = (() => {
+      const d = new Date(targetDate);
+      d.setDate(d.getDate() - 6);
+      return d.toISOString().slice(0, 10);
+    })();
+    const histRaw = await fetchAccessLogRows(hStart, prevDate);
+    const byDate = new Map();
+    for (const p of histRaw) {
+      const m = rowMetrics(p);
+      if (m.date) byDate.set(m.date, m);
+    }
+    history7 = [...byDate.values()].sort((a, b) => a.date.localeCompare(b.date)).slice(-6);
+  } catch (err) {
+    console.warn(`  ⚠️  履歴取得スキップ: ${(err?.message ?? String(err)).slice(0, 80)}`);
+  }
+
+  // 1) レポートは「DB行」として作成（先頭＝今日のKPI）
+  console.log("\n📝 [1/4] デイリーレポートDBへ行を作成中（KPI最上段）...");
+  const dailyPage = await createDailyPage(data, history7);
   data.dailyReportUrl = dailyPage?.url || null;
 
-  console.log("📝 [2/3] 日次アクセスログDBに保存中（レポートURL付き）...");
+  console.log("📝 [2/4] 日次アクセスログDBに保存中（レポートURL付き）...");
   const dbRow = await postToNotion(data);
   console.log(`  ✅ アクセスログ保存完了${data.dailyReportUrl ? ` / レポート列 → ${data.dailyReportUrl}` : ""}`);
   if (dbRow?.url) {
     console.log(`  🔗 アクセスログ行: ${dbRow.url}`);
-    // レポートDB側にも逆リンク（アクセスログへのURL）
     if (dailyPage?.id) {
       try {
         await nFetch(`/pages/${dailyPage.id}`, "PATCH", {
@@ -1295,18 +1483,25 @@ async function main() {
     }
   }
 
+  console.log("📝 [3/4] アクセス推移ダッシュボード（30日グラフ）更新中...");
+  try {
+    await updateAccessDashboard(targetDate);
+  } catch (err) {
+    console.warn(`  ⚠️  ダッシュボード更新失敗: ${(err?.message ?? String(err)).slice(0, 120)}`);
+  }
+
   const dayOfWeek = new Date(targetDate).getDay();
   if (NO_WEEKLY) {
-    console.log("📝 [3/3] 週次レポートはスキップ（--no-weekly）");
+    console.log("📝 [4/4] 週次レポートはスキップ（--no-weekly）");
   } else if (dayOfWeek === 0) {
-    console.log("📝 [3/3] 週次レポートページ作成中（日曜日）...");
+    console.log("📝 [4/4] 週次レポートページ作成中（日曜日）...");
     const weeklyPage = await createWeeklyPage(targetDate);
     if (weeklyPage?.url && dbRow?.id) {
       await patchDbReportLinks(dbRow.id, { weeklyReportUrl: weeklyPage.url });
       console.log(`  🔗 DB「週次レポート」列を更新: ${weeklyPage.url}`);
     }
   } else {
-    console.log(`📝 [3/3] 週次レポートはスキップ（日曜日のみ作成 / 今日は${["日","月","火","水","木","金","土"][dayOfWeek]}曜日）`);
+    console.log(`📝 [4/4] 週次レポートはスキップ（日曜日のみ作成 / 今日は${["日","月","火","水","木","金","土"][dayOfWeek]}曜日）`);
   }
 
   console.log(`\n✅ ${targetDate} すべて完了`);

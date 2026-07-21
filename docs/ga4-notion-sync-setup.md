@@ -123,6 +123,12 @@ gh workflow run migrate-reports-to-db.yml -f dry_run=false --repo keioigakubukat
 
 スクリプト: `scripts/migrate-reports-to-db.mjs`
 
+### ぱっと見（KPI + グラフ）
+
+- **デイリーレポート**の本文は先頭が「今日のKPI」ボード（PV/UU/Contact/Organic/SC + 7日スパークライン）
+- DBの行タイトルも `📊 MM/DD  PV6 UU6 -83.8%` 形式で一覧から数値が見える
+- 親ページ直下に **`📈 アクセス推移（ぱっと見）`** を毎日更新（直近30日の棒グラフ: PV/UU/Organic/Contact/SC）
+
 ## トラブルシュート
 
 - `Skipping GA4→Notion sync because required secrets are missing: ...` の warning が残る
