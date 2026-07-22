@@ -1,20 +1,11 @@
 {
   "unit_id": "ME-M1-01",
-  "brand": "Medvance",
-  "free": true,
-  "files": [
-    "audio.m4a",
-    "lesson.html",
-    "manifest.json",
-    "quiz.json",
-    "quiz.md",
-    "slides.html",
-    "slides.pdf",
-    "video.mp4"
-  ],
-  "audio": "audio.m4a",
+  "premium": true,
+  "title": "整式・項・係数・次数の厳密定義",
+  "minutes": 18,
+  "lesson_html": "lesson.html",
+  "slides_html": "slides.html",
+  "pdf": "lesson.pdf",
   "video": "video.mp4",
-  "slides_pdf": "slides.pdf",
-  "quiz": "quiz.json",
-  "deploy": "free-slim-v1"
+  "audio": "audio.m4a"
 }

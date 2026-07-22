@@ -1,18 +1,11 @@
 {
   "unit_id": "ADV-M1-06",
-  "brand": "Medvance",
-  "free": true,
-  "files": [
-    "audio.m4a",
-    "lesson.html",
-    "manifest.json",
-    "slides.html",
-    "slides.pdf",
-    "video.mp4"
-  ],
-  "audio": "audio.m4a",
+  "premium": true,
+  "title": "定義域が動く最大最小",
+  "minutes": 26,
+  "lesson_html": "lesson.html",
+  "slides_html": "slides.html",
+  "pdf": "lesson.pdf",
   "video": "video.mp4",
-  "slides_pdf": "slides.pdf",
-  "quiz": null,
-  "deploy": "free-slim-v1"
+  "audio": "audio.m4a"
 }

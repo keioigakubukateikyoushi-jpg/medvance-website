@@ -1,5 +1,6 @@
-# Vercel CLI uploads the working tree (including gitignored files).
-# Default: exclude heavy academy media, then allow FREE sample packs only.
+# Vercel CLI respects BOTH .gitignore and .vercelignore.
+# Free-sample delivery files are allowlisted in .gitignore.
+# Here: keep local tooling out, and drop non-free / junk media only.
 
 # Local / tooling
 node_modules
@@ -11,37 +12,14 @@ _backup_images
 .env*
 content/academy/nlm-queue.json
 
-# Exclude all media first
-public/academy/media/**
-
-# Re-include free sample unit folders (slim delivery files)
-!public/academy/media/ME-M1-01/
-!public/academy/media/ME-M1-01/**
-!public/academy/media/ME-EN-01/
-!public/academy/media/ME-EN-01/**
-!public/academy/media/ME-PH-01/
-!public/academy/media/ME-PH-01/**
-!public/academy/media/ME-CH-01/
-!public/academy/media/ME-CH-01/**
-!public/academy/media/ME-BI-01/
-!public/academy/media/ME-BI-01/**
-!public/academy/media/ME-IV-01/
-!public/academy/media/ME-IV-01/**
-!public/academy/media/ME-ES-01/
-!public/academy/media/ME-ES-01/**
-!public/academy/media/ME-JA-01/
-!public/academy/media/ME-JA-01/**
-!public/academy/media/ME-SO-01/
-!public/academy/media/ME-SO-01/**
-!public/academy/media/ME-IF-01/
-!public/academy/media/ME-IF-01/**
-!public/academy/media/ADV-M1-06/
-!public/academy/media/ADV-M1-06/**
-
-# Still drop non-delivery junk inside free folders if present
+# Drop non-delivery junk under media (all units)
 public/academy/media/**/*_frames/**
 public/academy/media/**/nlm_*
 public/academy/media/**/_alignment_lock.txt
 public/academy/media/**/_video_director.md
 public/academy/media/**/lesson.pdf
 public/academy/media/**/*.pptx
+
+# Paid / non-free unit binaries stay gitignored; no extra rules needed.
+# Free unit delivery names (audio.m4a / video.mp4 / slides.pdf / quiz.json)
+# are un-ignored in .gitignore and must be uploaded.
