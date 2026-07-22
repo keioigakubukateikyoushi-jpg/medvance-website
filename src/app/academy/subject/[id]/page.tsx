@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import fs from "node:fs";
-import path from "node:path";
 import { getCatalog, getSubjectIndex, getSubjectMeta } from "@/lib/academy/catalog";
 import { isAcademyMember } from "@/lib/academy/access";
+import { resolveUnitMedia } from "@/lib/academy/media";
 import type { Metadata } from "next";
 
 type Props = {
@@ -12,21 +11,12 @@ type Props = {
 };
 
 function unitMediaFlags(unitId: string) {
-  const dir = path.join(process.cwd(), "public", "academy", "media", unitId);
-  if (!fs.existsSync(dir)) return { pdf: false, slides: false, audio: false, video: false };
+  const media = resolveUnitMedia(unitId);
   return {
-    pdf: fs.existsSync(path.join(dir, "lesson.pdf")),
-    slides:
-      fs.existsSync(path.join(dir, "slides.pdf")) ||
-      fs.existsSync(path.join(dir, "slides.html")) ||
-      fs.existsSync(path.join(dir, "nlm_slides.pdf")),
-    audio:
-      fs.existsSync(path.join(dir, "audio.m4a")) ||
-      fs.existsSync(path.join(dir, "nlm_audio.m4a")),
-    video:
-      fs.existsSync(path.join(dir, "video.mp4")) ||
-      fs.existsSync(path.join(dir, "nlm_video.mp4")) ||
-      fs.existsSync(path.join(dir, "video_nlm.mp4")),
+    pdf: Boolean(media.lessonPdf),
+    slides: Boolean(media.slidesPdf),
+    audio: Boolean(media.audio),
+    video: Boolean(media.lectureVideo || media.video),
   };
 }
 
@@ -179,12 +169,21 @@ function UnitRow({
   member,
   flags,
 }: {
-  unit: { id: string; title: string; goal: string; minutes: number; free?: boolean; prereq?: string[] };
+  unit: {
+    id: string;
+    title: string;
+    goal: string;
+    minutes: number;
+    free?: boolean;
+    prereq?: string[];
+    status?: string;
+  };
   subjectId: string;
   member: boolean;
   flags: { pdf: boolean; slides: boolean; audio: boolean; video: boolean };
 }) {
   const locked = !member && !unit.free;
+  const draft = unit.status !== "full";
   return (
     <li
       className="p-4 rounded-xl bg-white flex flex-col sm:flex-row sm:items-center gap-3 justify-between"
@@ -192,6 +191,14 @@ function UnitRow({
     >
       <div className="min-w-0">
         <div className="flex flex-wrap gap-1.5 mb-1.5">
+          {draft && (
+            <span
+              className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+              style={{ background: "#f3f4f6", color: "#6b7280" }}
+            >
+              準備中
+            </span>
+          )}
           {unit.free ? (
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: "#eef8f0", color: "#17633a" }}>
               無料

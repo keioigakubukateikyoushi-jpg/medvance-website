@@ -136,7 +136,8 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
         curriculumQuiz = null;
       }
     }
-    if (media.quizJsonPath) {
+    // 正本クイズがある場合は、未校閲のNLM生成クイズを重ねて表示しない。
+    if (!curriculumQuiz && media.quizJsonPath) {
       try {
         extraQuiz = normalizeQuiz(readNlmQuizJson(media.quizJsonPath), "extra");
       } catch {
@@ -239,16 +240,6 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
                   rel="noopener noreferrer"
                 >
                   スライドPDF
-                </a>
-              )}
-              {media.slidesHtml && (
-                <a
-                  href={media.slidesHtml}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex px-4 py-2 rounded-lg text-xs font-semibold text-white border border-white/25"
-                >
-                  スライドを開く
                 </a>
               )}
             </div>
@@ -396,53 +387,6 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
                     )}
                   </div>
 
-                  {media.slidesPdf && (
-                    <div>
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                        <p className="text-xs font-medium text-[#6b7280]">スライドPDF プレビュー</p>
-                        <a
-                          href={media.slidesPdf}
-                          download={downloadName("スライド.pdf")}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-bold"
-                          style={{ color: "#2563eb" }}
-                        >
-                          PDFをダウンロード
-                        </a>
-                      </div>
-                      <iframe
-                        title="slides-pdf"
-                        src={`${media.slidesPdf}#view=FitH`}
-                        className="w-full rounded-lg"
-                        style={{ height: 420, border: "1px solid #e5e1d8", background: "#fff" }}
-                      />
-                    </div>
-                  )}
-
-                  {media.slidesHtml && (
-                    <div>
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                        <p className="text-xs font-medium text-[#6b7280]">スライド（ブラウザ）</p>
-                        <a
-                          href={media.slidesHtml}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-semibold"
-                          style={{ color: "#c9922a" }}
-                        >
-                          別タブで開く
-                        </a>
-                      </div>
-                      <iframe
-                        title="slides"
-                        src={media.slidesHtml}
-                        className="w-full rounded-lg"
-                        style={{ height: 400, border: "1px solid #e5e1d8" }}
-                      />
-                    </div>
-                  )}
-
                   {media.audio ? (
                     <div>
                       <p className="text-xs mb-1.5 font-medium text-[#6b7280]">音声</p>
@@ -556,11 +500,15 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
               )}
 
               <KatexEnhance />
+              <KatexEnhance rootClass="academy-quiz" />
 
               {tab === "quiz" && (
                 <div className="space-y-5">
                   {(extraQuiz || curriculumQuiz) && (
-                    <section className="p-6 rounded-2xl bg-white" style={{ border: "1px solid #e5e1d8" }}>
+                    <section
+                      className="p-6 rounded-2xl bg-white academy-quiz"
+                      style={{ border: "1px solid #e5e1d8" }}
+                    >
                       <h2 className="text-base font-bold mb-1" style={{ color: "#0c1a33" }}>
                         {extraQuiz?.title || curriculumQuiz?.title || "確認クイズ"}
                       </h2>

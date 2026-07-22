@@ -91,17 +91,13 @@ function freeCdnAssets(unitId: string): UnitMediaAssets {
   const slidesPdf = publicUrl(unitId, "slides.pdf");
   const audio = publicUrl(unitId, "audio.m4a");
   const video = publicUrl(unitId, "video.mp4");
-  // ADV は slides.html もある。存在しない場合でも 404 ではなく iframe 失敗だけなので任意。
-  const slidesHtml =
-    unitId === "ADV-M1-06" || unitId === "ME-M1-01"
-      ? publicUrl(unitId, "slides.html")
-      : null;
 
   return {
     unitId,
     lessonPdf: null,
     lessonHtml,
-    slidesHtml,
+    // ブラウザ用 slides.html はUIから廃止（PDFを正とする）
+    slidesHtml: null,
     slidesPdf,
     audio,
     lectureVideo: null,
@@ -149,8 +145,7 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   let lessonPdf =
     safePublicMediaUrl(publicUrls.lesson_pdf) || firstExisting(dir, unitId, ["lesson.pdf"]);
   let lessonHtml = firstExisting(dir, unitId, ["lesson.html"]);
-  let slidesHtml =
-    safePublicMediaUrl(publicUrls.slides_html) || firstExisting(dir, unitId, ["slides.html"]);
+  // slides.html（ブラウザデッキ）は配信しない。slides.pdf のみ。
 
   // スライドPDF（公開名 slides.pdf を優先。内部名 nlm_* も解決）
   let slidesPdf =
@@ -185,14 +180,13 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   if (isFreeUnit(unitId)) {
     const cdn = freeCdnAssets(unitId);
     lessonHtml = lessonHtml || cdn.lessonHtml;
-    slidesHtml = slidesHtml || cdn.slidesHtml;
     slidesPdf = slidesPdf || cdn.slidesPdf;
     audio = audio || cdn.audio;
     video = video || cdn.video;
   }
 
   const hasExtendedMedia = Boolean(
-    slidesPdf || audio || lectureVideo || video || slidesHtml || quizJsonPath || quizMd,
+    slidesPdf || audio || lectureVideo || video || quizJsonPath || quizMd,
   );
   const hasAnyMedia = Boolean(lessonPdf || lessonHtml || hasExtendedMedia);
 
@@ -200,7 +194,7 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
     unitId,
     lessonPdf,
     lessonHtml,
-    slidesHtml,
+    slidesHtml: null,
     slidesPdf,
     audio,
     lectureVideo,
