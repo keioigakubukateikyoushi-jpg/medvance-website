@@ -1,11 +1,22 @@
 {
   "unit_id": "ME-M1-01",
-  "premium": true,
+  "brand": "Medvance",
+  "free": true,
   "title": "整式・項・係数・次数の厳密定義",
-  "minutes": 18,
-  "lesson_html": "lesson.html",
-  "slides_html": "slides.html",
-  "pdf": "lesson.pdf",
+  "files": [
+    "audio.m4a",
+    "lesson.html",
+    "manifest.json",
+    "quiz.json",
+    "slides.pdf",
+    "video.mp4",
+    "slides.html"
+  ],
+  "audio": "audio.m4a",
   "video": "video.mp4",
-  "audio": "audio.m4a"
+  "slides_pdf": "slides.pdf",
+  "source": "notebooklm",
+  "video_quality": "nlm-studio",
+  "deploy": "free-slim-v2-nlm-video",
+  "updated_at": "2026-07-22T10:36:47.232449+00:00"
 }

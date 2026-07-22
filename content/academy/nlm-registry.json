@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-22T10:03:34.555Z",
+  "updated": "2026-07-22T10:36:15.786Z",
   "units": {
     "ME-M1-04": {
       "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
@@ -139,7 +139,46 @@
       "studio_requested_at": "2026-07-22T10:03:34.555Z",
       "focus": "【Medvance 公式教材・正本厳守】ユニット ME-EN-03「現在・過去・未来の基本」。 科目: 高校英語（受験） / 章: 時制 / ゴール: 基本時制を文脈に合わせて使える アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research 由来ソースがあ",
       "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-EN-03「現在・過去・未来の基本」。章:時制。ゴール:基本時制を文脈に合わせて使える。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用語: 画面にキーワードを大",
+      "video_quality": "hq-whiteboard-v1",
+      "last_run_at": "2026-07-22T10:17:07.001Z"
+    },
+    "ME-PH-03": {
+      "notebook_id": "13f3d849-f9a7-4dda-a26d-1f71a0cd6380",
+      "title": "Medvance ME-PH-03 等速直線運動と等加速度直線運動",
+      "created_at": "2026-07-22T10:17:16.274Z",
+      "subject": "高校物理（受験）",
+      "subjectDir": "physics-exam"
+    },
+    "ME-CH-02": {
+      "notebook_id": "f14917c6-50b2-4a18-a96e-0a14edaae383",
+      "title": "Medvance ME-CH-02 化学式と化学反応式のつくり方",
+      "created_at": "2026-07-22T10:17:20.871Z",
+      "subject": "高校化学（受験）",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-22T10:18:41.564Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-CH-02「化学式と化学反応式のつくり方」。 科目: 高校化学（受験） / 章: 物質の構成 / ゴール: 係数で原子数を合わせられる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research 由来ソ",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-CH-02「化学式と化学反応式のつくり方」。章:物質の構成。ゴール:係数で原子数を合わせられる。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用語: 画面にキーワ",
+      "video_quality": "hq-whiteboard-v1",
+      "last_run_at": "2026-07-22T10:34:32.326Z"
+    },
+    "ME-BI-03": {
+      "notebook_id": "78eb1824-94ba-4081-bbd9-9e17d6a5d716",
+      "title": "Medvance ME-BI-03 酵素の性質",
+      "created_at": "2026-07-22T10:34:57.168Z",
+      "subject": "高校生物（受験）",
+      "subjectDir": "biology-exam",
+      "studio_requested_at": "2026-07-22T10:36:15.786Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-BI-03「酵素の性質」。 科目: 高校生物（受験） / 章: 代謝 / ゴール: 基質特異性・最適条件を説明できる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research 由来ソースがあっても、定",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-BI-03「酵素の性質」。章:代謝。ゴール:基質特異性・最適条件を説明できる。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用語: 画面にキーワードを大きく出し、",
       "video_quality": "hq-whiteboard-v1"
+    },
+    "ME-M1-01": {
+      "notebook_id": "89a5d0bb-5e7d-408d-ab31-00cab65825de",
+      "title": "Medvance ME-M1-01 only",
+      "created_at": "2026-07-22T10:36:25.809304+00:00",
+      "subject": "高校数学I（受験）",
+      "subjectDir": "math1-exam",
+      "note": "linked existing notebook; video re-download 2026-07-22"
     }
   }
 }
