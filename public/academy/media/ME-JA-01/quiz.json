@@ -1,0 +1,266 @@
+{
+  "title": "Reading Quiz",
+  "questions": [
+    {
+      "question": "According to the Medvance curriculum, how is a 'Claim' (主張) defined in the context of critical reading?",
+      "answerOptions": [
+        {
+          "text": "The central proposition that the author wants the reader to accept.",
+          "isCorrect": true,
+          "rationale": "A claim is the core message or thesis that the author intends to persuade the reader to agree with."
+        },
+        {
+          "text": "A general truth or objective fact that is universally recognized.",
+          "isCorrect": false,
+          "rationale": "General truths are distinct from the specific center-point of the author's own argument."
+        },
+        {
+          "text": "A collection of personal impressions and feelings regarding a topic.",
+          "isCorrect": false,
+          "rationale": "Personal impressions are subjective and are explicitly distinguished from a formal logical claim in this unit."
+        },
+        {
+          "text": "The introductory background information used to set the scene.",
+          "isCorrect": false,
+          "rationale": "Introductory context provides background but does not represent the author's core stance or proposition."
+        }
+      ],
+      "hint": "Consider what the author is actively trying to prove or 'sell' to the audience."
+    },
+    {
+      "question": "Which of the following elements is categorized as 'Evidence' (根拠) to support an author's stance?",
+      "answerOptions": [
+        {
+          "text": "Experimental data and logical cause-and-effect relationships.",
+          "isCorrect": true,
+          "rationale": "Evidence consists of concrete proofs like data, specific examples, and logical causal links."
+        },
+        {
+          "text": "Abstract slogans and repetitive conclusions without data.",
+          "isCorrect": false,
+          "rationale": "Repetitive conclusions point to the claim itself rather than the evidence supporting it."
+        },
+        {
+          "text": "Adversative conjunctions used to pivot the argument.",
+          "isCorrect": false,
+          "rationale": "Conjunctions are markers that show the direction of logic, not the substantive evidence itself."
+        },
+        {
+          "text": "The reader's own previous knowledge about the subject.",
+          "isCorrect": false,
+          "rationale": "Evidence must be drawn from the text or provided materials, not the reader's external knowledge."
+        }
+      ],
+      "hint": "Think about the concrete building blocks that justify why a claim is true."
+    },
+    {
+      "question": "If you need to find the author's Claim quickly, which three locations should you check first?",
+      "answerOptions": [
+        {
+          "text": "Conclusion paragraphs, repeated expressions, and the text following adversative conjunctions.",
+          "isCorrect": true,
+          "rationale": "These locations are the most frequent sites for the author's main stance to appear or be emphasized."
+        },
+        {
+          "text": "Introduction, the first example provided, and the middle of the development section.",
+          "isCorrect": false,
+          "rationale": "While an intro might hint at a claim, the most definitive statements are usually found in conclusions or after logical pivots."
+        },
+        {
+          "text": "Bibliographies, footnote references, and experimental data charts.",
+          "isCorrect": false,
+          "rationale": "These sections provide external support or specific evidence but rarely contain the primary claim statement."
+        },
+        {
+          "text": "The first sentence of every paragraph and all transitional phrases.",
+          "isCorrect": false,
+          "rationale": "Not every paragraph begins with a claim; some are purely for development or evidence."
+        }
+      ],
+      "hint": "Look for places where the author sums up their thoughts or changes the direction of the argument."
+    },
+    {
+      "question": "In the Medvance 'Procedure Walkthrough,' what is the recommended first step before reading the actual text?",
+      "answerOptions": [
+        {
+          "text": "Look at the questions (problems) first to determine what information is needed.",
+          "isCorrect": true,
+          "rationale": "Analyzing the questions first allows the reader to search for specific logical markers and evidence efficiently."
+        },
+        {
+          "text": "Label every paragraph as 'Introduction' or 'Conclusion' immediately.",
+          "isCorrect": false,
+          "rationale": "Labeling occurs during the reading process, but the first step is to establish a purpose via the questions."
+        },
+        {
+          "text": "Write down a one-sentence summary of your own opinion on the title.",
+          "isCorrect": false,
+          "rationale": "Adding your own opinion is a 'pitfall' that can lead to misinterpreting the author's claim."
+        },
+        {
+          "text": "Read the concluding paragraph twice to ensure understanding.",
+          "isCorrect": false,
+          "rationale": "While the conclusion is important, the procedural first step is checking the exam questions."
+        }
+      ],
+      "hint": "Think about how to make your reading more targeted and 'results-oriented' for the exam."
+    },
+    {
+      "question": "When a text uses the conjunction 'However' (しかし), what typically follows in a standard critical essay?",
+      "answerOptions": [
+        {
+          "text": "The author's main position or the start of the core argument.",
+          "isCorrect": true,
+          "rationale": "Adversative conjunctions often signal a shift from general theory or opposing views to the author’s actual claim."
+        },
+        {
+          "text": "A list of minor supporting examples that contrast with the main idea.",
+          "isCorrect": false,
+          "rationale": "While contrast is involved, the pivot usually points toward the main claim rather than minor details."
+        },
+        {
+          "text": "A repetition of the previous paragraph's conclusion in different words.",
+          "isCorrect": false,
+          "rationale": "'However' indicates a change in logical direction, not a simple repetition of the preceding point."
+        },
+        {
+          "text": "The final summary of all experimental data provided earlier.",
+          "isCorrect": false,
+          "rationale": "Summaries of data usually follow concluding markers, whereas 'However' introduces a conceptual shift."
+        }
+      ],
+      "hint": "Think about what happens to the author's stance after they acknowledge an opposing viewpoint."
+    },
+    {
+      "question": "What is a common 'Pitfall' (落とし穴) when identifying an author's claim in high-stakes exams?",
+      "answerOptions": [
+        {
+          "text": "Mistaking one's personal feelings or impressions for the author's claim.",
+          "isCorrect": true,
+          "rationale": "The Common Test requires extracting only what is written, without adding external value judgments."
+        },
+        {
+          "text": "Spending too much time labeling the 'Intro' and 'Conclusion' sections.",
+          "isCorrect": false,
+          "rationale": "Labeling is a core step of the procedure; while time management is key, labeling itself is not the listed 'pitfall'."
+        },
+        {
+          "text": "Only reading the conclusion and ignoring the rest of the text.",
+          "isCorrect": false,
+          "rationale": "The specific pitfall mentioned involves the confusion of subjective feelings with objective textual claims."
+        },
+        {
+          "text": "Assuming the claim is always located in the first sentence of the text.",
+          "isCorrect": false,
+          "rationale": "While the claim location varies, the primary warning is against adding unstated personal biases."
+        }
+      ],
+      "hint": "Consider the danger of projecting your own thoughts onto the author's words."
+    },
+    {
+      "question": "In a paragraph structure where the end of the section says 'One ought to do $X$' and the previous section contains a research study, which part represents the 'Evidence'?",
+      "answerOptions": [
+        {
+          "text": "The section containing the research study.",
+          "isCorrect": true,
+          "rationale": "Research data, experiments, and studies serve as the logical foundation or evidence for the concluding claim."
+        },
+        {
+          "text": "The phrase 'One ought to do $X$'.",
+          "isCorrect": false,
+          "rationale": "Phrases expressing an 'ought' or 'should' usually represent the author's claim, not the evidence."
+        },
+        {
+          "text": "The transition word connecting the two sections.",
+          "isCorrect": false,
+          "rationale": "The transition word is a road sign for logic, not the substance of the evidence itself."
+        },
+        {
+          "text": "The entire essay taken as a single unit.",
+          "isCorrect": false,
+          "rationale": "Evidence and Claim must be distinguished as separate components within the text structure."
+        }
+      ],
+      "hint": "Identify which part provides the 'why' and which part provides the 'what should be done'."
+    },
+    {
+      "question": "Why is it dangerous to focus solely on specific examples (具体例) when reading a critique?",
+      "answerOptions": [
+        {
+          "text": "It can lead to over-generalizing or assuming the whole argument is just about that one example.",
+          "isCorrect": true,
+          "rationale": "Examples are evidence; treating them as the whole claim is a listed 'pitfall' in the Medvance materials."
+        },
+        {
+          "text": "Examples are usually factually incorrect in most entrance exam texts.",
+          "isCorrect": false,
+          "rationale": "Exam texts provide examples as valid evidence; the issue is how the reader interprets their scope."
+        },
+        {
+          "text": "Specific examples are always found in the conclusion, causing confusion.",
+          "isCorrect": false,
+          "rationale": "Examples are typically found in the 'Development' (展開) section, not the conclusion."
+        },
+        {
+          "text": "Adversative conjunctions are never used near specific examples.",
+          "isCorrect": false,
+          "rationale": "Conjunctions can be used anywhere to manage the flow between examples and claims."
+        }
+      ],
+      "hint": "Think about the relationship between a single case study and the author's broader message."
+    },
+    {
+      "question": "For students aiming for medical school, why is the 'speed and accuracy' of identifying claims highlighted for the Common Test?",
+      "answer": "It prevents being 'cut' at the first-stage selection (足切り) by handling paraphrased options efficiently.",
+      "answerOptions": [
+        {
+          "text": "To avoid being disqualified at the primary 'cut-off' stage due to time pressure.",
+          "isCorrect": true,
+          "rationale": "The Common Test is a battle against time, and correctly identifying claims helps in picking the right paraphrased options."
+        },
+        {
+          "text": "To prove that the student has the same values as the author of the text.",
+          "isCorrect": false,
+          "rationale": "Exams test the ability to extract logic, not the student's personal alignment with the author's values."
+        },
+        {
+          "text": "Because medical schools only accept students who can memorize entire essays.",
+          "isCorrect": false,
+          "rationale": "The focus is on applying a 'pattern' (型) to read efficiently, not on rote memorization of the content."
+        },
+        {
+          "text": "To satisfy the requirement of writing a personal critique during the primary exam.",
+          "isCorrect": false,
+          "rationale": "The Common Test is multiple-choice and focuses on selection, not personal essay writing."
+        }
+      ],
+      "hint": "Consider the strategic importance of the first-stage exam for high-level university targets."
+    },
+    {
+      "question": "Which of the following is a mandatory 'Label' used in the Medvance procedure to identify paragraph roles?",
+      "answerOptions": [
+        {
+          "text": "Introduction (導入), Development (展開), and Conclusion (結論).",
+          "isCorrect": true,
+          "rationale": "Labeling these three roles is a core part of the 'Structure Walkthrough' to organize the text logically."
+        },
+        {
+          "text": "Main Character, Conflict, and Resolution.",
+          "isCorrect": false,
+          "rationale": "These labels are for narrative fiction, not for the logical critique (評論文) addressed in this unit."
+        },
+        {
+          "text": "Subject, Verb, and Object.",
+          "isCorrect": false,
+          "rationale": "These are grammatical labels, not paragraph-level structural labels used for analyzing claims."
+        },
+        {
+          "text": "True, False, and Not Given.",
+          "isCorrect": false,
+          "rationale": "These are answer categories for certain tests, not labels for the roles of paragraphs within the text."
+        }
+      ],
+      "hint": "Look for labels that describe the function of a paragraph within the overall argument flow."
+    }
+  ]
+}

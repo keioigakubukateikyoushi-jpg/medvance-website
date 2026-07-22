@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   compress: true,
   // pdfkit loads .afm font metrics from disk; must not be bundled
   serverExternalPackages: ["pdfkit", "fontkit", "linebreak", "png-js"],
+  // 大容量 academy media を Serverless 関数バンドルに入れない（static 配信のみ）
+  outputFileTracingExcludes: {
+    "*": [
+      "./public/academy/media/**/*",
+      "./content/academy/**/lessons/**/*",
+      "./content/academy/**/storyboard/**/*",
+      "./content/academy/**/slides/**/*",
+    ],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000, // 1 year

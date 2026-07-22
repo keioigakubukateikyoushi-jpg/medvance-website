@@ -1,0 +1,265 @@
+{
+  "title": "Sentence Quiz",
+  "questions": [
+    {
+      "question": "According to the 'Goal' of unit ME-EN-01, what core skill should a student acquire?",
+      "answerOptions": [
+        {
+          "text": "Identifying and distinguishing between $S$, $V$, $O$, and $C$ to determine sentence patterns.",
+          "isCorrect": true,
+          "rationale": "The primary objective is to accurately identify these four components to classify the sentence correctly among the five types."
+        },
+        {
+          "text": "Memorizing long lists of transitive and intransitive verbs.",
+          "isCorrect": false,
+          "rationale": "While verb knowledge helps, the goal focuses on the procedural skill of identifying sentence components rather than rote memorization."
+        },
+        {
+          "text": "Translating complex medical English passages into Japanese.",
+          "isCorrect": false,
+          "rationale": "This is a basic course focusing on fundamental structure; translation of complex passages is a later stage of learning."
+        },
+        {
+          "text": "Identifying the difference between $M$ (modifiers) and $O$ (objects).",
+          "isCorrect": false,
+          "rationale": "While related, the specific goal stated in the source is the identification of $S$, $V$, $O$, and $C$ specifically."
+        }
+      ],
+      "hint": "Focus on the components required to determine one of the five sentence patterns."
+    },
+    {
+      "question": "In the core procedure for determining a sentence pattern, which step must be performed first?",
+      "answerOptions": [
+        {
+          "text": "Find the verb ($V$).",
+          "isCorrect": true,
+          "rationale": "The verb serves as the anchor of the sentence structure, making its identification the essential first step."
+        },
+        {
+          "text": "Identify the subject ($S$).",
+          "isCorrect": false,
+          "rationale": "Although the subject is vital, the procedure explicitly lists finding the verb as the first action to take."
+        },
+        {
+          "text": "Check for an object ($O$).",
+          "isCorrect": false,
+          "rationale": "Determining the presence of an object is the second step, which follows identifying the verb."
+        },
+        {
+          "text": "Look for a complement ($C$).",
+          "isCorrect": false,
+          "rationale": "Checking for a complement is the third step in the sequence, once the verb and potential objects are identified."
+        }
+      ],
+      "hint": "This step provides the 'action' or 'state' that defines how the other parts of the sentence relate."
+    },
+    {
+      "question": "How is a Complement ($C$) defined in the context of these five sentence patterns?",
+      "answerOptions": [
+        {
+          "text": "A word describing the state, nature, or identity of the subject or object.",
+          "isCorrect": true,
+          "rationale": "A complement functions by creating an 'equals' relationship ($S=C$ or $O=C$) with the subject or object."
+        },
+        {
+          "text": "A word that indicates 'to whom' or 'for whom' an action is performed.",
+          "isCorrect": false,
+          "rationale": "This description refers to an indirect object, often found in the $S\\,V\\,O\\,O$ pattern."
+        },
+        {
+          "text": "The target or receiver of the action described by the verb.",
+          "isCorrect": false,
+          "rationale": "This definition describes an object ($O$), not a complement ($C$)."
+        },
+        {
+          "text": "A word that modifies the verb by providing time or location.",
+          "isCorrect": false,
+          "rationale": "Words providing time or location are typically modifiers ($M$), which are not considered $C$ in the five patterns."
+        }
+      ],
+      "hint": "Think about the 'equality' rule mentioned in the source."
+    },
+    {
+      "question": "In 'Example A' (She became a doctor), why is 'a doctor' classified as $C$ rather than $O$?",
+      "answerOptions": [
+        {
+          "text": "Because 'She' and 'a doctor' represent the same person ($S=C$).",
+          "isCorrect": true,
+          "rationale": "The relationship of equality between the subject and the following noun identifies it as a complement."
+        },
+        {
+          "text": "Because 'became' is an action that She is performing on the doctor.",
+          "isCorrect": false,
+          "rationale": "Mistaking 'became' for a physical action performed 'on' something is a common error; it is actually a linking verb."
+        },
+        {
+          "text": "Because 'a doctor' answers the question 'who?'.",
+          "isCorrect": false,
+          "rationale": "Answering 'who' or 'what' can apply to both $O$ and $C$; the 'equality' test is the deciding factor."
+        },
+        {
+          "text": "Because 'a doctor' is a noun phrase following a verb.",
+          "isCorrect": false,
+          "rationale": "Both objects and complements can be noun phrases following a verb, so position alone is insufficient."
+        }
+      ],
+      "hint": "Determine if there is an identity or state relationship between the subject and the noun."
+    },
+    {
+      "question": "In 'Example B' (They elected him chairperson), what specific relationship identifies the sentence as $S\\,V\\,O\\,C$?",
+      "answerOptions": [
+        {
+          "text": "The object 'him' and the noun 'chairperson' are equal ($O=C$).",
+          "isCorrect": true,
+          "rationale": "The identity of 'him' is 'chairperson,' establishing the $O=C$ relationship required for the 5th sentence pattern."
+        },
+        {
+          "text": "The subject 'They' is equal to the 'chairperson' ($S=C$).",
+          "isCorrect": false,
+          "rationale": "In this context, 'They' are the ones doing the electing, not the ones who became the chairperson."
+        },
+        {
+          "text": "'Chairperson' is being given to 'him' by 'They' ($S\\,V\\,O\\,O$).",
+          "isCorrect": false,
+          "rationale": "The sentence describes an appointment or identity change, not a transfer of a physical object."
+        },
+        {
+          "text": "There are two separate objects that have no relationship to each other.",
+          "isCorrect": false,
+          "rationale": "If there were no relationship, it might be $S\\,V\\,O\\,O$, but here 'him' is the 'chairperson'."
+        }
+      ],
+      "hint": "Check the relationship between the two words following the verb 'elected'."
+    },
+    {
+      "question": "Regarding the exercise 'I gave her a book', why is it classified as $S\\,V\\,O\\,O$ instead of $S\\,V\\,O\\,C$?",
+      "answerOptions": [
+        {
+          "text": "Because 'her' and 'a book' are not equal ($O \\neq C$).",
+          "isCorrect": true,
+          "rationale": "The person 'her' is not the same thing as the 'book'; this lack of equality indicates two separate objects."
+        },
+        {
+          "text": "Because 'gave' is a linking verb.",
+          "isCorrect": false,
+          "rationale": "Linking verbs like 'be' or 'become' typically lead to $S\\,V\\,C$, whereas 'give' is a ditransitive verb."
+        },
+        {
+          "text": "Because 'a book' is the subject of the sentence.",
+          "isCorrect": false,
+          "rationale": "The subject is 'I,' the one performing the action of giving."
+        },
+        {
+          "text": "Because there is an 'equals' relationship between 'I' and 'a book'.",
+          "isCorrect": false,
+          "rationale": "The subject 'I' is not the 'book'; there is no $S=C$ relationship here."
+        }
+      ],
+      "hint": "Apply the 'equality' test to the two items following the verb."
+    },
+    {
+      "question": "Which of the following is listed as a 'Pitfall' (common error) in the source material?",
+      "answerOptions": [
+        {
+          "text": "Forcefully reading an object ($O$) into a sentence with an intransitive verb.",
+          "isCorrect": true,
+          "rationale": "Students often mistakenly assume a verb must have an object even when it is an intransitive verb in a $S\\,V$ pattern."
+        },
+        {
+          "text": "Confusing the subject ($S$) with the verb ($V$).",
+          "isCorrect": false,
+          "rationale": "While possible for beginners, the source specifically highlights the confusion between $O$ and $C$ or misreading intransitive verbs."
+        },
+        {
+          "text": "Ignoring the existence of the 5th sentence pattern entirely.",
+          "isCorrect": false,
+          "rationale": "The source emphasizes the distinction between patterns rather than the total omission of one."
+        },
+        {
+          "text": "Always assuming the first word of a sentence is the object.",
+          "isCorrect": false,
+          "rationale": "The first word is usually the subject ($S$); the pitfall mentioned regarding word order specifically involves 'there' constructions."
+        }
+      ],
+      "hint": "Consider errors related to how students interpret the requirements of different verb types."
+    },
+    {
+      "question": "Which relationship is the 'key' to identifying a Complement ($C$)?",
+      "answerOptions": [
+        {
+          "text": "The 'Equality' (Equal) relationship.",
+          "isCorrect": true,
+          "rationale": "The core principle for $C$ is that it must represent the same identity or state as the subject ($S=C$) or object ($O=C$)."
+        },
+        {
+          "text": "The 'Giving/Receiving' (Granting) relationship.",
+          "isCorrect": false,
+          "rationale": "This relationship is the hallmark of the $S\\,V\\,O\\,O$ (4th) pattern, not $C$."
+        },
+        {
+          "text": "The 'Action/Direction' relationship.",
+          "isCorrect": false,
+          "rationale": "This generally describes the relationship between a transitive verb and its object ($O$)."
+        },
+        {
+          "text": "The 'Time/Place' relationship.",
+          "isCorrect": false,
+          "rationale": "Time and place are usually modifiers ($M$), which are not central to identifying the $C$ component in the 5 patterns."
+        }
+      ],
+      "hint": "Look for the concept that determines if a word is describing what something 'is' versus what it 'does'."
+    },
+    {
+      "question": "Which of the following verbs are specifically mentioned as being likely to form the $S\\,V\\,C$ (2nd) pattern?",
+      "answerOptions": [
+        {
+          "text": "be, become, seem, look, feel",
+          "isCorrect": true,
+          "rationale": "These are 'linking verbs' that naturally connect a subject to its state or identity ($S=C$)."
+        },
+        {
+          "text": "give, buy, teach, tell, show",
+          "isCorrect": false,
+          "rationale": "These verbs are typically associated with the $S\\,V\\,O\\,O$ (4th) pattern involving the transfer of goods or information."
+        },
+        {
+          "text": "run, sleep, walk, cry, laugh",
+          "isCorrect": false,
+          "rationale": "These are common intransitive verbs that usually form the $S\\,V$ (1st) pattern."
+        },
+        {
+          "text": "elect, call, find, keep, make",
+          "isCorrect": false,
+          "rationale": "While 'make' can be $S\\,V\\,C$, this group is more commonly associated with the $S\\,V\\,O\\,C$ (5th) pattern."
+        }
+      ],
+      "hint": "These verbs often function like an equals sign in a mathematical equation."
+    },
+    {
+      "question": "What does the 'Reach Check' (conditions for mastery) require a student to do to prove they have 'perfected' this unit?",
+      "answerOptions": [
+        {
+          "text": "Reproduce Examples A and B from a blank sheet, starting from the procedure.",
+          "isCorrect": true,
+          "rationale": "Mastery in the Medvance method requires the ability to reconstruct the logical steps and examples without assistance."
+        },
+        {
+          "text": "Translate the entire lesson into English without any errors.",
+          "isCorrect": false,
+          "rationale": "The focus is on logic and component identification, not linguistic translation of the lesson text itself."
+        },
+        {
+          "text": "List 100 verbs that belong to the $S\\,V\\,O\\,C$ pattern.",
+          "isCorrect": false,
+          "rationale": "The unit focuses on the 'procedural' ability to identify patterns rather than the bulk memorization of verb lists."
+        },
+        {
+          "text": "Explain why the 5-sentence pattern system is superior to other systems.",
+          "isCorrect": false,
+          "rationale": "The reach check focuses on practical application and explaining 'why' certain errors (pitfalls) occur, rather than theoretical comparisons."
+        }
+      ],
+      "hint": "Consider the requirement for 'self-reproduction' mentioned in the source."
+    }
+  ]
+}

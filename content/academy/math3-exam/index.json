@@ -4,10 +4,10 @@
   "trackLabel": "基礎講座",
   "brand": "Medvance",
   "unit_count": 18,
-  "full_count": 18,
-  "outline_count": 0,
+  "full_count": 0,
+  "outline_count": 18,
   "design": "極限・微積・複素数平面・式と曲線を抜けなく分割。医学部二次の土台。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "全 18 単元は骨子のみ。内容を拡充中。",
   "chapters": [
     "極限",
     "微分法",
@@ -26,12 +26,12 @@
       "prereq": [
         "ME-MB-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-01.md",
       "storyboard": "storyboard/ME-M3-01.md",
       "slides": "slides/ME-M3-01.md",
       "quiz": "quiz/ME-M3-01.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-02",
@@ -42,12 +42,12 @@
       "prereq": [
         "ME-M3-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-02.md",
       "storyboard": "storyboard/ME-M3-02.md",
       "slides": "slides/ME-M3-02.md",
       "quiz": "quiz/ME-M3-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-03",
@@ -58,12 +58,12 @@
       "prereq": [
         "ME-M3-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-03.md",
       "storyboard": "storyboard/ME-M3-03.md",
       "slides": "slides/ME-M3-03.md",
       "quiz": "quiz/ME-M3-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-04",
@@ -75,12 +75,12 @@
         "ME-M2-19",
         "ME-M3-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-04.md",
       "storyboard": "storyboard/ME-M3-04.md",
       "slides": "slides/ME-M3-04.md",
       "quiz": "quiz/ME-M3-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-05",
@@ -91,12 +91,12 @@
       "prereq": [
         "ME-M3-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-05.md",
       "storyboard": "storyboard/ME-M3-05.md",
       "slides": "slides/ME-M3-05.md",
       "quiz": "quiz/ME-M3-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-06",
@@ -108,12 +108,12 @@
         "ME-M3-05",
         "ME-M2-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-06.md",
       "storyboard": "storyboard/ME-M3-06.md",
       "slides": "slides/ME-M3-06.md",
       "quiz": "quiz/ME-M3-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-07",
@@ -124,12 +124,12 @@
       "prereq": [
         "ME-M3-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-07.md",
       "storyboard": "storyboard/ME-M3-07.md",
       "slides": "slides/ME-M3-07.md",
       "quiz": "quiz/ME-M3-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-08",
@@ -141,12 +141,12 @@
         "ME-M3-07",
         "ME-M2-20"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-08.md",
       "storyboard": "storyboard/ME-M3-08.md",
       "slides": "slides/ME-M3-08.md",
       "quiz": "quiz/ME-M3-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-09",
@@ -157,12 +157,12 @@
       "prereq": [
         "ME-M3-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-09.md",
       "storyboard": "storyboard/ME-M3-09.md",
       "slides": "slides/ME-M3-09.md",
       "quiz": "quiz/ME-M3-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-10",
@@ -174,12 +174,12 @@
         "ME-M3-04",
         "ME-M2-21"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-10.md",
       "storyboard": "storyboard/ME-M3-10.md",
       "slides": "slides/ME-M3-10.md",
       "quiz": "quiz/ME-M3-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-11",
@@ -191,12 +191,12 @@
         "ME-M3-10",
         "ME-M3-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-11.md",
       "storyboard": "storyboard/ME-M3-11.md",
       "slides": "slides/ME-M3-11.md",
       "quiz": "quiz/ME-M3-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-12",
@@ -208,12 +208,12 @@
         "ME-M3-10",
         "ME-M2-22"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-12.md",
       "storyboard": "storyboard/ME-M3-12.md",
       "slides": "slides/ME-M3-12.md",
       "quiz": "quiz/ME-M3-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-13",
@@ -224,12 +224,12 @@
       "prereq": [
         "ME-M3-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-13.md",
       "storyboard": "storyboard/ME-M3-13.md",
       "slides": "slides/ME-M3-13.md",
       "quiz": "quiz/ME-M3-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-14",
@@ -240,12 +240,12 @@
       "prereq": [
         "ME-M2-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-14.md",
       "storyboard": "storyboard/ME-M3-14.md",
       "slides": "slides/ME-M3-14.md",
       "quiz": "quiz/ME-M3-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-15",
@@ -256,12 +256,12 @@
       "prereq": [
         "ME-M3-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-15.md",
       "storyboard": "storyboard/ME-M3-15.md",
       "slides": "slides/ME-M3-15.md",
       "quiz": "quiz/ME-M3-15.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-16",
@@ -272,12 +272,12 @@
       "prereq": [
         "ME-M2-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-16.md",
       "storyboard": "storyboard/ME-M3-16.md",
       "slides": "slides/ME-M3-16.md",
       "quiz": "quiz/ME-M3-16.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-17",
@@ -288,12 +288,12 @@
       "prereq": [
         "ME-M3-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-17.md",
       "storyboard": "storyboard/ME-M3-17.md",
       "slides": "slides/ME-M3-17.md",
       "quiz": "quiz/ME-M3-17.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-M3-18",
@@ -304,12 +304,12 @@
       "prereq": [
         "ME-M3-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-M3-18.md",
       "storyboard": "storyboard/ME-M3-18.md",
       "slides": "slides/ME-M3-18.md",
       "quiz": "quiz/ME-M3-18.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"

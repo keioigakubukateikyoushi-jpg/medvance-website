@@ -4,10 +4,10 @@
   "trackLabel": "共通テスト対策",
   "brand": "Medvance",
   "unit_count": 15,
-  "full_count": 15,
-  "outline_count": 0,
+  "full_count": 1,
+  "outline_count": 14,
   "design": "現代文・古文・漢文を共通テストの得点源に。主張根拠・識別・句法を型で固定。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 14 単元は骨子のみで内容を拡充中。",
   "chapters": [
     "現代文",
     "古文",
@@ -19,14 +19,14 @@
       "chapter": "現代文",
       "title": "評論文の読み方・主張と根拠",
       "minutes": 20,
-      "goal": "評論文で「筆者の主張」と「根拠」を区別して抜き出せる",
+      "goal": "評論文で「筆者の主張」と「根拠」を区別して抜き出し、選択肢を本文の記述だけで判定できる",
       "prereq": [],
       "status": "full",
       "file": "lessons/ME-JA-01.md",
       "storyboard": "storyboard/ME-JA-01.md",
       "slides": "slides/ME-JA-01.md",
       "quiz": "quiz/ME-JA-01.json",
-      "quality": "perfect-v1"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-JA-02",
@@ -37,12 +37,12 @@
       "prereq": [
         "ME-JA-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-02.md",
       "storyboard": "storyboard/ME-JA-02.md",
       "slides": "slides/ME-JA-02.md",
       "quiz": "quiz/ME-JA-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-03",
@@ -53,12 +53,12 @@
       "prereq": [
         "ME-JA-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-03.md",
       "storyboard": "storyboard/ME-JA-03.md",
       "slides": "slides/ME-JA-03.md",
       "quiz": "quiz/ME-JA-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-04",
@@ -69,12 +69,12 @@
       "prereq": [
         "ME-JA-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-04.md",
       "storyboard": "storyboard/ME-JA-04.md",
       "slides": "slides/ME-JA-04.md",
       "quiz": "quiz/ME-JA-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-05",
@@ -86,12 +86,12 @@
         "ME-JA-02",
         "ME-JA-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-05.md",
       "storyboard": "storyboard/ME-JA-05.md",
       "slides": "slides/ME-JA-05.md",
       "quiz": "quiz/ME-JA-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-06",
@@ -102,12 +102,12 @@
       "prereq": [
         "ME-JA-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-06.md",
       "storyboard": "storyboard/ME-JA-06.md",
       "slides": "slides/ME-JA-06.md",
       "quiz": "quiz/ME-JA-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-07",
@@ -116,12 +116,12 @@
       "minutes": 18,
       "goal": "歴史的仮名遣いを現代仮名に直し、品詞のざっくり分類ができる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-07.md",
       "storyboard": "storyboard/ME-JA-07.md",
       "slides": "slides/ME-JA-07.md",
       "quiz": "quiz/ME-JA-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-08",
@@ -132,12 +132,12 @@
       "prereq": [
         "ME-JA-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-08.md",
       "storyboard": "storyboard/ME-JA-08.md",
       "slides": "slides/ME-JA-08.md",
       "quiz": "quiz/ME-JA-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-09",
@@ -148,12 +148,12 @@
       "prereq": [
         "ME-JA-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-09.md",
       "storyboard": "storyboard/ME-JA-09.md",
       "slides": "slides/ME-JA-09.md",
       "quiz": "quiz/ME-JA-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-10",
@@ -164,12 +164,12 @@
       "prereq": [
         "ME-JA-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-10.md",
       "storyboard": "storyboard/ME-JA-10.md",
       "slides": "slides/ME-JA-10.md",
       "quiz": "quiz/ME-JA-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-11",
@@ -180,12 +180,12 @@
       "prereq": [
         "ME-JA-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-11.md",
       "storyboard": "storyboard/ME-JA-11.md",
       "slides": "slides/ME-JA-11.md",
       "quiz": "quiz/ME-JA-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-12",
@@ -194,12 +194,12 @@
       "minutes": 18,
       "goal": "レ点・一二点などを用いて正しく読み下せる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-12.md",
       "storyboard": "storyboard/ME-JA-12.md",
       "slides": "slides/ME-JA-12.md",
       "quiz": "quiz/ME-JA-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-13",
@@ -210,12 +210,12 @@
       "prereq": [
         "ME-JA-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-13.md",
       "storyboard": "storyboard/ME-JA-13.md",
       "slides": "slides/ME-JA-13.md",
       "quiz": "quiz/ME-JA-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-14",
@@ -226,12 +226,12 @@
       "prereq": [
         "ME-JA-13"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-14.md",
       "storyboard": "storyboard/ME-JA-14.md",
       "slides": "slides/ME-JA-14.md",
       "quiz": "quiz/ME-JA-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-JA-15",
@@ -243,12 +243,12 @@
         "ME-JA-14",
         "ME-JA-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-JA-15.md",
       "storyboard": "storyboard/ME-JA-15.md",
       "slides": "slides/ME-JA-15.md",
       "quiz": "quiz/ME-JA-15.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"

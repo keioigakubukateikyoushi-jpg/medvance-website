@@ -63,7 +63,7 @@
     <div class="brand">MEDVANCE · 基礎講座</div>
     <div class="meta">高校物理（受験） · 力学の基礎 · 約16分</div>
     <h1>ME-PH-01 · 物理量・単位・有効数字</h1>
-    <div class="goal"><strong>ゴール</strong> SI単位と次元の感覚で式の正しさを検算できる</div>
+    <div class="goal"><strong>ゴール</strong> 単位換算を機械的に実行でき、次元で式の正しさを検算し、有効数字を正しい桁で答えられる</div>
   </header>
   <main class="wrap">
     <section class="card"><h2>概要</h2><ul>
@@ -74,51 +74,85 @@
 <li>前提: なし</li>
 <li>次: <span class="uid">ME-PH-02</span></li>
 </ul></section>
-<section class="card"><h2>今日のゴール</h2><p>SI単位と次元の感覚で式の正しさを検算できる</p></section>
-<section class="card"><h2>受験での位置づけ</h2><p>力学の基礎の中核スキル。ここが曖昧だと模試で同じ失点をくり返す。</p>
+<section class="card"><h2>今日のゴール</h2><p>単位換算を機械的に実行でき、次元で式の正しさを検算し、有効数字を正しい桁で答えられる</p></section>
+<section class="card"><h2>受験での位置づけ</h2><p>物理の失点の相当数は「物理が分からない」ではなく「単位を揃え忘れた」「桁を勝手に増やした」で起きる。ここは知識ではなく作業手順の単元であり、力学から電磁気まで全分野の計算にそのまま効く。</p>
 <h3>攻略の方針</h3>
-<p>医学部・難関大では用語の定義と手順の再現がそのまま得点になる。</p></section>
+<p>次元解析は答案に書かなくても、検算として必ず頭の中で回す。導いた式の両辺の単位が合わなければ、その時点で式が間違っている。<strong>試験中に自力でミスを発見できる、ほぼ唯一の道具。</strong></p></section>
 <section class="card"><h2>前提チェック</h2><ul>
 <li>入口単元（ここから開始してよい）</li>
 </ul></section>
 <section class="card"><h2>この回のポイント</h2><ul>
-<li>長さ・質量・時間の基本単位</li>
-<li>速度は m/s、力は N</li>
-<li>有効数字は計算の弱い方に合わせる</li>
+<li>SI基本単位は 長さ $\mathrm{m}$・質量 $\mathrm{kg}$・時間 $\mathrm{s}$（力学ではこの3つで足りる）</li>
+<li>組立単位は基本単位の積・商に必ず分解できる（例：$\mathrm{N}=\mathrm{kg\cdot m/s^2}$）</li>
+<li>単位換算は「$1$ に等しい分数」を掛けて約分する操作にすぎない</li>
+<li>有効数字は掛け算・割り算では<strong>最も桁数の少ない値</strong>に合わせる</li>
+<li>足し算・引き算は桁数ではなく<strong>小数点以下の位</strong>で合わせる（規則が違う）</li>
 </ul></section>
 <section class="card"><h2>定義・用語</h2><h3>次元</h3>
-<p>物理量の種類（長さL、質量M、時間T など）で式の整合を見る考え方。</p></section>
+<p>物理量の種類を、長さ $\mathrm{L}$・質量 $\mathrm{M}$・時間 $\mathrm{T}$ の組み合わせで表したもの。速度の次元は $\mathrm{LT^{-1}}$、力の次元は $\mathrm{MLT^{-2}}$。<strong>次元の異なる量は足し引きできない</strong>ため、式の両辺・各項の次元が一致するかを見れば誤りを検出できる。</p>
+<h3>有効数字</h3>
+<p>測定値のうち意味を持つ桁。$0.0120\ \mathrm{m}$ の先頭の $0$ は位取りにすぎず、有効数字は $1,2,0$ の<strong>3桁</strong>。末尾の $0$ は「そこまで測った」という主張なので落としてはいけない。</p></section>
 <section class="card"><h2>核となる手順（答案でこの順）</h2><ol>
-<li>量の定義を書く</li>
-<li>単位を揃える</li>
-<li>桁の妥当性を見る</li>
+<li>与えられた量に単位を付けて書き出す</li>
+<li>換算の分数（$\frac{1000\ \mathrm{m}}{1\ \mathrm{km}}$ など）を掛け、消したい単位を約分する</li>
+<li>計算し、答えの単位が求められている単位になっているか確認する</li>
+<li>有効数字を、掛け割りなら最少桁数・加減なら最も粗い位に合わせて丸める</li>
 </ol></section>
-<section class="card example"><h2>例題A（標準・型の確認）</h2><p>速度 36 km/h を m/s に直せ。</p>
+<section class="card example"><h2>例題A（標準・型の確認）</h2><p>速度 $36\ \mathrm{km/h}$ を $\mathrm{m/s}$ に直せ。また、換算係数 $3.6$ がどこから出るかを説明せよ。</p>
 <h3>解答A</h3>
 <ul>
-<li>要点: 10 m/s</li>
-<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+<li><strong>手順1</strong>　$36\ \mathrm{km/h}$ は「$1$ 時間あたり $36\ \mathrm{km}$」の意味。</li>
+<li><strong>手順2</strong>　$\mathrm{km}\to\mathrm{m}$ は $\dfrac{1000\ \mathrm{m}}{1\ \mathrm{km}}$、$\mathrm{h}\to\mathrm{s}$ は $\dfrac{1\ \mathrm{h}}{3600\ \mathrm{s}}$ を掛ける。どちらも値は $1$ なので、掛けても量は変わらない。</li>
+</ul>
+<p>$$36\ \frac{\mathrm{km}}{\mathrm{h}}\times\frac{1000\ \mathrm{m}}{1\ \mathrm{km}}\times\frac{1\ \mathrm{h}}{3600\ \mathrm{s}}=36\times\frac{1000}{3600}\ \frac{\mathrm{m}}{\mathrm{s}}$$</p>
+<ul>
+<li><strong>手順3</strong>　$\mathrm{km}$ と $\mathrm{h}$ が約分で消え、残る単位は $\mathrm{m/s}$。求められた単位と一致するので換算の向きは正しい。</li>
+<li>$\dfrac{1000}{3600}=\dfrac{1}{3.6}$ なので $36\div 3.6=10$。</li>
+<li>**「$3.6$ で割る」の正体**　$3.6=\dfrac{3600}{1000}$、すなわち「時間の換算数 $3600$ ÷ 長さの換算数 $1000$」。丸暗記ではなく毎回この分数から出せるようにしておく。逆向き（$\mathrm{m/s}\to\mathrm{km/h}$）なら $3.6$ を掛ける、と迷わず決められる。</li>
+<li>答え $10\ \mathrm{m/s}$。$3.6=3600/1000$ より。</li>
 </ul></section>
-<section class="card example"><h2>例題B（受験・実戦）</h2><p>力の単位 N を基本単位で表せ。</p>
+<section class="card example"><h2>例題B（受験・実戦）</h2><p>力の単位 $\mathrm{N}$ を SI 基本単位で表せ。さらにばね定数 $k$ の単位を求め、単振動の周期 $T=2\pi\sqrt{m/k}$ が次元的に正しいことを確かめよ。</p>
 <h3>解答B</h3>
 <ul>
-<li>要点: kg·m/s²</li>
-<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+<li>**$\mathrm{N}$ の分解**　運動方程式 $F=ma$ より、$F$ の単位は（質量の単位）×（加速度の単位）。</li>
+</ul>
+<p>$$[\,\mathrm{N}\,]=\mathrm{kg}\times\frac{\mathrm{m}}{\mathrm{s^2}}=\mathrm{kg\cdot m/s^2}$$</p>
+<ul>
+<li><strong>ばね定数</strong>　フックの法則 $F=kx$ より $k=F/x$ なので</li>
+</ul>
+<p>$$[\,k\,]=\frac{\mathrm{kg\cdot m/s^2}}{\mathrm{m}}=\mathrm{kg/s^2}$$</p>
+<ul>
+<li><strong>周期の検算</strong>　$2\pi$ は無次元なので無視してよい。根号の中身の単位は</li>
+</ul>
+<p>$$\frac{[\,m\,]}{[\,k\,]}=\frac{\mathrm{kg}}{\mathrm{kg/s^2}}=\mathrm{s^2}$$</p>
+<ul>
+<li>$\sqrt{\mathrm{s^2}}=\mathrm{s}$ となり、周期の単位 $\mathrm{s}$ と一致する。<strong>式は次元的に正しい。</strong></li>
+<li>ここで仮に $T=2\pi\sqrt{k/m}$ と覚え違えていれば、単位は $\mathrm{s^{-1}}$ となって周期になり得ない。<strong>公式のうろ覚えをその場で潰せる</strong>のが次元解析の実戦価値である。</li>
+<li>答え $\mathrm{N}=\mathrm{kg\cdot m/s^2}$、$k$ の単位は $\mathrm{kg/s^2}$（$=\mathrm{N/m}$）。$\sqrt{m/k}$ の単位は $\mathrm{s}$ で周期と一致する。</li>
 </ul></section>
-<section class="card example"><h2>演習（自力再現）</h2><p>密度の単位を答えよ。</p>
+<section class="card example"><h2>演習（自力再現）</h2><p>$(1)$ 密度の単位を SI 基本単位で答えよ。</p>
+<p>$(2)$ 縦 $2.5\ \mathrm{cm}$、横 $4.20\ \mathrm{cm}$ の長方形の面積を、有効数字を考えて答えよ。</p>
+<p>$(3)$ $12.3\ \mathrm{cm}+4.567\ \mathrm{cm}$ を有効数字を考えて答えよ。</p>
 <h3>解答</h3>
 <ul>
-<li>要点: kg/m³</li>
-<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+<li>$(1)$ 密度は $\dfrac{質量}{体積}$ なので $\dfrac{\mathrm{kg}}{\mathrm{m^3}}=\mathrm{kg/m^3}$。</li>
+<li>$(2)$ 積は $2.5\times 4.20=10.5$。<strong>掛け算なので桁数の少ない方に合わせる</strong>。$2.5$ が2桁、$4.20$ が3桁だから答えは<strong>2桁</strong>。$10.5\to 11$。よって $11\ \mathrm{cm^2}$。</li>
+<li>$(3)$ 和は $16.867$。<strong>足し算は桁数ではなく位で合わせる</strong>。$12.3$ は小数第1位まで、$4.567$ は小数第3位まで。粗い方の小数第1位に合わせて $16.867\to 16.9$。よって $16.9\ \mathrm{cm}$。</li>
+<li>$(2)$ と $(3)$ で規則が違うことがこの回の核心。<strong>掛け割りは「桁数」、加減は「位」</strong>。$(3)$ を「2桁だから $17$」とするのが最頻出の誤り。</li>
+<li>答え $(1)\ \mathrm{kg/m^3}$　$(2)\ 11\ \mathrm{cm^2}$　$(3)\ 16.9\ \mathrm{cm}$</li>
 </ul></section>
 <section class="card traps"><h2>落とし穴（減点パターン）</h2><ul>
-<li>単位の混在（km/h と m/s）</li>
-<li>有効数字を無闇に増やす</li>
+<li>$\mathrm{km/h}$ と $\mathrm{m/s}$ を混在させたまま公式に代入する（換算は代入<strong>前</strong>に済ませる）</li>
+<li>電卓の表示をそのまま写して有効数字を無闇に増やす（測っていない桁を書くのは誤りの主張になる）</li>
+<li>加減にも「桁数の少ない方」を適用する（加減は<strong>位</strong>で合わせる）</li>
+<li>$0.0120$ の有効数字を2桁と数える（末尾の $0$ は有効なので3桁）</li>
+<li>次元が合わない式を書いたまま先へ進む（例：$v=at^2$ は左辺 $\mathrm{LT^{-1}}$、右辺 $\mathrm{LT}$ で不一致）</li>
 </ul></section>
 <section class="card"><h2>到達チェック（完璧の条件）</h2><ul>
 <li>ゴールを何も見ずに言える</li>
-<li>例題A・Bを白紙で手順から再現できる</li>
-<li>落とし穴を「なぜダメか」まで説明できる</li>
+<li>$3.6$ という数字を暗記に頼らず換算分数から導ける</li>
+<li>$T=2\pi\sqrt{m/k}$ の次元検算を白紙で再現できる</li>
+<li>掛け割りと加減で有効数字の規則が違うことを、例つきで説明できる</li>
 <li>確認クイズで合格点（4/5以上）</li>
 </ul></section>
 <section class="card"><h2>次へ</h2><p>次は <code><span class="uid">ME-PH-02</span></code>。本単元の到達チェックをすべて満たしてから進む。</p>

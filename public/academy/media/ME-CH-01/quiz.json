@@ -1,0 +1,265 @@
+{
+  "title": "Chemistry Quiz",
+  "questions": [
+    {
+      "question": "According to the Medvance foundation course, how is the atomic number of an element strictly defined?",
+      "answerOptions": [
+        {
+          "text": "The number of protons in the nucleus.",
+          "isCorrect": true,
+          "rationale": "This identity is the fundamental definition used to identify an element and its position in the periodic table."
+        },
+        {
+          "text": "The number of neutrons in the nucleus.",
+          "isCorrect": false,
+          "rationale": "Neutron counts can vary within the same element, defining isotopes rather than the atomic number itself."
+        },
+        {
+          "text": "The total sum of protons and neutrons.",
+          "isCorrect": false,
+          "rationale": "This value represents the mass number, which accounts for the total heavy particles in the nucleus."
+        },
+        {
+          "text": "The average mass of all naturally occurring isotopes.",
+          "isCorrect": false,
+          "rationale": "This describes the atomic weight, which is a common point of confusion highlighted in the 'pitfalls' section."
+        }
+      ],
+      "hint": "Consider which subatomic particle determines the identity of the element."
+    },
+    {
+      "question": "What is the correct formula to determine the mass number of a specific atom?",
+      "answerOptions": [
+        {
+          "text": "Mass Number = Protons + Neutrons",
+          "isCorrect": true,
+          "rationale": "The mass number represents the total count of nucleons, which are the primary contributors to an atom's mass."
+        },
+        {
+          "text": "Mass Number = Atomic Number + Electrons",
+          "isCorrect": false,
+          "rationale": "Electrons have negligible mass compared to nucleons and are not included in the mass number calculation."
+        },
+        {
+          "text": "Mass Number = Protons $-$ Neutrons",
+          "isCorrect": false,
+          "rationale": "The mass number is an additive total of the particles in the nucleus, not a difference between them."
+        },
+        {
+          "text": "Mass Number = Atomic Number + Atomic Weight",
+          "isCorrect": false,
+          "rationale": "Atomic weight is a weighted average of isotopes, whereas mass number is a specific integer count for a single atom."
+        }
+      ],
+      "hint": "Think about the two types of particles located within the nucleus."
+    },
+    {
+      "question": "In the atom represented as $^{12}_{6}\\text{C}$, how many neutrons are present?",
+      "answerOptions": [
+        {
+          "text": "6",
+          "isCorrect": true,
+          "rationale": "Subtracting the atomic number (6 protons) from the mass number (12) yields the neutron count."
+        },
+        {
+          "text": "12",
+          "isCorrect": false,
+          "rationale": "This is the mass number, representing the sum of both protons and neutrons."
+        },
+        {
+          "text": "0",
+          "isCorrect": false,
+          "rationale": "A neutral carbon atom must contain neutrons to stabilize the nucleus and reach the indicated mass number."
+        },
+        {
+          "text": "18",
+          "isCorrect": false,
+          "rationale": "This error results from incorrectly adding the mass number and atomic number together."
+        }
+      ],
+      "hint": "The mass number is the sum of protons and neutrons, while the lower number is the proton count."
+    },
+    {
+      "question": "Calculate the number of electrons in a $\\text{Na}^{+}$ ion, given that Sodium has an atomic number of 11.",
+      "answerOptions": [
+        {
+          "text": "10",
+          "isCorrect": true,
+          "rationale": "A positive charge indicates the loss of one electron from the neutral atom's count of 11."
+        },
+        {
+          "text": "11",
+          "isCorrect": false,
+          "rationale": "This is the number of electrons in a neutral Sodium atom, but the ion has a positive charge."
+        },
+        {
+          "text": "12",
+          "isCorrect": false,
+          "rationale": "This represents a common sign error where a positive charge is mistaken for an extra electron."
+        },
+        {
+          "text": "23",
+          "isCorrect": false,
+          "rationale": "This is the approximate mass number of Sodium, which is unrelated to the electron count of the ion."
+        }
+      ],
+      "hint": "A positive charge means there is a deficiency of electrons compared to the proton count."
+    },
+    {
+      "question": "Which of the following best describes the relationship between isotopes?",
+      "answerOptions": [
+        {
+          "text": "Same atomic number, different mass numbers.",
+          "isCorrect": true,
+          "rationale": "Isotopes are atoms of the same element (same protons) that differ in their number of neutrons."
+        },
+        {
+          "text": "Same mass number, different atomic numbers.",
+          "isCorrect": false,
+          "rationale": "This describes different elements that happen to have the same total nucleon count, known as isobars."
+        },
+        {
+          "text": "Same number of neutrons, different number of protons.",
+          "isCorrect": false,
+          "rationale": "This would result in different elements with no shared chemical identity, not isotopes."
+        },
+        {
+          "text": "Different atomic numbers and different electron counts.",
+          "isCorrect": false,
+          "rationale": "Isotopes must belong to the same element, which requires them to share the same atomic number."
+        }
+      ],
+      "hint": "Isotopes belong to the same element but have different physical weights."
+    },
+    {
+      "question": "What is the physical image of an ionic bond as defined in the Medvance materials?",
+      "answerOptions": [
+        {
+          "text": "Electrostatic attraction between cations and anions.",
+          "isCorrect": true,
+          "rationale": "Ionic bonds are formed by the strong attraction between oppositely charged particles."
+        },
+        {
+          "text": "Sharing of electron pairs between two atoms.",
+          "isCorrect": false,
+          "rationale": "This describes a covalent bond, which is distinct from the electrostatic nature of ionic bonds."
+        },
+        {
+          "text": "The movement of delocalized electrons through a lattice.",
+          "isCorrect": false,
+          "rationale": "This describes metallic bonding rather than the specific interaction between ions."
+        },
+        {
+          "text": "The repulsion between nuclei of adjacent atoms.",
+          "isCorrect": false,
+          "rationale": "Repulsion would prevent bonding; a bond requires a net attractive force between particles."
+        }
+      ],
+      "hint": "Focus on how opposite electrical charges interact with each other."
+    },
+    {
+      "question": "Which common 'pitfall' mentioned in the source material leads to incorrect answers in entrance exams?",
+      "answerOptions": [
+        {
+          "text": "Confusing the mass number of a specific atom with atomic weight.",
+          "isCorrect": true,
+          "rationale": "Mass number is an integer for one atom, while atomic weight is a decimal average for all isotopes of an element."
+        },
+        {
+          "text": "Confusing the atomic number with the proton number.",
+          "isCorrect": false,
+          "rationale": "These two values are identical by definition, so treating them as the same is correct."
+        },
+        {
+          "text": "Assuming ions are formed by changing the number of protons.",
+          "isCorrect": false,
+          "rationale": "While this is a mistake, the source specifically highlights the confusion between mass number and atomic weight."
+        },
+        {
+          "text": "Mistaking the group number for the period number.",
+          "isCorrect": false,
+          "rationale": "This is a general error, but not the specific 'pitfall' emphasized in the reaching the goal section."
+        }
+      ],
+      "hint": "Look for the confusion between a specific integer count and a periodic table average."
+    },
+    {
+      "question": "When following the Medvance 'Core Procedure' (核となる手順) to solve problems, what is the mandatory first step?",
+      "answerOptions": [
+        {
+          "text": "Count the number of particles (protons, neutrons, electrons).",
+          "isCorrect": true,
+          "rationale": "Accurate counting of subatomic particles provides the data needed for all subsequent chemical identifications."
+        },
+        {
+          "text": "Write the ionic formula (イオン式).",
+          "isCorrect": false,
+          "rationale": "Writing the formula is the second step in the procedure, which relies on the initial particle count."
+        },
+        {
+          "text": "Determine the group of the periodic table.",
+          "isCorrect": false,
+          "rationale": "Identifying the periodic group is the final step of the procedure used to verify the element's properties."
+        },
+        {
+          "text": "Identify the isotope ratio.",
+          "isCorrect": false,
+          "rationale": "This is a complex calculation that follows the basic identification of atomic structure."
+        }
+      ],
+      "hint": "The most basic level of analysis involves the fundamental components of the atom."
+    },
+    {
+      "question": "How does an atom specifically become an ion according to the 'Point' section of the lesson?",
+      "answerOptions": [
+        {
+          "text": "Through the excess or deficiency of electrons.",
+          "isCorrect": true,
+          "rationale": "Ions are formed solely by gaining or losing electrons; the nucleus remains unchanged during this process."
+        },
+        {
+          "text": "By changing the number of protons in the nucleus.",
+          "isCorrect": false,
+          "rationale": "Changing the number of protons would change the identity of the element itself, not just create an ion."
+        },
+        {
+          "text": "By adding or removing neutrons to change the mass.",
+          "isCorrect": false,
+          "rationale": "This process creates different isotopes of the same element, not ions."
+        },
+        {
+          "text": "By combining with other neutral atoms to form molecules.",
+          "isCorrect": false,
+          "rationale": "Molecules can be neutral; ion formation specifically requires a net change in charge via electron transfer."
+        }
+      ],
+      "hint": "The charge of an atom depends on the balance between its static positive core and its mobile negative particles."
+    },
+    {
+      "question": "To achieve a 'perfect condition' (完璧の条件) for this unit, what must a student be able to do with Examples A and B?",
+      "answerOptions": [
+        {
+          "text": "Reproduce them from scratch on a blank sheet of paper using the correct procedure.",
+          "isCorrect": true,
+          "rationale": "True mastery in the Medvance method involves the ability to replicate steps without external prompts."
+        },
+        {
+          "text": "Memorize the final answers (6 and 10) for the exam.",
+          "isCorrect": false,
+          "rationale": "Memorization of answers without understanding the procedure leads to repeated failures on modified exam questions."
+        },
+        {
+          "text": "Recognize the correct answer among a list of multiple choices.",
+          "isCorrect": false,
+          "rationale": "Recognition is a lower level of learning; the course demands 'reproduction' for medical-level exams."
+        },
+        {
+          "text": "Explain why the isotopes are relevant to medical imaging.",
+          "isCorrect": false,
+          "rationale": "While interesting, the 'perfect condition' for this specific lesson focuses on the core procedural skills of counting and defining."
+        }
+      ],
+      "hint": "The goal is active reproduction, not just passive recognition."
+    }
+  ]
+}

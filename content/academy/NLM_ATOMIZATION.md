@@ -66,10 +66,34 @@ node scripts/nlm-unit-factory.mjs ME-M1-04 --audio-only
 NLM_DRY=1 node scripts/nlm-unit-factory.mjs ME-M1-04
 ```
 
+## 動画品質バー（hq-whiteboard-v1）
+
+東進級の「授業として見られる」密度を目標にする。
+
+| 項目 | 基準 |
+|------|------|
+| スタイル | `explainer` + `whiteboard`（板書型）を第一選択 |
+| focus | `videoFocusPrompt`（ゴール→定義→手順→例A→例B→落とし穴→到達） |
+| ソース | lesson + storyboard + `_video_director.md`（画コンテ） |
+| 禁止 | 雑談・自己紹介・台本外例題・英語UI文言 |
+| ファイル | `public/academy/media/{ID}/nlm_video.mp4` → `video.mp4` |
+
+```bash
+# 無料単元から高品質動画のみ（既存2MB超はスキップ）
+node scripts/nlm-video-quality-queue.mjs
+
+# 強制再生成
+node scripts/nlm-video-quality-queue.mjs --force ME-EN-01
+
+# 単体
+node scripts/nlm-unit-factory.mjs ME-EN-01 --video-only --no-research --reuse-sources
+```
+
 ## レート制限
 
 NotebookLM は **短時間連打制限** と **日次に近いクォータ** がある。  
 推奨: **1日あたり数ユニット**（音声+動画+スライド）。  
+**動画のみ**は 1本ごとに **3〜5分クールダウン** を推奨。  
 失敗時は 2–10 分空けて `--download-only` または再 create。
 
 ## レジストリ

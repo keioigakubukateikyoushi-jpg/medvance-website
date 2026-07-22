@@ -2,43 +2,60 @@
   "unit_id": "ME-EN-01",
   "title": "5文型の判別",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v2",
   "questions": [
     {
       "id": "q1",
-      "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "S V O C を見分け文型を判定できる"
+      "type": "mc",
+      "prompt": "They made him captain. の文型はどれか。",
+      "choices": [
+        "第5文型 $S\\,V\\,O\\,C$",
+        "第4文型 $S\\,V\\,O\\,O$",
+        "第3文型 $S\\,V\\,O$",
+        "第2文型 $S\\,V\\,C$"
+      ],
+      "answer": "第5文型 $S\\,V\\,O\\,C$",
+      "explain": "him と captain を結ぶと「彼＝主将」が成立する。イコールが成り立つので captain は $C$。"
     },
     {
       "id": "q2",
-      "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "主語や目的語の性質・状態・同一物を述べる語。$S=C$ または $O=C$ が成り立つ。 be / become / seem / look / feel など（第2文型になりやすい）"
+      "type": "mc",
+      "prompt": "They made him a cake. の文型はどれか。",
+      "choices": [
+        "第4文型 $S\\,V\\,O\\,O$",
+        "第5文型 $S\\,V\\,O\\,C$",
+        "第3文型 $S\\,V\\,O$",
+        "第1文型 $S\\,V$"
+      ],
+      "answer": "第4文型 $S\\,V\\,O\\,O$",
+      "explain": "him と a cake はイコールではない（彼＝ケーキ ではない）。「彼にケーキを作ってやった」の授与関係。前問と同じ made でも文型が変わる点が核心で、動詞では判定できない。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "$O$ と $C$ の混同（イコールかどうかで切る）",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "$O$ と $C$ の混同（イコールかどうかで切る）"
+      "type": "short",
+      "prompt": "He lives in Tokyo. の文型を答え、その理由を述べよ。",
+      "answer": "第1文型 $S\\,V$。in Tokyo は前置詞句なので修飾語 $M$ であり、文型の要素に数えないため。",
+      "explain": "前置詞句は $O$ になれない。$M$ をいくら足しても文型は変わらないので、まず外してから判定する。"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "動詞 $V$ を見つける"
+      "prompt": "I found the book easy. と I found her a job. の文型をそれぞれ答え、判定基準を示せ。",
+      "answer": "前者は第5文型（the book＝easy が成立）、後者は第4文型（her≠a job）。基準は後続の2要素がイコールで結べるかどうか。",
+      "explain": "同じ found でも第4にも第5にもなる。動詞を暗記するのではなく、毎回イコールを試すのが確実な判定法。"
     },
     {
       "id": "q5",
-      "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "第1：$S\\,V$（自動詞）"
+      "type": "mc",
+      "prompt": "She looks happy. の happy の文法上の役割は何か。",
+      "choices": [
+        "補語 $C$",
+        "目的語 $O$",
+        "修飾語 $M$",
+        "主語 $S$"
+      ],
+      "answer": "補語 $C$",
+      "explain": "She＝happy が成立するので $C$。第2文型 $S\\,V\\,C$。$C$ は名詞とは限らず形容詞も来る点に注意。"
     }
   ]
 }

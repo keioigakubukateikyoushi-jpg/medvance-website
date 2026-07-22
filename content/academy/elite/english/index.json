@@ -4,8 +4,8 @@
   "trackLabel": "難関大講座",
   "brand": "Medvance",
   "unit_count": 8,
-  "full_count": 8,
-  "outline_count": 0,
+  "full_count": 0,
+  "outline_count": 8,
   "chapters": [
     "精読",
     "構文",
@@ -24,12 +24,12 @@
         "ADV-EN-06",
         "ADV-EN-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-01.md",
       "storyboard": "storyboard/ELI-E-01.md",
       "slides": "slides/ELI-E-01.md",
       "quiz": "quiz/ELI-E-01.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-E-02",
@@ -41,12 +41,12 @@
         "ADV-EN-01",
         "ADV-EN-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-02.md",
       "storyboard": "storyboard/ELI-E-02.md",
       "slides": "slides/ELI-E-02.md",
       "quiz": "quiz/ELI-E-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-E-03",
@@ -57,12 +57,12 @@
       "prereq": [
         "ADV-EN-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-03.md",
       "storyboard": "storyboard/ELI-E-03.md",
       "slides": "slides/ELI-E-03.md",
       "quiz": "quiz/ELI-E-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-E-04",
@@ -74,12 +74,12 @@
         "ADV-EN-04",
         "ADV-EN-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-04.md",
       "storyboard": "storyboard/ELI-E-04.md",
       "slides": "slides/ELI-E-04.md",
       "quiz": "quiz/ELI-E-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-E-05",
@@ -90,12 +90,12 @@
       "prereq": [
         "ADV-EN-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-05.md",
       "storyboard": "storyboard/ELI-E-05.md",
       "slides": "slides/ELI-E-05.md",
       "quiz": "quiz/ELI-E-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-E-06",
@@ -107,12 +107,12 @@
         "ADV-EN-07",
         "ELI-E-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-06.md",
       "storyboard": "storyboard/ELI-E-06.md",
       "slides": "slides/ELI-E-06.md",
       "quiz": "quiz/ELI-E-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-E-07",
@@ -123,12 +123,12 @@
       "prereq": [
         "ADV-EN-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-07.md",
       "storyboard": "storyboard/ELI-E-07.md",
       "slides": "slides/ELI-E-07.md",
       "quiz": "quiz/ELI-E-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-E-08",
@@ -139,14 +139,14 @@
       "prereq": [
         "ADV-EN-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-E-08.md",
       "storyboard": "storyboard/ELI-E-08.md",
       "slides": "slides/ELI-E-08.md",
       "quiz": "quiz/ELI-E-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+  "completeness": "全 8 単元は骨子のみ。内容を拡充中。"
 }

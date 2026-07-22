@@ -4,10 +4,10 @@
   "trackLabel": "基礎講座",
   "brand": "Medvance",
   "unit_count": 18,
-  "full_count": 18,
-  "outline_count": 0,
+  "full_count": 1,
+  "outline_count": 17,
   "design": "落とす理由を消す面接準備。志望動機・MMI・グループ討論・属性別まで原子スキル分割。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 17 単元は骨子のみで内容を拡充中。",
   "chapters": [
     "評価の基本",
     "志望動機",
@@ -23,14 +23,14 @@
       "chapter": "評価の基本",
       "title": "面接は「落とす試験」である",
       "minutes": 16,
-      "goal": "評価軸が適性・誠実さ・一貫性だと説明できる",
+      "goal": "医学部面接が「加点で選ぶ」ではなく「減点で外す」試験であることを理解し、自分の減点候補を洗い出して優先順位をつけられる",
       "prereq": [],
       "status": "full",
       "file": "lessons/ME-IV-01.md",
       "storyboard": "storyboard/ME-IV-01.md",
       "slides": "slides/ME-IV-01.md",
       "quiz": "quiz/ME-IV-01.json",
-      "quality": "perfect-v1"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-IV-02",
@@ -41,12 +41,12 @@
       "prereq": [
         "ME-IV-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-02.md",
       "storyboard": "storyboard/ME-IV-02.md",
       "slides": "slides/ME-IV-02.md",
       "quiz": "quiz/ME-IV-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-03",
@@ -57,12 +57,12 @@
       "prereq": [
         "ME-IV-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-03.md",
       "storyboard": "storyboard/ME-IV-03.md",
       "slides": "slides/ME-IV-03.md",
       "quiz": "quiz/ME-IV-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-04",
@@ -73,12 +73,12 @@
       "prereq": [
         "ME-IV-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-04.md",
       "storyboard": "storyboard/ME-IV-04.md",
       "slides": "slides/ME-IV-04.md",
       "quiz": "quiz/ME-IV-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-05",
@@ -89,12 +89,12 @@
       "prereq": [
         "ME-IV-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-05.md",
       "storyboard": "storyboard/ME-IV-05.md",
       "slides": "slides/ME-IV-05.md",
       "quiz": "quiz/ME-IV-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-06",
@@ -105,12 +105,12 @@
       "prereq": [
         "ME-IV-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-06.md",
       "storyboard": "storyboard/ME-IV-06.md",
       "slides": "slides/ME-IV-06.md",
       "quiz": "quiz/ME-IV-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-07",
@@ -121,12 +121,12 @@
       "prereq": [
         "ME-IV-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-07.md",
       "storyboard": "storyboard/ME-IV-07.md",
       "slides": "slides/ME-IV-07.md",
       "quiz": "quiz/ME-IV-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-08",
@@ -137,12 +137,12 @@
       "prereq": [
         "ME-IV-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-08.md",
       "storyboard": "storyboard/ME-IV-08.md",
       "slides": "slides/ME-IV-08.md",
       "quiz": "quiz/ME-IV-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-09",
@@ -153,12 +153,12 @@
       "prereq": [
         "ME-IV-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-09.md",
       "storyboard": "storyboard/ME-IV-09.md",
       "slides": "slides/ME-IV-09.md",
       "quiz": "quiz/ME-IV-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-10",
@@ -169,12 +169,12 @@
       "prereq": [
         "ME-IV-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-10.md",
       "storyboard": "storyboard/ME-IV-10.md",
       "slides": "slides/ME-IV-10.md",
       "quiz": "quiz/ME-IV-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-11",
@@ -186,12 +186,12 @@
         "ME-IV-04",
         "ME-IV-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-11.md",
       "storyboard": "storyboard/ME-IV-11.md",
       "slides": "slides/ME-IV-11.md",
       "quiz": "quiz/ME-IV-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-12",
@@ -203,12 +203,12 @@
         "ME-IV-11",
         "ME-IV-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-12.md",
       "storyboard": "storyboard/ME-IV-12.md",
       "slides": "slides/ME-IV-12.md",
       "quiz": "quiz/ME-IV-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-13",
@@ -219,12 +219,12 @@
       "prereq": [
         "ME-IV-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-13.md",
       "storyboard": "storyboard/ME-IV-13.md",
       "slides": "slides/ME-IV-13.md",
       "quiz": "quiz/ME-IV-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-14",
@@ -236,12 +236,12 @@
         "ME-IV-10",
         "ME-IV-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-14.md",
       "storyboard": "storyboard/ME-IV-14.md",
       "slides": "slides/ME-IV-14.md",
       "quiz": "quiz/ME-IV-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-15",
@@ -253,12 +253,12 @@
         "ME-IV-06",
         "ME-IV-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-15.md",
       "storyboard": "storyboard/ME-IV-15.md",
       "slides": "slides/ME-IV-15.md",
       "quiz": "quiz/ME-IV-15.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-16",
@@ -270,12 +270,12 @@
         "ME-IV-05",
         "ME-IV-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-16.md",
       "storyboard": "storyboard/ME-IV-16.md",
       "slides": "slides/ME-IV-16.md",
       "quiz": "quiz/ME-IV-16.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-17",
@@ -287,12 +287,12 @@
         "ME-IV-11",
         "ME-IV-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-17.md",
       "storyboard": "storyboard/ME-IV-17.md",
       "slides": "slides/ME-IV-17.md",
       "quiz": "quiz/ME-IV-17.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IV-18",
@@ -304,12 +304,12 @@
         "ME-IV-17",
         "ME-IV-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IV-18.md",
       "storyboard": "storyboard/ME-IV-18.md",
       "slides": "slides/ME-IV-18.md",
       "quiz": "quiz/ME-IV-18.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"

@@ -4,10 +4,10 @@
   "trackLabel": "基礎講座",
   "brand": "Medvance",
   "unit_count": 26,
-  "full_count": 26,
-  "outline_count": 0,
+  "full_count": 1,
+  "outline_count": 25,
   "design": "物理基礎＋物理の受験範囲を原子スキルでカバー。投射・円・振動・光・電磁・熱力学まで。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 25 単元は骨子のみで内容を拡充中。",
   "chapters": [
     "力学の基礎",
     "運動と力",
@@ -23,14 +23,14 @@
       "chapter": "力学の基礎",
       "title": "物理量・単位・有効数字",
       "minutes": 16,
-      "goal": "SI単位と次元の感覚で式の正しさを検算できる",
+      "goal": "単位換算を機械的に実行でき、次元で式の正しさを検算し、有効数字を正しい桁で答えられる",
       "prereq": [],
       "status": "full",
       "file": "lessons/ME-PH-01.md",
       "storyboard": "storyboard/ME-PH-01.md",
       "slides": "slides/ME-PH-01.md",
       "quiz": "quiz/ME-PH-01.json",
-      "quality": "perfect-v1"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-PH-02",
@@ -41,12 +41,12 @@
       "prereq": [
         "ME-PH-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-02.md",
       "storyboard": "storyboard/ME-PH-02.md",
       "slides": "slides/ME-PH-02.md",
       "quiz": "quiz/ME-PH-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-03",
@@ -57,12 +57,12 @@
       "prereq": [
         "ME-PH-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-03.md",
       "storyboard": "storyboard/ME-PH-03.md",
       "slides": "slides/ME-PH-03.md",
       "quiz": "quiz/ME-PH-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-04",
@@ -73,12 +73,12 @@
       "prereq": [
         "ME-PH-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-04.md",
       "storyboard": "storyboard/ME-PH-04.md",
       "slides": "slides/ME-PH-04.md",
       "quiz": "quiz/ME-PH-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-05",
@@ -89,12 +89,12 @@
       "prereq": [
         "ME-PH-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-05.md",
       "storyboard": "storyboard/ME-PH-05.md",
       "slides": "slides/ME-PH-05.md",
       "quiz": "quiz/ME-PH-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-06",
@@ -106,12 +106,12 @@
         "ME-PH-05",
         "ME-PH-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-06.md",
       "storyboard": "storyboard/ME-PH-06.md",
       "slides": "slides/ME-PH-06.md",
       "quiz": "quiz/ME-PH-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-07",
@@ -122,12 +122,12 @@
       "prereq": [
         "ME-PH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-07.md",
       "storyboard": "storyboard/ME-PH-07.md",
       "slides": "slides/ME-PH-07.md",
       "quiz": "quiz/ME-PH-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-08",
@@ -138,12 +138,12 @@
       "prereq": [
         "ME-PH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-08.md",
       "storyboard": "storyboard/ME-PH-08.md",
       "slides": "slides/ME-PH-08.md",
       "quiz": "quiz/ME-PH-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-09",
@@ -154,12 +154,12 @@
       "prereq": [
         "ME-PH-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-09.md",
       "storyboard": "storyboard/ME-PH-09.md",
       "slides": "slides/ME-PH-09.md",
       "quiz": "quiz/ME-PH-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-10",
@@ -170,12 +170,12 @@
       "prereq": [
         "ME-PH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-10.md",
       "storyboard": "storyboard/ME-PH-10.md",
       "slides": "slides/ME-PH-10.md",
       "quiz": "quiz/ME-PH-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-11",
@@ -184,12 +184,12 @@
       "minutes": 16,
       "goal": "f, T, λ, v の関係を使える",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-11.md",
       "storyboard": "storyboard/ME-PH-11.md",
       "slides": "slides/ME-PH-11.md",
       "quiz": "quiz/ME-PH-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-12",
@@ -200,12 +200,12 @@
       "prereq": [
         "ME-PH-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-12.md",
       "storyboard": "storyboard/ME-PH-12.md",
       "slides": "slides/ME-PH-12.md",
       "quiz": "quiz/ME-PH-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-13",
@@ -214,12 +214,12 @@
       "minutes": 18,
       "goal": "電場と電位の違いを言える",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-13.md",
       "storyboard": "storyboard/ME-PH-13.md",
       "slides": "slides/ME-PH-13.md",
       "quiz": "quiz/ME-PH-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-14",
@@ -230,12 +230,12 @@
       "prereq": [
         "ME-PH-13"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-14.md",
       "storyboard": "storyboard/ME-PH-14.md",
       "slides": "slides/ME-PH-14.md",
       "quiz": "quiz/ME-PH-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-15",
@@ -244,12 +244,12 @@
       "minutes": 16,
       "goal": "Q=mcΔT を使える",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-15.md",
       "storyboard": "storyboard/ME-PH-15.md",
       "slides": "slides/ME-PH-15.md",
       "quiz": "quiz/ME-PH-15.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-16",
@@ -260,12 +260,12 @@
       "prereq": [
         "ME-PH-15"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-16.md",
       "storyboard": "storyboard/ME-PH-16.md",
       "slides": "slides/ME-PH-16.md",
       "quiz": "quiz/ME-PH-16.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-17",
@@ -277,12 +277,12 @@
         "ME-PH-04",
         "ME-PH-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-17.md",
       "storyboard": "storyboard/ME-PH-17.md",
       "slides": "slides/ME-PH-17.md",
       "quiz": "quiz/ME-PH-17.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-18",
@@ -293,12 +293,12 @@
       "prereq": [
         "ME-PH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-18.md",
       "storyboard": "storyboard/ME-PH-18.md",
       "slides": "slides/ME-PH-18.md",
       "quiz": "quiz/ME-PH-18.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-19",
@@ -310,12 +310,12 @@
         "ME-PH-18",
         "ME-PH-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-19.md",
       "storyboard": "storyboard/ME-PH-19.md",
       "slides": "slides/ME-PH-19.md",
       "quiz": "quiz/ME-PH-19.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-20",
@@ -326,12 +326,12 @@
       "prereq": [
         "ME-PH-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-20.md",
       "storyboard": "storyboard/ME-PH-20.md",
       "slides": "slides/ME-PH-20.md",
       "quiz": "quiz/ME-PH-20.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-21",
@@ -342,12 +342,12 @@
       "prereq": [
         "ME-PH-20"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-21.md",
       "storyboard": "storyboard/ME-PH-21.md",
       "slides": "slides/ME-PH-21.md",
       "quiz": "quiz/ME-PH-21.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-22",
@@ -359,12 +359,12 @@
         "ME-PH-13",
         "ME-PH-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-22.md",
       "storyboard": "storyboard/ME-PH-22.md",
       "slides": "slides/ME-PH-22.md",
       "quiz": "quiz/ME-PH-22.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-23",
@@ -375,12 +375,12 @@
       "prereq": [
         "ME-PH-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-23.md",
       "storyboard": "storyboard/ME-PH-23.md",
       "slides": "slides/ME-PH-23.md",
       "quiz": "quiz/ME-PH-23.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-24",
@@ -391,12 +391,12 @@
       "prereq": [
         "ME-PH-23"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-24.md",
       "storyboard": "storyboard/ME-PH-24.md",
       "slides": "slides/ME-PH-24.md",
       "quiz": "quiz/ME-PH-24.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-25",
@@ -407,12 +407,12 @@
       "prereq": [
         "ME-PH-16"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-25.md",
       "storyboard": "storyboard/ME-PH-25.md",
       "slides": "slides/ME-PH-25.md",
       "quiz": "quiz/ME-PH-25.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-PH-26",
@@ -423,12 +423,12 @@
       "prereq": [
         "ME-PH-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-PH-26.md",
       "storyboard": "storyboard/ME-PH-26.md",
       "slides": "slides/ME-PH-26.md",
       "quiz": "quiz/ME-PH-26.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"

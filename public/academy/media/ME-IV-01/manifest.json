@@ -1,13 +1,18 @@
 {
   "unit_id": "ME-IV-01",
   "brand": "Medvance",
-  "lesson_html": "lesson.html",
-  "lesson_pdf": "lesson.pdf",
-  "slides_html": null,
-  "slides_pdf": null,
+  "free": true,
   "files": [
+    "audio.m4a",
     "lesson.html",
-    "lesson.pdf",
-    "manifest.json"
-  ]
+    "manifest.json",
+    "quiz.json",
+    "slides.pdf",
+    "video.mp4"
+  ],
+  "audio": "audio.m4a",
+  "video": "video.mp4",
+  "slides_pdf": "slides.pdf",
+  "quiz": "quiz.json",
+  "deploy": "free-slim-v1"
 }

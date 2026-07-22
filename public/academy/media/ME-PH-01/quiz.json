@@ -1,0 +1,265 @@
+{
+  "title": "Physics Quiz",
+  "questions": [
+    {
+      "question": "What is the primary 'Goal' of unit ME-PH-01 according to the Medvance curriculum?",
+      "answerOptions": [
+        {
+          "text": "To verify the correctness of equations using SI units and the sense of dimensions.",
+          "isCorrect": true,
+          "rationale": "The lesson specifically defines the goal as using SI units and dimensional awareness to check if a formula is correct."
+        },
+        {
+          "text": "To memorize all derived units in the International System of Units (SI).",
+          "isCorrect": false,
+          "rationale": "While knowing units is part of the course, the ultimate goal is the skill of verification and inspection of equations."
+        },
+        {
+          "text": "To solve complex kinematics problems using high-speed calculations.",
+          "isCorrect": false,
+          "rationale": "This unit focuses on the foundational skills of units and dimensions rather than complex problem-solving techniques."
+        },
+        {
+          "text": "To differentiate between scalar and vector quantities in mechanics.",
+          "isCorrect": false,
+          "rationale": "Scalars and vectors are not the primary focus of this specific unit's goal, which centers on units and significant figures."
+        }
+      ],
+      "hint": "Focus on the skill required to perform a 'check' or 'verification' on physical expressions."
+    },
+    {
+      "question": "When performing calculations in physics, how should the number of significant figures in the result be determined?",
+      "answerOptions": [
+        {
+          "text": "Adjust the result to match the precision of the value with the fewest significant figures.",
+          "isCorrect": true,
+          "rationale": "The material states that significant figures should be matched to the 'weakest' part of the calculation."
+        },
+        {
+          "text": "Match the result to the value that has the most significant figures to maintain maximum accuracy.",
+          "isCorrect": false,
+          "rationale": "Calculated results cannot be more precise than the least precise measurement used in the calculation."
+        },
+        {
+          "text": "Always round the final answer to exactly three significant figures for consistency.",
+          "isCorrect": false,
+          "rationale": "The number of significant figures depends on the input data, not a fixed rule of three digits."
+        },
+        {
+          "text": "Increase the number of digits as much as possible to avoid rounding errors during intermediate steps.",
+          "isCorrect": false,
+          "rationale": "Increasing digits unnecessarily is listed as a 'Pitfall' in the source material."
+        }
+      ],
+      "hint": "Consider which measurement limits the overall reliability of your calculated result."
+    },
+    {
+      "question": "According to the 'Core Procedure' for writing answers, what is the first step that should be taken?",
+      "answerOptions": [
+        {
+          "text": "Define the physical quantities involved.",
+          "isCorrect": true,
+          "rationale": "The Medvance procedural steps begin with defining the quantities to ensure the setup is clear."
+        },
+        {
+          "text": "Unify all units into the SI system.",
+          "isCorrect": false,
+          "rationale": "Unit unification is the second step in the core procedure, following the definition of quantities."
+        },
+        {
+          "text": "Check the validity of the magnitude (digits).",
+          "isCorrect": false,
+          "rationale": "Checking the magnitude is the final step in the procedure to ensure the result is plausible."
+        },
+        {
+          "text": "Perform a dimensional analysis of the formula.",
+          "isCorrect": false,
+          "rationale": "While dimensional analysis is a core skill, the specific procedural sequence starts with defining the quantities."
+        }
+      ],
+      "hint": "Think about the very first thing you must do before you start manipulating numbers or units."
+    },
+    {
+      "question": "Which of the following correctly expresses the unit for Force ($N$) using only SI base units?",
+      "answerOptions": [
+        {
+          "text": "$kg \\cdot m/s^{2}$",
+          "isCorrect": true,
+          "rationale": "Force is defined by mass times acceleration, leading to the combination of kilograms, meters, and seconds squared."
+        },
+        {
+          "text": "$kg \\cdot m/s$",
+          "isCorrect": false,
+          "rationale": "This represents momentum (mass times velocity), not force, which requires acceleration ($m/s^{2}$)."
+        },
+        {
+          "text": "$kg \\cdot m^{2}/s^{2}$",
+          "isCorrect": false,
+          "rationale": "This unit represents Energy (Joules), which involves an extra factor of distance compared to force."
+        },
+        {
+          "text": "$g \\cdot cm/s^{2}$",
+          "isCorrect": false,
+          "rationale": "While these are units of mass and length, they are not the standard SI base units (kilograms and meters)."
+        }
+      ],
+      "hint": "Recall the physical relationship between mass, length, and time used in Newton's second law."
+    },
+    {
+      "question": "Convert the speed $36\\ km/h$ into the SI unit $m/s$.",
+      "answerOptions": [
+        {
+          "text": "$10\\ m/s$",
+          "isCorrect": true,
+          "rationale": "Converting $36\\ km$ to $36,000\\ m$ and $1\\ hour$ to $3,600\\ seconds$ results in $10\\ m/s$."
+        },
+        {
+          "text": "$3.6\\ m/s$",
+          "isCorrect": false,
+          "rationale": "This is a common error resulting from dividing by 10 instead of accounting for the $3,600$ seconds in an hour."
+        },
+        {
+          "text": "$100\\ m/s$",
+          "isCorrect": false,
+          "rationale": "This error often occurs if the conversion between hours and seconds is calculated incorrectly."
+        },
+        {
+          "text": "$1.0\\ m/s$",
+          "isCorrect": false,
+          "rationale": "This result does not match the standard conversion factor ($1\\ m/s = 3.6\\ km/h$)."
+        }
+      ],
+      "hint": "Remember there are $1,000$ meters in a kilometer and $3,600$ seconds in an hour."
+    },
+    {
+      "question": "What are the three fundamental dimensions used in this unit to represent physical quantities in mechanics?",
+      "answerOptions": [
+        {
+          "text": "Length ($L$), Mass ($M$), and Time ($T$).",
+          "isCorrect": true,
+          "rationale": "These are the three basic dimensions defined in the material for checking the consistency of mechanical expressions."
+        },
+        {
+          "text": "Velocity ($V$), Force ($F$), and Energy ($E$).",
+          "isCorrect": false,
+          "rationale": "These are derived quantities, not the fundamental dimensions used for dimensional analysis."
+        },
+        {
+          "text": "Meters ($m$), Kilograms ($kg$), and Seconds ($s$).",
+          "isCorrect": false,
+          "rationale": "These are specific units, whereas dimensions represent the 'type' of quantity ($L, M, T$)."
+        },
+        {
+          "text": "Distance ($d$), Weight ($W$), and Duration ($t$).",
+          "isCorrect": false,
+          "rationale": "While related, 'Weight' is a force, not a fundamental dimension like 'Mass' ($M$)."
+        }
+      ],
+      "hint": "Think of the most basic 'types' of physical existence that cannot be broken down further in basic mechanics."
+    },
+    {
+      "question": "What is the correct SI base unit representation for density based on its definition?",
+      "answerOptions": [
+        {
+          "text": "$kg/m^{3}$",
+          "isCorrect": true,
+          "rationale": "Density is mass per unit volume, which corresponds to kilograms divided by meters cubed."
+        },
+        {
+          "text": "$g/cm^{3}$",
+          "isCorrect": false,
+          "rationale": "While common in chemistry, $g$ and $cm$ are not the primary SI base units used in physics mechanics."
+        },
+        {
+          "text": "$kg \\cdot m^{3}$",
+          "isCorrect": false,
+          "rationale": "This would imply mass multiplied by volume, which contradicts the definition of density."
+        },
+        {
+          "text": "$kg/m^{2}$",
+          "isCorrect": false,
+          "rationale": "This represents mass per unit area, not mass per unit volume."
+        }
+      ],
+      "hint": "Density describes how much mass is contained within a specific three-dimensional space."
+    },
+    {
+      "question": "Which of the following is identified as a 'Pitfall' (common reduction in score) in the Medvance material?",
+      "answerOptions": [
+        {
+          "text": "Mixing different units like $km/h$ and $m/s$ within the same calculation.",
+          "isCorrect": true,
+          "rationale": "The source explicitly warns against 'unit mixture' as a pattern that leads to lost points."
+        },
+        {
+          "text": "Using $L, M, T$ symbols instead of numerical values.",
+          "isCorrect": false,
+          "rationale": "Using $L, M, T$ is part of dimensional analysis, which is an encouraged skill, not a pitfall."
+        },
+        {
+          "text": "Expressing force in terms of Newtons ($N$).",
+          "isCorrect": false,
+          "rationale": "$N$ is a standard unit and its usage is not considered a mistake or a pitfall."
+        },
+        {
+          "text": "Defining physical quantities at the start of a solution.",
+          "isCorrect": false,
+          "rationale": "This is a recommended step in the core procedure, not a point of failure."
+        }
+      ],
+      "hint": "Think about common errors involving the inconsistency of measurement scales."
+    },
+    {
+      "question": "To satisfy the 'Perfection Criteria' (Reach Check), what must a student be able to explain regarding 'Pitfalls'?",
+      "answerOptions": [
+        {
+          "text": "Why those specific patterns are incorrect or lead to errors.",
+          "isCorrect": true,
+          "rationale": "The 'Reach Check' requires explaining the 'why' behind the pitfalls, not just identifying them."
+        },
+        {
+          "text": "How many times those pitfalls have appeared in past exams.",
+          "isCorrect": false,
+          "rationale": "Statistical frequency of errors is not a requirement for the reach check."
+        },
+        {
+          "text": "The mathematical proof for every fundamental unit.",
+          "isCorrect": false,
+          "rationale": "The reach check focuses on procedure, reproduction of examples, and understanding errors, not proving unit definitions."
+        },
+        {
+          "text": "A list of every possible unit conversion factor.",
+          "isCorrect": false,
+          "rationale": "The criteria focus on specific examples (A and B) and the reasoning behind pitfalls, not exhaustive lists."
+        }
+      ],
+      "hint": "True mastery involves understanding the logic of an error, not just knowing that the error exists."
+    },
+    {
+      "question": "Why is the skill of 'Dimensional Analysis' (Sense of Dimensions) considered a core skill for difficult university exams?",
+      "answerOptions": [
+        {
+          "text": "It allows a student to quickly check if a derived formula is logically consistent.",
+          "isCorrect": true,
+          "rationale": "Checking the '整合' (consistency) of an equation is the primary purpose of studying dimensions."
+        },
+        {
+          "text": "It is the only way to calculate the exact numerical value of a physical constant.",
+          "isCorrect": false,
+          "rationale": "Dimensional analysis checks the type of quantity, but it cannot determine the value of dimensionless constants."
+        },
+        {
+          "text": "It replaces the need for understanding the actual physics principles.",
+          "isCorrect": false,
+          "rationale": "Dimensions are a tool for verification, not a replacement for understanding physical laws."
+        },
+        {
+          "text": "It is required for converting units between the Metric and Imperial systems.",
+          "isCorrect": false,
+          "rationale": "While related to units, dimensional analysis is about the nature of the quantity ($L, M, T$), not just switching between measurement systems."
+        }
+      ],
+      "hint": "Think about how this skill helps you catch a mistake in a long formula during a test."
+    }
+  ]
+}

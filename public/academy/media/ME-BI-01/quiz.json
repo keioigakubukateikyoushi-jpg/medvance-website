@@ -1,0 +1,265 @@
+{
+  "title": "Biology Quiz",
+  "questions": [
+    {
+      "question": "In the study of cell biology, what is the primary structural distinction that defines a prokaryotic cell?",
+      "answerOptions": [
+        {
+          "text": "The absence of a membrane-bound nucleus.",
+          "isCorrect": true,
+          "rationale": "Prokaryotes are fundamentally characterized by lacking a true nucleus, which is a major point of differentiation in exam questions."
+        },
+        {
+          "text": "The lack of any genetic material or DNA.",
+          "isCorrect": false,
+          "rationale": "All living cells require genetic material to function, even if it is not enclosed within a nucleus."
+        },
+        {
+          "text": "The presence of chloroplasts for energy production.",
+          "isCorrect": false,
+          "rationale": "Chloroplasts are specialized organelles found in eukaryotes like plants, not in prokaryotes."
+        },
+        {
+          "text": "The inability to synthesize proteins due to a lack of ribosomes.",
+          "isCorrect": false,
+          "rationale": "Prokaryotes do possess ribosomes to perform protein synthesis, though they lack other membrane-bound organelles."
+        }
+      ],
+      "hint": "Focus on the literal meaning of the term which relates to the presence or absence of the 'karyon' or kernel."
+    },
+    {
+      "question": "Which organelle is specifically identified as the 'site of respiration' and is responsible for generating high amounts of $ATP$?",
+      "answerOptions": [
+        {
+          "text": "Mitochondria",
+          "isCorrect": true,
+          "rationale": "Mitochondria are the organelles where cellular respiration takes place to produce energy in the form of $ATP$."
+        },
+        {
+          "text": "Ribosomes",
+          "isCorrect": false,
+          "rationale": "Ribosomes are responsible for protein synthesis, not for the energy-producing process of respiration."
+        },
+        {
+          "text": "Chloroplasts",
+          "isCorrect": false,
+          "rationale": "While involved in energy, chloroplasts are the site of photosynthesis rather than cellular respiration."
+        },
+        {
+          "text": "Nucleus",
+          "isCorrect": false,
+          "rationale": "The nucleus controls gene expression and contains DNA but does not directly produce $ATP$ through respiration."
+        }
+      ],
+      "hint": "Think about which part of the cell acts as the power plant for energy production."
+    },
+    {
+      "question": "According to the Medvance curriculum, which set of roles best describes the function of the nucleus?",
+      "answerOptions": [
+        {
+          "text": "Maintenance of genetic information and regulation of gene expression.",
+          "isCorrect": true,
+          "rationale": "The nucleus serves as the central repository for DNA and controls how that information is utilized by the cell."
+        },
+        {
+          "text": "Synthesis of lipids and detoxification of the cell.",
+          "isCorrect": false,
+          "rationale": "These functions are typically associated with other organelles like the endoplasmic reticulum rather than the nucleus."
+        },
+        {
+          "text": "Providing structural support and maintaining cell pressure.",
+          "isCorrect": false,
+          "rationale": "This describes the role of the cell wall or vacuoles, particularly in plant cells."
+        },
+        {
+          "text": "Breaking down waste materials through enzymatic reactions.",
+          "isCorrect": false,
+          "rationale": "The nucleus is the control center, whereas waste breakdown is the responsibility of lysosomes."
+        }
+      ],
+      "hint": "Consider the organelle that houses the 'blueprints' of the cell."
+    },
+    {
+      "question": "Which of the following describes the correct 'Medvance Procedure' for constructing a standard answer regarding cell organelles?",
+      "answerOptions": [
+        {
+          "text": "1. List the structures, 2. Map their functions, 3. Identify differences between animal and plant cells.",
+          "isCorrect": true,
+          "rationale": "This three-step procedure ensures all critical exam points are covered systematically."
+        },
+        {
+          "text": "1. Compare animal and plant cells, 2. Define the nucleus, 3. List the organelles.",
+          "isCorrect": false,
+          "rationale": "Comparing differences usually comes after defining what structures are present and what they do."
+        },
+        {
+          "text": "1. Identify the site of respiration, 2. Define protein synthesis, 3. Categorize by size.",
+          "isCorrect": false,
+          "rationale": "While these are facts, they do not follow the systematic logic of listing, functioning, and then comparing."
+        },
+        {
+          "text": "1. Memorize definitions, 2. Calculate $ATP$ yield, 3. Draw the cell.",
+          "isCorrect": false,
+          "rationale": "This does not align with the specific three-step procedural reproducibility required for elite university exams."
+        }
+      ],
+      "hint": "Think about the logical flow from identifying 'what' is there to 'what' it does and then 'how' it varies."
+    },
+    {
+      "question": "What is the primary function of ribosomes within the cell's 'division of labor'?",
+      "answerOptions": [
+        {
+          "text": "Serving as the site for protein synthesis.",
+          "isCorrect": true,
+          "rationale": "Ribosomes are the cellular machinery where amino acids are assembled into proteins based on genetic instructions."
+        },
+        {
+          "text": "Storing minerals and maintaining cell rigidity.",
+          "isCorrect": false,
+          "rationale": "Storage and rigidity are handled by structures like the cell wall or vacuoles, not ribosomes."
+        },
+        {
+          "text": "Transporting molecules across the cell membrane.",
+          "isCorrect": false,
+          "rationale": "Ribosomes are involved in manufacturing proteins, not specifically the membrane transport process."
+        },
+        {
+          "text": "Acting as a backup site for $ATP$ production.",
+          "isCorrect": false,
+          "rationale": "Ribosomes do not participate in energy production; that is the specialized role of mitochondria."
+        }
+      ],
+      "hint": "Think about the translation of genetic information into physical building blocks."
+    },
+    {
+      "question": "A student looking at a cell under a microscope observes a cell wall and chloroplasts. Based on the source material, which conclusion is most likely?",
+      "answerOptions": [
+        {
+          "text": "The cell is a plant cell.",
+          "isCorrect": true,
+          "rationale": "The presence of a cell wall and chloroplasts are defining features that distinguish plant cells from animal cells."
+        },
+        {
+          "text": "The cell is an animal cell with a mutation.",
+          "isCorrect": false,
+          "rationale": "Animal cells fundamentally lack the genetic framework to produce a cell wall and chloroplasts."
+        },
+        {
+          "text": "The cell is a prokaryote because it has a cell wall.",
+          "isCorrect": false,
+          "rationale": "While some prokaryotes have walls, chloroplasts are complex membrane-bound organelles found only in eukaryotes."
+        },
+        {
+          "text": "The cell is in the process of losing its nucleus.",
+          "isCorrect": false,
+          "rationale": "The presence of these organelles does not indicate a loss of the nucleus; plant cells are eukaryotic and contain nuclei."
+        }
+      ],
+      "hint": "Recall the structures specifically mentioned as being unique to one of the two major eukaryotic kingdoms."
+    },
+    {
+      "question": "Which of the following represents a common 'pitfall' or error that results in lost points on exams regarding cellular organelles?",
+      "answerOptions": [
+        {
+          "text": "Swapping the specific functions of different organelles.",
+          "isCorrect": true,
+          "rationale": "Confusing the site of respiration with the site of protein synthesis is a frequent cause of errors."
+        },
+        {
+          "text": "Accurately defining the nucleus as the center of genetic control.",
+          "isCorrect": false,
+          "rationale": "This is a correct definition and would result in gaining points, not losing them."
+        },
+        {
+          "text": "Stating that plant cells have mitochondria.",
+          "isCorrect": false,
+          "rationale": "This is a fact; plant cells do have mitochondria, so stating this is correct."
+        },
+        {
+          "text": "Correctly identifying ribosomes as the site of protein assembly.",
+          "isCorrect": false,
+          "rationale": "This is a core concept that students are expected to know to score points."
+        }
+      ],
+      "hint": "Look for a scenario where a student might mix up the 'division of labor' roles."
+    },
+    {
+      "question": "What is the relationship between the cell's 'division of labor' (分業) and its organelles?",
+      "answerOptions": [
+        {
+          "text": "Organelles specialize in specific tasks to increase cellular efficiency.",
+          "isCorrect": true,
+          "rationale": "Specialization allows different biochemical environments to coexist within the same cell for different functions."
+        },
+        {
+          "text": "All organelles can perform all functions if one organelle is damaged.",
+          "isCorrect": false,
+          "rationale": "Organelles are highly specialized; for example, a ribosome cannot perform respiration if mitochondria fail."
+        },
+        {
+          "text": "The nucleus is the only organelle that performs a task, while others provide space.",
+          "isCorrect": false,
+          "rationale": "Every organelle, such as mitochondria and ribosomes, has a distinct and necessary active role."
+        },
+        {
+          "text": "Division of labor only occurs in multicellular organisms, not within a single cell.",
+          "isCorrect": false,
+          "rationale": "Even single eukaryotic cells exhibit a division of labor through their various internal organelles."
+        }
+      ],
+      "hint": "Think about why a factory has different departments for design, power, and manufacturing."
+    },
+    {
+      "question": "Which statement regarding the genetic control center of the cell is correct according to the Medvance basics?",
+      "answerOptions": [
+        {
+          "text": "The nucleus is responsible for the expression and control of genetic information.",
+          "isCorrect": true,
+          "rationale": "This identifies the two-fold role of the nucleus: housing DNA and managing its activation."
+        },
+        {
+          "text": "Prokaryotic cells use a nucleus to protect their genetic material.",
+          "isCorrect": false,
+          "rationale": "Prokaryotes lack a nucleus, which is one of the most critical distinctions in cell biology."
+        },
+        {
+          "text": "Genetic information is expressed in the mitochondria rather than the nucleus.",
+          "isCorrect": false,
+          "rationale": "While mitochondria have some DNA, the primary site for genomic control and expression is the nucleus."
+        },
+        {
+          "text": "The nucleus is where $ATP$ is synthesized to power gene expression.",
+          "isCorrect": false,
+          "rationale": "The energy ( $ATP$ ) is supplied by the mitochondria, even if it is used inside the nucleus."
+        }
+      ],
+      "hint": "Consider which organelle acts as the 'brain' or 'master controller' of the cell."
+    },
+    {
+      "question": "When evaluated on 'Perfect Mastery' (完璧の条件) for this unit, what must a student be able to do regarding the 'pitfalls'?",
+      "answerOptions": [
+        {
+          "text": "Explain not only what the pitfall is, but 'why it is incorrect.'",
+          "isCorrect": true,
+          "rationale": "Understanding the underlying logic of a common mistake prevents its recurrence and demonstrates deep mastery."
+        },
+        {
+          "text": "Simply list the names of the pitfalls without further explanation.",
+          "isCorrect": false,
+          "rationale": "Memorization of a list is insufficient for the 'Perfect Mastery' standard required for difficult university exams."
+        },
+        {
+          "text": "Identify which pitfalls are most common in easy exams vs. hard exams.",
+          "isCorrect": false,
+          "rationale": "The focus is on the scientific 'why' rather than exam statistics."
+        },
+        {
+          "text": "Show that they have never made a mistake in any previous practice quiz.",
+          "isCorrect": false,
+          "rationale": "Mastery is demonstrated by current ability and explanation, not just past performance."
+        }
+      ],
+      "hint": "Mastery involves being able to teach the logic behind avoiding errors to others."
+    }
+  ]
+}
