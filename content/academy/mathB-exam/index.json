@@ -4,10 +4,10 @@
   "trackLabel": "基礎講座",
   "brand": "Medvance",
   "unit_count": 14,
-  "full_count": 14,
-  "outline_count": 0,
+  "full_count": 0,
+  "outline_count": 14,
   "design": "数列・ベクトル・統計的推測を原子スキルで完全カバー。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "全 14 単元は骨子のみ。内容を拡充中。",
   "chapters": [
     "数列",
     "ベクトル",
@@ -21,12 +21,12 @@
       "minutes": 16,
       "goal": "第n項 an を式で表せる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-01.md",
       "storyboard": "storyboard/ME-MB-01.md",
       "slides": "slides/ME-MB-01.md",
       "quiz": "quiz/ME-MB-01.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-02",
@@ -37,12 +37,12 @@
       "prereq": [
         "ME-MB-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-02.md",
       "storyboard": "storyboard/ME-MB-02.md",
       "slides": "slides/ME-MB-02.md",
       "quiz": "quiz/ME-MB-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-03",
@@ -53,12 +53,12 @@
       "prereq": [
         "ME-MB-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-03.md",
       "storyboard": "storyboard/ME-MB-03.md",
       "slides": "slides/ME-MB-03.md",
       "quiz": "quiz/ME-MB-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-04",
@@ -69,12 +69,12 @@
       "prereq": [
         "ME-MB-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-04.md",
       "storyboard": "storyboard/ME-MB-04.md",
       "slides": "slides/ME-MB-04.md",
       "quiz": "quiz/ME-MB-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-05",
@@ -86,12 +86,12 @@
         "ME-MB-02",
         "ME-MB-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-05.md",
       "storyboard": "storyboard/ME-MB-05.md",
       "slides": "slides/ME-MB-05.md",
       "quiz": "quiz/ME-MB-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-06",
@@ -102,12 +102,12 @@
       "prereq": [
         "ME-MB-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-06.md",
       "storyboard": "storyboard/ME-MB-06.md",
       "slides": "slides/ME-MB-06.md",
       "quiz": "quiz/ME-MB-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-07",
@@ -116,12 +116,12 @@
       "minutes": 16,
       "goal": "和・実数倍・成分表示ができる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-07.md",
       "storyboard": "storyboard/ME-MB-07.md",
       "slides": "slides/ME-MB-07.md",
       "quiz": "quiz/ME-MB-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-08",
@@ -132,12 +132,12 @@
       "prereq": [
         "ME-MB-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-08.md",
       "storyboard": "storyboard/ME-MB-08.md",
       "slides": "slides/ME-MB-08.md",
       "quiz": "quiz/ME-MB-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-09",
@@ -148,12 +148,12 @@
       "prereq": [
         "ME-MB-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-09.md",
       "storyboard": "storyboard/ME-MB-09.md",
       "slides": "slides/ME-MB-09.md",
       "quiz": "quiz/ME-MB-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-10",
@@ -164,12 +164,12 @@
       "prereq": [
         "ME-MB-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-10.md",
       "storyboard": "storyboard/ME-MB-10.md",
       "slides": "slides/ME-MB-10.md",
       "quiz": "quiz/ME-MB-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-11",
@@ -180,12 +180,12 @@
       "prereq": [
         "ME-MB-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-11.md",
       "storyboard": "storyboard/ME-MB-11.md",
       "slides": "slides/ME-MB-11.md",
       "quiz": "quiz/ME-MB-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-12",
@@ -194,12 +194,12 @@
       "minutes": 16,
       "goal": "母集団・標本・推定の言葉を使える",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-12.md",
       "storyboard": "storyboard/ME-MB-12.md",
       "slides": "slides/ME-MB-12.md",
       "quiz": "quiz/ME-MB-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-13",
@@ -210,12 +210,12 @@
       "prereq": [
         "ME-MB-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-13.md",
       "storyboard": "storyboard/ME-MB-13.md",
       "slides": "slides/ME-MB-13.md",
       "quiz": "quiz/ME-MB-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-MB-14",
@@ -227,12 +227,12 @@
         "ME-MB-13",
         "ME-M1-35"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-MB-14.md",
       "storyboard": "storyboard/ME-MB-14.md",
       "slides": "slides/ME-MB-14.md",
       "quiz": "quiz/ME-MB-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-21T13:31:32.426Z",
+  "updated": "2026-07-22T10:03:34.555Z",
   "units": {
     "ME-M1-04": {
       "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
@@ -11,6 +11,135 @@
       "studio_requested_at": "2026-07-21T13:31:12.465Z",
       "focus": "【Medvance 公式教材・正本厳守】ユニット ME-M1-04「展開公式 (a±b)² と (a+b)(a-b)」。 科目: 高校数学I / 章: 数と式 / ゴール: 3公式を見極めて適用し、係数・符号ミスを防げる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 De",
       "last_run_at": "2026-07-21T13:31:32.426Z"
+    },
+    "ME-EN-01": {
+      "notebook_id": "d635b80f-bdbc-406a-bb6b-fd55e226a505",
+      "title": "Medvance ME-EN-01 5文型の判別",
+      "created_at": "2026-07-22T01:52:33.340Z",
+      "subject": "高校英語（受験）",
+      "subjectDir": "english-exam",
+      "research_at": "2026-07-22T01:52:56.980Z",
+      "studio_requested_at": "2026-07-22T07:32:49.065Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-EN-01「5文型の判別」。 科目: 高校英語（受験） / 章: 文型と基本構造 / ゴール: S V O C を見分け文型を判定できる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research 由来",
+      "last_run_at": "2026-07-22T07:34:13.587Z",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-EN-01「5文型の判別」。章:文型と基本構造。ゴール:S V O C を見分け文型を判定できる。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用語: 画面にキー",
+      "video_quality": "hq-whiteboard-v1"
+    },
+    "ME-PH-01": {
+      "notebook_id": "68b05d9d-e26a-4511-b1ce-3c9b8484f0bf",
+      "title": "Medvance ME-PH-01 物理量・単位・有効数字",
+      "created_at": "2026-07-22T02:02:00.301Z",
+      "subject": "高校物理（受験）",
+      "subjectDir": "physics-exam",
+      "studio_requested_at": "2026-07-22T04:28:01.532Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-PH-01「物理量・単位・有効数字」。 科目: 高校物理（受験） / 章: 力学の基礎 / ゴール: SI単位と次元の感覚で式の正しさを検算できる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Resear",
+      "last_run_at": "2026-07-22T04:41:15.741Z"
+    },
+    "ME-CH-01": {
+      "notebook_id": "b39e702c-4f38-4819-b701-0450fa86bca2",
+      "title": "Medvance ME-CH-01 原子・分子・イオンと周期表",
+      "created_at": "2026-07-22T02:20:13.733Z",
+      "subject": "高校化学（受験）",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-22T02:20:48.244Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-CH-01「原子・分子・イオンと周期表」。 科目: 高校化学（受験） / 章: 物質の構成 / ゴール: 原子番号・質量数・イオンを説明できる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research",
+      "last_run_at": "2026-07-22T02:32:50.221Z"
+    },
+    "ME-BI-01": {
+      "notebook_id": "bbacc88b-3592-4bc5-af4a-3d9bcd430b59",
+      "title": "Medvance ME-BI-01 細胞の構造と細胞小器官",
+      "created_at": "2026-07-22T02:37:52.129Z",
+      "subject": "高校生物（受験）",
+      "subjectDir": "biology-exam",
+      "studio_requested_at": "2026-07-22T02:38:26.725Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-BI-01「細胞の構造と細胞小器官」。 科目: 高校生物（受験） / 章: 細胞 / ゴール: 核・ミトコンドリア・リボソーム等の役割を言える アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research",
+      "last_run_at": "2026-07-22T02:52:43.611Z"
+    },
+    "ME-IV-01": {
+      "notebook_id": "06cf7cf4-b196-4455-9ea8-144de441d587",
+      "title": "Medvance ME-IV-01 面接は「落とす試験」である",
+      "created_at": "2026-07-22T02:57:52.069Z",
+      "subject": "医学部面接",
+      "subjectDir": "interview-exam",
+      "studio_requested_at": "2026-07-22T02:59:01.963Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-IV-01「面接は「落とす試験」である」。 科目: 医学部面接 / 章: 評価の基本 / ゴール: 評価軸が適性・誠実さ・一貫性だと説明できる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research",
+      "last_run_at": "2026-07-22T03:11:50.028Z"
+    },
+    "ME-ES-01": {
+      "notebook_id": "1da42aec-a40e-4074-ba63-066c2a566c94",
+      "title": "Medvance ME-ES-01 医学部小論文で見られる力",
+      "created_at": "2026-07-22T03:16:51.483Z",
+      "subject": "医学部小論文",
+      "subjectDir": "essay-exam",
+      "studio_requested_at": "2026-07-22T07:34:35.512Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-ES-01「医学部小論文で見られる力」。 科目: 医学部小論文 / 章: 小論文の型 / ゴール: 知識・論理・配慮の3点で評価されると説明できる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Resear",
+      "last_run_at": "2026-07-22T07:48:00.585Z",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-ES-01「医学部小論文で見られる力」。章:小論文の型。ゴール:知識・論理・配慮の3点で評価されると説明できる。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用語",
+      "video_quality": "hq-whiteboard-v1"
+    },
+    "ME-JA-01": {
+      "notebook_id": "1bd20f52-e984-4ea5-b90f-a2da6c727e30",
+      "title": "Medvance ME-JA-01 評論文の読み方・主張と根拠",
+      "created_at": "2026-07-22T03:35:50.839Z",
+      "subject": "共通テスト国語",
+      "subjectDir": "japanese-common-exam",
+      "studio_requested_at": "2026-07-22T03:36:24.540Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-JA-01「評論文の読み方・主張と根拠」。 科目: 共通テスト国語 / 章: 現代文 / ゴール: 評論文で「筆者の主張」と「根拠」を区別して抜き出せる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Res",
+      "last_run_at": "2026-07-22T03:46:48.683Z"
+    },
+    "ME-SO-01": {
+      "notebook_id": "36f96e29-f9e9-477d-9e44-f370121a0ad2",
+      "title": "Medvance ME-SO-01 地図・GIS・球面上の世界",
+      "created_at": "2026-07-22T03:51:50.082Z",
+      "subject": "共通テスト社会",
+      "subjectDir": "social-common-exam",
+      "studio_requested_at": "2026-07-22T09:23:50.377Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-SO-01「地図・GIS・球面上の世界」。 科目: 共通テスト社会 / 章: 地理総合 / ゴール: 緯度経度・縮尺・GISの基本を用いて資料を読める アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Rese",
+      "last_run_at": "2026-07-22T09:25:06.129Z",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-SO-01「地図・GIS・球面上の世界」。章:地理総合。ゴール:緯度経度・縮尺・GISの基本を用いて資料を読める。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用",
+      "video_quality": "hq-whiteboard-v1"
+    },
+    "ME-IF-01": {
+      "notebook_id": "a8ebb272-a95d-4532-9cfa-e08db84e00a7",
+      "title": "Medvance ME-IF-01 問題解決の手順と情報の信頼性",
+      "created_at": "2026-07-22T04:05:00.451Z",
+      "subject": "共通テスト情報",
+      "subjectDir": "info-common-exam",
+      "studio_requested_at": "2026-07-22T09:25:24.048Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-IF-01「問題解決の手順と情報の信頼性」。 科目: 共通テスト情報 / 章: 情報社会の問題解決 / ゴール: 問題の明確化→情報収集→整理→提案の型を使え、情報源を吟味できる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作",
+      "last_run_at": "2026-07-22T04:13:57.766Z",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-IF-01「問題解決の手順と情報の信頼性」。章:情報社会の問題解決。ゴール:問題の明確化→情報収集→整理→提案の型を使え、情報源を吟味できる。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル",
+      "video_quality": "hq-whiteboard-v1"
+    },
+    "ADV-M1-06": {
+      "notebook_id": "dbe83eeb-216a-4c42-b7cf-9c88a1bdb370",
+      "title": "Medvance ADV-M1-06 定義域が動く最大最小",
+      "created_at": "2026-07-22T04:16:59.553Z",
+      "subject": "高校数学I・発展",
+      "subjectDir": "advanced/math1",
+      "studio_requested_at": "2026-07-22T09:25:41.205Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ADV-M1-06「定義域が動く最大最小」。 科目: 高校数学I・発展 / 章: 2次関数・発展 / ゴール: 端点がパラメータのとき軸との位置で場合分けできる アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Re",
+      "last_run_at": "2026-07-22T09:26:52.327Z",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ADV-M1-06「定義域が動く最大最小」。章:2次関数・発展。ゴール:端点がパラメータのとき軸との位置で場合分けできる。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・",
+      "video_quality": "hq-whiteboard-v1"
+    },
+    "ME-EN-02": {
+      "notebook_id": "35ca9ebe-b9b3-4b0c-860e-14c8c3d8188b",
+      "title": "Medvance ME-EN-02 自動詞他動詞と目的語",
+      "created_at": "2026-07-22T10:02:47.046Z",
+      "subject": "高校英語（受験）",
+      "subjectDir": "english-exam"
+    },
+    "ME-EN-03": {
+      "notebook_id": "6480762b-0557-423d-a141-0fbd6cb4db5d",
+      "title": "Medvance ME-EN-03 現在・過去・未来の基本",
+      "created_at": "2026-07-22T10:02:53.095Z",
+      "subject": "高校英語（受験）",
+      "subjectDir": "english-exam",
+      "studio_requested_at": "2026-07-22T10:03:34.555Z",
+      "focus": "【Medvance 公式教材・正本厳守】ユニット ME-EN-03「現在・過去・未来の基本」。 科目: 高校英語（受験） / 章: 時制 / ゴール: 基本時制を文脈に合わせて使える アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research 由来ソースがあ",
+      "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-EN-03「現在・過去・未来の基本」。章:時制。ゴール:基本時制を文脈に合わせて使える。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用語: 画面にキーワードを大",
+      "video_quality": "hq-whiteboard-v1"
     }
   }
 }

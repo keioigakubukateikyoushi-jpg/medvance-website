@@ -1,0 +1,266 @@
+{
+  "title": "Information Quiz",
+  "questions": [
+    {
+      "question": "According to the Medvance curriculum for the Common Test, what is the most critical factor for students aiming for medical programs when approaching the 'Information' subject?",
+      "answerOptions": [
+        {
+          "text": "Memorizing as many technical terms as possible to ensure no vocabulary is missed.",
+          "isCorrect": false,
+          "rationale": "The source material explicitly states that the Common Test focuses more on judgment in specific situations and data handling rather than simple rote memorization."
+        },
+        {
+          "text": "Developing a consistent 'pattern' or 'framework' to solve problems quickly and accurately.",
+          "isCorrect": true,
+          "rationale": "The material emphasizes that because the Common Test is a 'race against time,' using a fixed model or 'type' is essential to avoid being cut off during primary exams."
+        },
+        {
+          "text": "Focusing solely on advanced programming logic since it carries the most weight.",
+          "isCorrect": false,
+          "rationale": "The curriculum prioritizes the problem-solving process and information reliability as the foundational steps for the current unit."
+        },
+        {
+          "text": "Relying on intuition developed through general computer usage and SNS experience.",
+          "isCorrect": false,
+          "rationale": "The source warns against relying on unverified information or informal habits, suggesting a structured approach instead."
+        }
+      ],
+      "hint": "Consider the strategic necessity of 'speed and accuracy' mentioned in the positioning section."
+    },
+    {
+      "question": "In the context of problem-solving, how is a 'Problem' formally defined within the ME-IF-01 unit?",
+      "answerOptions": [
+        {
+          "text": "The feeling of dissatisfaction or a specific desire for a new product.",
+          "isCorrect": false,
+          "rationale": "The material distinguishes between mere 'desires' and the structured definition of a problem."
+        },
+        {
+          "text": "A situation where information is unavailable or the data is unreliable.",
+          "isCorrect": false,
+          "rationale": "While related to information reliability, this is a symptom rather than the core definition of a problem in this context."
+        },
+        {
+          "text": "The gap between the current state (reality) and the target goal.",
+          "isCorrect": true,
+          "rationale": "The Medvance definition specifically identifies the problem as the discrepancy or 'gap' between the status quo and the objective."
+        },
+        {
+          "text": "The inability to find an immediate solution using available digital tools.",
+          "isCorrect": false,
+          "rationale": "The source warns against starting with tools or means before properly defining the issue."
+        }
+      ],
+      "hint": "Think about the relationship between where you are now and where you want to be."
+    },
+    {
+      "question": "Which of the following best describes the difference between 'Primary Information' and 'Secondary Information'?",
+      "answerOptions": [
+        {
+          "text": "Primary information is digital data, while secondary information consists of printed materials.",
+          "isCorrect": false,
+          "rationale": "The format of the information (digital vs. analog) does not determine whether it is primary or secondary."
+        },
+        {
+          "text": "Primary information is original raw data, whereas secondary information is interpreted or summarized.",
+          "isCorrect": true,
+          "rationale": "The source defines primary information as original sources like experimental data, while secondary information involves processing by others."
+        },
+        {
+          "text": "Primary information is always reliable, while secondary information is always misleading.",
+          "isCorrect": false,
+          "rationale": "Reliability is evaluated separately; both types can vary in quality, though primary sources are generally 'purer' data."
+        },
+        {
+          "text": "Primary information is found on the internet, while secondary information comes from libraries.",
+          "isCorrect": false,
+          "rationale": "Both types of information can be found in various locations, including online and offline environments."
+        }
+      ],
+      "hint": "Focus on whether the information has been filtered or interpreted by a third party."
+    },
+    {
+      "question": "When following the Medvance 'Problem-Solving Process,' what is the mandatory first step before searching for a solution?",
+      "answerOptions": [
+        {
+          "text": "Gathering as much information as possible from secondary sources.",
+          "isCorrect": false,
+          "rationale": "Gathering information is the second step; doing it first without a clear goal leads to inefficiency."
+        },
+        {
+          "text": "Identifying which software or SNS platform is most popular for the topic.",
+          "isCorrect": false,
+          "rationale": "Starting with tools or means is explicitly listed as a 'pitfall' in the curriculum."
+        },
+        {
+          "text": "Defining the problem clearly in a single sentence and clarifying goals.",
+          "isCorrect": true,
+          "rationale": "The core procedure dictates that one must first define the problem and target before moving to information listing or solution searching."
+        },
+        {
+          "text": "Analyzing the reliability of all available data using a checklist.",
+          "isCorrect": false,
+          "rationale": "Reliability checks occur during the information evaluation stage, which follows problem definition and gathering."
+        }
+      ],
+      "hint": "Consider what must be established to ensure your information gathering is focused."
+    },
+    {
+      "question": "Why is relying solely on SNS posts as a basis for problem-solving considered a high-risk approach?",
+      "answerOptions": [
+        {
+          "text": "Because SNS platforms are generally too slow to provide up-to-date information.",
+          "isCorrect": false,
+          "rationale": "SNS is often fast, but speed is not the primary risk mentioned in the curriculum regarding reliability."
+        },
+        {
+          "text": "The sender is often unclear and the information is difficult to verify, leading to the spread of errors.",
+          "isCorrect": true,
+          "rationale": "Example A in the source material highlights that lack of verifiability and unclear origins make SNS a dangerous primary ground for facts."
+        },
+        {
+          "text": "Digital information is inherently less accurate than information found in physical encyclopedias.",
+          "isCorrect": false,
+          "rationale": "The source focuses on the verification of the source and the nature of the data, not the medium (digital vs. physical) itself."
+        },
+        {
+          "text": "SNS algorithms prioritize official government statistics over personal opinions.",
+          "isCorrect": false,
+          "rationale": "In reality, algorithms often prioritize engagement, but the source specifically warns about the lack of 'fact vs. opinion' clarity on these platforms."
+        }
+      ],
+      "hint": "Think about the 'Example A' answer regarding the sender and the possibility of verification."
+    },
+    {
+      "question": "Which of the following is identified as a 'Pitfall' in the problem-solving process that can lead to point deduction in exams?",
+      "text": "Which of the following is identified as a 'Pitfall' in the problem-solving process that can lead to point deduction in exams?",
+      "answerOptions": [
+        {
+          "text": "Relying on official government statistics for raw data.",
+          "isCorrect": false,
+          "rationale": "Official statistics are cited as a valid example of primary information/reliable sources."
+        },
+        {
+          "text": "Defining the problem in one sentence instead of a detailed paragraph.",
+          "isCorrect": false,
+          "rationale": "Defining the problem in one sentence is the recommended 'Procedure Walkthrough' step."
+        },
+        {
+          "text": "Starting the process by looking for specific means or tools to solve the issue.",
+          "isCorrect": true,
+          "rationale": "The 'Pitfalls' section explicitly warns against 'Starting with means' rather than defining the problem and goal first."
+        },
+        {
+          "text": "Spending too much time checking the reliability of a source.",
+          "isCorrect": false,
+          "rationale": "Checking reliability is a core part of the procedure; the pitfall is rushing to a conclusion without doing so."
+        }
+      ],
+      "hint": "Look for the common error where a student jumps straight to the 'how' instead of the 'what'."
+    },
+    {
+      "question": "Based on the Medvance lesson, which item would be categorized as 'Primary Information'?",
+      "answerOptions": [
+        {
+          "text": "An editorial in a newspaper discussing the implications of a new law.",
+          "isCorrect": false,
+          "rationale": "Editorials are secondary information as they interpret and provide opinions on existing facts or events."
+        },
+        {
+          "text": "A blog post summarizing the results of a scientific study.",
+          "isCorrect": false,
+          "rationale": "This is secondary information because it is a third-party summary of someone else's work."
+        },
+        {
+          "text": "Raw experimental data or an original document written by a person involved in the event.",
+          "isCorrect": true,
+          "rationale": "解答B (Answer B) in the source lists experimental data and original documents as key examples of primary information."
+        },
+        {
+          "text": "A textbook chapter explaining the history of the internet.",
+          "isCorrect": false,
+          "rationale": "Textbooks are secondary sources because they compile and summarize information from many primary sources."
+        }
+      ],
+      "hint": "Identify the source that has not been interpreted, summarized, or edited by others."
+    },
+    {
+      "question": "In the context of evaluating information, why is it necessary to distinguish between 'Fact' and 'Opinion'?",
+      "answerOptions": [
+        {
+          "text": "Opinions are easier to list in the information gathering stage than facts.",
+          "isCorrect": false,
+          "rationale": "While opinions might be plentiful, the goal is to differentiate them to ensure the reliability of the final proposal."
+        },
+        {
+          "text": "Facts are objective data that can be verified, while opinions are subjective interpretations.",
+          "isCorrect": true,
+          "rationale": "Differentiating these allows the problem-solver to build a conclusion on a solid foundation of verifiable truth."
+        },
+        {
+          "text": "The Common Test only asks questions about facts, so opinions can be ignored entirely.",
+          "isCorrect": false,
+          "rationale": "The Common Test requires students to distinguish between the two in various scenarios/materials."
+        },
+        {
+          "text": "Opinions always represent the 'Goal,' while facts always represent the 'Current State.'",
+          "isCorrect": false,
+          "rationale": "The relationship between facts/opinions and the problem-solving steps is more complex and not a simple one-to-one match."
+        }
+      ],
+      "hint": "Consider which type of information can be proven true or false regardless of who says it."
+    },
+    {
+      "question": "If a student finds a piece of information that seems perfect for their solution but hasn't checked its reliability, what does Medvance warn will happen?",
+      "answerOptions": [
+        {
+          "text": "They will likely reach the goal faster than using the standard procedure.",
+          "isCorrect": false,
+          "rationale": "Rushing without reliability checks is a pitfall that leads to errors, not success."
+        },
+        {
+          "text": "They may fall into the pitfall of 'rushing to a conclusion' with biased or inaccurate information.",
+          "isCorrect": true,
+          "rationale": "The 'Pitfalls' section specifically warns against using 'seemingly plausible' information to rush a conclusion."
+        },
+        {
+          "text": "The information will automatically become primary information once it is used in a proposal.",
+          "isCorrect": false,
+          "rationale": "Usage does not change the nature of information from secondary to primary."
+        },
+        {
+          "text": "The student will receive bonus points for showing initiative in the proposal phase.",
+          "isCorrect": false,
+          "rationale": "The material states that for the Common Test, accurate execution of the 'pattern' is what leads to points."
+        }
+      ],
+      "hint": "Look at the 'Pitfalls' section regarding the speed of reaching conclusions."
+    },
+    {
+      "question": "What is the final step in the Medvance Problem-Solving Procedure before proceeding to the next unit?",
+      "answerOptions": [
+        {
+          "text": "Memorizing all the definitions of primary and secondary information.",
+          "isCorrect": false,
+          "rationale": "Memorization is not the final step; applying the model is."
+        },
+        {
+          "text": "Creating a secondary information source based on your own findings.",
+          "isCorrect": false,
+          "rationale": "The goal is to solve problems and evaluate sources, not necessarily to create new secondary literature."
+        },
+        {
+          "text": "Performing a reach check to ensure you can replicate the process and goal without looking at the material.",
+          "isCorrect": true,
+          "rationale": "The 'Reach Check' section lists being able to state the goal and replicate examples A/B from scratch as the conditions for completion."
+        },
+        {
+          "text": "Discarding all 'desires' so that only 'problems' remain in the analysis.",
+          "isCorrect": false,
+          "rationale": "While problems and desires are different, the final step involves confirming mastery of the entire flow."
+        }
+      ],
+      "hint": "Check the requirements for 'Perfecting the conditions' in the final section of the unit."
+    }
+  ]
+}

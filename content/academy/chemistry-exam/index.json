@@ -4,10 +4,10 @@
   "trackLabel": "基礎講座",
   "brand": "Medvance",
   "unit_count": 27,
-  "full_count": 27,
-  "outline_count": 0,
+  "full_count": 1,
+  "outline_count": 26,
   "design": "化学基礎＋化学の受験範囲。理論・無機・有機を抜けなく。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 26 単元は骨子のみで内容を拡充中。",
   "chapters": [
     "物質の構成",
     "化学量論",
@@ -23,14 +23,14 @@
       "chapter": "物質の構成",
       "title": "原子・分子・イオンと周期表",
       "minutes": 16,
-      "goal": "原子番号・質量数・イオンを説明できる",
+      "goal": "元素記号の表記から陽子・中性子・電子の数を出し、周期表の位置からイオンの価数を予測できる",
       "prereq": [],
       "status": "full",
       "file": "lessons/ME-CH-01.md",
       "storyboard": "storyboard/ME-CH-01.md",
       "slides": "slides/ME-CH-01.md",
       "quiz": "quiz/ME-CH-01.json",
-      "quality": "perfect-v1"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-CH-02",
@@ -41,12 +41,12 @@
       "prereq": [
         "ME-CH-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-02.md",
       "storyboard": "storyboard/ME-CH-02.md",
       "slides": "slides/ME-CH-02.md",
       "quiz": "quiz/ME-CH-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-03",
@@ -57,12 +57,12 @@
       "prereq": [
         "ME-CH-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-03.md",
       "storyboard": "storyboard/ME-CH-03.md",
       "slides": "slides/ME-CH-03.md",
       "quiz": "quiz/ME-CH-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-04",
@@ -74,12 +74,12 @@
         "ME-CH-03",
         "ME-CH-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-04.md",
       "storyboard": "storyboard/ME-CH-04.md",
       "slides": "slides/ME-CH-04.md",
       "quiz": "quiz/ME-CH-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-05",
@@ -90,12 +90,12 @@
       "prereq": [
         "ME-CH-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-05.md",
       "storyboard": "storyboard/ME-CH-05.md",
       "slides": "slides/ME-CH-05.md",
       "quiz": "quiz/ME-CH-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-06",
@@ -106,12 +106,12 @@
       "prereq": [
         "ME-CH-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-06.md",
       "storyboard": "storyboard/ME-CH-06.md",
       "slides": "slides/ME-CH-06.md",
       "quiz": "quiz/ME-CH-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-07",
@@ -122,12 +122,12 @@
       "prereq": [
         "ME-CH-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-07.md",
       "storyboard": "storyboard/ME-CH-07.md",
       "slides": "slides/ME-CH-07.md",
       "quiz": "quiz/ME-CH-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-08",
@@ -138,12 +138,12 @@
       "prereq": [
         "ME-CH-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-08.md",
       "storyboard": "storyboard/ME-CH-08.md",
       "slides": "slides/ME-CH-08.md",
       "quiz": "quiz/ME-CH-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-09",
@@ -154,12 +154,12 @@
       "prereq": [
         "ME-CH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-09.md",
       "storyboard": "storyboard/ME-CH-09.md",
       "slides": "slides/ME-CH-09.md",
       "quiz": "quiz/ME-CH-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-10",
@@ -170,12 +170,12 @@
       "prereq": [
         "ME-CH-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-10.md",
       "storyboard": "storyboard/ME-CH-10.md",
       "slides": "slides/ME-CH-10.md",
       "quiz": "quiz/ME-CH-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-11",
@@ -186,12 +186,12 @@
       "prereq": [
         "ME-CH-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-11.md",
       "storyboard": "storyboard/ME-CH-11.md",
       "slides": "slides/ME-CH-11.md",
       "quiz": "quiz/ME-CH-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-12",
@@ -202,12 +202,12 @@
       "prereq": [
         "ME-CH-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-12.md",
       "storyboard": "storyboard/ME-CH-12.md",
       "slides": "slides/ME-CH-12.md",
       "quiz": "quiz/ME-CH-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-13",
@@ -216,12 +216,12 @@
       "minutes": 16,
       "goal": "アルカン・アルケン・アルキンを区別できる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-13.md",
       "storyboard": "storyboard/ME-CH-13.md",
       "slides": "slides/ME-CH-13.md",
       "quiz": "quiz/ME-CH-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-14",
@@ -232,12 +232,12 @@
       "prereq": [
         "ME-CH-13"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-14.md",
       "storyboard": "storyboard/ME-CH-14.md",
       "slides": "slides/ME-CH-14.md",
       "quiz": "quiz/ME-CH-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-15",
@@ -248,12 +248,12 @@
       "prereq": [
         "ME-CH-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-15.md",
       "storyboard": "storyboard/ME-CH-15.md",
       "slides": "slides/ME-CH-15.md",
       "quiz": "quiz/ME-CH-15.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-16",
@@ -264,12 +264,12 @@
       "prereq": [
         "ME-CH-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-16.md",
       "storyboard": "storyboard/ME-CH-16.md",
       "slides": "slides/ME-CH-16.md",
       "quiz": "quiz/ME-CH-16.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-17",
@@ -280,12 +280,12 @@
       "prereq": [
         "ME-CH-16"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-17.md",
       "storyboard": "storyboard/ME-CH-17.md",
       "slides": "slides/ME-CH-17.md",
       "quiz": "quiz/ME-CH-17.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-18",
@@ -296,12 +296,12 @@
       "prereq": [
         "ME-CH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-18.md",
       "storyboard": "storyboard/ME-CH-18.md",
       "slides": "slides/ME-CH-18.md",
       "quiz": "quiz/ME-CH-18.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-19",
@@ -312,12 +312,12 @@
       "prereq": [
         "ME-CH-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-19.md",
       "storyboard": "storyboard/ME-CH-19.md",
       "slides": "slides/ME-CH-19.md",
       "quiz": "quiz/ME-CH-19.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-20",
@@ -329,12 +329,12 @@
         "ME-CH-08",
         "ME-CH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-20.md",
       "storyboard": "storyboard/ME-CH-20.md",
       "slides": "slides/ME-CH-20.md",
       "quiz": "quiz/ME-CH-20.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-21",
@@ -345,12 +345,12 @@
       "prereq": [
         "ME-CH-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-21.md",
       "storyboard": "storyboard/ME-CH-21.md",
       "slides": "slides/ME-CH-21.md",
       "quiz": "quiz/ME-CH-21.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-22",
@@ -361,12 +361,12 @@
       "prereq": [
         "ME-CH-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-22.md",
       "storyboard": "storyboard/ME-CH-22.md",
       "slides": "slides/ME-CH-22.md",
       "quiz": "quiz/ME-CH-22.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-23",
@@ -378,12 +378,12 @@
         "ME-CH-12",
         "ME-CH-20"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-23.md",
       "storyboard": "storyboard/ME-CH-23.md",
       "slides": "slides/ME-CH-23.md",
       "quiz": "quiz/ME-CH-23.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-24",
@@ -394,12 +394,12 @@
       "prereq": [
         "ME-CH-13"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-24.md",
       "storyboard": "storyboard/ME-CH-24.md",
       "slides": "slides/ME-CH-24.md",
       "quiz": "quiz/ME-CH-24.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-25",
@@ -411,12 +411,12 @@
         "ME-CH-13",
         "ME-CH-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-25.md",
       "storyboard": "storyboard/ME-CH-25.md",
       "slides": "slides/ME-CH-25.md",
       "quiz": "quiz/ME-CH-25.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-26",
@@ -428,12 +428,12 @@
         "ME-CH-14",
         "ME-CH-15"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-26.md",
       "storyboard": "storyboard/ME-CH-26.md",
       "slides": "slides/ME-CH-26.md",
       "quiz": "quiz/ME-CH-26.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-CH-27",
@@ -445,12 +445,12 @@
         "ME-CH-04",
         "ME-CH-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-CH-27.md",
       "storyboard": "storyboard/ME-CH-27.md",
       "slides": "slides/ME-CH-27.md",
       "quiz": "quiz/ME-CH-27.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"

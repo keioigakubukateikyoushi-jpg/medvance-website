@@ -2,43 +2,48 @@
   "unit_id": "ME-PH-01",
   "title": "物理量・単位・有効数字",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v2",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "SI単位と次元の感覚で式の正しさを検算できる"
+      "prompt": "$72\\ \\mathrm{km/h}$ を $\\mathrm{m/s}$ に直せ。",
+      "answer": "$20\\ \\mathrm{m/s}$",
+      "explain": "$72\\times\\dfrac{1000}{3600}=72\\div 3.6=20$。約分後に残る単位が $\\mathrm{m/s}$ であることを確認すれば換算の向きも検算できる。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "物理量の種類（長さL、質量M、時間T など）で式の整合を見る考え方。"
+      "prompt": "$\\mathrm{km/h}$ を $\\mathrm{m/s}$ に直すとき $3.6$ で割る。この $3.6$ はどこから出るか説明せよ。",
+      "answer": "時間の換算数 $3600$ を長さの換算数 $1000$ で割った値、すなわち $3.6=3600/1000$。",
+      "explain": "毎回この分数から導けるようにしておけば、逆向きの換算（$3.6$ を掛ける）でも迷わない。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "単位の混在（km/h と m/s）",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "単位の混在（km/h と m/s）"
+      "type": "short",
+      "prompt": "縦 $2.5\\ \\mathrm{cm}$、横 $4.20\\ \\mathrm{cm}$ の長方形の面積を、有効数字を考えて答えよ。",
+      "answer": "$11\\ \\mathrm{cm^2}$",
+      "explain": "$2.5\\times 4.20=10.5$ だが、掛け算は桁数の少ない方に合わせる。$2.5$ が2桁なので答えも2桁にして $11$。"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "量の定義を書く"
+      "prompt": "$12.3\\ \\mathrm{cm}+4.567\\ \\mathrm{cm}$ を有効数字を考えて答えよ。",
+      "answer": "$16.9\\ \\mathrm{cm}$",
+      "explain": "和は $16.867$。加減は桁数ではなく位で合わせるため、粗い方の小数第1位に丸めて $16.9$。ここを「2桁だから $17$」とするのが典型的な誤り。"
     },
     {
       "id": "q5",
-      "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "長さ・質量・時間の基本単位"
+      "type": "mc",
+      "prompt": "単振動の周期 $T=2\\pi\\sqrt{m/k}$ において、根号の中身 $m/k$ の単位はどれか。",
+      "choices": [
+        "$\\mathrm{s^2}$",
+        "$\\mathrm{s}$",
+        "$\\mathrm{s^{-1}}$",
+        "$\\mathrm{kg\\cdot s}$"
+      ],
+      "answer": "$\\mathrm{s^2}$",
+      "explain": "$[k]=\\mathrm{kg/s^2}$ なので $[m]/[k]=\\mathrm{kg}\\div(\\mathrm{kg/s^2})=\\mathrm{s^2}$。平方根をとると $\\mathrm{s}$ となり周期の単位に一致する。式をうろ覚えでも次元で検算できる。"
     }
   ]
 }

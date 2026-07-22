@@ -7,7 +7,8 @@
     "advanced_units": 54,
     "elite_units": 32,
     "all_units": 388,
-    "all_full": 388
+    "all_full": 11,
+    "all_outline": 377
   },
   "tracks": [
     {
@@ -20,8 +21,8 @@
           "path": "curriculum/english-exam",
           "subject": "高校英語（受験）",
           "unit_count": 30,
-          "full_count": 30,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 29,
           "trackLabel": "基礎講座"
         },
         {
@@ -29,8 +30,8 @@
           "path": "curriculum/math1-exam",
           "subject": "高校数学I",
           "unit_count": 38,
-          "full_count": 38,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 37,
           "trackLabel": "基礎講座"
         },
         {
@@ -38,8 +39,8 @@
           "path": "curriculum/mathA-exam",
           "subject": "高校数学A",
           "unit_count": 20,
-          "full_count": 20,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 20,
           "trackLabel": "基礎講座"
         },
         {
@@ -47,8 +48,8 @@
           "path": "curriculum/math2-exam",
           "subject": "高校数学II",
           "unit_count": 22,
-          "full_count": 22,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 22,
           "trackLabel": "基礎講座"
         },
         {
@@ -56,8 +57,8 @@
           "path": "curriculum/mathB-exam",
           "subject": "高校数学B（受験）",
           "unit_count": 14,
-          "full_count": 14,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 14,
           "trackLabel": "基礎講座"
         },
         {
@@ -65,8 +66,8 @@
           "path": "curriculum/math3-exam",
           "subject": "高校数学III（受験）",
           "unit_count": 18,
-          "full_count": 18,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 18,
           "trackLabel": "基礎講座"
         },
         {
@@ -74,8 +75,8 @@
           "path": "curriculum/physics-exam",
           "subject": "高校物理（受験）",
           "unit_count": 26,
-          "full_count": 26,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 25,
           "trackLabel": "基礎講座"
         },
         {
@@ -83,8 +84,8 @@
           "path": "curriculum/chemistry-exam",
           "subject": "高校化学（受験）",
           "unit_count": 27,
-          "full_count": 27,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 26,
           "trackLabel": "基礎講座"
         },
         {
@@ -92,8 +93,8 @@
           "path": "curriculum/biology-exam",
           "subject": "高校生物（受験）",
           "unit_count": 29,
-          "full_count": 29,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 28,
           "trackLabel": "基礎講座"
         },
         {
@@ -101,8 +102,8 @@
           "path": "curriculum/interview-exam",
           "subject": "医学部面接",
           "unit_count": 18,
-          "full_count": 18,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 17,
           "trackLabel": "基礎講座"
         },
         {
@@ -110,8 +111,8 @@
           "path": "curriculum/essay-exam",
           "subject": "医学部小論文",
           "unit_count": 18,
-          "full_count": 18,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 17,
           "trackLabel": "基礎講座"
         }
       ]
@@ -126,8 +127,8 @@
           "path": "curriculum/japanese-common-exam",
           "subject": "共通テスト国語",
           "unit_count": 15,
-          "full_count": 15,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 14,
           "trackLabel": "共通テスト対策"
         },
         {
@@ -135,8 +136,8 @@
           "path": "curriculum/social-common-exam",
           "subject": "共通テスト社会",
           "unit_count": 15,
-          "full_count": 15,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 14,
           "trackLabel": "共通テスト対策"
         },
         {
@@ -144,8 +145,8 @@
           "path": "curriculum/info-common-exam",
           "subject": "共通テスト情報",
           "unit_count": 12,
-          "full_count": 12,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 11,
           "trackLabel": "共通テスト対策"
         }
       ]
@@ -160,8 +161,8 @@
           "path": "curriculum/advanced/english",
           "subject": "高校英語・発展",
           "unit_count": 10,
-          "full_count": 10,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 10,
           "trackLabel": "発展講座"
         },
         {
@@ -169,8 +170,8 @@
           "path": "curriculum/advanced/math1",
           "subject": "高校数学I・発展",
           "unit_count": 18,
-          "full_count": 18,
-          "outline_count": 0,
+          "full_count": 1,
+          "outline_count": 17,
           "trackLabel": "発展講座"
         },
         {
@@ -178,8 +179,8 @@
           "path": "curriculum/advanced/math2",
           "subject": "高校数学II・発展",
           "unit_count": 14,
-          "full_count": 14,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 14,
           "trackLabel": "発展講座"
         },
         {
@@ -187,8 +188,8 @@
           "path": "curriculum/advanced/mathA",
           "subject": "高校数学A・発展",
           "unit_count": 12,
-          "full_count": 12,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 12,
           "trackLabel": "発展講座"
         }
       ]
@@ -203,8 +204,8 @@
           "path": "curriculum/elite/english",
           "subject": "英語・難関大",
           "unit_count": 8,
-          "full_count": 8,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 8,
           "trackLabel": "難関大講座"
         },
         {
@@ -212,8 +213,8 @@
           "path": "curriculum/elite/math",
           "subject": "数学・難関大（医含む）",
           "unit_count": 24,
-          "full_count": 24,
-          "outline_count": 0,
+          "full_count": 0,
+          "outline_count": 24,
           "trackLabel": "難関大講座"
         }
       ]
@@ -225,8 +226,8 @@
       "path": "curriculum/english-exam",
       "subject": "高校英語（受験）",
       "unit_count": 30,
-      "full_count": 30,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 29,
       "trackLabel": "基礎講座"
     },
     {
@@ -234,8 +235,8 @@
       "path": "curriculum/math1-exam",
       "subject": "高校数学I",
       "unit_count": 38,
-      "full_count": 38,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 37,
       "trackLabel": "基礎講座"
     },
     {
@@ -243,8 +244,8 @@
       "path": "curriculum/mathA-exam",
       "subject": "高校数学A",
       "unit_count": 20,
-      "full_count": 20,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 20,
       "trackLabel": "基礎講座"
     },
     {
@@ -252,8 +253,8 @@
       "path": "curriculum/math2-exam",
       "subject": "高校数学II",
       "unit_count": 22,
-      "full_count": 22,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 22,
       "trackLabel": "基礎講座"
     },
     {
@@ -261,8 +262,8 @@
       "path": "curriculum/mathB-exam",
       "subject": "高校数学B（受験）",
       "unit_count": 14,
-      "full_count": 14,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 14,
       "trackLabel": "基礎講座"
     },
     {
@@ -270,8 +271,8 @@
       "path": "curriculum/math3-exam",
       "subject": "高校数学III（受験）",
       "unit_count": 18,
-      "full_count": 18,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 18,
       "trackLabel": "基礎講座"
     },
     {
@@ -279,8 +280,8 @@
       "path": "curriculum/physics-exam",
       "subject": "高校物理（受験）",
       "unit_count": 26,
-      "full_count": 26,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 25,
       "trackLabel": "基礎講座"
     },
     {
@@ -288,8 +289,8 @@
       "path": "curriculum/chemistry-exam",
       "subject": "高校化学（受験）",
       "unit_count": 27,
-      "full_count": 27,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 26,
       "trackLabel": "基礎講座"
     },
     {
@@ -297,8 +298,8 @@
       "path": "curriculum/biology-exam",
       "subject": "高校生物（受験）",
       "unit_count": 29,
-      "full_count": 29,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 28,
       "trackLabel": "基礎講座"
     },
     {
@@ -306,8 +307,8 @@
       "path": "curriculum/interview-exam",
       "subject": "医学部面接",
       "unit_count": 18,
-      "full_count": 18,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 17,
       "trackLabel": "基礎講座"
     },
     {
@@ -315,8 +316,8 @@
       "path": "curriculum/essay-exam",
       "subject": "医学部小論文",
       "unit_count": 18,
-      "full_count": 18,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 17,
       "trackLabel": "基礎講座"
     },
     {
@@ -324,8 +325,8 @@
       "path": "curriculum/japanese-common-exam",
       "subject": "共通テスト国語",
       "unit_count": 15,
-      "full_count": 15,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 14,
       "trackLabel": "共通テスト対策"
     },
     {
@@ -333,8 +334,8 @@
       "path": "curriculum/social-common-exam",
       "subject": "共通テスト社会",
       "unit_count": 15,
-      "full_count": 15,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 14,
       "trackLabel": "共通テスト対策"
     },
     {
@@ -342,8 +343,8 @@
       "path": "curriculum/info-common-exam",
       "subject": "共通テスト情報",
       "unit_count": 12,
-      "full_count": 12,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 11,
       "trackLabel": "共通テスト対策"
     },
     {
@@ -351,8 +352,8 @@
       "path": "curriculum/advanced/english",
       "subject": "高校英語・発展",
       "unit_count": 10,
-      "full_count": 10,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 10,
       "trackLabel": "発展講座"
     },
     {
@@ -360,8 +361,8 @@
       "path": "curriculum/advanced/math1",
       "subject": "高校数学I・発展",
       "unit_count": 18,
-      "full_count": 18,
-      "outline_count": 0,
+      "full_count": 1,
+      "outline_count": 17,
       "trackLabel": "発展講座"
     },
     {
@@ -369,8 +370,8 @@
       "path": "curriculum/advanced/math2",
       "subject": "高校数学II・発展",
       "unit_count": 14,
-      "full_count": 14,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 14,
       "trackLabel": "発展講座"
     },
     {
@@ -378,8 +379,8 @@
       "path": "curriculum/advanced/mathA",
       "subject": "高校数学A・発展",
       "unit_count": 12,
-      "full_count": 12,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 12,
       "trackLabel": "発展講座"
     },
     {
@@ -387,8 +388,8 @@
       "path": "curriculum/elite/english",
       "subject": "英語・難関大",
       "unit_count": 8,
-      "full_count": 8,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 8,
       "trackLabel": "難関大講座"
     },
     {
@@ -396,8 +397,8 @@
       "path": "curriculum/elite/math",
       "subject": "数学・難関大（医含む）",
       "unit_count": 24,
-      "full_count": 24,
-      "outline_count": 0,
+      "full_count": 0,
+      "outline_count": 24,
       "trackLabel": "難関大講座"
     }
   ],

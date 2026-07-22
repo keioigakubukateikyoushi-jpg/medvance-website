@@ -63,7 +63,7 @@
     <div class="brand">MEDVANCE · 基礎講座</div>
     <div class="meta">高校英語（受験） · 文型と基本構造 · 約16分</div>
     <h1>ME-EN-01 · 5文型の判別</h1>
-    <div class="goal"><strong>ゴール</strong> S V O C を見分け文型を判定できる</div>
+    <div class="goal"><strong>ゴール</strong> 修飾語を外して文の骨格を取り出し、O と C を「イコール関係」で切り分けて5文型を判定できる</div>
   </header>
   <main class="wrap">
     <section class="card"><h2>概要</h2><ul>
@@ -74,60 +74,91 @@
 <li>前提: なし</li>
 <li>次: <span class="uid">ME-EN-02</span></li>
 </ul></section>
-<section class="card"><h2>今日のゴール</h2><p>S V O C を見分け文型を判定できる</p></section>
-<section class="card"><h2>受験での位置づけ</h2><p>文型と基本構造の中核スキル。ここが曖昧だと模試で同じ失点をくり返す。</p>
+<section class="card"><h2>今日のゴール</h2><p>修飾語を外して文の骨格を取り出し、$O$ と $C$ を「イコール関係」で切り分けて5文型を判定できる</p></section>
+<section class="card"><h2>受験での位置づけ</h2><p>文型は文法問題のための知識ではなく、<strong>長文を読むときに「どこまでが主語か」「この名詞は何の役か」を即断するための道具</strong>。ここが曖昧なままだと、医学部入試の長い一文（関係詞や挿入を含む文）で必ず読み違える。和訳・英作文の減点原因の多くもここに戻る。</p>
 <h3>攻略の方針</h3>
-<p>医学部・難関大では用語の定義と手順の再現がそのまま得点になる。</p></section>
+<p>**判定は「$O$ か $C$ か」の一点に集約される。<strong> 動詞の後ろの名詞が主語や目的語と</strong>イコールで結べるか**を試すだけ。これを機械的にやれば、知らない動詞でも文型は取れる。</p></section>
 <section class="card"><h2>前提チェック</h2><ul>
 <li>入口単元（ここから開始してよい）</li>
 </ul></section>
 <section class="card"><h2>この回のポイント</h2><ul>
-<li>第1：$S\,V$（自動詞）</li>
-<li>第2：$S\,V\,C$（$S=C$）</li>
-<li>第3：$S\,V\,O$</li>
-<li>第4：$S\,V\,O\,O$（授与）</li>
-<li>第5：$S\,V\,O\,C$（$O=C$）</li>
-<li>補語 $C$ は「イコール関係」が判定の鍵</li>
+<li>第1文型：$S\,V$（自動詞。後ろは修飾語のみ）</li>
+<li>第2文型：$S\,V\,C$（$S=C$）</li>
+<li>第3文型：$S\,V\,O$（$S\neq O$）</li>
+<li>第4文型：$S\,V\,O\,O$（授与。**$O_1\neq O_2$**）</li>
+<li>第5文型：$S\,V\,O\,C$（**$O=C$**）</li>
+<li>**最初にやるのは修飾語 $M$（前置詞句・副詞）を外すこと**。骨格だけ残せば迷いが消える</li>
+<li>第4と第5の分かれ目は、後ろ2つが<strong>イコールで結べるか</strong>だけ</li>
 </ul></section>
 <section class="card"><h2>定義・用語</h2><h3>補語 $C$</h3>
-<p>主語や目的語の性質・状態・同一物を述べる語。$S=C$ または $O=C$ が成り立つ。 be / become / seem / look / feel など（第2文型になりやすい）</p></section>
+<p>主語や目的語の性質・状態・同一物を述べる語。**$S=C$（第2文型）または $O=C$（第5文型）が成り立つ**。be / become / seem / look / feel / remain / get などは第2文型をとりやすい。</p>
+<h3>修飾語 $M$</h3>
+<p>文型の要素（$S\,V\,O\,C$）に数えない付加情報。前置詞＋名詞（in the room, with her）や副詞（quickly, yesterday）が典型。**$M$ をいくら足しても文型は変わらない。**</p></section>
 <section class="card"><h2>核となる手順（答案でこの順）</h2><ol>
+<li>**前置詞句・副詞を $M$ として（　）でくくり、視界から外す**</li>
 <li>動詞 $V$ を見つける</li>
-<li>目的語 $O$ があるか（何を／誰を）</li>
-<li>補語 $C$ があるか（$S$ や $O$ とイコールか）</li>
-<li>第1〜5のラベルを付ける</li>
+<li>$V$ の後ろに名詞があるか。なければ第1文型</li>
+<li>名詞が1つのとき：$S$ とイコールなら $C$（第2文型）、イコールでなければ $O$（第3文型）</li>
+<li>名詞が2つのとき：**2つ目が1つ目とイコールなら $C$（第5文型）、イコールでなければ $O_2$（第4文型）**</li>
 </ol></section>
-<section class="card example"><h2>例題A（標準・型の確認）</h2><p>She became a doctor. の文型を答えよ。</p>
+<section class="card example"><h2>例題A（標準・型の確認）</h2><p>She became a doctor (in 2020). の文型を答えよ。</p>
 <h3>解答A</h3>
 <ul>
-<li>の流れ</li>
-<li>$V=$ became（連結動詞）</li>
-<li>$O$ はない。a doctor は She とイコール → $C$</li>
-<li>第2文型 $S\,V\,C$</li>
+<li><strong>手順1</strong>　in 2020 は前置詞句なので $M$。外して She became a doctor. で考える。</li>
+<li><strong>手順2</strong>　$V=$ became。</li>
+<li><strong>手順3・4</strong>　後ろの名詞は a doctor の1つ。$S$（She）とイコールで結べるか試す。</li>
+</ul>
+<p>$$\text{She}=\text{a doctor}\quad(\text{彼女}＝\text{医者}\ \text{が成り立つ})$$</p>
+<ul>
+<li>イコールが成立するので a doctor は $O$ ではなく **$C$**。</li>
+<li><strong>意味からの確認</strong>　become は「〜になる」。「彼女が医者を〜した」ではなく「彼女＝医者 になった」なので、$C$ で正しい。</li>
+<li>答え 第2文型 $S\,V\,C$。（in 2020 は $M$ で文型に数えない）</li>
 </ul></section>
-<section class="card example"><h2>例題B（受験・実戦）</h2><p>They elected him chairperson. の文型を答えよ。</p>
+<section class="card example"><h2>例題B（受験・実戦）</h2><p>次の2文の文型をそれぞれ答え、判定の根拠を示せ。</p>
+<p>$(1)$ They elected him chairperson.</p>
+<p>$(2)$ They gave him a present.</p>
 <h3>解答B</h3>
 <ul>
-<li>の流れ</li>
-<li>$V=$ elected</li>
-<li>him が $O$、chairperson が $O$ とイコール → $C$</li>
-<li>第5文型 $S\,V\,O\,C$</li>
+<li>どちらも「動詞の後ろに名詞が2つ」という同じ形をしている。<strong>手順5のイコール判定だけが分かれ目</strong>。</li>
+<li>$(1)$ him と chairperson を結んでみる。</li>
+</ul>
+<p>$$\text{him}=\text{chairperson}\quad(\text{彼}＝\text{議長}\ \text{が成り立つ})$$</p>
+<ul>
+<li>選出の結果、彼が議長そのものになるのでイコールが成立。よって chairperson は $C$。**第5文型 $S\,V\,O\,C$**。</li>
+<li>$(2)$ him と a present を結んでみる。</li>
+</ul>
+<p>$$\text{him}\neq\text{a present}\quad(\text{彼}＝\text{プレゼント}\ \text{ではない})$$</p>
+<ul>
+<li>イコールが成立しない。$2$ つとも目的語で「彼<strong>に</strong> プレゼント<strong>を</strong>」という授与の関係。よって **第4文型 $S\,V\,O\,O$**。</li>
+<li><strong>見た目では絶対に判別できない</strong>点が重要。$S\,V+名詞+名詞$ という形は第4にも第5にもなる。<strong>動詞を覚えるのではなく、毎回イコールを試す</strong>のが確実な方法。</li>
+<li>答え $(1)$ 第5文型 $S\,V\,O\,C$（him＝chairperson）　$(2)$ 第4文型 $S\,V\,O\,O$（him≠a present）</li>
 </ul></section>
-<section class="card example"><h2>演習（自力再現）</h2><p>I gave her a book. の文型を答えよ。</p>
+<section class="card example"><h2>演習（自力再現）</h2><p>次の各文の文型を答え、根拠を一言で示せ。</p>
+<p>$(1)$ I gave her a book.</p>
+<p>$(2)$ I found her a job.</p>
+<p>$(3)$ I found the book easy.</p>
+<p>$(4)$ The book sells well.</p>
 <h3>解答</h3>
 <ul>
-<li>要点: 第4文型（$S\,V\,O\,O$）。her と a book はイコールではない（授与）。</li>
-<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+<li>$(1)$ her と a book はイコールではない（彼女＝本 ではない）。授与の関係なので **第4文型 $S\,V\,O\,O$**。</li>
+<li>$(2)$ her と a job はイコールではない（彼女＝仕事 ではない）。「彼女<strong>に</strong> 仕事<strong>を</strong> 見つけてやった」の授与。**第4文型 $S\,V\,O\,O$**。</li>
+<li>$(3)$ the book と easy を結ぶと「その本＝易しい」が成立する。easy は $C$。「その本が易しいと分かった」。**第5文型 $S\,V\,O\,C$**。</li>
+<li>**$(2)$ と $(3)$ の対比が核心<strong>　同じ found でも、後ろがイコールかどうかで第4にも第5にもなる。</strong>動詞で決まるのではない。**</li>
+<li>$(4)$ well は副詞なので $M$。外すと The book sells. で名詞は残らない。**第1文型 $S\,V$**。（sell が「売れる」の意味で自動詞になっている点にも注意）</li>
+<li>答え $(1)$ 第4　$(2)$ 第4　$(3)$ 第5　$(4)$ 第1</li>
 </ul></section>
 <section class="card traps"><h2>落とし穴（減点パターン）</h2><ul>
-<li>$O$ と $C$ の混同（イコールかどうかで切る）</li>
-<li>自動詞に無理に $O$ を読む</li>
-<li>there 構文で $S$ を取り違える</li>
+<li>**$O$ と $C$ の混同**　迷ったら必ず「イコールで結べるか」を口に出して試す。これ以外の判定法に頼らない</li>
+<li><strong>修飾語を数えてしまう</strong>　He lives in Tokyo. は in Tokyo が $M$ なので第3文型ではなく<strong>第1文型</strong>。前置詞句は $O$ になれない</li>
+<li><strong>動詞ごとに文型を丸暗記する</strong>　find・make・leave などは第3・第4・第5すべてを取りうる。形ではなく関係で判定する</li>
+<li>**there 構文で $S$ を取り違える**　There is a book on the desk. の $S$ は there ではなく <strong>a book</strong></li>
+<li>第2文型の $C$ に形容詞が来る場合を見落とす（She looks happy. の happy は $C$。$C$ は名詞とは限らない）</li>
 </ul></section>
 <section class="card"><h2>到達チェック（完璧の条件）</h2><ul>
 <li>ゴールを何も見ずに言える</li>
-<li>例題A・Bを白紙で手順から再現できる</li>
-<li>落とし穴を「なぜダメか」まで説明できる</li>
+<li>修飾語を外してから判定する手順を、順序どおりに実行できる</li>
+<li>I found her a job. と I found the book easy. の違いを、イコール判定で説明できる</li>
+<li>He lives in Tokyo. が第1文型である理由を言える</li>
 <li>確認クイズで合格点（4/5以上）</li>
 </ul></section>
 <section class="card"><h2>次へ</h2><p>次は <code><span class="uid">ME-EN-02</span></code>。本単元の到達チェックをすべて満たしてから進む。</p>

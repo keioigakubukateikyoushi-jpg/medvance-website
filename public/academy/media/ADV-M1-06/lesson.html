@@ -71,75 +71,86 @@
     <div class="brand">MEDVANCE · 発展講座</div>
     <div class="meta">高校数学I・発展 · 2次関数・発展 · 約26分</div>
     <h1>ADV-M1-06 · 定義域が動く最大最小</h1>
-    <div class="goal"><strong>ゴール</strong> 定義域 $[t,\,t+\ell]$ が動くとき、軸との位置関係で最大・最小を場合分けできる</div>
+    <div class="goal"><strong>ゴール</strong> 定義域が動くとき、軸との位置関係で場合分けし、最大値・最小値をパラメータの式として求められる</div>
   </header>
   <main class="wrap">
     <section class="card">
       <h2>受験での位置づけ</h2>
-      <p>軸と区間の相対位置がパラメータで動く型は、医学部・難関の2次関数で頻出。分類を機械にできるかが得点差になる。</p>
+      <p>軸と区間の相対位置がパラメータで動く型は、医学部・難関大の2次関数で頻出。ひらめきは不要で、分類を機械的に実行できるかがそのまま得点差になる。</p>
     </section>
     <section class="card">
       <h2>この回のポイント</h2>
-      <ul><li>まず平方完成して軸 $x=p$ を固定する</li>
-<li>区間が軸の左／含む／右で場合分けする</li>
-<li>下に凸なら最小は頂点か端点、最大は必ず端点</li></ul>
+      <ul><li>まず平方完成して軸 $x=p$ を固定する。動くのは区間の方</li>
+<li>下に凸（$a&gt;0$）のとき、最小は「頂点か端点」、最大は必ず端点</li>
+<li>区間が軸の左／軸を含む／軸の右、の3通りで場合分けする</li>
+<li>最大値は区間の中点と軸の位置関係で決まる（軸から遠い端点が最大）</li>
+<li>境界の $t$ で両側の式が一致することを必ず確認する</li></ul>
     </section>
     <section class="card">
       <h2>定義 · 動く定義域</h2>
-      <p>パラメータ $t$ に対し定義域が $[t,t+\ell]$（$\ell&gt;0$ は長さ）と動くとき、最大値 $M(t)$・最小値 $m(t)$ を $t$ の式として求める問題。</p>
+      <p>パラメータ $t$ に対し定義域が $[t,\,t+\ell]$（$\ell&gt;0$ は区間の長さで定数）と動くとき、最大値 $M(t)$・最小値 $m(t)$ を $t$ の関数として求める問題。区間の長さは変わらず位置だけが平行移動するのが特徴で、区間が軸を含む条件は $t\le p\le t+\ell$、すなわち $p-\ell\le t\le p$ となる。</p>
     </section>
     <section class="card">
       <h2>公式ボックス</h2>
-      <div class="formula-row"><span class="flab">$a&gt;0$</span><div class="formula-body">$y=a(x-p)^2+q$ は下に凸</div></div>
-<div class="formula-row"><div class="formula-body">軸を含む ⇔ $t\le p\le t+\ell$</div></div>
-<div class="formula-row"><div class="formula-body">最大は端点、最小は頂点または端点</div></div>
+      <div class="formula-row"><div class="formula-body">$a&gt;0$ のとき $y=a(x-p)^2+q$ は下に凸、軸は $x=p$</div></div>
+<div class="formula-row"><span class="flab">軸を含む条件</span><div class="formula-body">$t\le p\le t+\ell$ ⇔ $p-\ell\le t\le p$</div></div>
+<div class="formula-row"><span class="flab">下に凸</span><div class="formula-body">最小は頂点または端点、最大は必ず端点</div></div>
+<div class="formula-row"><span class="flab">最大の判定</span><div class="formula-body">区間の中点 $t+\dfrac{\ell}{2}$ と軸 $p$ を比べ、軸から遠い端点をとる</div></div>
     </section>
     <section class="card">
       <h2>核となる手順</h2>
-      <ol class="proc-list"><li><span class="num">1</span> $y=a(x-p)^2+q$ に平方完成（$a&gt;0$ を典型とする）</li>
-<li><span class="num">2</span> 軸 $x=p$ が区間に入る条件 $t\le p\le t+\ell$ ⇔ $p-\ell\le t\le p$</li>
-<li><span class="num">3</span> 場合1：区間が軸より左（$t+\ell&lt;p$）→ 区間内で単調減少（$a&gt;0$）</li>
-<li><span class="num">4</span> 場合2：軸を含む → 最小は頂点、最大は両端の大きい方</li>
+      <ol class="proc-list"><li><span class="num">1</span> $y=a(x-p)^2+q$ に平方完成する（$a&gt;0$ を典型とする）</li>
+<li><span class="num">2</span> 軸 $x=p$ が区間に入る条件 $t\le p\le t+\ell$ を $p-\ell\le t\le p$ に直す</li>
+<li><span class="num">3</span> 場合1：区間が軸より左（$t+\ell&lt;p$）→ 区間内で単調減少</li>
+<li><span class="num">4</span> 場合2：区間が軸を含む → 最小は頂点、最大は両端の大きい方</li>
 <li><span class="num">5</span> 場合3：区間が軸より右（$t&gt;p$）→ 区間内で単調増加</li>
-<li><span class="num">6</span> 境界 $t=p-\ell,\,t=p$ で式がつながることを確認</li></ol>
+<li><span class="num">6</span> 境界 $t=p-\ell,\ t=p$ で式がつながることを確認する</li></ol>
     </section>
     
       <section class="card">
         <h2>例題A（標準）</h2>
-        <div class="problem"><p>$y=x^2-2x$ を $t\le x\le t+1$ で考える。最小値を $t$ で場合分けせよ。</p></div>
+        <div class="problem"><p>$y=x^2-2x$ を $t\le x\le t+1$ で考える。最小値 $m(t)$ を $t$ で場合分けして求めよ。</p></div>
         <h3>解答の流れ</h3>
-        <ol class="steps"><li>$y=(x-1)^2-1$。軸 $x=1$、$a&gt;0$</li>
-<li>軸を含む条件：$t\le 1\le t+1$ ⇔ $0\le t\le 1$</li>
-<li>$t+1&lt;1$ ⇔ $t&lt;0$：区間は軸の左。減少なので最小は右端 $x=t+1$：$m=(t+1-1)^2-1=t^2-1$</li>
-<li>$0\le t\le 1$：最小は頂点 $-1$</li>
-<li>$t&gt;1$：区間は軸の右。増加なので最小は左端 $x=t$：$m=(t-1)^2-1$</li></ol>
-        <div class="answer"><strong>答え</strong> $t&lt;0$ で $t^2-1$；$0\le t\le 1$ で $-1$；$t&gt;1$ で $(t-1)^2-1$。</div>
+        <ol class="steps"><li>平方完成して $y=(x-1)^2-1$。軸は $x=1$、頂点は $(1,\,-1)$、$a=1&gt;0$ で下に凸</li>
+<li>軸を含む条件は $t\le 1\le t+1$ を解いて $0\le t\le 1$</li>
+<li>$t&lt;0$：区間全体が軸より左で単調減少。最小は右端 $x=t+1$ で $m(t)=(t+1-1)^2-1=t^2-1$</li>
+<li>$0\le t\le 1$：区間が軸を含むので最小は頂点そのもので $m(t)=-1$</li>
+<li>$t&gt;1$：区間全体が軸より右で単調増加。最小は左端 $x=t$ で $m(t)=(t-1)^2-1$</li>
+<li>境界の確認：$t=0$ で $0^2-1=-1$、$t=1$ で $(1-1)^2-1=-1$。いずれも一致し $m(t)$ は連続につながる</li></ol>
+        <div class="answer"><strong>答え</strong> $m(t)=t^2-1\ (t&lt;0)$、$m(t)=-1\ (0\le t\le 1)$、$m(t)=(t-1)^2-1\ (t&gt;1)$</div>
       </section>
 
       <section class="card">
         <h2>例題B（受験）</h2>
-        <div class="problem"><p>同じ設定で最大値 $M(t)$ を場合分けせよ。</p></div>
+        <div class="problem"><p>同じ設定 $y=x^2-2x$、$t\le x\le t+1$ で、最大値 $M(t)$ を場合分けして求めよ。</p></div>
         <h3>解答の流れ</h3>
-        <ol class="steps"><li>下に凸なので最大は常に端点比較</li>
-<li>軸を含むとき：$M=\max\{f(t),f(t+1)\}$</li>
-<li>軸より左（減少）：最大は左端 $f(t)$</li>
-<li>軸より右（増加）：最大は右端 $f(t+1)$</li></ol>
-        <div class="answer"><strong>答え</strong> 最大は端点の大きい方。軸の左右では単調性から一端に決まる。</div>
+        <ol class="steps"><li>下に凸なので最大は必ず端点でとる。頂点は候補から外れ、$f(t)$ と $f(t+1)$ の比較だけでよい</li>
+<li>$f(t)=(t-1)^2-1=t^2-2t$、$f(t+1)=t^2-1$</li>
+<li>差をとると $f(t)-f(t+1)=(t^2-2t)-(t^2-1)=-2t+1$</li>
+<li>$t&lt;\dfrac12$ なら $f(t)&gt;f(t+1)$ で最大は左端、$t&gt;\dfrac12$ なら最大は右端</li>
+<li>境目の理由：区間 $[t,\,t+1]$ の中点 $t+\dfrac12$ が軸 $x=1$ と一致するのが $t=\dfrac12$。下に凸では軸から遠い端点ほど値が大きい</li>
+<li>最小値は3通り、最大値は2通りに分かれる。問われる量で場合分けの構造が変わる</li></ol>
+        <div class="answer"><strong>答え</strong> $M(t)=t^2-2t\ \left(t\le \dfrac12\right)$、$M(t)=t^2-1\ \left(t\ge \dfrac12\right)$</div>
       </section>
 
       <section class="card">
         <h2>演習</h2>
-        <div class="problem"><p>$y=(x-2)^2+1$（$0\le x\le 3$）の最大・最小を求めよ（定義域固定の確認）。</p></div>
+        <div class="problem"><p>$y=(x-2)^2+1$（$0\le x\le 3$）の最大値・最小値を、それぞれとる $x$ の値とともに求めよ。</p></div>
         <h3>解答の流れ</h3>
-        <ol class="steps"><li>軸 $x=2$ は $[0,3]$ 内。最小は頂点 $1$（$x=2$）</li>
-<li>端点 $f(0)=5$、$f(3)=2$。最大 $5$（$x=0$）</li></ol>
-        <div class="answer"><strong>答え</strong> 最小 $1$（$x=2$）、最大 $5$（$x=0$）。</div>
+        <ol class="steps"><li>軸は $x=2$、頂点は $(2,\,1)$、下に凸</li>
+<li>軸 $x=2$ は定義域 $[0,3]$ に含まれるので最小は頂点で、$x=2$ のとき $1$</li>
+<li>端点を比較すると $f(0)=(0-2)^2+1=5$、$f(3)=(3-2)^2+1=2$</li>
+<li>$f(0)&gt;f(3)$ より最大は $x=0$ のとき $5$</li>
+<li>検算：区間 $[0,3]$ の中点 $1.5$ は軸 $x=2$ より左なので、軸から遠い左端が最大。例題Bの結論と一致する</li></ol>
+        <div class="answer"><strong>答え</strong> 最大 $5$（$x=0$）、最小 $1$（$x=2$）</div>
       </section>
     <section class="card traps">
       <h2>落とし穴（減点パターン）</h2>
-      <ul><li>下に凸なのに頂点を最大と答える</li>
-<li>軸を含む条件を $t\le p$ だけにして長さ $\ell$ を忘れる</li>
-<li>境界で場合を二重に数え、式が不連続に見える書き方をする</li></ul>
+      <ul><li>下に凸なのに頂点を最大と答える（$a&gt;0$ なら頂点は最小側で、最大は必ず端点）</li>
+<li>軸を含む条件で区間の長さ $\ell$ を落とす（$t\le p$ だけでなく $p\le t+\ell$ も必要）</li>
+<li>最小値と同じ場合分けで最大値を求める（最大は3通りではなく中点比較による2通り）</li>
+<li>境界で場合を二重に数える（重複も抜けもない形で宣言する）</li>
+<li>境界での一致を確認しない（$m(t)$ が境界で不連続なら、その時点で誤り）</li></ul>
     </section>
     <p class="footer">Medvance · ADV-M1-06 · 本文・スライド・PDF・動画は同一台本 · 無断転載禁止</p>
   </main>

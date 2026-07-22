@@ -1,0 +1,275 @@
+{
+  "title": "Medical Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "According to the Medvance materials, what are the three specific pillars used to evaluate a medical school short essay?",
+      "hint": "Refer to the primary goal of the unit mentioned in the core lesson material.",
+      "answerOptions": [
+        {
+          "text": "Knowledge, Logic, and Consideration",
+          "isCorrect": true,
+          "rationale": "The lesson explicitly states that the goal is to explain evaluation based on the three points of knowledge, logic, and consideration (other-centeredness)."
+        },
+        {
+          "text": "Vocabulary, Grammar, and Speed",
+          "isCorrect": false,
+          "rationale": "While important, these are not the specific three pillars defined in the primary unit goal."
+        },
+        {
+          "text": "Creativity, Empathy, and Experience",
+          "isCorrect": false,
+          "rationale": "These traits may be valued, but the Medvance curriculum focuses on Knowledge, Logic, and Consideration as the core pillars."
+        },
+        {
+          "text": "Opinion, Fact, and Summary",
+          "isCorrect": false,
+          "rationale": "These are components of writing but are not the specific evaluation pillars mentioned in the source."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "When does the short essay (Shoronbun) typically become the deciding factor for pass/fail in medical school entrance exams?",
+      "hint": "Think about the 'Position in the Exam' section of the source material.",
+      "answerOptions": [
+        {
+          "text": "When there is no significant difference between candidates in their academic subject scores.",
+          "isCorrect": true,
+          "rationale": "The source explains that the essay differentiates candidates in situations where academic scores do not create a gap."
+        },
+        {
+          "text": "Only when the student fails to reach the minimum score in the mathematics section.",
+          "isCorrect": false,
+          "rationale": "The essay is generally used to differentiate candidates who have similar academic standing, rather than specifically as a backup for failing math."
+        },
+        {
+          "text": "When the candidate has no previous clinical or volunteering experience.",
+          "isCorrect": false,
+          "rationale": "While clinical experience is relevant for interviews, the exam position of the short essay is focused on academic tie-breaking."
+        },
+        {
+          "text": "In the early stages of the application before the primary academic exams are held.",
+          "isCorrect": false,
+          "rationale": "Most medical school short essays are taken during the secondary exam phase alongside or after academic tests."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What is the primary distinguishing factor between a short essay (Shoronbun) and an impressionistic essay (Kansoubun)?",
+      "hint": "Focus on what 'Answer A' identifies as the core difference.",
+      "answerOptions": [
+        {
+          "text": "The presence of a clear structure and logical grounds for the opinion.",
+          "isCorrect": true,
+          "rationale": "A 'Shoronbun' requires the writer to provide logical grounds and a specific composition, unlike a simple report of feelings."
+        },
+        {
+          "text": "The length of the text and the level of emotional vocabulary used.",
+          "isCorrect": false,
+          "rationale": "Length and emotional depth do not define a short essay; logic and structure do."
+        },
+        {
+          "text": "The requirement to use complex medical terminology and scientific notation.",
+          "isCorrect": false,
+          "rationale": "While medical knowledge is a pillar, the primary distinction is the logic and grounding of the argument, not just terminology."
+        },
+        {
+          "text": "Whether the writer includes personal anecdotes from their childhood.",
+          "isCorrect": false,
+          "rationale": "Anecdotes are more common in impressionistic essays (Kansoubun) than in structured short essays."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What is the very first thing a student should solidify when beginning their preparation for medical school short essays?",
+      "hint": "Look at the 'Practice' (演習) section of the source material.",
+      "answerOptions": [
+        {
+          "text": "The 'Kata' (the structural framework or form).",
+          "isCorrect": true,
+          "rationale": "The lesson identifies the 'Kata' or form as the first thing that must be firmly established."
+        },
+        {
+          "text": "A list of memorized model answers for every topic.",
+          "isCorrect": false,
+          "rationale": "The curriculum warns against rote memorization of model answers as a pitfall."
+        },
+        {
+          "text": "A dictionary of medical jargon and ethical terms.",
+          "isCorrect": false,
+          "rationale": "Vocabulary is secondary to establishing the correct structure and form first."
+        },
+        {
+          "text": "Speed-reading skills for reading prompts quickly.",
+          "isCorrect": false,
+          "rationale": "Reading speed is helpful, but the priority is establishing the writing framework."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Why is 'Knowledge' alone considered insufficient for a successful medical school short essay?",
+      "hint": "Consider the three evaluation points and what 'Answer B' suggests.",
+      "answerOptions": [
+        {
+          "text": "Logic and the perspective of others (Consideration) are also required.",
+          "isCorrect": true,
+          "rationale": "The source material specifies that logic and the perspective of others are necessary components alongside knowledge."
+        },
+        {
+          "text": "Medical schools assume all students already have identical knowledge bases.",
+          "isCorrect": false,
+          "rationale": "Knowledge levels vary, but schools look for how students apply that knowledge through logic and consideration."
+        },
+        {
+          "text": "Focusing on knowledge makes the essay too long to finish in time.",
+          "isCorrect": false,
+          "rationale": "The issue is not length, but the lack of balanced evaluation criteria like logic and empathy."
+        },
+        {
+          "text": "Knowledge is considered a secondary trait that is not formally scored.",
+          "isCorrect": false,
+          "rationale": "Knowledge is one of the three pillars and is formally scored, but it is not sufficient on its own."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which of the following is identified as a 'Pitfall' (point deduction pattern) in the lesson?",
+      "hint": "Check the '落とし穴' (Pitfall) section for common mistakes.",
+      "answerOptions": [
+        {
+          "text": "Writing an essay based solely on emotional responses.",
+          "isCorrect": true,
+          "rationale": "The materials warn that 'feelings only' (感情だけ) is a major pattern that leads to point deductions."
+        },
+        {
+          "text": "Spending too much time on the planning phase of the essay.",
+          "isCorrect": false,
+          "rationale": "Planning is actually encouraged to ensure a logical structure."
+        },
+        {
+          "text": "Asking for a clarification of the theme during the examination.",
+          "isCorrect": false,
+          "rationale": "While usually not allowed, it is not listed as a primary content-based pitfall in these materials."
+        },
+        {
+          "text": "Using simple language instead of academic medical terms.",
+          "isCorrect": false,
+          "rationale": "Clear language is better than misused jargon; the lesson focuses on logic rather than specific linguistic complexity."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "In the context of the Medvance curriculum, how is a 'Shoronbun' (Short Essay) defined?",
+      "hint": "Look for the specific 'Definition/Terminology' section in the document.",
+      "answerOptions": [
+        {
+          "text": "An exam that demonstrates a grounded opinion on a given theme.",
+          "isCorrect": true,
+          "rationale": "The text defines it as an exam to show an opinion with grounds regarding a provided theme."
+        },
+        {
+          "text": "A creative writing task that evaluates the student's imagination.",
+          "isCorrect": false,
+          "rationale": "Short essays are academic and logical, not creative writing tasks."
+        },
+        {
+          "text": "A summary of medical research papers provided in the prompt.",
+          "isCorrect": false,
+          "rationale": "While prompts vary, the core definition is expressing an opinion with grounds, not just summarizing."
+        },
+        {
+          "text": "A test of the student's ability to recall specific historical dates in medicine.",
+          "isCorrect": false,
+          "rationale": "This describes a history exam, not the 'Shoronbun' defined in the curriculum."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "According to the 'Points' section of the unit, which three elements are essential for the content of the essay?",
+      "hint": "These are the three specific points listed in the lesson overview.",
+      "answerOptions": [
+        {
+          "text": "Claim, Grounds, and Counterargument",
+          "isCorrect": true,
+          "rationale": "The lesson lists Claim (主張), Grounds (根拠), and Counterargument (反論) as the three key points."
+        },
+        {
+          "text": "Introduction, Body, and Conclusion",
+          "isCorrect": false,
+          "rationale": "These are structural parts of an essay, but the 'Points' section specifically focuses on Claim, Grounds, and Counterargument."
+        },
+        {
+          "text": "Problem, Solution, and Future Outlook",
+          "isCorrect": false,
+          "rationale": "While logical, this is not the specific triad mentioned in the lesson materials."
+        },
+        {
+          "text": "Definition, Example, and Summary",
+          "isCorrect": false,
+          "rationale": "These are expository tools, but not the three essential content points defined in the unit."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What is another identified 'Pitfall' besides writing with only emotion?",
+      "hint": "Consider the danger of using 'standard' answers mentioned in the source.",
+      "answerOptions": [
+        {
+          "text": "Copying a memorized model answer exactly.",
+          "isCorrect": true,
+          "rationale": "The material warns against 'copying a model of memorization' (丸暗記の模範を写す) as a major mistake."
+        },
+        {
+          "text": "Handwriting that is too large for the provided grid.",
+          "isCorrect": false,
+          "rationale": "While presentation matters, the curriculum highlights rote memorization as a core conceptual pitfall."
+        },
+        {
+          "text": "Providing too many logical grounds for a single claim.",
+          "isCorrect": false,
+          "rationale": "Providing grounds is good; the pitfall is lack of logic or lack of originality."
+        },
+        {
+          "text": "Choosing a theme that is too controversial for the audience.",
+          "isCorrect": false,
+          "rationale": "Usually, themes are provided by the school; the student's handling of the theme (like rote memorization) is the danger."
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What is the primary goal of the 'Core Procedure' (核となる手順) step in the preparation plan?",
+      "hint": "The procedure involves self-assessment and planning.",
+      "answerOptions": [
+        {
+          "text": "To list evaluation axes, identify weaknesses, and create a prep plan.",
+          "isCorrect": true,
+          "rationale": "The 'Core Procedure' involves enumerating evaluation axes, checking personal weaknesses, and setting a preparation plan."
+        },
+        {
+          "text": "To memorize the top 10 most common medical essay topics.",
+          "isCorrect": false,
+          "rationale": "The curriculum explicitly discourages rote memorization in favor of structural and logical preparation."
+        },
+        {
+          "text": "To practice writing 1000 characters in under 20 minutes.",
+          "isCorrect": false,
+          "rationale": "Speed is part of later practice, but the core procedure is about strategic planning and self-evaluation."
+        },
+        {
+          "text": "To research the specific grading history of each individual university.",
+          "isCorrect": false,
+          "rationale": "While useful, the 'Core Procedure' refers to the student's internal planning and weakness identification."
+        }
+      ]
+    }
+  ]
+}

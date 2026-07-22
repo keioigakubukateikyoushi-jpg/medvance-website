@@ -1,0 +1,257 @@
+{
+  "title": "Geography Quiz",
+  "questions": [
+    {
+      "question": "According to the Medvance guidelines, what is the primary role of latitude and longitude in geographic data reading?",
+      "answerOptions": [
+        {
+          "text": "Latitude indicates north-south positions, while longitude indicates east-west positions.",
+          "isCorrect": true,
+          "rationale": "The source explicitly defines latitude as the north-south coordinate and longitude as the east-west coordinate for geographic positioning."
+        },
+        {
+          "text": "Latitude indicates east-west positions, while longitude indicates north-south positions.",
+          "isCorrect": false,
+          "rationale": "This reverses the standard definitions where latitude measures distance from the equator and longitude measures distance from the prime meridian."
+        },
+        {
+          "text": "Latitude and longitude are primarily used to calculate the map scale and actual distance.",
+          "isCorrect": false,
+          "rationale": "While related to positioning, scale is a separate concept involving the ratio of map distance to actual distance."
+        },
+        {
+          "text": "Latitude measures the distance from the Prime Meridian, while longitude measures the distance from the Equator.",
+          "isCorrect": false,
+          "rationale": "This incorrectly identifies the reference lines; latitude is based on the Equator and longitude is based on the Prime Meridian."
+        }
+      ],
+      "hint": "Consider the orientation of the lines that wrap around the Earth horizontally versus vertically."
+    },
+    {
+      "question": "Using the Medvance calculation procedure for a map with a scale of $1:50,000$, how is the actual distance for $2\\text{ cm}$ on the map determined?",
+      "answerOptions": [
+        {
+          "text": "$2\\text{ cm} \\times 0.5\\text{ km}$",
+          "isCorrect": true,
+          "rationale": "At $1:50,000$, $1\\text{ cm}$ on the map equals $50,000\\text{ cm}$ ($0.5\\text{ km}$) in reality, making the calculation $2 \\times 0.5$."
+        },
+        {
+          "text": "$2\\text{ cm} \\times 5\\text{ km}$",
+          "isCorrect": false,
+          "rationale": "This calculation incorrectly converts $50,000\\text{ cm}$ to $5\\text{ km}$ instead of $0.5\\text{ km}$."
+        },
+        {
+          "text": "$2\\text{ cm} \\div 0.5\\text{ km}$",
+          "isCorrect": false,
+          "rationale": "To find actual distance from a map, one must multiply the map distance by the scale factor, not divide."
+        },
+        {
+          "text": "$2\\text{ cm} \\times 50,000\\text{ km}$",
+          "isCorrect": false,
+          "rationale": "This fails to convert the centimeters of the scale ratio into a standard unit of distance like kilometers."
+        }
+      ],
+      "hint": "Think about the conversion of $50,000$ centimeters into kilometers before multiplying by the map distance."
+    },
+    {
+      "question": "What is the core conceptual advantage of using a Geographic Information System (GIS) for data analysis?",
+      "answerOptions": [
+        {
+          "text": "It allows different types of data to be related and analyzed by overlaying them based on location.",
+          "isCorrect": true,
+          "rationale": "The source identifies the key benefit as the ability to link and interpret disparate data sets through their shared geographic coordinates."
+        },
+        {
+          "text": "It provides a more accurate calculation of map scales than traditional paper maps.",
+          "isCorrect": false,
+          "rationale": "GIS is a system for visualization and analysis rather than a specialized tool just for calculating scale ratios."
+        },
+        {
+          "text": "It eliminates the need to check legends and units when reading geographic materials.",
+          "isCorrect": false,
+          "rationale": "Checking legends and units remains a fundamental procedure regardless of the technology used to display the data."
+        },
+        {
+          "text": "It automatically identifies the causal relationships between datasets without user verification.",
+          "isCorrect": false,
+          "rationale": "Users must still verify if the causalities suggested by the data are supported within the scope of the provided materials."
+        }
+      ],
+      "hint": "Focus on the 'layering' or 'stacking' metaphor mentioned in the points regarding GIS."
+    },
+    {
+      "question": "When interpreting data for entrance exams, which three items must be confirmed first to ensure accuracy?",
+      "answerOptions": [
+        {
+          "text": "Units, Legend (symbols), and Target Year (period).",
+          "isCorrect": true,
+          "rationale": "These three items are explicitly listed as the essential first steps for material analysis in the training procedure."
+        },
+        {
+          "text": "Scale, Distance, and Elevation.",
+          "isCorrect": false,
+          "rationale": "While important for specific tasks, these do not represent the foundational checklist for all general material interpretation."
+        },
+        {
+          "text": "Latitude, Longitude, and Time Zone.",
+          "isCorrect": false,
+          "rationale": "These are coordinate-related data points but do not encompass the initial contextual checks required for varied data charts."
+        },
+        {
+          "text": "Source Material, Author, and Publication Date.",
+          "isCorrect": false,
+          "rationale": "Although relevant in academic research, the Medvance method prioritizes the data's internal parameters: units, legend, and year."
+        }
+      ],
+      "hint": "Look for the checklist provided in the 'Practice (Self-reproduction)' section of the source."
+    },
+    {
+      "question": "Which of the following describes a common 'pitfall' that leads to point deductions in geography exams?",
+      "answerOptions": [
+        {
+          "text": "Assuming a causal relationship that is not explicitly supported by the provided data.",
+          "isCorrect": true,
+          "rationale": "The source warns against 'adding causality not in the materials' as a major error that deviates from evidence-based reasoning."
+        },
+        {
+          "text": "Converting map distances into kilometers before finalizing the answer.",
+          "isCorrect": false,
+          "rationale": "Converting units to match the required output is a necessary procedural step, not a mistake."
+        },
+        {
+          "text": "Summarizing the comparison of materials into a single sentence.",
+          "isCorrect": false,
+          "rationale": "The source actually recommends identifying what the material is comparing in a single sentence as part of the core procedure."
+        },
+        {
+          "text": "Checking the legend of a map before looking at the specific question options.",
+          "isCorrect": false,
+          "rationale": "Reading the legend first is a recommended step in the standard procedure to understand the visual data."
+        }
+      ],
+      "hint": "Recall the caution regarding how one should treat information that is missing from the provided documents."
+    },
+    {
+      "question": "In the context of GIS, what does the term 'layering' (重ねる) specifically refer to?",
+      "answerOptions": [
+        {
+          "text": "Stacking different thematic datasets on the same geographic coordinates for analysis.",
+          "isCorrect": true,
+          "rationale": "GIS operates by aligning different data sets based on their shared spatial location to reveal correlations."
+        },
+        {
+          "text": "Placing a transparent physical map over a digital screen to verify accuracy.",
+          "isCorrect": false,
+          "rationale": "Layering is a digital process of integrating data sets, not a physical comparison between paper and screens."
+        },
+        {
+          "text": "Multiplying the scale factor multiple times to increase map detail.",
+          "isCorrect": false,
+          "rationale": "Scale relates to size ratios, whereas layering relates to the integration of different types of information."
+        },
+        {
+          "text": "Organizing files by chronological order in a database.",
+          "isCorrect": false,
+          "rationale": "While data can be chronological, 'layering' in GIS specifically refers to the spatial arrangement of data types."
+        }
+      ],
+      "hint": "Think about how one might view population data and rainfall data simultaneously on a single map."
+    },
+    {
+      "question": "Why does the Medvance method emphasize 'speed and accuracy' through fixed 'patterns' (型) for geography questions?",
+      "answer": "To prevent primary exam disqualification (足切り) by ensuring high performance within strict time limits.",
+      "answerOptions": [
+        {
+          "text": "To prevent failure to meet cut-off scores in exams where time management is critical.",
+          "isCorrect": true,
+          "rationale": "The source notes that the Common Test is a 'race against time' and standardized procedures help ensure students meet required thresholds."
+        },
+        {
+          "text": "To encourage students to memorize as many geographical facts as possible.",
+          "isCorrect": false,
+          "rationale": "The method explicitly states that data interpretation accuracy is more important than pure memorization for these exams."
+        },
+        {
+          "text": "To replace the need for analyzing materials with quick intuition.",
+          "isCorrect": false,
+          "rationale": "The 'pattern' is designed to improve the quality of analysis, not to bypass it through guesswork."
+        },
+        {
+          "text": "To focus exclusively on the specific requirements of medical school interviews.",
+          "isCorrect": false,
+          "rationale": "While aimed at medical school candidates, the focus here is specifically on the Primary (Common) Test geography scores."
+        }
+      ],
+      "hint": "Consider the strategic 'Position in Exams' section mentioned at the beginning of the material."
+    },
+    {
+      "text": "If a student ignores the units provided in a map legend, which error are they most likely to commit according to the source?",
+      "question": "If a student ignores the units provided in a map legend, which error are they most likely to commit according to the source?",
+      "answerOptions": [
+        {
+          "text": "Falling into a 'pitfall' that results in point deductions.",
+          "isCorrect": true,
+          "rationale": "The source specifically lists 'ignoring units' as a primary pitfall or deduction pattern in the 'Pitfalls' section."
+        },
+        {
+          "text": "Incorrectly identifying the north-south orientation of the map.",
+          "isCorrect": false,
+          "rationale": "Orientation is determined by latitude and compass indicators, whereas units relate to measurement scales and data values."
+        },
+        {
+          "text": "Spending too much time on the GIS layering process.",
+          "isCorrect": false,
+          "rationale": "Ignoring units is a fast but incorrect way of reading data, which does not necessarily affect the speed of GIS operations."
+        },
+        {
+          "text": "Confusing the target year with the scale ratio.",
+          "isCorrect": false,
+          "rationale": "While both are important to check, the source treats units as a distinct category of data precision error."
+        }
+      ],
+      "hint": "Look under the section titled 'Pitfalls (Deduction/Trap Patterns)'."
+    },
+    {
+      "question": "True or False: In the Medvance framework for the Common Test, the volume of memorized facts is more important than the precision of chart reading.",
+      "answerOptions": [
+        {
+          "text": "False",
+          "isCorrect": true,
+          "rationale": "The source explicitly states that 'chart reading precision determines the score more than the amount of memorization' for the Common Test."
+        },
+        {
+          "text": "True",
+          "isCorrect": false,
+          "rationale": "The source prioritizes interpretation skills over rote memorization for this specific exam context."
+        }
+      ],
+      "hint": "Check the 'Policy for Common Test Strategy' section."
+    },
+    {
+      "question": "According to the 'Core Procedures' used in exams, what should a student do immediately after reading the legend and units?",
+      "answerOptions": [
+        {
+          "text": "Summarize in one sentence what the materials are comparing.",
+          "isCorrect": true,
+          "rationale": "The procedure dictates: read legend/units, then summarize the comparison point, then check the causal logic of the options."
+        },
+        {
+          "text": "Move immediately to the next unit (ME-SO-02).",
+          "isCorrect": false,
+          "rationale": "Moving to the next unit should only happen after completing the 'Perfect Condition' check of the current unit."
+        },
+        {
+          "text": "Calculate the distance using the scale $1:50,000$.",
+          "isCorrect": false,
+          "rationale": "Scale calculation is a specific technique (Example A) but not the general second step for all material interpretation."
+        },
+        {
+          "text": "Identify the latitude and longitude of the central point.",
+          "isCorrect": false,
+          "rationale": "While useful, the core procedural step focus is on understanding the comparison presented in the data materials."
+        }
+      ],
+      "hint": "Refer to the second bullet point in the 'Core Procedures' section."
+    }
+  ]
+}

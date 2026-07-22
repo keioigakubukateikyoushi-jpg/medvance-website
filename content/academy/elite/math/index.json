@@ -4,8 +4,8 @@
   "trackLabel": "難関大講座",
   "brand": "Medvance",
   "unit_count": 24,
-  "full_count": 24,
-  "outline_count": 0,
+  "full_count": 0,
+  "outline_count": 24,
   "chapters": [
     "数と式・方程式",
     "2次関数",
@@ -29,12 +29,12 @@
       "prereq": [
         "ADV-M1-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-01.md",
       "storyboard": "storyboard/ELI-M-01.md",
       "slides": "slides/ELI-M-01.md",
       "quiz": "quiz/ELI-M-01.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-02",
@@ -45,12 +45,12 @@
       "prereq": [
         "ADV-M1-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-02.md",
       "storyboard": "storyboard/ELI-M-02.md",
       "slides": "slides/ELI-M-02.md",
       "quiz": "quiz/ELI-M-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-03",
@@ -61,12 +61,12 @@
       "prereq": [
         "ADV-M1-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-03.md",
       "storyboard": "storyboard/ELI-M-03.md",
       "slides": "slides/ELI-M-03.md",
       "quiz": "quiz/ELI-M-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-04",
@@ -77,12 +77,12 @@
       "prereq": [
         "ADV-M1-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-04.md",
       "storyboard": "storyboard/ELI-M-04.md",
       "slides": "slides/ELI-M-04.md",
       "quiz": "quiz/ELI-M-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-05",
@@ -94,12 +94,12 @@
         "ADV-M1-07",
         "ADV-M1-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-05.md",
       "storyboard": "storyboard/ELI-M-05.md",
       "slides": "slides/ELI-M-05.md",
       "quiz": "quiz/ELI-M-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-06",
@@ -110,12 +110,12 @@
       "prereq": [
         "ADV-M1-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-06.md",
       "storyboard": "storyboard/ELI-M-06.md",
       "slides": "slides/ELI-M-06.md",
       "quiz": "quiz/ELI-M-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-07",
@@ -126,12 +126,12 @@
       "prereq": [
         "ADV-M2-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-07.md",
       "storyboard": "storyboard/ELI-M-07.md",
       "slides": "slides/ELI-M-07.md",
       "quiz": "quiz/ELI-M-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-08",
@@ -143,12 +143,12 @@
         "ADV-M2-06",
         "ADV-M2-13"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-08.md",
       "storyboard": "storyboard/ELI-M-08.md",
       "slides": "slides/ELI-M-08.md",
       "quiz": "quiz/ELI-M-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-09",
@@ -160,12 +160,12 @@
         "ADV-M1-11",
         "ADV-M1-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-09.md",
       "storyboard": "storyboard/ELI-M-09.md",
       "slides": "slides/ELI-M-09.md",
       "quiz": "quiz/ELI-M-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-10",
@@ -177,12 +177,12 @@
         "ADV-M2-08",
         "ADV-M2-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-10.md",
       "storyboard": "storyboard/ELI-M-10.md",
       "slides": "slides/ELI-M-10.md",
       "quiz": "quiz/ELI-M-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-11",
@@ -193,12 +193,12 @@
       "prereq": [
         "ADV-M2-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-11.md",
       "storyboard": "storyboard/ELI-M-11.md",
       "slides": "slides/ELI-M-11.md",
       "quiz": "quiz/ELI-M-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-12",
@@ -209,12 +209,12 @@
       "prereq": [
         "ADV-M2-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-12.md",
       "storyboard": "storyboard/ELI-M-12.md",
       "slides": "slides/ELI-M-12.md",
       "quiz": "quiz/ELI-M-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-13",
@@ -225,12 +225,12 @@
       "prereq": [
         "ADV-M2-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-13.md",
       "storyboard": "storyboard/ELI-M-13.md",
       "slides": "slides/ELI-M-13.md",
       "quiz": "quiz/ELI-M-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-14",
@@ -241,12 +241,12 @@
       "prereq": [
         "ADV-M2-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-14.md",
       "storyboard": "storyboard/ELI-M-14.md",
       "slides": "slides/ELI-M-14.md",
       "quiz": "quiz/ELI-M-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-15",
@@ -258,12 +258,12 @@
         "ME-M2-21",
         "ME-M2-19"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-15.md",
       "storyboard": "storyboard/ELI-M-15.md",
       "slides": "slides/ELI-M-15.md",
       "quiz": "quiz/ELI-M-15.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-16",
@@ -274,12 +274,12 @@
       "prereq": [
         "ADV-MA-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-16.md",
       "storyboard": "storyboard/ELI-M-16.md",
       "slides": "slides/ELI-M-16.md",
       "quiz": "quiz/ELI-M-16.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-17",
@@ -291,12 +291,12 @@
         "ADV-MA-12",
         "ME-MA-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-17.md",
       "storyboard": "storyboard/ELI-M-17.md",
       "slides": "slides/ELI-M-17.md",
       "quiz": "quiz/ELI-M-17.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-18",
@@ -308,12 +308,12 @@
         "ADV-MA-02",
         "ADV-MA-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-18.md",
       "storyboard": "storyboard/ELI-M-18.md",
       "slides": "slides/ELI-M-18.md",
       "quiz": "quiz/ELI-M-18.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-19",
@@ -324,12 +324,12 @@
       "prereq": [
         "ADV-MA-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-19.md",
       "storyboard": "storyboard/ELI-M-19.md",
       "slides": "slides/ELI-M-19.md",
       "quiz": "quiz/ELI-M-19.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-20",
@@ -340,12 +340,12 @@
       "prereq": [
         "ADV-MA-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-20.md",
       "storyboard": "storyboard/ELI-M-20.md",
       "slides": "slides/ELI-M-20.md",
       "quiz": "quiz/ELI-M-20.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-21",
@@ -356,12 +356,12 @@
       "prereq": [
         "ADV-M2-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-21.md",
       "storyboard": "storyboard/ELI-M-21.md",
       "slides": "slides/ELI-M-21.md",
       "quiz": "quiz/ELI-M-21.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-22",
@@ -373,12 +373,12 @@
         "ADV-M2-05",
         "ADV-M1-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-22.md",
       "storyboard": "storyboard/ELI-M-22.md",
       "slides": "slides/ELI-M-22.md",
       "quiz": "quiz/ELI-M-22.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-23",
@@ -390,12 +390,12 @@
         "ADV-M1-18",
         "ADV-M2-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-23.md",
       "storyboard": "storyboard/ELI-M-23.md",
       "slides": "slides/ELI-M-23.md",
       "quiz": "quiz/ELI-M-23.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ELI-M-24",
@@ -406,14 +406,14 @@
       "prereq": [
         "ELI-M-23"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ELI-M-24.md",
       "storyboard": "storyboard/ELI-M-24.md",
       "slides": "slides/ELI-M-24.md",
       "quiz": "quiz/ELI-M-24.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+  "completeness": "全 24 単元は骨子のみ。内容を拡充中。"
 }

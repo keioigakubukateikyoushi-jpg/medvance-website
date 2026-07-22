@@ -4,10 +4,10 @@
   "trackLabel": "共通テスト対策",
   "brand": "Medvance",
   "unit_count": 15,
-  "full_count": 15,
-  "outline_count": 0,
+  "full_count": 1,
+  "outline_count": 14,
   "design": "地理総合・歴史総合・公共を資料読解中心に。暗記より根拠と因果の型。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 14 単元は骨子のみで内容を拡充中。",
   "chapters": [
     "地理総合",
     "歴史総合",
@@ -19,14 +19,14 @@
       "chapter": "地理総合",
       "title": "地図・GIS・球面上の世界",
       "minutes": 18,
-      "goal": "緯度経度・縮尺・GISの基本を用いて資料を読める",
+      "goal": "縮尺の計算を単位換算として確実に実行し、緯度経度から時差を求め、GISの資料を凡例と単位から読める",
       "prereq": [],
       "status": "full",
       "file": "lessons/ME-SO-01.md",
       "storyboard": "storyboard/ME-SO-01.md",
       "slides": "slides/ME-SO-01.md",
       "quiz": "quiz/ME-SO-01.json",
-      "quality": "perfect-v1"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-SO-02",
@@ -37,12 +37,12 @@
       "prereq": [
         "ME-SO-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-02.md",
       "storyboard": "storyboard/ME-SO-02.md",
       "slides": "slides/ME-SO-02.md",
       "quiz": "quiz/ME-SO-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-03",
@@ -53,12 +53,12 @@
       "prereq": [
         "ME-SO-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-03.md",
       "storyboard": "storyboard/ME-SO-03.md",
       "slides": "slides/ME-SO-03.md",
       "quiz": "quiz/ME-SO-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-04",
@@ -69,12 +69,12 @@
       "prereq": [
         "ME-SO-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-04.md",
       "storyboard": "storyboard/ME-SO-04.md",
       "slides": "slides/ME-SO-04.md",
       "quiz": "quiz/ME-SO-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-05",
@@ -86,12 +86,12 @@
         "ME-SO-01",
         "ME-SO-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-05.md",
       "storyboard": "storyboard/ME-SO-05.md",
       "slides": "slides/ME-SO-05.md",
       "quiz": "quiz/ME-SO-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-06",
@@ -100,12 +100,12 @@
       "minutes": 18,
       "goal": "一次資料と二次資料を区別し、時代の問いを立てられる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-06.md",
       "storyboard": "storyboard/ME-SO-06.md",
       "slides": "slides/ME-SO-06.md",
       "quiz": "quiz/ME-SO-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-07",
@@ -116,12 +116,12 @@
       "prereq": [
         "ME-SO-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-07.md",
       "storyboard": "storyboard/ME-SO-07.md",
       "slides": "slides/ME-SO-07.md",
       "quiz": "quiz/ME-SO-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-08",
@@ -132,12 +132,12 @@
       "prereq": [
         "ME-SO-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-08.md",
       "storyboard": "storyboard/ME-SO-08.md",
       "slides": "slides/ME-SO-08.md",
       "quiz": "quiz/ME-SO-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-09",
@@ -148,12 +148,12 @@
       "prereq": [
         "ME-SO-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-09.md",
       "storyboard": "storyboard/ME-SO-09.md",
       "slides": "slides/ME-SO-09.md",
       "quiz": "quiz/ME-SO-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-10",
@@ -166,12 +166,12 @@
         "ME-SO-08",
         "ME-SO-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-10.md",
       "storyboard": "storyboard/ME-SO-10.md",
       "slides": "slides/ME-SO-10.md",
       "quiz": "quiz/ME-SO-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-11",
@@ -180,12 +180,12 @@
       "minutes": 18,
       "goal": "公共性・正義・自由の対立を具体例で整理できる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-11.md",
       "storyboard": "storyboard/ME-SO-11.md",
       "slides": "slides/ME-SO-11.md",
       "quiz": "quiz/ME-SO-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-12",
@@ -196,12 +196,12 @@
       "prereq": [
         "ME-SO-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-12.md",
       "storyboard": "storyboard/ME-SO-12.md",
       "slides": "slides/ME-SO-12.md",
       "quiz": "quiz/ME-SO-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-13",
@@ -212,12 +212,12 @@
       "prereq": [
         "ME-SO-12"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-13.md",
       "storyboard": "storyboard/ME-SO-13.md",
       "slides": "slides/ME-SO-13.md",
       "quiz": "quiz/ME-SO-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-14",
@@ -228,12 +228,12 @@
       "prereq": [
         "ME-SO-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-14.md",
       "storyboard": "storyboard/ME-SO-14.md",
       "slides": "slides/ME-SO-14.md",
       "quiz": "quiz/ME-SO-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-SO-15",
@@ -245,12 +245,12 @@
         "ME-SO-12",
         "ME-SO-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-SO-15.md",
       "storyboard": "storyboard/ME-SO-15.md",
       "slides": "slides/ME-SO-15.md",
       "quiz": "quiz/ME-SO-15.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"

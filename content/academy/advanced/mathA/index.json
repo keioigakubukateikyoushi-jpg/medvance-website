@@ -4,8 +4,8 @@
   "trackLabel": "発展講座",
   "brand": "Medvance",
   "unit_count": 12,
-  "full_count": 12,
-  "outline_count": 0,
+  "full_count": 0,
+  "outline_count": 12,
   "chapters": [
     "場合の数・発展",
     "確率・発展",
@@ -25,12 +25,12 @@
         "ME-MA-02",
         "ME-MA-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-01.md",
       "storyboard": "storyboard/ADV-MA-01.md",
       "slides": "slides/ADV-MA-01.md",
       "quiz": "quiz/ADV-MA-01.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-02",
@@ -42,12 +42,12 @@
         "ME-MA-06",
         "ME-MA-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-02.md",
       "storyboard": "storyboard/ADV-MA-02.md",
       "slides": "slides/ADV-MA-02.md",
       "quiz": "quiz/ADV-MA-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-03",
@@ -58,12 +58,12 @@
       "prereq": [
         "ME-MA-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-03.md",
       "storyboard": "storyboard/ADV-MA-03.md",
       "slides": "slides/ADV-MA-03.md",
       "quiz": "quiz/ADV-MA-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-04",
@@ -74,12 +74,12 @@
       "prereq": [
         "ME-MA-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-04.md",
       "storyboard": "storyboard/ADV-MA-04.md",
       "slides": "slides/ADV-MA-04.md",
       "quiz": "quiz/ADV-MA-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-05",
@@ -91,12 +91,12 @@
         "ME-MA-12",
         "ADV-MA-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-05.md",
       "storyboard": "storyboard/ADV-MA-05.md",
       "slides": "slides/ADV-MA-05.md",
       "quiz": "quiz/ADV-MA-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-06",
@@ -107,12 +107,12 @@
       "prereq": [
         "ME-MA-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-06.md",
       "storyboard": "storyboard/ADV-MA-06.md",
       "slides": "slides/ADV-MA-06.md",
       "quiz": "quiz/ADV-MA-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-07",
@@ -123,12 +123,12 @@
       "prereq": [
         "ME-MA-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-07.md",
       "storyboard": "storyboard/ADV-MA-07.md",
       "slides": "slides/ADV-MA-07.md",
       "quiz": "quiz/ADV-MA-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-08",
@@ -139,12 +139,12 @@
       "prereq": [
         "ME-MA-15"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-08.md",
       "storyboard": "storyboard/ADV-MA-08.md",
       "slides": "slides/ADV-MA-08.md",
       "quiz": "quiz/ADV-MA-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-09",
@@ -155,12 +155,12 @@
       "prereq": [
         "ME-MA-16"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-09.md",
       "storyboard": "storyboard/ADV-MA-09.md",
       "slides": "slides/ADV-MA-09.md",
       "quiz": "quiz/ADV-MA-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-10",
@@ -171,12 +171,12 @@
       "prereq": [
         "ME-MA-18"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-10.md",
       "storyboard": "storyboard/ADV-MA-10.md",
       "slides": "slides/ADV-MA-10.md",
       "quiz": "quiz/ADV-MA-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-11",
@@ -187,12 +187,12 @@
       "prereq": [
         "ME-MA-20"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-11.md",
       "storyboard": "storyboard/ADV-MA-11.md",
       "slides": "slides/ADV-MA-11.md",
       "quiz": "quiz/ADV-MA-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-MA-12",
@@ -204,14 +204,14 @@
         "ADV-MA-02",
         "ADV-MA-04"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-MA-12.md",
       "storyboard": "storyboard/ADV-MA-12.md",
       "slides": "slides/ADV-MA-12.md",
       "quiz": "quiz/ADV-MA-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+  "completeness": "全 12 単元は骨子のみ。内容を拡充中。"
 }

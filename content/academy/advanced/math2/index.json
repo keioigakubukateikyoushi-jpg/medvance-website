@@ -4,8 +4,8 @@
   "trackLabel": "発展講座",
   "brand": "Medvance",
   "unit_count": 14,
-  "full_count": 14,
-  "outline_count": 0,
+  "full_count": 0,
+  "outline_count": 14,
   "chapters": [
     "式と証明・発展",
     "複素数・発展",
@@ -28,12 +28,12 @@
         "ME-M2-01",
         "ME-M2-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-01.md",
       "storyboard": "storyboard/ADV-M2-01.md",
       "slides": "slides/ADV-M2-01.md",
       "quiz": "quiz/ADV-M2-01.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-02",
@@ -44,12 +44,12 @@
       "prereq": [
         "ME-M2-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-02.md",
       "storyboard": "storyboard/ADV-M2-02.md",
       "slides": "slides/ADV-M2-02.md",
       "quiz": "quiz/ADV-M2-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-03",
@@ -60,12 +60,12 @@
       "prereq": [
         "ME-M2-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-03.md",
       "storyboard": "storyboard/ADV-M2-03.md",
       "slides": "slides/ADV-M2-03.md",
       "quiz": "quiz/ADV-M2-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-04",
@@ -76,12 +76,12 @@
       "prereq": [
         "ME-M2-10"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-04.md",
       "storyboard": "storyboard/ADV-M2-04.md",
       "slides": "slides/ADV-M2-04.md",
       "quiz": "quiz/ADV-M2-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-05",
@@ -93,12 +93,12 @@
         "ME-M2-08",
         "ME-M2-09"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-05.md",
       "storyboard": "storyboard/ADV-M2-05.md",
       "slides": "slides/ADV-M2-05.md",
       "quiz": "quiz/ADV-M2-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-06",
@@ -109,12 +109,12 @@
       "prereq": [
         "ME-M2-14"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-06.md",
       "storyboard": "storyboard/ADV-M2-06.md",
       "slides": "slides/ADV-M2-06.md",
       "quiz": "quiz/ADV-M2-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-07",
@@ -126,12 +126,12 @@
         "ME-M2-12",
         "ADV-M2-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-07.md",
       "storyboard": "storyboard/ADV-M2-07.md",
       "slides": "slides/ADV-M2-07.md",
       "quiz": "quiz/ADV-M2-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-08",
@@ -142,12 +142,12 @@
       "prereq": [
         "ME-M2-17"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-08.md",
       "storyboard": "storyboard/ADV-M2-08.md",
       "slides": "slides/ADV-M2-08.md",
       "quiz": "quiz/ADV-M2-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-09",
@@ -158,12 +158,12 @@
       "prereq": [
         "ADV-M2-08"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-09.md",
       "storyboard": "storyboard/ADV-M2-09.md",
       "slides": "slides/ADV-M2-09.md",
       "quiz": "quiz/ADV-M2-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-10",
@@ -174,12 +174,12 @@
       "prereq": [
         "ME-M2-19"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-10.md",
       "storyboard": "storyboard/ADV-M2-10.md",
       "slides": "slides/ADV-M2-10.md",
       "quiz": "quiz/ADV-M2-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-11",
@@ -190,12 +190,12 @@
       "prereq": [
         "ME-M2-20"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-11.md",
       "storyboard": "storyboard/ADV-M2-11.md",
       "slides": "slides/ADV-M2-11.md",
       "quiz": "quiz/ADV-M2-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-12",
@@ -206,12 +206,12 @@
       "prereq": [
         "ME-M2-22"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-12.md",
       "storyboard": "storyboard/ADV-M2-12.md",
       "slides": "slides/ADV-M2-12.md",
       "quiz": "quiz/ADV-M2-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-13",
@@ -223,12 +223,12 @@
         "ADV-M2-06",
         "ME-M2-20"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-13.md",
       "storyboard": "storyboard/ADV-M2-13.md",
       "slides": "slides/ADV-M2-13.md",
       "quiz": "quiz/ADV-M2-13.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ADV-M2-14",
@@ -240,14 +240,14 @@
         "ME-M2-15",
         "ME-M2-20"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ADV-M2-14.md",
       "storyboard": "storyboard/ADV-M2-14.md",
       "slides": "slides/ADV-M2-14.md",
       "quiz": "quiz/ADV-M2-14.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。"
+  "completeness": "全 14 単元は骨子のみ。内容を拡充中。"
 }

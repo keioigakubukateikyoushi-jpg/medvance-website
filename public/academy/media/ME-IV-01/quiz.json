@@ -1,0 +1,265 @@
+{
+  "title": "Interview Quiz",
+  "questions": [
+    {
+      "question": "Based on the fundamental philosophy of this unit, what is the primary mindset a candidate should adopt toward the medical school interview?",
+      "answerOptions": [
+        {
+          "text": "View it as a 'test to eliminate' where one must remove reasons for disqualification.",
+          "isCorrect": true,
+          "rationale": "The unit title and focus emphasize that the interview serves as a process to filter out unsuitable candidates by identifying reasons to 'drop' them."
+        },
+        {
+          "text": "Approach it as a competition to prove one possesses superior medical knowledge.",
+          "isCorrect": false,
+          "rationale": "Medical knowledge is usually tested in academic exams; the interview focuses on suitability and personal character rather than raw data."
+        },
+        {
+          "text": "Treat it as an opportunity to present a unique and heroic life story.",
+          "isCorrect": false,
+          "rationale": "Over-embellishing stories is listed as a 'pitfall' because it risks losing sincerity and creating contradictions."
+        },
+        {
+          "text": "Consider it a secondary formality that rarely affects the final admission decision.",
+          "isCorrect": false,
+          "rationale": "The material states that when academic scores are close, the interview and essay are often the deciding factors for pass/fail."
+        }
+      ],
+      "hint": "Consider whether the interview is designed to find the 'best' person or to identify those who may be 'unfit'."
+    },
+    {
+      "question": "Which set of qualities represents the three core evaluation axes defined as the goal of this unit?",
+      "answerOptions": [
+        {
+          "text": "Suitability, Sincerity, and Consistency",
+          "isCorrect": true,
+          "rationale": "These three pillars are explicitly identified in the 'Goal' section as the primary criteria interviewers use for evaluation."
+        },
+        {
+          "text": "Intelligence, Speed, and Technical Skill",
+          "isCorrect": false,
+          "rationale": "These qualities are typically measured by written academic tests rather than the personal interview format discussed here."
+        },
+        {
+          "text": "Leadership, Ambition, and Creativity",
+          "isCorrect": false,
+          "rationale": "While valuable in many fields, these are not the specific core axes prioritized in this medical interview foundation unit."
+        },
+        {
+          "text": "Logic, Cooperation, and Vocabulary",
+          "isCorrect": false,
+          "rationale": "Although logic and cooperation are mentioned in Example A as secondary factors, they do not constitute the primary three-part goal."
+        }
+      ],
+      "hint": "Focus on the specific trio of terms that relate to being fit for the profession and being truthful in your delivery."
+    },
+    {
+      "question": "When does the interview/essay portion most significantly impact a candidate's final admission result?",
+      "answerOptions": [
+        {
+          "text": "When there is little to no difference between candidates' academic scores.",
+          "isCorrect": true,
+          "rationale": "The material notes that in situations where academic grades are similar, the interview becomes the deciding factor for passing or failing."
+        },
+        {
+          "text": "Only when a candidate has failed the primary written examination.",
+          "isCorrect": false,
+          "rationale": "Interviews are generally part of a comprehensive evaluation and do not serve as a replacement for failed academic benchmarks."
+        },
+        {
+          "text": "When the candidate is applying for an academic scholarship rather than general admission.",
+          "isCorrect": false,
+          "rationale": "The source material discusses general admission (pass/fail) dynamics rather than specific scholarship criteria."
+        },
+        {
+          "text": "During the initial screening phase before any academic testing occurs.",
+          "isCorrect": false,
+          "rationale": "The lesson describes it as a component that differentiates candidates at critical decision points, typically after academic levels are known."
+        }
+      ],
+      "hint": "Think about the scenario where 'standard' metrics like test scores are no longer enough to distinguish between applicants."
+    },
+    {
+      "question": "How does the source material define the concept of 'Suitability Evaluation' (適性評価)?",
+      "answerOptions": [
+        {
+          "text": "Checking for potential issues that would hinder learning or working as a physician.",
+          "isCorrect": true,
+          "rationale": "Suitability evaluation specifically looks for red flags or 'problems' that might arise during medical training or future clinical practice."
+        },
+        {
+          "text": "Determining if a student has the physical stamina to work long hospital shifts.",
+          "isCorrect": false,
+          "rationale": "While physical health is important, the definition focuses more broadly on potential problems in the learning and professional process."
+        },
+        {
+          "text": "Assessing whether a student's biological knowledge is suitable for medical school.",
+          "isCorrect": false,
+          "rationale": "Academic suitability is handled by the 'discipline' or 'subject' balance mentioned separately, not by this specific evaluation axis."
+        },
+        {
+          "text": "Evaluating if a candidate's personality is likable enough for the university's social atmosphere.",
+          "isCorrect": false,
+          "rationale": "The evaluation is professional and functional, focusing on fitness for the medical career rather than simple social likability."
+        }
+      ],
+      "hint": "This evaluation focuses on the long-term viability of the candidate in a professional and educational medical environment."
+    },
+    {
+      "question": "What is considered more important than delivering an 'impressive' or 'great' story during the interview?",
+      "answerOptions": [
+        {
+          "text": "Speaking with sincerity and maintaining logical consistency without contradictions.",
+          "isCorrect": true,
+          "rationale": "The source emphasizes that being sincere and maintaining a contradiction-free narrative is more valuable than the scale of the achievement being told."
+        },
+        {
+          "text": "Using sophisticated medical terminology to impress the interviewers.",
+          "isCorrect": false,
+          "rationale": "Excessive jargon can seem forced; the focus should remain on the core axes of sincerity and consistency."
+        },
+        {
+          "text": "Demonstrating that you have perfectly memorized your answers to common questions.",
+          "isCorrect": false,
+          "rationale": "The 'Points' section explicitly states that consistency is more important than rote memorization (暗記より一貫性)."
+        },
+        {
+          "text": "Focusing on the number of extracurricular activities listed in your application.",
+          "isCorrect": false,
+          "rationale": "The quality of the narrative (sincerity/consistency) matters more than the quantity of activities presented."
+        }
+      ],
+      "hint": "Consider the pitfalls of 'embellishing' a story and what the opposite of that approach would be."
+    },
+    {
+      "question": "Which of the following is identified as the very first step in preparing for the medical school interview?",
+      "answerOptions": [
+        {
+          "text": "Conducting a self-check to identify potential reasons for being 'dropped'.",
+          "isCorrect": true,
+          "rationale": "The 'Exercise' section identifies the first step of preparation as the 'self-inspection of reasons to drop' (落とす理由の自己点検)."
+        },
+        {
+          "text": "Writing a detailed autobiography to find interesting stories for the interview.",
+          "isCorrect": false,
+          "rationale": "Finding 'great stories' is discouraged compared to focusing on eliminating negative points and maintaining consistency."
+        },
+        {
+          "text": "Practicing facial expressions in a mirror to ensure a friendly appearance.",
+          "isCorrect": false,
+          "rationale": "While presentation matters, the foundational step is a strategic assessment of potential point-deductions."
+        },
+        {
+          "text": "Reading the medical school's philosophy to align your personality with their goals.",
+          "isCorrect": false,
+          "rationale": "While university-specific balance is mentioned, the fundamental first step is a self-assessment of one's own risks."
+        }
+      ],
+      "hint": "The focus of this unit is 'eliminating the negative' before 'highlighting the positive'."
+    },
+    {
+      "question": "In the core preparation procedure, what should a candidate do immediately after listing the primary evaluation axes?",
+      "answerOptions": [
+        {
+          "text": "Identify and write down their own personal 'point-deduction' candidates.",
+          "isCorrect": true,
+          "rationale": "The procedural steps are: 1. List axes, 2. Write down your own deduction candidates, 3. Prioritize."
+        },
+        {
+          "text": "Rank their academic subjects by difficulty.",
+          "isCorrect": false,
+          "rationale": "While academic balance is important, the interview-specific procedure focuses on identifying personal interview risks."
+        },
+        {
+          "text": "Draft answers for the most common 100 interview questions.",
+          "isCorrect": false,
+          "rationale": "Memorization is discouraged in favor of establishing a consistent and sincere narrative framework."
+        },
+        {
+          "text": "Seek feedback from a medical professional regarding their life experiences.",
+          "isCorrect": false,
+          "rationale": "Internal self-reflection on deduction candidates comes before external verification in the outlined procedure."
+        }
+      ],
+      "hint": "Think about the next step after knowing what the interviewers are looking for in the 'elimination' process."
+    },
+    {
+      "question": "Why is 'over-embellishing a heroic story' (美談の盛りすぎ) listed as a significant pitfall?",
+      "answerOptions": [
+        {
+          "text": "It often leads to contradictions and a failure to appear sincere.",
+          "isCorrect": true,
+          "rationale": "Embellishing stories makes it difficult to maintain consistency and often rings false to experienced interviewers."
+        },
+        {
+          "text": "It makes the candidate appear too overqualified for the university.",
+          "isCorrect": false,
+          "rationale": "The danger is not being overqualified, but rather being perceived as dishonest or inconsistent."
+        },
+        {
+          "text": "It takes up too much time, leaving no room for questions about academic subjects.",
+          "isCorrect": false,
+          "rationale": "While time management is a factor, the primary risk mentioned is the deduction of points due to lack of sincerity or consistency."
+        },
+        {
+          "text": "It forces the interviewer to ask more difficult medical ethics questions.",
+          "isCorrect": false,
+          "rationale": "The pitfall is directly related to the 'Sincerity' and 'Consistency' evaluation axes rather than the difficulty of subsequent questions."
+        }
+      ],
+      "hint": "Consider what happens to the believability of a person's testimony when they exaggerate."
+    },
+    {
+      "question": "If a candidate's verbal answers during the interview contradict the information in their submitted documents, which evaluation axis are they primarily failing?",
+      "answerOptions": [
+        {
+          "text": "Consistency",
+          "isCorrect": true,
+          "rationale": "A contradiction between written documents and verbal responses is a direct failure of 'Consistency' (一貫性)."
+        },
+        {
+          "text": "Suitability",
+          "isCorrect": false,
+          "rationale": "Suitability refers to fitness for the profession; while related, the direct error of self-contradiction is a failure of consistency."
+        },
+        {
+          "text": "Academic Balance",
+          "isCorrect": false,
+          "rationale": "Academic balance refers to the weight of the interview vs. written exams, not the internal logic of the candidate's answers."
+        },
+        {
+          "text": "Cooperation",
+          "isCorrect": false,
+          "rationale": "Cooperation involves how one works with others, whereas document alignment is about the honesty and logic of one's own story."
+        }
+      ],
+      "hint": "This axis focuses on the internal harmony of all information presented by the candidate."
+    },
+    {
+      "question": "Regarding the 'Points of this session,' how should a student balance interview preparation with academic subjects?",
+      "answerOptions": [
+        {
+          "text": "Maintain a healthy balance, as interviews only differentiate candidates when academic scores are close.",
+          "isCorrect": true,
+          "rationale": "The source advises a balance between academic subjects and interview prep, noting that the interview 'separates' candidates at the final hurdle."
+        },
+        {
+          "text": "Shift all focus to the interview once the written exam is finished.",
+          "isCorrect": false,
+          "rationale": "The material suggests preparation is part of a balance, rather than an all-or-nothing switch."
+        },
+        {
+          "text": "Focus 90% on academics and only 10% on the interview, as interviews rarely matter.",
+          "isCorrect": false,
+          "rationale": "The text states the interview determines pass/fail when academic scores are close, making it too significant to marginalize."
+        },
+        {
+          "text": "Prepare for the interview only if you have a significant weakness in your academic profile.",
+          "isCorrect": false,
+          "rationale": "The unit suggests all candidates should prepare by self-checking for reasons to be 'dropped'."
+        }
+      ],
+      "hint": "Think about the 'strategic positioning' of the interview in relation to your overall application score."
+    }
+  ]
+}

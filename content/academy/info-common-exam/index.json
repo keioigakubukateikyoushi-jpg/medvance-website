@@ -4,10 +4,10 @@
   "trackLabel": "共通テスト対策",
   "brand": "Medvance",
   "unit_count": 12,
-  "full_count": 12,
-  "outline_count": 0,
+  "full_count": 1,
+  "outline_count": 11,
   "design": "情報Iの4領域を受験で使える判断・手順に分割。データとアルゴリズムを重視。",
-  "completeness": "全単元 perfect-v1：ゴール/手順/例A・B/演習/落とし穴/到達チェック/クイズ5問。",
+  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 11 単元は骨子のみで内容を拡充中。",
   "chapters": [
     "情報社会の問題解決",
     "コミュニケーションと情報デザイン",
@@ -20,14 +20,14 @@
       "chapter": "情報社会の問題解決",
       "title": "問題解決の手順と情報の信頼性",
       "minutes": 18,
-      "goal": "問題の明確化→情報収集→整理→提案の型を使え、情報源を吟味できる",
+      "goal": "「問題の明確化 → 情報収集 → 整理・分析 → 提案 → 評価」の型を場面問題に適用し、情報源を信頼性の観点から吟味できる",
       "prereq": [],
       "status": "full",
       "file": "lessons/ME-IF-01.md",
       "storyboard": "storyboard/ME-IF-01.md",
       "slides": "slides/ME-IF-01.md",
       "quiz": "quiz/ME-IF-01.json",
-      "quality": "perfect-v1"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-IF-02",
@@ -38,12 +38,12 @@
       "prereq": [
         "ME-IF-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-02.md",
       "storyboard": "storyboard/ME-IF-02.md",
       "slides": "slides/ME-IF-02.md",
       "quiz": "quiz/ME-IF-02.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-03",
@@ -54,12 +54,12 @@
       "prereq": [
         "ME-IF-01"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-03.md",
       "storyboard": "storyboard/ME-IF-03.md",
       "slides": "slides/ME-IF-03.md",
       "quiz": "quiz/ME-IF-03.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-04",
@@ -70,12 +70,12 @@
       "prereq": [
         "ME-IF-03"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-04.md",
       "storyboard": "storyboard/ME-IF-04.md",
       "slides": "slides/ME-IF-04.md",
       "quiz": "quiz/ME-IF-04.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-05",
@@ -84,12 +84,12 @@
       "minutes": 18,
       "goal": "2進法・ビット・サンプリングの基本を説明できる",
       "prereq": [],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-05.md",
       "storyboard": "storyboard/ME-IF-05.md",
       "slides": "slides/ME-IF-05.md",
       "quiz": "quiz/ME-IF-05.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-06",
@@ -100,12 +100,12 @@
       "prereq": [
         "ME-IF-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-06.md",
       "storyboard": "storyboard/ME-IF-06.md",
       "slides": "slides/ME-IF-06.md",
       "quiz": "quiz/ME-IF-06.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-07",
@@ -116,12 +116,12 @@
       "prereq": [
         "ME-IF-06"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-07.md",
       "storyboard": "storyboard/ME-IF-07.md",
       "slides": "slides/ME-IF-07.md",
       "quiz": "quiz/ME-IF-07.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-08",
@@ -132,12 +132,12 @@
       "prereq": [
         "ME-IF-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-08.md",
       "storyboard": "storyboard/ME-IF-08.md",
       "slides": "slides/ME-IF-08.md",
       "quiz": "quiz/ME-IF-08.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-09",
@@ -148,12 +148,12 @@
       "prereq": [
         "ME-IF-05"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-09.md",
       "storyboard": "storyboard/ME-IF-09.md",
       "slides": "slides/ME-IF-09.md",
       "quiz": "quiz/ME-IF-09.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-10",
@@ -165,12 +165,12 @@
         "ME-IF-09",
         "ME-IF-02"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-10.md",
       "storyboard": "storyboard/ME-IF-10.md",
       "slides": "slides/ME-IF-10.md",
       "quiz": "quiz/ME-IF-10.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-11",
@@ -182,12 +182,12 @@
         "ME-IF-04",
         "ME-IF-07"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-11.md",
       "storyboard": "storyboard/ME-IF-11.md",
       "slides": "slides/ME-IF-11.md",
       "quiz": "quiz/ME-IF-11.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     },
     {
       "id": "ME-IF-12",
@@ -198,12 +198,12 @@
       "prereq": [
         "ME-IF-11"
       ],
-      "status": "full",
+      "status": "outline",
       "file": "lessons/ME-IF-12.md",
       "storyboard": "storyboard/ME-IF-12.md",
       "slides": "slides/ME-IF-12.md",
       "quiz": "quiz/ME-IF-12.json",
-      "quality": "perfect-v1"
+      "quality": "draft"
     }
   ],
   "quality": "perfect-v1"
