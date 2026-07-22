@@ -1,7 +1,22 @@
 import fs from "node:fs";
 import path from "node:path";
+import { isFreeUnit } from "./freeUnits";
 
 const MEDIA_ROOT = path.join(process.cwd(), "public", "academy", "media");
+
+type UnitMediaPublicUrls = {
+  lesson_pdf?: string;
+  slides_html?: string;
+  slides_pdf?: string;
+  audio?: string;
+  lecture_video?: string;
+  video?: string;
+  quiz_md?: string;
+};
+
+type UnitMediaManifest = {
+  public_urls?: UnitMediaPublicUrls;
+};
 
 export type UnitMediaAssets = {
   unitId: string;
@@ -47,59 +62,134 @@ function firstExistingPath(dir: string, names: string[]): string | null {
   return null;
 }
 
+function safePublicMediaUrl(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const url = value.trim();
+  if (url.startsWith("/") || url.startsWith("https://")) return url;
+  return null;
+}
+
+function readPublicUrls(dir: string): UnitMediaPublicUrls {
+  try {
+    const manifest = JSON.parse(
+      fs.readFileSync(path.join(dir, "manifest.json"), "utf8"),
+    ) as UnitMediaManifest;
+    return manifest.public_urls || {};
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Free sample packs are published to the Vercel static CDN, but
+ * `outputFileTracingExcludes` keeps `public/academy/media/**` out of the
+ * serverless filesystem. `fs.existsSync` therefore fails in production even
+ * when `/academy/media/...` URLs return 200. Use known delivery names for free units.
+ */
+function freeCdnAssets(unitId: string): UnitMediaAssets {
+  const lessonHtml = publicUrl(unitId, "lesson.html");
+  const slidesPdf = publicUrl(unitId, "slides.pdf");
+  const audio = publicUrl(unitId, "audio.m4a");
+  const video = publicUrl(unitId, "video.mp4");
+  // ADV は slides.html もある。存在しない場合でも 404 ではなく iframe 失敗だけなので任意。
+  const slidesHtml =
+    unitId === "ADV-M1-06" || unitId === "ME-M1-01"
+      ? publicUrl(unitId, "slides.html")
+      : null;
+
+  return {
+    unitId,
+    lessonPdf: null,
+    lessonHtml,
+    slidesHtml,
+    slidesPdf,
+    audio,
+    lectureVideo: null,
+    video,
+    // quiz.json は Serverless に無い。カリキュラム正本クイズ（content/）を使う。
+    quizJsonPath: null,
+    quizMd: null,
+    hasAnyMedia: true,
+    hasExtendedMedia: true,
+  };
+}
+
+function emptyAssets(unitId: string): UnitMediaAssets {
+  return {
+    unitId,
+    lessonPdf: null,
+    lessonHtml: null,
+    slidesHtml: null,
+    slidesPdf: null,
+    audio: null,
+    lectureVideo: null,
+    video: null,
+    quizJsonPath: null,
+    quizMd: null,
+    hasAnyMedia: false,
+    hasExtendedMedia: false,
+  };
+}
+
 /**
  * public/academy/media/{unitId}/ 配下のアセットを解決する。
  * 教材PDF・スライドPDF・音声・動画・クイズ（複数ファイル名を吸収）。
+ * 本番では無料パックを CDN URL で解決する（関数内に media バイナリが無いため）。
  */
 export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   const dir = path.join(MEDIA_ROOT, unitId);
-  if (!fs.existsSync(dir)) {
-    return {
-      unitId,
-      lessonPdf: null,
-      lessonHtml: null,
-      slidesHtml: null,
-      slidesPdf: null,
-      audio: null,
-      lectureVideo: null,
-      video: null,
-      quizJsonPath: null,
-      quizMd: null,
-      hasAnyMedia: false,
-      hasExtendedMedia: false,
-    };
+  const onDisk = fs.existsSync(dir);
+
+  // ローカル/ディスク無しの本番: 無料パックは CDN 固定名で公開済み
+  if (!onDisk) {
+    return isFreeUnit(unitId) ? freeCdnAssets(unitId) : emptyAssets(unitId);
   }
 
-  const lessonPdf = firstExisting(dir, unitId, ["lesson.pdf"]);
-  const lessonHtml = firstExisting(dir, unitId, ["lesson.html"]);
-  const slidesHtml = firstExisting(dir, unitId, ["slides.html"]);
+  const publicUrls = readPublicUrls(dir);
+  let lessonPdf =
+    safePublicMediaUrl(publicUrls.lesson_pdf) || firstExisting(dir, unitId, ["lesson.pdf"]);
+  let lessonHtml = firstExisting(dir, unitId, ["lesson.html"]);
+  let slidesHtml =
+    safePublicMediaUrl(publicUrls.slides_html) || firstExisting(dir, unitId, ["slides.html"]);
 
   // スライドPDF（公開名 slides.pdf を優先。内部名 nlm_* も解決）
-  const slidesPdf = firstExisting(dir, unitId, [
-    "slides.pdf",
-    "nlm_slides.pdf",
-    "slides_nlm.pdf",
-  ]);
+  let slidesPdf =
+    safePublicMediaUrl(publicUrls.slides_pdf) ||
+    firstExisting(dir, unitId, ["slides.pdf", "nlm_slides.pdf", "slides_nlm.pdf"]);
 
   // 音声: 講義音声を優先
-  const audio = firstExisting(dir, unitId, [
-    "audio.m4a",
-    "audio.mp3",
-    "nlm_audio.m4a",
-    "audio_nlm.m4a",
-    "audio_unit.m4a",
-  ]);
+  let audio =
+    safePublicMediaUrl(publicUrls.audio) ||
+    firstExisting(dir, unitId, [
+      "audio.m4a",
+      "audio.mp3",
+      "nlm_audio.m4a",
+      "audio_nlm.m4a",
+      "audio_unit.m4a",
+    ]);
 
   // 長めの講義動画（nlm / video_nlm）と、短い連動動画（video.mp4）
-  const lectureVideo = firstExisting(dir, unitId, [
-    "lecture.mp4",
-    "nlm_video.mp4",
-    "video_nlm.mp4",
-  ]);
-  const video = firstExisting(dir, unitId, ["video.mp4"]);
+  let lectureVideo =
+    safePublicMediaUrl(publicUrls.lecture_video) ||
+    firstExisting(dir, unitId, ["lecture.mp4", "nlm_video.mp4", "video_nlm.mp4"]);
+  let video =
+    safePublicMediaUrl(publicUrls.video) || firstExisting(dir, unitId, ["video.mp4"]);
 
   const quizJsonPath = firstExistingPath(dir, ["quiz.json", "nlm_quiz.json"]);
-  const quizMd = firstExisting(dir, unitId, ["quiz.md", "nlm_quiz.md"]);
+  let quizMd =
+    safePublicMediaUrl(publicUrls.quiz_md) ||
+    firstExisting(dir, unitId, ["quiz.md", "nlm_quiz.md"]);
+
+  // ディスク上の public/ が一部欠けているケース（Vercel で小ファイルだけ残る等）でも
+  // 無料パックは CDN 配信名で埋める
+  if (isFreeUnit(unitId)) {
+    const cdn = freeCdnAssets(unitId);
+    lessonHtml = lessonHtml || cdn.lessonHtml;
+    slidesHtml = slidesHtml || cdn.slidesHtml;
+    slidesPdf = slidesPdf || cdn.slidesPdf;
+    audio = audio || cdn.audio;
+    video = video || cdn.video;
+  }
 
   const hasExtendedMedia = Boolean(
     slidesPdf || audio || lectureVideo || video || slidesHtml || quizJsonPath || quizMd,
