@@ -1,15 +1,25 @@
 #!/usr/bin/env node
 /**
- * 全 Academy 教材を「完成」水準へ引き上げる。
+ * @deprecated 2026-07-22
  *
- * 完成の定義:
- * 1. 標準セクション一式（ゴール/位置づけ/前提/ポイント/定義/手順/例A・B/演習/落とし穴/到達チェック）
- * 2. 例題解答が手順レベル（1行だけで終わらない）
- * 3. クイズ5問（pass 4）でゴール・手順・落とし穴を測定
- * 4. スライドにポイント＋手順
- * 5. プレースホルダ文言（一般化だけの設問）を具体問題に置換
+ * このスクリプトはテンプレート一括で status を full にし、薄い shell を
+ * 「完成」に見せかけるため **使用禁止**。
  *
- * Usage:
+ * 正しい整備プロセス:
+ *   docs/curriculum/DESIGN_OS.md
+ *   scripts/quality-gate.mjs
+ *   scripts/curriculum-map-export.mjs
+ *
+ * 単元の本文拡充は Blueprint 承認後、章バッチで人手/他AIが書き、
+ * quality-gate 通過後にのみ status を full にする。
+ *
+ * 誤実行を防ぐため、デフォルトはエラー終了する。
+ * どうしてもテンプレ生成を見る場合のみ: ALLOW_DEPRECATED_PERFECT=1
+ *
+ * --- 旧説明 ---
+ * 全 Academy 教材を「完成」水準へ引き上げる（実際はテンプレ拡張）。
+ *
+ * Usage (blocked unless ALLOW_DEPRECATED_PERFECT=1):
  *   node scripts/perfect-all-curriculum.mjs
  *   node scripts/perfect-all-curriculum.mjs --dry-run
  *   node scripts/perfect-all-curriculum.mjs --only elite/math
@@ -1077,6 +1087,17 @@ ME-M1-01, ME-EN-01, ME-PH-01, ME-CH-01, ME-BI-01, ME-IV-01, ME-ES-01, ME-JA-01, 
 }
 
 function main() {
+  if (process.env.ALLOW_DEPRECATED_PERFECT !== "1") {
+    console.error(
+      [
+        "DEPRECATED: perfect-all-curriculum.mjs は使用禁止です。",
+        "薄いテンプレを full に見せかけるため、Design OS では実行をブロックしています。",
+        "正しい手順: docs/curriculum/DESIGN_OS.md",
+        "やむを得ず旧動作を見る場合のみ: ALLOW_DEPRECATED_PERFECT=1",
+      ].join("\n"),
+    );
+    process.exit(2);
+  }
   console.log(DRY ? "DRY RUN" : "UPGRADE perfect-v1");
   let subjects = allSubjects();
   if (ONLY) subjects = subjects.filter((s) => s.id === ONLY || s.id.startsWith(ONLY));
