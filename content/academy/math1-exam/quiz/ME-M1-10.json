@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-10",
   "title": "絶対値を含む方程式",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "|f(x)|=k および |f|=|g| を場合分けで解ける"
+      "prompt": "|x-2|=5 を解け。",
+      "answer": "x=7,-3",
+      "explain": "定義。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "絶対値を含む方程式を扱うための中心概念。受験では定義を答案の一文目に置けることが得点の土台になる。"
+      "prompt": "|2x+1|=|x-4| を解け。",
+      "answer": "x=-5,1",
+      "explain": "A=B or A=-B。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "|f|=負 を解ありとする",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "|f|=負 を解ありとする"
+      "type": "short",
+      "prompt": "|x|=-1 の解は。",
+      "answer": "解なし",
+      "explain": "右辺負。"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "右辺の非負を確認"
+      "type": "mc",
+      "prompt": "|A|=|B| と同値なものはどれか。",
+      "choices": [
+        "A=B または A=-B",
+        "A=B のみ",
+        "A=-B のみ",
+        "A=0"
+      ],
+      "answer": "A=B または A=-B",
+      "explain": "基本。"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "|f|=k (k>0) は f=k または f=−k"
+      "prompt": "|x+3|=4 を解け。",
+      "answer": "x=1,-7",
+      "explain": "同様。"
     }
   ]
 }

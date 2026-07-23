@@ -1,44 +1,49 @@
 {
   "unit_id": "ME-M1-09",
-  "title": "実数の分類と絶対値の定義",
+  "title": "実数の分類（有理・無理）と数直線",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
-      "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "有理・無理の判別と |A| の定義に基づく場合分けができる"
+      "type": "mc",
+      "prompt": "有理数はどれか。",
+      "choices": [
+        "$\\sqrt{9}$",
+        "$\\sqrt{2}$",
+        "$\\pi$",
+        "$\\sqrt{8}$（整理前の印象だけで）"
+      ],
+      "answer": "$\\sqrt{9}$",
+      "explain": "$3$ になる。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "|A| = A (A≧0), −A (A<0)。幾何的には 0 からの距離。"
+      "prompt": "有理数の定義を書け。",
+      "answer": "整数 $p,q$（$q\\neq0$）の比 $p/q$ と表せる実数",
+      "explain": "定義。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "零点をまたがず一気に外す",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "零点をまたがず一気に外す"
+      "type": "short",
+      "prompt": "$\\sqrt{8}+\\sqrt{2}$ を簡単にし有理か判定。",
+      "answer": "$3\\sqrt{2}$ で無理数",
+      "explain": "整理が先。"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "中身の零点を求める"
+      "prompt": "循環小数は有理数か。",
+      "answer": "有理数である",
+      "explain": "有限・循環は有理。"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "|A| は A≧0 なら A、A<0 なら −A"
+      "prompt": "$-1.5$ と $\\sqrt{2}$ の大小を述べよ。",
+      "answer": "$-1.5<\\sqrt{2}$",
+      "explain": "数直線。"
     }
   ]
 }

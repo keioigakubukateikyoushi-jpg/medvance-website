@@ -1,0 +1,49 @@
+{
+  "unit_id": "ME-M1-39",
+  "title": "1次不等式の性質と解法",
+  "pass_score": 4,
+  "quality": "reviewed-v3",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "$2x-1>5$ を解け。",
+      "answer": "$x>3$",
+      "explain": "基本。"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "$-3x\\ge 6$ を解け。",
+      "answer": "$x\\le -2$",
+      "explain": "負で割り向き逆。"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "prompt": "負の数を両辺に掛けると不等号はどうなるか。",
+      "answer": "向きが逆になる",
+      "explain": "性質。"
+    },
+    {
+      "id": "q4",
+      "type": "mc",
+      "prompt": "$x>2$ の境界2は解に含まれるか。",
+      "choices": [
+        "含まれない",
+        "含まれる",
+        "どちらかわからない",
+        "0のみ"
+      ],
+      "answer": "含まれない",
+      "explain": "厳密な不等号。"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "$4-x\\le 1$ を解け。",
+      "answer": "$x\\ge 3$",
+      "explain": "$-x\\le-3$ で逆。"
+    }
+  ]
+}

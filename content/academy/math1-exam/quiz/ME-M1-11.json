@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-11",
   "title": "絶対値を含む不等式",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "|f(x)|≦a, |f(x)|≧a を数直線と場合分けで処理できる"
+      "prompt": "|x-1|≤3 を解け。",
+      "answer": "-2≤x≤4",
+      "explain": "内側。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "絶対値を含む不等式を扱うための中心概念。受験では定義を答案の一文目に置けることが得点の土台になる。"
+      "prompt": "|2x+1|>5 を解け。",
+      "answer": "x<-3 または x>2",
+      "explain": "外側。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "≦ と < の混同",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "≦ と < の混同"
+      "type": "short",
+      "prompt": "|x|≤-2 の解は。",
+      "answer": "解なし",
+      "explain": "右辺負。"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "形の判別（≦か≧か）"
+      "type": "mc",
+      "prompt": "|A|≥a (a>0) のイメージはどれか。",
+      "choices": [
+        "数直線で外側",
+        "内側だけ",
+        "原点のみ",
+        "空集合"
+      ],
+      "answer": "数直線で外側",
+      "explain": "距離。"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "|A|≦a (a>0) ⇔ −a≦A≦a"
+      "prompt": "|x+2|<5 を解け。",
+      "answer": "-7<x<3",
+      "explain": "同様。"
     }
   ]
 }

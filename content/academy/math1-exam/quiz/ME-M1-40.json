@@ -1,0 +1,49 @@
+{
+  "unit_id": "ME-M1-40",
+  "title": "絶対値の定義と1次式の場合分け",
+  "pass_score": 4,
+  "quality": "reviewed-v3",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "short",
+      "prompt": "|A| の定義を場合分けで書け。",
+      "answer": "A≥0ならA、A<0なら-A",
+      "explain": "定義。"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "|x-3| を x≥3 のとき外せ。",
+      "answer": "x-3",
+      "explain": "境界右側。"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "prompt": "|x-3| を x<3 のとき外せ。",
+      "answer": "3-x",
+      "explain": "-(x-3)。"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "|2x+1| の境界の x は。",
+      "answer": "x=-1/2",
+      "explain": "2x+1=0。"
+    },
+    {
+      "id": "q5",
+      "type": "mc",
+      "prompt": "|x| の意味として最も適切なものはどれか。",
+      "choices": [
+        "原点からの距離",
+        "常に x",
+        "常に -x",
+        "x の平方"
+      ],
+      "answer": "原点からの距離",
+      "explain": "幾何。"
+    }
+  ]
+}

@@ -3,9 +3,9 @@
   "track": "exam",
   "trackLabel": "大学受験（医学部・難関大）",
   "brand": "Medvance",
-  "unit_count": 38,
-  "full_count": 8,
-  "outline_count": 30,
+  "unit_count": 40,
+  "full_count": 15,
+  "outline_count": 25,
   "design": "単元を原子スキル単位で細分化。15–25分講義。PDF=スライド=動画=音声は同一台本。飛び飛び禁止。",
   "media_policy": {
     "min_minutes": 15,
@@ -150,82 +150,83 @@
     {
       "id": "ME-M1-09",
       "chapter": "数と式",
-      "title": "実数の分類と絶対値の定義",
+      "title": "実数の分類（有理・無理）と数直線",
       "minutes": 16,
-      "goal": "有理・無理の判別と |A| の定義に基づく場合分けができる",
+      "goal": "有理数・無理数を定義に照らして判別し数直線上の位置関係を説明できる",
       "prereq": [
         "ME-M1-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-09.md",
       "storyboard": "storyboard/ME-M1-09.md",
       "slides": "slides/ME-M1-09.md",
       "quiz": "quiz/ME-M1-09.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-10",
       "chapter": "数と式",
       "title": "絶対値を含む方程式",
       "minutes": 18,
-      "goal": "|f(x)|=k および |f|=|g| を場合分けで解ける",
+      "goal": "|f|=k および |f|=|g| を場合分けで解ける",
       "prereq": [
-        "ME-M1-09"
+        "ME-M1-40"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-10.md",
       "storyboard": "storyboard/ME-M1-10.md",
       "slides": "slides/ME-M1-10.md",
       "quiz": "quiz/ME-M1-10.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-11",
       "chapter": "数と式",
       "title": "絶対値を含む不等式",
       "minutes": 18,
-      "goal": "|f(x)|≦a, |f(x)|≧a を数直線と場合分けで処理できる",
+      "goal": "|f|≤a, |f|≥a を数直線と場合分けで処理できる",
       "prereq": [
-        "ME-M1-10"
+        "ME-M1-10",
+        "ME-M1-39"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-11.md",
       "storyboard": "storyboard/ME-M1-11.md",
       "slides": "slides/ME-M1-11.md",
       "quiz": "quiz/ME-M1-11.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-12",
       "chapter": "数と式",
       "title": "平方根の計算と有理化",
-      "minutes": 16,
+      "minutes": 18,
       "goal": "根号の加減乗除と分母の有理化ができる",
       "prereq": [
-        "ME-M1-01"
+        "ME-M1-09"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-12.md",
       "storyboard": "storyboard/ME-M1-12.md",
       "slides": "slides/ME-M1-12.md",
       "quiz": "quiz/ME-M1-12.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-13",
       "chapter": "数と式",
       "title": "二重根号と式の値",
       "minutes": 18,
-      "goal": "二重根号の簡略化と代入計算ができる",
+      "goal": "二重根号の簡略化と代入による式の値ができる",
       "prereq": [
         "ME-M1-12"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-13.md",
       "storyboard": "storyboard/ME-M1-13.md",
       "slides": "slides/ME-M1-13.md",
       "quiz": "quiz/ME-M1-13.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-14",
@@ -622,8 +623,40 @@
       "slides": "slides/ME-M1-38.md",
       "quiz": "quiz/ME-M1-38.json",
       "quality": "draft"
+    },
+    {
+      "id": "ME-M1-40",
+      "file": "lessons/ME-M1-40.md",
+      "storyboard": "storyboard/ME-M1-40.md",
+      "slides": "slides/ME-M1-40.md",
+      "quiz": "quiz/ME-M1-40.json",
+      "chapter": "数と式",
+      "title": "絶対値の定義と1次式の場合分け",
+      "minutes": 16,
+      "goal": "|A|の定義に基づき1次式の絶対値を場合分けで外せる",
+      "prereq": [
+        "ME-M1-09"
+      ],
+      "status": "full",
+      "quality": "reviewed-v3"
+    },
+    {
+      "id": "ME-M1-39",
+      "file": "lessons/ME-M1-39.md",
+      "storyboard": "storyboard/ME-M1-39.md",
+      "slides": "slides/ME-M1-39.md",
+      "quiz": "quiz/ME-M1-39.json",
+      "chapter": "数と式",
+      "title": "1次不等式の性質と解法",
+      "minutes": 18,
+      "goal": "1次不等式を性質に基づいて解き数直線で表せる",
+      "prereq": [
+        "ME-M1-09"
+      ],
+      "status": "full",
+      "quality": "reviewed-v3"
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "品質基準合格 8/38 単元（数と式 01–08）。"
+  "completeness": "品質基準合格 15/40 単元。"
 }

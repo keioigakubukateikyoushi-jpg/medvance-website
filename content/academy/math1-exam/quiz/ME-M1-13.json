@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-13",
   "title": "二重根号と式の値",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "二重根号の簡略化と代入計算ができる"
+      "prompt": "$\\sqrt{5+2\\sqrt{6}}$ を簡単にせよ。",
+      "answer": "$\\sqrt{3}+\\sqrt{2}$",
+      "explain": "3+2+2√6。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "√(c±d) の形で、さらに根号が中に入っているもの。"
+      "prompt": "$x=\\sqrt{3}+\\sqrt{2}$ のとき $x+1/x$。",
+      "answer": "$2\\sqrt{3}$",
+      "explain": "逆数は√3-√2。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "符号を取り違える",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "符号を取り違える"
+      "type": "short",
+      "prompt": "$\\sqrt{a+b-2\\sqrt{ab}}$ を簡単にすると（a≥b≥0）。",
+      "answer": "$\\sqrt{a}-\\sqrt{b}$",
+      "explain": "差。"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "中を a+b±2√(ab) の形に変形できないか探す"
+      "type": "mc",
+      "prompt": "二重根号を外したあと最初にすべきことはどれか。",
+      "choices": [
+        "二乗して検算",
+        "捨てる",
+        "さらに三重根号にする",
+        "有理数と決めつける"
+      ],
+      "answer": "二乗して検算",
+      "explain": "定義に戻る。"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "√(a±b±2√(ab)) 型の分解"
+      "prompt": "$\\sqrt{8-2\\sqrt{15}}$ を簡単にせよ。",
+      "answer": "$\\sqrt{5}-\\sqrt{3}$",
+      "explain": "5+3-2√15。"
     }
   ]
 }
