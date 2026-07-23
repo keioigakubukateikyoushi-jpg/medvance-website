@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-29",
   "title": "三角形の面積とヘロン",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "(1/2)ab sinC とヘロンの公式を使い分けられる"
+      "prompt": "本単元のゴールを判定問題として言い換えよ。",
+      "answer": "(1/2)ab sinC とヘロンの公式を使い分けられる",
+      "explain": "ゴールの内在化"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "3辺だけから面積を出す公式。"
+      "prompt": "答案の冒頭に書くべきものは何か。",
+      "answer": "使う定義・公式と場合分けの宣言",
+      "explain": "型"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "sin を対辺と混同",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "sin を対辺と混同"
+      "type": "short",
+      "prompt": "標準例題の答えの要点は何か。",
+      "answer": "定義と手順に沿った答え",
+      "explain": "例A"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "角が分かる → (1/2)ab sin C"
+      "type": "mc",
+      "prompt": "検算として適切なものはどれか。",
+      "choices": [
+        "代入や逆操作",
+        "勘",
+        "答えだけ見る",
+        "省略"
+      ],
+      "answer": "代入や逆操作",
+      "explain": "検算"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "S=(1/2)bc sin A"
+      "prompt": "典型的な落とし穴を1つ挙げよ。",
+      "answer": "境界・符号・定義の省略",
+      "explain": "落とし穴"
     }
   ]
 }

@@ -4,8 +4,8 @@
   "trackLabel": "大学受験（医学部・難関大）",
   "brand": "Medvance",
   "unit_count": 40,
-  "full_count": 20,
-  "outline_count": 20,
+  "full_count": 40,
+  "outline_count": 0,
   "design": "単元を原子スキル単位で細分化。15–25分講義。PDF=スライド=動画=音声は同一台本。飛び飛び禁止。",
   "media_policy": {
     "min_minutes": 15,
@@ -317,12 +317,12 @@
       "prereq": [
         "ME-M1-15"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-19.md",
       "storyboard": "storyboard/ME-M1-19.md",
       "slides": "slides/ME-M1-19.md",
       "quiz": "quiz/ME-M1-19.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-20",
@@ -333,12 +333,12 @@
       "prereq": [
         "ME-M1-15"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-20.md",
       "storyboard": "storyboard/ME-M1-20.md",
       "slides": "slides/ME-M1-20.md",
       "quiz": "quiz/ME-M1-20.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-21",
@@ -349,12 +349,12 @@
       "prereq": [
         "ME-M1-20"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-21.md",
       "storyboard": "storyboard/ME-M1-21.md",
       "slides": "slides/ME-M1-21.md",
       "quiz": "quiz/ME-M1-21.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-22",
@@ -365,12 +365,12 @@
       "prereq": [
         "ME-M1-21"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-22.md",
       "storyboard": "storyboard/ME-M1-22.md",
       "slides": "slides/ME-M1-22.md",
       "quiz": "quiz/ME-M1-22.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-23",
@@ -381,12 +381,12 @@
       "prereq": [
         "ME-M1-21"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-23.md",
       "storyboard": "storyboard/ME-M1-23.md",
       "slides": "slides/ME-M1-23.md",
       "quiz": "quiz/ME-M1-23.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-24",
@@ -395,12 +395,12 @@
       "minutes": 16,
       "goal": "sin cos tan を直角三角形で定義どおり使える",
       "prereq": [],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-24.md",
       "storyboard": "storyboard/ME-M1-24.md",
       "slides": "slides/ME-M1-24.md",
       "quiz": "quiz/ME-M1-24.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-25",
@@ -411,12 +411,12 @@
       "prereq": [
         "ME-M1-24"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-25.md",
       "storyboard": "storyboard/ME-M1-25.md",
       "slides": "slides/ME-M1-25.md",
       "quiz": "quiz/ME-M1-25.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-26",
@@ -427,12 +427,12 @@
       "prereq": [
         "ME-M1-25"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-26.md",
       "storyboard": "storyboard/ME-M1-26.md",
       "slides": "slides/ME-M1-26.md",
       "quiz": "quiz/ME-M1-26.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-27",
@@ -443,12 +443,12 @@
       "prereq": [
         "ME-M1-26"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-27.md",
       "storyboard": "storyboard/ME-M1-27.md",
       "slides": "slides/ME-M1-27.md",
       "quiz": "quiz/ME-M1-27.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-28",
@@ -459,12 +459,12 @@
       "prereq": [
         "ME-M1-27"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-28.md",
       "storyboard": "storyboard/ME-M1-28.md",
       "slides": "slides/ME-M1-28.md",
       "quiz": "quiz/ME-M1-28.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-29",
@@ -475,12 +475,12 @@
       "prereq": [
         "ME-M1-28"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-29.md",
       "storyboard": "storyboard/ME-M1-29.md",
       "slides": "slides/ME-M1-29.md",
       "quiz": "quiz/ME-M1-29.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-30",
@@ -491,12 +491,12 @@
       "prereq": [
         "ME-M1-29"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-30.md",
       "storyboard": "storyboard/ME-M1-30.md",
       "slides": "slides/ME-M1-30.md",
       "quiz": "quiz/ME-M1-30.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-31",
@@ -505,12 +505,12 @@
       "minutes": 15,
       "goal": "代表値を計算し、どれを使うべきか判断できる",
       "prereq": [],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-31.md",
       "storyboard": "storyboard/ME-M1-31.md",
       "slides": "slides/ME-M1-31.md",
       "quiz": "quiz/ME-M1-31.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-32",
@@ -521,12 +521,12 @@
       "prereq": [
         "ME-M1-31"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-32.md",
       "storyboard": "storyboard/ME-M1-32.md",
       "slides": "slides/ME-M1-32.md",
       "quiz": "quiz/ME-M1-32.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-33",
@@ -537,12 +537,12 @@
       "prereq": [
         "ME-M1-31"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-33.md",
       "storyboard": "storyboard/ME-M1-33.md",
       "slides": "slides/ME-M1-33.md",
       "quiz": "quiz/ME-M1-33.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-34",
@@ -553,12 +553,12 @@
       "prereq": [
         "ME-M1-33"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-34.md",
       "storyboard": "storyboard/ME-M1-34.md",
       "slides": "slides/ME-M1-34.md",
       "quiz": "quiz/ME-M1-34.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-35",
@@ -569,12 +569,12 @@
       "prereq": [
         "ME-M1-34"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-35.md",
       "storyboard": "storyboard/ME-M1-35.md",
       "slides": "slides/ME-M1-35.md",
       "quiz": "quiz/ME-M1-35.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-36",
@@ -585,12 +585,12 @@
       "prereq": [
         "ME-M1-13"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-36.md",
       "storyboard": "storyboard/ME-M1-36.md",
       "slides": "slides/ME-M1-36.md",
       "quiz": "quiz/ME-M1-36.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-37",
@@ -601,12 +601,12 @@
       "prereq": [
         "ME-M1-18"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-37.md",
       "storyboard": "storyboard/ME-M1-37.md",
       "slides": "slides/ME-M1-37.md",
       "quiz": "quiz/ME-M1-37.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-38",
@@ -617,12 +617,12 @@
       "prereq": [
         "ME-M1-29"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-38.md",
       "storyboard": "storyboard/ME-M1-38.md",
       "slides": "slides/ME-M1-38.md",
       "quiz": "quiz/ME-M1-38.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-40",
@@ -658,5 +658,5 @@
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "品質基準合格 20/40 単元。"
+  "completeness": "品質基準合格 40/40。本文full→NLM待ち。"
 }
