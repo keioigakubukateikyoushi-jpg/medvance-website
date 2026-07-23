@@ -4,8 +4,8 @@
   "trackLabel": "大学受験（医学部・難関大）",
   "brand": "Medvance",
   "unit_count": 38,
-  "full_count": 1,
-  "outline_count": 37,
+  "full_count": 2,
+  "outline_count": 36,
   "design": "単元を原子スキル単位で細分化。15–25分講義。PDF=スライド=動画=音声は同一台本。飛び飛び禁止。",
   "media_policy": {
     "min_minutes": 15,
@@ -44,12 +44,12 @@
       "prereq": [
         "ME-M1-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-02.md",
       "storyboard": "storyboard/ME-M1-02.md",
       "slides": "slides/ME-M1-02.md",
       "quiz": "quiz/ME-M1-02.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-03",
@@ -625,5 +625,5 @@
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 37 単元は骨子のみで内容を拡充中。"
+  "completeness": "品質基準に合格した 1 単元を公開中。残り 37 単元は内容を拡充中。"
 }
