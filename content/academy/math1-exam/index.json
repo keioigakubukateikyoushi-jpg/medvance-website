@@ -4,8 +4,8 @@
   "trackLabel": "大学受験（医学部・難関大）",
   "brand": "Medvance",
   "unit_count": 40,
-  "full_count": 15,
-  "outline_count": 25,
+  "full_count": 20,
+  "outline_count": 20,
   "design": "単元を原子スキル単位で細分化。15–25分講義。PDF=スライド=動画=音声は同一台本。飛び飛び禁止。",
   "media_policy": {
     "min_minutes": 15,
@@ -237,12 +237,12 @@
       "prereq": [
         "ME-M1-04"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-14.md",
       "storyboard": "storyboard/ME-M1-14.md",
       "slides": "slides/ME-M1-14.md",
       "quiz": "quiz/ME-M1-14.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-15",
@@ -253,12 +253,12 @@
       "prereq": [
         "ME-M1-14"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-15.md",
       "storyboard": "storyboard/ME-M1-15.md",
       "slides": "slides/ME-M1-15.md",
       "quiz": "quiz/ME-M1-15.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-16",
@@ -269,12 +269,12 @@
       "prereq": [
         "ME-M1-15"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-16.md",
       "storyboard": "storyboard/ME-M1-16.md",
       "slides": "slides/ME-M1-16.md",
       "quiz": "quiz/ME-M1-16.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-17",
@@ -285,12 +285,12 @@
       "prereq": [
         "ME-M1-16"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-17.md",
       "storyboard": "storyboard/ME-M1-17.md",
       "slides": "slides/ME-M1-17.md",
       "quiz": "quiz/ME-M1-17.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-18",
@@ -301,12 +301,12 @@
       "prereq": [
         "ME-M1-17"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-18.md",
       "storyboard": "storyboard/ME-M1-18.md",
       "slides": "slides/ME-M1-18.md",
       "quiz": "quiz/ME-M1-18.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-19",
@@ -658,5 +658,5 @@
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "品質基準合格 15/40 単元。"
+  "completeness": "品質基準合格 20/40 単元。"
 }
