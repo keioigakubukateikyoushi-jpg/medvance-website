@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-04",
   "title": "展開公式 (a±b)² と (a+b)(a-b)",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
-      "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "3公式を見極めて適用し、係数・符号ミスを防げる"
+      "type": "mc",
+      "prompt": "$(x+3)^2$ として正しいものはどれか。",
+      "choices": [
+        "$x^2+6x+9$",
+        "$x^2+9$",
+        "$x^2+3x+9$",
+        "$x^2+6x+6$"
+      ],
+      "answer": "$x^2+6x+9$",
+      "explain": "真ん中 $2ab=6x$ を落とさない。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "(a±b)² では中間項 ±2ab が必ず出る。 平方の差 a²−b² になる。"
+      "prompt": "$(2x-1)^2$ を展開せよ。",
+      "answer": "$4x^2-4x+1$",
+      "explain": "$(2x)^2=4x^2$、$-2\\cdot 2x\\cdot 1=-4x$。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "(a+b)²= a²+b² と中間項を落とす",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "(a+b)²= a²+b² と中間項を落とす"
+      "type": "short",
+      "prompt": "$(3x+1)(3x-1)$ を展開せよ。",
+      "answer": "$9x^2-1$",
+      "explain": "平方の差 $a^2-b^2$。"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "公式のどれに当てはまるか判定"
+      "prompt": "$(x+2)^2-(x-2)^2$ を簡単にせよ。",
+      "answer": "$8x$",
+      "explain": "展開しても $A^2-B^2$ でも $8x$。"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "(a+b)²= a²+2ab+b²"
+      "prompt": "$(2x)^2$ を計算せよ。よくある誤りも一文で。",
+      "answer": "$4x^2$（$2x^2$ と書くのが誤り）",
+      "explain": "係数にも二乗がかかる。"
     }
   ]
 }

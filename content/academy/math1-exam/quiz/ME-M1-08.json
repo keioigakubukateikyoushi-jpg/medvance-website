@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-08",
   "title": "因数分解：置換・複二次式",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "置換や複二次式を因数分解できる"
+      "prompt": "$x^4-5x^2+4$ を因数分解せよ。",
+      "answer": "$(x-1)(x+1)(x-2)(x+2)$",
+      "explain": "t=x^2 の後にさらに分解。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "x⁴ と x² と定数だけの式。t=x² で二次に落ちる。"
+      "prompt": "$x^4-1$ を因数分解せよ。",
+      "answer": "$(x-1)(x+1)(x^2+1)$",
+      "explain": "平方の差の反復。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "t に戻し忘れる",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "t に戻し忘れる"
+      "type": "short",
+      "prompt": "複二次式でよく置く置換は何か。",
+      "answer": "$t=x^2$",
+      "explain": "定石。"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "繰り返す式を見つける"
+      "type": "mc",
+      "prompt": "置換後に必ず行うことはどれか。",
+      "choices": [
+        "t を元の式に戻す",
+        "置換したまま提出",
+        "次数を上げる",
+        "共通因数を捨てる"
+      ],
+      "answer": "t を元の式に戻す",
+      "explain": "戻し忘れが最大失点。"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "同じ塊を t とおく"
+      "prompt": "$(x+1)^2-4$ を因数分解せよ。",
+      "answer": "$(x-1)(x+3)$",
+      "explain": "平方の差。"
     }
   ]
 }

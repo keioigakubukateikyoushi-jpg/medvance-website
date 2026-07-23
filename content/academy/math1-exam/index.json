@@ -4,8 +4,8 @@
   "trackLabel": "大学受験（医学部・難関大）",
   "brand": "Medvance",
   "unit_count": 38,
-  "full_count": 2,
-  "outline_count": 36,
+  "full_count": 8,
+  "outline_count": 30,
   "design": "単元を原子スキル単位で細分化。15–25分講義。PDF=スライド=動画=音声は同一台本。飛び飛び禁止。",
   "media_policy": {
     "min_minutes": 15,
@@ -60,12 +60,12 @@
       "prereq": [
         "ME-M1-02"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-03.md",
       "storyboard": "storyboard/ME-M1-03.md",
       "slides": "slides/ME-M1-03.md",
       "quiz": "quiz/ME-M1-03.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-04",
@@ -76,28 +76,28 @@
       "prereq": [
         "ME-M1-03"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-04.md",
       "storyboard": "storyboard/ME-M1-04.md",
       "slides": "slides/ME-M1-04.md",
       "quiz": "quiz/ME-M1-04.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-05",
       "chapter": "数と式",
-      "title": "展開公式 (a±b)³ と (x+a)(x+b)",
+      "title": "展開：(x+a)(x+b) と (a±b)³",
       "minutes": 18,
       "goal": "三次の展開とたして○かけて□の展開ができる",
       "prereq": [
         "ME-M1-04"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-05.md",
       "storyboard": "storyboard/ME-M1-05.md",
       "slides": "slides/ME-M1-05.md",
       "quiz": "quiz/ME-M1-05.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-06",
@@ -108,12 +108,12 @@
       "prereq": [
         "ME-M1-05"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-06.md",
       "storyboard": "storyboard/ME-M1-06.md",
       "slides": "slides/ME-M1-06.md",
       "quiz": "quiz/ME-M1-06.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-07",
@@ -124,12 +124,12 @@
       "prereq": [
         "ME-M1-06"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-07.md",
       "storyboard": "storyboard/ME-M1-07.md",
       "slides": "slides/ME-M1-07.md",
       "quiz": "quiz/ME-M1-07.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-08",
@@ -140,12 +140,12 @@
       "prereq": [
         "ME-M1-07"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-M1-08.md",
       "storyboard": "storyboard/ME-M1-08.md",
       "slides": "slides/ME-M1-08.md",
       "quiz": "quiz/ME-M1-08.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-M1-09",
@@ -625,5 +625,5 @@
     }
   ],
   "quality": "perfect-v1",
-  "completeness": "品質基準に合格した 1 単元を公開中。残り 37 単元は内容を拡充中。"
+  "completeness": "品質基準合格 8/38 単元（数と式 01–08）。"
 }

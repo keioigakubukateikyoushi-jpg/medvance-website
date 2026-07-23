@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-03",
   "title": "展開の基本：分配法則と整理",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
-      "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "(a+b)(c+d) 型を分配法則で展開し降べきで整理できる"
+      "type": "mc",
+      "prompt": "$(2x-3)(x+5)$ を展開した結果はどれか。",
+      "choices": [
+        "$2x^2+7x-15$",
+        "$2x^2+10x-15$",
+        "$2x^2-7x-15$",
+        "$2x^2+7x+15$"
+      ],
+      "answer": "$2x^2+7x-15$",
+      "explain": "中間は $10x-3x=7x$。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "A(B+C)= AB+AC。多項式同士は一方の各項を他方全体にかける。"
+      "prompt": "2項×3項の展開で、整理前の積は何本あるか。",
+      "answer": "6本",
+      "explain": "項数の積 $2\\times 3=6$。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "符号の付け忘れ（負×負）",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "符号の付け忘れ（負×負）"
+      "type": "short",
+      "prompt": "$(x+2)(x^2-3x+1)$ を展開した結果を書け。",
+      "answer": "$x^3-x^2-5x+2$",
+      "explain": "6本の積を列挙して同類項をまとめる。"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "形を見る（何項×何項か）"
+      "prompt": "$x\\cdot(-3x)$ の正しい結果は何か。",
+      "answer": "$-3x^2$",
+      "explain": "指数が足されて $-3x^2$。$-3x$ は誤り。"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "(a+b)(c+d)= ac+ad+bc+bd"
+      "prompt": "$(3x+1)(2x-5)$ を展開せよ。",
+      "answer": "$6x^2-13x-5$",
+      "explain": "$6x^2-15x+2x-5$。"
     }
   ]
 }

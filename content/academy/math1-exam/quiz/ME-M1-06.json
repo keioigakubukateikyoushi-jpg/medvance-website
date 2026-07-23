@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-06",
   "title": "因数分解：共通因数と公式の逆",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "共通因数と公式の逆で因数分解できる"
+      "prompt": "$6x^2-9x$ を因数分解せよ。",
+      "answer": "$3x(2x-3)$",
+      "explain": "共通因数 $3x$。"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "多項式を多項式の積の形に書き直すこと。"
+      "prompt": "$x^2-9$ を因数分解せよ。",
+      "answer": "$(x-3)(x+3)$",
+      "explain": "平方の差。"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "共通因数を残す",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "共通因数を残す"
+      "type": "short",
+      "prompt": "$x^2+6x+9$ を因数分解せよ。",
+      "answer": "$(x+3)^2$",
+      "explain": "完全平方式。"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "共通因数をくくり出す"
+      "prompt": "$x^3-8$ を因数分解せよ。",
+      "answer": "$(x-2)(x^2+2x+4)$",
+      "explain": "立方の差。"
     },
     {
       "id": "q5",
-      "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "まず共通因数"
+      "type": "mc",
+      "prompt": "因数分解で最初に行うべきことはどれか。",
+      "choices": [
+        "共通因数をくくる",
+        "いきなりたすきがけ",
+        "展開する",
+        "次数を上げる"
+      ],
+      "answer": "共通因数をくくる",
+      "explain": "順序が崩れると係数が膨らむ。"
     }
   ]
 }
