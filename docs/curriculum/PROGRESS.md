@@ -3,6 +3,10 @@
 更新: **2026-07-23**  
 司令塔: **Grok**（本文量産はしない。仕様・統合・ゲート）
 
+**Obsidian ハブ（AI切替の入口）**:  
+`AI_MEMORY/02_Projects/Medvance_Academy_Curriculum.md`  
+（OneDrive: `ドキュメント/AI_MEMORY/02_Projects/Medvance_Academy_Curriculum.md`）
+
 ## ルール
 
 1. **一人のAIが全388単元を急いで書かない**
