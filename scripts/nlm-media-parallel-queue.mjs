@@ -34,6 +34,28 @@ const COOLDOWN_ON_LIMIT_MS = Math.max(
 
 /** 各教科の入口直後（無料の次）を優先する波 */
 const WAVES = {
+  // math1 本文 full 済み → メディア生成（今日の本線）
+  "math1-full": [
+    "ME-M1-02",
+    "ME-M1-03",
+    "ME-M1-04",
+    "ME-M1-05",
+    "ME-M1-06",
+    "ME-M1-07",
+    "ME-M1-08",
+    "ME-M1-09",
+    "ME-M1-12",
+    "ME-M1-13",
+    "ME-M1-40",
+    "ME-M1-39",
+    "ME-M1-10",
+    "ME-M1-11",
+    "ME-M1-14",
+    "ME-M1-15",
+    "ME-M1-16",
+    "ME-M1-17",
+    "ME-M1-18",
+  ],
   "foundation-next": [
     // 主要教科 02–03
     "ME-EN-02",

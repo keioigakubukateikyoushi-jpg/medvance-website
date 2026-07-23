@@ -21,7 +21,7 @@
 | 科目 | ID | 単元 | 講座 | 品質現状 |
 |------|-----|------|------|----------|
 | 高校英語（受験） | english-exam | 30 | 基礎 | 入口のみ full |
-| 高校数学I | math1-exam | 38 | 基礎 | 入口のみ full · **Blueprint パイロット** |
+| 高校数学I | math1-exam | 40 | 基礎 | **gate 40/40 full · NLM待ち** |
 | 高校数学A | mathA-exam | 20 | 基礎 | outline |
 | 高校数学II | math2-exam | 22 | 基礎 | outline |
 | 高校数学B（受験） | mathB-exam | 14 | 基礎 | outline |
