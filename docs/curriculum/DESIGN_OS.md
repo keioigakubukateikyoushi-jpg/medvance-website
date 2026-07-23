@@ -97,6 +97,9 @@ Map（科目Blueprint） → Unit（full本文） → Media（NLM）
 
 ## 関連
 
+- 進捗・ローテ: `docs/curriculum/PROGRESS.md`
+- 手渡し: `docs/curriculum/handoffs/`
+- 実装プロンプト: `docs/curriculum/prompts/implementer.md`
 - ベースライン: `docs/curriculum/BASELINE.md`
 - カバレッジ方針: `content/academy/00_TRACK_SYSTEM.md`
 - 台本: `content/academy/SHARED_STORYBOARD.md`
