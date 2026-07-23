@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-14",
   "title": "2次関数のグラフと平行移動",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "y=a(x-p)²+q の頂点・軸・開閉を即座に言える"
+      "prompt": "y=2(x-1)²-3 の頂点",
+      "answer": "(1,-3)",
+      "explain": "p=1,q=-3"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "$y=a(x-p)^2+q$ 標準形 $y=ax^2$ を $x$ 方向に $p$、$y$ 方向に $q$ だけ平行移動した形。平行移動の結果が式から一目で読める。 - $a>0$：下に凸。頂点が最小 - $a"
+      "prompt": "軸は",
+      "answer": "x=1",
+      "explain": "x=p"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "$(x+1)$ を見て頂点の $x$ を $1$ と答える（符号ミス）",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "$(x+1)$ を見て頂点の $x$ を $1$ と答える（符号ミス）"
+      "type": "short",
+      "prompt": "a=2 の開閉",
+      "answer": "下に凸",
+      "explain": "a>0"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "$a,\\,p,\\,q$ を式から読む（$(x+1)$ は $p=-1$）"
+      "type": "mc",
+      "prompt": "y=(x+2)² の頂点",
+      "choices": [
+        "(-2,0)",
+        "(2,0)",
+        "(0,2)",
+        "(0,-2)"
+      ],
+      "answer": "(-2,0)",
+      "explain": "x+2=x-(-2)"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "$y=a(x-p)^2+q$ の頂点は $(p,q)$"
+      "prompt": "y=-(x-3)²+5 の頂点",
+      "answer": "(3,5)",
+      "explain": "完成形"
     }
   ]
 }

@@ -1,44 +1,49 @@
 {
   "unit_id": "ME-M1-17",
-  "title": "定義域つき最大・最小（軸が区間内）",
+  "title": "定義域つき最大最小（軸が区間内）",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "軸が定義域内のとき端点と頂点を比較できる"
+      "prompt": "軸内・下に凸の最小は",
+      "answer": "頂点の y",
+      "explain": "原則"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "x の動く範囲が制限されたときの最大・最小。"
+      "prompt": "x²-2x+2 on [0,3] の最小",
+      "answer": "1",
+      "explain": "x=1"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "端点だけ見て頂点を忘れる",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "端点だけ見て頂点を忘れる"
+      "type": "short",
+      "prompt": "その最大",
+      "answer": "5",
+      "explain": "x=3"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "平方完成で軸・頂点を出す"
+      "prompt": "軸が区間内か見るものは",
+      "answer": "定義域と軸の位置",
+      "explain": "判定"
     },
     {
       "id": "q5",
-      "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "定義域 [p,q]"
+      "type": "mc",
+      "prompt": "軸内・上に凸の最大",
+      "choices": [
+        "頂点",
+        "左端のみ",
+        "右端のみ",
+        "0"
+      ],
+      "answer": "頂点",
+      "explain": "対称"
     }
   ]
 }

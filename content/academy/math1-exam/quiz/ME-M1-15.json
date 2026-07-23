@@ -2,43 +2,48 @@
   "unit_id": "ME-M1-15",
   "title": "平方完成の完全習得",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "任意の y=ax²+bx+c を平方完成できる"
+      "prompt": "x²-6x+5 の平方完成",
+      "answer": "(x-3)²-4",
+      "explain": "基本"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "二次式 $ax^2+bx+c$（$a\\neq 0$）を $a(x-p)^2+q$ の形に変形する操作。ここで頂点は $(p,q)$、軸は $x=p$。"
+      "prompt": "頂点",
+      "answer": "(3,-4)",
+      "explain": "完成形"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "- $a$ でくくったあと、足し引きした定数に $a$ を掛け忘れる（$2(x^2+4x+4)$ の $+4$ は $2\\times 4$ で戻す）",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "- $a$ でくくったあと、足し引きした定数に $a$ を掛け忘れる（$2(x^2+4x+4)$ の $+4$ は $2\\times 4$ で戻す）"
+      "type": "short",
+      "prompt": "2x²+8x+3 の平方完成",
+      "answer": "2(x+2)²-5",
+      "explain": "aでくくる"
     },
     {
       "id": "q4",
       "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "- 1 $a$ で $x^2,\\,x$ をくくる：$y=a\\left(x^2+\\dfrac{b}{a}x\\right)+c$"
+      "prompt": "その頂点",
+      "answer": "(-2,-5)",
+      "explain": "p=-2"
     },
     {
       "id": "q5",
-      "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "平方完成の完全習得"
+      "type": "mc",
+      "prompt": "x²+bx の完成で足すのは",
+      "choices": [
+        "(b/2)²",
+        "b²",
+        "2b",
+        "b/2"
+      ],
+      "answer": "(b/2)²",
+      "explain": "半分の二乗"
     }
   ]
 }

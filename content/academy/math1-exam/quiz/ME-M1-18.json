@@ -1,44 +1,49 @@
 {
   "unit_id": "ME-M1-18",
-  "title": "定義域つき最大・最小（軸が区間外）",
+  "title": "定義域つき最大最小（軸が区間外）",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "軸が外のとき端点だけで最大最小を決められる"
+      "prompt": "軸が定義域左外・下に凸のとき区間は",
+      "answer": "増加",
+      "explain": "単調"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "定義域つき最大・最小（軸が区間外）を扱うための中心概念。受験では定義を答案の一文目に置けることが得点の土台になる。"
+      "prompt": "x²-2x on [2,5] の最小",
+      "answer": "0",
+      "explain": "x=2"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "軸が外なのに頂点を使う",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "軸が外なのに頂点を使う"
+      "type": "short",
+      "prompt": "その最大",
+      "answer": "15",
+      "explain": "x=5"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "軸の位置を定義域と比較"
+      "type": "mc",
+      "prompt": "軸外のとき頂点は",
+      "choices": [
+        "候補にしない",
+        "必ず最小",
+        "必ず最大",
+        "常に使う"
+      ],
+      "answer": "候補にしない",
+      "explain": "外"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "軸が左外 → 区間は右上がり/下がりを a で判定"
+      "prompt": "先にすべき判定は",
+      "answer": "軸が定義域内か外か",
+      "explain": "分岐"
     }
   ]
 }
