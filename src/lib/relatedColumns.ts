@@ -12,6 +12,7 @@ export const relatedColumnsByHub: Record<string, string[]> = {
   "for/ko3": [
     "new-high3-april-plan",
     "april-year-plan",
+    "igakubu-genzai-kara",
     "kakomon-timing",
     "natsu-manikiai",
     "moshi-katsuyo",
@@ -20,12 +21,20 @@ export const relatedColumnsByHub: Record<string, string[]> = {
   "for/ronin": [
     "ronin-april-plan",
     "ronin-kateikyoushi",
+    "igakubu-genzai-kara",
     "natsu-manikiai",
     "moshi-katsuyo",
     "kakomon-timing",
   ],
-  "for/saijuken": ["saijuken", "junrejo-goukaku", "dokugaku-genkai", "juku-erabi"],
+  "for/saijuken": [
+    "saijuken",
+    "junrejo-goukaku",
+    "dokugaku-genkai",
+    "igakubu-juken-susume",
+    "juku-erabi",
+  ],
   "for/parents": [
+    "oya-igakubu-juken",
     "gakuhi",
     "juku-erabi",
     "medical-yobiko-cost",

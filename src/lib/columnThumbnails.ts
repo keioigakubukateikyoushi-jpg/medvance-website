@@ -91,6 +91,13 @@ const slugOverrides: Record<string, string> = {
   "difference": "/images/universities/juntendo.webp",
   "moshi-katsuyo": "/images/universities/juntendo.webp",
   "junrejo-goukaku": "/images/universities/showa.webp",
+  // 2026-07 追加コラム
+  "academy-mihoudai": "/images/universities/toho.webp",
+  "video-gakushu-katsuyo": "/images/universities/keio.webp",
+  "igakubu-juken-susume": "/images/universities/juntendo.webp",
+  "igakubu-genzai-kara": "/images/universities/juntendo.webp",
+  "oya-igakubu-juken": "/images/universities/jikei.webp",
+  "ishi-mezasu-riyuu": "/images/universities/nippon-medical.webp",
 };
 
 export function getColumnThumbnail(slug: string, category?: string): string | null {

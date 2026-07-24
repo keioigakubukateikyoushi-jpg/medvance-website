@@ -54,6 +54,15 @@ export default async function AcademyHubPage() {
               </Link>
             </p>
           )}
+          <p className="mt-5">
+            <Link
+              href="/column/academy-mihoudai"
+              className="inline-flex items-center gap-1 text-xs font-semibold underline underline-offset-2"
+              style={{ color: "#c9922a" }}
+            >
+              見放題の内容・使い方を記事で読む →
+            </Link>
+          </p>
         </div>
       </div>
 

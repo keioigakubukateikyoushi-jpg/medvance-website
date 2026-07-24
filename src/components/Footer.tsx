@@ -107,14 +107,14 @@ export default function Footer() {
             <nav className="space-y-2 text-sm mb-6">
               {[
                 { label: "コラム一覧", href: "/column" },
+                { label: "動画・PDF教材が見放題に", href: "/column/academy-mihoudai" },
+                { label: "医学部受験のすすめ", href: "/column/igakubu-juken-susume" },
+                { label: "今から医学部受験を始める人へ", href: "/column/igakubu-genzai-kara" },
+                { label: "保護者のための医学部受験ガイド", href: "/column/oya-igakubu-juken" },
+                { label: "動画教材の使い方", href: "/column/video-gakushu-katsuyo" },
+                { label: "医師を目指す理由の作り方", href: "/column/ishi-mezasu-riyuu" },
                 { label: "医学部合格の勉強法", href: "/column/study-method" },
                 { label: "医学部受験ロードマップ", href: "/column/roadmap" },
-                { label: "受かる人・落ちる人の違い", href: "/column/difference" },
-                { label: "私立 vs 国公立", href: "/column/shigaku-vs-kokuritsu" },
-                { label: "医学部面接対策", href: "/column/mensetu" },
-                { label: "面接対策はいつから？", href: "/column/mensetu-timing" },
-                { label: "医学部の学費比較", href: "/column/gakuhi" },
-                { label: "過去問はいつから？", href: "/column/kakomon-timing" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block hover:opacity-100 transition-opacity" style={{ color: "rgba(255,255,255,0.58)" }}>
                   {l.label}
