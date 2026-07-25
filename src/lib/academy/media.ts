@@ -4,6 +4,7 @@ import { isFreeUnit } from "./freeUnits";
 
 const MEDIA_ROOT = path.join(process.cwd(), "public", "academy", "media");
 const YOUTUBE_REGISTRY = path.join(process.cwd(), "content", "academy", "media-youtube.json");
+const MEDIA_READY_PATH = path.join(process.cwd(), "content", "academy", "media-ready.json");
 
 type UnitMediaPublicUrls = {
   lesson_pdf?: string;
@@ -123,33 +124,60 @@ function readPublicUrls(dir: string): UnitMediaPublicUrls {
 }
 
 /**
- * Free sample packs are published to the Vercel static CDN, but
+ * Static CDN packs (free + media-ready complete).
  * `outputFileTracingExcludes` keeps `public/academy/media/**` out of the
- * serverless filesystem. `fs.existsSync` therefore fails in production even
- * when `/academy/media/...` URLs return 200. Use known delivery names for free units.
+ * serverless filesystem, so `fs.existsSync` fails in production even when
+ * `/academy/media/...` URLs return 200. Resolve by known delivery names.
  */
-function freeCdnAssets(unitId: string): UnitMediaAssets {
+function staticCdnAssets(
+  unitId: string,
+  opts: { audio?: boolean; video?: boolean; slides?: boolean } = {},
+): UnitMediaAssets {
+  const wantAudio = opts.audio !== false;
+  const wantVideo = opts.video !== false;
+  const wantSlides = opts.slides !== false;
   const lessonHtml = publicUrl(unitId, "lesson.html");
-  const slidesPdf = publicUrl(unitId, "slides.pdf");
-  const audio = publicUrl(unitId, "audio.m4a");
-  const video = publicUrl(unitId, "video.mp4");
+  const slidesPdf = wantSlides ? publicUrl(unitId, "slides.pdf") : null;
+  const audio = wantAudio ? publicUrl(unitId, "audio.m4a") : null;
+  const video = wantVideo ? publicUrl(unitId, "video.mp4") : null;
 
   return {
     unitId,
     lessonPdf: null,
     lessonHtml,
-    // ブラウザ用 slides.html はUIから廃止（PDFを正とする）
     slidesHtml: null,
     slidesPdf,
     audio,
-    lectureVideo: null,
+    lectureVideo: video,
     video,
-    // quiz.json は Serverless に無い。カリキュラム正本クイズ（content/）を使う。
     quizJsonPath: null,
     quizMd: null,
-    hasAnyMedia: true,
-    hasExtendedMedia: true,
+    hasAnyMedia: Boolean(lessonHtml || slidesPdf || audio || video),
+    hasExtendedMedia: Boolean(slidesPdf || audio || video),
   };
+}
+
+/** @deprecated use staticCdnAssets */
+function freeCdnAssets(unitId: string): UnitMediaAssets {
+  return staticCdnAssets(unitId);
+}
+
+type ReadyFlags = { audio?: boolean; video?: boolean; slides?: boolean };
+
+function readMediaReady(): {
+  complete: Record<string, ReadyFlags>;
+  partial: Record<string, ReadyFlags>;
+} {
+  try {
+    if (!fs.existsSync(MEDIA_READY_PATH)) return { complete: {}, partial: {} };
+    const raw = JSON.parse(fs.readFileSync(MEDIA_READY_PATH, "utf8")) as {
+      complete?: Record<string, ReadyFlags>;
+      partial?: Record<string, ReadyFlags>;
+    };
+    return { complete: raw.complete || {}, partial: raw.partial || {} };
+  } catch {
+    return { complete: {}, partial: {} };
+  }
 }
 
 function emptyAssets(unitId: string): UnitMediaAssets {
@@ -188,18 +216,25 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   const remoteVideo =
     safePublicMediaUrl(publicUrls.video) || safePublicMediaUrl(ytReg.video) || null;
 
-  // 本番（media ディレクトリ無し）: 無料は CDN mp4、有料は remote のみ
+  // 本番（serverless に media バイナリが無い）: 静的 CDN の固定パスで解決
+  // ※ ファイル自体はデプロイ済みでも fs.existsSync は false になる
   if (!onDisk) {
-    if (isFreeUnit(unitId)) {
-      const base = freeCdnAssets(unitId);
-      return {
-        ...base,
-        // 無料は CDN mp4 を本線
-        lectureVideo: base.video,
-        video: base.video,
-        hasExtendedMedia: true,
-        hasAnyMedia: true,
-      };
+    const ready = readMediaReady();
+    if (isFreeUnit(unitId) || ready.complete[unitId]) {
+      const flags = ready.complete[unitId] || { audio: true, video: true, slides: true };
+      return staticCdnAssets(unitId, {
+        audio: flags.audio !== false,
+        video: flags.video !== false,
+        slides: flags.slides !== false,
+      });
+    }
+    if (ready.partial[unitId]) {
+      const flags = ready.partial[unitId];
+      return staticCdnAssets(unitId, {
+        audio: Boolean(flags.audio),
+        video: Boolean(flags.video),
+        slides: Boolean(flags.slides),
+      });
     }
     if (remoteLecture || remoteVideo) {
       const v = remoteVideo || remoteLecture;
@@ -251,16 +286,34 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
     safePublicMediaUrl(publicUrls.quiz_md) ||
     firstExisting(dir, unitId, ["quiz.md", "nlm_quiz.md"]);
 
-  // ディスク上の public/ が一部欠けているケース（Vercel で小ファイルだけ残る等）でも
-  // 無料パックは CDN 配信名で埋める
-  if (isFreeUnit(unitId)) {
-    const cdn = freeCdnAssets(unitId);
-    lessonHtml = lessonHtml || cdn.lessonHtml;
-    slidesPdf = slidesPdf || cdn.slidesPdf;
-    audio = audio || cdn.audio;
-    if (!video) {
-      video = cdn.video;
-      lectureVideo = cdn.video;
+  // Vercel: ディレクトリや manifest だけ残り、mp4 が serverless FS に無いことが多い
+  // → media-ready / 無料枠は CDN 固定パスで埋める
+  const ready = readMediaReady();
+  const readyFlags = ready.complete[unitId] || ready.partial[unitId];
+  if (isFreeUnit(unitId) || readyFlags) {
+    const cdn = staticCdnAssets(unitId, {
+      audio: readyFlags ? readyFlags.audio !== false : true,
+      video: readyFlags ? Boolean(readyFlags.video) || isFreeUnit(unitId) : true,
+      slides: readyFlags ? readyFlags.slides !== false : true,
+    });
+    // free complete always has full pack
+    if (isFreeUnit(unitId) || ready.complete[unitId]) {
+      const full = staticCdnAssets(unitId);
+      lessonHtml = lessonHtml || full.lessonHtml;
+      slidesPdf = slidesPdf || full.slidesPdf;
+      audio = audio || full.audio;
+      if (!video) {
+        video = full.video;
+        lectureVideo = full.video;
+      }
+    } else {
+      lessonHtml = lessonHtml || cdn.lessonHtml;
+      slidesPdf = slidesPdf || cdn.slidesPdf;
+      audio = audio || cdn.audio;
+      if (!video && cdn.video) {
+        video = cdn.video;
+        lectureVideo = cdn.video;
+      }
     }
   }
 
