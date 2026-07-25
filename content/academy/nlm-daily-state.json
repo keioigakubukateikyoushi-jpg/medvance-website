@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "days": {
+    "2026-07-26": {
+      "date": "2026-07-26",
+      "attempted": [
+        "ME-EN-02",
+        "ME-EN-03"
+      ],
+      "ok": [
+        "ME-EN-02",
+        "ME-EN-03"
+      ],
+      "fail": [],
+      "rateLimited": true,
+      "runs": 1,
+      "rateLimitHits": 1,
+      "lastFinished": "2026-07-25T16:14:13.060Z",
+      "stoppedReason": "rate_limit_or_quota"
+    }
+  },
+  "lastRun": "2026-07-25T16:14:13.060Z",
+  "updated": "2026-07-25T16:14:13.060Z"
+}

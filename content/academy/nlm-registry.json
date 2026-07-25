@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-23T10:01:40.573Z",
+  "updated": "2026-07-25T16:14:05.034Z",
   "units": {
     "ME-M1-04": {
       "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
@@ -138,11 +138,11 @@
       "created_at": "2026-07-22T10:02:53.095Z",
       "subject": "高校英語（受験）",
       "subjectDir": "english-exam",
-      "studio_requested_at": "2026-07-22T10:03:34.555Z",
+      "studio_requested_at": "2026-07-25T16:12:47.737Z",
       "focus": "【Medvance 公式教材・正本厳守】ユニット ME-EN-03「現在・過去・未来の基本」。 科目: 高校英語（受験） / 章: 時制 / ゴール: 基本時制を文脈に合わせて使える アップロードされた lesson と storyboard が唯一の正本。 台本（storyboard）のブロック順を必ず守る。台本にない例題・数値・入試問題を創作しない。 Deep Research 由来ソースがあ",
       "video_focus": "あなたは医学部・難関大受験のプロ講師。Medvance の授業動画を作る。 ユニット ME-EN-03「現在・過去・未来の基本」。章:時制。ゴール:基本時制を文脈に合わせて使える。 【絶対ルール】lesson と storyboard が唯一の正本。台本のブロック順を守る。 台本にない例題・数値・入試問題・一般論の脱線を一切入れない。 【授業の型（必須）】 1) 冒頭15秒: 今日のゴールを一文で宣言（自己紹介・チャンネル宣伝は禁止） 2) 定義・用語: 画面にキーワードを大",
       "video_quality": "hq-whiteboard-v1",
-      "last_run_at": "2026-07-22T10:17:07.001Z"
+      "last_run_at": "2026-07-25T16:14:05.034Z"
     },
     "ME-PH-03": {
       "notebook_id": "13f3d849-f9a7-4dda-a26d-1f71a0cd6380",
