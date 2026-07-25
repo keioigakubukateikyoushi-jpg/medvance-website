@@ -1,6 +1,7 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 import RelatedColumns from "@/components/RelatedColumns";
+import Image from "next/image";
 
 export const metadata = {
   title: "【医学部浪人生の対策】今年で決める合格戦略と再浪人回避の個別指導 | Medvance",
@@ -230,10 +231,13 @@ export default function RoninPage() {
               {/* Embedding realistic Japanese ronin study coaching photo */}
               <div className="mt-8 relative overflow-hidden rounded-[20px] md:rounded-[24px] shadow-[0_15px_40px_rgba(12,26,51,0.1)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
                 <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
-                <img 
+                <Image 
                   src="/images/generated/japanese_student_ronin_grit_desk.png" 
                   alt="15分単位の計画表を使いながら講師と学習計画を確認する日本人の浪人生" 
                   className="w-full h-auto object-cover max-h-[300px] transition-transform duration-700 group-hover:scale-[1.03]"
+                  width={1024}
+                  height={1024}
+                  sizes="(min-width: 1024px) 900px, 100vw"
                 />
               </div>
             </div>

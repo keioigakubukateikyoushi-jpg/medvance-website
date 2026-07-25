@@ -3,6 +3,7 @@ import Link from "next/link";
 import TutorProfiles from "@/components/TutorProfiles";
 import LineButton from "@/components/LineButton";
 import KeioNaibuSimulator from "@/components/KeioNaibuSimulator";
+import Image from "next/image";
 
 export const metadata = {
   title: "【慶應医学部への内部進学】系列校特化の評定アップと推薦枠獲得対策 | Medvance",
@@ -372,10 +373,13 @@ export default function KeioNaibuRevampedPage() {
         <section className="bg-white px-4 py-12">
           <div className="mx-auto max-w-3xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
             <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
-            <img 
+            <Image 
               src="/images/generated/japanese_keio_medical_campus_walkway.png" 
               alt="慶應義塾大学キャンパス前でスマートに勉学に励む慶應医学部生・附属校生" 
               className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 900px, 100vw"
             />
           </div>
         </section>

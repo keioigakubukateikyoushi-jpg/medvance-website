@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   buildBreadcrumbSchema,
   buildFaqSchema,
@@ -212,10 +213,13 @@ export default function PrivateMedicalStrategyPage() {
 
           {/* Embedding professional strategy visual */}
           <div className="mb-10 overflow-hidden rounded-2xl border bg-white" style={{ borderColor: "#e5e1d8" }}>
-            <img 
+            <Image 
               src="/images/generated/private_medical_strategy_hero.png" 
               alt="私立医学部受験における戦略計画・スケジュール選定のイメージ" 
               className="w-full h-auto object-cover max-h-[380px]"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 900px, 100vw"
             />
           </div>
           <div className="grid gap-5 md:grid-cols-4">

@@ -1,5 +1,6 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "保護者の方へ｜私立医学部合格のための戦略伴走",
@@ -125,10 +126,13 @@ export default function ParentsPage() {
               {/* Embedding realistic Japanese parent consultation photo */}
               <div className="mt-8 relative overflow-hidden rounded-[20px] md:rounded-[24px] shadow-[0_15px_40px_rgba(12,26,51,0.1)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
                 <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
-                <img 
+                <Image 
                   src="/images/generated/japanese_parents_anxious_smiling.png" 
                   alt="面談で保護者に学習計画と進捗レポートを説明する日本人のプロ講師" 
                   className="w-full h-auto object-cover max-h-[300px] transition-transform duration-700 group-hover:scale-[1.03]"
+                  width={1024}
+                  height={1024}
+                  sizes="(min-width: 1024px) 900px, 100vw"
                 />
               </div>
             </div>

@@ -50,6 +50,12 @@ function LineIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
+/**
+ * このブロックはデスクトップ用とモバイル用で2回描画される。
+ * そのため見出し文字は h1 ではなく p として描き（aria-hidden で読み上げ対象外）、
+ * 実体の h1 は HeroAnimated 側に sr-only で1つだけ置く。
+ * こうするとビューポートに関係なく h1 は常にちょうど1つになる。
+ */
 function HeroText() {
   return (
     <>
@@ -112,7 +118,8 @@ function HeroText() {
       </p>
 
       {/* Headline — single sentence, two lines on mobile */}
-      <h1
+      <p
+        aria-hidden
         className="mb-3 font-bold leading-snug sm:mb-4"
         style={{
           fontFamily: "var(--font-noto-serif)",
@@ -125,7 +132,7 @@ function HeroText() {
         <span className="block">医学部受験塾 Medvance｜</span>
         <span className="block">完全1対1個別指導と</span>
         <span className="block">合格戦略</span>
-      </h1>
+      </p>
 
       {/* Sub copy */}
       <p
@@ -260,6 +267,9 @@ function HeroPersonas() {
 export default function HeroAnimated() {
   return (
     <section style={{ backgroundColor: "#0c1a33" }}>
+
+      {/* 唯一の h1。見出し文字はPC用・スマホ用で2回描画されるので、実体はここに1つだけ置く */}
+      <h1 className="sr-only">医学部受験塾 Medvance｜完全1対1個別指導と合格戦略</h1>
 
       {/* ── Desktop: full image background ── */}
       <div className="hidden md:block relative" style={{ minHeight: "70svh" }}>

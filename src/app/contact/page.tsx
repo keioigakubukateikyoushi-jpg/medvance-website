@@ -164,25 +164,24 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section style={{ backgroundColor: "#0c1a33" }} className="px-4 py-20">
+      {/* 申込みを決めて来た人をすぐフォームに届けたいので、導入部はスマホでは短くする。
+          説明カード（quickFields）はフォームより下（PCではサイドバー横）に置く。 */}
+      <section style={{ backgroundColor: "#0c1a33" }} className="px-4 py-9 md:py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
+          <p className="mb-2 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>
             お申し込み
           </p>
-          <h1 className="mb-4 text-3xl font-bold leading-snug text-white md:text-4xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
+          <h1 className="mb-3 text-[1.7rem] font-bold leading-snug text-white md:text-4xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
             医学部・歯学部 合格戦略診断
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.66)" }}>
+          {/* スマホ: 要点だけ */}
+          <p className="text-sm leading-relaxed md:hidden" style={{ color: "rgba(255,255,255,0.72)" }}>
+            現在地と志望校の差を整理し、次にやることをお伝えします。30分・無料・勧誘なし。
+          </p>
+          {/* PC: 詳しい説明 */}
+          <p className="mx-auto hidden max-w-2xl text-sm leading-relaxed md:block" style={{ color: "rgba(255,255,255,0.66)" }}>
             予備校の利用状況、集団塾との相性、模試結果、志望校、保護者の投資方針をもとに、国公立・私立の医学部・歯学部合格に向けた受験校選定・科目別優先順位・必要な伴走体制を整理します。
           </p>
-          <div className="mx-auto grid max-w-3xl gap-3 sm:grid-cols-3">
-            {quickFields.map((item) => (
-              <div key={item.title} className="rounded-lg p-4 text-left" style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                <p className="mb-2 text-sm font-bold text-white">{item.title}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>{item.body}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -315,64 +314,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid gap-5 md:grid-cols-2">
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        前年度の受験結果
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.examHistory}
-                        onChange={(e) => updateField("examHistory", e.target.value)}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="例: 共通テスト得点、私立6校受験、一次通過2校、補欠1校など"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        現在利用している塾・予備校
-                      </label>
-                      <select
-                        value={formData.currentPrepSchool}
-                        onChange={(e) => updateField("currentPrepSchool", e.target.value)}
-                        className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: formData.currentPrepSchool ? "#0c1a33" : "#9ca3af" }}
-                      >
-                        <option value="">選択してください</option>
-                        <option value="大手予備校">大手予備校</option>
-                        <option value="医学部専門予備校">医学部専門予備校</option>
-                        <option value="集団塾">集団塾</option>
-                        <option value="個別指導">個別指導</option>
-                        <option value="学校中心">学校中心</option>
-                        <option value="利用なし">利用なし</option>
-                        <option value="その他">その他</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-5 md:grid-cols-2">
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        いま一番困っていること
-                      </label>
-                      <select
-                        value={formData.strategyNeed}
-                        onChange={(e) => updateField("strategyNeed", e.target.value)}
-                        className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: formData.strategyNeed ? "#0c1a33" : "#9ca3af" }}
-                      >
-                        <option value="">選択してください</option>
-                        <option value="予備校の復習管理">予備校の復習管理</option>
-                        <option value="質の高い質問対応">質の高い質問対応</option>
-                        <option value="集団塾が合わない">集団塾が合わない</option>
-                        <option value="弱点科目の個別補強">弱点科目の個別補強</option>
-                        <option value="国公立医学部の共通テスト・二次配分">国公立医学部の共通テスト・二次配分</option>
-                        <option value="私立医学部の出願校設計">私立医学部の出願校設計</option>
-                        <option value="保護者への進捗共有">保護者への進捗共有</option>
-                      </select>
-                    </div>
+                  <div>
 
                     <div>
                       <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
@@ -421,93 +363,8 @@ export default function ContactPage() {
                     )}
                   </div>
 
-                  <div className="grid gap-5 md:grid-cols-2">
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        志望校・候補校
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.targetName}
-                        onChange={(e) => updateField("targetName", e.target.value)}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="例: 東大、東京科学大、東京歯科大、昭和歯など"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        私立医学部の受験予定校数（予定があれば）
-                      </label>
-                      <select
-                        value={formData.plannedPrivateSchools}
-                        onChange={(e) => updateField("plannedPrivateSchools", e.target.value)}
-                        className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: formData.plannedPrivateSchools ? "#0c1a33" : "#9ca3af" }}
-                      >
-                        <option value="">選択してください</option>
-                        <option value="0〜1校">0〜1校</option>
-                        <option value="2〜4校">2〜4校</option>
-                        <option value="5〜8校">5〜8校</option>
-                        <option value="9校以上">9校以上</option>
-                        <option value="未定">未定</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-5 md:grid-cols-2">
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        直近の模試・偏差値
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.latestScore}
-                        onChange={(e) => updateField("latestScore", e.target.value)}
-                        className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
-                        placeholder="例: 河合記述 英55 数50 化48 生52"
-                      />
-                    </div>
+                  <div>
                   
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        週あたりの学習時間
-                      </label>
-                      <select
-                        value={formData.studyHours}
-                        onChange={(e) => updateField("studyHours", e.target.value)}
-                        className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: formData.studyHours ? "#0c1a33" : "#9ca3af" }}
-                      >
-                        <option value="">選択してください</option>
-                        <option value="20〜30時間">20〜30時間</option>
-                        <option value="30時間以上">30時間以上</option>
-                        <option value="50時間以上">50時間以上</option>
-                        <option value="10〜20時間">10〜20時間</option>
-                        <option value="10時間未満">10時間未満</option>
-                        <option value="これから増やす予定">これから増やす予定</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
-                        年間の指導投資イメージ
-                      </label>
-                      <select
-                        value={formData.investmentReadiness}
-                        onChange={(e) => updateField("investmentReadiness", e.target.value)}
-                        className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
-                        style={{ border: "1px solid #e5e1d8", color: formData.investmentReadiness ? "#0c1a33" : "#9ca3af" }}
-                      >
-                        <option value="">選択してください</option>
-                        <option value="まず費用感を知りたい">まず費用感を知りたい</option>
-                        <option value="年間100万〜300万円">年間100万〜300万円</option>
-                        <option value="年間300万〜600万円">年間300万〜600万円</option>
-                        <option value="必要なら600万円以上も検討">必要なら600万円以上も検討</option>
-                      </select>
-                    </div>
 
                     <div>
                       <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
@@ -558,6 +415,152 @@ export default function ContactPage() {
                     )}
                   </div>
 
+                  {/* 任意項目。無くても申し込めるが、あるとその場でより具体的に返せる。
+                      最初から全部見せると項目数に圧倒されるので既定は閉じた状態にする。 */}
+                  <details className="rounded-lg" style={{ border: "1px solid #e5e1d8", backgroundColor: "#faf9f6" }}>
+                    <summary className="cursor-pointer px-4 py-3 text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                      任意項目を入力する（模試・志望校・学習時間など）
+                      <span className="ml-2 text-xs font-normal" style={{ color: "#5f6b7a" }}>
+                        入力いただくと、相談当日により具体的にお答えできます
+                      </span>
+                    </summary>
+                    <div className="space-y-5 px-4 pb-5">
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            前年度の受験結果
+                          </label>
+                          <input
+                            type="text"
+                            value={formData.examHistory}
+                            onChange={(e) => updateField("examHistory", e.target.value)}
+                            className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                            placeholder="例: 共通テスト得点、私立6校受験、一次通過2校、補欠1校など"
+                          />
+                        </div>
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            現在利用している塾・予備校
+                          </label>
+                          <select
+                            value={formData.currentPrepSchool}
+                            onChange={(e) => updateField("currentPrepSchool", e.target.value)}
+                            className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: formData.currentPrepSchool ? "#0c1a33" : "#9ca3af" }}
+                          >
+                            <option value="">選択してください</option>
+                            <option value="大手予備校">大手予備校</option>
+                            <option value="医学部専門予備校">医学部専門予備校</option>
+                            <option value="集団塾">集団塾</option>
+                            <option value="個別指導">個別指導</option>
+                            <option value="学校中心">学校中心</option>
+                            <option value="利用なし">利用なし</option>
+                            <option value="その他">その他</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            いま一番困っていること
+                          </label>
+                          <select
+                            value={formData.strategyNeed}
+                            onChange={(e) => updateField("strategyNeed", e.target.value)}
+                            className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: formData.strategyNeed ? "#0c1a33" : "#9ca3af" }}
+                          >
+                            <option value="">選択してください</option>
+                            <option value="予備校の復習管理">予備校の復習管理</option>
+                            <option value="質の高い質問対応">質の高い質問対応</option>
+                            <option value="集団塾が合わない">集団塾が合わない</option>
+                            <option value="弱点科目の個別補強">弱点科目の個別補強</option>
+                            <option value="国公立医学部の共通テスト・二次配分">国公立医学部の共通テスト・二次配分</option>
+                            <option value="私立医学部の出願校設計">私立医学部の出願校設計</option>
+                            <option value="保護者への進捗共有">保護者への進捗共有</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            志望校・候補校
+                          </label>
+                          <input
+                            type="text"
+                            value={formData.targetName}
+                            onChange={(e) => updateField("targetName", e.target.value)}
+                            className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                            placeholder="例: 東大、東京科学大、東京歯科大、昭和歯など"
+                          />
+                        </div>
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            私立医学部の受験予定校数（予定があれば）
+                          </label>
+                          <select
+                            value={formData.plannedPrivateSchools}
+                            onChange={(e) => updateField("plannedPrivateSchools", e.target.value)}
+                            className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: formData.plannedPrivateSchools ? "#0c1a33" : "#9ca3af" }}
+                          >
+                            <option value="">選択してください</option>
+                            <option value="0〜1校">0〜1校</option>
+                            <option value="2〜4校">2〜4校</option>
+                            <option value="5〜8校">5〜8校</option>
+                            <option value="9校以上">9校以上</option>
+                            <option value="未定">未定</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            直近の模試・偏差値
+                          </label>
+                          <input
+                            type="text"
+                            value={formData.latestScore}
+                            onChange={(e) => updateField("latestScore", e.target.value)}
+                            className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                            placeholder="例: 河合記述 英55 数50 化48 生52"
+                          />
+                        </div>
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            週あたりの学習時間
+                          </label>
+                          <select
+                            value={formData.studyHours}
+                            onChange={(e) => updateField("studyHours", e.target.value)}
+                            className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: formData.studyHours ? "#0c1a33" : "#9ca3af" }}
+                          >
+                            <option value="">選択してください</option>
+                            <option value="20〜30時間">20〜30時間</option>
+                            <option value="30時間以上">30時間以上</option>
+                            <option value="50時間以上">50時間以上</option>
+                            <option value="10〜20時間">10〜20時間</option>
+                            <option value="10時間未満">10時間未満</option>
+                            <option value="これから増やす予定">これから増やす予定</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
+                            年間の指導投資イメージ
+                          </label>
+                          <select
+                            value={formData.investmentReadiness}
+                            onChange={(e) => updateField("investmentReadiness", e.target.value)}
+                            className="w-full rounded-lg bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                            style={{ border: "1px solid #e5e1d8", color: formData.investmentReadiness ? "#0c1a33" : "#9ca3af" }}
+                          >
+                            <option value="">選択してください</option>
+                            <option value="まず費用感を知りたい">まず費用感を知りたい</option>
+                            <option value="年間100万〜300万円">年間100万〜300万円</option>
+                            <option value="年間300万〜600万円">年間300万〜600万円</option>
+                            <option value="必要なら600万円以上も検討">必要なら600万円以上も検討</option>
+                          </select>
+                        </div>
+                    </div>
+                  </details>
+
                   <div>
                     <label className="mb-1.5 block text-sm font-semibold" style={{ color: "#0c1a33" }}>
                       相談したい内容
@@ -591,6 +594,21 @@ export default function ContactPage() {
           </div>
 
           <aside className="space-y-6">
+            {/* 導入部から移設。フォームを最初に見せたいので、説明はこちらに置く */}
+            <div className="rounded-lg bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
+              <p className="mb-4 text-sm font-bold" style={{ color: "#0c1a33" }}>
+                診断で整理すること
+              </p>
+              <div className="space-y-4">
+                {quickFields.map((item) => (
+                  <div key={item.title}>
+                    <p className="mb-1 text-sm font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="rounded-lg bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
               <p className="mb-4 text-sm font-bold" style={{ color: "#0c1a33" }}>
                 診断に向いているご家庭

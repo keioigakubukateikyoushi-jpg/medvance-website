@@ -179,10 +179,13 @@ export default function SciencePage() {
             </div>
             
             <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
-              <img 
+              <Image 
                 src="/images/generated/database_dashboard_mockup.png" 
                 alt="Medvance独自の学習計画・必須公式連携・保護者共有管理画面UI" 
                 className="w-full h-auto object-cover max-h-[380px]"
+                width={1024}
+                height={1024}
+                sizes="(min-width: 1024px) 900px, 100vw"
               />
             </div>
           </div>

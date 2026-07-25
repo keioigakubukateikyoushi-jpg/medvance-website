@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import Image from "next/image";
 
 const faqItems = [
   {
@@ -67,10 +68,13 @@ export default function PrivateMedicalScienceSelectionPage() {
         <div className="max-w-3xl mx-auto">
           {/* Embedding realistic trustworthy generated photo */}
           <div className="mb-10 overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
-            <img 
+            <Image 
               src="/images/generated/science_subject_chart.png" 
               alt="医学部受験における物理と生物の選択率・平均偏差値・合格実績の分析インフォグラフィック" 
               className="w-full h-auto object-cover max-h-[420px]"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 900px, 100vw"
             />
             <p className="p-3 text-center text-xs text-gray-500 bg-white border-t" style={{ borderColor: "#e5e1d8" }}>
               選択科目ごとの合格率推移と、私立医学部上位校における平均偏差値の相関データ。

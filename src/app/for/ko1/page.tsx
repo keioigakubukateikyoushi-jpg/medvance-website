@@ -1,5 +1,6 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
+import Image from "next/image";
 export const metadata = {
   title: "高1から始める医学部受験対策｜現役医学部生による完全1対1指導 | Medvance",
   description:
@@ -148,10 +149,13 @@ export default function Ko1Page() {
         <section className="bg-white px-4 py-12">
           <div className="mx-auto max-w-3xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
             <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
-            <img 
+            <Image 
               src="/images/generated/japanese_student_highschool_ko1.png" 
               alt="高1からの医学部合格ルートを視野に入れ、笑顔で数学の学習に取り組む日本の高校1年生" 
               className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 900px, 100vw"
             />
           </div>
         </section>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import RelatedColumns from "@/components/RelatedColumns";
 
 type Language = "ja" | "en" | "zh" | "ko";
@@ -582,10 +583,13 @@ export default function InternationalClient() {
 
             <div className="relative overflow-hidden rounded-2xl shadow-lg border border-[#e5e1d8] group">
               <div className="absolute inset-0 bg-[#c9922a]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
-              <img
+              <Image
                 src="/images/generated/international_medical_student.png"
                 alt="日本の医学部を目指す外国人留学生とバイリンガル講師が笑顔で理科や数学を学習している様子"
                 className="w-full h-auto object-cover max-h-[320px] transition-transform duration-700 group-hover:scale-[1.02]"
+                width={1024}
+                height={1024}
+                sizes="(min-width: 1024px) 900px, 100vw"
               />
             </div>
           </div>

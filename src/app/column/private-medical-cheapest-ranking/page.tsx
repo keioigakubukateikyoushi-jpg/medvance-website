@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ColumnCTA from "@/components/ColumnCTA";
 import ColumnArticleSchemas from "@/components/ColumnArticleSchemas";
+import Image from "next/image";
 
 const faqItems = [
   {
@@ -66,10 +67,13 @@ export default function PrivateMedicalCheapestRankingPage() {
         <div className="max-w-3xl mx-auto">
           {/* Embedding realistic trustworthy generated photo */}
           <div className="mb-10 overflow-hidden rounded-2xl border" style={{ borderColor: "#e5e1d8" }}>
-            <img 
+            <Image 
               src="/images/generated/private_medical_library.png" 
               alt="東京慈恵会医科大や順天堂など名門私立医学部の図書館で勉強する医学生のイメージ" 
               className="w-full h-auto object-cover max-h-[420px]"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 900px, 100vw"
             />
             <p className="p-3 text-center text-xs text-gray-500 bg-white border-t" style={{ borderColor: "#e5e1d8" }}>
               名門私立医学部では、極めて充実した最新の学習施設と医療臨床環境が整っています。

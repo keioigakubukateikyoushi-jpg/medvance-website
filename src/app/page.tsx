@@ -155,42 +155,6 @@ const homeSchemas = [
   buildSpeakableSchema("/"),
 ];
 
-/* ── Local-rewrite carry-over data ─────────── */
-const serviceItems = [
-  { title: "1対1個別指導", body: "英語、数学、物理、化学、生物を、医学部受験の得点に直結する形で指導します。" },
-  { title: "週次学習計画", body: "授業、自習、復習、確認テスト、過去問演習を1週間単位で具体化します。" },
-  { title: "模試・答案分析", body: "偏差値だけでなく、失点単元、答案の癖、時間配分から次の打ち手を決めます。" },
-  { title: "国公立医学部対策", body: "共通テストと二次試験の配点を軸に、科目ごとの優先順位を調整します。" },
-  { title: "私立医学部対策", body: "大学別の出題傾向、科目相性、日程、面接小論文まで含めて受験校を組みます。" },
-  { title: "保護者共有", body: "進捗、課題、志望校判断、指導投資の優先順位を保護者にも共有します。" },
-];
-
-const strategyItems = [
-  { label: "国公立", title: "国公立医学部", body: "共通テストの得点設計、二次試験の記述力、面接対策まで。科目数が多い国公立医学部では、捨てる範囲と伸ばす範囲の判断が重要です。", href: "/universities/national?from=home-strategy" },
-  { label: "私立", title: "私立医学部", body: "大学ごとの科目相性、日程、学費、面接小論文、補欠可能性まで。複数校受験を前提に、受験校ポートフォリオを設計します。", href: "/private-medical-strategy?from=home-strategy" },
-  { label: "予備校と併用", title: "予備校併用", body: "大手予備校の授業を否定せず、授業後の復習、質問対応、志望校別演習、保護者共有を補完します。", href: "/for/prep-school-plus?from=home-strategy" },
-];
-
-const differenceItems = [
-  { title: "大手予備校", points: ["講義と教材は強いが、授業後の復習は本人任せになりやすい", "国公立・私立の個別出願戦略まで細かく見えにくい", "保護者が日々の実行状況を把握しづらい"] },
-  { title: "一般的な個別指導", points: ["分からない問題の解説で終わりやすい", "受験校設計、模試分析、保護者共有が分断されやすい", "医学部特有の面接小論文まで一体管理しづらい"] },
-  { title: "Medvance", points: ["医学部合格から逆算して、授業・自習・復習日を毎週設計する", "国公立・私立の志望校別に、科目配分と出願戦略を調整する", "保護者に進捗・課題・次の判断材料を共有する"] },
-];
-
-const flowItemsLocal = [
-  { step: "01", title: "現状入力", body: "学年、模試結果、現在の塾・予備校、志望校、学習時間、保護者同席可否を確認します。" },
-  { step: "02", title: "合格戦略診断", body: "国公立・私立の志望に合わせて、科目別優先順位と必要な指導体制を整理します。" },
-  { step: "03", title: "プラン提案", body: "1対1指導の科目、頻度、週次管理、面接小論文、保護者共有の範囲を決めます。" },
-  { step: "04", title: "伴走開始", body: "毎週の学習計画、個別指導、模試分析、志望校戦略の更新を継続します。" },
-];
-
-const faqItemsLocal = [
-  { q: "国公立医学部にも対応していますか？", a: "します。共通テスト・二次試験の配点比率、科目ごとの演習量配分、面接傾向まで、志望校に合わせて設計します。" },
-  { q: "私立医学部の複数校受験も相談できますか？", a: "できます。出願スケジュール、科目相性、面接負荷のバランスを踏まえ、合格可能性の高い受験校を一緒に選びます。" },
-  { q: "大手予備校に通いながら受講できますか？", a: "問題ありません。週次の復習状況を確認しながら、弱点補強・志望校別演習・質問対応を担います。" },
-  { q: "保護者も面談に参加できますか？", a: "推奨しています。受験校の選定・学費・追加投資の判断は保護者と一緒に行う方が適切なため、初回から同席をお願いしています。" },
-];
-
 function SectionHeading({
   eyebrow,
   title,
@@ -252,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* ── 2.1 PAIN POINTS SECTION (🤖 CUTE FRIENDLY FAMILY LINE ART COMPONENT) ── */}
-      <section className="relative overflow-hidden bg-[#faf9f6] py-24 px-4 border-b" style={{ borderColor: "#e5e1d8" }}>
+      <section className="relative overflow-hidden bg-[#faf9f6] px-4 py-14 border-b md:py-20" style={{ borderColor: "#e5e1d8" }}>
         
         {/* Custom CSS Style Injection for smooth details/summary premium transitions */}
         <style dangerouslySetInnerHTML={{ __html: `
@@ -288,46 +252,24 @@ export default function Home() {
             from { opacity: 0; transform: translateY(-5px); }
             to { opacity: 1; transform: translateY(0); }
           }
-          @keyframes spin-slow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-          .animate-spin-slow { animation: spin-slow 220s linear infinite; }
           @media (prefers-reduced-motion: reduce) {
-            .animate-spin-slow { animation: none !important; }
             .qa-card, .qa-card:hover { transform: none; }
           }
         `}} />
 
-        {/* Subtle background light effects */}
-        <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(#0c1a33 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-blue-50 blur-[100px] pointer-events-none" />
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-amber-50 blur-[100px] pointer-events-none" />
-
         <div className="relative mx-auto max-w-6xl z-10">
-          
+
           {/* Header */}
-          <div className="mb-16 text-center">
-            {/* Eyebrow with flanking gold lines */}
-            <div className="mb-4 flex items-center justify-center gap-3.5">
-              <span className="hidden sm:block h-px w-8 bg-gradient-to-r from-transparent to-[#c9922a]/50" />
-              <p className="whitespace-nowrap text-[11px] sm:text-xs font-bold tracking-[0.18em] sm:tracking-[0.2em] text-[#c9922a] uppercase">Current Struggles &amp; Solutions</p>
-              <span className="hidden sm:block h-px w-8 bg-gradient-to-l from-transparent to-[#c9922a]/50" />
-            </div>
+          <div className="mb-9 text-center md:mb-12">
             <h2
-              className="text-3xl md:text-[2.25rem] font-bold mb-5 tracking-tight"
-              style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)", lineHeight: "1.3" }}
+              className="mb-3 text-[1.6rem] font-bold leading-[1.35] md:text-[2.1rem]"
+              style={{ color: "#0c1a33", fontFamily: "var(--font-noto-serif)" }}
             >
-              こんな<span className="relative inline-block">お悩み<span aria-hidden className="absolute -bottom-1 left-0 h-[7px] w-full rounded-full bg-[#c9922a]/15" /></span>ありませんか？
+              {/* スマホで「か？」だけ次行に落ちないよう、意味の切れ目で明示的に改行する */}
+              こんなお悩み、<br className="sm:hidden" />ありませんか？
             </h2>
-            {/* Ornamental divider with center diamond */}
-            <div aria-hidden className="mb-5 flex items-center justify-center gap-2.5">
-              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#c9922a]/40" />
-              <span className="h-1.5 w-1.5 rotate-45 rounded-[1px] bg-[#c9922a]/70" />
-              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#c9922a]/40" />
-            </div>
-            <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: "#0c1a33", opacity: 0.8 }}>
-              気になるお悩みをタップすると、Medvanceならではの解決方法をご覧いただけます
+            <p className="text-[13px] leading-relaxed md:text-sm" style={{ color: "#5f6b7a" }}>
+              タップすると、Medvanceでの解決方法が開きます
             </p>
           </div>
 
@@ -432,7 +374,7 @@ export default function Home() {
                 {
                   title: "慶應など附属校での内部進学対策や",
                   subtitle: "評定（GPA）アップと他大受験を両立したい",
-                  mobileText: "慶應などの附属校で高い評定（GPA）を維持し、医学部への内部推薦や他大学一般受験を賢く両立させたい",
+                  mobileText: "慶應附属校の評定維持と他大受験を両立したい",
                   icon: "target",
                   num: "04",
                   solution: "各附属校の定期試験データに基づき「評定（GPA）アップ」と「他大一般対策」の比率を個別に最適化。激戦となる慶應医学部等の内部推薦枠の獲得から一般受験併願まで、完全マンツーマンで両立計画をサポートします。"
@@ -546,23 +488,21 @@ export default function Home() {
                     {/* Center Column (Central Illustration with premium radial backglow and glassmorphic pedestal base) */}
                     <div className="relative w-[340px] h-[340px] flex items-center justify-center sticky top-24 select-none">
 
-                      {/* Layer 1: Pulsing Deep Backglows */}
-                      <div className="absolute w-[280px] h-[280px] bg-blue-100/30 rounded-full blur-[50px] pointer-events-none animate-pulse" />
-                      <div className="absolute w-[320px] h-[320px] bg-amber-100/20 rounded-full blur-[70px] pointer-events-none animate-[pulse_10s_infinite]" />
-
-                      {/* Layer 2: Quiet concentric rings (static, for calm depth) */}
-                      <div className="absolute w-[300px] h-[300px] rounded-full border border-[#c9922a]/[0.12] pointer-events-none" />
-                      <div className="absolute w-[276px] h-[276px] rounded-full border border-dashed border-[#0c1a33]/[0.06] pointer-events-none" />
+                      {/* 脈動する光彩・二重リング・点線円は「いかにも生成物」に見えるので落とし、
+                          静かな一本の円だけ残す */}
+                      <div className="absolute w-[288px] h-[288px] rounded-full border pointer-events-none" style={{ borderColor: "rgba(201,146,42,0.18)" }} />
 
                       {/* Layer 3+4: Circular medallion framing the illustration (eliminates the square edge) */}
                       <div
-                        className="group/medallion relative z-10 w-[252px] h-[252px] rounded-full overflow-hidden border border-white/70 shadow-[0_22px_55px_rgba(12,26,51,0.12),inset_0_2px_6px_rgba(255,255,255,0.85)]"
+                        className="group/medallion relative z-10 w-[252px] h-[252px] rounded-full overflow-hidden border border-white/70 shadow-[0_12px_30px_rgba(12,26,51,0.10)]"
                         style={{ background: "radial-gradient(circle at 50% 36%, #ffffff 0%, #fbfaf6 68%, #f3f0e8 100%)" }}
                       >
-                        <img
+                        <Image
                           src="/images/generated/worried_family_option3.png"
                           alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                          className="absolute inset-0 h-full w-full object-cover object-center scale-[1.04] mix-blend-multiply transition-transform duration-700 group-hover/medallion:scale-[1.1]"
+                          fill
+                          sizes="252px"
+                          className="object-cover object-center scale-[1.04] mix-blend-multiply transition-transform duration-700 group-hover/medallion:scale-[1.1]"
                         />
                         {/* Soft inner vignette so the artwork melts into the frame */}
                         <span aria-hidden className="pointer-events-none absolute inset-0 rounded-full" style={{ boxShadow: "inset 0 -26px 44px -22px rgba(12,26,51,0.14), inset 0 14px 30px -20px rgba(255,255,255,0.9)" }} />
@@ -598,68 +538,62 @@ export default function Home() {
                   </div>
 
                   {/* MOBILE & TABLET LAYOUT (Sleek grid with clean typography) */}
-                  <div className="lg:hidden flex flex-col items-center gap-8">
-                    
-                    {/* Central Illustration for Mobile with pedestal framing */}
-                    <div className="relative flex items-center justify-center p-8">
-                      {/* Backglow */}
-                      <div className="absolute w-[200px] h-[200px] bg-amber-100/25 rounded-full blur-2xl pointer-events-none" />
-                      <div className="absolute w-[192px] h-[192px] rounded-full border border-[#c9922a]/[0.12] pointer-events-none" />
-                      <div className="absolute w-[176px] h-[176px] rounded-full border border-dashed border-[#0c1a33]/[0.06] pointer-events-none" />
+                  <div className="lg:hidden flex flex-col items-center">
 
-                      {/* Circular medallion (eliminates the square edge) */}
+                    {/* 縦長のスマホでも画像は残したいので、縦に積まず「画像＋要点」を横一列にする。
+                        以前は円形イラスト＋装飾リング＋浮遊チップで約500px使っていたが、
+                        この形なら約96pxで収まる。 */}
+                    <div
+                      className="mb-5 flex w-full max-w-3xl items-center gap-4 rounded-xl px-4 py-3"
+                      style={{ backgroundColor: "#ffffff", border: "1px solid #e5e1d8" }}
+                    >
                       <div
-                        className="relative z-10 w-[166px] h-[166px] rounded-full overflow-hidden border border-white/70 shadow-[0_18px_44px_rgba(12,26,51,0.12),inset_0_2px_5px_rgba(255,255,255,0.85)]"
-                        style={{ background: "radial-gradient(circle at 50% 36%, #ffffff 0%, #fbfaf6 68%, #f3f0e8 100%)" }}
+                        className="relative h-[72px] w-[72px] flex-shrink-0 overflow-hidden rounded-full"
+                        style={{ backgroundColor: "#fbfaf6", border: "1px solid #e5e1d8" }}
                       >
-                        <img
+                        <Image
                           src="/images/generated/worried_family_option3.png"
                           alt="医学部受験の進路について少し考えている親しみやすいタッチの日本人のご家族"
-                          className="absolute inset-0 h-full w-full object-cover object-center scale-[1.04] mix-blend-multiply"
+                          fill
+                          sizes="72px"
+                          className="object-cover object-center scale-[1.04] mix-blend-multiply"
                         />
-                        <span aria-hidden className="pointer-events-none absolute inset-0 rounded-full" style={{ boxShadow: "inset 0 -20px 34px -18px rgba(12,26,51,0.14)" }} />
-                        <span aria-hidden className="pointer-events-none absolute inset-[6px] rounded-full ring-1 ring-[#c9922a]/20" />
                       </div>
-
-                      {/* Calm glass chips */}
-                      <div className="absolute top-1 left-0 z-20 flex items-center gap-1.5 rounded-full border border-[#0c1a33]/[0.06] bg-white/90 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.08)] backdrop-blur-sm">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#3a6ea5]" />
-                        <span className="whitespace-nowrap text-[10px] font-bold text-[#0c1a33]">慶應医学部生講師</span>
-                      </div>
-                      <div className="absolute bottom-1 right-0 z-20 flex items-center gap-1.5 rounded-full border border-[#0c1a33]/[0.06] bg-white/90 px-2.5 py-1 shadow-[0_8px_22px_rgba(12,26,51,0.08)] backdrop-blur-sm">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#bd8a23]" />
-                        <span className="whitespace-nowrap text-[10px] font-bold text-[#0c1a33]">完全1対1</span>
+                      <div className="min-w-0 text-[12.5px] font-bold leading-[1.7]" style={{ color: "#0c1a33" }}>
+                        <p className="flex items-center gap-1.5">
+                          <span aria-hidden className="h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ backgroundColor: "#3a6ea5" }} />
+                          慶應医学部生が直接指導
+                        </p>
+                        <p className="flex items-center gap-1.5">
+                          <span aria-hidden className="h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ backgroundColor: "#bd8a23" }} />
+                          完全1対1・合格から逆算
+                        </p>
                       </div>
                     </div>
 
-                    {/* Editorial single/2-column list */}
-                    <div className="grid gap-3 sm:grid-cols-2 w-full max-w-3xl px-2">
+                    {/* 一覧本体 */}
+                    <div className="grid gap-2 sm:grid-cols-2 w-full max-w-3xl px-2">
                       {[...leftPainPoints, ...rightPainPoints].map((item, idx) => {
-                        const isLeft = idx < 5;
-                        const accent = isLeft ? "#3a6ea5" : "#bd8a23";
-                        const iconWrap = isLeft ? "bg-[#eef3fa] text-[#3a6ea5]" : "bg-[#f7efda] text-[#bd8a23]";
+                        const accent = idx < 5 ? "#3a6ea5" : "#bd8a23";
                         return (
                           <details
                             key={item.num}
-                            className="qa-card group relative w-full overflow-hidden rounded-2xl border border-[#0c1a33]/[0.07] shadow-[0_2px_10px_rgba(12,26,51,0.03)] text-left focus:outline-none select-none"
+                            className="qa-card group relative w-full overflow-hidden rounded-xl border border-[#0c1a33]/[0.09] text-left focus:outline-none select-none"
                           >
                             <span aria-hidden className="qa-rule absolute left-0 top-0 h-full w-[3px]" style={{ background: accent }} />
-                            <summary className="flex items-center gap-3 py-3.5 pl-4 pr-3.5 focus:outline-none">
-                              <span className="shrink-0 w-5 text-center text-[13.5px] font-bold leading-none tabular-nums" style={{ color: accent, fontFamily: "var(--font-noto-serif)" }}>{item.num}</span>
-                              <span className={`shrink-0 flex h-9 w-9 items-center justify-center rounded-full ${iconWrap}`}>
-                                {getPainPointIcon(item.icon)}
-                              </span>
-                              <h3 className="flex-1 text-[13.5px] font-bold leading-[1.5] tracking-tight text-[#0c1a33]">{item.mobileText}</h3>
+                            <summary className="flex items-center gap-2.5 py-2.5 pl-3.5 pr-3 focus:outline-none">
+                              <span className="shrink-0 w-4 text-center text-[12px] font-bold leading-none tabular-nums" style={{ color: accent, fontFamily: "var(--font-noto-serif)" }}>{item.num}</span>
+                              <h3 className="flex-1 text-[13px] font-bold leading-[1.45] tracking-tight text-[#0c1a33]">{item.mobileText}</h3>
                               <span className="qa-chevron shrink-0 text-[#c9922a]/70 group-hover:text-[#c9922a]">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-4 h-4">
                                   <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                               </span>
                             </summary>
-                            <div className="qa-answer px-4 pb-4">
-                              <div className="flex gap-2.5 border-t border-[#c9922a]/15 pt-3">
-                                <span className="shrink-0 text-[12.5px] font-bold leading-[1.9] text-[#c9922a]" style={{ fontFamily: "var(--font-noto-serif)" }}>A.</span>
-                                <p className="text-[12.5px] font-medium leading-[1.9] text-[#4b5563]">{item.solution}</p>
+                            <div className="qa-answer px-3.5 pb-3.5">
+                              <div className="flex gap-2 border-t border-[#c9922a]/15 pt-2.5">
+                                <span className="shrink-0 text-[12px] font-bold leading-[1.8] text-[#c9922a]" style={{ fontFamily: "var(--font-noto-serif)" }}>A.</span>
+                                <p className="text-[12.5px] font-medium leading-[1.8] text-[#4b5563]">{item.solution}</p>
                               </div>
                             </div>
                           </details>
@@ -672,18 +606,22 @@ export default function Home() {
               );
             })()}
 
-            {/* Bottom Support Banner (refined editorial closing) */}
-            <div className="relative mt-16 overflow-hidden rounded-3xl border border-[#0c1a33]/[0.07] bg-white px-6 py-9 text-center shadow-[0_12px_34px_rgba(12,26,51,0.05)] md:px-10 md:py-10">
-              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#c9922a] to-transparent" />
-              <div aria-hidden className="mb-4 flex items-center justify-center gap-2.5">
-                <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#c9922a]/45" />
-                <span className="h-1.5 w-1.5 rotate-45 rounded-[1px] bg-[#c9922a]/70" />
-                <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#c9922a]/45" />
-              </div>
-              <p className="text-base md:text-lg font-bold leading-relaxed" style={{ color: "#0c1a33" }}>
-                一人一人の課題に合わせた最適なサポートで、<br className="hidden sm:block" />
-                <span style={{ color: "#c9922a" }}>お子様の未来を一緒に切り拓きます。</span>
+            {/* 締めの一文＋次の一手。装飾は左の金罫のみに絞る */}
+            <div
+              className="mt-10 rounded-lg bg-white px-5 py-5 md:px-7 md:py-6"
+              style={{ border: "1px solid #e5e1d8", borderLeft: "3px solid #c9922a" }}
+            >
+              <p className="text-sm font-bold leading-relaxed md:text-base" style={{ color: "#0c1a33" }}>
+                どれか一つでも当てはまるなら、まず現在地を確認するところから。
               </p>
+              <Link
+                href="/contact?from=home-painpoints"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold hover:underline"
+                style={{ color: "#c9922a" }}
+              >
+                30分の無料相談で相談する
+                <span aria-hidden>→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -1311,64 +1249,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 4.3 STRATEGY (local) ───────────────── */}
-      <section className="bg-white py-20 px-4">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            eyebrow="志望校別戦略"
-            title="国公立医学部も、私立医学部も、戦い方が違います。"
-            body="同じ医学部受験でも、共通テスト重視、二次記述重視、私立大学別対策では、必要な学習設計が変わります。"
-          />
-          <div className="grid gap-5 md:grid-cols-3">
-            {strategyItems.map((item) => (
-              <FadeIn key={item.title}>
-                <Link
-                  href={item.href}
-                  className="flex h-full flex-col rounded-lg p-6 transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#0c1a33", border: "1px solid rgba(255,255,255,0.12)" }}
-                >
-                  <p className="mb-3 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>{item.label}</p>
-                  <p className="mb-3 text-lg font-bold text-white">{item.title}</p>
-                  <p className="mb-6 flex-1 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>{item.body}</p>
-                  <span className="text-xs font-bold" style={{ color: "#c9922a" }}>対策を見る →</span>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ── 4.6 DIFFERENCE (local) ─────────────── */}
-      <section className="px-4 py-20" style={{ backgroundColor: "#0c1a33" }}>
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>他との違い</p>
-            <h2 className="text-2xl font-bold leading-snug text-white md:text-3xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
-              授業だけで終わらせず、医学部合格から逆算します。
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.66)" }}>
-              Medvanceは、大手予備校や学校の授業を否定する塾ではありません。足りない復習管理、個別補強、志望校別戦略を補う塾です。
-            </p>
-          </div>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {differenceItems.map((item) => (
-              <FadeIn key={item.title}>
-                <div className="h-full rounded-lg p-6" style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                  <p className="mb-5 text-lg font-bold text-white">{item.title}</p>
-                  <ul className="space-y-3">
-                    {item.points.map((point) => (
-                      <li key={point} className="flex gap-3 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
-                        <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full" style={{ backgroundColor: "#c9922a" }} />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── 4.7 FLOW (moved up) ──────────────────── */}
       <section className="bg-white py-24 px-4">
@@ -1596,26 +1477,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7.15 SERVICES (local) ──────────────── */}
-      <section className="px-4 py-20" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            eyebrow="指導の内容"
-            title="医学部受験塾として提供すること"
-            body="問題を教えるだけではなく、志望校を起点に、毎週の実行量と受験判断まで管理します。"
-          />
-          <div className="grid gap-4 md:grid-cols-3">
-            {serviceItems.map((item, index) => (
-              <FadeIn key={item.title} delay={index * 0.04}>
-                <div className="h-full rounded-lg bg-white p-6" style={{ border: "1px solid #e5e1d8" }}>
-                  <p className="mb-3 text-base font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
-                  <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── 7.3 SUPPORT CONTENT ───────────────── */}
       <section className="bg-white py-20 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
@@ -1710,96 +1571,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7.4 PARENTS (local) ────────────────── */}
-      <section className="px-4 py-20" style={{ backgroundColor: "#f7f5f0" }}>
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <FadeIn>
-            <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
-              <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
-              <Image
-                src="/images/generated/japanese_parents_consultation_smiling.png"
-                alt="医学部受験の志望校と学習計画を整理する親子の相談会"
-                width={1600}
-                height={1066}
-                className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]"
-              />
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.08}>
-            <div>
-              <SectionHeading
-                align="left"
-                eyebrow="保護者の方へ"
-                title="保護者にも、受験判断に必要な情報を共有します。"
-                body="医学部受験は、学力だけでなく家庭の判断が多い受験です。志望校、受験料、学費、追加指導、浪人可否。Medvanceは、その判断材料を保護者にも届く形で整理します。"
-              />
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/for/parents?from=home-parent"
-                  className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#0c1a33" }}
-                >
-                  保護者向けページを見る
-                </Link>
-                <Link
-                  href="/contact?from=home-parent"
-                  className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90"
-                  style={{ color: "#0c1a33", border: "1px solid #d6d1c7" }}
-                >
-                  保護者同席で相談する
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
-      {/* ── 8.5 DIAGNOSIS FLOW (local) ─────────── */}
-      <section className="bg-white px-4 py-20">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <FadeIn>
-            <div>
-              <SectionHeading
-                align="left"
-                eyebrow="診断の流れ"
-                title="まずは、医学部合格に向けた戦略診断から。"
-                body="初回診断では、模試結果、志望校、現在の塾・予備校、学習時間、保護者の方針を確認し、必要な指導体制を整理します。"
-              />
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact?from=home-diagnosis"
-                  className="inline-flex items-center justify-center rounded-lg px-7 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#c9922a" }}
-                >
-                  合格戦略診断を申し込む
-                </Link>
-                <Link
-                  href="/pricing?from=home-diagnosis"
-                  className="inline-flex items-center justify-center rounded-lg px-7 py-4 text-sm font-bold transition-opacity hover:opacity-90"
-                  style={{ color: "#0c1a33", border: "1px solid #d6d1c7" }}
-                >
-                  料金を見る
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-          <div className="grid gap-4">
-            {flowItemsLocal.map((item, index) => (
-              <FadeIn key={item.step} delay={index * 0.05}>
-                <div className="flex gap-4 rounded-lg p-5" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                  <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: "#0c1a33" }}>
-                    {item.step}
-                  </span>
-                  <div>
-                    <p className="mb-1 text-sm font-bold" style={{ color: "#0c1a33" }}>{item.title}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>{item.body}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── 9. TARGET AUDIENCE ────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-20 px-4">
@@ -1876,22 +1648,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 10.1 FAQ ADDITIONAL (local) ────────── */}
-      <section className="bg-white px-4 py-16" style={{ borderTop: "1px solid #e5e1d8" }}>
-        <div className="mx-auto max-w-3xl">
-          <SectionHeading eyebrow="補足FAQ" title="相談前に確認されることが多い質問" />
-          <div className="space-y-4">
-            {faqItemsLocal.map((item) => (
-              <FadeIn key={item.q}>
-                <div className="rounded-lg p-6" style={{ backgroundColor: "#f7f5f0", border: "1px solid #e5e1d8" }}>
-                  <p className="mb-2 text-sm font-bold" style={{ color: "#0c1a33" }}>Q. {item.q}</p>
-                  <p className="text-sm leading-relaxed" style={{ color: "#5f6b7a" }}>A. {item.a}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── 10.2 PRICING SUMMARY ──────────────── */}
       <section className="bg-white py-16 px-4" style={{ borderTop: "1px solid #e5e1d8" }}>
@@ -2049,7 +1805,8 @@ export default function Home() {
             </FadeIn>
 
             <div className="space-y-4">
-              {resolvedColumnTopicClusters.map((cluster, index) => (
+              {/* トップは代表6テーマまで。残りはコラム一覧側で辿れる */}
+              {resolvedColumnTopicClusters.slice(0, 6).map((cluster, index) => (
                 <FadeIn key={cluster.title} delay={index * 0.08}>
                   <div className="rounded-2xl bg-white p-5" style={{ border: "1px solid #e5e1d8" }}>
                     <div className="flex items-center justify-between gap-3 mb-2">
@@ -2390,30 +2147,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 13.9 FINAL CTA (local) ─────────────── */}
-      <section className="px-4 py-24" style={{ backgroundColor: "#0c1a33" }}>
-        <div className="mx-auto max-w-4xl text-center">
-          <FadeIn>
-            <p className="mb-4 text-xs font-bold tracking-widest" style={{ color: "#c9922a" }}>まずは現在地の確認から</p>
-            <h2 className="mb-4 text-2xl font-bold leading-snug text-white md:text-4xl" style={{ fontFamily: "var(--font-noto-serif)" }}>
-              医学部合格に向けて、まず現在地と戦略を整理しましょう。
-            </h2>
-            <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.66)" }}>
-              国公立・私立、現役・浪人、予備校併用の有無を問わず、志望校から必要な学習体制を設計します。
-            </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/contact?from=home-final-local"
-                className="inline-flex w-full items-center justify-center rounded-lg px-9 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90 sm:w-auto"
-                style={{ backgroundColor: "#c9922a" }}
-              >
-                合格戦略診断を申し込む
-              </Link>
-              <LineButton label="LINEで相談する" size="lg" className="!w-full !px-8 !py-4 sm:!w-auto" />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       {/* ── 14. FINAL CTA ─────────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-28 px-4">

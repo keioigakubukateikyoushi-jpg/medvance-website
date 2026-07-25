@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { buildBreadcrumbSchema, buildFaqSchema, siteUrl } from "@/lib/seo";
+import Image from "next/image";
 
 export const metadata = {
   title: "医学部受験専門塾Medvanceの料金｜全プラン動画使い放題・質問し放題",
@@ -498,10 +499,13 @@ export default function PricingPage() {
             <div className="space-y-5">
               {/* Premium Special Package Visual Banner */}
               <div className="mb-6 overflow-hidden rounded-2xl border bg-white" style={{ borderColor: "rgba(201,146,42,0.18)" }}>
-                <img 
+                <Image 
                   src="/images/generated/medvance_premium_special_package.png" 
                   alt="私立医学部完全特化プランの特大教材・模試・特化サポート一式" 
                   className="w-full h-auto object-cover max-h-[360px]"
+                  width={1024}
+                  height={1024}
+                  sizes="(min-width: 1024px) 900px, 100vw"
                 />
               </div>
               <p className="text-sm font-semibold leading-relaxed" style={{ color: "#0c1a33" }}>

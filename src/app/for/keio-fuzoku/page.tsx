@@ -1,6 +1,7 @@
 import ForPageSchemas from "@/components/ForPageSchemas";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 const faqItems = [
   {
@@ -231,10 +232,13 @@ export default function KeioFuzokuPage() {
         <section className="bg-white px-4 py-12">
           <div className="mx-auto max-w-3xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
             <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
-            <img 
+            <Image 
               src="/images/generated/japanese_student_keio_fuzoku.png" 
               alt="慶應附属校の制服を着て、目標の慶応医学部内部推薦獲得に向け笑顔で立つ日本の高校生" 
               className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 900px, 100vw"
             />
           </div>
         </section>

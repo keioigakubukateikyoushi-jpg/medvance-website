@@ -3,6 +3,7 @@ import Link from "next/link";
 import TutorProfiles from "@/components/TutorProfiles";
 import LineButton from "@/components/LineButton";
 import KeioHeiganSimulator from "@/components/KeioHeiganSimulator";
+import Image from "next/image";
 
 export const metadata = {
   title: "慶應内部進学＆外部一般受験ダブル対策｜医学部推薦と併願合格を両立 | Medvance",
@@ -269,10 +270,13 @@ export default function KeioNaibuHeiganPage() {
         <section className="bg-white px-4 py-12">
           <div className="mx-auto max-w-3xl relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0_20px_50px_rgba(12,26,51,0.12)] border border-white/40 ring-1 ring-[#c9922a]/10 group">
             <div className="absolute inset-0 bg-amber-100/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500 z-10" />
-            <img 
+            <Image 
               src="/images/generated/japanese_student_keio_heigan.png" 
               alt="慶應内部推薦の維持と他大一般一般受験の両立に向け、赤本や計画表を開き集中して取り組む受験生" 
               className="w-full h-auto object-cover max-h-[420px] transition-transform duration-700 group-hover:scale-[1.03]"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 900px, 100vw"
             />
           </div>
         </section>
