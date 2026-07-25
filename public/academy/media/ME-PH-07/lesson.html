@@ -70,55 +70,134 @@
 <li>講座: 基礎講座</li>
 <li>科目: 高校物理（受験）</li>
 <li>章: 運動と力</li>
-<li>目安: <strong>18分</strong></li>
+<li>目安: <strong>20分</strong></li>
 <li>前提: <span class="uid">ME-PH-06</span></li>
 <li>次: <span class="uid">ME-PH-08</span></li>
 </ul></section>
-<section class="card"><h2>今日のゴール</h2><p>静止摩擦と運動摩擦を使い分ける</p></section>
-<section class="card"><h2>受験での位置づけ</h2><p>運動と力の中核スキル。ここが曖昧だと模試で同じ失点をくり返す。</p>
+<section class="card"><h2>今日のゴール</h2><p>静止摩擦力が「必要なだけ生じる変数」であることを理解し、動き出す前後で使う式を正しく切り替えられる</p></section>
+<section class="card"><h2>受験での位置づけ</h2><p>摩擦の設問で失点する原因はほぼ一つ、**まだ動いていないのに $\mu N$ を摩擦力として代入してしまう**ことである。$\mu N$ は静止摩擦力の<strong>最大値</strong>であって、実際の値ではない。この区別ができると、斜面・ブレーキ・積み重ねた物体など、摩擦が絡む問題群がまとめて解けるようになる。</p>
 <h3>攻略の方針</h3>
-<p>医学部・難関大では用語の定義と手順の再現がそのまま得点になる。</p></section>
+<p>問題を読んだら真っ先に<strong>「この物体は動いているか、まだ静止しているか」</strong>を判定する。静止しているならつり合いから摩擦力を逆算し、動いているなら $\mu' N$ を代入する。<strong>判定を飛ばして式を書き始めない。</strong></p></section>
 <section class="card"><h2>前提チェック</h2><ul>
-<li><code><span class="uid">ME-PH-06</span></code> の到達チェックを満たしている</li>
+<li><code><span class="uid">ME-PH-06</span></code> の到達チェックを満たしている（運動方程式の立式）</li>
 </ul></section>
 <section class="card"><h2>この回のポイント</h2><ul>
-<li>静止摩擦は 0〜μN</li>
-<li>運動摩擦は μ'N で一定向き</li>
-<li>動き出す直前が最大静止摩擦</li>
+<li><strong>静止摩擦力は「つり合いに必要な分だけ」生じる変数</strong>で、外力とともに変化する</li>
+<li>静止摩擦力には上限があり、<strong>最大静止摩擦力</strong> $f_{\max}=\mu N$</li>
+<li>外力が $f_{\max}$ を超えた瞬間に物体は動き出す</li>
+<li>動き出した後は<strong>動摩擦力</strong> $f'=\mu' N$ で、速さによらずほぼ一定</li>
+<li>一般に $\mu'<\mu$（動き出すと少し軽くなる）</li>
+<li>摩擦力は<strong>接触面に平行</strong>、垂直抗力は<strong>接触面に垂直</strong></li>
 </ul></section>
-<section class="card"><h2>定義・用語</h2><h3>最大静止摩擦力</h3>
-<p>μN。これより大きい力が必要で動き出す。</p></section>
+<section class="card"><h2>定義・用語</h2><h3>静止摩擦力</h3>
+<p>静止している物体に外力が加わったとき、それを打ち消す向きに接触面から生じる力。<strong>大きさは外力に応じて変わる</strong>。$10\ \mathrm{N}$ で押して動かなければ静止摩擦力は $10\ \mathrm{N}$、$15\ \mathrm{N}$ で押しても動かなければ $15\ \mathrm{N}$ になる。決まった値を持つ力ではない点が最大の特徴。</p>
+<h3>最大静止摩擦力と動摩擦力</h3>
+<p>静止摩擦力が取りうる上限が $f_{\max}=\mu N$（$\mu$ は静止摩擦係数）。これを超える外力が加わると物体は滑り出し、以後は動摩擦力 $f'=\mu' N$（$\mu'$ は動摩擦係数）がはたらく。$\mu$ も $\mu'$ も<strong>無次元の数</strong>で、単位を持たない。</p></section>
 <section class="card"><h2>核となる手順（答案でこの順）</h2><ol>
-<li>垂直抗力 N を求める</li>
-<li>静止か運動か判定</li>
-<li>方程式</li>
+<li>垂直抗力 $N$ を先に求める（斜面なら $mg\cos\theta$）</li>
+<li>最大静止摩擦力 $f_{\max}=\mu N$ を計算する</li>
+<li>面に平行な外力の大きさと $f_{\max}$ を比較する</li>
+<li>**外力 $\le f_{\max}$ なら静止**：摩擦力＝外力（つり合いから逆算）</li>
+<li>**外力 $>f_{\max}$ なら滑る**：摩擦力＝$\mu' N$ を運動方程式に代入</li>
 </ol></section>
-<section class="card example"><h2>例題A（標準・型の確認）</h2><p>N=20 N, μ=0.3 の最大静止摩擦。</p>
+<section class="card example"><h2>例題A（標準・型の確認）</h2><p>水平な床の上に質量 $5.0\ \mathrm{kg}$ の物体が置かれている。静止摩擦係数を $\mu=0.40$、動摩擦係数を $\mu'=0.30$、$g=9.8\ \mathrm{m/s^2}$ とする。</p>
+<p>$(1)$ 水平に $10\ \mathrm{N}$ で押したとき、物体は動くか。またこのときの摩擦力を求めよ。</p>
+<p>$(2)$ 水平に $25\ \mathrm{N}$ で押したときはどうか。加速度も求めよ。</p>
 <h3>解答A</h3>
 <ul>
-<li>要点: 6 N</li>
-<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+<li><strong>手順1</strong>　鉛直方向はつり合っているので</li>
+</ul>
+<p>$$N=mg=5.0\times 9.8=49\ \mathrm{N}$$</p>
+<ul>
+<li><strong>手順2</strong>　最大静止摩擦力は</li>
+</ul>
+<p>$$f_{\max}=\mu N=0.40\times 49=19.6\ \mathrm{N}$$</p>
+<ul>
+<li>$(1)$ <strong>手順3・4</strong>　外力 $10\ \mathrm{N}$ は $f_{\max}=19.6\ \mathrm{N}$ より小さい。よって<strong>動かない</strong>。</li>
+</ul>
+<p>  - 動かない以上、水平方向はつり合っているので</p>
+<p>$$摩擦力=外力=10\ \mathrm{N}$$</p>
+<p>  - <strong>ここが最重要</strong>　このとき摩擦力を $\mu N=19.6\ \mathrm{N}$ と答えるのが最頻出の誤答である。$19.6\ \mathrm{N}$ はあくまで<strong>上限</strong>であって、実際に生じている力ではない。もし摩擦力が $19.6\ \mathrm{N}$ なら、合力が逆向きに $9.6\ \mathrm{N}$ となり、物体が押した向きと反対に動き出してしまう。明らかに不合理である。</p>
+<ul>
+<li>$(2)$ 外力 $25\ \mathrm{N}$ は $f_{\max}=19.6\ \mathrm{N}$ を超えるので<strong>滑り出す</strong>。</li>
+</ul>
+<p>  - <strong>手順5</strong>　動き出したので動摩擦力を使う。</p>
+<p>$$f'=\mu'N=0.30\times 49=14.7\ \mathrm{N}$$</p>
+<p>  - 運動方程式（押す向きを正）は</p>
+<p>$$ma=F-f'$$</p>
+<p>$$5.0a=25-14.7=10.3\quad\Longrightarrow\quad a=2.06\fallingdotseq 2.1\ \mathrm{m/s^2}$$</p>
+<ul>
+<li>答え $(1)$ 動かない。摩擦力は $10\ \mathrm{N}$　$(2)$ 滑り出す。$a\fallingdotseq 2.1\ \mathrm{m/s^2}$</li>
 </ul></section>
-<section class="card example"><h2>例題B（受験・実戦）</h2><p>動いた後 μ'=0.2 の運動摩擦。</p>
+<section class="card example"><h2>例題B（受験・実戦）</h2><p>傾角 $\theta$ の斜面上に質量 $m$ の物体を置き、$\theta$ を $0$ から徐々に大きくしていく。静止摩擦係数を $\mu$ とする。物体が滑り出す直前の角度 $\theta_0$ が満たす関係を求めよ。</p>
 <h3>解答B</h3>
 <ul>
-<li>要点: 4 N</li>
-<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+<li><strong>手順1</strong>　斜面方向と斜面垂直方向に分解する（<code><span class="uid">ME-PH-05</span></code> と同じ座標の取り方）。</li>
+</ul>
+<p>  - 斜面垂直方向はつり合っているので</p>
+<p>$$N=mg\cos\theta$$</p>
+<ul>
+<li><strong>物体を滑らせようとする力</strong>は重力の斜面方向成分で</li>
+</ul>
+<p>$$mg\sin\theta$$</p>
+<ul>
+<li><strong>手順2</strong>　最大静止摩擦力は</li>
+</ul>
+<p>$$f_{\max}=\mu N=\mu mg\cos\theta$$</p>
+<ul>
+<li><strong>滑り出す直前</strong>とは、滑らせようとする力がちょうど最大静止摩擦力に等しくなる瞬間である。</li>
+</ul>
+<p>$$mg\sin\theta_0=\mu mg\cos\theta_0$$</p>
+<ul>
+<li>両辺を $mg\cos\theta_0$ で割ると（$\cos\theta_0\neq 0$）</li>
+</ul>
+<p>$$\tan\theta_0=\mu$$</p>
+<ul>
+<li><strong>この結果の意味</strong></li>
+</ul>
+<p>  - **質量 $m$ が消えている。<strong> つまり</strong>滑り出す角度は物体の重さによらない**。重い物体ほど滑りにくそうに思えるが、重くなると滑らせる力も摩擦の上限も同じ割合で増えるため、比が変わらない。</p>
+<p>  - この関係は<strong>摩擦係数の測定法</strong>そのものでもある。板を傾けて物体が滑り出す角度を測れば、$\mu=\tan\theta_0$ から係数が求まる。$\theta_0$ を<strong>摩擦角</strong>という。</p>
+<p>  - 数値例：$\mu=0.40$ なら $\tan\theta_0=0.40$ より $\theta_0\fallingdotseq 22^\circ$。</p>
+<ul>
+<li>答え $\tan\theta_0=\mu$（滑り出す角度は質量によらない）</li>
 </ul></section>
-<section class="card example"><h2>演習（自力再現）</h2><p>水平面で mg と N の関係（静止）。</p>
+<section class="card example"><h2>演習（自力再現）</h2><p>$(1)$ 静止している物体にはたらく静止摩擦力の大きさは、何によって決まるか。</p>
+<p>$(2)$ 例題Aの物体を水平に $18\ \mathrm{N}$ で押したときの摩擦力を求めよ。</p>
+<p>$(3)$ 例題Bで、物体の質量を $2$ 倍にすると滑り出す角度はどうなるか。理由も述べよ。</p>
 <h3>解答</h3>
 <ul>
-<li>要点: N=mg</li>
-<li>条件を確認し、同じ手順で再現できるか検算する。</li>
+<li>$(1)$ <strong>つり合いを保つのに必要な値</strong>、すなわち<strong>面に平行な外力の大きさ</strong>によって決まる。外力が大きくなれば静止摩擦力も同じだけ大きくなり、外力がなければ静止摩擦力も $0$ である。</li>
+</ul>
+<p>  - ただし上限があり、$\mu N$ を超えることはできない。<strong>上限に達するまでは「言われた分だけ出す」受け身の力</strong>だと理解しておくとよい。</p>
+<p>  - $\mu N$ は「静止摩擦力の値」ではなく「静止摩擦力が取りうる最大値」である。この読み替えができるかどうかが、この単元の合否を分ける。</p>
+<ul>
+<li>$(2)$ $f_{\max}=19.6\ \mathrm{N}$ に対して外力は $18\ \mathrm{N}$。$18<19.6$ なので<strong>まだ動かない</strong>。よって</li>
+</ul>
+<p>$$摩擦力=18\ \mathrm{N}$$</p>
+<p>  - $f_{\max}$ に近い値でも、超えていなければ静止摩擦力は外力と等しい。$19.6\ \mathrm{N}$ と答えないこと。</p>
+<ul>
+<li>$(3)$ <strong>変わらない。</strong></li>
+</ul>
+<p>  - 滑り出す条件は $\tan\theta_0=\mu$ であり、**質量 $m$ が含まれていない**。</p>
+<p>  - 導出過程で見たとおり、質量を $2$ 倍にすると滑らせようとする力 $mg\sin\theta$ も $2$ 倍になるが、垂直抗力 $N=mg\cos\theta$ も $2$ 倍になるため最大静止摩擦力 $\mu N$ も $2$ 倍になる。<strong>両者が同じ割合で増えるので、つり合いが破れる角度は変わらない。</strong></p>
+<p>  - 摩擦係数 $\mu$ は接触する2つの面の材質で決まる量であり、物体の重さや接触面積にはよらない。</p>
+<ul>
+<li>答え $(1)$ 面に平行な外力の大きさ（上限は $\mu N$）　$(2)\ 18\ \mathrm{N}$　$(3)$ 変わらない。$\tan\theta_0=\mu$ に質量が含まれないため</li>
 </ul></section>
 <section class="card traps"><h2>落とし穴（減点パターン）</h2><ul>
-<li>μ と μ' の取り違え</li>
-<li>斜面で N=mg とする</li>
+<li>**静止しているのに摩擦力を $\mu N$ とする**　$\mu N$ は上限であって実際の値ではない。この単元最大の誤り</li>
+<li>**動き出した後も静止摩擦係数 $\mu$ を使う**　滑っているなら $\mu'$ に切り替える</li>
+<li>**垂直抗力を常に $mg$ とする**　斜面上では $mg\cos\theta$</li>
+<li><strong>滑り出す角度が重さで変わると考える</strong>　$\tan\theta_0=\mu$ に質量は現れない</li>
+<li><strong>摩擦係数に単位を付ける</strong>　$\mu$ は力の比なので無次元</li>
+<li><strong>摩擦力の向きを常に運動と逆向きと決めつける</strong>　静止摩擦力は外力を打ち消す向きで、歩くときのように進行方向を向くこともある</li>
 </ul></section>
 <section class="card"><h2>到達チェック（完璧の条件）</h2><ul>
 <li>ゴールを何も見ずに言える</li>
-<li>例題A・Bを白紙で手順から再現できる</li>
-<li>落とし穴を「なぜダメか」まで説明できる</li>
+<li>「動くか動かないか」を先に判定する手順を実行できる</li>
+<li>$\mu N$ が上限であって実際の摩擦力ではない理由を説明できる</li>
+<li>$\tan\theta_0=\mu$ を自力で導ける</li>
+<li>滑り出す角度が質量によらない理由を、式の上で説明できる</li>
 <li>確認クイズで合格点（4/5以上）</li>
 </ul></section>
 <section class="card"><h2>次へ</h2><p>次は <code><span class="uid">ME-PH-08</span></code>。本単元の到達チェックをすべて満たしてから進む。</p>

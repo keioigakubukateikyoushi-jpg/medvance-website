@@ -1,13 +1,22 @@
 {
   "unit_id": "ME-EN-03",
   "brand": "Medvance",
-  "lesson_html": "lesson.html",
-  "lesson_pdf": "lesson.pdf",
-  "slides_html": null,
-  "slides_pdf": null,
+  "source": "notebooklm-unit-factory",
+  "notebook_id": "6480762b-0557-423d-a141-0fbd6cb4db5d",
+  "alignment": "lesson+storyboard primary; research secondary",
   "files": [
+    "_alignment_lock.txt",
+    "_video_director.md",
+    "audio.m4a",
     "lesson.html",
     "lesson.pdf",
-    "manifest.json"
-  ]
+    "manifest.json",
+    "nlm_audio.m4a",
+    "slides.pdf"
+  ],
+  "audio": "audio.m4a",
+  "video": null,
+  "slides_pdf": "slides.pdf",
+  "lesson_pdf": "lesson.pdf",
+  "updated_at": "2026-07-22T10:17:07.000Z"
 }

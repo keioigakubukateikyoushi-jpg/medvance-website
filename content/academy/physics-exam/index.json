@@ -4,10 +4,10 @@
   "trackLabel": "基礎講座",
   "brand": "Medvance",
   "unit_count": 26,
-  "full_count": 1,
-  "outline_count": 25,
+  "full_count": 7,
+  "outline_count": 19,
   "design": "物理基礎＋物理の受験範囲を原子スキルでカバー。投射・円・振動・光・電磁・熱力学まで。",
-  "completeness": "検収済み 1 単元（本文・クイズを人手で確認）。残り 25 単元は骨子のみで内容を拡充中。",
+  "completeness": "品質基準に合格した 7 単元を公開中。残り 19 単元は内容を拡充中。",
   "chapters": [
     "力学の基礎",
     "運動と力",
@@ -37,97 +37,97 @@
       "chapter": "力学の基礎",
       "title": "位置・変位・速度・加速度",
       "minutes": 18,
-      "goal": "平均と瞬間、速度と加速度の違いを言える",
+      "goal": "変位と道のり、平均と瞬間、速度と加速度をそれぞれ区別し、v-t グラフから加速度と変位を読み取れる",
       "prereq": [
         "ME-PH-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-PH-02.md",
       "storyboard": "storyboard/ME-PH-02.md",
       "slides": "slides/ME-PH-02.md",
       "quiz": "quiz/ME-PH-02.json",
-      "quality": "draft"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-PH-03",
       "chapter": "運動と力",
       "title": "等速直線運動と等加速度直線運動",
       "minutes": 18,
-      "goal": "等加速度の3公式を使い分けられる",
+      "goal": "等加速度直線運動の3公式を、求めたい量と与えられた量に応じて使い分けられる",
       "prereq": [
         "ME-PH-02"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-PH-03.md",
       "storyboard": "storyboard/ME-PH-03.md",
       "slides": "slides/ME-PH-03.md",
       "quiz": "quiz/ME-PH-03.json",
-      "quality": "draft"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-PH-04",
       "chapter": "運動と力",
       "title": "自由落下・鉛直投射",
       "minutes": 16,
-      "goal": "g を用いた鉛直運動を立式できる",
+      "goal": "重力だけがはたらく鉛直方向の運動を等加速度の3公式で解き、最高点や落下の対称性を利用できる",
       "prereq": [
         "ME-PH-03"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-PH-04.md",
       "storyboard": "storyboard/ME-PH-04.md",
       "slides": "slides/ME-PH-04.md",
       "quiz": "quiz/ME-PH-04.json",
-      "quality": "draft"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-PH-05",
       "chapter": "運動と力",
       "title": "力のつり合いと作用反作用",
       "minutes": 16,
-      "goal": "つり合いと作用反作用を混同しない",
+      "goal": "つり合いの2力と作用反作用の2力を「どの物体にはたらくか」で区別し、力の図を正しく描ける",
       "prereq": [
         "ME-PH-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-PH-05.md",
       "storyboard": "storyboard/ME-PH-05.md",
       "slides": "slides/ME-PH-05.md",
       "quiz": "quiz/ME-PH-05.json",
-      "quality": "draft"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-PH-06",
       "chapter": "運動と力",
       "title": "運動方程式 ma=F",
       "minutes": 18,
-      "goal": "合力を求めて加速度を出せる",
+      "goal": "着目物体を定めて力を書き出し、正の向きを決めて ma=F を立て、加速度や未知の力を求められる",
       "prereq": [
         "ME-PH-05",
         "ME-PH-03"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-PH-06.md",
       "storyboard": "storyboard/ME-PH-06.md",
       "slides": "slides/ME-PH-06.md",
       "quiz": "quiz/ME-PH-06.json",
-      "quality": "draft"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-PH-07",
       "chapter": "運動と力",
       "title": "摩擦力（静止・運動）",
       "minutes": 18,
-      "goal": "静止摩擦と運動摩擦を使い分ける",
+      "goal": "静止摩擦力が「必要なだけ生じる変数」であることを理解し、動き出す前後で使う式を正しく切り替えられる",
       "prereq": [
         "ME-PH-06"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-PH-07.md",
       "storyboard": "storyboard/ME-PH-07.md",
       "slides": "slides/ME-PH-07.md",
       "quiz": "quiz/ME-PH-07.json",
-      "quality": "draft"
+      "quality": "reviewed-v2"
     },
     {
       "id": "ME-PH-08",

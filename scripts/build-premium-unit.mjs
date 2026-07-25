@@ -184,7 +184,9 @@ ${katexBootScripts("../../vendor/katex")}
     <section class="card">
       <h2>受験での位置づけ</h2>
       <p>${richText(u.examWhy)}</p>
+      ${u.strategy ? `<h3>攻略の方針</h3><p>${richText(u.strategy)}</p>` : ""}
     </section>
+    ${u.prereqNote ? `<section class="card"><h2>前提チェック</h2><p>${richText(u.prereqNote)}</p></section>` : ""}
     <section class="card">
       <h2>この回のポイント</h2>
       <ul>${points}</ul>
@@ -205,6 +207,20 @@ ${katexBootScripts("../../vendor/katex")}
     <section class="card traps">
       <h2>落とし穴（減点パターン）</h2>
       <ul>${traps}</ul>
+    </section>
+    <section class="card">
+      <h2>到達チェック（完璧の条件）</h2>
+      <ul>${(u.mastery?.length
+        ? u.mastery
+        : [
+            "ゴールを何も見ずに言える",
+            "例題を白紙で手順から再現できる",
+            "落とし穴を「なぜダメか」まで説明できる",
+            "確認クイズで合格点（4/5以上）",
+          ]
+      )
+        .map((m) => `<li>${richText(m)}</li>`)
+        .join("")}</ul>
     </section>
     <p class="footer">Medvance · ${esc(u.id)} · 本文・スライド・PDF・動画は同一台本 · 無断転載禁止</p>
   </main>
@@ -488,10 +504,13 @@ function premiumToMarkdown(u) {
     "## 受験での位置づけ",
     u.examWhy,
     "",
+    ...(u.strategy ? ["### 攻略の方針", u.strategy, ""] : []),
+    ...(u.prereqNote ? ["## 前提チェック", `- ${u.prereqNote}`, ""] : []),
     "## この回のポイント",
     ...(u.points || []).map((p) => `- ${p}`),
     "",
-    `## 定義 · ${u.definition.name}`,
+    "## 定義・用語",
+    `### ${u.definition.name}`,
     u.definition.body,
     "",
     "## 公式ボックス",
@@ -504,7 +523,17 @@ function premiumToMarkdown(u) {
   for (const ex of u.examples || []) {
     lines.push(`## ${ex.label}`, ex.problem, "", "### 解答", ...(ex.steps || []).map((s) => `- ${s}`), "", `**答え** ${ex.answer}`, "");
   }
-  lines.push("## 落とし穴", ...(u.traps || []).map((t) => `- ${t}`), "", `## 次へ`, u.next || "", "");
+  lines.push("## 落とし穴（減点パターン）", ...(u.traps || []).map((t) => `- ${t}`), "");
+  const mastery = u.mastery?.length
+    ? u.mastery
+    : [
+        "ゴールを何も見ずに言える",
+        "例題を白紙で手順から再現できる",
+        "落とし穴を「なぜダメか」まで説明できる",
+        "確認クイズで合格点（4/5以上）",
+      ];
+  lines.push("## 到達チェック（完璧の条件）", ...mastery.map((m) => `- ${m}`), "");
+  lines.push("## 次へ", `次は \`${u.next || ""}\`。本単元の到達チェックをすべて満たしてから進む。`, "");
   return lines.join("\n");
 }
 

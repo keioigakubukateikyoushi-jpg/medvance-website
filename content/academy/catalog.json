@@ -7,8 +7,8 @@
     "advanced_units": 54,
     "elite_units": 32,
     "all_units": 388,
-    "all_full": 11,
-    "all_outline": 377
+    "all_full": 17,
+    "all_outline": 371
   },
   "tracks": [
     {
@@ -75,8 +75,8 @@
           "path": "curriculum/physics-exam",
           "subject": "高校物理（受験）",
           "unit_count": 26,
-          "full_count": 1,
-          "outline_count": 25,
+          "full_count": 7,
+          "outline_count": 19,
           "trackLabel": "基礎講座"
         },
         {
@@ -280,8 +280,8 @@
       "path": "curriculum/physics-exam",
       "subject": "高校物理（受験）",
       "unit_count": 26,
-      "full_count": 1,
-      "outline_count": 25,
+      "full_count": 7,
+      "outline_count": 19,
       "trackLabel": "基礎講座"
     },
     {

@@ -5,14 +5,18 @@
   "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
   "alignment": "lesson+storyboard primary; research secondary",
   "files": [
+    "_alignment_lock.txt",
+    "_video_director.md",
+    "audio.m4a",
     "lesson.html",
     "lesson.pdf",
-    "manifest.json"
+    "manifest.json",
+    "nlm_audio.m4a",
+    "slides.pdf"
   ],
-  "audio": null,
+  "audio": "audio.m4a",
   "video": null,
-  "slides_pdf": null,
+  "slides_pdf": "slides.pdf",
   "lesson_pdf": "lesson.pdf",
-  "lesson_html": "lesson.html",
-  "slides_html": null
+  "updated_at": "2026-07-23T10:01:40.573Z"
 }
