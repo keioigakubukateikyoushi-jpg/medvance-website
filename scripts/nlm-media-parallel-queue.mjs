@@ -34,42 +34,29 @@ const COOLDOWN_ON_LIMIT_MS = Math.max(
 
 /** 各教科の入口直後（無料の次）を優先する波 */
 const WAVES = {
-  // 英 → 数 → 理（gate 済み・メディア未完を日次が再ソートするが、明示 wave も用意）
-  "en-math-sci": [
-    // 英語（入口の次）
-    "ME-EN-02",
-    "ME-EN-03",
-    "ME-EN-04",
-    "ME-EN-05",
-    // 数学I
-    "ME-M1-02",
-    "ME-M1-03",
-    "ME-M1-04",
-    "ME-M1-05",
-    "ME-M1-06",
-    "ME-M1-07",
-    "ME-M1-08",
-    "ME-M1-09",
-    "ME-M1-10",
-    "ME-M1-11",
-    "ME-M1-12",
-    "ME-M1-13",
-    "ME-M1-14",
-    "ME-M1-15",
-    "ME-M1-16",
-    "ME-M1-17",
-    "ME-M1-18",
-    // 理科
+  // 理・数・英をラウンドロビンで満遍なく（明示 wave）
+  "sci-math-en": [
     "ME-PH-02",
+    "ME-M1-04",
+    "ME-EN-02",
     "ME-PH-03",
-    "ME-PH-04",
-    "ME-PH-05",
-    "ME-PH-06",
-    "ME-PH-07",
+    "ME-M1-05",
+    "ME-EN-03",
     "ME-CH-02",
-    "ME-CH-03",
+    "ME-M1-06",
+    "ME-EN-04",
     "ME-BI-02",
+    "ME-M1-07",
+    "ME-EN-05",
+    "ME-PH-04",
+    "ME-M1-08",
+    "ME-EN-06",
+    "ME-CH-03",
+    "ME-M1-09",
+    "ME-EN-07",
     "ME-BI-03",
+    "ME-M1-10",
+    "ME-EN-08",
   ],
   // math1 本文 full 済み → メディア生成（今日の本線）
   "math1-full": [

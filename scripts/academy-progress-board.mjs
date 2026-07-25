@@ -188,7 +188,8 @@ function build() {
   }
 
   // Next queue: gate pass, not complete media
-  // Priority: 英 → 数 → 理 → その他（無料未完は各トラック先頭で優遇）
+  // トラック優先の「素点」: 理 → 数 → 英 → その他
+  // 日次は満遍なく: ラウンドロビンで 理1・数1・英1 を繰り返す
   const FREE = new Set([
     "ME-M1-01",
     "ME-EN-01",
@@ -203,33 +204,10 @@ function build() {
     "ADV-M1-06",
   ]);
 
-  /** @param {{ subjectId: string, id: string }} u */
-  function trackRank(u) {
+  /** @param {{ subjectId: string, id: string }} u @returns {'sci'|'math'|'en'|'other'} */
+  function trackOf(u) {
     const s = u.subjectId;
     const id = u.id;
-    // 英語
-    if (
-      s === "english-exam" ||
-      s === "advanced/english" ||
-      s === "elite/english" ||
-      /^ME-EN-/.test(id) ||
-      /^ADV-EN/.test(id) ||
-      /^ELI-E/.test(id)
-    ) {
-      return 1;
-    }
-    // 数学
-    if (
-      /math/i.test(s) ||
-      /^ME-M\d/.test(id) ||
-      /^ME-MA-/.test(id) ||
-      /^ME-MB-/.test(id) ||
-      /^ADV-M/.test(id) ||
-      /^ELI-M/.test(id)
-    ) {
-      return 2;
-    }
-    // 理科
     if (
       s === "physics-exam" ||
       s === "chemistry-exam" ||
@@ -238,17 +216,37 @@ function build() {
       /^ME-CH-/.test(id) ||
       /^ME-BI-/.test(id)
     ) {
-      return 3;
+      return "sci";
     }
-    return 9;
+    if (
+      /math/i.test(s) ||
+      /^ME-M\d/.test(id) ||
+      /^ME-MA-/.test(id) ||
+      /^ME-MB-/.test(id) ||
+      /^ADV-M/.test(id) ||
+      /^ELI-M/.test(id)
+    ) {
+      return "math";
+    }
+    if (
+      s === "english-exam" ||
+      s === "advanced/english" ||
+      s === "elite/english" ||
+      /^ME-EN-/.test(id) ||
+      /^ADV-EN/.test(id) ||
+      /^ELI-E/.test(id)
+    ) {
+      return "en";
+    }
+    return "other";
   }
 
-  /** subject order within track */
+  /** subject order within track（理: 物→化→生 / 数: I→A→II… / 英: foundation→adv→elite） */
   function subjectRank(sid) {
     const order = [
-      "english-exam",
-      "advanced/english",
-      "elite/english",
+      "physics-exam",
+      "chemistry-exam",
+      "biology-exam",
       "math1-exam",
       "mathA-exam",
       "math2-exam",
@@ -258,32 +256,53 @@ function build() {
       "advanced/mathA",
       "advanced/math2",
       "elite/math",
-      "physics-exam",
-      "chemistry-exam",
-      "biology-exam",
+      "english-exam",
+      "advanced/english",
+      "elite/english",
     ];
     const i = order.indexOf(sid);
     return i === -1 ? 50 : i;
   }
 
-  const nextQueue = units
-    .filter((u) => u.gatePass && u.media !== "complete")
-    .sort((a, b) => {
-      const track = trackRank(a) - trackRank(b);
-      if (track) return track;
+  const phasePri = (p) =>
+    p === "nlm_video_wait" ? 0 : p === "nlm_partial" ? 1 : p === "nlm_wait" ? 2 : 3;
+
+  function sortTrackList(list) {
+    return list.sort((a, b) => {
       const freeA = FREE.has(a.id) ? 0 : 1;
       const freeB = FREE.has(b.id) ? 0 : 1;
       if (freeA !== freeB) return freeA - freeB;
-      // 動画待ちを同トラック内で先に
-      const phasePri = (p) =>
-        p === "nlm_video_wait" ? 0 : p === "nlm_partial" ? 1 : p === "nlm_wait" ? 2 : 3;
       const ph = phasePri(a.phase) - phasePri(b.phase);
       if (ph) return ph;
       const sub = subjectRank(a.subjectId) - subjectRank(b.subjectId);
       if (sub) return sub;
       return a.id.localeCompare(b.id, "en", { numeric: true });
-    })
-    .map((u) => u.id);
+    });
+  }
+
+  const candidates = units.filter((u) => u.gatePass && u.media !== "complete");
+  const buckets = { sci: [], math: [], en: [], other: [] };
+  for (const u of candidates) {
+    buckets[trackOf(u)].push(u);
+  }
+  for (const k of Object.keys(buckets)) sortTrackList(buckets[k]);
+
+  // ラウンドロビン: 理 → 数 → 英 → その他 を1本ずつ（毎日満遍なく）
+  const RR_ORDER = ["sci", "math", "en", "other"];
+  const nextQueue = [];
+  const idx = { sci: 0, math: 0, en: 0, other: 0 };
+  let added = true;
+  while (added) {
+    added = false;
+    for (const track of RR_ORDER) {
+      const i = idx[track];
+      if (i < buckets[track].length) {
+        nextQueue.push(buckets[track][i].id);
+        idx[track] = i + 1;
+        added = true;
+      }
+    }
+  }
 
   const inventory = {
     generatedAt: new Date().toISOString(),
@@ -353,6 +372,8 @@ function build() {
   }
   lines.push("");
   lines.push("## 次に NLM へ回すキュー（先頭40）");
+  lines.push("");
+  lines.push("順序: **ラウンドロビン（理→数→英→その他を1本ずつ）** — 毎日満遍なく。トラック内は 物→化→生 / 数I→… / 英語。");
   lines.push("");
   for (const id of nextQueue.slice(0, 40)) {
     const u = units.find((x) => x.id === id);

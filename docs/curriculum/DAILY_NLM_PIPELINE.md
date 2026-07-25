@@ -116,3 +116,9 @@ PC がスリープ中は走らない。Mac を起きている時間帯に合わ�
 
 **英 → 数 → 理**（`academy-progress-board` の nextQueue 順）
 
+
+## 優先と満遍なく
+
+- トラック: **理・数・英** を優先
+- 日内: **ラウンドロビン**（理1→数1→英1→…）で偏りを防ぐ
+- 詳細: `docs/curriculum/PRIORITY_EN_MATH_SCI.md`（ファイル名は歴史的。中身は理数英RR）

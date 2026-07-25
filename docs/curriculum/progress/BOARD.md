@@ -1,6 +1,6 @@
 # Academy Progress Board
 
-生成: 2026-07-25T16:12:18.850Z
+生成: 2026-07-25T16:23:21.666Z
 
 ## 全体
 
@@ -8,10 +8,10 @@
 |---|---:|
 | 単元総数 | 390 |
 | 本文 gate 合格 | 158 |
-| メディア complete | 14 |
+| メディア complete | 16 |
 | **NLM 待ち**（本文OK・メディアなし） | **136** |
 | 本文ブロック（gate未） | 229 |
-| 統合可能 ready | 14 |
+| 統合可能 ready | 16 |
 
 ### フェーズ凡例
 
@@ -34,7 +34,7 @@
 | chemistry-exam | 27 | 27 | 24 | 2 | 1 | 0 |
 | elite/english | 8 | 0 | 0 | 0 | 0 | 8 |
 | elite/math | 24 | 0 | 0 | 0 | 0 | 24 |
-| english-exam | 30 | 30 | 27 | 2 | 1 | 0 |
+| english-exam | 30 | 30 | 27 | 0 | 3 | 0 |
 | essay-exam | 18 | 1 | 0 | 0 | 1 | 16 |
 | info-common-exam | 12 | 1 | 0 | 0 | 1 | 11 |
 | interview-exam | 18 | 1 | 0 | 0 | 1 | 17 |
@@ -49,47 +49,49 @@
 
 ## 次に NLM へ回すキュー（先頭40）
 
-- `ME-EN-02` (english-exam) media=audio_slides phase=nlm_video_wait
-- `ME-EN-03` (english-exam) media=audio_slides phase=nlm_video_wait
-- `ME-EN-04` (english-exam) media=none phase=nlm_wait
-- `ME-EN-05` (english-exam) media=none phase=nlm_wait
-- `ME-EN-06` (english-exam) media=none phase=nlm_wait
-- `ME-EN-07` (english-exam) media=none phase=nlm_wait
-- `ME-EN-08` (english-exam) media=none phase=nlm_wait
-- `ME-EN-09` (english-exam) media=none phase=nlm_wait
-- `ME-EN-10` (english-exam) media=none phase=nlm_wait
-- `ME-EN-11` (english-exam) media=none phase=nlm_wait
-- `ME-EN-12` (english-exam) media=none phase=nlm_wait
-- `ME-EN-13` (english-exam) media=none phase=nlm_wait
-- `ME-EN-14` (english-exam) media=none phase=nlm_wait
-- `ME-EN-15` (english-exam) media=none phase=nlm_wait
-- `ME-EN-16` (english-exam) media=none phase=nlm_wait
-- `ME-EN-17` (english-exam) media=none phase=nlm_wait
-- `ME-EN-18` (english-exam) media=none phase=nlm_wait
-- `ME-EN-19` (english-exam) media=none phase=nlm_wait
-- `ME-EN-20` (english-exam) media=none phase=nlm_wait
-- `ME-EN-21` (english-exam) media=none phase=nlm_wait
-- `ME-EN-22` (english-exam) media=none phase=nlm_wait
-- `ME-EN-23` (english-exam) media=none phase=nlm_wait
-- `ME-EN-24` (english-exam) media=none phase=nlm_wait
-- `ME-EN-25` (english-exam) media=none phase=nlm_wait
-- `ME-EN-26` (english-exam) media=none phase=nlm_wait
-- `ME-EN-27` (english-exam) media=none phase=nlm_wait
-- `ME-EN-28` (english-exam) media=none phase=nlm_wait
-- `ME-EN-29` (english-exam) media=none phase=nlm_wait
-- `ME-EN-30` (english-exam) media=none phase=nlm_wait
+順序: **ラウンドロビン（理→数→英→その他を1本ずつ）** — 毎日満遍なく。トラック内は 物→化→生 / 数I→… / 英語。
+
+- `ME-PH-02` (physics-exam) media=audio_slides phase=nlm_video_wait
 - `ME-M1-04` (math1-exam) media=audio_slides phase=nlm_video_wait
+- `ME-EN-04` (english-exam) media=none phase=nlm_wait
+- `ME-PH-03` (physics-exam) media=audio_slides phase=nlm_video_wait
 - `ME-M1-05` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-05` (english-exam) media=none phase=nlm_wait
+- `ME-CH-02` (chemistry-exam) media=partial phase=nlm_partial
 - `ME-M1-06` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-06` (english-exam) media=none phase=nlm_wait
+- `ME-CH-03` (chemistry-exam) media=partial phase=nlm_partial
 - `ME-M1-07` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-07` (english-exam) media=none phase=nlm_wait
+- `ME-BI-02` (biology-exam) media=partial phase=nlm_partial
 - `ME-M1-08` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-08` (english-exam) media=none phase=nlm_wait
+- `ME-PH-04` (physics-exam) media=none phase=nlm_wait
 - `ME-M1-09` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-09` (english-exam) media=none phase=nlm_wait
+- `ME-PH-05` (physics-exam) media=none phase=nlm_wait
 - `ME-M1-10` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-10` (english-exam) media=none phase=nlm_wait
+- `ME-PH-06` (physics-exam) media=none phase=nlm_wait
 - `ME-M1-11` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-11` (english-exam) media=none phase=nlm_wait
+- `ME-PH-07` (physics-exam) media=none phase=nlm_wait
 - `ME-M1-12` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-12` (english-exam) media=none phase=nlm_wait
+- `ME-PH-08` (physics-exam) media=none phase=nlm_wait
 - `ME-M1-13` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-13` (english-exam) media=none phase=nlm_wait
+- `ME-PH-09` (physics-exam) media=none phase=nlm_wait
 - `ME-M1-14` (math1-exam) media=none phase=nlm_wait
-- … 他 104 件（`content/academy/nlm-queue-next.json`）
+- `ME-EN-14` (english-exam) media=none phase=nlm_wait
+- `ME-PH-10` (physics-exam) media=none phase=nlm_wait
+- `ME-M1-16` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-15` (english-exam) media=none phase=nlm_wait
+- `ME-PH-11` (physics-exam) media=none phase=nlm_wait
+- `ME-M1-17` (math1-exam) media=none phase=nlm_wait
+- `ME-EN-16` (english-exam) media=none phase=nlm_wait
+- `ME-PH-12` (physics-exam) media=none phase=nlm_wait
+- … 他 102 件（`content/academy/nlm-queue-next.json`）
 
 ## 運用
 
