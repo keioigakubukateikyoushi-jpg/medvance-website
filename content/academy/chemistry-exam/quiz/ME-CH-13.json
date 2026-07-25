@@ -2,43 +2,48 @@
   "unit_id": "ME-CH-13",
   "title": "炭化水素の分類と命名の入口",
   "pass_score": 4,
-  "quality": "perfect-v1",
+  "quality": "reviewed-v3",
   "questions": [
     {
       "id": "q1",
       "type": "short",
-      "prompt": "今日のゴールを書け。",
-      "answer": "アルカン・アルケン・アルキンを区別できる"
+      "prompt": "本単元のゴールを判定問題として言い換えよ。",
+      "answer": "アルカン・アルケン・アルキンを区別できる",
+      "explain": "ゴール"
     },
     {
       "id": "q2",
       "type": "short",
-      "prompt": "中心用語・定義の要点は？",
-      "answer": "C=C を持つ炭化水素。一般式 CnH2n。"
+      "prompt": "答案の冒頭に書くべきものは何か。",
+      "answer": "使う定義・公式と例外の宣言",
+      "explain": "型"
     },
     {
       "id": "q3",
-      "type": "mc",
-      "prompt": "落とし穴として最も近いものは？",
-      "choices": [
-        "アルケンとアルカンの一般式混同",
-        "定義を答案に書く",
-        "検算する",
-        "場合分けを宣言する"
-      ],
-      "answer": "アルケンとアルカンの一般式混同"
+      "type": "short",
+      "prompt": "標準例での急所は何か。",
+      "answer": "定義に戻って判定すること",
+      "explain": "急所"
     },
     {
       "id": "q4",
-      "type": "short",
-      "prompt": "手順の第1手は？",
-      "answer": "結合を見る"
+      "type": "mc",
+      "prompt": "検算として適切なものはどれか。",
+      "choices": [
+        "言い換えや逆操作",
+        "勘",
+        "省略",
+        "答えだけ"
+      ],
+      "answer": "言い換えや逆操作",
+      "explain": "検算"
     },
     {
       "id": "q5",
       "type": "short",
-      "prompt": "この回のポイントを1つ書け。",
-      "answer": "飽和／不飽和"
+      "prompt": "典型的な落とし穴を1つ挙げよ。",
+      "answer": "例外・境界・用語混同の省略",
+      "explain": "落とし穴"
     }
   ]
 }

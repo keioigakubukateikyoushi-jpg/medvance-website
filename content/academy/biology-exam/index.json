@@ -4,10 +4,10 @@
   "trackLabel": "基礎講座",
   "brand": "Medvance",
   "unit_count": 29,
-  "full_count": 1,
-  "outline_count": 28,
+  "full_count": 29,
+  "outline_count": 0,
   "design": "生物基礎＋生物の受験範囲。細胞〜進化・実験考察まで。",
-  "completeness": "品質基準に合格した 1 単元を公開中。残り 28 単元は内容を拡充中。",
+  "completeness": "品質基準合格 29/29（英数理優先）",
   "chapters": [
     "細胞",
     "代謝",
@@ -41,12 +41,12 @@
       "prereq": [
         "ME-BI-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-02.md",
       "storyboard": "storyboard/ME-BI-02.md",
       "slides": "slides/ME-BI-02.md",
       "quiz": "quiz/ME-BI-02.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-03",
@@ -55,12 +55,12 @@
       "minutes": 16,
       "goal": "基質特異性・最適条件を説明できる",
       "prereq": [],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-03.md",
       "storyboard": "storyboard/ME-BI-03.md",
       "slides": "slides/ME-BI-03.md",
       "quiz": "quiz/ME-BI-03.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-04",
@@ -72,12 +72,12 @@
         "ME-BI-03",
         "ME-BI-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-04.md",
       "storyboard": "storyboard/ME-BI-04.md",
       "slides": "slides/ME-BI-04.md",
       "quiz": "quiz/ME-BI-04.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-05",
@@ -88,12 +88,12 @@
       "prereq": [
         "ME-BI-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-05.md",
       "storyboard": "storyboard/ME-BI-05.md",
       "slides": "slides/ME-BI-05.md",
       "quiz": "quiz/ME-BI-05.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-06",
@@ -104,12 +104,12 @@
       "prereq": [
         "ME-BI-05"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-06.md",
       "storyboard": "storyboard/ME-BI-06.md",
       "slides": "slides/ME-BI-06.md",
       "quiz": "quiz/ME-BI-06.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-07",
@@ -120,12 +120,12 @@
       "prereq": [
         "ME-BI-06"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-07.md",
       "storyboard": "storyboard/ME-BI-07.md",
       "slides": "slides/ME-BI-07.md",
       "quiz": "quiz/ME-BI-07.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-08",
@@ -134,12 +134,12 @@
       "minutes": 16,
       "goal": "内部環境の一定維持を説明できる",
       "prereq": [],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-08.md",
       "storyboard": "storyboard/ME-BI-08.md",
       "slides": "slides/ME-BI-08.md",
       "quiz": "quiz/ME-BI-08.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-09",
@@ -150,12 +150,12 @@
       "prereq": [
         "ME-BI-08"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-09.md",
       "storyboard": "storyboard/ME-BI-09.md",
       "slides": "slides/ME-BI-09.md",
       "quiz": "quiz/ME-BI-09.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-10",
@@ -166,12 +166,12 @@
       "prereq": [
         "ME-BI-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-10.md",
       "storyboard": "storyboard/ME-BI-10.md",
       "slides": "slides/ME-BI-10.md",
       "quiz": "quiz/ME-BI-10.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-11",
@@ -183,12 +183,12 @@
         "ME-BI-10",
         "ME-BI-08"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-11.md",
       "storyboard": "storyboard/ME-BI-11.md",
       "slides": "slides/ME-BI-11.md",
       "quiz": "quiz/ME-BI-11.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-12",
@@ -197,12 +197,12 @@
       "minutes": 16,
       "goal": "オーキシン等の働きを説明できる",
       "prereq": [],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-12.md",
       "storyboard": "storyboard/ME-BI-12.md",
       "slides": "slides/ME-BI-12.md",
       "quiz": "quiz/ME-BI-12.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-13",
@@ -213,12 +213,12 @@
       "prereq": [
         "ME-BI-04"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-13.md",
       "storyboard": "storyboard/ME-BI-13.md",
       "slides": "slides/ME-BI-13.md",
       "quiz": "quiz/ME-BI-13.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-14",
@@ -229,12 +229,12 @@
       "prereq": [
         "ME-BI-13"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-14.md",
       "storyboard": "storyboard/ME-BI-14.md",
       "slides": "slides/ME-BI-14.md",
       "quiz": "quiz/ME-BI-14.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-15",
@@ -246,12 +246,12 @@
         "ME-BI-05",
         "ME-BI-01"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-15.md",
       "storyboard": "storyboard/ME-BI-15.md",
       "slides": "slides/ME-BI-15.md",
       "quiz": "quiz/ME-BI-15.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-16",
@@ -263,12 +263,12 @@
         "ME-BI-01",
         "ME-BI-05"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-16.md",
       "storyboard": "storyboard/ME-BI-16.md",
       "slides": "slides/ME-BI-16.md",
       "quiz": "quiz/ME-BI-16.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-17",
@@ -280,12 +280,12 @@
         "ME-BI-16",
         "ME-BI-06"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-17.md",
       "storyboard": "storyboard/ME-BI-17.md",
       "slides": "slides/ME-BI-17.md",
       "quiz": "quiz/ME-BI-17.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-18",
@@ -296,12 +296,12 @@
       "prereq": [
         "ME-BI-04"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-18.md",
       "storyboard": "storyboard/ME-BI-18.md",
       "slides": "slides/ME-BI-18.md",
       "quiz": "quiz/ME-BI-18.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-19",
@@ -312,12 +312,12 @@
       "prereq": [
         "ME-BI-04"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-19.md",
       "storyboard": "storyboard/ME-BI-19.md",
       "slides": "slides/ME-BI-19.md",
       "quiz": "quiz/ME-BI-19.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-20",
@@ -328,12 +328,12 @@
       "prereq": [
         "ME-BI-15"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-20.md",
       "storyboard": "storyboard/ME-BI-20.md",
       "slides": "slides/ME-BI-20.md",
       "quiz": "quiz/ME-BI-20.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-21",
@@ -345,12 +345,12 @@
         "ME-BI-05",
         "ME-BI-15"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-21.md",
       "storyboard": "storyboard/ME-BI-21.md",
       "slides": "slides/ME-BI-21.md",
       "quiz": "quiz/ME-BI-21.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-22",
@@ -361,12 +361,12 @@
       "prereq": [
         "ME-BI-08"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-22.md",
       "storyboard": "storyboard/ME-BI-22.md",
       "slides": "slides/ME-BI-22.md",
       "quiz": "quiz/ME-BI-22.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-23",
@@ -377,12 +377,12 @@
       "prereq": [
         "ME-BI-08"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-23.md",
       "storyboard": "storyboard/ME-BI-23.md",
       "slides": "slides/ME-BI-23.md",
       "quiz": "quiz/ME-BI-23.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-24",
@@ -394,12 +394,12 @@
         "ME-BI-08",
         "ME-BI-04"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-24.md",
       "storyboard": "storyboard/ME-BI-24.md",
       "slides": "slides/ME-BI-24.md",
       "quiz": "quiz/ME-BI-24.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-25",
@@ -410,12 +410,12 @@
       "prereq": [
         "ME-BI-10"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-25.md",
       "storyboard": "storyboard/ME-BI-25.md",
       "slides": "slides/ME-BI-25.md",
       "quiz": "quiz/ME-BI-25.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-26",
@@ -426,12 +426,12 @@
       "prereq": [
         "ME-BI-11"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-26.md",
       "storyboard": "storyboard/ME-BI-26.md",
       "slides": "slides/ME-BI-26.md",
       "quiz": "quiz/ME-BI-26.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-27",
@@ -443,12 +443,12 @@
         "ME-BI-12",
         "ME-BI-17"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-27.md",
       "storyboard": "storyboard/ME-BI-27.md",
       "slides": "slides/ME-BI-27.md",
       "quiz": "quiz/ME-BI-27.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-28",
@@ -459,12 +459,12 @@
       "prereq": [
         "ME-BI-13"
       ],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-28.md",
       "storyboard": "storyboard/ME-BI-28.md",
       "slides": "slides/ME-BI-28.md",
       "quiz": "quiz/ME-BI-28.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     },
     {
       "id": "ME-BI-29",
@@ -473,12 +473,12 @@
       "minutes": 16,
       "goal": "対照実験と考察の型を使える",
       "prereq": [],
-      "status": "outline",
+      "status": "full",
       "file": "lessons/ME-BI-29.md",
       "storyboard": "storyboard/ME-BI-29.md",
       "slides": "slides/ME-BI-29.md",
       "quiz": "quiz/ME-BI-29.json",
-      "quality": "draft"
+      "quality": "reviewed-v3"
     }
   ],
   "quality": "perfect-v1"

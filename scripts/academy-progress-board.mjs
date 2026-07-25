@@ -187,7 +187,8 @@ function build() {
     phaseCount[u.phase] = (phaseCount[u.phase] || 0) + 1;
   }
 
-  // Next queue: gate pass, not complete media, prefer math1 then free-adjacent
+  // Next queue: gate pass, not complete media
+  // Priority: 英 → 数 → 理 → その他（無料未完は各トラック先頭で優遇）
   const FREE = new Set([
     "ME-M1-01",
     "ME-EN-01",
@@ -201,17 +202,86 @@ function build() {
     "ME-IF-01",
     "ADV-M1-06",
   ]);
+
+  /** @param {{ subjectId: string, id: string }} u */
+  function trackRank(u) {
+    const s = u.subjectId;
+    const id = u.id;
+    // 英語
+    if (
+      s === "english-exam" ||
+      s === "advanced/english" ||
+      s === "elite/english" ||
+      /^ME-EN-/.test(id) ||
+      /^ADV-EN/.test(id) ||
+      /^ELI-E/.test(id)
+    ) {
+      return 1;
+    }
+    // 数学
+    if (
+      /math/i.test(s) ||
+      /^ME-M\d/.test(id) ||
+      /^ME-MA-/.test(id) ||
+      /^ME-MB-/.test(id) ||
+      /^ADV-M/.test(id) ||
+      /^ELI-M/.test(id)
+    ) {
+      return 2;
+    }
+    // 理科
+    if (
+      s === "physics-exam" ||
+      s === "chemistry-exam" ||
+      s === "biology-exam" ||
+      /^ME-PH-/.test(id) ||
+      /^ME-CH-/.test(id) ||
+      /^ME-BI-/.test(id)
+    ) {
+      return 3;
+    }
+    return 9;
+  }
+
+  /** subject order within track */
+  function subjectRank(sid) {
+    const order = [
+      "english-exam",
+      "advanced/english",
+      "elite/english",
+      "math1-exam",
+      "mathA-exam",
+      "math2-exam",
+      "mathB-exam",
+      "math3-exam",
+      "advanced/math1",
+      "advanced/mathA",
+      "advanced/math2",
+      "elite/math",
+      "physics-exam",
+      "chemistry-exam",
+      "biology-exam",
+    ];
+    const i = order.indexOf(sid);
+    return i === -1 ? 50 : i;
+  }
+
   const nextQueue = units
     .filter((u) => u.gatePass && u.media !== "complete")
     .sort((a, b) => {
-      const pri = (u) => {
-        if (FREE.has(u.id) && u.media !== "complete") return 0;
-        if (u.subjectId === "math1-exam") return 1;
-        if (u.phase === "nlm_video_wait") return 2;
-        if (u.phase === "nlm_partial") return 3;
-        return 4;
-      };
-      return pri(a) - pri(b) || a.id.localeCompare(b.id);
+      const track = trackRank(a) - trackRank(b);
+      if (track) return track;
+      const freeA = FREE.has(a.id) ? 0 : 1;
+      const freeB = FREE.has(b.id) ? 0 : 1;
+      if (freeA !== freeB) return freeA - freeB;
+      // 動画待ちを同トラック内で先に
+      const phasePri = (p) =>
+        p === "nlm_video_wait" ? 0 : p === "nlm_partial" ? 1 : p === "nlm_wait" ? 2 : 3;
+      const ph = phasePri(a.phase) - phasePri(b.phase);
+      if (ph) return ph;
+      const sub = subjectRank(a.subjectId) - subjectRank(b.subjectId);
+      if (sub) return sub;
+      return a.id.localeCompare(b.id, "en", { numeric: true });
     })
     .map((u) => u.id);
 

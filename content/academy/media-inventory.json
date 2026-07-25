@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-07-25T02:33:51.772Z",
+  "generatedAt": "2026-07-25T16:12:18.850Z",
   "totals": {
     "units": 390,
-    "gatePass": 56,
+    "gatePass": 158,
     "mediaComplete": 14,
-    "nlmWait": 39,
+    "nlmWait": 136,
     "readyIntegrated": 14,
-    "curriculumBlocked": 326
+    "curriculumBlocked": 229
   },
   "phaseCount": {
-    "curriculum_blocked": 326,
+    "curriculum_blocked": 229,
     "ready_integrated": 14,
-    "media_without_curriculum": 8,
-    "nlm_video_wait": 3,
-    "nlm_wait": 39
+    "nlm_partial": 3,
+    "nlm_wait": 136,
+    "nlm_video_wait": 5,
+    "media_without_curriculum": 3
   },
   "bySubject": {
     "advanced/english": {
@@ -59,22 +60,22 @@
     "biology-exam": {
       "subject": "高校生物（受験）",
       "total": 29,
-      "gate": 1,
-      "nlm_wait": 0,
-      "nlm_partial": 0,
+      "gate": 29,
+      "nlm_wait": 27,
+      "nlm_partial": 1,
       "nlm_video_wait": 0,
       "ready": 1,
-      "blocked": 27
+      "blocked": 0
     },
     "chemistry-exam": {
       "subject": "高校化学（受験）",
       "total": 27,
-      "gate": 1,
-      "nlm_wait": 0,
-      "nlm_partial": 0,
+      "gate": 27,
+      "nlm_wait": 24,
+      "nlm_partial": 2,
       "nlm_video_wait": 0,
       "ready": 1,
-      "blocked": 24
+      "blocked": 0
     },
     "elite/english": {
       "subject": "英語・難関大",
@@ -99,12 +100,12 @@
     "english-exam": {
       "subject": "高校英語（受験）",
       "total": 30,
-      "gate": 1,
-      "nlm_wait": 0,
+      "gate": 30,
+      "nlm_wait": 27,
       "nlm_partial": 0,
-      "nlm_video_wait": 0,
+      "nlm_video_wait": 2,
       "ready": 1,
-      "blocked": 27
+      "blocked": 0
     },
     "essay-exam": {
       "subject": "医学部小論文",
@@ -199,12 +200,12 @@
     "physics-exam": {
       "subject": "高校物理（受験）",
       "total": 26,
-      "gate": 7,
-      "nlm_wait": 4,
+      "gate": 26,
+      "nlm_wait": 23,
       "nlm_partial": 0,
       "nlm_video_wait": 2,
       "ready": 1,
-      "blocked": 19
+      "blocked": 0
     },
     "social-common-exam": {
       "subject": "共通テスト社会",
@@ -218,6 +219,35 @@
     }
   },
   "nextQueue": [
+    "ME-EN-02",
+    "ME-EN-03",
+    "ME-EN-04",
+    "ME-EN-05",
+    "ME-EN-06",
+    "ME-EN-07",
+    "ME-EN-08",
+    "ME-EN-09",
+    "ME-EN-10",
+    "ME-EN-11",
+    "ME-EN-12",
+    "ME-EN-13",
+    "ME-EN-14",
+    "ME-EN-15",
+    "ME-EN-16",
+    "ME-EN-17",
+    "ME-EN-18",
+    "ME-EN-19",
+    "ME-EN-20",
+    "ME-EN-21",
+    "ME-EN-22",
+    "ME-EN-23",
+    "ME-EN-24",
+    "ME-EN-25",
+    "ME-EN-26",
+    "ME-EN-27",
+    "ME-EN-28",
+    "ME-EN-29",
+    "ME-EN-30",
     "ME-M1-04",
     "ME-M1-05",
     "ME-M1-06",
@@ -256,10 +286,83 @@
     "ME-M1-40",
     "ME-PH-02",
     "ME-PH-03",
+    "ME-CH-02",
+    "ME-CH-03",
+    "ME-BI-02",
     "ME-PH-04",
     "ME-PH-05",
     "ME-PH-06",
-    "ME-PH-07"
+    "ME-PH-07",
+    "ME-PH-08",
+    "ME-PH-09",
+    "ME-PH-10",
+    "ME-PH-11",
+    "ME-PH-12",
+    "ME-PH-13",
+    "ME-PH-14",
+    "ME-PH-15",
+    "ME-PH-16",
+    "ME-PH-17",
+    "ME-PH-18",
+    "ME-PH-19",
+    "ME-PH-20",
+    "ME-PH-21",
+    "ME-PH-22",
+    "ME-PH-23",
+    "ME-PH-24",
+    "ME-PH-25",
+    "ME-PH-26",
+    "ME-CH-04",
+    "ME-CH-05",
+    "ME-CH-06",
+    "ME-CH-07",
+    "ME-CH-08",
+    "ME-CH-09",
+    "ME-CH-10",
+    "ME-CH-11",
+    "ME-CH-12",
+    "ME-CH-13",
+    "ME-CH-14",
+    "ME-CH-15",
+    "ME-CH-16",
+    "ME-CH-17",
+    "ME-CH-18",
+    "ME-CH-19",
+    "ME-CH-20",
+    "ME-CH-21",
+    "ME-CH-22",
+    "ME-CH-23",
+    "ME-CH-24",
+    "ME-CH-25",
+    "ME-CH-26",
+    "ME-CH-27",
+    "ME-BI-03",
+    "ME-BI-04",
+    "ME-BI-05",
+    "ME-BI-06",
+    "ME-BI-07",
+    "ME-BI-08",
+    "ME-BI-09",
+    "ME-BI-10",
+    "ME-BI-11",
+    "ME-BI-12",
+    "ME-BI-13",
+    "ME-BI-14",
+    "ME-BI-15",
+    "ME-BI-16",
+    "ME-BI-17",
+    "ME-BI-18",
+    "ME-BI-19",
+    "ME-BI-20",
+    "ME-BI-21",
+    "ME-BI-22",
+    "ME-BI-23",
+    "ME-BI-24",
+    "ME-BI-25",
+    "ME-BI-26",
+    "ME-BI-27",
+    "ME-BI-28",
+    "ME-BI-29"
   ],
   "units": [
     {
@@ -1362,19 +1465,16 @@
       "subject": "高校生物（受験）",
       "chapter": "細胞",
       "title": "細胞膜と輸送（拡散・浸透・能動輸送）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 587,
-      "gateFail": [
-        "chars 587",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3180,
+      "gateFail": [],
       "media": "partial",
       "mediaBytes": 80175265,
       "hasVideo": false,
       "hasAudio": true,
       "hasSlides": false,
-      "phase": "media_without_curriculum"
+      "phase": "nlm_partial"
     },
     {
       "id": "ME-BI-03",
@@ -1382,19 +1482,16 @@
       "subject": "高校生物（受験）",
       "chapter": "代謝",
       "title": "酵素の性質",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 580,
-      "gateFail": [
-        "chars 580",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3178,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3159399,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-04",
@@ -1402,19 +1499,16 @@
       "subject": "高校生物（受験）",
       "chapter": "代謝",
       "title": "呼吸と光合成の全体像",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 617,
-      "gateFail": [
-        "chars 617",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3155,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3160812,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-05",
@@ -1422,19 +1516,16 @@
       "subject": "高校生物（受験）",
       "chapter": "遺伝",
       "title": "DNA・遺伝子・染色体",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 589,
-      "gateFail": [
-        "chars 589",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3170,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3162881,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-06",
@@ -1442,19 +1533,16 @@
       "subject": "高校生物（受験）",
       "chapter": "遺伝",
       "title": "メンデルの法則と遺伝の基本計算",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 577,
-      "gateFail": [
-        "chars 577",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3156817,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-07",
@@ -1462,19 +1550,16 @@
       "subject": "高校生物（受験）",
       "chapter": "遺伝",
       "title": "血統図と伴性遺伝の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 603,
-      "gateFail": [
-        "chars 603",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3168067,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-08",
@@ -1482,19 +1567,16 @@
       "subject": "高校生物（受験）",
       "chapter": "体内環境",
       "title": "体液と恒常性",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 583,
-      "gateFail": [
-        "chars 583",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3175,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3171169,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-09",
@@ -1502,19 +1584,16 @@
       "subject": "高校生物（受験）",
       "chapter": "体内環境",
       "title": "免疫の基本（自然・獲得）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 582,
-      "gateFail": [
-        "chars 582",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3182,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3176510,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-10",
@@ -1522,19 +1601,16 @@
       "subject": "高校生物（受験）",
       "chapter": "動物の反応",
       "title": "神経と興奮伝導",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 571,
-      "gateFail": [
-        "chars 571",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3188,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3161079,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-11",
@@ -1542,19 +1618,16 @@
       "subject": "高校生物（受験）",
       "chapter": "動物の反応",
       "title": "受容器と効果器・ホルモン",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 621,
-      "gateFail": [
-        "chars 621",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3128,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3176102,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-12",
@@ -1562,19 +1635,16 @@
       "subject": "高校生物（受験）",
       "chapter": "植物・生態",
       "title": "植物ホルモンと環境応答",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 573,
-      "gateFail": [
-        "chars 573",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3176,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3162743,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-13",
@@ -1582,19 +1652,16 @@
       "subject": "高校生物（受験）",
       "chapter": "植物・生態",
       "title": "生態系の物質循環とエネルギー",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 613,
-      "gateFail": [
-        "chars 613",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3193,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3179623,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-14",
@@ -1602,19 +1669,16 @@
       "subject": "高校生物（受験）",
       "chapter": "植物・生態",
       "title": "個体群と生物間関係",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 570,
-      "gateFail": [
-        "chars 570",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3178,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3160039,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-15",
@@ -1622,19 +1686,16 @@
       "subject": "高校生物（受験）",
       "chapter": "遺伝",
       "title": "タンパク質合成（転写・翻訳）の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 594,
-      "gateFail": [
-        "chars 594",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3189,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3162205,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-16",
@@ -1642,19 +1703,16 @@
       "subject": "高校生物（受験）",
       "chapter": "細胞",
       "title": "細胞分裂（体細胞分裂）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 495,
-      "gateFail": [
-        "chars 495",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3189,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1715792,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-17",
@@ -1662,19 +1720,16 @@
       "subject": "高校生物（受験）",
       "chapter": "細胞",
       "title": "減数分裂と受精",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 517,
-      "gateFail": [
-        "chars 517",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3120,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1728546,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-18",
@@ -1682,19 +1737,16 @@
       "subject": "高校生物（受験）",
       "chapter": "代謝",
       "title": "呼吸の詳細（解糖・クエン酸・電子伝達）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 519,
-      "gateFail": [
-        "chars 519",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1738171,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-19",
@@ -1702,19 +1754,16 @@
       "subject": "高校生物（受験）",
       "chapter": "代謝",
       "title": "光合成の詳細（光化学系・カルビン）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 529,
-      "gateFail": [
-        "chars 529",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1728853,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-20",
@@ -1722,19 +1771,16 @@
       "subject": "高校生物（受験）",
       "chapter": "遺伝",
       "title": "遺伝子発現の調節の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 544,
-      "gateFail": [
-        "chars 544",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3121,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1727166,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-21",
@@ -1742,19 +1788,16 @@
       "subject": "高校生物（受験）",
       "chapter": "遺伝",
       "title": "バイオテクノロジーの入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 512,
-      "gateFail": [
-        "chars 512",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3135,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1724090,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-22",
@@ -1762,19 +1805,16 @@
       "subject": "高校生物（受験）",
       "chapter": "体内環境",
       "title": "血液循環と心臓",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 485,
-      "gateFail": [
-        "chars 485",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3172,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1722291,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-23",
@@ -1782,19 +1822,16 @@
       "subject": "高校生物（受験）",
       "chapter": "体内環境",
       "title": "腎臓と浸透圧調節",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 484,
-      "gateFail": [
-        "chars 484",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3172,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1729283,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-24",
@@ -1802,19 +1839,16 @@
       "subject": "高校生物（受験）",
       "chapter": "体内環境",
       "title": "肝臓の機能",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 510,
-      "gateFail": [
-        "chars 510",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3191,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1729147,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-25",
@@ -1822,19 +1856,16 @@
       "subject": "高校生物（受験）",
       "chapter": "動物の反応",
       "title": "筋肉と収縮の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 494,
-      "gateFail": [
-        "chars 494",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3183,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1738408,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-26",
@@ -1842,19 +1873,16 @@
       "subject": "高校生物（受験）",
       "chapter": "動物の反応",
       "title": "眼・耳の受容器",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 496,
-      "gateFail": [
-        "chars 496",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3183,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1731239,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-27",
@@ -1862,19 +1890,16 @@
       "subject": "高校生物（受験）",
       "chapter": "植物・生態",
       "title": "被子植物の生殖",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 496,
-      "gateFail": [
-        "chars 496",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3123,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1725760,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-28",
@@ -1882,19 +1907,16 @@
       "subject": "高校生物（受験）",
       "chapter": "植物・生態",
       "title": "進化と系統の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 519,
-      "gateFail": [
-        "chars 519",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3198,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1737308,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-BI-29",
@@ -1902,19 +1924,16 @@
       "subject": "高校生物（受験）",
       "chapter": "総合",
       "title": "実験考察問題の読み方",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 520,
-      "gateFail": [
-        "chars 520",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3156,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1734206,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-01",
@@ -1939,19 +1958,16 @@
       "subject": "高校化学（受験）",
       "chapter": "物質の構成",
       "title": "化学式と化学反応式のつくり方",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 596,
-      "gateFail": [
-        "chars 596",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3173,
+      "gateFail": [],
       "media": "partial",
       "mediaBytes": 64503614,
       "hasVideo": false,
       "hasAudio": true,
       "hasSlides": false,
-      "phase": "media_without_curriculum"
+      "phase": "nlm_partial"
     },
     {
       "id": "ME-CH-03",
@@ -1959,19 +1975,16 @@
       "subject": "高校化学（受験）",
       "chapter": "化学量論",
       "title": "モル・分子量・物質量",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 581,
-      "gateFail": [
-        "chars 581",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3187,
+      "gateFail": [],
       "media": "partial",
       "mediaBytes": 61843274,
       "hasVideo": false,
       "hasAudio": true,
       "hasSlides": false,
-      "phase": "media_without_curriculum"
+      "phase": "nlm_partial"
     },
     {
       "id": "ME-CH-04",
@@ -1979,19 +1992,16 @@
       "subject": "高校化学（受験）",
       "chapter": "化学量論",
       "title": "反応式と量的関係（限界反応）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 644,
-      "gateFail": [
-        "chars 644",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3132,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3161409,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-05",
@@ -1999,19 +2009,16 @@
       "subject": "高校化学（受験）",
       "chapter": "気体・溶液",
       "title": "気体の体積と状態方程式",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 599,
-      "gateFail": [
-        "chars 599",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3183,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3158488,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-06",
@@ -2019,19 +2026,16 @@
       "subject": "高校化学（受験）",
       "chapter": "気体・溶液",
       "title": "濃度（mol/L・質量パーセント）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 611,
-      "gateFail": [
-        "chars 611",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3178,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3146710,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-07",
@@ -2039,19 +2043,16 @@
       "subject": "高校化学（受験）",
       "chapter": "反応と平衡",
       "title": "反応熱と熱化学方程式",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 579,
-      "gateFail": [
-        "chars 579",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3183,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3160534,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-08",
@@ -2059,19 +2060,16 @@
       "subject": "高校化学（受験）",
       "chapter": "反応と平衡",
       "title": "化学平衡と平衡移動",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 638,
-      "gateFail": [
-        "chars 638",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3134,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3165960,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-09",
@@ -2079,19 +2077,16 @@
       "subject": "高校化学（受験）",
       "chapter": "反応と平衡",
       "title": "酸塩基と pH の基礎",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 592,
-      "gateFail": [
-        "chars 592",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3168,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3141045,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-10",
@@ -2099,19 +2094,16 @@
       "subject": "高校化学（受験）",
       "chapter": "反応と平衡",
       "title": "酸化還元と半反応",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 588,
-      "gateFail": [
-        "chars 588",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3193,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3158661,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-11",
@@ -2119,19 +2111,16 @@
       "subject": "高校化学（受験）",
       "chapter": "無機",
       "title": "典型元素の性質（Na, Cl, ハロゲン等）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 610,
-      "gateFail": [
-        "chars 610",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3170,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3159064,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-12",
@@ -2139,19 +2128,16 @@
       "subject": "高校化学（受験）",
       "chapter": "無機",
       "title": "遷移元素と錯イオンの入り口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 584,
-      "gateFail": [
-        "chars 584",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3170,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3167322,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-13",
@@ -2159,19 +2145,16 @@
       "subject": "高校化学（受験）",
       "chapter": "有機",
       "title": "炭化水素の分類と命名の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 569,
-      "gateFail": [
-        "chars 569",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3198,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3148958,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-14",
@@ -2179,19 +2162,16 @@
       "subject": "高校化学（受験）",
       "chapter": "有機",
       "title": "官能基とアルコール・カルボン酸",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 579,
-      "gateFail": [
-        "chars 579",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3170,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3154696,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-15",
@@ -2199,19 +2179,16 @@
       "subject": "高校化学（受験）",
       "chapter": "有機",
       "title": "油脂・アミノ酸・糖の受験ポイント",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 596,
-      "gateFail": [
-        "chars 596",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3175,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3159502,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-16",
@@ -2219,19 +2196,16 @@
       "subject": "高校化学（受験）",
       "chapter": "物質の構成",
       "title": "化学結合（イオン・共有・金属）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 514,
-      "gateFail": [
-        "chars 514",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3188,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1732569,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-17",
@@ -2239,19 +2213,16 @@
       "subject": "高校化学（受験）",
       "chapter": "物質の構成",
       "title": "分子の形と極性",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 503,
-      "gateFail": [
-        "chars 503",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3183,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1717621,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-18",
@@ -2259,19 +2230,16 @@
       "subject": "高校化学（受験）",
       "chapter": "気体・溶液",
       "title": "溶解度と希薄溶液の性質",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 510,
-      "gateFail": [
-        "chars 510",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3193,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1735587,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-19",
@@ -2279,19 +2247,16 @@
       "subject": "高校化学（受験）",
       "chapter": "反応と平衡",
       "title": "反応速度と触媒",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 513,
-      "gateFail": [
-        "chars 513",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3193,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1729609,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-20",
@@ -2299,19 +2264,16 @@
       "subject": "高校化学（受験）",
       "chapter": "反応と平衡",
       "title": "溶解度積と沈殿",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 512,
-      "gateFail": [
-        "chars 512",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3133,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1725284,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-21",
@@ -2319,19 +2281,16 @@
       "subject": "高校化学（受験）",
       "chapter": "反応と平衡",
       "title": "電気分解と電池",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 494,
-      "gateFail": [
-        "chars 494",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3168,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1714847,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-22",
@@ -2339,19 +2298,16 @@
       "subject": "高校化学（受験）",
       "chapter": "無機",
       "title": "非金属元素（S,N,C の酸化物など）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 508,
-      "gateFail": [
-        "chars 508",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1718399,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-23",
@@ -2359,19 +2315,16 @@
       "subject": "高校化学（受験）",
       "chapter": "無機",
       "title": "金属イオンの分離・沈殿の型",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 494,
-      "gateFail": [
-        "chars 494",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3179,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1727976,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-24",
@@ -2379,19 +2332,16 @@
       "subject": "高校化学（受験）",
       "chapter": "有機",
       "title": "異性体（構造・立体の入口）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 542,
-      "gateFail": [
-        "chars 542",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3190,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1727037,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-25",
@@ -2399,19 +2349,16 @@
       "subject": "高校化学（受験）",
       "chapter": "有機",
       "title": "芳香族化合物の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 513,
-      "gateFail": [
-        "chars 513",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3120,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1723947,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-26",
@@ -2419,19 +2366,16 @@
       "subject": "高校化学（受験）",
       "chapter": "有機",
       "title": "高分子（合成・天然）の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 513,
-      "gateFail": [
-        "chars 513",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3189,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1714680,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-CH-27",
@@ -2439,19 +2383,16 @@
       "subject": "高校化学（受験）",
       "chapter": "総合",
       "title": "化学計算の検算と有効数字",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 519,
-      "gateFail": [
-        "chars 519",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3162,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1714010,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ELI-E-01",
@@ -3116,19 +3057,16 @@
       "subject": "高校英語（受験）",
       "chapter": "文型と基本構造",
       "title": "自動詞他動詞と目的語",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 683,
-      "gateFail": [
-        "chars 683",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3195,
+      "gateFail": [],
       "media": "audio_slides",
       "mediaBytes": 57136431,
       "hasVideo": false,
       "hasAudio": true,
       "hasSlides": true,
-      "phase": "media_without_curriculum"
+      "phase": "nlm_video_wait"
     },
     {
       "id": "ME-EN-03",
@@ -3136,19 +3074,16 @@
       "subject": "高校英語（受験）",
       "chapter": "時制",
       "title": "現在・過去・未来の基本",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 661,
-      "gateFail": [
-        "chars 661",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3173,
+      "gateFail": [],
       "media": "audio_slides",
       "mediaBytes": 84069665,
       "hasVideo": false,
       "hasAudio": true,
       "hasSlides": true,
-      "phase": "media_without_curriculum"
+      "phase": "nlm_video_wait"
     },
     {
       "id": "ME-EN-04",
@@ -3156,19 +3091,16 @@
       "subject": "高校英語（受験）",
       "chapter": "時制",
       "title": "完了形の核心（経験・完了・継続）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 688,
-      "gateFail": [
-        "chars 688",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3175,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3159347,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-05",
@@ -3176,19 +3108,16 @@
       "subject": "高校英語（受験）",
       "chapter": "時制",
       "title": "完了進行と時制の一致",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 692,
-      "gateFail": [
-        "chars 692",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3184505,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-06",
@@ -3196,19 +3125,16 @@
       "subject": "高校英語（受験）",
       "chapter": "助動詞",
       "title": "法助動詞の核（can may must will）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 692,
-      "gateFail": [
-        "chars 692",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3174,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3184229,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-07",
@@ -3216,19 +3142,16 @@
       "subject": "高校英語（受験）",
       "chapter": "助動詞",
       "title": "推量と義務の助動詞",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 694,
-      "gateFail": [
-        "chars 694",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3177,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3171626,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-08",
@@ -3236,19 +3159,16 @@
       "subject": "高校英語（受験）",
       "chapter": "不定詞・動名詞",
       "title": "不定詞の3用法",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 691,
-      "gateFail": [
-        "chars 691",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3124,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3168284,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-09",
@@ -3256,19 +3176,16 @@
       "subject": "高校英語（受験）",
       "chapter": "不定詞・動名詞",
       "title": "動名詞と不定詞の選択",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 700,
-      "gateFail": [
-        "chars 700",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3190,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3179728,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-10",
@@ -3276,19 +3193,16 @@
       "subject": "高校英語（受験）",
       "chapter": "分詞",
       "title": "現在分詞・過去分詞の形容詞用法",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 693,
-      "gateFail": [
-        "chars 693",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3163,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3170655,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-11",
@@ -3296,19 +3210,16 @@
       "subject": "高校英語（受験）",
       "chapter": "分詞",
       "title": "分詞構文の基本",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 678,
-      "gateFail": [
-        "chars 678",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3180,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3163918,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-12",
@@ -3316,19 +3227,16 @@
       "subject": "高校英語（受験）",
       "chapter": "関係詞",
       "title": "関係代名詞 who which that",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 661,
-      "gateFail": [
-        "chars 661",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3184,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3158774,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-13",
@@ -3336,19 +3244,16 @@
       "subject": "高校英語（受験）",
       "chapter": "関係詞",
       "title": "関係副詞と非制限用法",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 678,
-      "gateFail": [
-        "chars 678",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3137,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3159526,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-14",
@@ -3356,19 +3261,16 @@
       "subject": "高校英語（受験）",
       "chapter": "比較",
       "title": "原級比較級最上級の基本",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 654,
-      "gateFail": [
-        "chars 654",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3168,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3173048,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-15",
@@ -3376,19 +3278,16 @@
       "subject": "高校英語（受験）",
       "chapter": "比較",
       "title": "比較の応用（倍数・最上級言い換え）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 730,
-      "gateFail": [
-        "chars 730",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3172074,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-16",
@@ -3396,19 +3295,16 @@
       "subject": "高校英語（受験）",
       "chapter": "仮定法",
       "title": "仮定法過去・過去完了",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 738,
-      "gateFail": [
-        "chars 738",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3174,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3161185,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-17",
@@ -3416,19 +3312,16 @@
       "subject": "高校英語（受験）",
       "chapter": "仮定法",
       "title": "I wish / as if / if の省略",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 701,
-      "gateFail": [
-        "chars 701",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3176,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3151232,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-18",
@@ -3436,19 +3329,16 @@
       "subject": "高校英語（受験）",
       "chapter": "読解技法",
       "title": "段落構造とディスコースマーカー",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 631,
-      "gateFail": [
-        "chars 631",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3160,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3162439,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-19",
@@ -3456,19 +3346,16 @@
       "subject": "高校英語（受験）",
       "chapter": "読解技法",
       "title": "Finding the main idea（要旨）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 697,
-      "gateFail": [
-        "chars 697",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3187,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3180835,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-20",
@@ -3476,19 +3363,16 @@
       "subject": "高校英語（受験）",
       "chapter": "読解技法",
       "title": "Finding detail と言い換えトラップ",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 684,
-      "gateFail": [
-        "chars 684",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3182,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3188541,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-21",
@@ -3496,19 +3380,16 @@
       "subject": "高校英語（受験）",
       "chapter": "文型と基本構造",
       "title": "受動態の核心",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 527,
-      "gateFail": [
-        "chars 527",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3180,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1725323,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-22",
@@ -3516,19 +3397,16 @@
       "subject": "高校英語（受験）",
       "chapter": "文型と基本構造",
       "title": "間接疑問・強調・倒置の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 550,
-      "gateFail": [
-        "chars 550",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3180,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1738256,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-23",
@@ -3536,19 +3414,16 @@
       "subject": "高校英語（受験）",
       "chapter": "時制",
       "title": "未来表現 will / be going to / 現在形",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 521,
-      "gateFail": [
-        "chars 521",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3180,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1713860,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-24",
@@ -3556,19 +3431,16 @@
       "subject": "高校英語（受験）",
       "chapter": "助動詞",
       "title": "完了形との結合（should have 等）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 565,
-      "gateFail": [
-        "chars 565",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3180,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1726280,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-25",
@@ -3576,19 +3448,16 @@
       "subject": "高校英語（受験）",
       "chapter": "関係詞",
       "title": "関係形容詞 what / 複合関係詞",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 555,
-      "gateFail": [
-        "chars 555",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3166,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1716046,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-26",
@@ -3596,19 +3465,16 @@
       "subject": "高校英語（受験）",
       "chapter": "比較",
       "title": "比較構文の応用（no sooner 等）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 535,
-      "gateFail": [
-        "chars 535",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3165,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1723985,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-27",
@@ -3616,19 +3482,16 @@
       "subject": "高校英語（受験）",
       "chapter": "仮定法",
       "title": "仮定法の応用（if 除去・with）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 559,
-      "gateFail": [
-        "chars 559",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3196,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1723654,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-28",
@@ -3636,19 +3499,16 @@
       "subject": "高校英語（受験）",
       "chapter": "読解技法",
       "title": "論理展開とパラフレーズ",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 520,
-      "gateFail": [
-        "chars 520",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3196,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1741099,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-29",
@@ -3656,19 +3516,16 @@
       "subject": "高校英語（受験）",
       "chapter": "読解技法",
       "title": "長文の時間配分と設問先読み",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 526,
-      "gateFail": [
-        "chars 526",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3182,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1748504,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-EN-30",
@@ -3676,19 +3533,16 @@
       "subject": "高校英語（受験）",
       "chapter": "総合",
       "title": "英作文の型（意見・理由・例）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 536,
-      "gateFail": [
-        "chars 536",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3168,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1730917,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-ES-01",
@@ -7223,19 +7077,16 @@
       "subject": "高校物理（受験）",
       "chapter": "エネルギーと運動量",
       "title": "仕事と運動エネルギー",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 613,
-      "gateFail": [
-        "chars 613",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3187,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3147071,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-09",
@@ -7243,19 +7094,16 @@
       "subject": "高校物理（受験）",
       "chapter": "エネルギーと運動量",
       "title": "力学的エネルギー保存",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 615,
-      "gateFail": [
-        "chars 615",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3123,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3175937,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-10",
@@ -7263,19 +7111,16 @@
       "subject": "高校物理（受験）",
       "chapter": "エネルギーと運動量",
       "title": "運動量と力積",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 586,
-      "gateFail": [
-        "chars 586",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3172,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3151792,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-11",
@@ -7283,19 +7128,16 @@
       "subject": "高校物理（受験）",
       "chapter": "波動",
       "title": "波の基本量（振幅・周期・波長）",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 564,
-      "gateFail": [
-        "chars 564",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3168,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3148013,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-12",
@@ -7303,19 +7145,16 @@
       "subject": "高校物理（受験）",
       "chapter": "波動",
       "title": "音波・弦・気柱の基礎",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 588,
-      "gateFail": [
-        "chars 588",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3195,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3150461,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-13",
@@ -7323,19 +7162,16 @@
       "subject": "高校物理（受験）",
       "chapter": "電気",
       "title": "電荷・電場・電位のイメージ",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 586,
-      "gateFail": [
-        "chars 586",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3158,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3140889,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-14",
@@ -7343,19 +7179,16 @@
       "subject": "高校物理（受験）",
       "chapter": "電気",
       "title": "オームの法則と電力",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 570,
-      "gateFail": [
-        "chars 570",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3170,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3126142,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-15",
@@ -7363,19 +7196,16 @@
       "subject": "高校物理（受験）",
       "chapter": "熱・気体",
       "title": "温度・熱量・比熱",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 581,
-      "gateFail": [
-        "chars 581",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3150,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3138101,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-16",
@@ -7383,19 +7213,16 @@
       "subject": "高校物理（受験）",
       "chapter": "熱・気体",
       "title": "理想気体の状態方程式",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 588,
-      "gateFail": [
-        "chars 588",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3187,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 3155402,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-17",
@@ -7403,19 +7230,16 @@
       "subject": "高校物理（受験）",
       "chapter": "運動と力",
       "title": "水平投射・斜方投射",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 519,
-      "gateFail": [
-        "chars 519",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3191,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1719365,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-18",
@@ -7423,19 +7247,16 @@
       "subject": "高校物理（受験）",
       "chapter": "運動と力",
       "title": "等速円運動",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 502,
-      "gateFail": [
-        "chars 502",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3172,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1716377,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-19",
@@ -7443,19 +7264,16 @@
       "subject": "高校物理（受験）",
       "chapter": "運動と力",
       "title": "単振動の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 500,
-      "gateFail": [
-        "chars 500",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3186,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1721072,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-20",
@@ -7463,19 +7281,16 @@
       "subject": "高校物理（受験）",
       "chapter": "波動",
       "title": "光の反射・屈折・全反射",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 522,
-      "gateFail": [
-        "chars 522",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1724839,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-21",
@@ -7483,19 +7298,16 @@
       "subject": "高校物理（受験）",
       "chapter": "波動",
       "title": "ヤングの干渉・薄膜の入口",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 493,
-      "gateFail": [
-        "chars 493",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3175,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1715511,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-22",
@@ -7503,19 +7315,16 @@
       "subject": "高校物理（受験）",
       "chapter": "電気",
       "title": "コンデンサー",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 496,
-      "gateFail": [
-        "chars 496",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3174,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1705680,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-23",
@@ -7523,19 +7332,16 @@
       "subject": "高校物理（受験）",
       "chapter": "電気",
       "title": "磁場と電流が受ける力",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 482,
-      "gateFail": [
-        "chars 482",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3185,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1710810,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-24",
@@ -7543,19 +7349,16 @@
       "subject": "高校物理（受験）",
       "chapter": "電気",
       "title": "電磁誘導と誘導起電力",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 487,
-      "gateFail": [
-        "chars 487",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3170,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1706104,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-25",
@@ -7563,19 +7366,16 @@
       "subject": "高校物理（受験）",
       "chapter": "熱・気体",
       "title": "熱力学第一法則",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 513,
-      "gateFail": [
-        "chars 513",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3182,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1729761,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-PH-26",
@@ -7583,19 +7383,16 @@
       "subject": "高校物理（受験）",
       "chapter": "総合",
       "title": "物理の次元解析と近似",
-      "status": "outline",
-      "gatePass": false,
-      "gateChars": 516,
-      "gateFail": [
-        "chars 516",
-        "drills 0"
-      ],
+      "status": "full",
+      "gatePass": true,
+      "gateChars": 3163,
+      "gateFail": [],
       "media": "none",
       "mediaBytes": 1724411,
       "hasVideo": false,
       "hasAudio": false,
       "hasSlides": false,
-      "phase": "curriculum_blocked"
+      "phase": "nlm_wait"
     },
     {
       "id": "ME-SO-01",
