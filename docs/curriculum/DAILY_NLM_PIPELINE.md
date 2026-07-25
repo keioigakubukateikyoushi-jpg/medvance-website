@@ -65,15 +65,18 @@ bash scripts/install-nlm-daily-launchd.sh
 
 ---
 
-## 日次上限の考え方
+## 日次上限の考え方（until-error）
 
-NotebookLM に公式の「今日の残り N」API が無いため:
+NotebookLM に「残り枠 N」API が無いので、**エラーが出るまで回す**のが最も限界に近い。
 
-- **NLM_DAILY_MAX_UNITS**（既定 10）で1日の最大単元数を切る
-- `RESOURCE_EXHAUSTED` / rate limit を検知したら **その日は打ち切り**
-- 状態は `nlm-daily-state.json` に残り、同じ日の再実行は予算を消費済みとして抑制
+| モード | 環境変数 | 動き |
+|---|---|---|
+| **until-error（既定）** | `NLM_DAILY_MODE=until-error` | キューが続く限り生成。**rate limit / quota / notebook作成失敗**で当日終了 |
+| capped | `NLM_DAILY_MODE=capped` + `NLM_DAILY_MAX_UNITS=10` | 旧方式。本数で止める |
 
-上限が余っている日は `nlm-daily-runner` を手動でもう一度（または MAX を上げて）実行可能。
+- 暴走防止だけ **NLM_DAILY_SAFETY_MAX**（既定 80）— 通常は error の方が先
+- 当日すでに limit 済みなら再実行しない（`--force-retry` で再プローブ可）
+- 状態: `content/academy/nlm-daily-state.json`
 
 ---
 
