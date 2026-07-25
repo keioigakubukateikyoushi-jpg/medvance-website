@@ -16,9 +16,17 @@ nlm-queue-next.json     … 次に回す ID 一覧
         ↓
 nlm-daily-runner        … その日の上限まで自動生成
         ↓
-rate limit で停止 / 日次ログ
+pack_ok のたび nlm-integrate-ready  … 配信名正規化 + media-ready + BOARD
         ↓
-BOARD.md で「どこまで作れたか」を確認 → 組み込み
+全滅失敗で停止 / 日次ログ
+        ↓
+BOARD.md / media-ready.json で「どこまで作れたか」を確認
+```
+
+```bash
+# 完成パックだけ手動組み込み
+node scripts/nlm-integrate-ready.mjs
+node scripts/nlm-integrate-ready.mjs ME-PH-02 ME-M1-04
 ```
 
 ---

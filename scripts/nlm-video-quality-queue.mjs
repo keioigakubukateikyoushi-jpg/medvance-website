@@ -95,9 +95,15 @@ function runOne(id) {
     child.stderr.on("data", onData);
 
     child.on("close", (code) => {
-      const limited = /rate limit|RESOURCE_EXHAUSTED|Rate limited|quota/i.test(out);
       const ok = code === 0 && hasGoodVideo(id);
-      log("END", id, `code=${code}`, ok ? "video_ok" : "video_missing", limited ? "RATE_LIMIT" : "");
+      const hardLimitHint =
+        /\bRESOURCE_EXHAUSTED\b/.test(out) ||
+        /\brate[\s_-]*limit(?:ed|ing)?\b/i.test(out) ||
+        /\btoo\s+many\s+requests\b/i.test(out) ||
+        /\b(?:http[\s_-]*)?(?:status|error|code)[:\s#=]*429\b/i.test(out) ||
+        /\bquota\s*(?:exceeded|exhausted|limit|reached|hit)\b/i.test(out);
+      const limited = !ok && hardLimitHint;
+      log("END", id, `code=${code}`, ok ? "video_ok" : "video_missing", limited ? "RATE_LIMIT" : !ok ? "FAIL" : "");
       resolve({ id, code, ok, limited, out });
     });
   });

@@ -3,6 +3,7 @@ import path from "node:path";
 import { isFreeUnit } from "./freeUnits";
 
 const MEDIA_ROOT = path.join(process.cwd(), "public", "academy", "media");
+const YOUTUBE_REGISTRY = path.join(process.cwd(), "content", "academy", "media-youtube.json");
 
 type UnitMediaPublicUrls = {
   lesson_pdf?: string;
@@ -16,6 +17,17 @@ type UnitMediaPublicUrls = {
 
 type UnitMediaManifest = {
   public_urls?: UnitMediaPublicUrls;
+};
+
+type YoutubeRegistryEntry = {
+  video?: string;
+  lecture_video?: string;
+};
+
+type YoutubeRegistry = {
+  version?: number;
+  updated?: string;
+  units?: Record<string, YoutubeRegistryEntry>;
 };
 
 export type UnitMediaAssets = {
@@ -42,6 +54,36 @@ export type UnitMediaAssets = {
   /** スライドPDF・音声・動画など拡張メディアあり */
   hasExtendedMedia: boolean;
 };
+
+/** YouTube 視聴URL / embed / ID から判定（UI 側でも利用可） */
+export function isYoutubeMediaUrl(value: string | null | undefined): boolean {
+  if (!value) return false;
+  const v = value.trim();
+  if (/^[\w-]{11}$/.test(v)) return true;
+  try {
+    const u = new URL(v);
+    const host = u.hostname.replace(/^www\./, "");
+    return (
+      host === "youtu.be" ||
+      host === "youtube.com" ||
+      host === "m.youtube.com" ||
+      host === "music.youtube.com" ||
+      host === "youtube-nocookie.com"
+    );
+  } catch {
+    return false;
+  }
+}
+
+function readYoutubeRegistry(): Record<string, YoutubeRegistryEntry> {
+  try {
+    if (!fs.existsSync(YOUTUBE_REGISTRY)) return {};
+    const raw = JSON.parse(fs.readFileSync(YOUTUBE_REGISTRY, "utf8")) as YoutubeRegistry;
+    return raw.units || {};
+  } catch {
+    return {};
+  }
+}
 
 function publicUrl(unitId: string, file: string): string {
   return `/academy/media/${unitId}/${file}`;
@@ -131,17 +173,47 @@ function emptyAssets(unitId: string): UnitMediaAssets {
  * public/academy/media/{unitId}/ 配下のアセットを解決する。
  * 教材PDF・スライドPDF・音声・動画・クイズ（複数ファイル名を吸収）。
  * 本番では無料パックを CDN URL で解決する（関数内に media バイナリが無いため）。
+ * 動画はサイト内 mp4（通常埋め込み）を本線。remote URL はフォールバック。
  */
 export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   const dir = path.join(MEDIA_ROOT, unitId);
   const onDisk = fs.existsSync(dir);
+  const ytReg = readYoutubeRegistry()[unitId] || {};
+  const publicUrls = onDisk ? readPublicUrls(dir) : {};
 
-  // ローカル/ディスク無しの本番: 無料パックは CDN 固定名で公開済み
+  const remoteLecture =
+    safePublicMediaUrl(publicUrls.lecture_video) ||
+    safePublicMediaUrl(ytReg.lecture_video) ||
+    null;
+  const remoteVideo =
+    safePublicMediaUrl(publicUrls.video) || safePublicMediaUrl(ytReg.video) || null;
+
+  // 本番（media ディレクトリ無し）: 無料は CDN mp4、有料は remote のみ
   if (!onDisk) {
-    return isFreeUnit(unitId) ? freeCdnAssets(unitId) : emptyAssets(unitId);
+    if (isFreeUnit(unitId)) {
+      const base = freeCdnAssets(unitId);
+      return {
+        ...base,
+        // 無料は CDN mp4 を本線
+        lectureVideo: base.video,
+        video: base.video,
+        hasExtendedMedia: true,
+        hasAnyMedia: true,
+      };
+    }
+    if (remoteLecture || remoteVideo) {
+      const v = remoteVideo || remoteLecture;
+      return {
+        ...emptyAssets(unitId),
+        lectureVideo: v,
+        video: v,
+        hasAnyMedia: true,
+        hasExtendedMedia: true,
+      };
+    }
+    return emptyAssets(unitId);
   }
 
-  const publicUrls = readPublicUrls(dir);
   let lessonPdf =
     safePublicMediaUrl(publicUrls.lesson_pdf) || firstExisting(dir, unitId, ["lesson.pdf"]);
   let lessonHtml = firstExisting(dir, unitId, ["lesson.html"]);
@@ -163,12 +235,16 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
       "audio_unit.m4a",
     ]);
 
-  // 長めの講義動画（nlm / video_nlm）と、短い連動動画（video.mp4）
-  let lectureVideo =
-    safePublicMediaUrl(publicUrls.lecture_video) ||
-    firstExisting(dir, unitId, ["lecture.mp4", "nlm_video.mp4", "video_nlm.mp4"]);
-  let video =
-    safePublicMediaUrl(publicUrls.video) || firstExisting(dir, unitId, ["video.mp4"]);
+  // 動画: サイト内 mp4 本線（配信名 video.mp4 優先）→ remote フォールバック
+  const localMp4 = firstExisting(dir, unitId, [
+    "video.mp4",
+    "nlm_video.mp4",
+    "lecture.mp4",
+    "video_nlm.mp4",
+  ]);
+  let video = localMp4 || remoteVideo || remoteLecture;
+  // 二重表示しないよう lecture は video と同じ主ソースに揃える
+  let lectureVideo = video;
 
   const quizJsonPath = firstExistingPath(dir, ["quiz.json", "nlm_quiz.json"]);
   let quizMd =
@@ -182,7 +258,10 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
     lessonHtml = lessonHtml || cdn.lessonHtml;
     slidesPdf = slidesPdf || cdn.slidesPdf;
     audio = audio || cdn.audio;
-    video = video || cdn.video;
+    if (!video) {
+      video = cdn.video;
+      lectureVideo = cdn.video;
+    }
   }
 
   const hasExtendedMedia = Boolean(

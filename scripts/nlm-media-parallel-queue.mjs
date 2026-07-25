@@ -189,11 +189,28 @@ function runOne(id) {
     child.stdout.on("data", onData);
     child.stderr.on("data", onData);
     child.on("close", (code) => {
-      const limited = /rate limit|RESOURCE_EXHAUSTED|Rate limited|quota/i.test(out);
       const videoOnly = flags.has("--video-only");
-      const ok = videoOnly ? hasPack(id, { needVideo: true }) : hasPack(id, { needVideo: true }) || hasPack(id, { needVideo: false });
-      log("END", id, `code=${code}`, ok ? "pack_ok" : "pack_incomplete", limited ? "RATE_LIMIT" : "");
-      resolve({ id, code, ok, limited });
+      const ok =
+        videoOnly
+          ? hasPack(id, { needVideo: true })
+          : hasPack(id, { needVideo: true }) || hasPack(id, { needVideo: false });
+      // 方針: pack が取れたら成功。ログ文字列だけで RATE_LIMIT にしない。
+      // 失敗時のみ「上限っぽい文言」を副次情報として付ける（INVALID_ARGUMENT 等は除外）。
+      const hardLimitHint =
+        /\bRESOURCE_EXHAUSTED\b/.test(out) ||
+        /\brate[\s_-]*limit(?:ed|ing)?\b/i.test(out) ||
+        /\btoo\s+many\s+requests\b/i.test(out) ||
+        /\b(?:http[\s_-]*)?(?:status|error|code)[:\s#=]*429\b/i.test(out) ||
+        /\bquota\s*(?:exceeded|exhausted|limit|reached|hit)\b/i.test(out);
+      const limited = !ok && hardLimitHint;
+      log(
+        "END",
+        id,
+        `code=${code}`,
+        ok ? "pack_ok" : "pack_incomplete",
+        limited ? "RATE_LIMIT" : !ok ? "FAIL" : "",
+      );
+      resolve({ id, code, ok, limited, failed: !ok });
     });
   });
 }
@@ -219,14 +236,15 @@ async function runPool(jobs) {
           const res = await runOne(id);
           results.push(res);
           active--;
-          if (res.limited) {
+          // 失敗が続いたときだけ並列を落とす（成功時はフル並列維持）
+          if (res.failed) {
             rateHits++;
             const prev = parallel;
-            parallel = 1;
-            log("RATE_LIMIT → parallel", prev, "-> 1, cooldown", COOLDOWN_ON_LIMIT_MS);
-            await sleep(COOLDOWN_ON_LIMIT_MS);
-            if (rateHits < 4) {
-              parallel = Math.max(1, Math.min(baseParallel, 2));
+            parallel = Math.max(1, Math.floor(prev / 2));
+            log("FAIL throttle → parallel", prev, "->", parallel, "cooldown", COOLDOWN_ON_LIMIT_MS);
+            await sleep(Math.min(COOLDOWN_ON_LIMIT_MS, 90_000));
+            if (rateHits < 5) {
+              parallel = Math.max(1, Math.min(baseParallel, parallel + 1));
               log("parallel partial restore", parallel);
             }
           }

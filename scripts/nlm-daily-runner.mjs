@@ -15,8 +15,12 @@
  *   node scripts/nlm-daily-runner.mjs              # until-error（推奨）
  *   node scripts/nlm-daily-runner.mjs --dry-run
  *   node scripts/nlm-daily-runner.mjs --max 5      # 強制キャップ（テスト用）
- *   NLM_PARALLEL=2 node scripts/nlm-daily-runner.mjs
+ *   node scripts/nlm-daily-runner.mjs --tracks math,physics,chemistry
+ *   node scripts/nlm-daily-runner.mjs --force-retry  # 当日 rateLimited を解除して再試行
+ *   NLM_PARALLEL=4 NLM_DAILY_CHUNK=4 node scripts/nlm-daily-runner.mjs
  *   NLM_DAILY_MODE=capped NLM_DAILY_MAX_UNITS=10 …  # 旧: 本数上限モード
+ *
+ * 停止: pack 全滅失敗のみ。pack_ok があればログに何が出ても続行。
  *
  * LaunchAgent: scripts/install-nlm-daily-launchd.sh
  */
@@ -62,9 +66,12 @@ const PARALLEL = Math.max(1, parseInt(process.env.NLM_PARALLEL || "2", 10) || 2)
 const CHUNK = Math.max(1, Math.min(PARALLEL, parseInt(process.env.NLM_DAILY_CHUNK || String(PARALLEL), 10) || PARALLEL));
 const CHUNK_PAUSE_MS = Math.max(0, parseInt(process.env.NLM_DAILY_CHUNK_PAUSE_MS || "12000", 10) || 12_000);
 
-const RATE_RE =
-  /rate limit|RESOURCE_EXHAUSTED|Rate limited|quota|failed to create notebook|RESOURCE_EXHAUSTED|429|too many requests/i;
-
+/**
+ * 停止判定の方針（ユーザー合意）:
+ *   多めに満遍なく投げる → pack が取れたら成功 → 続ける
+ *   pack が取れない（失敗）が続いたら「限界/エラー」として止める
+ * ログ文言の単独マッチでは止めない（UUID 429・INVALID_ARGUMENT 誤爆の教訓）。
+ */
 function log(...parts) {
   const line = `[${new Date().toISOString()}] ${parts.join(" ")}`;
   console.log(line);
@@ -103,14 +110,82 @@ function refreshBoard() {
   }
 }
 
+/** pack_ok をサイト組み込み（配信名正規化 + media-ready + BOARD） */
+function integrateReady(ids) {
+  const list = (ids || []).filter(Boolean);
+  if (!list.length) return;
+  log("integrate ready packs:", list.join(", "));
+  const r = spawnSync(
+    "node",
+    [path.join(ROOT, "scripts/nlm-integrate-ready.mjs"), ...list],
+    { cwd: ROOT, encoding: "utf8" },
+  );
+  if (r.stdout) process.stdout.write(r.stdout);
+  if (r.stderr) process.stderr.write(r.stderr);
+  if (r.status !== 0) {
+    log("integrate failed (non-fatal)", r.status, r.stderr || "");
+  }
+}
+
 function loadNextIds() {
   if (!fs.existsSync(NEXT_PATH)) refreshBoard();
   const q = JSON.parse(fs.readFileSync(NEXT_PATH, "utf8"));
   return q.ids || [];
 }
 
-function isRateLimitedOutput(out) {
-  return RATE_RE.test(out || "");
+/**
+ * チャンク結果から「今日は打ち切るべき失敗」か判定。
+ * - 1本でも pack_ok があれば続行（部分成功）
+ * - 全滅（ok=0 かつ fail>=1）なら限界/エラー
+ */
+function shouldStopOnChunk(res) {
+  if (!res) return { stop: false, reason: null };
+  if (res.ok > 0) return { stop: false, reason: null };
+  if (res.fail > 0) {
+    return {
+      stop: true,
+      reason: res.limited ? "rate_limit_or_quota" : "chunk_all_failed",
+    };
+  }
+  return { stop: false, reason: null };
+}
+
+/** --tracks math,physics,chemistry で科目絞り込み */
+function parseTrackFilter() {
+  const idx = args.indexOf("--tracks");
+  if (idx < 0) return null;
+  const raw = (args[idx + 1] || process.env.NLM_TRACKS || "").trim();
+  if (!raw) return null;
+  return raw
+    .split(/[,+\s]+/)
+    .map((s) => s.toLowerCase())
+    .filter(Boolean);
+}
+
+function idMatchesTracks(id, tracks) {
+  if (!tracks || !tracks.length) return true;
+  const u = String(id).toUpperCase();
+  for (const t of tracks) {
+    if (t === "math" || t === "suu" || t === "数") {
+      if (/^ME-M\d|^ME-MA|^ME-MB|^ADV-M|^ELI-M/.test(u)) return true;
+    }
+    if (t === "physics" || t === "ph" || t === "物" || t === "butsuri") {
+      if (/PH-/.test(u) || u.startsWith("ME-PH")) return true;
+    }
+    if (t === "chemistry" || t === "ch" || t === "化" || t === "kagaku") {
+      if (/CH-/.test(u) || u.startsWith("ME-CH")) return true;
+    }
+    if (t === "biology" || t === "bi" || t === "生") {
+      if (/BI-/.test(u) || u.startsWith("ME-BI")) return true;
+    }
+    if (t === "sci" || t === "science" || t === "理") {
+      if (/(PH|CH|BI)-/.test(u) || /^ME-(PH|CH|BI)/.test(u)) return true;
+    }
+    if (t === "en" || t === "english" || t === "英") {
+      if (/EN-/.test(u) || u.includes("ENGLISH")) return true;
+    }
+  }
+  return false;
 }
 
 function runQueue(ids) {
@@ -156,33 +231,41 @@ function runQueue(ids) {
     child.stdout.on("data", onData);
     child.stderr.on("data", onData);
     child.on("close", (code) => {
-      const limited = isRateLimitedOutput(out);
-      const ends = [...out.matchAll(/END (\S+) code=(\d+) (\S+)( RATE_LIMIT)?/g)];
+      // END id code=N pack_ok|pack_incomplete [RATE_LIMIT|FAIL]
+      const ends = [...out.matchAll(/END (\S+) code=(\d+) (\S+)(?:\s+(\S+))?/g)];
       let ok = 0;
       let fail = 0;
+      let limitedFlags = 0;
       const results = [];
       for (const m of ends) {
+        const status = m[3];
+        const flag = m[4] || "";
+        const isOk = status === "pack_ok";
         const rec = {
           id: m[1],
           code: Number(m[2]),
-          status: m[3],
-          limited: Boolean(m[4]) || limited,
+          status,
+          limited: flag === "RATE_LIMIT",
+          failed: !isOk,
         };
         results.push(rec);
-        if (rec.status === "pack_ok") ok++;
+        if (isOk) ok++;
         else fail++;
+        if (flag === "RATE_LIMIT") limitedFlags++;
       }
       if (!ends.length) {
-        if (limited) fail = ids.length;
-        else if (code === 0) ok = ids.length;
-        else fail = ids.length;
+        // END が無い = 子が落ちた扱い → 全滅失敗
+        fail = ids.length;
+        for (const id of ids) results.push({ id, code, status: "no_end", limited: false, failed: true });
       }
+      // 成功が1本でもあれば limited で日を止めない（rate_hits も無視）
+      const limited = ok === 0 && fail > 0 && limitedFlags > 0;
       log(
         "chunk done",
         `code=${code}`,
         `ok=${ok}`,
         `fail=${fail}`,
-        limited ? "RATE_LIMIT_OR_QUOTA" : "",
+        limited ? "ALL_FAIL_RATE" : fail > 0 && ok === 0 ? "ALL_FAIL" : ok > 0 && fail > 0 ? "PARTIAL" : "OK",
       );
       resolve({ ok, fail, limited, code, results, out });
     });
@@ -313,7 +396,9 @@ async function main() {
     return;
   }
 
-  let queue = loadNextIds().filter((id) => !already.has(id));
+  const trackFilter = parseTrackFilter();
+  if (trackFilter) log("track filter:", trackFilter.join(","));
+  let queue = loadNextIds().filter((id) => !already.has(id) && idMatchesTracks(id, trackFilter));
   if (DRY) {
     const preview = queue.slice(0, Math.min(remainingCap, MODE === "capped" ? MAX_UNITS : 30));
     log(
@@ -383,35 +468,35 @@ async function main() {
     fail += res.fail;
     allResults.push(...(res.results || []));
 
+    const justOk = [];
     for (const r of res.results || []) {
       if (r.status === "pack_ok") {
         dayState.ok = [...new Set([...(dayState.ok || []), r.id])];
         consecutiveNonLimitFails = 0;
+        justOk.push(r.id);
       } else {
         dayState.fail = [...new Set([...(dayState.fail || []), r.id])];
       }
     }
+    // できたらすぐ組み込む（配信名正規化・media-ready・BOARD）
+    if (justOk.length) {
+      integrateReady(justOk);
+      saveState(state);
+    }
 
-    if (res.limited) {
+    // 成功が1本でもあれば続行。全滅失敗だけ止める（ログ誤爆しない）
+    const stop = shouldStopOnChunk(res);
+    if (stop.stop) {
+      consecutiveNonLimitFails++;
+      // 1チャンク全滅でも、並列多めなので「限界かも」として止める
       rateLimited = true;
       dayState.rateLimited = true;
       dayState.rateLimitHits = (dayState.rateLimitHits || 0) + 1;
-      stoppedReason = "rate_limit_or_quota";
-      log("STOP: rate limit / quota — 今日の限界とみなして終了");
+      stoppedReason = stop.reason || "chunk_all_failed";
+      log("STOP: chunk 全滅失敗 — 限界/エラーとみなして終了", stoppedReason, `ok=${res.ok} fail=${res.fail}`);
       break;
     }
-
-    // 連続で pack 失敗が続き、かつ出力に limit が無い場合も打ち切り（無限リトライ防止）
-    if (res.fail > 0 && res.ok === 0) {
-      consecutiveNonLimitFails++;
-      if (consecutiveNonLimitFails >= 3) {
-        stoppedReason = "consecutive_failures";
-        log("STOP: 3 consecutive chunks failed without pack_ok (not necessarily quota)");
-        break;
-      }
-    } else if (res.ok > 0) {
-      consecutiveNonLimitFails = 0;
-    }
+    if (res.ok > 0) consecutiveNonLimitFails = 0;
 
     if (remainingCap <= 0) {
       stoppedReason = MODE === "capped" ? "hard_max" : "safety_max";
@@ -423,7 +508,7 @@ async function main() {
     if (queue.length < CHUNK) {
       refreshBoard();
       const again = new Set(dayState.attempted || []);
-      queue = loadNextIds().filter((id) => !again.has(id));
+      queue = loadNextIds().filter((id) => !again.has(id) && idMatchesTracks(id, trackFilter));
       if (!queue.length && !rateLimited) {
         stoppedReason = "completed_queue";
         log("queue drained");
@@ -441,6 +526,9 @@ async function main() {
   dayState.stoppedReason = stoppedReason;
   state.lastRun = dayState.lastFinished;
   saveState(state);
+
+  // 最終: 当日成功分をまとめて再組み込み（取りこぼし防止）
+  if ((dayState.ok || []).length) integrateReady(dayState.ok);
 
   refreshBoard();
   const inv = JSON.parse(fs.readFileSync(path.join(CONTENT, "media-inventory.json"), "utf8"));

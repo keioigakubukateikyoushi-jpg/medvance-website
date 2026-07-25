@@ -17,6 +17,7 @@ import {
   type NormalizedQuizQuestion,
 } from "@/lib/academy/media";
 import KatexEnhance from "@/components/academy/KatexEnhance";
+import UnitVideoPlayer from "@/components/academy/UnitVideoPlayer";
 import type { Metadata } from "next";
 
 type Props = {
@@ -390,7 +391,8 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
                   {media.audio ? (
                     <div>
                       <p className="text-xs mb-1.5 font-medium text-[#6b7280]">音声</p>
-                      <audio controls className="w-full" src={media.audio} preload="metadata" />
+                      {/* preload=none: タブを開いただけでは音声を取りに行かない */}
+                      <audio controls className="w-full" src={media.audio} preload="none" />
                     </div>
                   ) : (
                     <div
@@ -407,22 +409,20 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
                   )}
 
                   {media.lectureVideo || media.video ? (
-                    <div>
-                      <p className="text-xs mb-1.5 font-medium text-[#6b7280]">動画</p>
-                      <video
-                        controls
-                        className="w-full rounded-lg max-h-96 bg-black"
-                        src={media.lectureVideo || media.video || undefined}
-                        preload="metadata"
-                      />
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-xs mb-1.5 font-medium text-[#6b7280]">動画</p>
+                        <UnitVideoPlayer
+                          src={(media.lectureVideo || media.video)!}
+                          title={`${unit.title} 授業動画`}
+                        />
+                      </div>
                       {showShortVideo && media.video && media.lectureVideo && (
-                        <div className="mt-4">
+                        <div>
                           <p className="text-xs mb-1.5 font-medium text-[#6b7280]">動画（要点）</p>
-                          <video
-                            controls
-                            className="w-full rounded-lg max-h-96 bg-black"
+                          <UnitVideoPlayer
                             src={media.video}
-                            preload="metadata"
+                            title={`${unit.title} 要点動画`}
                           />
                         </div>
                       )}
@@ -436,7 +436,7 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
                         動画
                       </p>
                       <p className="text-sm" style={{ color: "#9ca3af" }}>
-                        動画は準備中です
+                        動画は準備中です（YouTube URL 登録後に表示されます）
                       </p>
                     </div>
                   )}

@@ -54,6 +54,20 @@ rsync -a --delete \
 ## 大容量メディアの配信
 
 音声・動画・スライドPDFは `.gitignore` / `.vercelignore` の対象で、ローカル生成物をそのままVercelへ送らない。
+
+### 推奨（動画）: サイト内 mp4 を通常埋め込み
+
+1. NLM で `video.mp4` / `audio.m4a` / `slides.pdf` を生成
+2. **無料単元**は gitignore 例外で Vercel 静的配信 → `UnitVideoPlayer` が HTML5 埋め込み
+3. 重くしない工夫（プレイヤー側）:
+   - クリックするまで `src` を付けない（初期帯域ゼロ）
+   - 画面付近まで UI のみ
+   - 音声は `preload="none"`
+4. **有料単元**の大容量バイナリは git / Vercel に載せない（現状）。本文はコードで見放題、動画はローカル確認 or 後日ストレージ
+5. YouTube URL は任意フォールバック（`set-media-youtube.mjs` / `media-youtube.json`）
+
+### 外部ストレージ（任意）
+
 外部ストレージへ配置した後、各ユニットの `public/academy/media/<unit-id>/manifest.json` に公開URLを指定する。
 
 ```json
@@ -61,15 +75,16 @@ rsync -a --delete \
   "public_urls": {
     "slides_pdf": "https://media.example.com/ME-PH-01/slides.pdf",
     "audio": "https://media.example.com/ME-PH-01/audio.m4a",
-    "lecture_video": "https://media.example.com/ME-PH-01/video.mp4"
+    "lecture_video": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
+    "video": "https://youtu.be/XXXXXXXXXXX"
   }
 }
 ```
 
 - 利用できるキー: `lesson_pdf`, `slides_html`, `slides_pdf`, `audio`, `lecture_video`, `video`, `quiz_md`
 - URLは `https://` またはサイト内の `/` 始まりだけを受け付ける。
+- YouTube / youtu.be / embed / shorts 対応。mp4 直リンクも従来どおり `<video>`。
 - NotebookLM再生成時も既存の `public_urls` は保持する。
-- 配信先サービスは未決。料金・容量・転送量を確認してユーザー承認後に選ぶ。
 
 ### クイズの正本
 
