@@ -30,7 +30,22 @@
       "storyboard": "storyboard/ME-PH-01.md",
       "slides": "slides/ME-PH-01.md",
       "quiz": "quiz/ME-PH-01.json",
-      "quality": "reviewed-v2"
+      "quality": "reviewed-v2",
+      "parts": [
+        {
+          "id": "ME-PH-01-P01",
+          "part": 1,
+          "title": "SI単位と単位換算",
+          "minutes": 8,
+          "goal": "SI単位を理解し、換算分数で単位換算を途中過程つきで実行できる",
+          "prereq": [],
+          "status": "generation-ready",
+          "file": "lessons/ME-PH-01-P01.md",
+          "storyboard": "storyboard/ME-PH-01-P01.md",
+          "slides": "slides/ME-PH-01-P01.md",
+          "quiz": "quiz/ME-PH-01-P01.json"
+        }
+      ]
     },
     {
       "id": "ME-PH-02",

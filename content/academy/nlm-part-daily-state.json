@@ -1,0 +1,62 @@
+{
+  "version": 3,
+  "days": {},
+  "partDays": {
+    "2026-07-26": {
+      "attempted": [
+        "ME-EN-01-P01",
+        "ME-M1-15-P01",
+        "ME-PH-01-P01",
+        "ME-M1-15-P02",
+        "ME-M1-15-P03",
+        "ME-M1-15-P04",
+        "ME-M1-15-P05"
+      ],
+      "complete": [
+        "ME-M1-15-P01",
+        "ME-PH-01-P01",
+        "ME-M1-15-P02",
+        "ME-M1-15-P03",
+        "ME-M1-15-P04",
+        "ME-M1-15-P05"
+      ],
+      "partial": [
+        {
+          "id": "ME-EN-01-P01",
+          "at": "2026-07-26T12:36:53.038Z",
+          "status": {
+            "video": false,
+            "audio": false,
+            "slides": false,
+            "quiz": false
+          },
+          "code": 0
+        },
+        {
+          "id": "ME-EN-01-P01",
+          "at": "2026-07-26T12:47:58.267Z",
+          "status": {
+            "video": false,
+            "audio": false,
+            "slides": true,
+            "quiz": true
+          },
+          "code": 0
+        },
+        {
+          "id": "ME-M1-15-P02",
+          "at": "2026-07-26T13:26:43.372Z",
+          "status": {
+            "video": false,
+            "audio": false,
+            "slides": false,
+            "quiz": false
+          },
+          "code": 0
+        }
+      ],
+      "stoppedReason": "safety_max"
+    }
+  },
+  "updatedAt": "2026-07-26T14:42:58.303Z"
+}

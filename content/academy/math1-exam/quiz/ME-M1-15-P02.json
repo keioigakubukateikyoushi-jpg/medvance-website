@@ -1,0 +1,12 @@
+{
+  "unit_id": "ME-M1-15-P02",
+  "title": "奇数係数の平方完成",
+  "pass_score": 4,
+  "questions": [
+    {"id":"q1","type":"mc","prompt":"5の半分はどれか。","choices":["5","5/2","25/2","25/4"],"answer":"5/2","explain":"一次係数を2で割る。"},
+    {"id":"q2","type":"short","prompt":"x²+5x-1を平方完成せよ。","answer":"(x+5/2)²-29/4","explain":"-1=-4/4としてまとめる。"},
+    {"id":"q3","type":"short","prompt":"x²+3x+4を平方完成せよ。","answer":"(x+3/2)²+7/4","explain":"-9/4+16/4=7/4。"},
+    {"id":"q4","type":"mc","prompt":"(7/2)²はどれか。","choices":["49/2","7/4","49/4","14/4"],"answer":"49/4","explain":"分子と分母をそれぞれ二乗する。"},
+    {"id":"q5","type":"short","prompt":"x²-7x+2を平方完成せよ。","answer":"(x-7/2)²-41/4","explain":"2=8/4としてまとめる。"}
+  ]
+}

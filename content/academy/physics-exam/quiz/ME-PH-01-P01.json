@@ -1,0 +1,44 @@
+{
+  "unit_id": "ME-PH-01-P01",
+  "title": "SI単位と単位換算",
+  "pass_score": 4,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mc",
+      "prompt": "質量のSI基本単位はどれか。",
+      "choices": ["$\\mathrm{kg}$", "$\\mathrm{g}$", "$\\mathrm{N}$", "$\\mathrm{m}$"],
+      "answer": "$\\mathrm{kg}$",
+      "explain": "質量のSI基本単位はキログラムである。"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "$72\\ \\mathrm{km/h}$ を $\\mathrm{m/s}$ に換算せよ。",
+      "answer": "$20\\ \\mathrm{m/s}$",
+      "explain": "$72\\times1000/3600=20$。単位は $\\mathrm{km}$ と $\\mathrm{h}$ を約分して $\\mathrm{m/s}$ が残る。"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "prompt": "$15\\ \\mathrm{m/s}$ を $\\mathrm{km/h}$ に換算せよ。",
+      "answer": "$54\\ \\mathrm{km/h}$",
+      "explain": "$15\\times3600/1000=54$。"
+    },
+    {
+      "id": "q4",
+      "type": "mc",
+      "prompt": "力の単位 $\\mathrm{N}$ をSI基本単位で表したものはどれか。",
+      "choices": ["$\\mathrm{kg\\cdot m/s^2}$", "$\\mathrm{kg\\cdot m/s}$", "$\\mathrm{m/s^2}$", "$\\mathrm{kg/s^2}$"],
+      "answer": "$\\mathrm{kg\\cdot m/s^2}$",
+      "explain": "$F=ma$ より質量 $\\mathrm{kg}$ と加速度 $\\mathrm{m/s^2}$ の積になる。"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "prompt": "$250\\ \\mathrm{cm}$ を $\\mathrm{m}$ に換算し、使う換算分数も示せ。",
+      "answer": "$250\\ \\mathrm{cm}\\times\\dfrac{1\\ \\mathrm{m}}{100\\ \\mathrm{cm}}=2.5\\ \\mathrm{m}$",
+      "explain": "消したい $\\mathrm{cm}$ が分母側に来る向きで換算分数を掛ける。"
+    }
+  ]
+}

@@ -33,6 +33,16 @@ export const STANDARD = {
   ],
 };
 
+/** NotebookLM 5〜9分Partは、1中心技能・詳解例題1問を完結単位とする。 */
+export const PART_STANDARD = {
+  ...STANDARD,
+  minBodyChars: 1400,
+  minWorkedExamples: 1,
+  minPracticeProblems: 2,
+  minTraps: 2,
+  minQuizQuestions: 4,
+};
+
 /** 全単元で使い回されている水増し定型文 */
 const BOILERPLATE = [
   "ここが曖昧だと模試で同じ失点をくり返す",
@@ -40,6 +50,29 @@ const BOILERPLATE = [
   "条件を確認し、同じ手順で再現できるか検算する",
   "学科で差がつかない局面ほど、面接・小論文が合否を分ける",
   "共通テストは時間との勝負であり、根拠を本文・資料から拾えるかが得点に直結する",
+  "ゴールを判定問題として言い換える",
+  "本単元の中心概念",
+  "本単元は型の固定が目的である",
+  "例題Aと同型の基本問題を手順どおり解け",
+  "定義に沿った標準形の結論",
+  "受験形での正しい判定・計算結果",
+  "いずれも根拠と検算が揃った結論",
+  "使う定義・公式を宣言する",
+  "例外・境界を処理する",
+  "適用・計算を行ごとに書く",
+  "答えの形を整える",
+];
+
+/** 教科内容の代わりに置かれた汎用スタブ。1件でも販売不可。 */
+const CONTENT_STUBS = [
+  /標準問題を解け（基本形）/,
+  /紛らわしい選択肢や複合条件がある受験形/,
+  /\*\*答え\*\*\s*定義に沿った/,
+  /\*\*答え\*\*\s*受験形での/,
+  /\*\*答え\*\*.*根拠と検算が揃った結論/,
+  /本単元のゴールを判定問題として言い換えよ/,
+  /標準例での急所は何か/,
+  /典型的な落とし穴を1つ挙げよ/,
 ];
 
 /** 生成崩れの痕跡 */
@@ -98,24 +131,51 @@ function solutionDepth(md, headingRe) {
   return out;
 }
 
-function auditUnit(subjectId, unit) {
+/** 長文の同一行・同一段落を繰り返して文字数を水増ししていないか。 */
+function repeatedLongText(md) {
+  const chunks = md
+    .split(/\n+|(?<=。)(?=\S)/)
+    .map((s) => s.replace(/\s+/g, " ").trim())
+    .filter((s) => s.length >= 40 && !s.startsWith("#"));
+  const counts = new Map();
+  for (const s of chunks) counts.set(s, (counts.get(s) || 0) + 1);
+  return [...counts.entries()]
+    .filter(([, n]) => n >= 2)
+    .map(([text, count]) => ({ text: text.slice(0, 40), count }));
+}
+
+/** Partがある単元は、教材・問題・メディアをPart単位で監査する。 */
+export function expandUnitParts(unit) {
+  if (!Array.isArray(unit.parts) || !unit.parts.length) return [unit];
+  return unit.parts.map((part) => ({
+    ...part,
+    chapter: unit.chapter,
+    prereq: part.prereq || unit.prereq || [],
+    parentUnitId: unit.id,
+    parentTitle: unit.title,
+  }));
+}
+
+export function auditUnit(subjectId, unit) {
   const mdPath = path.join(CONTENT, subjectId, unit.file);
   if (!fs.existsSync(mdPath)) {
     return { id: unit.id, subjectId, fail: ["本文ファイルなし"], chars: 0 };
   }
   const md = fs.readFileSync(mdPath, "utf8");
   const fail = [];
+  const standard =
+    unit.parentUnitId || /-P\d+$/.test(unit.id) ? PART_STANDARD : STANDARD;
 
   const chars = bodyChars(md);
-  if (chars < STANDARD.minBodyChars) {
-    fail.push(`本文${chars}字（基準${STANDARD.minBodyChars}字）`);
+  if (chars < standard.minBodyChars) {
+    fail.push(`本文${chars}字（基準${standard.minBodyChars}字）`);
   }
 
   // 解答つき例題：### 解答A / 解答B のように手順が3行以上あるもの
   const exampleDepths = solutionDepth(md, /^###\s*解答[AB]?\s*$|^###\s*解答の流れ/);
   const worked = exampleDepths.filter((d) => d >= 3).length;
-  if (worked < STANDARD.minWorkedExamples) {
-    fail.push(`解答つき例題${worked}件（基準${STANDARD.minWorkedExamples}件）`);
+  if (worked < standard.minWorkedExamples) {
+    fail.push(`解答つき例題${worked}件（基準${standard.minWorkedExamples}件）`);
   }
 
   // 演習の小問数：演習セクション内の (1)(2)... または箇条書き
@@ -126,20 +186,28 @@ function auditUnit(subjectId, unit) {
     practice = nums ? new Set(nums).size : 0;
     if (!practice && exSec[1].trim().length > 80) practice = 1;
   }
-  if (practice < STANDARD.minPracticeProblems) {
-    fail.push(`演習小問${practice}問（基準${STANDARD.minPracticeProblems}問）`);
+  if (practice < standard.minPracticeProblems) {
+    fail.push(`演習小問${practice}問（基準${standard.minPracticeProblems}問）`);
   }
 
   const trapSec = md.match(/^##\s*落とし穴[^\n]*\n([\s\S]*?)(?=^##\s|\Z)/m);
   const traps = trapSec ? (trapSec[1].match(/^-\s+\S/gm) || []).length : 0;
-  if (traps < STANDARD.minTraps) fail.push(`落とし穴${traps}件（基準${STANDARD.minTraps}件）`);
+  if (traps < standard.minTraps) fail.push(`落とし穴${traps}件（基準${standard.minTraps}件）`);
 
-  for (const sec of STANDARD.requiredSections) {
+  for (const sec of standard.requiredSections) {
     if (!md.includes(sec)) fail.push(`欠落: ${sec}`);
   }
 
   const bp = BOILERPLATE.filter((b) => md.includes(b));
   if (bp.length) fail.push(`使い回し定型文${bp.length}件`);
+
+  const stubs = CONTENT_STUBS.filter((re) => re.test(md));
+  if (stubs.length) fail.push(`具体的内容のないスタブ${stubs.length}件`);
+
+  const repeats = repeatedLongText(md);
+  if (repeats.length) {
+    fail.push(`長文重複${repeats.reduce((n, x) => n + x.count - 1, 0)}件`);
+  }
 
   for (const a of ARTIFACTS) {
     if (a.name && a.re.test(md)) fail.push(`生成崩れ: ${a.name}`);
@@ -151,9 +219,9 @@ function auditUnit(subjectId, unit) {
     if (fs.existsSync(qp)) {
       const q = readJson(qp);
       const n = (q.questions || []).length;
-      if (n < STANDARD.minQuizQuestions) fail.push(`クイズ${n}問`);
+      if (n < standard.minQuizQuestions) fail.push(`クイズ${n}問`);
       const templated = (q.questions || []).filter((x) =>
-        /今日のゴールを書け|中心用語・定義の要点は|手順の第1手は|この回のポイントを1つ書け/.test(
+        /今日のゴールを書け|中心用語・定義の要点は|手順の第1手は|この回のポイントを1つ書け|本単元のゴールを判定問題として|答案の冒頭に書くべきもの|標準例での急所|検算として適切|典型的な落とし穴を1つ/.test(
           x.prompt || "",
         ),
       ).length;
@@ -168,16 +236,21 @@ function auditUnit(subjectId, unit) {
   return { id: unit.id, subjectId, title: unit.title, fail, chars, worked, practice, traps };
 }
 
-function auditAll() {
+export function auditAll() {
   const rows = [];
   for (const sid of subjectIds()) {
     const idx = readJson(path.join(CONTENT, sid, "index.json"));
-    for (const u of idx.units) rows.push(auditUnit(sid, u));
+    for (const u of idx.units) {
+      for (const deliverable of expandUnitParts(u)) {
+        rows.push(auditUnit(sid, deliverable));
+      }
+    }
   }
   return rows;
 }
 
 // ---- CLI ----
+function runCli() {
 const args = process.argv.slice(2);
 const rows = auditAll();
 const pass = rows.filter((r) => !r.fail.length);
@@ -228,4 +301,9 @@ if (args.includes("--subject")) {
       console.log(`  ${String(v).padStart(4)}件  ${k}`);
     }
   }
+}
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  runCli();
 }

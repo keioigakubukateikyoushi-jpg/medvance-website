@@ -33,7 +33,22 @@
       "storyboard": "storyboard/ME-EN-01.md",
       "slides": "slides/ME-EN-01.md",
       "quiz": "quiz/ME-EN-01.json",
-      "quality": "reviewed-v2"
+      "quality": "reviewed-v2",
+      "parts": [
+        {
+          "id": "ME-EN-01-P01",
+          "part": 1,
+          "title": "文の要素：骨格を取り出す",
+          "minutes": 7,
+          "goal": "修飾語を外し、S・V・O・Cからなる骨格を取り出せる",
+          "prereq": [],
+          "status": "generation-ready",
+          "file": "lessons/ME-EN-01-P01.md",
+          "storyboard": "storyboard/ME-EN-01-P01.md",
+          "slides": "slides/ME-EN-01-P01.md",
+          "quiz": "quiz/ME-EN-01-P01.json"
+        }
+      ]
     },
     {
       "id": "ME-EN-02",

@@ -7,7 +7,20 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
-    "sc:health": "node scripts/check-sc-health.mjs"
+    "sc:health": "node scripts/check-sc-health.mjs",
+    "academy:quality": "node scripts/quality-gate.mjs",
+    "academy:sales-gate": "node scripts/foundation-sales-gate.mjs",
+    "academy:part-capacity": "node scripts/notebooklm-part-capacity-audit.mjs",
+    "academy:partition": "node scripts/academy-partition-curriculum.mjs",
+    "academy:partition-check": "node scripts/academy-partition-curriculum.mjs --check",
+    "academy:curriculum-audit": "node scripts/academy-part-curriculum-audit.mjs",
+    "academy:pdf-skeleton": "node scripts/academy-pdf-skeleton.mjs",
+    "academy:pdf-manifest": "node scripts/academy-pdf-skeleton.mjs --manifest",
+    "academy:notion-pull": "node scripts/notion-curriculum-pull.mjs",
+    "academy:generation-manifest": "node scripts/nlm-build-generation-manifest.mjs",
+    "academy:generation-manifest-check": "node scripts/nlm-build-generation-manifest.mjs --check",
+    "academy:daily-preview": "node scripts/nlm-part-daily-runner.mjs --dry-run",
+    "academy:daily-generate": "node scripts/nlm-part-daily-runner.mjs --confirm"
   },
   "dependencies": {
     "katex": "^0.18.1",

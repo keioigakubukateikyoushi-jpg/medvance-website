@@ -1,0 +1,45 @@
+{
+  "unit_id": "ME-EN-01-P01",
+  "title": "文の要素：骨格を取り出す",
+  "pass_score": 4,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mc",
+      "prompt": "The students in the library study hard. の中心動詞はどれか。",
+      "choices": ["study", "students", "library", "hard"],
+      "answer": "study",
+      "explain": "時制を担う述語動詞が study。in the library と hard は修飾語である。"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "prompt": "My brother plays tennis after school. から修飾語を外した骨格を書け。",
+      "answer": "My brother plays tennis.",
+      "explain": "after school は前置詞句なので修飾語 $M$。"
+    },
+    {
+      "id": "q3",
+      "type": "mc",
+      "prompt": "She looks happy. の happy の役割はどれか。",
+      "choices": ["補語 $C$", "目的語 $O$", "修飾語 $M$", "動詞 $V$"],
+      "answer": "補語 $C$",
+      "explain": "happy は She の状態を説明し、She = happy の関係をつくる。"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "prompt": "He lives in Tokyo. の in Tokyo を文型上の目的語に数えない理由を説明せよ。",
+      "answer": "in Tokyo は前置詞句全体で場所を加える修飾語 $M$ だから。",
+      "explain": "Tokyo は前置詞 in の目的語だが、文型の要素としては前置詞句全体を $M$ とする。"
+    },
+    {
+      "id": "q5",
+      "type": "mc",
+      "prompt": "骨格抽出の最初の操作として最も適切なものはどれか。",
+      "choices": ["時制を持つ中心動詞を見つける", "文型名を決める", "すべての名詞を目的語にする", "日本語へ全文訳す"],
+      "answer": "時制を持つ中心動詞を見つける",
+      "explain": "中心動詞を確定すると、その主体である主語と後続要素を順に決められる。"
+    }
+  ]
+}

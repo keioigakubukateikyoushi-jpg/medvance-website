@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updated": "2026-07-26",
+  "policy": "one-shot-micro-part-5to9-v3",
+  "duration_seconds": {
+    "target_min": 300,
+    "target_max": 540,
+    "content_review_below": 240,
+    "content_review_above": 600,
+    "release_gate": false
+  },
+  "generation": {
+    "max_video_requests_per_part": 1,
+    "automatic_retry": false,
+    "deep_research_default": false,
+    "require_preflight_pass": true
+  },
+  "content_capacity": {
+    "learning_goals": 1,
+    "max_core_concepts": 1,
+    "max_micro_skills": 2,
+    "worked_examples": 1,
+    "min_practice_problems": 2,
+    "min_traps": 2,
+    "min_mastery_checks": 3
+  },
+  "split_when": [
+    "独立した到達目標が2つ以上ある",
+    "新しい中心概念が2つ以上ある",
+    "詳解例題1問と誤答比較を省略せず説明すると9分を超える",
+    "前半を理解しないと後半へ進めない",
+    "定義・導出と応用演習を同じ動画で省略なく扱えない"
+  ],
+  "short_video_action": "5分未満は内容欠落の兆候として警告するが、尺だけでは不合格にしない",
+  "long_video_action": "9分超の見込みなら原則として中心技能または例題型の境界で分割する"
+}

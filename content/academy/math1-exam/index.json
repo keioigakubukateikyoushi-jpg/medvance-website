@@ -258,7 +258,114 @@
       "storyboard": "storyboard/ME-M1-15.md",
       "slides": "slides/ME-M1-15.md",
       "quiz": "quiz/ME-M1-15.json",
-      "quality": "reviewed-v3"
+      "quality": "superseded-by-parts",
+      "parts": [
+        {
+          "id": "ME-M1-15-P01",
+          "part": 1,
+          "title": "偶数係数の平方完成",
+          "minutes": 7,
+          "goal": "一次係数が偶数のx²+bx+cを平方完成できる",
+          "prereq": [
+            "ME-M1-14"
+          ],
+          "file": "lessons/ME-M1-15-P01.md",
+          "storyboard": "storyboard/ME-M1-15-P01.md",
+          "slides": "slides/ME-M1-15-P01.md",
+          "quiz": "quiz/ME-M1-15-P01.json",
+          "status": "generation-ready",
+          "outputs": [
+            "video",
+            "audio",
+            "slide_deck",
+            "quiz"
+          ]
+        },
+        {
+          "id": "ME-M1-15-P02",
+          "part": 2,
+          "title": "奇数係数の平方完成",
+          "minutes": 6,
+          "goal": "一次係数が奇数のx²+bx+cを分数のまま平方完成できる",
+          "prereq": [
+            "ME-M1-15-P01"
+          ],
+          "file": "lessons/ME-M1-15-P02.md",
+          "storyboard": "storyboard/ME-M1-15-P02.md",
+          "slides": "slides/ME-M1-15-P02.md",
+          "quiz": "quiz/ME-M1-15-P02.json",
+          "status": "generation-ready",
+          "outputs": [
+            "video",
+            "audio",
+            "slide_deck",
+            "quiz"
+          ]
+        },
+        {
+          "id": "ME-M1-15-P03",
+          "part": 3,
+          "title": "正の一般係数の平方完成",
+          "minutes": 7,
+          "goal": "a>0でくくった後の一次係数が整数になる二次式を平方完成できる",
+          "prereq": [
+            "ME-M1-15-P02"
+          ],
+          "file": "lessons/ME-M1-15-P03.md",
+          "storyboard": "storyboard/ME-M1-15-P03.md",
+          "slides": "slides/ME-M1-15-P03.md",
+          "quiz": "quiz/ME-M1-15-P03.json",
+          "status": "generation-ready",
+          "outputs": [
+            "video",
+            "audio",
+            "slide_deck",
+            "quiz"
+          ]
+        },
+        {
+          "id": "ME-M1-15-P04",
+          "part": 4,
+          "title": "負の二次係数の平方完成",
+          "minutes": 7,
+          "goal": "負の二次係数を符号ごとくくり、符号を保って平方完成できる",
+          "prereq": [
+            "ME-M1-15-P03"
+          ],
+          "file": "lessons/ME-M1-15-P04.md",
+          "storyboard": "storyboard/ME-M1-15-P04.md",
+          "slides": "slides/ME-M1-15-P04.md",
+          "quiz": "quiz/ME-M1-15-P04.json",
+          "status": "generation-ready",
+          "outputs": [
+            "video",
+            "audio",
+            "slide_deck",
+            "quiz"
+          ]
+        },
+        {
+          "id": "ME-M1-15-P05",
+          "part": 5,
+          "title": "分数係数の平方完成",
+          "minutes": 8,
+          "goal": "くくった後の一次係数が分数になる二次式を、厳密な分数のまま平方完成できる",
+          "prereq": [
+            "ME-M1-15-P04"
+          ],
+          "file": "lessons/ME-M1-15-P05.md",
+          "storyboard": "storyboard/ME-M1-15-P05.md",
+          "slides": "slides/ME-M1-15-P05.md",
+          "quiz": "quiz/ME-M1-15-P05.json",
+          "status": "generation-ready",
+          "outputs": [
+            "video",
+            "audio",
+            "slide_deck",
+            "quiz"
+          ]
+        }
+      ]
     },
     {
       "id": "ME-M1-16",
