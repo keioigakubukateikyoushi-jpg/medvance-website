@@ -9102,7 +9102,7 @@
         "slides": "slides/ME-M1-15-P04.md",
         "quiz": "quiz/ME-M1-15-P04.json"
       },
-      "sourceHash": "00b07768402253d035c10fded0ff67492ce2d174c967a762f423a3979267e6c7",
+      "sourceHash": "64aaadb9d094b56672365633885c7b87efb9a02a6fea01ecbf0ca829207b198e",
       "status": "complete",
       "missing": [],
       "artifacts": {
@@ -9145,7 +9145,7 @@
         "slides": "slides/ME-M1-15-P05.md",
         "quiz": "quiz/ME-M1-15-P05.json"
       },
-      "sourceHash": "003188af53ae2938581ca56448b5d1cc17a0cc102deda37ee77a12be87d93e85",
+      "sourceHash": "8606256de72815fb0fbee5dbea25af6dd577a1d14d71ce58a7081318b06a6c9b",
       "status": "complete",
       "missing": [],
       "artifacts": {

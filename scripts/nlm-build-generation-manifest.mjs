@@ -53,8 +53,11 @@ function artifactStatus(partId) {
   return { ...ready, complete: Object.values(ready).every(Boolean) };
 }
 
-function build() {
+function build({ artifactSnapshot = null } = {}) {
   const curriculum = JSON.parse(fs.readFileSync(INPUT, "utf8"));
+  const snapshotByPart = new Map(
+    (artifactSnapshot?.parts || []).map((part) => [part.partId, part]),
+  );
   const parts = [];
   for (const [subjectId, subject] of Object.entries(curriculum.subjects)) {
     for (const unit of subject.units) {
@@ -72,7 +75,8 @@ function build() {
             parentTitle: unit.title,
           },
         };
-        const artifacts = artifactStatus(part.id);
+        const snapshot = snapshotByPart.get(part.id);
+        const artifacts = snapshot?.artifacts || artifactStatus(part.id);
         parts.push({
           subjectId,
           parentUnitId: unit.id,
@@ -92,7 +96,7 @@ function build() {
           sourceHash: hashFiles(subjectId, sources),
           status: missing.length
             ? "blocked_source_authoring"
-            : artifacts.complete
+            : snapshot?.status === "complete" || artifacts.complete
               ? "complete"
               : "ready",
           missing,
@@ -132,7 +136,10 @@ function build() {
   };
 }
 
-const result = build();
+const existing = CHECK && fs.existsSync(OUTPUT)
+  ? JSON.parse(fs.readFileSync(OUTPUT, "utf8"))
+  : null;
+const result = build({ artifactSnapshot: existing });
 const serialized = `${JSON.stringify(result, null, 2)}\n`;
 if (CHECK) {
   if (!fs.existsSync(OUTPUT) || fs.readFileSync(OUTPUT, "utf8") !== serialized) {
