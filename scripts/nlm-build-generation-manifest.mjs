@@ -153,12 +153,14 @@ if (CHECK) {
       ready: 0,
       complete: 0,
     },
-    parts: manifest.parts.map(({ artifacts, status, ...part }) => ({
-      ...part,
+    parts: manifest.parts.map((part) => {
+      const normalized = { ...part };
+      delete normalized.artifacts;
       // Completed media intentionally lives on the generation or integration
       // host. Treat ready/complete as the same source-ready state here.
-      status: status === "complete" ? "ready" : status,
-    })),
+      if (normalized.status === "complete") normalized.status = "ready";
+      return normalized;
+    }),
   });
   const current = fs.existsSync(OUTPUT)
     ? JSON.parse(fs.readFileSync(OUTPUT, "utf8"))
