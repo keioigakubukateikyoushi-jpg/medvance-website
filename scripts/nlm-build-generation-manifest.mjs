@@ -37,7 +37,11 @@ function hashFiles(subjectId, sources) {
     const file = path.join(CONTENT, subjectId, relative);
     hash.update(role);
     hash.update(relative);
-    if (fs.existsSync(file)) hash.update(fs.readFileSync(file));
+    if (fs.existsSync(file)) {
+      // Git may check text files out as CRLF on Windows. Normalize line endings
+      // so the same canonical source has the same cross-host manifest hash.
+      hash.update(fs.readFileSync(file, "utf8").replace(/\r\n/g, "\n"));
+    }
   }
   return hash.digest("hex");
 }
