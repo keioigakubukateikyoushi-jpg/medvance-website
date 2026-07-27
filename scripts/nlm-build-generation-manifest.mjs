@@ -146,10 +146,31 @@ const existing = CHECK && fs.existsSync(OUTPUT)
 const result = build({ artifactSnapshot: existing });
 const serialized = `${JSON.stringify(result, null, 2)}\n`;
 if (CHECK) {
-  if (!fs.existsSync(OUTPUT) || fs.readFileSync(OUTPUT, "utf8") !== serialized) {
+  const normalizeForCrossHostCheck = (manifest) => ({
+    ...manifest,
+    totals: {
+      ...manifest.totals,
+      ready: 0,
+      complete: 0,
+    },
+    parts: manifest.parts.map(({ artifacts, status, ...part }) => ({
+      ...part,
+      // Completed media intentionally lives on the generation or integration
+      // host. Treat ready/complete as the same source-ready state here.
+      status: status === "complete" ? "ready" : status,
+    })),
+  });
+  const current = fs.existsSync(OUTPUT)
+    ? JSON.parse(fs.readFileSync(OUTPUT, "utf8"))
+    : null;
+  if (
+    !current ||
+    JSON.stringify(normalizeForCrossHostCheck(current)) !==
+      JSON.stringify(normalizeForCrossHostCheck(result))
+  ) {
     throw new Error("nlm-generation-manifest.json is stale; run npm run academy:generation-manifest");
   }
-  console.log("generation manifest check PASS", result.totals);
+  console.log("generation manifest check PASS", current.totals);
 } else {
   fs.writeFileSync(OUTPUT, serialized);
   console.log("generation manifest written", result.totals);
