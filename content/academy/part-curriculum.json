@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-26T14:56:42.512Z",
+  "generatedAt": "2026-07-28T04:06:32.662Z",
   "authority": "MEXT-aligned subject blueprints",
   "rule": "one core skill per NotebookLM notebook; design for 5-9 minutes with one worked example; duration alone is not a release gate",
   "outputProfile": {
@@ -76,7 +76,7 @@
     "subjects": 10,
     "units": 427,
     "parts": 898,
-    "generationReady": 7
+    "generationReady": 10
   },
   "subjects": {
     "english-exam": {
@@ -145,30 +145,27 @@
             {
               "id": "ME-EN-01-P02",
               "part": 2,
-              "title": "5文型",
-              "goal": "5文型について、骨格抽出、O/C判定を根拠と途中過程を示して完結できる",
-              "prereq": "ME-EN-01-P01",
+              "title": "5文型：OとCを関係で判定する",
+              "minutes": 8,
+              "goal": "動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる",
+              "prereq": [
+                "ME-EN-01-P01"
+              ],
+              "status": "generation-ready",
+              "file": "lessons/ME-EN-01-P02.md",
+              "storyboard": "storyboard/ME-EN-01-P02.md",
+              "slides": "slides/ME-EN-01-P02.md",
+              "quiz": "quiz/ME-EN-01-P02.json",
               "scope_in": [
-                "5文型",
-                "骨格抽出、O/C判定"
+                "動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる"
               ],
               "scope_out": [
-                "文の要素"
+                "次Partおよび後続単元の内容"
               ],
-              "canonical": {
-                "lesson": "lessons/ME-EN-01-P02.md",
-                "storyboard": "storyboard/ME-EN-01-P02.md",
-                "slides": "slides/ME-EN-01-P02.md",
-                "quiz": "quiz/ME-EN-01-P02.json"
-              },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ]
+                "status": "generation_ready",
+                "missing": [],
+                "failures": []
               },
               "outputs": {
                 "video": {
@@ -8918,32 +8915,25 @@
             {
               "id": "ME-M1-01-P01",
               "part": 1,
-              "title": "整式",
-              "goal": "整式について、定義・標準問題・説明を根拠と途中過程を示して完結できる",
-              "prereq": "—",
+              "title": "整式の定義と判別",
+              "minutes": 8,
+              "goal": "変数の指数を調べ、整式かどうかを定義に基づいて判定できる",
+              "prereq": [],
+              "status": "generation-ready",
+              "file": "lessons/ME-M1-01-P01.md",
+              "storyboard": "storyboard/ME-M1-01-P01.md",
+              "slides": "slides/ME-M1-01-P01.md",
+              "quiz": "quiz/ME-M1-01-P01.json",
               "scope_in": [
-                "整式",
-                "定義・標準問題・説明"
+                "変数の指数を調べ、整式かどうかを定義に基づいて判定できる"
               ],
               "scope_out": [
-                "項",
-                "係数",
-                "次数の厳密定義"
+                "次Partおよび後続単元の内容"
               ],
-              "canonical": {
-                "lesson": "lessons/ME-M1-01-P01.md",
-                "storyboard": "storyboard/ME-M1-01-P01.md",
-                "slides": "slides/ME-M1-01-P01.md",
-                "quiz": "quiz/ME-M1-01-P01.json"
-              },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ]
+                "status": "generation_ready",
+                "missing": [],
+                "failures": []
               },
               "outputs": {
                 "video": {
@@ -33158,31 +33148,27 @@
             {
               "id": "ME-PH-01-P02",
               "part": 2,
-              "title": "有効数字",
-              "goal": "有効数字について、単位換算、桁、誤差を根拠と途中過程を示して完結できる",
-              "prereq": "ME-PH-01-P01",
+              "title": "有効数字と計算結果の丸め",
+              "minutes": 8,
+              "goal": "有効数字を数え、演算別の規則で計算結果を丸められる",
+              "prereq": [
+                "ME-PH-01-P01"
+              ],
+              "status": "generation-ready",
+              "file": "lessons/ME-PH-01-P02.md",
+              "storyboard": "storyboard/ME-PH-01-P02.md",
+              "slides": "slides/ME-PH-01-P02.md",
+              "quiz": "quiz/ME-PH-01-P02.json",
               "scope_in": [
-                "有効数字",
-                "単位換算、桁、誤差"
+                "有効数字を数え、演算別の規則で計算結果を丸められる"
               ],
               "scope_out": [
-                "SI単位",
-                "測定誤差"
+                "次Partおよび後続単元の内容"
               ],
-              "canonical": {
-                "lesson": "lessons/ME-PH-01-P02.md",
-                "storyboard": "storyboard/ME-PH-01-P02.md",
-                "slides": "slides/ME-PH-01-P02.md",
-                "quiz": "quiz/ME-PH-01-P02.json"
-              },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ]
+                "status": "generation_ready",
+                "missing": [],
+                "failures": []
               },
               "outputs": {
                 "video": {

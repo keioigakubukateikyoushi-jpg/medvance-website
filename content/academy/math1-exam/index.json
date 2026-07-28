@@ -33,7 +33,22 @@
       "storyboard": "storyboard/ME-M1-01.md",
       "slides": "slides/ME-M1-01.md",
       "quiz": "quiz/ME-M1-01.json",
-      "quality": "reviewed-v2"
+      "quality": "reviewed-v2",
+      "parts": [
+        {
+          "id": "ME-M1-01-P01",
+          "part": 1,
+          "title": "整式の定義と判別",
+          "minutes": 8,
+          "goal": "変数の指数を調べ、整式かどうかを定義に基づいて判定できる",
+          "prereq": [],
+          "status": "generation-ready",
+          "file": "lessons/ME-M1-01-P01.md",
+          "storyboard": "storyboard/ME-M1-01-P01.md",
+          "slides": "slides/ME-M1-01-P01.md",
+          "quiz": "quiz/ME-M1-01-P01.json"
+        }
+      ]
     },
     {
       "id": "ME-M1-02",

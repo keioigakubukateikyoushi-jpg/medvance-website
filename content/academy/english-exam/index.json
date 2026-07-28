@@ -47,6 +47,21 @@
           "storyboard": "storyboard/ME-EN-01-P01.md",
           "slides": "slides/ME-EN-01-P01.md",
           "quiz": "quiz/ME-EN-01-P01.json"
+        },
+        {
+          "id": "ME-EN-01-P02",
+          "part": 2,
+          "title": "5文型：OとCを関係で判定する",
+          "minutes": 8,
+          "goal": "動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる",
+          "prereq": [
+            "ME-EN-01-P01"
+          ],
+          "status": "generation-ready",
+          "file": "lessons/ME-EN-01-P02.md",
+          "storyboard": "storyboard/ME-EN-01-P02.md",
+          "slides": "slides/ME-EN-01-P02.md",
+          "quiz": "quiz/ME-EN-01-P02.json"
         }
       ]
     },

@@ -48,9 +48,9 @@
   },
   "totals": {
     "parts": 898,
-    "ready": 0,
+    "ready": 3,
     "complete": 7,
-    "blocked": 891
+    "blocked": 888
   },
   "parts": [
     {
@@ -100,17 +100,16 @@
       "partId": "ME-EN-01-P02",
       "part": 2,
       "chapter": "横断基盤",
-      "title": "5文型",
-      "goal": "5文型について、骨格抽出、O/C判定を根拠と途中過程を示して完結できる",
+      "title": "5文型：OとCを関係で判定する",
+      "goal": "動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる",
       "prerequisites": [
         "ME-EN-01-P01"
       ],
       "scopeIn": [
-        "5文型",
-        "骨格抽出、O/C判定"
+        "動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる"
       ],
       "scopeOut": [
-        "文の要素"
+        "次Partおよび後続単元の内容"
       ],
       "sources": {
         "lesson": "lessons/ME-EN-01-P02.md",
@@ -118,14 +117,9 @@
         "slides": "slides/ME-EN-01-P02.md",
         "quiz": "quiz/ME-EN-01-P02.json"
       },
-      "sourceHash": "d0ed7f8e51fe3151c8c6f00a075edd3eb869f6f87d6300d8ae5b1f176ea8d38b",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "b9f7ceff8d719d3dc16685912b50332e02c17cd8ba71c682cfe6ee802450f90b",
+      "status": "ready",
+      "missing": [],
       "artifacts": {
         "video": false,
         "audio": false,
@@ -134,11 +128,11 @@
         "complete": false
       },
       "prompts": {
-        "common": "Medvance 基礎講座 ME-EN-01-P02「5文型」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:5文型について、骨格抽出、O/C判定を根拠と途中過程を示して完結できる。 扱う範囲:5文型、骨格抽出、O/C判定。 扱わない範囲:文の要素。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
-        "video": "Medvance 基礎講座 ME-EN-01-P02「5文型」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:5文型について、骨格抽出、O/C判定を根拠と途中過程を示して完結できる。 扱う範囲:5文型、骨格抽出、O/C判定。 扱わない範囲:文の要素。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、冒頭の到達目標、正確な定義、番号付き手順、詳解例題1問、典型誤答1つ、自力確認1問、到達チェック。 自己紹介、宣伝、雑談、尺合わせの水増しは禁止。画面文字とナレーションは自然な日本語にする。 5〜9分を設計容量とするが、時間合わせより中心技能の完結を優先し、別概念は次Partへ送る。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
-        "audio": "Medvance 基礎講座 ME-EN-01-P02「5文型」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:5文型について、骨格抽出、O/C判定を根拠と途中過程を示して完結できる。 扱う範囲:5文型、骨格抽出、O/C判定。 扱わない範囲:文の要素。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 音声は deep_dive。講師と学習者の対話で、なぜその手順になるか、誤答の原因、自己確認の順に説明する。 前置きと雑談を省き、耳だけで式・条件・結論を追えるよう明示する。",
-        "slides": "Medvance 基礎講座 ME-EN-01-P02「5文型」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:5文型について、骨格抽出、O/C判定を根拠と途中過程を示して完結できる。 扱う範囲:5文型、骨格抽出、O/C判定。 扱わない範囲:文の要素。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 詳細スライド教材を作る。1枚1論点とし、到達目標、定義、手順、例題の途中過程、誤答比較、演習、まとめを順に置く。 式・図・表を優先し、装飾や長文で情報を埋めない。",
-        "quiz": "Medvance 基礎講座 ME-EN-01-P02「5文型」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:5文型について、骨格抽出、O/C判定を根拠と途中過程を示して完結できる。 扱う範囲:5文型、骨格抽出、O/C判定。 扱わない範囲:文の要素。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 確認クイズを6問作る。用語確認だけに偏らず、手順選択、途中過程、誤答診断、短い適用を含める。 正答と解説は正本の根拠に結びつけ、範囲外の発展問題を入れない。"
+        "common": "Medvance 基礎講座 ME-EN-01-P02「5文型：OとCを関係で判定する」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱う範囲:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
+        "video": "Medvance 基礎講座 ME-EN-01-P02「5文型：OとCを関係で判定する」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱う範囲:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱わない範囲:次Partおよび後続単元の内容。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、冒頭の到達目標、正確な定義、番号付き手順、詳解例題1問、典型誤答1つ、自力確認1問、到達チェック。 自己紹介、宣伝、雑談、尺合わせの水増しは禁止。画面文字とナレーションは自然な日本語にする。 5〜9分を設計容量とするが、時間合わせより中心技能の完結を優先し、別概念は次Partへ送る。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
+        "audio": "Medvance 基礎講座 ME-EN-01-P02「5文型：OとCを関係で判定する」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱う範囲:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 音声は deep_dive。講師と学習者の対話で、なぜその手順になるか、誤答の原因、自己確認の順に説明する。 前置きと雑談を省き、耳だけで式・条件・結論を追えるよう明示する。",
+        "slides": "Medvance 基礎講座 ME-EN-01-P02「5文型：OとCを関係で判定する」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱う範囲:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 詳細スライド教材を作る。1枚1論点とし、到達目標、定義、手順、例題の途中過程、誤答比較、演習、まとめを順に置く。 式・図・表を優先し、装飾や長文で情報を埋めない。",
+        "quiz": "Medvance 基礎講座 ME-EN-01-P02「5文型：OとCを関係で判定する」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱う範囲:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 確認クイズを6問作る。用語確認だけに偏らず、手順選択、途中過程、誤答診断、短い適用を含める。 正答と解説は正本の根拠に結びつけ、範囲外の発展問題を入れない。"
       },
       "outputDirectory": "public/academy/media/ME-EN-01-P02",
       "command": "node scripts/nlm-unit-factory.mjs ME-EN-01-P02 --no-research"
@@ -7277,19 +7271,14 @@
       "partId": "ME-M1-01-P01",
       "part": 1,
       "chapter": "数と式",
-      "title": "整式",
-      "goal": "整式について、定義・標準問題・説明を根拠と途中過程を示して完結できる",
-      "prerequisites": [
-        "—"
-      ],
+      "title": "整式の定義と判別",
+      "goal": "変数の指数を調べ、整式かどうかを定義に基づいて判定できる",
+      "prerequisites": [],
       "scopeIn": [
-        "整式",
-        "定義・標準問題・説明"
+        "変数の指数を調べ、整式かどうかを定義に基づいて判定できる"
       ],
       "scopeOut": [
-        "項",
-        "係数",
-        "次数の厳密定義"
+        "次Partおよび後続単元の内容"
       ],
       "sources": {
         "lesson": "lessons/ME-M1-01-P01.md",
@@ -7297,14 +7286,9 @@
         "slides": "slides/ME-M1-01-P01.md",
         "quiz": "quiz/ME-M1-01-P01.json"
       },
-      "sourceHash": "e9a090380bb6be216254cbe3cf65eb1e5cdd2e58edf1ad8ba02b2b061516b853",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "8702b6897eca4ba049919a24dd01a837379e84717a58e77e3ba0cc94ab522ebd",
+      "status": "ready",
+      "missing": [],
       "artifacts": {
         "video": false,
         "audio": false,
@@ -7313,11 +7297,11 @@
         "complete": false
       },
       "prompts": {
-        "common": "Medvance 基礎講座 ME-M1-01-P01「整式」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:整式について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:整式、定義・標準問題・説明。 扱わない範囲:項、係数、次数の厳密定義。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
-        "video": "Medvance 基礎講座 ME-M1-01-P01「整式」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:整式について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:整式、定義・標準問題・説明。 扱わない範囲:項、係数、次数の厳密定義。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、冒頭の到達目標、正確な定義、番号付き手順、詳解例題1問、典型誤答1つ、自力確認1問、到達チェック。 自己紹介、宣伝、雑談、尺合わせの水増しは禁止。画面文字とナレーションは自然な日本語にする。 5〜9分を設計容量とするが、時間合わせより中心技能の完結を優先し、別概念は次Partへ送る。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
-        "audio": "Medvance 基礎講座 ME-M1-01-P01「整式」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:整式について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:整式、定義・標準問題・説明。 扱わない範囲:項、係数、次数の厳密定義。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 音声は deep_dive。講師と学習者の対話で、なぜその手順になるか、誤答の原因、自己確認の順に説明する。 前置きと雑談を省き、耳だけで式・条件・結論を追えるよう明示する。",
-        "slides": "Medvance 基礎講座 ME-M1-01-P01「整式」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:整式について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:整式、定義・標準問題・説明。 扱わない範囲:項、係数、次数の厳密定義。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 詳細スライド教材を作る。1枚1論点とし、到達目標、定義、手順、例題の途中過程、誤答比較、演習、まとめを順に置く。 式・図・表を優先し、装飾や長文で情報を埋めない。",
-        "quiz": "Medvance 基礎講座 ME-M1-01-P01「整式」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:整式について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:整式、定義・標準問題・説明。 扱わない範囲:項、係数、次数の厳密定義。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 確認クイズを6問作る。用語確認だけに偏らず、手順選択、途中過程、誤答診断、短い適用を含める。 正答と解説は正本の根拠に結びつけ、範囲外の発展問題を入れない。"
+        "common": "Medvance 基礎講座 ME-M1-01-P01「整式の定義と判別」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱う範囲:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
+        "video": "Medvance 基礎講座 ME-M1-01-P01「整式の定義と判別」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱う範囲:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱わない範囲:次Partおよび後続単元の内容。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、冒頭の到達目標、正確な定義、番号付き手順、詳解例題1問、典型誤答1つ、自力確認1問、到達チェック。 自己紹介、宣伝、雑談、尺合わせの水増しは禁止。画面文字とナレーションは自然な日本語にする。 5〜9分を設計容量とするが、時間合わせより中心技能の完結を優先し、別概念は次Partへ送る。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
+        "audio": "Medvance 基礎講座 ME-M1-01-P01「整式の定義と判別」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱う範囲:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 音声は deep_dive。講師と学習者の対話で、なぜその手順になるか、誤答の原因、自己確認の順に説明する。 前置きと雑談を省き、耳だけで式・条件・結論を追えるよう明示する。",
+        "slides": "Medvance 基礎講座 ME-M1-01-P01「整式の定義と判別」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱う範囲:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 詳細スライド教材を作る。1枚1論点とし、到達目標、定義、手順、例題の途中過程、誤答比較、演習、まとめを順に置く。 式・図・表を優先し、装飾や長文で情報を埋めない。",
+        "quiz": "Medvance 基礎講座 ME-M1-01-P01「整式の定義と判別」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱う範囲:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 確認クイズを6問作る。用語確認だけに偏らず、手順選択、途中過程、誤答診断、短い適用を含める。 正答と解説は正本の根拠に結びつけ、範囲外の発展問題を入れない。"
       },
       "outputDirectory": "public/academy/media/ME-M1-01-P01",
       "command": "node scripts/nlm-unit-factory.mjs ME-M1-01-P01 --no-research"
@@ -26837,18 +26821,16 @@
       "partId": "ME-PH-01-P02",
       "part": 2,
       "chapter": "探究と測定",
-      "title": "有効数字",
-      "goal": "有効数字について、単位換算、桁、誤差を根拠と途中過程を示して完結できる",
+      "title": "有効数字と計算結果の丸め",
+      "goal": "有効数字を数え、演算別の規則で計算結果を丸められる",
       "prerequisites": [
         "ME-PH-01-P01"
       ],
       "scopeIn": [
-        "有効数字",
-        "単位換算、桁、誤差"
+        "有効数字を数え、演算別の規則で計算結果を丸められる"
       ],
       "scopeOut": [
-        "SI単位",
-        "測定誤差"
+        "次Partおよび後続単元の内容"
       ],
       "sources": {
         "lesson": "lessons/ME-PH-01-P02.md",
@@ -26856,14 +26838,9 @@
         "slides": "slides/ME-PH-01-P02.md",
         "quiz": "quiz/ME-PH-01-P02.json"
       },
-      "sourceHash": "939243a411a7d9628eef7e00560abf9b707173e29d9aac65f5fc71b6032080f2",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "d86e629c3198721c1126f35489f8f763cb21a7148081aeee83bd2bfa501b1da2",
+      "status": "ready",
+      "missing": [],
       "artifacts": {
         "video": false,
         "audio": false,
@@ -26872,11 +26849,11 @@
         "complete": false
       },
       "prompts": {
-        "common": "Medvance 基礎講座 ME-PH-01-P02「有効数字」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:有効数字、単位換算、桁、誤差。 扱わない範囲:SI単位、測定誤差。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
-        "video": "Medvance 基礎講座 ME-PH-01-P02「有効数字」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:有効数字、単位換算、桁、誤差。 扱わない範囲:SI単位、測定誤差。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、冒頭の到達目標、正確な定義、番号付き手順、詳解例題1問、典型誤答1つ、自力確認1問、到達チェック。 自己紹介、宣伝、雑談、尺合わせの水増しは禁止。画面文字とナレーションは自然な日本語にする。 5〜9分を設計容量とするが、時間合わせより中心技能の完結を優先し、別概念は次Partへ送る。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
-        "audio": "Medvance 基礎講座 ME-PH-01-P02「有効数字」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:有効数字、単位換算、桁、誤差。 扱わない範囲:SI単位、測定誤差。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 音声は deep_dive。講師と学習者の対話で、なぜその手順になるか、誤答の原因、自己確認の順に説明する。 前置きと雑談を省き、耳だけで式・条件・結論を追えるよう明示する。",
-        "slides": "Medvance 基礎講座 ME-PH-01-P02「有効数字」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:有効数字、単位換算、桁、誤差。 扱わない範囲:SI単位、測定誤差。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 詳細スライド教材を作る。1枚1論点とし、到達目標、定義、手順、例題の途中過程、誤答比較、演習、まとめを順に置く。 式・図・表を優先し、装飾や長文で情報を埋めない。",
-        "quiz": "Medvance 基礎講座 ME-PH-01-P02「有効数字」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:有効数字、単位換算、桁、誤差。 扱わない範囲:SI単位、測定誤差。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 確認クイズを6問作る。用語確認だけに偏らず、手順選択、途中過程、誤答診断、短い適用を含める。 正答と解説は正本の根拠に結びつけ、範囲外の発展問題を入れない。"
+        "common": "Medvance 基礎講座 ME-PH-01-P02「有効数字と計算結果の丸め」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字を数え、演算別の規則で計算結果を丸められる。 扱う範囲:有効数字を数え、演算別の規則で計算結果を丸められる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
+        "video": "Medvance 基礎講座 ME-PH-01-P02「有効数字と計算結果の丸め」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字を数え、演算別の規則で計算結果を丸められる。 扱う範囲:有効数字を数え、演算別の規則で計算結果を丸められる。 扱わない範囲:次Partおよび後続単元の内容。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、冒頭の到達目標、正確な定義、番号付き手順、詳解例題1問、典型誤答1つ、自力確認1問、到達チェック。 自己紹介、宣伝、雑談、尺合わせの水増しは禁止。画面文字とナレーションは自然な日本語にする。 5〜9分を設計容量とするが、時間合わせより中心技能の完結を優先し、別概念は次Partへ送る。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
+        "audio": "Medvance 基礎講座 ME-PH-01-P02「有効数字と計算結果の丸め」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字を数え、演算別の規則で計算結果を丸められる。 扱う範囲:有効数字を数え、演算別の規則で計算結果を丸められる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 音声は deep_dive。講師と学習者の対話で、なぜその手順になるか、誤答の原因、自己確認の順に説明する。 前置きと雑談を省き、耳だけで式・条件・結論を追えるよう明示する。",
+        "slides": "Medvance 基礎講座 ME-PH-01-P02「有効数字と計算結果の丸め」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字を数え、演算別の規則で計算結果を丸められる。 扱う範囲:有効数字を数え、演算別の規則で計算結果を丸められる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 詳細スライド教材を作る。1枚1論点とし、到達目標、定義、手順、例題の途中過程、誤答比較、演習、まとめを順に置く。 式・図・表を優先し、装飾や長文で情報を埋めない。",
+        "quiz": "Medvance 基礎講座 ME-PH-01-P02「有効数字と計算結果の丸め」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字を数え、演算別の規則で計算結果を丸められる。 扱う範囲:有効数字を数え、演算別の規則で計算結果を丸められる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources. 確認クイズを6問作る。用語確認だけに偏らず、手順選択、途中過程、誤答診断、短い適用を含める。 正答と解説は正本の根拠に結びつけ、範囲外の発展問題を入れない。"
       },
       "outputDirectory": "public/academy/media/ME-PH-01-P02",
       "command": "node scripts/nlm-unit-factory.mjs ME-PH-01-P02 --no-research"

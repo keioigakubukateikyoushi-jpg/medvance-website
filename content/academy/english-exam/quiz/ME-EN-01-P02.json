@@ -1,0 +1,11 @@
+{
+  "unit_id": "ME-EN-01-P02",
+  "questions": [
+    {"prompt": "She became a doctor. の文型は？", "choices": ["第1文型", "第2文型", "第3文型", "第5文型"], "answer": 1, "explanation": "She=a doctorが成立するためSVC。"},
+    {"prompt": "They made Ken captain. のcaptainの役割は？", "choices": ["S", "O", "C", "M"], "answer": 2, "explanation": "Ken=captainが成立し、目的語Kenを説明する補語。"},
+    {"prompt": "She gave me a pen. が第4文型である根拠は？", "choices": ["She=me", "me=a pen", "meとa penは同一でない", "gaveが自動詞"], "answer": 2, "explanation": "2つの目的語は授与関係で同一物ではない。"},
+    {"prompt": "He lives in Tokyo. のin Tokyoの役割は？", "choices": ["O", "C", "M", "V"], "answer": 2, "explanation": "前置詞句は修飾語で文型要素に数えない。"},
+    {"prompt": "We call the dog Pochi. の文型は？", "choices": ["SVO", "SVOO", "SVOC", "SVC"], "answer": 2, "explanation": "the dog=Pochiが成立するためSVOC。"},
+    {"prompt": "OとCを切り分ける最重要の検査は？", "choices": ["語数", "単語の長さ", "イコール関係", "時制"], "answer": 2, "explanation": "主語または目的語との同一・説明関係を検査する。"}
+  ]
+}
