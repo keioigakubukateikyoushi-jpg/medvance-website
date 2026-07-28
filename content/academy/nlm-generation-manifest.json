@@ -48,8 +48,8 @@
   },
   "totals": {
     "parts": 898,
-    "ready": 3,
-    "complete": 7,
+    "ready": 0,
+    "complete": 10,
     "blocked": 888
   },
   "parts": [
@@ -117,15 +117,15 @@
         "slides": "slides/ME-EN-01-P02.md",
         "quiz": "quiz/ME-EN-01-P02.json"
       },
-      "sourceHash": "b9f7ceff8d719d3dc16685912b50332e02c17cd8ba71c682cfe6ee802450f90b",
-      "status": "ready",
+      "sourceHash": "fa30c4b0f13b418421c0db3fe747e137a1779e836d4c78c776f1972388f3891a",
+      "status": "complete",
       "missing": [],
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-EN-01-P02「5文型：OとCを関係で判定する」。 親単元 ME-EN-01「文の要素と5文型」の Part 2。 科目:english-exam。章:横断基盤。到達目標:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱う範囲:動詞後の語をイコール関係で調べ、5文型を根拠つきで判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -7286,15 +7286,15 @@
         "slides": "slides/ME-M1-01-P01.md",
         "quiz": "quiz/ME-M1-01-P01.json"
       },
-      "sourceHash": "8702b6897eca4ba049919a24dd01a837379e84717a58e77e3ba0cc94ab522ebd",
-      "status": "ready",
+      "sourceHash": "d15b2e8852b4fbb7dcbd8fd83c68697199c2ce1262886495f7ae86bb8623dcb4",
+      "status": "complete",
       "missing": [],
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-M1-01-P01「整式の定義と判別」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 1。 科目:math1-exam。章:数と式。到達目標:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱う範囲:変数の指数を調べ、整式かどうかを定義に基づいて判定できる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -26838,15 +26838,15 @@
         "slides": "slides/ME-PH-01-P02.md",
         "quiz": "quiz/ME-PH-01-P02.json"
       },
-      "sourceHash": "d86e629c3198721c1126f35489f8f763cb21a7148081aeee83bd2bfa501b1da2",
-      "status": "ready",
+      "sourceHash": "f0ad623514948e97c57b14438e6987c9195552667d6005743b1f4d83c81473db",
+      "status": "complete",
       "missing": [],
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-PH-01-P02「有効数字と計算結果の丸め」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:有効数字を数え、演算別の規則で計算結果を丸められる。 扱う範囲:有効数字を数え、演算別の規則で計算結果を丸められる。 扱わない範囲:次Partおよび後続単元の内容。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",

@@ -41,6 +41,8 @@ const PART_POLICY = JSON.parse(
   fs.readFileSync(path.join(CONTENT, "part-policy.json"), "utf8"),
 );
 const DRY = process.env.NLM_DRY === "1";
+process.env.NOTEBOOKLM_BASE_URL ??= "https://notebook.google.com";
+const claimedNotebookIds = new Set();
 
 const args = process.argv.slice(2);
 const flags = new Set(args.filter((a) => a.startsWith("--")));
@@ -54,6 +56,30 @@ function sh(cmd, opts = {}) {
     encoding: "utf8",
     maxBuffer: 20 * 1024 * 1024,
     timeout: opts.timeout ?? 600_000,
+  });
+  if (r.status !== 0) {
+    const err = `${r.stdout || ""}\n${r.stderr || ""}`.trim();
+    if (err) console.warn(err.slice(-600));
+  } else if (r.stdout?.trim()) {
+    console.log(r.stdout.trim().slice(0, 400));
+  }
+  return r;
+}
+
+function quoteArg(arg) {
+  return JSON.stringify(String(arg));
+}
+
+function shArgs(cmd, cmdArgs, opts = {}) {
+  const rendered = [cmd, ...cmdArgs.map(quoteArg)].join(" ");
+  console.log(DRY ? `[dry] ${rendered}` : `> ${rendered}`);
+  if (DRY) return { status: 0, stdout: "", stderr: "" };
+  const r = spawnSync(cmd, cmdArgs, {
+    shell: false,
+    encoding: "utf8",
+    maxBuffer: 20 * 1024 * 1024,
+    timeout: opts.timeout ?? 600_000,
+    windowsHide: true,
   });
   if (r.status !== 0) {
     const err = `${r.stdout || ""}\n${r.stderr || ""}`.trim();
@@ -196,6 +222,107 @@ function researchQuery(loc) {
   ].join("");
 }
 
+function parseJsonOutput(output, fallback) {
+  try {
+    return JSON.parse(output || "");
+  } catch {
+    return fallback;
+  }
+}
+
+function artifactCountFromStudioStatus(raw) {
+  if (Array.isArray(raw)) return raw.length;
+  if (raw && Array.isArray(raw.artifacts)) return raw.artifacts.length;
+  if (raw && Array.isArray(raw.items)) return raw.items.length;
+  return null;
+}
+
+function notebookSourceCount(raw, fallback) {
+  const value = raw?.source_count ?? raw?.sourceCount ?? fallback;
+  return Number(value || 0);
+}
+
+function findReusableEmptyNotebook(reg) {
+  const list = shArgs("nlm", ["notebook", "list", "--json"], { timeout: 60_000 });
+  if (list.status !== 0) return null;
+  const notebooks = parseJsonOutput(list.stdout, []);
+  if (!Array.isArray(notebooks) || notebooks.length < 495) return null;
+
+  const registered = new Set(
+    Object.values(reg.units || {})
+      .map((unit) => unit?.notebook_id)
+      .filter(Boolean),
+  );
+  const candidates = notebooks.filter((item) =>
+    notebookSourceCount(item, 0) === 0 &&
+    item?.id &&
+    !registered.has(item.id) &&
+    !claimedNotebookIds.has(item.id)
+  );
+
+  for (const candidate of candidates) {
+    const id = candidate.id;
+    const detail = shArgs("nlm", ["notebook", "get", id, "--json"], { timeout: 60_000 });
+    if (detail.status !== 0) continue;
+    const detailJson = parseJsonOutput(detail.stdout, null);
+    const sourceCount = notebookSourceCount(detailJson, candidate.source_count);
+    const sourcesLen = Array.isArray(detailJson?.sources) ? detailJson.sources.length : 0;
+    if (sourceCount !== 0 || sourcesLen !== 0) continue;
+
+    const studio = shArgs("nlm", ["studio", "status", id, "--json"], { timeout: 60_000 });
+    if (studio.status !== 0) continue;
+    const studioJson = parseJsonOutput(studio.stdout, []);
+    const artifactCount = artifactCountFromStudioStatus(studioJson);
+    if (artifactCount !== 0) continue;
+
+    return {
+      id,
+      title: candidate.title || "",
+      updated_at: candidate.updated_at || null,
+    };
+  }
+  return null;
+}
+
+function claimReusableNotebook(reg, unitId, title) {
+  const candidate = findReusableEmptyNotebook(reg);
+  if (!candidate) return null;
+  console.log("claim empty notebook", {
+    unitId,
+    notebook_id: candidate.id,
+    previous_title: candidate.title,
+    updated_at: candidate.updated_at,
+  });
+  const renamed = shArgs("nlm", ["notebook", "rename", candidate.id, title], { timeout: 60_000 });
+  if (renamed.status !== 0) {
+    console.warn("notebook rename failed; continuing with claimed empty notebook", candidate.id);
+  }
+  claimedNotebookIds.add(candidate.id);
+  reg.units[unitId] = {
+    ...(reg.units[unitId] || {}),
+    notebook_id: candidate.id,
+    title,
+    reused_empty_notebook: true,
+    previous_title: candidate.title,
+    claimed_at: new Date().toISOString(),
+    created_at: new Date().toISOString(),
+  };
+  saveRegistry(reg);
+  return candidate.id;
+}
+
+function parseNotebookCreateId(output) {
+  try {
+    const j = JSON.parse(output || "{}");
+    return j.id || j.notebook_id || j.notebook?.id || null;
+  } catch {
+    const m = String(output || "").match(
+      /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
+    );
+    return m?.[0] || null;
+  }
+}
+
 function ensureNotebook(reg, unitId, title) {
   if (reg.units[unitId]?.notebook_id) {
     console.log("reuse notebook", unitId, reg.units[unitId].notebook_id);
@@ -212,35 +339,24 @@ function ensureNotebook(reg, unitId, title) {
     console.log("[dry] synthetic notebook", id);
     return id;
   }
-  const r = sh(`nlm notebook create ${JSON.stringify(title)} --json`);
-  let id = null;
-  try {
-    const j = JSON.parse(r.stdout || "{}");
-    id = j.id || j.notebook_id || j.notebook?.id;
-  } catch {
-    /* parse from text */
-    const m = (r.stdout + r.stderr).match(
-      /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
-    );
-    id = m?.[0];
+  const r = shArgs("nlm", ["notebook", "create", title, "--json"]);
+  let id = parseNotebookCreateId(r.stdout) || parseNotebookCreateId(r.stderr);
+  const createOutput = `${r.stdout || ""}\n${r.stderr || ""}`;
+  if (!id && createOutput.includes("INVALID_ARGUMENT")) {
+    id = claimReusableNotebook(reg, unitId, title);
   }
   if (!id) {
-    // fallback list
-    const list = sh(`nlm notebook list --json`);
-    try {
-      const arr = JSON.parse(list.stdout || "[]");
-      const hit = arr.find((x) => (x.title || "").includes(unitId));
-      id = hit?.id;
-    } catch {
-      /* */
-    }
+    const list = shArgs("nlm", ["notebook", "list", "--json"], { timeout: 60_000 });
+    const arr = parseJsonOutput(list.stdout, []);
+    const hit = Array.isArray(arr) ? arr.find((x) => (x.title || "").includes(unitId)) : null;
+    id = hit?.id;
   }
   if (!id) throw new Error(`failed to create notebook for ${unitId}: ${r.stderr}`);
   reg.units[unitId] = {
     ...(reg.units[unitId] || {}),
     notebook_id: id,
     title,
-    created_at: new Date().toISOString(),
+    created_at: reg.units[unitId]?.created_at || new Date().toISOString(),
   };
   saveRegistry(reg);
   return id;
@@ -475,7 +591,12 @@ function downloadArtifacts(
   // quiz optional
   if (kinds.quiz) {
     const quizOut = path.join(out, "nlm_quiz.json");
-    sh(`nlm download quiz ${nb} --output ${JSON.stringify(quizOut)} --format json 2>/dev/null || true`);
+    const quiz = shArgs("nlm", ["download", "quiz", nb, "--output", quizOut, "--format", "json"], {
+      timeout: 300_000,
+    });
+    if (quiz.status !== 0) {
+      console.warn("download fail/skip quiz");
+    }
     if (fs.existsSync(quizOut) && fs.statSync(quizOut).size > 20) {
       fs.copyFileSync(quizOut, path.join(out, "quiz.json"));
     }
@@ -563,7 +684,13 @@ function processUnit(unitId, reg, options) {
 
   console.log("\n========", unitId, loc.unit.title, "========");
   preflight(loc);
-  const title = `Medvance ${unitId} ${loc.unit.title}`.slice(0, 80);
+  const ymd = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date()).replaceAll("-", "");
+  const title = `Medvance ${unitId} ${ymd}`;
   const nb = ensureNotebook(reg, unitId, title);
   reg.units[unitId].subject = loc.subject;
   reg.units[unitId].subjectDir = loc.subjectDir;

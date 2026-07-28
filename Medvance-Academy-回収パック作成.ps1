@@ -29,7 +29,7 @@ $ready = Get-ChildItem $mediaRoot -Directory | Where-Object {
 }
 
 if ($ready.Count -eq 0) {
-  Write-Host "新しい完成パックはありません。"
+  Write-Host "No new complete packs."
   exit 0
 }
 
@@ -61,5 +61,5 @@ $batch | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $batchRoot "_batch.jso
   ConvertTo-Json -Depth 3 |
   Set-Content $stateFile -Encoding UTF8
 
-Write-Host "回収パック作成:" $batchRoot
-Write-Host "Part数:" $ready.Count
+Write-Host "Recovery pack created:" $batchRoot
+Write-Host "Part count:" $ready.Count

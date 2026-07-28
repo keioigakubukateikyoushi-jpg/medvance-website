@@ -80,7 +80,16 @@ function build({ artifactSnapshot = null } = {}) {
           },
         };
         const snapshot = snapshotByPart.get(part.id);
-        const artifacts = snapshot?.artifacts || artifactStatus(part.id);
+        const localArtifacts = artifactStatus(part.id);
+        const snapshotArtifacts = snapshot?.artifacts;
+        const artifacts = {
+          video: Boolean(snapshotArtifacts?.video || localArtifacts.video),
+          audio: Boolean(snapshotArtifacts?.audio || localArtifacts.audio),
+          slides: Boolean(snapshotArtifacts?.slides || localArtifacts.slides),
+          quiz: Boolean(snapshotArtifacts?.quiz || localArtifacts.quiz),
+          complete: false,
+        };
+        artifacts.complete = artifacts.video && artifacts.audio && artifacts.slides && artifacts.quiz;
         parts.push({
           subjectId,
           parentUnitId: unit.id,
@@ -140,7 +149,7 @@ function build({ artifactSnapshot = null } = {}) {
   };
 }
 
-const existing = CHECK && fs.existsSync(OUTPUT)
+const existing = fs.existsSync(OUTPUT)
   ? JSON.parse(fs.readFileSync(OUTPUT, "utf8"))
   : null;
 const result = build({ artifactSnapshot: existing });

@@ -56,7 +56,33 @@
         }
       ],
       "stoppedReason": "safety_max"
+    },
+    "2026-07-28": {
+      "attempted": [
+        "ME-EN-01-P02",
+        "ME-M1-01-P01",
+        "ME-PH-01-P02"
+      ],
+      "complete": [
+        "ME-EN-01-P02",
+        "ME-M1-01-P01",
+        "ME-PH-01-P02"
+      ],
+      "partial": [
+        {
+          "id": "ME-EN-01-P02",
+          "at": "2026-07-28T04:48:55.337Z",
+          "status": {
+            "video": true,
+            "audio": true,
+            "slides": true,
+            "quiz": false
+          },
+          "code": 0
+        }
+      ],
+      "stoppedReason": "queue_drained"
     }
   },
-  "updatedAt": "2026-07-26T14:42:58.303Z"
+  "updatedAt": "2026-07-28T05:35:48.689Z"
 }
