@@ -92,8 +92,18 @@ if (!fs.existsSync(MANIFEST)) {
   process.exit(2);
 }
 const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
+const stateForQueue = loadState();
+const dayForQueue = today();
+const todayStateForQueue = stateForQueue.partDays?.[dayForQueue] || { attempted: [] };
+const completedParts = new Set(Object.values(stateForQueue.partDays || {}).flatMap((day) => day.complete || []));
+const partialParts = new Set(
+  Object.values(stateForQueue.partDays || {}).flatMap((day) => (day.partial || []).map((entry) => entry.id)),
+);
+const todayAttemptedParts = new Set(todayStateForQueue.attempted || []);
+const excludedParts = new Set([...completedParts, ...partialParts, ...todayAttemptedParts]);
 const queue = (manifest.parts || [])
   .filter((item) => item.status === "ready")
+  .filter((item) => !excludedParts.has(item.partId))
   .map((item) => ({
     ...item,
     outputs: ["video", "audio", "slide_deck", "quiz"],
@@ -124,7 +134,12 @@ console.log("NotebookLM Part daily queue", {
   ready: queue.length,
   pending: pending.length,
   safetyMax: SAFETY_MAX,
-  mode: DRY ? "dry-run" : "generate-until-limit"
+  mode: DRY ? "dry-run" : "generate-until-limit",
+  excluded: {
+    complete: completedParts.size,
+    partial: partialParts.size,
+    todayAttempted: todayAttemptedParts.size,
+  },
 });
 
 if (DRY) {

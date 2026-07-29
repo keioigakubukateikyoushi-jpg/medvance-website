@@ -1,0 +1,72 @@
+{
+  "unit_id": "ME-EN-02-P01",
+  "quality": "reviewed-v3",
+  "questions": [
+    {
+      "prompt": "The early train arrived. の early の品詞は？",
+      "choices": [
+        "名詞",
+        "動詞",
+        "形容詞",
+        "副詞"
+      ],
+      "answer": 2,
+      "explanation": "early は名詞 train を修飾するので形容詞。"
+    },
+    {
+      "prompt": "He arrived early. の early の品詞は？",
+      "choices": [
+        "名詞",
+        "形容詞",
+        "副詞",
+        "前置詞"
+      ],
+      "answer": 2,
+      "explanation": "arrived の時を説明しているので副詞。"
+    },
+    {
+      "prompt": "名詞になれる働きとして最も適切なものは？",
+      "choices": [
+        "主語になる",
+        "動詞を修飾する",
+        "節をつなぐ",
+        "後ろに必ず目的語を取る"
+      ],
+      "answer": 0,
+      "explanation": "名詞は主語・目的語・補語になれる。"
+    },
+    {
+      "prompt": "in the room のような前置詞句の扱いで正しいものは？",
+      "choices": [
+        "必ず主語になる",
+        "まとまり全体で形容詞句または副詞句になる",
+        "前置詞だけで文型要素になる",
+        "必ず補語になる"
+      ],
+      "answer": 1,
+      "explanation": "前置詞句は全体で名詞を修飾したり、動詞・文全体を修飾したりする。"
+    },
+    {
+      "prompt": "You are right. の right の働きは？",
+      "choices": [
+        "目的語",
+        "主語",
+        "補語",
+        "副詞"
+      ],
+      "answer": 2,
+      "explanation": "You の状態を説明する補語で、品詞は形容詞。"
+    },
+    {
+      "prompt": "品詞判定で最も危険な方法は？",
+      "choices": [
+        "修飾先を見る",
+        "文中の位置を見る",
+        "日本語訳だけで決める",
+        "述語動詞を探す"
+      ],
+      "answer": 2,
+      "explanation": "訳だけでは同じ語の別用法を見落とす。"
+    }
+  ]
+}

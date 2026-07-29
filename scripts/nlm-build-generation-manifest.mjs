@@ -107,12 +107,13 @@ function build({ artifactSnapshot = null } = {}) {
           scopeOut: part.scope_out || ["後続Part"],
           sources,
           sourceHash: hashFiles(subjectId, sources),
-          status: missing.length
-            ? "blocked_source_authoring"
-            : snapshot?.status === "complete" || artifacts.complete
-              ? "complete"
-              : "ready",
-          missing,
+          status: snapshot?.status === "complete" || artifacts.complete
+            ? "complete"
+            : part.readiness?.status === "generation_ready" && missing.length === 0
+              ? "ready"
+              : "blocked_source_authoring",
+          missing: part.readiness?.status === "generation_ready" ? missing : (part.readiness?.missing || missing),
+          readiness: part.readiness || null,
           artifacts,
           prompts: buildArtifactPrompts(loc),
           outputDirectory: `public/academy/media/${part.id}`,

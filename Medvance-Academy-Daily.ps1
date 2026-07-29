@@ -96,13 +96,14 @@ try {
   Write-RunLog ("npm={0}" -f $npmPath)
   Write-RunLog ("nlm={0}" -f $nlmPath)
 
-  Invoke-Step "manifest-check" $npmPath @("run", "academy:generation-manifest-check")
+  Invoke-Step "partition" $npmPath @("run", "academy:partition")
+  Invoke-Step "generation-manifest" $npmPath @("run", "academy:generation-manifest")
+  Invoke-Step "daily-preview" $npmPath @("run", "academy:daily-preview", "--", "--max", "3")
   if ($Generate) {
     Invoke-Step "auth-check" $nlmPath @("login", "--check")
   } else {
-    Write-RunLog "DryRun skips auth-check; Generate mode checks auth before generation."
+    Write-RunLog "DryRun skips auth-check and generation."
   }
-  Invoke-Step "daily-preview" $npmPath @("run", "academy:daily-preview", "--", "--max", "3")
 
   if ($Generate) {
     $env:NLM_DAILY_CONFIRMED = "1"
