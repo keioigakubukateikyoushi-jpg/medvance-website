@@ -17,10 +17,13 @@ const CONTENT = path.join(ROOT, "content", "academy");
 const MEDIA = path.join(ROOT, "public", "academy", "media");
 const MANIFEST = path.join(CONTENT, "nlm-generation-manifest.json");
 const STATE = path.join(CONTENT, "nlm-part-daily-state.json");
+const REGISTRY = path.join(CONTENT, "nlm-registry.json");
 const LOCK = path.join(CONTENT, ".nlm-part-daily.lock");
 const FACTORY = path.join(ROOT, "scripts", "nlm-unit-factory.mjs");
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry-run");
+const RETRY_SUBMISSION_ERRORS = args.includes("--retry-submission-errors");
+const CLEAR_FALSE_QUOTA = args.includes("--clear-false-quota");
 const CONFIRMED = args.includes("--confirm") || process.env.NLM_DAILY_CONFIRMED === "1";
 const maxIndex = args.indexOf("--max");
 const SAFETY_MAX = Math.max(
@@ -72,6 +75,12 @@ function packStatus(id) {
       fileReady(path.join(id, "nlm_quiz.json"), 50) ||
       fileReady(path.join(id, "quiz.json"), 50),
   };
+}
+
+function submissionSnapshot(id) {
+  if (!fs.existsSync(REGISTRY)) return null;
+  const registry = JSON.parse(fs.readFileSync(REGISTRY, "utf8"));
+  return registry.units?.[id]?.batch_submission || null;
 }
 
 function complete(status) {
@@ -126,13 +135,25 @@ function roundRobin(items) {
   return out;
 }
 
-function runSubmission(id) {
+function runSubmission(id, retryKinds = null) {
+  const retrySet = retryKinds ? new Set(retryKinds) : null;
   const result = spawnSync("node", [FACTORY, id, "--no-research", "--submit-only"], {
     cwd: ROOT,
     encoding: "utf8",
     maxBuffer: 40 * 1024 * 1024,
     timeout: Number(process.env.NLM_SUBMISSION_TIMEOUT_MS || 900_000),
-    env: { ...process.env, NLM_RESEARCH_MODE: "off" },
+    env: {
+      ...process.env,
+      NLM_RESEARCH_MODE: "off",
+      ...(retrySet
+        ? {
+            NLM_SKIP_AUDIO: retrySet.has("audio") ? "0" : "1",
+            NLM_SKIP_VIDEO: retrySet.has("video") ? "0" : "1",
+            NLM_SKIP_SLIDES: retrySet.has("slides") ? "0" : "1",
+            NLM_SKIP_QUIZ: retrySet.has("quiz") ? "0" : "1",
+          }
+        : {}),
+    },
   });
   const output = `${result.stdout || ""}\n${result.stderr || ""}`;
   process.stdout.write(output);
@@ -207,6 +228,45 @@ dayState.complete ??= [];
 dayState.partial ??= [];
 dayState.submissions ??= [];
 dayState.collectionPending ??= [];
+if (
+  CLEAR_FALSE_QUOTA &&
+  dayState.stoppedReason === "quota_or_rate_limit"
+) {
+  const flagged = dayState.submissions.find(
+    (entry) => entry.sequence === dayState.firstQuotaErrorSequence,
+  );
+  if (flagged?.accepted) {
+    console.log("CLEAR false quota marker from an accepted submission", {
+      sequence: dayState.firstQuotaErrorSequence,
+      id: dayState.firstQuotaErrorPartId,
+    });
+    delete dayState.firstQuotaErrorSequence;
+    delete dayState.firstQuotaErrorPartId;
+    delete dayState.limitProbe;
+    dayState.stoppedReason = null;
+    saveState(state);
+  }
+}
+if (RETRY_SUBMISSION_ERRORS) {
+  const retryableIds = new Set(
+    dayState.submissions
+      .filter(
+        (entry) =>
+          !entry.accepted &&
+          entry.errorKind === "submission_error",
+      )
+      .map((entry) => entry.id),
+  );
+  if (retryableIds.size) {
+    console.log("RETRY confirmed pre-notebook submission errors", [...retryableIds]);
+    dayState.attempted = dayState.attempted.filter((id) => !retryableIds.has(id));
+    dayState.partial = dayState.partial.filter((entry) => !retryableIds.has(entry.id));
+    dayState.submissions = dayState.submissions.filter(
+      (entry) => !retryableIds.has(entry.id),
+    );
+    saveState(state);
+  }
+}
 const previousStoppedReason = dayState.stoppedReason;
 const quotaAlreadyDetected =
   previousStoppedReason === "quota_or_rate_limit" &&
@@ -237,15 +297,31 @@ const partialParts = new Set(
   ),
 );
 const excludedParts = new Set([...allAttempted, ...completedParts, ...partialParts]);
+const manifestById = new Map(
+  (manifest.parts || []).map((item) => [item.partId, item]),
+);
+const retryById = new Map();
+for (const [partDay, entry] of Object.entries(state.partDays || {})) {
+  if (partDay === day) continue;
+  for (const partial of entry.partial || []) {
+    const missing = partial.missing || submissionSnapshot(partial.id)?.missing || [];
+    if (!missing.length || complete(packStatus(partial.id))) continue;
+    const item = manifestById.get(partial.id);
+    if (item) retryById.set(partial.id, { ...item, retryKinds: missing });
+  }
+}
+const retryQueue = roundRobin([...retryById.values()]);
 const readyQueue = roundRobin(
   (manifest.parts || [])
     .filter((item) => item.status === "ready")
     .filter((item) => !excludedParts.has(item.partId))
+    .filter((item) => !retryById.has(item.partId))
     .filter((item) => !complete(packStatus(item.partId))),
 );
 
 console.log("NotebookLM Part daily batch queue", {
   ready: readyQueue.length,
+  partialRetries: retryQueue.length,
   safetyMax: SAFETY_MAX,
   submissionBatchSize: BATCH_SIZE,
   collectConcurrency: COLLECT_CONCURRENCY,
@@ -254,11 +330,12 @@ console.log("NotebookLM Part daily batch queue", {
 });
 
 if (DRY) {
-  readyQueue.slice(0, SAFETY_MAX).forEach((item, index) => {
+  [...retryQueue, ...readyQueue].slice(0, SAFETY_MAX).forEach((item, index) => {
     console.log(
       `- submit #${dayState.attempted.length + index + 1}`,
       item.partId,
       priorityGroup(item),
+      item.retryKinds ? `retry:${item.retryKinds.join(",")}` : "new",
       packStatus(item.partId),
     );
   });
@@ -290,7 +367,7 @@ process.on("SIGINT", () => process.exit(130));
 process.on("SIGTERM", () => process.exit(143));
 
 const remainingCapacity = Math.max(0, SAFETY_MAX - dayState.attempted.length);
-const candidates = readyQueue.slice(0, remainingCapacity);
+const candidates = [...retryQueue, ...readyQueue].slice(0, remainingCapacity);
 let quotaDetected = quotaAlreadyDetected;
 
 for (let offset = 0; offset < candidates.length && !quotaDetected; offset += BATCH_SIZE) {
@@ -304,9 +381,12 @@ for (let offset = 0; offset < candidates.length && !quotaDetected; offset += BAT
     const id = item.partId;
     dayState.attempted.push(id);
     saveState(state);
-    const result = runSubmission(id);
-    const quota = quotaFailure(result.output);
+    const result = runSubmission(id, item.retryKinds);
     const accepted = result.code === 0;
+    const quota = !accepted && quotaFailure(result.output);
+    const snapshot = submissionSnapshot(id);
+    const acceptedKinds = snapshot?.accepted || [];
+    const missingKinds = snapshot?.missing || [];
     dayState.submissions.push({
       sequence,
       id,
@@ -315,15 +395,26 @@ for (let offset = 0; offset < candidates.length && !quotaDetected; offset += BAT
       accepted,
       code: result.code,
       errorKind: quota ? "quota_or_rate_limit" : accepted ? null : "submission_error",
+      ...(item.retryKinds ? { retryKinds: item.retryKinds } : {}),
+      acceptedKinds,
+      missingKinds,
     });
-    if (accepted) {
+    if (accepted || acceptedKinds.length) {
       dayState.collectionPending = [...new Set([...dayState.collectionPending, id])];
-    } else {
+    }
+    if (!accepted) {
       dayState.partial.push({
         id,
         at: new Date().toISOString(),
         stage: "submission",
-        status: packStatus(id),
+        status: Object.fromEntries(
+          ["video", "audio", "slides", "quiz"].map((kind) => [
+            kind,
+            acceptedKinds.includes(kind),
+          ]),
+        ),
+        accepted: acceptedKinds,
+        missing: missingKinds,
         code: result.code,
       });
     }

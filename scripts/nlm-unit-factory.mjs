@@ -42,7 +42,7 @@ const PART_POLICY = JSON.parse(
   fs.readFileSync(path.join(CONTENT, "part-policy.json"), "utf8"),
 );
 const DRY = process.env.NLM_DRY === "1";
-process.env.NOTEBOOKLM_BASE_URL ??= "https://notebook.google.com";
+process.env.NOTEBOOKLM_BASE_URL ??= "https://notebooklm.google.com";
 const claimedNotebookIds = new Set();
 
 const args = process.argv.slice(2);
@@ -418,7 +418,24 @@ function ensureNotebook(reg, unitId, title) {
 function addCanonicalSources(nb, loc) {
   const files = [loc.lessonPath, loc.storyboardPath, loc.slidesPath, loc.quizPath].filter(
     (f) => f && fs.existsSync(f),
-  );
+  ).map((f) => {
+    if (path.extname(f).toLowerCase() !== ".json") return f;
+    const json = JSON.parse(fs.readFileSync(f, "utf8"));
+    const rendered = [
+      `# ${loc.unit.id} 確認問題ソース`,
+      "",
+      "以下はこのPartの確認問題・正答・解説の正本です。",
+      "",
+      "```json",
+      JSON.stringify(json, null, 2),
+      "```",
+      "",
+    ].join("\n");
+    const out = path.join(MEDIA, loc.unit.id, "_quiz_source.md");
+    fs.mkdirSync(path.dirname(out), { recursive: true });
+    fs.writeFileSync(out, rendered, "utf8");
+    return out;
+  });
   for (const f of files) {
     const r = sh(`nlm source add ${nb} --file ${JSON.stringify(f)} --wait`);
     if (r.status !== 0) console.warn("source add warn", f, r.stderr?.slice(-200));
@@ -770,6 +787,12 @@ function processUnit(unitId, reg, options) {
     console.log("skip video create: one-shot request already recorded", reg.units[unitId].video_requested_at);
   }
   if (options.downloadOnly) {
+    const accepted = reg.units[unitId]?.batch_submission?.accepted;
+    if (Array.isArray(accepted) && accepted.length) {
+      for (const kind of Object.keys(kinds)) {
+        kinds[kind] = kinds[kind] && accepted.includes(kind);
+      }
+    }
     downloadArtifacts(nb, unitId, loc, { kinds });
     return;
   }
@@ -808,14 +831,24 @@ function processUnit(unitId, reg, options) {
   saveRegistry(reg);
 
   if (options.submitOnly) {
-    const missing = Object.entries(kinds)
-      .filter(([, requested]) => requested)
-      .map(([kind]) => kind)
-      .filter((kind) => !created[kind]);
+    const previous = reg.units[unitId].batch_submission || {};
+    const requested = [
+      ...new Set([
+        ...(previous.requested || []),
+        ...Object.entries(kinds).filter(([, value]) => value).map(([kind]) => kind),
+      ]),
+    ];
+    const accepted = [
+      ...new Set([
+        ...(previous.accepted || []),
+        ...Object.entries(created).filter(([, value]) => value).map(([kind]) => kind),
+      ]),
+    ];
+    const missing = requested.filter((kind) => !accepted.includes(kind));
     reg.units[unitId].batch_submission = {
       at: new Date().toISOString(),
-      requested: Object.entries(kinds).filter(([, value]) => value).map(([kind]) => kind),
-      accepted: Object.entries(created).filter(([, value]) => value).map(([kind]) => kind),
+      requested,
+      accepted,
       missing,
     };
     saveRegistry(reg);
