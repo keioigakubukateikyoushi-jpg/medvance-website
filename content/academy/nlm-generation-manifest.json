@@ -48,9 +48,9 @@
   },
   "totals": {
     "parts": 898,
-    "ready": 15,
+    "ready": 25,
     "complete": 10,
-    "blocked": 873
+    "blocked": 863
   },
   "parts": [
     {
@@ -14214,22 +14214,12 @@
         "slides": "slides/ME-MA-02-P02.md",
         "quiz": "quiz/ME-MA-02-P02.json"
       },
-      "sourceHash": "a1e65d6c1527252f3b5a370a829c3d4fec6228f743e6004a8466692ea069cc0b",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "d252074710feba3a447a2274c37aaec5d8787a60d37390af2dadb0777fd5dba3",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -14274,22 +14264,12 @@
         "slides": "slides/ME-MA-02-P03.md",
         "quiz": "quiz/ME-MA-02-P03.json"
       },
-      "sourceHash": "7d84956e90d805002fbcda78fce0847e4c1163fc509bb3a39a4f37b88ee11940",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "a101cfd79c4df111db85bd9fa00982fcc08697bb944283467cecc2cff3a2c911",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -14331,22 +14311,12 @@
         "slides": "slides/ME-MA-03-P01.md",
         "quiz": "quiz/ME-MA-03-P01.json"
       },
-      "sourceHash": "226f58ef28dad398f7ca1456e12f2d8c41682892cfd3b7d68f175cd337740a56",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "20486d52ebfca9266d91c345f500d7b714d549a9558c5f54cdd20e0b59d27d40",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -32238,29 +32208,13 @@
         "slides": "slides/ME-PH-01-P01.md",
         "quiz": "quiz/ME-PH-01-P01.json"
       },
-      "sourceHash": "1f4c8c4e13296f7dfd3568dd99d685b1194c057e9e2971cf1698259fbeb4b193",
+      "sourceHash": "879b3361ffb8474b6862b54da45bbc816ed909ab4fa98ab513dcd621378a3f90",
       "status": "complete",
       "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
+        "status": "generation_ready",
         "missing": [],
-        "failures": [
-          "storyboard_too_thin",
-          "quiz_requires_6_questions",
-          "quiz_1_answer_invalid",
-          "quiz_1_explanation_short",
-          "quiz_2_choices_invalid",
-          "quiz_2_answer_invalid",
-          "quiz_2_explanation_short",
-          "quiz_3_choices_invalid",
-          "quiz_3_answer_invalid",
-          "quiz_3_explanation_short",
-          "quiz_4_answer_invalid",
-          "quiz_4_explanation_short",
-          "quiz_5_choices_invalid",
-          "quiz_5_answer_invalid",
-          "quiz_5_explanation_short"
-        ]
+        "failures": []
       },
       "artifacts": {
         "video": true,
@@ -32302,15 +32256,13 @@
         "slides": "slides/ME-PH-01-P02.md",
         "quiz": "quiz/ME-PH-01-P02.json"
       },
-      "sourceHash": "f0ad623514948e97c57b14438e6987c9195552667d6005743b1f4d83c81473db",
+      "sourceHash": "b7d271c3d4e3cf7e7d5b3a56183bbef9415f6c4e0aa7014765c14687057365a2",
       "status": "complete",
       "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
+        "status": "generation_ready",
         "missing": [],
-        "failures": [
-          "quiz_2_explanation_short"
-        ]
+        "failures": []
       },
       "artifacts": {
         "video": true,
@@ -32602,22 +32554,12 @@
         "slides": "slides/ME-PH-03-P02.md",
         "quiz": "quiz/ME-PH-03-P02.json"
       },
-      "sourceHash": "d00821922e8774e99ce3366ff2d99c739a7816ed5278ad16f0164c7fc92d7427",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "fd0a96116eac81e0a05a0b831210ef60eedce6b969b4672b39adc2cb793362ef",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -32663,22 +32605,12 @@
         "slides": "slides/ME-PH-03-P03.md",
         "quiz": "quiz/ME-PH-03-P03.json"
       },
-      "sourceHash": "ceffd5a24387891ca9e4df109e008dc467b251d2d03513d2e79c240cf49e7a44",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "984b766ff060ee9459bf20f40ac712f6fff9df0bdea03aa304b5b563ddd3d10b",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -32724,22 +32656,12 @@
         "slides": "slides/ME-PH-03-P04.md",
         "quiz": "quiz/ME-PH-03-P04.json"
       },
-      "sourceHash": "6e61ff30cc4cdf5fa58f454a5fb14f1771bfdee9931d7d427302cc6c83075069",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "ada6ccbe88d310da5359156bb7532009f3d8de13192889d2955490d9d6c53720",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -40402,22 +40324,12 @@
         "slides": "slides/ME-CH-02-P02.md",
         "quiz": "quiz/ME-CH-02-P02.json"
       },
-      "sourceHash": "2001b0b13f1b0ca9993eead4179a68088fd6a9b5fd9b97e0af07c371632c018c",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "b64a16ecdf3eddc2cf64b6c6f2094f14f5cceb11d8b871d8cfcc35e9e992f97d",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -40462,22 +40374,12 @@
         "slides": "slides/ME-CH-02-P03.md",
         "quiz": "quiz/ME-CH-02-P03.json"
       },
-      "sourceHash": "ab72578a7c815c7a6e920331fd65c99bf9347637b0c3100821dd3c19a1b46f34",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "448623d70b4fab3daaa397aa3f45683500a2fd839abda8a0114428e90355feeb",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -40522,22 +40424,12 @@
         "slides": "slides/ME-CH-03-P01.md",
         "quiz": "quiz/ME-CH-03-P01.json"
       },
-      "sourceHash": "a33708c8e0e0dcce0ae07d20b0ac304890328e606ed4faa3219625057cc1f83c",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "a9d38e5e8e75730eff58cbcbd26b7f592391e5eed7e25b87d7a06b3d0ce4a506",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
@@ -40582,22 +40474,12 @@
         "slides": "slides/ME-CH-03-P02.md",
         "quiz": "quiz/ME-CH-03-P02.json"
       },
-      "sourceHash": "fa17c4b9d3c8cffea65573177123c8e2c401ffdf3068ba8f665a94630253d059",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "ef00689706ea5ac985e50934237544079325dedb0019117c44a2afeefbc09b01",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {

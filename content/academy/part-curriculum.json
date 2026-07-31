@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-31T03:33:57.103Z",
+  "generatedAt": "2026-07-31T05:09:17.111Z",
   "authority": "MEXT-aligned subject blueprints",
   "rule": "one core skill per NotebookLM notebook; design for 5-9 minutes with one worked example; duration alone is not a release gate",
   "outputProfile": {
@@ -76,7 +76,7 @@
     "subjects": 10,
     "units": 427,
     "parts": 898,
-    "generationReady": 16
+    "generationReady": 28
   },
   "subjects": {
     "english-exam": {
@@ -15089,13 +15089,8 @@
                 "quiz": "quiz/ME-MA-02-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15125,7 +15120,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-MA-02-P03",
@@ -15148,13 +15143,8 @@
                 "quiz": "quiz/ME-MA-02-P03.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15184,7 +15174,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -15213,13 +15203,8 @@
                 "quiz": "quiz/ME-MA-03-P01.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15249,7 +15234,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -34246,7 +34231,7 @@
               "minutes": 8,
               "goal": "SI単位を理解し、換算分数で単位換算を途中過程つきで実行できる",
               "prereq": [],
-              "status": "source-authoring-required",
+              "status": "generation-ready",
               "file": "lessons/ME-PH-01-P01.md",
               "storyboard": "storyboard/ME-PH-01-P01.md",
               "slides": "slides/ME-PH-01-P01.md",
@@ -34258,25 +34243,9 @@
                 "次Partおよび後続単元の内容"
               ],
               "readiness": {
-                "status": "source_authoring_required",
+                "status": "generation_ready",
                 "missing": [],
-                "failures": [
-                  "storyboard_too_thin",
-                  "quiz_requires_6_questions",
-                  "quiz_1_answer_invalid",
-                  "quiz_1_explanation_short",
-                  "quiz_2_choices_invalid",
-                  "quiz_2_answer_invalid",
-                  "quiz_2_explanation_short",
-                  "quiz_3_choices_invalid",
-                  "quiz_3_answer_invalid",
-                  "quiz_3_explanation_short",
-                  "quiz_4_answer_invalid",
-                  "quiz_4_explanation_short",
-                  "quiz_5_choices_invalid",
-                  "quiz_5_answer_invalid",
-                  "quiz_5_explanation_short"
-                ]
+                "failures": []
               },
               "outputs": {
                 "video": {
@@ -34315,7 +34284,7 @@
               "prereq": [
                 "ME-PH-01-P01"
               ],
-              "status": "source-authoring-required",
+              "status": "generation-ready",
               "file": "lessons/ME-PH-01-P02.md",
               "storyboard": "storyboard/ME-PH-01-P02.md",
               "slides": "slides/ME-PH-01-P02.md",
@@ -34327,11 +34296,9 @@
                 "次Partおよび後続単元の内容"
               ],
               "readiness": {
-                "status": "source_authoring_required",
+                "status": "generation_ready",
                 "missing": [],
-                "failures": [
-                  "quiz_2_explanation_short"
-                ]
+                "failures": []
               },
               "outputs": {
                 "video": {
@@ -34672,13 +34639,8 @@
                 "quiz": "quiz/ME-PH-03-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -34708,7 +34670,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-PH-03-P03",
@@ -34732,13 +34694,8 @@
                 "quiz": "quiz/ME-PH-03-P03.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -34768,7 +34725,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-PH-03-P04",
@@ -34792,13 +34749,8 @@
                 "quiz": "quiz/ME-PH-03-P04.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -34828,7 +34780,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -42909,13 +42861,8 @@
                 "quiz": "quiz/ME-CH-02-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -42945,7 +42892,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-CH-02-P03",
@@ -42968,13 +42915,8 @@
                 "quiz": "quiz/ME-CH-02-P03.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -43004,7 +42946,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -43036,13 +42978,8 @@
                 "quiz": "quiz/ME-CH-03-P01.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -43072,7 +43009,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-CH-03-P02",
@@ -43095,13 +43032,8 @@
                 "quiz": "quiz/ME-CH-03-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -43131,7 +43063,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-CH-03-P03",
