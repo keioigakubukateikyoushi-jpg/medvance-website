@@ -15265,13 +15265,8 @@
                 "quiz": "quiz/ME-MA-04-P01.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15301,7 +15296,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-MA-04-P02",
@@ -15323,13 +15318,8 @@
                 "quiz": "quiz/ME-MA-04-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15359,7 +15349,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -15388,13 +15378,8 @@
                 "quiz": "quiz/ME-MA-05-P01.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15424,7 +15409,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -15455,13 +15440,8 @@
                 "quiz": "quiz/ME-MA-06-P01.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15491,7 +15471,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-MA-06-P02",
@@ -15513,13 +15493,8 @@
                 "quiz": "quiz/ME-MA-06-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15549,7 +15524,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -15580,13 +15555,8 @@
                 "quiz": "quiz/ME-MA-07-P01.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15616,7 +15586,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-MA-07-P02",
@@ -15638,13 +15608,8 @@
                 "quiz": "quiz/ME-MA-07-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15674,7 +15639,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },
@@ -15706,13 +15671,8 @@
                 "quiz": "quiz/ME-MA-08-P01.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15742,7 +15702,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-MA-08-P02",
@@ -15765,13 +15725,8 @@
                 "quiz": "quiz/ME-MA-08-P02.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15801,7 +15756,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             },
             {
               "id": "ME-MA-08-P03",
@@ -15824,13 +15779,8 @@
                 "quiz": "quiz/ME-MA-08-P03.json"
               },
               "readiness": {
-                "status": "source_authoring_required",
-                "missing": [
-                  "lesson",
-                  "storyboard",
-                  "slides",
-                  "quiz"
-                ],
+                "status": "generation_ready",
+                "missing": [],
                 "failures": []
               },
               "outputs": {
@@ -15860,7 +15810,7 @@
                   "language": "ja"
                 }
               },
-              "status": "source-authoring-required"
+              "status": "generation-ready"
             }
           ]
         },

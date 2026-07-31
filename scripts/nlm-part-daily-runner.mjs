@@ -35,6 +35,7 @@ const COLLECT_CONCURRENCY = Math.max(
   1,
   Math.min(10, Number(process.env.NLM_COLLECT_CONCURRENCY || 4) || 4),
 );
+const ARTIFACT_KINDS = ["audio", "video", "slides", "quiz"];
 
 function today() {
   return new Intl.DateTimeFormat("en-CA", {
@@ -89,6 +90,60 @@ function complete(status) {
 
 function quotaFailure(output) {
   return /(RESOURCE_EXHAUSTED|rate.?limit|quota|daily limit|429|上限)/i.test(output);
+}
+
+function requestedKindsForSubmission(entry) {
+  if (Array.isArray(entry.requestedKinds)) return entry.requestedKinds;
+  if (Array.isArray(entry.retryKinds)) return entry.retryKinds;
+  if (entry.accepted) return ARTIFACT_KINDS;
+  return [
+    ...new Set([
+      ...(entry.acceptedKinds || []),
+      ...(entry.missingKinds || []),
+    ]),
+  ];
+}
+
+function rebuildArtifactLimits(dayState) {
+  const previous = dayState.artifactLimits || {};
+  const limits = Object.fromEntries(
+    ARTIFACT_KINDS.map((kind) => [
+      kind,
+      {
+        attempted: 0,
+        accepted: 0,
+        errors: 0,
+        exhausted: Boolean(previous[kind]?.exhausted),
+        firstErrorSequence: previous[kind]?.firstErrorSequence || null,
+        firstErrorPartId: previous[kind]?.firstErrorPartId || null,
+      },
+    ]),
+  );
+  for (const entry of dayState.submissions || []) {
+    const requested = requestedKindsForSubmission(entry);
+    const acceptedKinds =
+      Array.isArray(entry.acceptedKinds) && entry.acceptedKinds.length
+        ? entry.acceptedKinds
+        : entry.accepted
+          ? requested
+          : [];
+    for (const kind of requested) {
+      if (!limits[kind]) continue;
+      limits[kind].attempted += 1;
+      if (acceptedKinds.includes(kind)) {
+        limits[kind].accepted += 1;
+      } else {
+        limits[kind].errors += 1;
+        if (entry.errorKind === "quota_or_rate_limit") {
+          limits[kind].exhausted = true;
+          limits[kind].firstErrorSequence ??= entry.sequence;
+          limits[kind].firstErrorPartId ??= entry.id;
+        }
+      }
+    }
+  }
+  dayState.artifactLimits = limits;
+  return limits;
 }
 
 function priorityGroup(item) {
@@ -267,11 +322,6 @@ if (RETRY_SUBMISSION_ERRORS) {
     saveState(state);
   }
 }
-const previousStoppedReason = dayState.stoppedReason;
-const quotaAlreadyDetected =
-  previousStoppedReason === "quota_or_rate_limit" &&
-  !args.includes("--force-retry");
-if (!quotaAlreadyDetected) dayState.stoppedReason = null;
 for (const [index, id] of dayState.attempted.entries()) {
   if (dayState.submissions.some((entry) => entry.id === id)) continue;
   dayState.submissions.push({
@@ -284,6 +334,11 @@ for (const [index, id] of dayState.attempted.entries()) {
     mode: "legacy_sequential",
   });
 }
+const artifactLimits = rebuildArtifactLimits(dayState);
+if (dayState.stoppedReason === "quota_or_rate_limit") {
+  dayState.stoppedReason = null;
+}
+saveState(state);
 
 const allAttempted = new Set(
   Object.values(state.partDays || {}).flatMap((entry) => entry.attempted || []),
@@ -326,16 +381,22 @@ console.log("NotebookLM Part daily batch queue", {
   submissionBatchSize: BATCH_SIZE,
   collectConcurrency: COLLECT_CONCURRENCY,
   todayAttempted: dayState.attempted.length,
+  artifactLimits,
   mode: DRY ? "dry-run" : "batch-submit-then-collect",
 });
 
 if (DRY) {
   [...retryQueue, ...readyQueue].slice(0, SAFETY_MAX).forEach((item, index) => {
+    const desiredKinds = item.retryKinds || ARTIFACT_KINDS;
+    const activeKinds = desiredKinds.filter(
+      (kind) => !artifactLimits[kind]?.exhausted,
+    );
     console.log(
       `- submit #${dayState.attempted.length + index + 1}`,
       item.partId,
       priorityGroup(item),
-      item.retryKinds ? `retry:${item.retryKinds.join(",")}` : "new",
+      `active:${activeKinds.join(",") || "none"}`,
+      `deferred:${desiredKinds.filter((kind) => !activeKinds.includes(kind)).join(",") || "none"}`,
       packStatus(item.partId),
     );
   });
@@ -368,25 +429,58 @@ process.on("SIGTERM", () => process.exit(143));
 
 const remainingCapacity = Math.max(0, SAFETY_MAX - dayState.attempted.length);
 const candidates = [...retryQueue, ...readyQueue].slice(0, remainingCapacity);
-let quotaDetected = quotaAlreadyDetected;
 
-for (let offset = 0; offset < candidates.length && !quotaDetected; offset += BATCH_SIZE) {
+for (let offset = 0; offset < candidates.length; offset += BATCH_SIZE) {
   const batch = candidates.slice(offset, offset + BATCH_SIZE);
   console.log(
     `SUBMISSION BATCH ${Math.floor(offset / BATCH_SIZE) + 1}`,
     batch.map((item) => item.partId),
   );
   for (const item of batch) {
+    const desiredKinds = item.retryKinds || ARTIFACT_KINDS;
+    const activeKinds = desiredKinds.filter(
+      (kind) => !artifactLimits[kind]?.exhausted,
+    );
+    const deferredKinds = desiredKinds.filter(
+      (kind) => !activeKinds.includes(kind),
+    );
+    if (!activeKinds.length) {
+      console.log("SKIP: all requested artifact limits exhausted", {
+        id: item.partId,
+        desiredKinds,
+      });
+      continue;
+    }
     const sequence = dayState.attempted.length + 1;
     const id = item.partId;
     dayState.attempted.push(id);
     saveState(state);
-    const result = runSubmission(id, item.retryKinds);
-    const accepted = result.code === 0;
-    const quota = !accepted && quotaFailure(result.output);
+    const result = runSubmission(id, activeKinds);
     const snapshot = submissionSnapshot(id);
-    const acceptedKinds = snapshot?.accepted || [];
-    const missingKinds = snapshot?.missing || [];
+    const acceptedKinds = activeKinds.filter((kind) =>
+      (snapshot?.accepted || []).includes(kind),
+    );
+    const failedKinds = activeKinds.filter(
+      (kind) => !acceptedKinds.includes(kind),
+    );
+    const quota = result.code !== 0 && quotaFailure(result.output);
+    const quotaKinds = quota ? failedKinds : [];
+    const missingKinds = [...new Set([...failedKinds, ...deferredKinds])];
+    const accepted = failedKinds.length === 0;
+    for (const kind of activeKinds) {
+      const limit = artifactLimits[kind];
+      limit.attempted += 1;
+      if (acceptedKinds.includes(kind)) {
+        limit.accepted += 1;
+      } else {
+        limit.errors += 1;
+      }
+      if (quotaKinds.includes(kind)) {
+        limit.exhausted = true;
+        limit.firstErrorSequence ??= sequence;
+        limit.firstErrorPartId ??= id;
+      }
+    }
     dayState.submissions.push({
       sequence,
       id,
@@ -394,40 +488,54 @@ for (let offset = 0; offset < candidates.length && !quotaDetected; offset += BAT
       at: new Date().toISOString(),
       accepted,
       code: result.code,
-      errorKind: quota ? "quota_or_rate_limit" : accepted ? null : "submission_error",
+      errorKind: quotaKinds.length
+        ? "quota_or_rate_limit"
+        : accepted
+          ? null
+          : "submission_error",
+      requestedKinds: activeKinds,
       ...(item.retryKinds ? { retryKinds: item.retryKinds } : {}),
       acceptedKinds,
       missingKinds,
+      deferredKinds,
+      quotaKinds,
     });
     if (accepted || acceptedKinds.length) {
       dayState.collectionPending = [...new Set([...dayState.collectionPending, id])];
     }
-    if (!accepted) {
-      dayState.partial.push({
+    if (missingKinds.length) {
+      const partial = {
         id,
         at: new Date().toISOString(),
         stage: "submission",
         status: Object.fromEntries(
-          ["video", "audio", "slides", "quiz"].map((kind) => [
+          ARTIFACT_KINDS.map((kind) => [
             kind,
-            acceptedKinds.includes(kind),
+            (snapshot?.accepted || []).includes(kind),
           ]),
         ),
-        accepted: acceptedKinds,
+        accepted: snapshot?.accepted || acceptedKinds,
         missing: missingKinds,
         code: result.code,
+      };
+      const priorIndex = dayState.partial.findIndex((entry) => entry.id === id);
+      if (priorIndex >= 0) dayState.partial[priorIndex] = partial;
+      else dayState.partial.push(partial);
+    }
+    if (quotaKinds.length) {
+      console.log("ARTIFACT LIMIT REACHED", {
+        sequence,
+        id,
+        quotaKinds,
+        remainingKinds: ARTIFACT_KINDS.filter(
+          (kind) => !artifactLimits[kind].exhausted,
+        ),
       });
     }
-    if (quota) {
-      quotaDetected = true;
-      dayState.firstQuotaErrorSequence ??= sequence;
-      dayState.firstQuotaErrorPartId ??= id;
-      dayState.stoppedReason = "quota_or_rate_limit";
-      console.log("FIRST QUOTA/RATE LIMIT", { sequence, id });
-    }
     saveState(state);
-    if (quotaDetected) break;
+    if (ARTIFACT_KINDS.every((kind) => artifactLimits[kind].exhausted)) break;
   }
+  if (ARTIFACT_KINDS.every((kind) => artifactLimits[kind].exhausted)) break;
 }
 
 const collectionIds = [
@@ -460,16 +568,27 @@ await runPool(collectionIds, COLLECT_CONCURRENCY, runCollection, async (result) 
 });
 
 if (!dayState.stoppedReason) {
-  if (dayState.attempted.length >= SAFETY_MAX) {
+  if (ARTIFACT_KINDS.every((kind) => artifactLimits[kind].exhausted)) {
+    dayState.stoppedReason = "all_artifact_limits";
+  } else if (dayState.attempted.length >= SAFETY_MAX) {
     dayState.stoppedReason = "safety_max";
   } else if (candidates.length === 0) {
     dayState.stoppedReason = "queue_empty";
-  } else if (candidates.length === readyQueue.length) {
-    dayState.stoppedReason = "queue_drained";
+  } else if (candidates.length < retryQueue.length + readyQueue.length) {
+    dayState.stoppedReason = "safety_max";
   } else {
-    dayState.stoppedReason = "batch_complete";
+    dayState.stoppedReason = "queue_drained";
   }
 }
+dayState.artifactLimitProbe = Object.fromEntries(
+  ARTIFACT_KINDS.map((kind) => [
+    kind,
+    {
+      ...artifactLimits[kind],
+      recordedAt: new Date().toISOString(),
+    },
+  ]),
+);
 dayState.limitProbe = {
   attempted: dayState.attempted.length,
   accepted: dayState.submissions.filter((entry) => entry.accepted).length,
@@ -483,6 +602,7 @@ console.log("daily batch result", {
   day,
   stoppedReason: dayState.stoppedReason,
   limitProbe: dayState.limitProbe,
+  artifactLimitProbe: dayState.artifactLimitProbe,
   complete: dayState.complete.length,
   collectionPending: dayState.collectionPending.length,
 });

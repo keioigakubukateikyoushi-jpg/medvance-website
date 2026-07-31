@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-31T05:43:39.482Z",
+  "updated": "2026-07-31T06:53:08.970Z",
   "units": {
     "ME-M1-04": {
       "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
@@ -657,6 +657,360 @@
         "missing": [
           "slides"
         ]
+      }
+    },
+    "ME-MA-03-P01": {
+      "notebook_id": "0c9e4c5d-a7d0-441a-9ba0-cf855854c3c8",
+      "title": "Medvance ME-MA-03-P01 20260731",
+      "created_at": "2026-07-31T06:27:15.495Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:28:16.221Z",
+      "video_requested_at": "2026-07-31T06:28:16.221Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-MA-03-P01「順列」。 親単元 ME-MA-03「順列」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:順列について、条件付き配列を根拠と途中過程を示して完結できる。 扱う範囲:順列、条件付き配列。 扱わない範囲:。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先",
+      "video_focus": "Medvance 基礎講座 ME-MA-03-P01「順列」。 親単元 ME-MA-03「順列」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:順列について、条件付き配列を根拠と途中過程を示して完結できる。 扱う範囲:順列、条件付き配列。 扱わない範囲:。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、冒頭の到達目標、正確",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T06:28:16.222Z",
+        "requested": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-PH-03-P04": {
+      "notebook_id": "d007cf7b-739a-40ec-8da7-a32dd7ca3fe8",
+      "title": "Medvance ME-PH-03-P04 20260731",
+      "created_at": "2026-07-31T06:28:17.758Z",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "studio_requested_at": "2026-07-31T06:29:19.018Z",
+      "video_requested_at": "2026-07-31T06:29:19.018Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-PH-03-P04「面積」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 4。 科目:physics-exam。章:探究と測定。到達目標:面積について、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:面積、実験データ解釈。 扱わない範囲:表、グラフ、傾き。 lesson と storyboard が唯一の正本。storyboard",
+      "video_focus": "Medvance 基礎講座 ME-PH-03-P04「面積」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 4。 科目:physics-exam。章:探究と測定。到達目標:面積について、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:面積、実験データ解釈。 扱わない範囲:表、グラフ、傾き。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T06:29:19.019Z",
+        "requested": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-CH-02-P01": {
+      "notebook_id": "e43a8469-9e9a-46ed-b6b1-5d0a99aa1e92",
+      "title": "Medvance ME-CH-02-P01 20260731",
+      "created_at": "2026-07-31T06:29:20.334Z",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-31T06:30:23.015Z",
+      "video_requested_at": "2026-07-31T06:30:23.015Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-CH-02-P01「測定値」。 親単元 ME-CH-02「測定値・有効数字・誤差」の Part 1。 科目:chemistry-exam。章:探究。到達目標:測定値について、記録、誤差評価を根拠と途中過程を示して完結できる。 扱う範囲:測定値、記録、誤差評価。 扱わない範囲:有効数字、誤差。 lesson と storyboard が唯一の正本。storyboar",
+      "video_focus": "Medvance 基礎講座 ME-CH-02-P01「測定値」。 親単元 ME-CH-02「測定値・有効数字・誤差」の Part 1。 科目:chemistry-exam。章:探究。到達目標:測定値について、記録、誤差評価を根拠と途中過程を示して完結できる。 扱う範囲:測定値、記録、誤差評価。 扱わない範囲:有効数字、誤差。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T06:30:23.020Z",
+        "requested": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-CH-02-P02": {
+      "notebook_id": "d1a12f52-ad34-4cb1-9cf7-6ef6a862a2f9",
+      "title": "Medvance ME-CH-02-P02 20260731",
+      "created_at": "2026-07-31T06:30:24.527Z",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-31T06:31:36.934Z",
+      "focus": "Medvance 基礎講座 ME-CH-02-P02「有効数字」。 親単元 ME-CH-02「測定値・有効数字・誤差」の Part 2。 科目:chemistry-exam。章:探究。到達目標:有効数字について、記録、誤差評価を根拠と途中過程を示して完結できる。 扱う範囲:有効数字、記録、誤差評価。 扱わない範囲:測定値、誤差。 lesson と storyboard が唯一の正本。storybo",
+      "video_focus": "Medvance 基礎講座 ME-CH-02-P02「有効数字」。 親単元 ME-CH-02「測定値・有効数字・誤差」の Part 2。 科目:chemistry-exam。章:探究。到達目標:有効数字について、記録、誤差評価を根拠と途中過程を示して完結できる。 扱う範囲:有効数字、記録、誤差評価。 扱わない範囲:測定値、誤差。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T06:31:36.935Z",
+        "requested": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": [
+          "audio",
+          "video"
+        ]
+      }
+    },
+    "ME-CH-02-P03": {
+      "notebook_id": "4a87dc9b-a3fd-4078-abc1-c6c612aa1021",
+      "title": "Medvance ME-CH-02-P03 20260731",
+      "created_at": "2026-07-31T06:31:38.668Z",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-31T06:32:20.557Z",
+      "focus": "Medvance 基礎講座 ME-CH-02-P03「誤差」。 親単元 ME-CH-02「測定値・有効数字・誤差」の Part 3。 科目:chemistry-exam。章:探究。到達目標:誤差について、記録、誤差評価を根拠と途中過程を示して完結できる。 扱う範囲:誤差、記録、誤差評価。 扱わない範囲:測定値、有効数字。 lesson と storyboard が唯一の正本。storyboard ",
+      "batch_submission": {
+        "at": "2026-07-31T06:32:20.557Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-CH-03-P01": {
+      "notebook_id": "33d85b2a-0f38-49a6-a41d-2a61b87fe372",
+      "title": "Medvance ME-CH-03-P01 20260731",
+      "created_at": "2026-07-31T06:32:22.045Z",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-31T06:33:03.874Z",
+      "focus": "Medvance 基礎講座 ME-CH-03-P01「グラフ」。 親単元 ME-CH-03「グラフ・比例・実験計画」の Part 1。 科目:chemistry-exam。章:探究。到達目標:グラフについて、変数統制、考察を根拠と途中過程を示して完結できる。 扱う範囲:グラフ、変数統制、考察。 扱わない範囲:比例、実験計画。 lesson と storyboard が唯一の正本。storyboar",
+      "batch_submission": {
+        "at": "2026-07-31T06:33:03.875Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-CH-03-P02": {
+      "notebook_id": "dccdcd9f-aabe-419e-a333-f561cd12ed34",
+      "title": "Medvance ME-CH-03-P02 20260731",
+      "created_at": "2026-07-31T06:33:05.502Z",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-31T06:33:49.270Z",
+      "focus": "Medvance 基礎講座 ME-CH-03-P02「比例」。 親単元 ME-CH-03「グラフ・比例・実験計画」の Part 2。 科目:chemistry-exam。章:探究。到達目標:比例について、変数統制、考察を根拠と途中過程を示して完結できる。 扱う範囲:比例、変数統制、考察。 扱わない範囲:グラフ、実験計画。 lesson と storyboard が唯一の正本。storyboard ",
+      "batch_submission": {
+        "at": "2026-07-31T06:33:49.275Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-04-P01": {
+      "notebook_id": "022de55c-742b-4474-81ea-7ddd17721f78",
+      "title": "Medvance ME-MA-04-P01 20260731",
+      "created_at": "2026-07-31T06:45:18.595Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:46:01.918Z",
+      "focus": "Medvance 基礎講座 ME-MA-04-P01「円順列」。 親単元 ME-MA-04「円順列・重複順列」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:円順列について、回転同一視、重複を根拠と途中過程を示して完結できる。 扱う範囲:円順列、回転同一視、重複。 扱わない範囲:重複順列。 lesson と storyboard が唯一の正本。storyboard の",
+      "batch_submission": {
+        "at": "2026-07-31T06:46:01.918Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-04-P02": {
+      "notebook_id": "944ae2d7-225c-4685-9204-30b447c60090",
+      "title": "Medvance ME-MA-04-P02 20260731",
+      "created_at": "2026-07-31T06:46:03.454Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:46:45.114Z",
+      "focus": "Medvance 基礎講座 ME-MA-04-P02「重複順列」。 親単元 ME-MA-04「円順列・重複順列」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:重複順列について、回転同一視、重複を根拠と途中過程を示して完結できる。 扱う範囲:重複順列、回転同一視、重複。 扱わない範囲:円順列。 lesson と storyboard が唯一の正本。storyboard",
+      "batch_submission": {
+        "at": "2026-07-31T06:46:45.116Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-05-P01": {
+      "notebook_id": "945dfb09-3b00-4e4c-858f-badbfaff97c4",
+      "title": "Medvance ME-MA-05-P01 20260731",
+      "created_at": "2026-07-31T06:46:46.672Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:47:29.475Z",
+      "focus": "Medvance 基礎講座 ME-MA-05-P01「組合せ」。 親単元 ME-MA-05「組合せ」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:組合せについて、選択と分割を根拠と途中過程を示して完結できる。 扱う範囲:組合せ、選択と分割。 扱わない範囲:。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容",
+      "batch_submission": {
+        "at": "2026-07-31T06:47:29.476Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-06-P01": {
+      "notebook_id": "025cb43e-a87c-4c7a-b259-dbef1c7fd591",
+      "title": "Medvance ME-MA-06-P01 20260731",
+      "created_at": "2026-07-31T06:47:31.012Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:48:12.585Z",
+      "focus": "Medvance 基礎講座 ME-MA-06-P01「同じものを含む順列」。 親単元 ME-MA-06「同じものを含む順列・組分け」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:同じものを含む順列について、多項係数の基本を根拠と途中過程を示して完結できる。 扱う範囲:同じものを含む順列、多項係数の基本。 扱わない範囲:組分け。 lesson と storyboard",
+      "batch_submission": {
+        "at": "2026-07-31T06:48:12.586Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-06-P02": {
+      "notebook_id": "a6f7b4a6-a285-45f4-b0ae-545e7215b8ba",
+      "title": "Medvance ME-MA-06-P02 20260731",
+      "created_at": "2026-07-31T06:48:13.832Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:48:57.037Z",
+      "focus": "Medvance 基礎講座 ME-MA-06-P02「組分け」。 親単元 ME-MA-06「同じものを含む順列・組分け」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:組分けについて、多項係数の基本を根拠と途中過程を示して完結できる。 扱う範囲:組分け、多項係数の基本。 扱わない範囲:同じものを含む順列。 lesson と storyboard が唯一の正本。stor",
+      "batch_submission": {
+        "at": "2026-07-31T06:48:57.042Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-07-P01": {
+      "notebook_id": "4c57c0ed-2444-400e-bca0-dc3b689e22da",
+      "title": "Medvance ME-MA-07-P01 20260731",
+      "created_at": "2026-07-31T06:48:58.361Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:49:41.380Z",
+      "focus": "Medvance 基礎講座 ME-MA-07-P01「確率の定義」。 親単元 ME-MA-07「確率の定義と基本法則」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:確率の定義について、標本空間、事象を根拠と途中過程を示して完結できる。 扱う範囲:確率の定義、標本空間、事象。 扱わない範囲:基本法則。 lesson と storyboard が唯一の正本。storyb",
+      "batch_submission": {
+        "at": "2026-07-31T06:49:41.383Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-07-P02": {
+      "notebook_id": "1021906f-6b42-4185-a97f-a80d4d260d0d",
+      "title": "Medvance ME-MA-07-P02 20260731",
+      "created_at": "2026-07-31T06:49:42.860Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:50:24.480Z",
+      "focus": "Medvance 基礎講座 ME-MA-07-P02「基本法則」。 親単元 ME-MA-07「確率の定義と基本法則」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:基本法則について、標本空間、事象を根拠と途中過程を示して完結できる。 扱う範囲:基本法則、標本空間、事象。 扱わない範囲:確率の定義。 lesson と storyboard が唯一の正本。storyboa",
+      "batch_submission": {
+        "at": "2026-07-31T06:50:24.483Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-08-P01": {
+      "notebook_id": "76148bad-a5c2-4e0e-a661-9d1fb41e6c22",
+      "title": "Medvance ME-MA-08-P01 20260731",
+      "created_at": "2026-07-31T06:50:25.913Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:51:08.139Z",
+      "focus": "Medvance 基礎講座 ME-MA-08-P01「和事象」。 親単元 ME-MA-08「和事象・排反・余事象」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:和事象について、少なくともを根拠と途中過程を示して完結できる。 扱う範囲:和事象、少なくとも。 扱わない範囲:排反、余事象。 lesson と storyboard が唯一の正本。storyboard の順序",
+      "batch_submission": {
+        "at": "2026-07-31T06:51:08.144Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-08-P02": {
+      "notebook_id": "6362fc25-718d-4c6a-b0c5-1b1b91406b82",
+      "title": "Medvance ME-MA-08-P02 20260731",
+      "created_at": "2026-07-31T06:51:09.638Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:51:51.441Z",
+      "focus": "Medvance 基礎講座 ME-MA-08-P02「排反」。 親単元 ME-MA-08「和事象・排反・余事象」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:排反について、少なくともを根拠と途中過程を示して完結できる。 扱う範囲:排反、少なくとも。 扱わない範囲:和事象、余事象。 lesson と storyboard が唯一の正本。storyboard の順序を守",
+      "batch_submission": {
+        "at": "2026-07-31T06:51:51.442Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-08-P03": {
+      "notebook_id": "b60846a1-4ca9-49cb-a11d-165b60ce2a53",
+      "title": "Medvance ME-MA-08-P03 20260731",
+      "created_at": "2026-07-31T06:51:53.063Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T06:52:38.961Z",
+      "focus": "Medvance 基礎講座 ME-MA-08-P03「余事象」。 親単元 ME-MA-08「和事象・排反・余事象」の Part 3。 科目:mathA-exam。章:場合の数と確率。到達目標:余事象について、少なくともを根拠と途中過程を示して完結できる。 扱う範囲:余事象、少なくとも。 扱わない範囲:和事象、排反。 lesson と storyboard が唯一の正本。storyboard の順序",
+      "batch_submission": {
+        "at": "2026-07-31T06:52:38.962Z",
+        "requested": [
+          "quiz"
+        ],
+        "accepted": [
+          "quiz"
+        ],
+        "missing": []
       }
     }
   }

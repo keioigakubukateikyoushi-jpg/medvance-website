@@ -48,9 +48,9 @@
   },
   "totals": {
     "parts": 898,
-    "ready": 25,
-    "complete": 10,
-    "blocked": 863
+    "ready": 21,
+    "complete": 24,
+    "blocked": 853
   },
   "parts": [
     {
@@ -8850,7 +8850,7 @@
         "quiz": "quiz/ME-M1-01-P03.json"
       },
       "sourceHash": "87ae248a8ed01cd852e0bed812002323ea907185bc4ae7578ea9ba0ceea45feb",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -8858,11 +8858,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-M1-01-P03「係数」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 3。 科目:math1-exam。章:数と式。到達目標:係数について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:係数、定義・標準問題・説明。 扱わない範囲:整式、項、次数の厳密定義。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -14066,7 +14066,7 @@
         "quiz": "quiz/ME-MA-01-P01.json"
       },
       "sourceHash": "abc684a923e7f82fe31d8f15f9730d96a55524596605b0321da2f1dfc26b74f6",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -14074,11 +14074,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-MA-01-P01「集合」。 親単元 ME-MA-01「集合と数え上げの原則」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:集合について、和・積の法則を根拠と途中過程を示して完結できる。 扱う範囲:集合、和・積の法則。 扱わない範囲:数え上げの原則。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -14115,7 +14115,7 @@
         "quiz": "quiz/ME-MA-01-P02.json"
       },
       "sourceHash": "65131eaec57e0fabb4a30e575f135a5001268887fbdcc21ec520d2068029f376",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -14123,11 +14123,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-MA-01-P02「数え上げの原則」。 親単元 ME-MA-01「集合と数え上げの原則」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:数え上げの原則について、和・積の法則を根拠と途中過程を示して完結できる。 扱う範囲:数え上げの原則、和・積の法則。 扱わない範囲:集合。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -14165,7 +14165,7 @@
         "quiz": "quiz/ME-MA-02-P01.json"
       },
       "sourceHash": "73105e1b7172c15a33676a1b5e6106d4ea8dde7203dbafa60499e31826732979",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -14173,11 +14173,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-MA-02-P01「樹形図」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:樹形図について、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:樹形図、漏れと重複の除去。 扱わない範囲:表、場合分け。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -14215,7 +14215,7 @@
         "quiz": "quiz/ME-MA-02-P02.json"
       },
       "sourceHash": "d252074710feba3a447a2274c37aaec5d8787a60d37390af2dadb0777fd5dba3",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -14223,11 +14223,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-MA-02-P02「表」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:表について、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:表、漏れと重複の除去。 扱わない範囲:樹形図、場合分け。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -14265,7 +14265,7 @@
         "quiz": "quiz/ME-MA-02-P03.json"
       },
       "sourceHash": "a101cfd79c4df111db85bd9fa00982fcc08697bb944283467cecc2cff3a2c911",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -14273,11 +14273,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-MA-02-P03「場合分け」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 3。 科目:mathA-exam。章:場合の数と確率。到達目標:場合分けについて、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:場合分け、漏れと重複の除去。 扱わない範囲:樹形図、表。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -14320,10 +14320,10 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
+        "video": true,
+        "audio": true,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14360,29 +14360,19 @@
         "slides": "slides/ME-MA-04-P01.md",
         "quiz": "quiz/ME-MA-04-P01.json"
       },
-      "sourceHash": "33c95db3c2b665f3c3bb902636b8591997733a8dc638d96b9615ef6cf0000577",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "67e7a764c8da4303794ed1a1306259faf34ac17899438ae3cc1bca7895c077ca",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14419,29 +14409,19 @@
         "slides": "slides/ME-MA-04-P02.md",
         "quiz": "quiz/ME-MA-04-P02.json"
       },
-      "sourceHash": "03fbf3da55a875f9f7e36b4972df7ed103ff054c0d2f38598c5c713254f3eb26",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "f08ae1620fb73a777322acb5e3b46b0aa511927cd2cd830c40722b6b1ceb808d",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14476,29 +14456,19 @@
         "slides": "slides/ME-MA-05-P01.md",
         "quiz": "quiz/ME-MA-05-P01.json"
       },
-      "sourceHash": "a6cdcee50962b41eeb79dc4cfd86c02529ae7af64e09fde8fcc2fe3388897e92",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "3e5e9b4f7c602c034a85205969e3f69b47c8ff1c940a1c5385c4e2f1d6252573",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14535,29 +14505,19 @@
         "slides": "slides/ME-MA-06-P01.md",
         "quiz": "quiz/ME-MA-06-P01.json"
       },
-      "sourceHash": "4d589b3f2affdd8d273ff9a862284335259452b43b2d705d978569b00b0a909f",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "1ea54d796c932dfa884f205359adaa967fc0e6cee1ba0ff87e73a2939c3e85d8",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14594,29 +14554,19 @@
         "slides": "slides/ME-MA-06-P02.md",
         "quiz": "quiz/ME-MA-06-P02.json"
       },
-      "sourceHash": "d3cd111b64737241b9f6fc96a00b555c4f8b1158d7dc3dcb8619907ae99c9745",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "a22052522ad400ef5a3ea8d88a35d449559834654475f34884fb8cf1e5b28b4f",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14653,29 +14603,19 @@
         "slides": "slides/ME-MA-07-P01.md",
         "quiz": "quiz/ME-MA-07-P01.json"
       },
-      "sourceHash": "0fab88484298f9a8bd1324146343343967d13cbd0e68649b35a1060b47db2798",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "c70859ad7bfaa582a16d4e94cee551c949c4f32b5369cdff5786c51742401130",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14712,29 +14652,19 @@
         "slides": "slides/ME-MA-07-P02.md",
         "quiz": "quiz/ME-MA-07-P02.json"
       },
-      "sourceHash": "dd269cd06c0b1d68d9b1782043bb7aeb64770a57702fb3dce643c3712e5caf99",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "47c81ff60c7b4f435d39309e2a23eabad6028e95b94be8a2af90e780b548317e",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14772,29 +14702,19 @@
         "slides": "slides/ME-MA-08-P01.md",
         "quiz": "quiz/ME-MA-08-P01.json"
       },
-      "sourceHash": "f78c0cd9ab8a57b1505ac7a32e6f98f3e469c65d70c22e71dc1cce4ccfa0bc31",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "c24d18b6ec3c38950e9ba3907111c2e4c83087ae6a88b218136a43ffa4da7d44",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14832,29 +14752,19 @@
         "slides": "slides/ME-MA-08-P02.md",
         "quiz": "quiz/ME-MA-08-P02.json"
       },
-      "sourceHash": "455e80034909bf8ac5173df6818ef1fa5962009f8adbdac5d77ba8d61d366724",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "d228a0e6bbde21ec4a0dcac74572de096df5bfad0448ef456e0c7e121cd6d2cd",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -14892,29 +14802,19 @@
         "slides": "slides/ME-MA-08-P03.md",
         "quiz": "quiz/ME-MA-08-P03.json"
       },
-      "sourceHash": "2f8b16e2c6fd9ef88857ad1ec55fbbb1c131e78a4aba45686566258eaf178151",
-      "status": "blocked_source_authoring",
-      "missing": [
-        "lesson",
-        "storyboard",
-        "slides",
-        "quiz"
-      ],
+      "sourceHash": "f7e0e04db1a8acde65718307af37e7f93b8631e9e9248ef5e972257efaf56c40",
+      "status": "ready",
+      "missing": [],
       "readiness": {
-        "status": "source_authoring_required",
-        "missing": [
-          "lesson",
-          "storyboard",
-          "slides",
-          "quiz"
-        ],
+        "status": "generation_ready",
+        "missing": [],
         "failures": []
       },
       "artifacts": {
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -32355,7 +32255,7 @@
         "quiz": "quiz/ME-PH-02-P01.json"
       },
       "sourceHash": "25ba359c1e47e983fc55c8f38aaead31372d4d643371ac32b3247221e092164c",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -32363,11 +32263,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-PH-02-P01「ベクトル」。 親単元 ME-PH-02「ベクトル・スカラー・成分分解」の Part 1。 科目:physics-exam。章:探究と測定。到達目標:ベクトルについて、合成分解を根拠と途中過程を示して完結できる。 扱う範囲:ベクトル、合成分解。 扱わない範囲:スカラー、成分分解。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -32405,7 +32305,7 @@
         "quiz": "quiz/ME-PH-02-P02.json"
       },
       "sourceHash": "1b819d1543f5c9a50c2be218defd88bfd9bb6098200e7f64df5b63c66aaf8bd9",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -32413,11 +32313,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-PH-02-P02「スカラー」。 親単元 ME-PH-02「ベクトル・スカラー・成分分解」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:スカラーについて、合成分解を根拠と途中過程を示して完結できる。 扱う範囲:スカラー、合成分解。 扱わない範囲:ベクトル、成分分解。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -32455,7 +32355,7 @@
         "quiz": "quiz/ME-PH-02-P03.json"
       },
       "sourceHash": "edb0d59cf0f88b4678f468299879f8410cccb049788df15c04c2e147903c5e5e",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -32463,11 +32363,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-PH-02-P03「成分分解」。 親単元 ME-PH-02「ベクトル・スカラー・成分分解」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:成分分解について、合成分解を根拠と途中過程を示して完結できる。 扱う範囲:成分分解、合成分解。 扱わない範囲:ベクトル、スカラー。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -32504,7 +32404,7 @@
         "quiz": "quiz/ME-PH-03-P01.json"
       },
       "sourceHash": "1d3a8139190b03bf89bafbdf4ec476c7c2f3c82fe4751203fcdb3d64e5a04b4e",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -32512,11 +32412,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-PH-03-P01「表」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 1。 科目:physics-exam。章:探究と測定。到達目標:表について、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:表、実験データ解釈。 扱わない範囲:グラフ、傾き、面積。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -32555,7 +32455,7 @@
         "quiz": "quiz/ME-PH-03-P02.json"
       },
       "sourceHash": "fd0a96116eac81e0a05a0b831210ef60eedce6b969b4672b39adc2cb793362ef",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -32563,11 +32463,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-PH-03-P02「グラフ」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:グラフについて、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:グラフ、実験データ解釈。 扱わない範囲:表、傾き、面積。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -32614,10 +32514,10 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
+        "video": true,
+        "audio": true,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -32665,10 +32565,10 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
+        "video": true,
+        "audio": true,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -40125,7 +40025,7 @@
         "quiz": "quiz/ME-CH-01-P01.json"
       },
       "sourceHash": "db5b7861635ae502a276d7790006fcc97ef1554d37875e0867650daea040b4b2",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -40133,11 +40033,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-CH-01-P01「実験器具」。 親単元 ME-CH-01「実験器具・安全・廃棄」の Part 1。 科目:chemistry-exam。章:探究。到達目標:実験器具について、器具選択、安全操作を根拠と途中過程を示して完結できる。 扱う範囲:実験器具、器具選択、安全操作。 扱わない範囲:安全、廃棄。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -40175,7 +40075,7 @@
         "quiz": "quiz/ME-CH-01-P02.json"
       },
       "sourceHash": "25c6f98d2d7be3c1259a58af7897ce4230744f53e4bca4d8205f32a2cc502885",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -40183,11 +40083,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-CH-01-P02「安全」。 親単元 ME-CH-01「実験器具・安全・廃棄」の Part 2。 科目:chemistry-exam。章:探究。到達目標:安全について、器具選択、安全操作を根拠と途中過程を示して完結できる。 扱う範囲:安全、器具選択、安全操作。 扱わない範囲:実験器具、廃棄。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -40225,7 +40125,7 @@
         "quiz": "quiz/ME-CH-01-P03.json"
       },
       "sourceHash": "f985fa1e0c514de71a34b190d88228438999b735188c07d0424a6f3270c1f6eb",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -40233,11 +40133,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-CH-01-P03「廃棄」。 親単元 ME-CH-01「実験器具・安全・廃棄」の Part 3。 科目:chemistry-exam。章:探究。到達目標:廃棄について、器具選択、安全操作を根拠と途中過程を示して完結できる。 扱う範囲:廃棄、器具選択、安全操作。 扱わない範囲:実験器具、安全。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -40283,10 +40183,10 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
+        "video": true,
+        "audio": true,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -40336,7 +40236,7 @@
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -40386,7 +40286,7 @@
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -40436,7 +40336,7 @@
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
@@ -40486,7 +40386,7 @@
         "video": false,
         "audio": false,
         "slides": false,
-        "quiz": false,
+        "quiz": true,
         "complete": false
       },
       "prompts": {
