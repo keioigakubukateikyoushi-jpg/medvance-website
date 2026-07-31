@@ -1200,8 +1200,20 @@
           "firstErrorPartId": null,
           "recordedAt": "2026-07-31T06:53:13.397Z"
         }
+      },
+      "probePlan": {
+        "artifactProbeBuffer": 4,
+        "historicalArtifactPeaks": {
+          "audio": 18,
+          "video": 18,
+          "slides": 14,
+          "quiz": 32
+        },
+        "recommendedSafetyMax": 36,
+        "effectiveSafetyMax": 36,
+        "hardCapFromCli": false
       }
     }
   },
-  "updatedAt": "2026-07-31T06:53:13.397Z"
+  "updatedAt": "2026-07-31T07:22:35.468Z"
 }

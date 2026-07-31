@@ -117,6 +117,22 @@ try {
   if ($Generate) {
     $env:NLM_DAILY_CONFIRMED = "1"
     $env:NLM_RESEARCH_MODE = "off"
+    # Per-artifact quota probing: never stop audio/video/quiz merely because
+    # another artifact type reached its own daily cap. The runner raises its
+    # Part safety cap from the previous observed ceiling + this buffer.
+    if ([string]::IsNullOrWhiteSpace($env:NLM_PART_DAILY_SAFETY_MAX)) {
+      $env:NLM_PART_DAILY_SAFETY_MAX = "40"
+    }
+    if ([string]::IsNullOrWhiteSpace($env:NLM_ARTIFACT_PROBE_BUFFER)) {
+      $env:NLM_ARTIFACT_PROBE_BUFFER = "4"
+    }
+    if ([string]::IsNullOrWhiteSpace($env:NLM_SUBMISSION_BATCH_SIZE)) {
+      $env:NLM_SUBMISSION_BATCH_SIZE = "10"
+    }
+    if ([string]::IsNullOrWhiteSpace($env:NLM_COLLECT_CONCURRENCY)) {
+      $env:NLM_COLLECT_CONCURRENCY = "4"
+    }
+    Write-RunLog ("Artifact probe: safety={0}; buffer={1}; batch={2}; collect={3}" -f $env:NLM_PART_DAILY_SAFETY_MAX, $env:NLM_ARTIFACT_PROBE_BUFFER, $env:NLM_SUBMISSION_BATCH_SIZE, $env:NLM_COLLECT_CONCURRENCY)
     Invoke-Step "daily-generate" $npmPath @("run", "academy:daily-generate")
   } else {
     Write-RunLog "DryRun complete; generation not started."
@@ -129,6 +145,10 @@ try {
 } finally {
   Remove-Item Env:NLM_DAILY_CONFIRMED -ErrorAction SilentlyContinue
   Remove-Item Env:NLM_RESEARCH_MODE -ErrorAction SilentlyContinue
+  Remove-Item Env:NLM_PART_DAILY_SAFETY_MAX -ErrorAction SilentlyContinue
+  Remove-Item Env:NLM_ARTIFACT_PROBE_BUFFER -ErrorAction SilentlyContinue
+  Remove-Item Env:NLM_SUBMISSION_BATCH_SIZE -ErrorAction SilentlyContinue
+  Remove-Item Env:NLM_COLLECT_CONCURRENCY -ErrorAction SilentlyContinue
   if ($transcriptStarted) {
     try { Stop-Transcript | Out-Null } catch { }
   }

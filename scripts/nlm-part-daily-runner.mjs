@@ -26,9 +26,14 @@ const RETRY_SUBMISSION_ERRORS = args.includes("--retry-submission-errors");
 const CLEAR_FALSE_QUOTA = args.includes("--clear-false-quota");
 const CONFIRMED = args.includes("--confirm") || process.env.NLM_DAILY_CONFIRMED === "1";
 const maxIndex = args.indexOf("--max");
-const SAFETY_MAX = Math.max(
+const CLI_SAFETY_MAX = maxIndex >= 0 ? Number(args[maxIndex + 1]) : null;
+let SAFETY_MAX = Math.max(
   10,
-  Number(maxIndex >= 0 ? args[maxIndex + 1] : process.env.NLM_PART_DAILY_SAFETY_MAX || 40) || 40,
+  Number(CLI_SAFETY_MAX ?? (process.env.NLM_PART_DAILY_SAFETY_MAX || 40)) || 40,
+);
+const ARTIFACT_PROBE_BUFFER = Math.max(
+  1,
+  Number(process.env.NLM_ARTIFACT_PROBE_BUFFER || 4) || 4,
 );
 const BATCH_SIZE = Math.max(10, Number(process.env.NLM_SUBMISSION_BATCH_SIZE || 10) || 10);
 const COLLECT_CONCURRENCY = Math.max(
@@ -335,6 +340,38 @@ for (const [index, id] of dayState.attempted.entries()) {
   });
 }
 const artifactLimits = rebuildArtifactLimits(dayState);
+const historicalArtifactPeaks = Object.fromEntries(
+  ARTIFACT_KINDS.map((kind) => [
+    kind,
+    Math.max(
+      0,
+      ...Object.values(state.partDays || {}).map(
+        (entry) =>
+          entry.artifactLimitProbe?.[kind]?.accepted ||
+          entry.artifactLimits?.[kind]?.accepted ||
+          0,
+      ),
+    ),
+  ]),
+);
+const recommendedSafetyMax = Math.max(
+  10,
+  ...Object.values(historicalArtifactPeaks).map(
+    (accepted) => accepted + ARTIFACT_PROBE_BUFFER,
+  ),
+);
+// A command-line --max is an intentional hard test cap. Normal daily runs use
+// at least the largest observed per-artifact success count plus a small buffer.
+if (CLI_SAFETY_MAX === null) {
+  SAFETY_MAX = Math.max(SAFETY_MAX, recommendedSafetyMax);
+}
+dayState.probePlan = {
+  artifactProbeBuffer: ARTIFACT_PROBE_BUFFER,
+  historicalArtifactPeaks,
+  recommendedSafetyMax,
+  effectiveSafetyMax: SAFETY_MAX,
+  hardCapFromCli: CLI_SAFETY_MAX !== null,
+};
 if (dayState.stoppedReason === "quota_or_rate_limit") {
   dayState.stoppedReason = null;
 }
@@ -378,6 +415,7 @@ console.log("NotebookLM Part daily batch queue", {
   ready: readyQueue.length,
   partialRetries: retryQueue.length,
   safetyMax: SAFETY_MAX,
+  probePlan: dayState.probePlan,
   submissionBatchSize: BATCH_SIZE,
   collectConcurrency: COLLECT_CONCURRENCY,
   todayAttempted: dayState.attempted.length,
@@ -603,6 +641,7 @@ console.log("daily batch result", {
   stoppedReason: dayState.stoppedReason,
   limitProbe: dayState.limitProbe,
   artifactLimitProbe: dayState.artifactLimitProbe,
+  probePlan: dayState.probePlan,
   complete: dayState.complete.length,
   collectionPending: dayState.collectionPending.length,
 });
