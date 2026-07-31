@@ -773,6 +773,7 @@ function processUnit(unitId, reg, options) {
     ? durationSeconds(existingVideoPath)
     : null;
   if (
+    !options.downloadOnly &&
     kinds.video &&
     Number.isFinite(existingSeconds) &&
     existingSeconds > 0
@@ -782,7 +783,7 @@ function processUnit(unitId, reg, options) {
     reg.units[unitId].video_duration_seconds = existingSeconds;
     console.log("skip video create: existing NotebookLM video is kept for content review", Math.round(existingSeconds), "sec");
   }
-  if (kinds.video && reg.units[unitId]?.video_requested_at) {
+  if (!options.downloadOnly && kinds.video && reg.units[unitId]?.video_requested_at) {
     kinds.video = false;
     console.log("skip video create: one-shot request already recorded", reg.units[unitId].video_requested_at);
   }
