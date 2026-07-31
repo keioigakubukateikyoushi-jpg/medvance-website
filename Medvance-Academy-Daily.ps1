@@ -98,7 +98,7 @@ try {
 
   Invoke-Step "partition" $npmPath @("run", "academy:partition")
   Invoke-Step "generation-manifest" $npmPath @("run", "academy:generation-manifest")
-  Invoke-Step "daily-preview" $npmPath @("run", "academy:daily-preview", "--", "--max", "3")
+  Invoke-Step "daily-preview" $npmPath @("run", "academy:daily-preview")
   if ($Generate) {
     Invoke-Step "auth-check" $nlmPath @("login", "--check")
   } else {
@@ -108,7 +108,7 @@ try {
   if ($Generate) {
     $env:NLM_DAILY_CONFIRMED = "1"
     $env:NLM_RESEARCH_MODE = "off"
-    Invoke-Step "daily-generate" $npmPath @("run", "academy:daily-generate", "--", "--max", "3")
+    Invoke-Step "daily-generate" $npmPath @("run", "academy:daily-generate")
   } else {
     Write-RunLog "DryRun complete; generation not started."
   }

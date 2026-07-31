@@ -37,6 +37,7 @@ const ROOT = path.join(__dirname, "..");
 const CONTENT = path.join(ROOT, "content/academy");
 const MEDIA = path.join(ROOT, "public/academy/media");
 const REGISTRY = path.join(CONTENT, "nlm-registry.json");
+const PART_CURRICULUM = path.join(CONTENT, "part-curriculum.json");
 const PART_POLICY = JSON.parse(
   fs.readFileSync(path.join(CONTENT, "part-policy.json"), "utf8"),
 );
@@ -124,6 +125,51 @@ function listSubjectDirs() {
   return out;
 }
 
+
+function sourcePathsFromPart(part) {
+  const canonical = part.canonical || {};
+  return {
+    lesson: part.file || canonical.lesson || "lessons/" + part.id + ".md",
+    storyboard: part.storyboard || canonical.storyboard || "storyboard/" + part.id + ".md",
+    slides: part.slides || canonical.slides || "slides/" + part.id + ".md",
+    quiz: part.quiz || canonical.quiz || "quiz/" + part.id + ".json",
+  };
+}
+
+function findPartCurriculumUnit(unitId) {
+  if (!fs.existsSync(PART_CURRICULUM)) return null;
+  const curriculum = JSON.parse(fs.readFileSync(PART_CURRICULUM, "utf8"));
+  for (const [subjectId, subject] of Object.entries(curriculum.subjects || {})) {
+    for (const parent of subject.units || []) {
+      const part = (parent.parts || []).find((item) => item.id === unitId);
+      if (!part) continue;
+      const sources = sourcePathsFromPart(part);
+      const unit = {
+        ...part,
+        file: sources.lesson,
+        storyboard: sources.storyboard,
+        slides: sources.slides,
+        quiz: sources.quiz,
+        chapter: parent.chapter,
+        prereq: part.prereq || parent.prereq || [],
+        parentUnitId: parent.id,
+        parentTitle: parent.title,
+      };
+      return {
+        subjectDir: subjectId,
+        subject: subjectId,
+        unit,
+        fromPartCurriculum: true,
+        lessonPath: path.join(CONTENT, subjectId, sources.lesson),
+        storyboardPath: path.join(CONTENT, subjectId, sources.storyboard),
+        slidesPath: path.join(CONTENT, subjectId, sources.slides),
+        quizPath: path.join(CONTENT, subjectId, sources.quiz),
+      };
+    }
+  }
+  return null;
+}
+
 function findUnit(unitId) {
   for (const dir of listSubjectDirs()) {
     const idxPath = path.join(CONTENT, dir, "index.json");
@@ -151,11 +197,12 @@ function findUnit(unitId) {
         storyboardPath: unit.storyboard
           ? path.join(CONTENT, dir, unit.storyboard)
           : null,
+        slidesPath: unit.slides ? path.join(CONTENT, dir, unit.slides) : null,
         quizPath: unit.quiz ? path.join(CONTENT, dir, unit.quiz) : null,
       };
     }
   }
-  return null;
+  return findPartCurriculumUnit(unitId);
 }
 
 function listSubjectUnitIds(subjectDir, limit = Infinity) {
@@ -228,6 +275,12 @@ function parseJsonOutput(output, fallback) {
   } catch {
     return fallback;
   }
+}
+
+function listText(value) {
+  if (Array.isArray(value)) return value.filter(Boolean).join(', ');
+  if (value == null) return "";
+  return String(value);
 }
 
 function artifactCountFromStudioStatus(raw) {
@@ -363,7 +416,7 @@ function ensureNotebook(reg, unitId, title) {
 }
 
 function addCanonicalSources(nb, loc) {
-  const files = [loc.lessonPath, loc.storyboardPath].filter(
+  const files = [loc.lessonPath, loc.storyboardPath, loc.slidesPath, loc.quizPath].filter(
     (f) => f && fs.existsSync(f),
   );
   for (const f of files) {
@@ -374,7 +427,7 @@ function addCanonicalSources(nb, loc) {
   const note = [
     `ALIGNMENT LOCK for ${loc.unit.id}`,
     `Goal: ${loc.unit.goal}`,
-    `Prereq: ${(loc.unit.prereq || []).join(", ") || "none"}`,
+    `Prereq: ${listText(loc.unit.prereq) || "none"}`,
     `Rule: storyboard order is mandatory. No invented exam problems.`,
     `Deep research sources are secondary; lesson+storyboard are primary.`,
   ].join("\n");
@@ -457,10 +510,12 @@ function createStudio(nb, prompts, kinds) {
 
 function preflight(loc) {
   const failures = [];
-  const audit = auditUnit(loc.subjectDir, loc.unit);
+  const audit = loc.fromPartCurriculum && loc.unit.readiness?.status === "generation_ready"
+    ? { fail: [] }
+    : auditUnit(loc.subjectDir, loc.unit);
   if (audit.fail.length) failures.push(...audit.fail);
   if (!loc.storyboardPath || !fs.existsSync(loc.storyboardPath)) failures.push("storyboard missing");
-  if (!loc.unit.slides || !fs.existsSync(path.join(CONTENT, loc.subjectDir, loc.unit.slides))) {
+  if (!loc.slidesPath || !fs.existsSync(loc.slidesPath)) {
     failures.push("canonical slides missing");
   }
   if (!loc.quizPath || !fs.existsSync(loc.quizPath)) failures.push("canonical quiz missing");
@@ -674,8 +729,7 @@ function resolveKinds(options) {
 function processUnit(unitId, reg, options) {
   const loc = findUnit(unitId);
   if (!loc) {
-    console.warn("unit not found", unitId);
-    return;
+    throw new Error(`unit not found ${unitId}`);
   }
   if (!fs.existsSync(loc.lessonPath)) {
     console.warn("no lesson", unitId);
@@ -814,6 +868,7 @@ function main() {
   console.log("options", options, "research_mode", options.research ? process.env.NLM_RESEARCH_MODE || "fast" : "off");
 
   const reg = loadRegistry();
+  let failures = 0;
   for (const id of ids) {
     try {
       processUnit(id, reg, options);

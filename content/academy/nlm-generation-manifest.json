@@ -48,8 +48,8 @@
   },
   "totals": {
     "parts": 898,
-    "ready": 3,
-    "complete": 10,
+    "ready": 0,
+    "complete": 13,
     "blocked": 885
   },
   "parts": [
@@ -186,7 +186,7 @@
         "quiz": "quiz/ME-EN-02-P01.json"
       },
       "sourceHash": "6231975cbd15a0527d5bc96bdd243dae2a89c8ad45a261ee16aa20a59b0acf9e",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -194,11 +194,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-EN-02-P01「品詞」。 親単元 ME-EN-02「品詞・句・節」の Part 1。 科目:english-exam。章:横断基盤。到達目標:品詞について、修飾範囲、節境界を根拠と途中過程を示して完結できる。 扱う範囲:品詞、修飾範囲、節境界。 扱わない範囲:句、節。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -8798,7 +8798,7 @@
         "quiz": "quiz/ME-M1-01-P02.json"
       },
       "sourceHash": "81842b5980f3c382254577371c095d2048218024659e84d02e5d150a80e8607a",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -8806,11 +8806,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-M1-01-P02「項」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 2。 科目:math1-exam。章:数と式。到達目標:項について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:項、定義・標準問題・説明。 扱わない範囲:整式、係数、次数の厳密定義。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",
@@ -32393,7 +32393,7 @@
         "quiz": "quiz/ME-PH-01-P03.json"
       },
       "sourceHash": "45c2f46eb67f23b9079eec14bf0c817977fe9deece42cb690616d50089848d0c",
-      "status": "ready",
+      "status": "complete",
       "missing": [],
       "readiness": {
         "status": "generation_ready",
@@ -32401,11 +32401,11 @@
         "failures": []
       },
       "artifacts": {
-        "video": false,
-        "audio": false,
-        "slides": false,
-        "quiz": false,
-        "complete": false
+        "video": true,
+        "audio": true,
+        "slides": true,
+        "quiz": true,
+        "complete": true
       },
       "prompts": {
         "common": "Medvance 基礎講座 ME-PH-01-P03「測定誤差」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:測定誤差について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:測定誤差、単位換算、桁、誤差。 扱わない範囲:SI単位、有効数字。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 別Partの内容を先取りせず、このPartの中心技能1つを完結させる。 日本語で、定義・手順・例題・典型誤答・到達確認を具体的に扱う。 台本にない例題、数値、固有名詞、入試年度、統計、引用を作らない。 Use only uploaded sources. Do not invent statistics, quotes, names, or examples not in the sources.",

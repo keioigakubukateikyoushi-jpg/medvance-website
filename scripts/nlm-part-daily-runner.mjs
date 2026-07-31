@@ -19,7 +19,7 @@ const args = process.argv.slice(2);
 const DRY = args.includes("--dry-run");
 const CONFIRMED = args.includes("--confirm") || process.env.NLM_DAILY_CONFIRMED === "1";
 const maxIndex = args.indexOf("--max");
-const SAFETY_MAX = Math.max(1, Number(maxIndex >= 0 ? args[maxIndex + 1] : process.env.NLM_PART_DAILY_SAFETY_MAX || 40) || 40);
+const SAFETY_MAX = Math.max(1, Number(maxIndex >= 0 ? args[maxIndex + 1] : process.env.NLM_PART_DAILY_SAFETY_MAX || 999) || 999);
 
 function today() {
   return new Intl.DateTimeFormat("en-CA", {
@@ -108,21 +108,41 @@ const queue = (manifest.parts || [])
     ...item,
     outputs: ["video", "audio", "slide_deck", "quiz"],
   }));
-function broadArea(item) {
-  if (item.subjectId === "english-exam") return "english";
-  if (item.subjectId.startsWith("math")) return "math";
-  if (["physics-exam", "chemistry-exam", "biology-exam"].includes(item.subjectId)) return "science";
+function priorityBucket(item) {
+  if (["mathA-exam", "physics-exam", "chemistry-exam", "math1-exam", "english-exam"].includes(item.subjectId)) {
+    return item.subjectId;
+  }
+  if (item.subjectId.startsWith("math")) return "other-math";
+  if (["biology-exam"].includes(item.subjectId)) return "other-science";
   return "other";
 }
 
 function roundRobin(items) {
-  const order = ["english", "math", "science", "other"];
-  const groups = Object.fromEntries(order.map((key) => [key, []]));
-  for (const item of items) groups[broadArea(item)].push(item);
+  const order = [
+    "mathA-exam",
+    "physics-exam",
+    "chemistry-exam",
+    "math1-exam",
+    "physics-exam",
+    "chemistry-exam",
+    "mathA-exam",
+    "math1-exam",
+    "other-math",
+    "other-science",
+    "english-exam",
+    "other",
+  ];
+  const keys = [...new Set(order)];
+  const groups = Object.fromEntries(keys.map((key) => [key, []]));
+  for (const item of items) {
+    const key = priorityBucket(item);
+    groups[key] ??= [];
+    groups[key].push(item);
+  }
   const out = [];
-  while (order.some((key) => groups[key].length)) {
+  while (Object.values(groups).some((group) => group.length)) {
     for (const key of order) {
-      const item = groups[key].shift();
+      const item = groups[key]?.shift();
       if (item) out.push(item);
     }
   }
