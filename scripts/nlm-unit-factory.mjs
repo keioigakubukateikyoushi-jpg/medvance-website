@@ -597,8 +597,8 @@ function downloadArtifacts(
     if (kinds.slides) types.push("slide_deck");
     if (kinds.quiz) types.push("quiz");
     waitStudioReady(nb, {
-      maxWaitSec: 1200,
-      pollSec: 40,
+      maxWaitSec: Number(process.env.NLM_STUDIO_WAIT_SECONDS || 1200),
+      pollSec: Number(process.env.NLM_STUDIO_POLL_SECONDS || 40),
       // 対象タイプだけ待つ（旧ジョブの unknown に捕まらない）
       types: types.length ? types : null,
     });
@@ -708,7 +708,7 @@ function downloadArtifacts(
 
 function sleep(ms) {
   if (DRY) return;
-  spawnSync("sleep", [String(Math.ceil(ms / 1000))]);
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
 }
 
 function resolveKinds(options) {
@@ -807,6 +807,25 @@ function processUnit(unitId, reg, options) {
   }
   saveRegistry(reg);
 
+  if (options.submitOnly) {
+    const missing = Object.entries(kinds)
+      .filter(([, requested]) => requested)
+      .map(([kind]) => kind)
+      .filter((kind) => !created[kind]);
+    reg.units[unitId].batch_submission = {
+      at: new Date().toISOString(),
+      requested: Object.entries(kinds).filter(([, value]) => value).map(([kind]) => kind),
+      accepted: Object.entries(created).filter(([, value]) => value).map(([kind]) => kind),
+      missing,
+    };
+    saveRegistry(reg);
+    if (missing.length) {
+      throw new Error(`studio submission incomplete: ${missing.join(",")}`);
+    }
+    console.log("SUBMISSION ACCEPTED", unitId, created);
+    return;
+  }
+
   // 生成完了を待ってからダウンロード（早すぎると失敗する）
   sleep(60_000);
   downloadArtifacts(nb, unitId, loc, { wait: true, kinds });
@@ -856,12 +875,16 @@ function main() {
   const options = {
     research: flags.has("--research") && !flags.has("--no-research"),
     downloadOnly: flags.has("--download-only"),
+    submitOnly: flags.has("--submit-only"),
     audioOnly: flags.has("--audio-only"),
     videoOnly: flags.has("--video-only"),
     reuseSources: flags.has("--reuse-sources"),
   };
   if (options.audioOnly && options.videoOnly) {
     throw new Error("--audio-only and --video-only cannot be combined");
+  }
+  if (options.downloadOnly && options.submitOnly) {
+    throw new Error("--download-only and --submit-only cannot be combined");
   }
   const ids = resolveUnitIds();
   console.log("factory units:", ids.length, ids.join(", "));
@@ -873,12 +896,14 @@ function main() {
     try {
       processUnit(id, reg, options);
     } catch (e) {
+      failures += 1;
       console.error("FAIL", id, e.message);
       // continue next after pause
-      sleep(60_000);
+      if (!options.submitOnly) sleep(60_000);
     }
   }
   console.log("done. registry →", REGISTRY);
+  if (failures) process.exitCode = 1;
 }
 
 main();
