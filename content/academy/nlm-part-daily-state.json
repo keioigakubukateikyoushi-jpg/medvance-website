@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "days": {},
   "partDays": {
     "2026-07-26": {
@@ -55,7 +55,8 @@
           "code": 0
         }
       ],
-      "stoppedReason": "safety_max"
+      "stoppedReason": "safety_max",
+      "collectionPending": []
     },
     "2026-07-28": {
       "attempted": [
@@ -81,7 +82,8 @@
           "code": 0
         }
       ],
-      "stoppedReason": "queue_drained"
+      "stoppedReason": "queue_drained",
+      "collectionPending": []
     },
     "2026-07-30": {
       "attempted": [
@@ -95,14 +97,220 @@
         "ME-PH-01-P03"
       ],
       "partial": [],
-      "stoppedReason": "queue_drained"
+      "stoppedReason": "queue_drained",
+      "collectionPending": []
     },
     "2026-07-31": {
-      "attempted": [],
-      "complete": [],
-      "partial": [],
-      "stoppedReason": "queue_empty"
+      "attempted": [
+        "ME-MA-01-P01",
+        "ME-PH-02-P01",
+        "ME-CH-01-P01",
+        "ME-M1-01-P03",
+        "ME-PH-02-P02",
+        "ME-MA-01-P02",
+        "ME-PH-02-P03",
+        "ME-MA-02-P01",
+        "ME-PH-03-P01",
+        "ME-CH-01-P02",
+        "ME-PH-03-P02",
+        "ME-CH-01-P03",
+        "ME-MA-02-P02",
+        "ME-MA-02-P03",
+        "ME-PH-03-P03"
+      ],
+      "complete": [
+        "ME-MA-02-P01",
+        "ME-MA-01-P02",
+        "ME-PH-02-P03",
+        "ME-PH-02-P02",
+        "ME-PH-03-P01",
+        "ME-CH-01-P02",
+        "ME-CH-01-P03",
+        "ME-PH-03-P02",
+        "ME-MA-02-P03",
+        "ME-MA-02-P02",
+        "ME-MA-01-P01",
+        "ME-CH-01-P01",
+        "ME-PH-02-P01",
+        "ME-M1-01-P03"
+      ],
+      "partial": [
+        {
+          "id": "ME-PH-03-P03",
+          "at": "2026-07-31T05:25:40.974Z",
+          "stage": "submission",
+          "status": {
+            "video": true,
+            "audio": true,
+            "slides": false,
+            "quiz": true
+          },
+          "accepted": [
+            "audio",
+            "video",
+            "quiz"
+          ],
+          "missing": [
+            "slides"
+          ],
+          "code": 1
+        }
+      ],
+      "submissions": [
+        {
+          "sequence": 1,
+          "id": "ME-MA-01-P01",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null,
+          "mode": "windows-sequential"
+        },
+        {
+          "sequence": 2,
+          "id": "ME-PH-02-P01",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null,
+          "mode": "windows-sequential"
+        },
+        {
+          "sequence": 3,
+          "id": "ME-CH-01-P01",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null,
+          "mode": "windows-sequential"
+        },
+        {
+          "sequence": 4,
+          "id": "ME-M1-01-P03",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null,
+          "mode": "windows-sequential"
+        },
+        {
+          "sequence": 5,
+          "id": "ME-PH-02-P02",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null,
+          "mode": "windows-sequential"
+        },
+        {
+          "sequence": 6,
+          "id": "ME-MA-01-P02",
+          "subjectId": "mathA-exam",
+          "at": "2026-07-31T05:15:54.248Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 7,
+          "id": "ME-PH-02-P03",
+          "subjectId": "physics-exam",
+          "at": "2026-07-31T05:16:51.389Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 8,
+          "id": "ME-MA-02-P01",
+          "subjectId": "mathA-exam",
+          "at": "2026-07-31T05:18:49.966Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 9,
+          "id": "ME-PH-03-P01",
+          "subjectId": "physics-exam",
+          "at": "2026-07-31T05:19:47.064Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 10,
+          "id": "ME-CH-01-P02",
+          "subjectId": "chemistry-exam",
+          "at": "2026-07-31T05:20:46.064Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 11,
+          "id": "ME-PH-03-P02",
+          "subjectId": "physics-exam",
+          "at": "2026-07-31T05:21:42.187Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 12,
+          "id": "ME-CH-01-P03",
+          "subjectId": "chemistry-exam",
+          "at": "2026-07-31T05:22:40.882Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 13,
+          "id": "ME-MA-02-P02",
+          "subjectId": "mathA-exam",
+          "at": "2026-07-31T05:23:37.551Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 14,
+          "id": "ME-MA-02-P03",
+          "subjectId": "mathA-exam",
+          "at": "2026-07-31T05:24:36.714Z",
+          "accepted": true,
+          "code": 0,
+          "errorKind": null
+        },
+        {
+          "sequence": 15,
+          "id": "ME-PH-03-P03",
+          "subjectId": "physics-exam",
+          "at": "2026-07-31T05:25:40.974Z",
+          "accepted": false,
+          "code": 1,
+          "errorKind": "quota_or_rate_limit",
+          "acceptedKinds": [
+            "audio",
+            "video",
+            "quiz"
+          ],
+          "missingKinds": [
+            "slides"
+          ]
+        }
+      ],
+      "collectionPending": [
+        "ME-PH-03-P03"
+      ],
+      "stoppedReason": "quota_or_rate_limit",
+      "firstQuotaErrorSequence": 15,
+      "firstQuotaErrorPartId": "ME-PH-03-P03",
+      "limitProbe": {
+        "attempted": 15,
+        "accepted": 14,
+        "errors": 1,
+        "firstQuotaErrorSequence": 15,
+        "firstQuotaErrorPartId": "ME-PH-03-P03",
+        "recordedAt": "2026-07-31T05:43:54.506Z"
+      }
     }
   },
-  "updatedAt": "2026-07-31T03:35:47.740Z"
+  "updatedAt": "2026-07-31T05:43:54.506Z"
 }

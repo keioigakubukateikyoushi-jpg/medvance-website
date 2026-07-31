@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-30T10:00:45.207Z",
+  "updated": "2026-07-31T05:43:39.482Z",
   "units": {
     "ME-M1-04": {
       "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
@@ -332,6 +332,332 @@
       "video_focus": "Medvance 基礎講座 ME-PH-01-P03「測定誤差」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:測定誤差について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:測定誤差、単位換算、桁、誤差。 扱わない範囲:SI単位、有効数字。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一",
       "video_quality": "hq-whiteboard-v1",
       "last_run_at": "2026-07-30T10:00:45.206Z"
+    },
+    "ME-MA-01-P01": {
+      "notebook_id": "058ef39c-ef1f-41c3-b4ec-de0b303d4158",
+      "title": "Medvance ME-MA-01-P01 20260731",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "video_requested_at": "2026-07-31T00:00:00.000Z"
+    },
+    "ME-PH-02-P01": {
+      "notebook_id": "89921100-b35a-4ebc-9538-3f288c157e37",
+      "title": "Medvance ME-PH-02-P01 20260731",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "video_requested_at": "2026-07-31T00:00:00.000Z"
+    },
+    "ME-CH-01-P01": {
+      "notebook_id": "545fcb55-f065-4e76-b3f8-9b0e2f61828e",
+      "title": "Medvance ME-CH-01-P01 20260731",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "video_requested_at": "2026-07-31T00:00:00.000Z"
+    },
+    "ME-M1-01-P03": {
+      "notebook_id": "c356cc24-edb1-4d82-90da-03ca6ed6629f",
+      "title": "Medvance ME-M1-01-P03 20260731",
+      "subject": "math1-exam",
+      "subjectDir": "math1-exam",
+      "video_requested_at": "2026-07-31T00:00:00.000Z"
+    },
+    "ME-PH-02-P02": {
+      "notebook_id": "884683fc-deb8-4da2-85ac-facea3304750",
+      "title": "Medvance ME-PH-02-P02 20260731",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "video_requested_at": "2026-07-31T00:00:00.000Z"
+    },
+    "ME-MA-01-P02": {
+      "notebook_id": "81041b93-dc2b-4016-b840-72cb927a8dcb",
+      "title": "Medvance ME-MA-01-P02 20260731",
+      "created_at": "2026-07-31T05:14:57.131Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T05:15:54.242Z",
+      "video_requested_at": "2026-07-31T05:15:54.242Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-MA-01-P02「数え上げの原則」。 親単元 ME-MA-01「集合と数え上げの原則」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:数え上げの原則について、和・積の法則を根拠と途中過程を示して完結できる。 扱う範囲:数え上げの原則、和・積の法則。 扱わない範囲:集合。 lesson と storyboard が唯一の正本。stor",
+      "video_focus": "Medvance 基礎講座 ME-MA-01-P02「数え上げの原則」。 親単元 ME-MA-01「集合と数え上げの原則」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:数え上げの原則について、和・積の法則を根拠と途中過程を示して完結できる。 扱う範囲:数え上げの原則、和・積の法則。 扱わない範囲:集合。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブ",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:15:54.242Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-PH-02-P03": {
+      "notebook_id": "5e81e39c-8b0e-4226-8006-2d588d903b4c",
+      "title": "Medvance ME-PH-02-P03 20260731",
+      "created_at": "2026-07-31T05:15:55.580Z",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "studio_requested_at": "2026-07-31T05:16:51.384Z",
+      "video_requested_at": "2026-07-31T05:16:51.384Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-PH-02-P03「成分分解」。 親単元 ME-PH-02「ベクトル・スカラー・成分分解」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:成分分解について、合成分解を根拠と途中過程を示して完結できる。 扱う範囲:成分分解、合成分解。 扱わない範囲:ベクトル、スカラー。 lesson と storyboard が唯一の正本。storyb",
+      "video_focus": "Medvance 基礎講座 ME-PH-02-P03「成分分解」。 親単元 ME-PH-02「ベクトル・スカラー・成分分解」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:成分分解について、合成分解を根拠と途中過程を示して完結できる。 扱う範囲:成分分解、合成分解。 扱わない範囲:ベクトル、スカラー。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロッ",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:16:51.385Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-02-P01": {
+      "notebook_id": "86b8de49-4bf3-437c-964e-0c84a195b09c",
+      "title": "Medvance ME-MA-02-P01 20260731",
+      "created_at": "2026-07-31T05:17:55.669Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T05:18:49.962Z",
+      "video_requested_at": "2026-07-31T05:18:49.962Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-MA-02-P01「樹形図」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:樹形図について、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:樹形図、漏れと重複の除去。 扱わない範囲:表、場合分け。 lesson と storyboard が唯一の正本。storyboa",
+      "video_focus": "Medvance 基礎講座 ME-MA-02-P01「樹形図」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 1。 科目:mathA-exam。章:場合の数と確率。到達目標:樹形図について、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:樹形図、漏れと重複の除去。 扱わない範囲:表、場合分け。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:18:49.962Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-PH-03-P01": {
+      "notebook_id": "92bb6794-b72a-47b1-aa87-b02c2ad2cc7f",
+      "title": "Medvance ME-PH-03-P01 20260731",
+      "created_at": "2026-07-31T05:18:51.192Z",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "studio_requested_at": "2026-07-31T05:19:47.059Z",
+      "video_requested_at": "2026-07-31T05:19:47.059Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-PH-03-P01「表」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 1。 科目:physics-exam。章:探究と測定。到達目標:表について、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:表、実験データ解釈。 扱わない範囲:グラフ、傾き、面積。 lesson と storyboard が唯一の正本。storyboard の",
+      "video_focus": "Medvance 基礎講座 ME-PH-03-P01「表」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 1。 科目:physics-exam。章:探究と測定。到達目標:表について、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:表、実験データ解釈。 扱わない範囲:グラフ、傾き、面積。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守す",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:19:47.060Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-CH-01-P02": {
+      "notebook_id": "db281acf-d900-4646-9d99-1569bab9b625",
+      "title": "Medvance ME-CH-01-P02 20260731",
+      "created_at": "2026-07-31T05:19:48.639Z",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-31T05:20:46.059Z",
+      "video_requested_at": "2026-07-31T05:20:46.059Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-CH-01-P02「安全」。 親単元 ME-CH-01「実験器具・安全・廃棄」の Part 2。 科目:chemistry-exam。章:探究。到達目標:安全について、器具選択、安全操作を根拠と途中過程を示して完結できる。 扱う範囲:安全、器具選択、安全操作。 扱わない範囲:実験器具、廃棄。 lesson と storyboard が唯一の正本。storyboar",
+      "video_focus": "Medvance 基礎講座 ME-CH-01-P02「安全」。 親単元 ME-CH-01「実験器具・安全・廃棄」の Part 2。 科目:chemistry-exam。章:探究。到達目標:安全について、器具選択、安全操作を根拠と途中過程を示して完結できる。 扱う範囲:安全、器具選択、安全操作。 扱わない範囲:実験器具、廃棄。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:20:46.060Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-PH-03-P02": {
+      "notebook_id": "a9a08a47-3c7f-4cec-ae58-2f41acf39bd3",
+      "title": "Medvance ME-PH-03-P02 20260731",
+      "created_at": "2026-07-31T05:20:47.620Z",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "studio_requested_at": "2026-07-31T05:21:42.181Z",
+      "video_requested_at": "2026-07-31T05:21:42.181Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-PH-03-P02「グラフ」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:グラフについて、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:グラフ、実験データ解釈。 扱わない範囲:表、傾き、面積。 lesson と storyboard が唯一の正本。storyboa",
+      "video_focus": "Medvance 基礎講座 ME-PH-03-P02「グラフ」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 2。 科目:physics-exam。章:探究と測定。到達目標:グラフについて、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:グラフ、実験データ解釈。 扱わない範囲:表、傾き、面積。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:21:42.182Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-CH-01-P03": {
+      "notebook_id": "38c9c04e-02aa-4637-8dc7-c45dcc875e0b",
+      "title": "Medvance ME-CH-01-P03 20260731",
+      "created_at": "2026-07-31T05:21:43.667Z",
+      "subject": "chemistry-exam",
+      "subjectDir": "chemistry-exam",
+      "studio_requested_at": "2026-07-31T05:22:40.877Z",
+      "video_requested_at": "2026-07-31T05:22:40.877Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-CH-01-P03「廃棄」。 親単元 ME-CH-01「実験器具・安全・廃棄」の Part 3。 科目:chemistry-exam。章:探究。到達目標:廃棄について、器具選択、安全操作を根拠と途中過程を示して完結できる。 扱う範囲:廃棄、器具選択、安全操作。 扱わない範囲:実験器具、安全。 lesson と storyboard が唯一の正本。storyboar",
+      "video_focus": "Medvance 基礎講座 ME-CH-01-P03「廃棄」。 親単元 ME-CH-01「実験器具・安全・廃棄」の Part 3。 科目:chemistry-exam。章:探究。到達目標:廃棄について、器具選択、安全操作を根拠と途中過程を示して完結できる。 扱う範囲:廃棄、器具選択、安全操作。 扱わない範囲:実験器具、安全。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:22:40.878Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-02-P02": {
+      "notebook_id": "8381c84e-4b0d-4232-83ad-d3f0a2804e00",
+      "title": "Medvance ME-MA-02-P02 20260731",
+      "created_at": "2026-07-31T05:22:42.374Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T05:23:37.547Z",
+      "video_requested_at": "2026-07-31T05:23:37.547Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-MA-02-P02「表」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:表について、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:表、漏れと重複の除去。 扱わない範囲:樹形図、場合分け。 lesson と storyboard が唯一の正本。storyboard の",
+      "video_focus": "Medvance 基礎講座 ME-MA-02-P02「表」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 2。 科目:mathA-exam。章:場合の数と確率。到達目標:表について、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:表、漏れと重複の除去。 扱わない範囲:樹形図、場合分け。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守す",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:23:37.547Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-MA-02-P03": {
+      "notebook_id": "eec4aa02-2dd7-486c-aa12-1311d087a792",
+      "title": "Medvance ME-MA-02-P03 20260731",
+      "created_at": "2026-07-31T05:23:39.002Z",
+      "subject": "mathA-exam",
+      "subjectDir": "mathA-exam",
+      "studio_requested_at": "2026-07-31T05:24:36.706Z",
+      "video_requested_at": "2026-07-31T05:24:36.708Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-MA-02-P03「場合分け」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 3。 科目:mathA-exam。章:場合の数と確率。到達目標:場合分けについて、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:場合分け、漏れと重複の除去。 扱わない範囲:樹形図、表。 lesson と storyboard が唯一の正本。storyb",
+      "video_focus": "Medvance 基礎講座 ME-MA-02-P03「場合分け」。 親単元 ME-MA-02「樹形図・表・場合分け」の Part 3。 科目:mathA-exam。章:場合の数と確率。到達目標:場合分けについて、漏れと重複の除去を根拠と途中過程を示して完結できる。 扱う範囲:場合分け、漏れと重複の除去。 扱わない範囲:樹形図、表。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロッ",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:24:36.708Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "missing": []
+      }
+    },
+    "ME-PH-03-P03": {
+      "notebook_id": "97870048-9d70-40a1-8550-a440c77589d4",
+      "title": "Medvance ME-PH-03-P03 20260731",
+      "created_at": "2026-07-31T05:24:38.016Z",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "studio_requested_at": "2026-07-31T05:25:40.966Z",
+      "video_requested_at": "2026-07-31T05:25:40.966Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-PH-03-P03「傾き」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:傾きについて、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:傾き、実験データ解釈。 扱わない範囲:表、グラフ、面積。 lesson と storyboard が唯一の正本。storyboard",
+      "video_focus": "Medvance 基礎講座 ME-PH-03-P03「傾き」。 親単元 ME-PH-03「表・グラフ・傾き・面積」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:傾きについて、実験データ解釈を根拠と途中過程を示して完結できる。 扱う範囲:傾き、実験データ解釈。 扱わない範囲:表、グラフ、面積。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳",
+      "video_quality": "hq-whiteboard-v1",
+      "batch_submission": {
+        "at": "2026-07-31T05:25:40.967Z",
+        "requested": [
+          "audio",
+          "video",
+          "slides",
+          "quiz"
+        ],
+        "accepted": [
+          "audio",
+          "video",
+          "quiz"
+        ],
+        "missing": [
+          "slides"
+        ]
+      }
     }
   }
 }
