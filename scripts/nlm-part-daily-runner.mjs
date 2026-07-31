@@ -108,19 +108,33 @@ const queue = (manifest.parts || [])
     ...item,
     outputs: ["video", "audio", "slide_deck", "quiz"],
   }));
-function broadArea(item) {
+function priorityGroup(item) {
+  if (item.subjectId === "mathA-exam") return "mathA";
+  if (item.subjectId === "physics-exam") return "physics";
+  if (item.subjectId === "chemistry-exam") return "chemistry";
+  if (item.subjectId === "math1-exam") return "math1";
+  if (item.subjectId.startsWith("math")) return "otherMath";
   if (item.subjectId === "english-exam") return "english";
-  if (item.subjectId.startsWith("math")) return "math";
-  if (["physics-exam", "chemistry-exam", "biology-exam"].includes(item.subjectId)) return "science";
+  if (item.subjectId === "biology-exam") return "otherScience";
   return "other";
 }
 
 function roundRobin(items) {
-  const order = ["english", "math", "science", "other"];
-  const groups = Object.fromEntries(order.map((key) => [key, []]));
-  for (const item of items) groups[broadArea(item)].push(item);
+  // Weighted cycle requested for the foundation build:
+  // Math A is no longer hidden behind Math I, while physics and chemistry
+  // receive two turns per cycle. Override without editing code when needed.
+  const order = (
+    process.env.NLM_SUBJECT_PRIORITY ||
+    "mathA,physics,chemistry,math1,physics,chemistry,mathA,math1,otherMath,otherScience,english,other"
+  )
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  const groupKeys = [...new Set([...order, "mathA", "physics", "chemistry", "math1", "otherMath", "otherScience", "english", "other"])];
+  const groups = Object.fromEntries(groupKeys.map((key) => [key, []]));
+  for (const item of items) groups[priorityGroup(item)].push(item);
   const out = [];
-  while (order.some((key) => groups[key].length)) {
+  while (groupKeys.some((key) => groups[key].length)) {
     for (const key of order) {
       const item = groups[key].shift();
       if (item) out.push(item);
