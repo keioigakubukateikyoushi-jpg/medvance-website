@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-28T05:35:48.666Z",
+  "updated": "2026-07-30T10:00:45.207Z",
   "units": {
     "ME-M1-04": {
       "notebook_id": "b52fdfcc-bc4e-45de-bce7-1cd15e415038",
@@ -290,6 +290,48 @@
       "video_focus": "Medvance 基礎講座 ME-PH-01-P02「有効数字と計算結果の丸め」。 親単元 ME-PH-01「物理量・単位・有効数字」の Part 2。 科目:高校物理（受験）。章:力学の基礎。到達目標:有効数字を数え、演算別の規則で計算結果を丸められる。 扱う範囲:有効数字を数え、演算別の規則で計算結果を丸められる。 扱わない範囲:後続Part。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の",
       "video_quality": "hq-whiteboard-v1",
       "last_run_at": "2026-07-28T05:35:48.666Z"
+    },
+    "ME-EN-02-P01": {
+      "notebook_id": "efc35b5b-fab1-4aa5-97fb-76aa9501c057",
+      "title": "Medvance ME-EN-02-P01 20260730",
+      "created_at": "2026-07-30T09:01:58.663Z",
+      "subject": "english-exam",
+      "subjectDir": "english-exam",
+      "studio_requested_at": "2026-07-30T09:03:22.760Z",
+      "video_requested_at": "2026-07-30T09:03:22.760Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-EN-02-P01「品詞」。 親単元 ME-EN-02「品詞・句・節」の Part 1。 科目:english-exam。章:横断基盤。到達目標:品詞について、修飾範囲、節境界を根拠と途中過程を示して完結できる。 扱う範囲:品詞、修飾範囲、節境界。 扱わない範囲:句、節。 lesson と storyboard が唯一の正本。storyboard の順序を守る。 ",
+      "video_focus": "Medvance 基礎講座 ME-EN-02-P01「品詞」。 親単元 ME-EN-02「品詞・句・節」の Part 1。 科目:english-exam。章:横断基盤。到達目標:品詞について、修飾範囲、節境界を根拠と途中過程を示して完結できる。 扱う範囲:品詞、修飾範囲、節境界。 扱わない範囲:句、節。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台本ブロック順を厳守する。 構成は、",
+      "video_quality": "hq-whiteboard-v1",
+      "last_run_at": "2026-07-30T09:18:16.475Z"
+    },
+    "ME-M1-01-P02": {
+      "notebook_id": "687c4588-674b-4f6b-9fb3-156c9aaf1954",
+      "title": "Medvance ME-M1-01-P02 20260730",
+      "created_at": "2026-07-30T09:18:20.800Z",
+      "subject": "math1-exam",
+      "subjectDir": "math1-exam",
+      "studio_requested_at": "2026-07-30T09:27:59.616Z",
+      "video_requested_at": "2026-07-30T09:27:59.616Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-M1-01-P02「項」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 2。 科目:math1-exam。章:数と式。到達目標:項について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:項、定義・標準問題・説明。 扱わない範囲:整式、係数、次数の厳密定義。 lesson と storyboard が唯一の正本。st",
+      "video_focus": "Medvance 基礎講座 ME-M1-01-P02「項」。 親単元 ME-M1-01「整式・項・係数・次数の厳密定義」の Part 2。 科目:math1-exam。章:数と式。到達目標:項について、定義・標準問題・説明を根拠と途中過程を示して完結できる。 扱う範囲:項、定義・標準問題・説明。 扱わない範囲:整式、係数、次数の厳密定義。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一の正本で、台",
+      "video_quality": "hq-whiteboard-v1",
+      "last_run_at": "2026-07-30T09:46:07.584Z"
+    },
+    "ME-PH-01-P03": {
+      "notebook_id": "a7399efd-08f4-4325-85d9-3abe04ab7cd4",
+      "title": "Medvance ME-PH-01-P03 20260730",
+      "created_at": "2026-07-30T09:46:12.342Z",
+      "subject": "physics-exam",
+      "subjectDir": "physics-exam",
+      "studio_requested_at": "2026-07-30T09:47:51.455Z",
+      "video_requested_at": "2026-07-30T09:47:51.455Z",
+      "video_request_policy": "one-shot-micro-part-5to9-v3",
+      "focus": "Medvance 基礎講座 ME-PH-01-P03「測定誤差」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:測定誤差について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:測定誤差、単位換算、桁、誤差。 扱わない範囲:SI単位、有効数字。 lesson と storyboard が唯一",
+      "video_focus": "Medvance 基礎講座 ME-PH-01-P03「測定誤差」。 親単元 ME-PH-01「SI単位・有効数字・測定誤差」の Part 3。 科目:physics-exam。章:探究と測定。到達目標:測定誤差について、単位換算、桁、誤差を根拠と途中過程を示して完結できる。 扱う範囲:測定誤差、単位換算、桁、誤差。 扱わない範囲:SI単位、有効数字。 あなたは医学部・難関大受験のプロ講師。Medvanceの板書型授業動画を作る。 lesson と storyboard が唯一",
+      "video_quality": "hq-whiteboard-v1",
+      "last_run_at": "2026-07-30T10:00:45.206Z"
     }
   }
 }

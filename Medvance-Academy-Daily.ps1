@@ -98,9 +98,18 @@ try {
 
   Invoke-Step "partition" $npmPath @("run", "academy:partition")
   Invoke-Step "generation-manifest" $npmPath @("run", "academy:generation-manifest")
-  Invoke-Step "daily-preview" $npmPath @("run", "academy:daily-preview", "--", "--max", "3")
+  Invoke-Step "daily-preview" $npmPath @("run", "academy:daily-preview")
   if ($Generate) {
-    Invoke-Step "auth-check" $nlmPath @("login", "--check")
+    Write-RunLog ("START auth-check: {0} login --check" -f $nlmPath)
+    & $nlmPath login --check
+    $authCode = if ($LASTEXITCODE -ne $null) { [int]$LASTEXITCODE } else { 0 }
+    Write-RunLog ("END auth-check: exit={0}" -f $authCode)
+    if ($authCode -ne 0) {
+      $cdpUrl = if ([string]::IsNullOrWhiteSpace($env:NLM_CDP_URL)) { "http://127.0.0.1:9223" } else { $env:NLM_CDP_URL }
+      Write-RunLog ("NotebookLM auth expired; recovering from the signed-in local browser at {0}." -f $cdpUrl)
+      Invoke-Step "auth-recover" $nlmPath @("login", "--provider", "openclaw", "--cdp-url", $cdpUrl)
+      Invoke-Step "auth-check-after-recovery" $nlmPath @("login", "--check")
+    }
   } else {
     Write-RunLog "DryRun skips auth-check and generation."
   }
@@ -108,7 +117,7 @@ try {
   if ($Generate) {
     $env:NLM_DAILY_CONFIRMED = "1"
     $env:NLM_RESEARCH_MODE = "off"
-    Invoke-Step "daily-generate" $npmPath @("run", "academy:daily-generate", "--", "--max", "3")
+    Invoke-Step "daily-generate" $npmPath @("run", "academy:daily-generate")
   } else {
     Write-RunLog "DryRun complete; generation not started."
   }
