@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "policy": "one-shot-micro-part-5to9-v3",
+  "approved": {
+    "ME-M1-04": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T05:29:59.747Z",
+      "duration_seconds": 453.160635,
+      "quality_tier": "acceptable",
+      "warnings": [
+        "preferred duration is 600–900 seconds (actual 453.160635)"
+      ]
+    },
+    "ME-PH-02": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T05:29:59.797Z",
+      "duration_seconds": 431.357098,
+      "quality_tier": "acceptable",
+      "warnings": [
+        "preferred duration is 600–900 seconds (actual 431.357098)"
+      ]
+    },
+    "ME-PH-03": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T05:29:59.823Z",
+      "duration_seconds": 406.883265,
+      "quality_tier": "acceptable",
+      "warnings": [
+        "preferred duration is 600–900 seconds (actual 406.883265)"
+      ]
+    },
+    "ME-EN-01-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T14:46:05.496Z",
+      "duration_seconds": 477.820227,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-M1-15-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T14:46:05.524Z",
+      "duration_seconds": 354.522268,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-PH-01-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T14:46:05.551Z",
+      "duration_seconds": 566.311474,
+      "quality_tier": "acceptable",
+      "warnings": [
+        "duration is a guide (300–540 seconds preferred; actual 566.311474); release depends on content completeness"
+      ]
+    },
+    "ME-M1-15-P02": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T14:46:05.576Z",
+      "duration_seconds": 439.855601,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-M1-15-P03": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T14:46:05.599Z",
+      "duration_seconds": 488.292426,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-M1-15-P04": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T14:46:05.623Z",
+      "duration_seconds": 499.507664,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-M1-15-P05": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-26T14:46:05.648Z",
+      "duration_seconds": 409.50712,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-EN-01-P02": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-28T07:32:55.764Z",
+      "duration_seconds": 393.740771,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-M1-01-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-28T07:32:55.794Z",
+      "duration_seconds": 519.221406,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-PH-01-P02": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-28T07:32:55.826Z",
+      "duration_seconds": 440.36644,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-EN-02-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-30T10:13:14.751Z",
+      "duration_seconds": 446.124989,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-M1-01-P02": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-30T10:13:14.779Z",
+      "duration_seconds": 453.090975,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-PH-01-P03": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-07-30T10:13:14.804Z",
+      "duration_seconds": 429.453061,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-MA-03-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.552Z",
+      "duration_seconds": 427.479365,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-PH-03-P03": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.586Z",
+      "duration_seconds": 466.558549,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-MA-04-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.615Z",
+      "duration_seconds": 408.926621,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-PH-03-P04": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.642Z",
+      "duration_seconds": 496.001451,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-MA-04-P02": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.675Z",
+      "duration_seconds": 442.967075,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-CH-02-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.702Z",
+      "duration_seconds": 459.360363,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-MA-05-P01": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.732Z",
+      "duration_seconds": 512.09288,
+      "quality_tier": "preferred",
+      "warnings": []
+    },
+    "ME-CH-02-P02": {
+      "audio": true,
+      "video": "nlm_video.mp4",
+      "slides": true,
+      "approved_at": "2026-08-01T14:19:50.760Z",
+      "duration_seconds": 478.075646,
+      "quality_tier": "preferred",
+      "warnings": []
+    }
+  }
+}

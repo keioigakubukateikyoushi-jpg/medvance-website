@@ -18,5 +18,7 @@ export const FREE_UNIT_IDS = new Set<string>([
 ]);
 
 export function isFreeUnit(unitId: string): boolean {
-  return FREE_UNIT_IDS.has(unitId);
+  if (FREE_UNIT_IDS.has(unitId)) return true;
+  const parentId = unitId.replace(/-P\d+$/, "");
+  return parentId !== unitId && FREE_UNIT_IDS.has(parentId);
 }

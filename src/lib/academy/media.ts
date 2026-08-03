@@ -5,6 +5,9 @@ import { isFreeUnit } from "./freeUnits";
 const MEDIA_ROOT = path.join(process.cwd(), "public", "academy", "media");
 const YOUTUBE_REGISTRY = path.join(process.cwd(), "content", "academy", "media-youtube.json");
 const MEDIA_READY_PATH = path.join(process.cwd(), "content", "academy", "media-ready.json");
+const MEDIA_APPROVED_PATH = path.join(process.cwd(), "content", "academy", "media-approved.json");
+const MEDIA_BLOCKED_PATH = path.join(process.cwd(), "content", "academy", "media-blocked.json");
+const DAILY_RELEASE_PATH = path.join(process.cwd(), "content", "academy", "media-release-20260731.json");
 
 type UnitMediaPublicUrls = {
   lesson_pdf?: string;
@@ -131,15 +134,18 @@ function readPublicUrls(dir: string): UnitMediaPublicUrls {
  */
 function staticCdnAssets(
   unitId: string,
-  opts: { audio?: boolean; video?: boolean; slides?: boolean } = {},
+  opts: { audio?: boolean; video?: boolean; slides?: boolean; videoFile?: string } = {},
 ): UnitMediaAssets {
   const wantAudio = opts.audio !== false;
   const wantVideo = opts.video !== false;
   const wantSlides = opts.slides !== false;
-  const lessonHtml = publicUrl(unitId, "lesson.html");
+  // Daily NotebookLM media packs do not publish lesson.html. Returning a
+  // guessed CDN path makes the lesson iframe render a visible 404; the unit
+  // page should instead render the canonical lesson Markdown.
+  const lessonHtml = null;
   const slidesPdf = wantSlides ? publicUrl(unitId, "slides.pdf") : null;
   const audio = wantAudio ? publicUrl(unitId, "audio.m4a") : null;
-  const video = wantVideo ? publicUrl(unitId, "video.mp4") : null;
+  const video = wantVideo ? publicUrl(unitId, opts.videoFile || "video.mp4") : null;
 
   return {
     unitId,
@@ -163,6 +169,17 @@ function freeCdnAssets(unitId: string): UnitMediaAssets {
 }
 
 type ReadyFlags = { audio?: boolean; video?: boolean; slides?: boolean };
+type DailyReleaseFlags = ReadyFlags & { quiz?: boolean };
+
+export type ReleasedMediaFlags = DailyReleaseFlags;
+
+type ApprovedFlags = Omit<ReadyFlags, "video"> & { video?: string; duration_seconds?: number };
+type BlockedFlags = { video?: boolean; reason?: string };
+
+/** 品質判定は nlm_video.mp4 を正本とし、CDNには同一内容の配信名 video.mp4 を載せる。 */
+function deliveryVideoFile(approved: ApprovedFlags): string | undefined {
+  return approved.video === "nlm_video.mp4" ? "video.mp4" : approved.video;
+}
 
 function readMediaReady(): {
   complete: Record<string, ReadyFlags>;
@@ -177,6 +194,51 @@ function readMediaReady(): {
     return { complete: raw.complete || {}, partial: raw.partial || {} };
   } catch {
     return { complete: {}, partial: {} };
+  }
+}
+
+/** Explicit, date-scoped public release register for a completed daily batch. */
+function readDailyRelease(): Record<string, DailyReleaseFlags> {
+  try {
+    if (!fs.existsSync(DAILY_RELEASE_PATH)) return {};
+    return (JSON.parse(fs.readFileSync(DAILY_RELEASE_PATH, "utf8")) as {
+      units?: Record<string, DailyReleaseFlags>;
+    }).units || {};
+  } catch {
+    return {};
+  }
+}
+
+/** Public-release registry entries, kept in registry order (oldest to newest). */
+export function listReleasedMedia(): Array<{
+  unitId: string;
+  flags: ReleasedMediaFlags;
+}> {
+  return Object.entries(readDailyRelease()).map(([unitId, flags]) => ({
+    unitId,
+    flags,
+  }));
+}
+
+/** Release authority for audio/video/slides.  A file existing is not approval. */
+function readApprovedMedia(): Record<string, ApprovedFlags> {
+  try {
+    if (!fs.existsSync(MEDIA_APPROVED_PATH)) return {};
+    return (JSON.parse(fs.readFileSync(MEDIA_APPROVED_PATH, "utf8")) as { approved?: Record<string, ApprovedFlags> }).approved || {};
+  } catch {
+    return {};
+  }
+}
+
+function readBlockedMedia(): Record<string, BlockedFlags> {
+  try {
+    if (!fs.existsSync(MEDIA_BLOCKED_PATH)) return {};
+    const raw = JSON.parse(fs.readFileSync(MEDIA_BLOCKED_PATH, "utf8")) as {
+      units?: Record<string, BlockedFlags>;
+    };
+    return raw.units || {};
+  } catch {
+    return {};
   }
 }
 
@@ -208,6 +270,9 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   const onDisk = fs.existsSync(dir);
   const ytReg = readYoutubeRegistry()[unitId] || {};
   const publicUrls = onDisk ? readPublicUrls(dir) : {};
+  const approved = readApprovedMedia()[unitId];
+  const released = readDailyRelease()[unitId];
+  const videoBlocked = readBlockedMedia()[unitId]?.video === true;
 
   const remoteLecture =
     safePublicMediaUrl(publicUrls.lecture_video) ||
@@ -216,27 +281,50 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   const remoteVideo =
     safePublicMediaUrl(publicUrls.video) || safePublicMediaUrl(ytReg.video) || null;
 
+  // 日付限定の公開レジストリは品質承認と別枠。serverless でもローカルでも優先する。
+  if (released) {
+    const pack = staticCdnAssets(unitId, {
+      audio: Boolean(released.audio),
+      video: !videoBlocked && Boolean(released.video),
+      slides: Boolean(released.slides),
+    });
+    // ローカルに実ファイルがあれば quiz パスを優先、なければ CDN 想定パス
+    const quizJsonPath = onDisk
+      ? firstExistingPath(dir, ["quiz.json", "nlm_quiz.json"])
+      : released.quiz
+        ? path.join(MEDIA_ROOT, unitId, "quiz.json")
+        : null;
+    return {
+      ...pack,
+      quizJsonPath,
+      hasAnyMedia: pack.hasAnyMedia || Boolean(quizJsonPath),
+      hasExtendedMedia: pack.hasExtendedMedia || Boolean(quizJsonPath),
+    };
+  }
+
   // 本番（serverless に media バイナリが無い）: 静的 CDN の固定パスで解決
   // ※ ファイル自体はデプロイ済みでも fs.existsSync は false になる
   if (!onDisk) {
     const ready = readMediaReady();
-    if (isFreeUnit(unitId) || ready.complete[unitId]) {
-      const flags = ready.complete[unitId] || { audio: true, video: true, slides: true };
+    if (approved && (isFreeUnit(unitId) || ready.complete[unitId])) {
+      const flags = approved;
       return staticCdnAssets(unitId, {
         audio: flags.audio !== false,
-        video: flags.video !== false,
+        video: !videoBlocked && Boolean(flags.video),
         slides: flags.slides !== false,
+        videoFile: deliveryVideoFile(flags),
       });
     }
-    if (ready.partial[unitId]) {
-      const flags = ready.partial[unitId];
+    if (approved && ready.partial[unitId]) {
+      const flags = approved;
       return staticCdnAssets(unitId, {
         audio: Boolean(flags.audio),
-        video: Boolean(flags.video),
+        video: !videoBlocked && Boolean(flags.video),
         slides: Boolean(flags.slides),
+        videoFile: deliveryVideoFile(flags),
       });
     }
-    if (remoteLecture || remoteVideo) {
+    if (!videoBlocked && (remoteLecture || remoteVideo)) {
       const v = remoteVideo || remoteLecture;
       return {
         ...emptyAssets(unitId),
@@ -249,40 +337,39 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
     return emptyAssets(unitId);
   }
 
-  let lessonPdf =
+  const lessonPdf =
     safePublicMediaUrl(publicUrls.lesson_pdf) || firstExisting(dir, unitId, ["lesson.pdf"]);
   let lessonHtml = firstExisting(dir, unitId, ["lesson.html"]);
   // slides.html（ブラウザデッキ）は配信しない。slides.pdf のみ。
 
   // スライドPDF（公開名 slides.pdf を優先。内部名 nlm_* も解決）
-  let slidesPdf =
-    safePublicMediaUrl(publicUrls.slides_pdf) ||
-    firstExisting(dir, unitId, ["slides.pdf", "nlm_slides.pdf", "slides_nlm.pdf"]);
+  let slidesPdf = approved
+    ? safePublicMediaUrl(publicUrls.slides_pdf) || firstExisting(dir, unitId, ["slides.pdf", "nlm_slides.pdf", "slides_nlm.pdf"])
+    : null;
 
   // 音声: 講義音声を優先
-  let audio =
-    safePublicMediaUrl(publicUrls.audio) ||
-    firstExisting(dir, unitId, [
+  let audio = approved
+    ? safePublicMediaUrl(publicUrls.audio) || firstExisting(dir, unitId, [
       "audio.m4a",
       "audio.mp3",
       "nlm_audio.m4a",
       "audio_nlm.m4a",
       "audio_unit.m4a",
-    ]);
+    ])
+    : null;
 
   // 動画: サイト内 mp4 本線（配信名 video.mp4 優先）→ remote フォールバック
-  const localMp4 = firstExisting(dir, unitId, [
-    "video.mp4",
-    "nlm_video.mp4",
-    "lecture.mp4",
-    "video_nlm.mp4",
-  ]);
-  let video = localMp4 || remoteVideo || remoteLecture;
+  const localMp4 = approved?.video === "nlm_video.mp4"
+    ? firstExisting(dir, unitId, ["nlm_video.mp4"])
+    : null;
+  let video = videoBlocked
+    ? null
+    : localMp4 || (approved ? remoteVideo || remoteLecture : null);
   // 二重表示しないよう lecture は video と同じ主ソースに揃える
   let lectureVideo = video;
 
   const quizJsonPath = firstExistingPath(dir, ["quiz.json", "nlm_quiz.json"]);
-  let quizMd =
+  const quizMd =
     safePublicMediaUrl(publicUrls.quiz_md) ||
     firstExisting(dir, unitId, ["quiz.md", "nlm_quiz.md"]);
 
@@ -290,15 +377,21 @@ export function resolveUnitMedia(unitId: string): UnitMediaAssets {
   // → media-ready / 無料枠は CDN 固定パスで埋める
   const ready = readMediaReady();
   const readyFlags = ready.complete[unitId] || ready.partial[unitId];
-  if (isFreeUnit(unitId) || readyFlags) {
+  if (approved && (isFreeUnit(unitId) || readyFlags)) {
     const cdn = staticCdnAssets(unitId, {
-      audio: readyFlags ? readyFlags.audio !== false : true,
-      video: readyFlags ? Boolean(readyFlags.video) || isFreeUnit(unitId) : true,
-      slides: readyFlags ? readyFlags.slides !== false : true,
+      audio: approved.audio !== false,
+      video: !videoBlocked && Boolean(approved.video),
+      slides: approved.slides !== false,
+      videoFile: deliveryVideoFile(approved),
     });
     // free complete always has full pack
     if (isFreeUnit(unitId) || ready.complete[unitId]) {
-      const full = staticCdnAssets(unitId);
+      const full = staticCdnAssets(unitId, {
+        audio: approved.audio !== false,
+        video: !videoBlocked && Boolean(approved.video),
+        slides: approved.slides !== false,
+        videoFile: deliveryVideoFile(approved),
+      });
       lessonHtml = lessonHtml || full.lessonHtml;
       slidesPdf = slidesPdf || full.slidesPdf;
       audio = audio || full.audio;

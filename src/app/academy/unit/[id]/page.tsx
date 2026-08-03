@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import {
   findUnitLocation,
+  findSubjectUnit,
+  findPartContext,
   getSubjectIndex,
   readLessonMarkdown,
   readQuizJson,
@@ -182,19 +184,15 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
   const legacyTab = sp.tab;
   const loc = sp.subject
     ? (() => {
-        try {
-          const idx = getSubjectIndex(sp.subject!);
-          const unit = idx.units.find((u) => u.id === id);
-          return unit ? { subjectId: sp.subject!, unit } : findUnitLocation(id);
-        } catch {
-          return findUnitLocation(id);
-        }
+        const unit = findSubjectUnit(sp.subject!, id);
+        return unit ? { subjectId: sp.subject!, unit } : findUnitLocation(id);
       })()
     : findUnitLocation(id);
 
   if (!loc) notFound();
 
   const { subjectId, unit } = loc;
+  const partContext = findPartContext(subjectId, id);
   const member = await isAcademyMember();
   const allowed = canViewUnit(id, member);
   const free = isFreeUnit(id);
@@ -278,11 +276,6 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
             ? "lesson"
             : null;
 
-  // Part ID（例: ME-MA-01-P01）なら見出し用に親単元っぽい表示を付ける
-  const partLabel = /-P\d+$/i.test(id)
-    ? id.replace(/^(.+)-(P\d+)$/i, "$2")
-    : null;
-
   return (
     <div className="min-h-screen bg-white">
       <ScrollToSection sectionId={focusId} />
@@ -292,7 +285,7 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
         <div className="max-w-3xl mx-auto">
           <p className="text-xs mb-2" style={{ color: "rgba(255,255,255,0.45)" }}>
             {subjectLabel}
-            {partLabel ? ` · ${partLabel}` : ""}
+            {partContext ? ` · ${partContext.parent.title} · Part ${partContext.part.part}` : ""}
           </p>
           <div className="flex flex-wrap gap-2 mb-3">
             {free ? (
@@ -721,6 +714,53 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
               </Link>
             )}
           </div>
+
+          {partContext && (
+            <nav aria-label="Part授業の前後移動" className="grid sm:grid-cols-2 gap-3">
+              {partContext.previous ? (
+                <Link
+                  href={`/academy/unit/${partContext.previous.id}?subject=${encodeURIComponent(subjectId)}`}
+                  className="p-4 rounded-xl bg-white hover:shadow-sm transition-shadow"
+                  style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                >
+                  <span className="block text-[10px] text-[#6b7280] mb-1">← 前のPart</span>
+                  <span className="block text-sm font-semibold">
+                    Part {partContext.previous.part} · {partContext.previous.title}
+                  </span>
+                </Link>
+              ) : (
+                <Link
+                  href={`/academy/subject/${encodeURIComponent(subjectId)}?chapter=${encodeURIComponent(unit.chapter)}`}
+                  className="p-4 rounded-xl bg-white"
+                  style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                >
+                  <span className="block text-[10px] text-[#6b7280] mb-1">← 分野一覧へ</span>
+                  <span className="block text-sm font-semibold">{partContext.parent.title}</span>
+                </Link>
+              )}
+              {partContext.next ? (
+                <Link
+                  href={`/academy/unit/${partContext.next.id}?subject=${encodeURIComponent(subjectId)}`}
+                  className="p-4 rounded-xl bg-white hover:shadow-sm transition-shadow sm:text-right"
+                  style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                >
+                  <span className="block text-[10px] text-[#6b7280] mb-1">次のPart →</span>
+                  <span className="block text-sm font-semibold">
+                    Part {partContext.next.part} · {partContext.next.title}
+                  </span>
+                </Link>
+              ) : (
+                <Link
+                  href={`/academy/subject/${encodeURIComponent(subjectId)}?chapter=${encodeURIComponent(unit.chapter)}`}
+                  className="p-4 rounded-xl bg-white sm:text-right"
+                  style={{ border: "1px solid #e5e1d8", color: "#0c1a33" }}
+                >
+                  <span className="block text-[10px] text-[#6b7280] mb-1">分野を完了</span>
+                  <span className="block text-sm font-semibold">分野一覧へ戻る →</span>
+                </Link>
+              )}
+            </nav>
+          )}
         </div>
       </div>
 

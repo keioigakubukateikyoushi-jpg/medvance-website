@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-26T15:00:00+09:00",
+  "reason": "Wrong-project or non-NotebookLM videos must never be exposed.",
+  "units": {
+    "ME-M1-02": {
+      "video": true,
+      "reason": "Mixed with ai-sensei-sora project."
+    },
+    "ME-M1-03": {
+      "video": true,
+      "reason": "Mixed with ai-sensei-sora project."
+    },
+    "ME-M1-15": {
+      "video": true,
+      "reason": "Not an approved NotebookLM video."
+    }
+  }
+}

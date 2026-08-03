@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-25T17:17:44.179Z",
+  "updated": "2026-08-01T14:19:50.275Z",
   "complete": {
     "ADV-M1-06": {
       "audio": true,
@@ -45,7 +45,7 @@
       "lessonPdf": true,
       "hasPublicUrls": false,
       "free": false,
-      "updated_at": "2026-07-25T17:17:44.174Z"
+      "updated_at": "2026-07-26T05:29:21.149Z"
     },
     "ME-EN-03": {
       "audio": true,
@@ -54,7 +54,7 @@
       "lessonPdf": true,
       "hasPublicUrls": false,
       "free": false,
-      "updated_at": "2026-07-25T17:17:44.176Z"
+      "updated_at": "2026-07-26T05:29:21.174Z"
     },
     "ME-ES-01": {
       "audio": true,
@@ -126,7 +126,7 @@
       "lessonPdf": true,
       "hasPublicUrls": false,
       "free": false,
-      "updated_at": "2026-07-25T17:17:44.178Z"
+      "updated_at": "2026-07-26T05:29:21.200Z"
     },
     "ME-M1-15": {
       "audio": true,
@@ -135,7 +135,7 @@
       "lessonPdf": true,
       "hasPublicUrls": false,
       "free": false,
-      "updated_at": "2026-07-25T17:02:23.391Z"
+      "updated_at": "2026-07-26T05:29:21.225Z"
     },
     "ME-PH-01": {
       "audio": true,
@@ -153,7 +153,7 @@
       "lessonPdf": true,
       "hasPublicUrls": false,
       "free": false,
-      "updated_at": "2026-07-25T17:17:44.177Z"
+      "updated_at": "2026-07-26T05:29:21.250Z"
     },
     "ME-PH-03": {
       "audio": true,
@@ -162,7 +162,7 @@
       "lessonPdf": true,
       "hasPublicUrls": false,
       "free": false,
-      "updated_at": "2026-07-25T17:17:44.178Z"
+      "updated_at": "2026-07-26T05:29:21.275Z"
     },
     "ME-SO-01": {
       "audio": true,
@@ -172,6 +172,321 @@
       "hasPublicUrls": false,
       "free": true,
       "updated_at": "2026-07-25T17:02:23.424Z"
+    },
+    "ME-EN-01-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-26T14:43:12.981Z"
+    },
+    "ME-M1-15-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-26T14:43:13.015Z"
+    },
+    "ME-PH-01-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-26T14:43:13.046Z"
+    },
+    "ME-M1-15-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-26T14:43:13.071Z"
+    },
+    "ME-M1-15-P03": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-26T14:43:13.094Z"
+    },
+    "ME-M1-15-P04": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-26T14:43:13.119Z"
+    },
+    "ME-M1-15-P05": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-26T14:43:13.145Z"
+    },
+    "ME-EN-01-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-28T07:32:55.880Z"
+    },
+    "ME-M1-01-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-28T07:32:55.903Z"
+    },
+    "ME-PH-01-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-28T07:32:55.930Z"
+    },
+    "ME-EN-02-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-30T10:13:14.247Z"
+    },
+    "ME-M1-01-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-30T10:13:14.318Z"
+    },
+    "ME-PH-01-P03": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-30T10:13:14.389Z"
+    },
+    "ME-MA-01-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:29.681Z"
+    },
+    "ME-PH-02-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:29.748Z"
+    },
+    "ME-CH-01-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:29.837Z"
+    },
+    "ME-M1-01-P03": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:29.937Z"
+    },
+    "ME-PH-02-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.016Z"
+    },
+    "ME-MA-01-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.096Z"
+    },
+    "ME-PH-02-P03": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.182Z"
+    },
+    "ME-MA-02-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.249Z"
+    },
+    "ME-PH-03-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.319Z"
+    },
+    "ME-CH-01-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.409Z"
+    },
+    "ME-PH-03-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.485Z"
+    },
+    "ME-CH-01-P03": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.623Z"
+    },
+    "ME-MA-02-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.716Z"
+    },
+    "ME-MA-02-P03": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-07-31T07:35:30.778Z"
+    },
+    "ME-MA-03-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.065Z"
+    },
+    "ME-PH-03-P03": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.101Z"
+    },
+    "ME-MA-04-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.130Z"
+    },
+    "ME-PH-03-P04": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.156Z"
+    },
+    "ME-MA-04-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.188Z"
+    },
+    "ME-CH-02-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.216Z"
+    },
+    "ME-MA-05-P01": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.247Z"
+    },
+    "ME-CH-02-P02": {
+      "audio": true,
+      "video": true,
+      "slides": true,
+      "lessonPdf": false,
+      "hasPublicUrls": false,
+      "free": false,
+      "updated_at": "2026-08-01T14:19:50.275Z"
     }
   },
   "partial": {
@@ -213,7 +528,7 @@
     }
   },
   "counts": {
-    "complete": 19,
+    "complete": 54,
     "partial": 6
   }
 }
