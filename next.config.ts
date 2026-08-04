@@ -8,9 +8,19 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "*": [
       "./public/academy/media/**/*",
+    ],
+  },
+  // Part授業は実行時に正本Markdown/クイズを読む。動画などの大容量配信物は
+  // 上の除外を維持しつつ、本文・台本・クイズは授業/API関数に同梱する。
+  outputFileTracingIncludes: {
+    "/academy/unit/[id]": [
       "./content/academy/**/lessons/**/*",
       "./content/academy/**/storyboard/**/*",
-      "./content/academy/**/slides/**/*",
+      "./content/academy/**/quiz/**/*",
+    ],
+    "/api/academy/pdf/[id]": [
+      "./content/academy/**/lessons/**/*",
+      "./content/academy/**/quiz/**/*",
     ],
   },
   images: {
