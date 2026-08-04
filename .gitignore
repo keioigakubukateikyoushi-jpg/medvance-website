@@ -121,3 +121,13 @@ public/academy/media/**/quiz.json
 !public/academy/media/ADV-M1-06/video.mp4
 !public/academy/media/ADV-M1-06/slides.pdf
 !public/academy/media/ADV-M1-06/quiz.json
+
+# 2026-08-04 math1 recovered batch (video/quiz only; audio where requested; slides pending)
+!public/academy/media/ME-M1-01-P04/audio.m4a
+!public/academy/media/ME-M1-01-P04/video.mp4
+!public/academy/media/ME-M1-01-P04/quiz.json
+!public/academy/media/ME-M1-05-P02/audio.m4a
+!public/academy/media/ME-M1-05-P02/video.mp4
+!public/academy/media/ME-M1-05-P02/quiz.json
+!public/academy/media/ME-M1-03-P01/video.mp4
+!public/academy/media/ME-M1-03-P01/quiz.json

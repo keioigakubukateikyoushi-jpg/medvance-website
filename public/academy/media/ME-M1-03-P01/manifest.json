@@ -1,0 +1,51 @@
+{
+  "unit_id": "ME-M1-03-P01",
+  "parent_unit_id": "ME-M1-03",
+  "part_number": 1,
+  "brand": "Medvance",
+  "source": "notebooklm-unit-factory",
+  "notebook_id": "4e8def0d-f235-4852-a221-e35fcbe99a41",
+  "alignment": "lesson+storyboard primary; research disabled",
+  "files": [
+    "_alignment_lock.txt",
+    "_video_director.md",
+    "manifest.json",
+    "nlm_quiz.json",
+    "nlm_video.mp4",
+    "quiz.json",
+    "video.mp4"
+  ],
+  "audio": null,
+  "video": "nlm_video.mp4",
+  "slides_pdf": null,
+  "lesson_pdf": null,
+  "updated_at": "2026-08-04T06:40:24.037Z",
+  "provenance": {
+    "brand": "Medvance",
+    "generator": "notebooklm",
+    "canonical_sources": [
+      "lessons/ME-M1-03-P01.md",
+      "storyboard/ME-M1-03-P01.md"
+    ],
+    "canonical_sha256": [
+      {
+        "role": "lesson",
+        "file": "lessons/ME-M1-03-P01.md",
+        "sha256": "39c97217b5ae64a7477868ce02bdeef095349d678020a908266f737b50749aa5"
+      },
+      {
+        "role": "storyboard",
+        "file": "storyboard/ME-M1-03-P01.md",
+        "sha256": "19a7db46a324d14563507db65abb26b6f3c63d38bf6b49dc627e9567f89b7126"
+      }
+    ],
+    "video_generator": "notebooklm",
+    "video_duration_seconds": 430.08,
+    "audio_generator": null,
+    "slides_generator": null,
+    "duration_quality": "preferred"
+  },
+  "free": false,
+  "pack": "partial",
+  "integrated_at": "2026-08-04T06:40:24.037Z"
+}

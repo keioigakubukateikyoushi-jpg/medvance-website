@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-08-01T14:19:50.275Z",
+  "updated": "2026-08-04T06:40:24.037Z",
   "complete": {
     "ADV-M1-06": {
       "audio": true,
@@ -525,10 +525,28 @@
       "video": false,
       "slides": true,
       "updated_at": "2026-07-25T17:02:23.385Z"
+    },
+    "ME-M1-01-P04": {
+      "audio": true,
+      "video": true,
+      "slides": false,
+      "updated_at": "2026-08-04T06:40:23.975Z"
+    },
+    "ME-M1-05-P02": {
+      "audio": true,
+      "video": true,
+      "slides": false,
+      "updated_at": "2026-08-04T06:40:24.008Z"
+    },
+    "ME-M1-03-P01": {
+      "audio": false,
+      "video": true,
+      "slides": false,
+      "updated_at": "2026-08-04T06:40:24.037Z"
     }
   },
   "counts": {
     "complete": 54,
-    "partial": 6
+    "partial": 9
   }
 }

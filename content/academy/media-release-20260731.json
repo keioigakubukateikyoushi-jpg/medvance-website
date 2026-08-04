@@ -34,6 +34,9 @@
     "ME-MA-07-P02": { "quiz": true },
     "ME-MA-08-P01": { "quiz": true },
     "ME-MA-08-P02": { "quiz": true },
-    "ME-MA-08-P03": { "quiz": true }
+    "ME-MA-08-P03": { "quiz": true },
+    "ME-M1-01-P04": { "audio": true, "video": true, "quiz": true },
+    "ME-M1-05-P02": { "audio": true, "video": true, "quiz": true },
+    "ME-M1-03-P01": { "video": true, "quiz": true }
   }
 }
