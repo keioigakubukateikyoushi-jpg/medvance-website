@@ -8,10 +8,17 @@ export type QuizForPdf = {
     prompt?: string;
     question?: string;
     choices?: string[];
-    answer?: string;
+    answer?: string | number;
+    explanation?: string;
     explain?: string;
   }>;
 };
+
+/** answer は選択肢テキストの場合と choices への数値インデックスの場合がある。 */
+function resolveAnswerText(q: { choices?: string[]; answer?: string | number }): string | null {
+  if (typeof q.answer === "number") return q.choices?.[q.answer] ?? null;
+  return q.answer || null;
+}
 
 /** 簡易 LaTeX コマンド展開（API PDF の数式文字化け・生LaTeX残存対策） */
 function latexCommands(s: string): string {
@@ -217,11 +224,13 @@ export async function buildUnitPdf(opts: {
               doc.text(`   ${String.fromCharCode(65 + j)}. ${markdownToPlain(c)}`);
             });
           }
-          if (q.answer) {
-            doc.font("JP").fontSize(9).fillColor("#17633a").text(`解答: ${markdownToPlain(q.answer)}`);
+          const answerText = resolveAnswerText(q);
+          if (answerText) {
+            doc.font("JP").fontSize(9).fillColor("#17633a").text(`解答: ${markdownToPlain(answerText)}`);
           }
-          if (q.explain) {
-            doc.font("JP").fontSize(8).fillColor(muted).text(`解説: ${markdownToPlain(q.explain)}`);
+          const explain = q.explanation || q.explain;
+          if (explain) {
+            doc.font("JP").fontSize(8).fillColor(muted).text(`解説: ${markdownToPlain(explain)}`);
           }
           doc.moveDown(0.4);
         });
