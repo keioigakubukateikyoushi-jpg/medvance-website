@@ -872,6 +872,11 @@ export const videoGakushuKatsuyoArticle: LongformColumnArticle = {
   ],
   relatedArticles: [
     {
+      href: "/academy",
+      title: "動画・PDF教材ライブラリを見る",
+      label: "教材",
+    },
+    {
       href: "/column/academy-mihoudai",
       title: "動画・PDF教材が見放題に",
       label: "塾・指導",

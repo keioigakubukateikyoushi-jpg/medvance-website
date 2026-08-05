@@ -4,6 +4,7 @@ import { columnArticles } from "@/lib/columnArticles";
 import { nationalUniversityArticles } from "./universities/national/data";
 import { notices } from "@/lib/notices";
 import { getGitMtimeDate } from "@/lib/gitMtime";
+import { getCatalog, listAllFreeUnits } from "@/lib/academy/catalog";
 
 const BASE = "https://medvance-edu.com";
 
@@ -39,6 +40,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/academy`, lastModified: pageMtime("academy"), changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/academy/library`, lastModified: pageMtime("academy"), changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/academy/access`, lastModified: pageMtime("academy"), changeFrequency: "monthly", priority: 0.4 },
+    ...getCatalog().subjects.map((s) => ({
+      url: `${BASE}/academy/subject/${s.id}`,
+      lastModified: pageMtime("academy"),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+    ...listAllFreeUnits().map(({ unit }) => ({
+      url: `${BASE}/academy/unit/${unit.id}`,
+      lastModified: pageMtime("academy"),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     { url: `${BASE}/private-medical-strategy`, lastModified: pageMtime("private-medical-strategy"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: pageMtime("contact"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/diagnosis`, lastModified: pageMtime("diagnosis"), changeFrequency: "monthly", priority: 0.8 },
