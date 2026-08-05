@@ -22,6 +22,8 @@ import {
 import KatexEnhance from "@/components/academy/KatexEnhance";
 import ScrollToSection from "@/components/academy/ScrollToSection";
 import UnitVideoPlayer from "@/components/academy/UnitVideoPlayer";
+import { isYoutubeMediaUrl } from "@/lib/academy/media";
+import { buildBreadcrumbSchema, buildVideoObjectSchema } from "@/lib/seo";
 import type { Metadata } from "next";
 
 type Props = {
@@ -254,6 +256,23 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
   const lessonPoints = extractLessonPoints(rawLessonMd);
   const downloadName = (suffix: string) => `${id}_${suffix}`;
 
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "ホーム", url: "/" },
+    { name: "動画・PDF教材", url: "/academy" },
+    { name: subjectLabel, url: `/academy/subject/${subjectId}` },
+    { name: unit.title, url: `/academy/unit/${id}` },
+  ]);
+  const videoSrc = media.lectureVideo || media.video;
+  const videoSchema = hasVideo && videoSrc
+    ? buildVideoObjectSchema({
+        name: `${unit.title}｜${subjectLabel}`,
+        description: unit.goal,
+        path: `/academy/unit/${id}`,
+        contentUrl: videoSrc,
+        isYoutube: isYoutubeMediaUrl(videoSrc),
+      })
+    : null;
+
   const jumps: JumpItem[] = [
     { id: "video", label: "動画", available: hasVideo, tone: hasVideo ? "ready" : "muted" },
     { id: "slides", label: "スライドPDF", available: hasSlides, tone: hasSlides ? "ready" : "muted" },
@@ -278,6 +297,10 @@ export default async function AcademyUnitPage({ params, searchParams }: Props) {
 
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {videoSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+      )}
       <ScrollToSection sectionId={focusId} />
 
       {/* ヘッダー */}

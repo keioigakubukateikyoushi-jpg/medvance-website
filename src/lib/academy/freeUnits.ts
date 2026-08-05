@@ -15,6 +15,9 @@ export const FREE_UNIT_IDS = new Set<string>([
   "ME-SO-01", // 共通テスト社会・入口
   "ME-IF-01", // 共通テスト情報・入口
   "ADV-M1-06", // 発展・お試し1本
+  "ME-M1-04", // 数学I・展開公式（動画・PDFあり）
+  "ME-PH-02", // 物理・位置/変位/速度/加速度（動画・PDFあり）
+  "ME-PH-03", // 物理・等速直線運動と等加速度直線運動（動画・PDFあり）
 ]);
 
 export function isFreeUnit(unitId: string): boolean {

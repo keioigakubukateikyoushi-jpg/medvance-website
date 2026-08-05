@@ -432,3 +432,44 @@ export function buildForPageSchemas({
     ]),
   ];
 }
+
+function secondsToIso8601Duration(seconds: number): string {
+  const total = Math.round(seconds);
+  const h = Math.floor(total / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  return `PT${h > 0 ? `${h}H` : ""}${m > 0 ? `${m}M` : ""}${s > 0 || (h === 0 && m === 0) ? `${s}S` : ""}`;
+}
+
+// 動画教材（academy）の VideoObject schema。サムネイルは既存の動的OGP生成APIを流用。
+export function buildVideoObjectSchema({
+  name,
+  description,
+  path,
+  contentUrl,
+  isYoutube,
+  uploadDate,
+  durationSeconds,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  contentUrl: string;
+  isYoutube?: boolean;
+  uploadDate?: string;
+  durationSeconds?: number;
+}) {
+  const thumbnailUrl = `${siteUrl}/api/og?title=${encodeURIComponent(name)}&cat=${encodeURIComponent("動画・PDF教材")}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name,
+    description,
+    thumbnailUrl: [thumbnailUrl],
+    uploadDate: uploadDate || SITE_MODIFIED,
+    ...(isYoutube ? { embedUrl: contentUrl } : { contentUrl: buildAbsoluteUrl(contentUrl) }),
+    ...(durationSeconds ? { duration: secondsToIso8601Duration(durationSeconds) } : {}),
+    inLanguage: "ja-JP",
+    isFamilyFriendly: true,
+  };
+}

@@ -1002,6 +1002,7 @@ export const englishStudyMethodArticle = createSubjectArticle({
     { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
     { href: "/column/kakomon-timing", title: "医学部受験の過去問はいつから始めるべきか", label: "受験戦略" },
     { href: "/subjects/english", title: "医学部受験の英語対策ページ", label: "科目別対策" },
+    { href: "/academy/subject/english-exam", title: "高校英語の動画・PDF教材", label: "動画・PDF教材" },
   ],
   concerns: [
     "単語や文法はやっているのに、長文になると点が安定しない",
@@ -1049,6 +1050,7 @@ export const mathStudyMethodArticle = createSubjectArticle({
     { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
     { href: "/column/kakomon-timing", title: "医学部受験の過去問はいつから始めるべきか", label: "受験戦略" },
     { href: "/subjects/math", title: "医学部受験の数学対策ページ", label: "科目別対策" },
+    { href: "/academy/subject/math1-exam", title: "高校数学Iの動画・PDF教材", label: "動画・PDF教材" },
   ],
   concerns: [
     "基礎問題は解けるのに、医学部数学になると止まってしまう",
@@ -1096,6 +1098,7 @@ export const chemistryStudyMethodArticle = createSubjectArticle({
     { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
     { href: "/column/kakomon-timing", title: "医学部受験の過去問はいつから始めるべきか", label: "受験戦略" },
     { href: "/subjects/chemistry", title: "医学部受験の化学対策ページ", label: "科目別対策" },
+    { href: "/academy/subject/chemistry-exam", title: "高校化学の動画・PDF教材", label: "動画・PDF教材" },
   ],
   concerns: [
     "理論化学の計算で止まり、有機や無機まで手が回らない",
@@ -1143,6 +1146,7 @@ export const physicsStudyMethodArticle = createSubjectArticle({
     { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
     { href: "/column/kakomon-timing", title: "医学部受験の過去問はいつから始めるべきか", label: "受験戦略" },
     { href: "/subjects/physics", title: "医学部受験の物理対策ページ", label: "科目別対策" },
+    { href: "/academy/subject/physics-exam", title: "高校物理の動画・PDF教材", label: "動画・PDF教材" },
   ],
   concerns: [
     "公式は覚えているのに、初見問題で立式が止まる",
@@ -1190,6 +1194,7 @@ export const biologyStudyMethodArticle = createSubjectArticle({
     { href: "/column/study-method", title: "医学部合格のための正しい勉強法", label: "勉強法" },
     { href: "/column/kakomon-timing", title: "医学部受験の過去問はいつから始めるべきか", label: "受験戦略" },
     { href: "/subjects/biology", title: "医学部受験の生物対策ページ", label: "科目別対策" },
+    { href: "/academy/subject/biology-exam", title: "高校生物の動画・PDF教材", label: "動画・PDF教材" },
   ],
   concerns: [
     "知識は覚えているのに、記述問題で点が安定しない",

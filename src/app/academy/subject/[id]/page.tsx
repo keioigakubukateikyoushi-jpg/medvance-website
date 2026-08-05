@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getCatalog, getSubjectIndex, getSubjectMeta } from "@/lib/academy/catalog";
 import { isAcademyMember } from "@/lib/academy/access";
 import { resolveUnitMedia } from "@/lib/academy/media";
+import { buildBreadcrumbSchema, buildCollectionPageSchema } from "@/lib/seo";
 import type { Metadata } from "next";
 
 type Props = {
@@ -58,8 +59,21 @@ export default async function SubjectHubPage({ params, searchParams }: Props) {
   // group by chapter for display when ALL
   const chapters = index.chapters?.length ? index.chapters : [...new Set(units.map((u) => u.chapter))];
 
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "ホーム", url: "/" },
+    { name: "動画・PDF教材", url: "/academy" },
+    { name: index.subject, url: `/academy/subject/${subjectId}` },
+  ]);
+  const collectionSchema = buildCollectionPageSchema(
+    `${index.subject}｜動画・PDF教材`,
+    `${index.subject}を分野から選び、単元ごとに学べます。`,
+    `/academy/subject/${subjectId}`,
+  );
+
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <div style={{ backgroundColor: "#0c1a33" }} className="py-12 px-4">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#c9922a" }}>

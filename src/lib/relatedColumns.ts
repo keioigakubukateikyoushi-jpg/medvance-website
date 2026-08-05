@@ -89,6 +89,14 @@ export const relatedColumnsByHub: Record<string, string[]> = {
   "subjects/physics": ["physics-study-method", "study-method"],
   "subjects/biology": ["biology-study-method", "study-method"],
   "subjects/chemistry": ["chemistry-study-method", "study-method"],
+
+  // 動画・PDF教材（academy）
+  academy: ["academy-mihoudai", "video-gakushu-katsuyo", "study-method", "roadmap", "dokugaku-genkai"],
+  "academy/subject/math1-exam": ["math-study-method", "kakomon-timing"],
+  "academy/subject/english-exam": ["english-study-method"],
+  "academy/subject/physics-exam": ["physics-study-method"],
+  "academy/subject/chemistry-exam": ["chemistry-study-method"],
+  "academy/subject/biology-exam": ["biology-study-method"],
 };
 
 export type HubInfo = {
@@ -120,6 +128,12 @@ export const hubMeta: Record<string, { label: string }> = {
   "subjects/physics": { label: "物理指導" },
   "subjects/biology": { label: "生物指導" },
   "subjects/chemistry": { label: "化学指導" },
+  academy: { label: "動画・PDF教材" },
+  "academy/subject/math1-exam": { label: "高校数学Iの動画・PDF教材" },
+  "academy/subject/english-exam": { label: "高校英語の動画・PDF教材" },
+  "academy/subject/physics-exam": { label: "高校物理の動画・PDF教材" },
+  "academy/subject/chemistry-exam": { label: "高校化学の動画・PDF教材" },
+  "academy/subject/biology-exam": { label: "高校生物の動画・PDF教材" },
 };
 
 /**
