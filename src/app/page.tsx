@@ -7,6 +7,8 @@ import HoverCard from "@/components/HoverCard";
 import LineButton from "@/components/LineButton";
 import PentagonMethod from "@/components/PentagonMethod";
 import ScientificCTABanner from "@/components/ScientificCTABanner";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import { featuredTestimonials } from "@/lib/testimonials";
 import {
   homeFeaturedColumnArticles,
   resolvedColumnTopicClusters,
@@ -1443,6 +1445,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── 6. VOICES（受講生・保護者の声：抜粋） ── */}
+      <TestimonialsSection
+        items={featuredTestimonials}
+        background="#ffffff"
+        heading="受講生・保護者から届いた言葉"
+        lead="実際に受講している方からいただいた声を、ご本人・保護者の同意を得て匿名で掲載しています。成果の表現は足さず、いただいた内容のまま載せています。"
+        includeSchema={false}
+        showAllLink
+      />
 
       {/* ── 7. 6 FEATURES ─────────────────────── */}
       <section style={{ backgroundColor: "#0c1a33" }} className="py-24 px-4">

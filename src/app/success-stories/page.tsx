@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { LINE_URL } from "@/lib/links";
 import { buildBreadcrumbSchema } from "@/lib/seo";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "合格実績・指導事例｜現役医学部生による医学部受験塾 Medvance",
@@ -224,6 +225,11 @@ export default function SuccessStoriesPage() {
           </div>
         </div>
       </section>
+
+      {/* 受講生・保護者の声 */}
+      <div id="voices" className="scroll-mt-24" style={{ borderBottom: "1px solid #e5e1d8" }}>
+        <TestimonialsSection background="#ffffff" showConsentNote />
+      </div>
 
       {/* 方針 */}
       <section className="bg-white px-4 py-16">
